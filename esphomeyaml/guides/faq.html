@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Frequently Asked Questions</a><ul>
 <li><a class="reference internal" href="#tips-for-using-esphomeyaml">Tips for using esphomeyaml</a></li>
@@ -84,18 +85,18 @@
 in a file called <code class="docutils literal notranslate"><span class="pre">secrets.yaml</span></code> within the directory where the configuration file is.</p>
 </li>
 <li><p class="first">If you want to see how esphomeyaml interprets your configuration, run</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">config</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">config</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">To view the logs from your node without uploading, run</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">logs</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">logs</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">If you have changed the name of the node and want to update over-the-air, just specify
 <code class="docutils literal notranslate"><span class="pre">--upload-port</span></code> when running esphomeyaml. For example:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span> <span class="o">--</span><span class="n">upload</span><span class="o">-</span><span class="n">port</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.52</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span> <span class="o">--</span><span class="n">upload</span><span class="o">-</span><span class="n">port</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.52</span>
 </pre></div>
 </div>
 </li>
@@ -158,7 +159,7 @@ about what is going on.</li>
 <div class="section" id="how-do-i-update-to-the-latest-version">
 <h2>How do I update to the latest version?<a class="headerlink" href="#how-do-i-update-to-the-latest-version" title="Permalink to this headline">¶</a></h2>
 <p>It’s simple. Run:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip2</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">esphomeyaml</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">pip2</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">esphomeyaml</span>
 <span class="c1"># From docker:</span>
 <span class="n">docker</span> <span class="n">pull</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span><span class="p">:</span><span class="n">latest</span>
 </pre></div>
@@ -180,7 +181,7 @@ Install that and stop the stable version (both can’t run at the same time with
 commands.</li>
 </ul>
 <p>Next, if you want to use the latest version of the esphomelib C++ framework too:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample configuration entry</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Sample configuration entry</span>
 <span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="n">name</span><span class="p">:</span> <span class="o">...</span>
   <span class="n">esphomelib_version</span><span class="p">:</span> <span class="n">dev</span>
@@ -249,7 +250,7 @@ keepalive works better.</li>
 <div class="section" id="i-can-t-update-using-ota-because-of-to-little-space-now-what">
 <h2>I can’t update using OTA because of to little space, now what?<a class="headerlink" href="#i-can-t-update-using-ota-because-of-to-little-space-now-what" title="Permalink to this headline">¶</a></h2>
 <p>If you are using ESP8266/Sonoff devices and you have many components enabled you will probably encounter this error during OTA update:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Bad</span> <span class="n">Answer</span><span class="p">:</span> <span class="n">ERR</span><span class="p">:</span> <span class="n">ERROR</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">Not</span> <span class="n">Enough</span> <span class="n">Space</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Bad</span> <span class="n">Answer</span><span class="p">:</span> <span class="n">ERR</span><span class="p">:</span> <span class="n">ERROR</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">Not</span> <span class="n">Enough</span> <span class="n">Space</span>
 </pre></div>
 </div>
 <p>This is because of the limited amount of flash memory available on these devices (often just 1M). The size of the firmware data that is created by esphomeyaml depends on the number of components enabled (eg: webserver, sensors, etc). Especially the webserver component is very large.</p>
@@ -257,7 +258,7 @@ keepalive works better.</li>
 <p>A possible solution is to disable (large) components like webserver so the size of the firmware data stays below a certain size.</p>
 <p>If even this doesn’t work or you like to have a lot of components enabled there is a workaround that might help you out so you can have your cake and eat it too. Using a two stage OTA update.</p>
 <p>First we temporary ‘remove’ (comment out) all components from the <code class="docutils literal notranslate"><span class="pre">yaml</span></code> file, leaving only: <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span></code>, <code class="docutils literal notranslate"><span class="pre">ota</span></code> and <code class="docutils literal notranslate"><span class="pre">wifi</span></code>, example:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="n">name</span><span class="p">:</span> <span class="n">sonoff_basic</span>
   <span class="n">platform</span><span class="p">:</span> <span class="n">espressif8266</span>
   <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
@@ -307,7 +308,7 @@ keepalive works better.</li>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

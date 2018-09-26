@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">PN532 NFC/RFID Tag</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -72,7 +73,7 @@ unique id (<code class="docutils literal notranslate"><span class="pre">uid</spa
 <a class="reference internal image-reference" href="../../../_images/pn532-full.jpg"><img alt="../../../_images/pn532-full.jpg" src="../../../_images/pn532-full.jpg" style="width: 60.0%;" /></a>
 </div>
 <p>See <a class="reference internal" href="../pn532.html"><span class="doc">PN532 NFC/RFID Controller Hub</span></a> for instructions for setting up the connection to the PN532.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">spi</span><span class="p">:</span>
   <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
   <span class="n">miso_pin</span><span class="p">:</span> <span class="n">D1</span>
@@ -103,7 +104,7 @@ of hexadecimal values. For example <code class="docutils literal notranslate"><s
 <p>To set up binary sensors for specific NFC tags you first have to know their unique IDs. To obtain this
 id, first set up a simple pn532 configuration without any binary sensors like above.</p>
 <p>When your code is running and you approach the PN532 with an NFC Tag, you should see a message like this:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Found</span> <span class="n">new</span> <span class="n">tag</span> <span class="s1">&#39;74-10-37-94&#39;</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">Found</span> <span class="n">new</span> <span class="n">tag</span> <span class="s1">&#39;74-10-37-94&#39;</span>
 </pre></div>
 </div>
 <p>Then copy this id and create a <code class="docutils literal notranslate"><span class="pre">binary_sensor</span></code> entry as in the configuration example. Repeat this process for
@@ -131,7 +132,7 @@ each tag.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

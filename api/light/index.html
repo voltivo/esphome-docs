@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Light</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -91,7 +92,7 @@ state updates.</p>
 </div>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Binary</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Binary</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_binary_light</span><span class="p">(</span><span class="s">&quot;Desk Lamp&quot;</span><span class="p">,</span> <span class="n">App</span><span class="p">.</span><span class="n">make_gpio_output</span><span class="p">(</span><span class="mi">15</span><span class="p">));</span>
 <span class="c1">// Brightness-only</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_monochromatic_light</span><span class="p">(</span><span class="s">&quot;Kitchen Lights&quot;</span><span class="p">,</span> <span class="n">App</span><span class="p">.</span><span class="n">make_ledc_output</span><span class="p">(</span><span class="mi">16</span><span class="p">));</span>
@@ -138,7 +139,7 @@ state updates.</p>
 <dd><p>Load the color values from the non-volatile storage container preferences into the this object. </p>
 <p><dl class="docutils">
 <dt><strong>See</strong></dt>
-<dd><a class="reference internal" href="#classlight_1_1_light_color_values_1a95e4a9c5fa0a5f65994e484fa06cace6"><span class="std std-ref">save_to_preferences()</span></a> </dd>
+<dd><a class="reference internal" href="#classlight_1_1_light_color_values_1a01cad28d369fdf40a89dd69f2deed471"><span class="std std-ref">save_to_preferences()</span></a> </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">friendly_name</span></code>: The friendly name of the component that’s calling this. </li>
@@ -150,7 +151,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits">
-<span id="_CPPv2NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits"></span><span id="light::LightColorValues::save_to_preferences__ssCR.LightTraitsCRC"></span><span class="target" id="classlight_1_1_light_color_values_1a95e4a9c5fa0a5f65994e484fa06cace6"></span>void <code class="descname">save_to_preferences</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits"></span><span id="light::LightColorValues::save_to_preferences__ssCR.LightTraitsCRC"></span><span class="target" id="classlight_1_1_light_color_values_1a01cad28d369fdf40a89dd69f2deed471"></span>void <code class="descname">save_to_preferences</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Store these <a class="reference internal" href="#classlight_1_1_light_color_values"><span class="std std-ref">LightColorValues</span></a> in the preferences object. </p>
 <p><dl class="docutils">
 <dt><strong>See</strong></dt>
@@ -181,7 +182,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits">
-<span id="_CPPv2NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits"></span><span id="light::LightColorValues::dump_json__JsonObjectR.LightTraitsCRC"></span><span class="target" id="classlight_1_1_light_color_values_1a9b12c7a432c12cbcb3c2244748a00b70"></span>void <code class="descname">dump_json</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits"></span><span id="light::LightColorValues::dump_json__JsonObjectR.LightTraitsCRC"></span><span class="target" id="classlight_1_1_light_color_values_1abf31f1d526cf048dbb69b5a297bbadcb"></span>void <code class="descname">dump_json</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Dump this color into a JsonObject. </p>
 <p>Only dumps values if the corresponding traits are marked supported by traits.</p>
 <p><dl class="docutils">
@@ -212,48 +213,48 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues9as_binaryEPb">
-<span id="_CPPv2NK5light16LightColorValues9as_binaryEPb"></span><span id="light::LightColorValues::as_binary__bPC"></span><span class="target" id="classlight_1_1_light_color_values_1a6af507a8120765342e4bf6eb299cc052"></span>void <code class="descname">as_binary</code><span class="sig-paren">(</span>bool *<em>binary</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9as_binaryEPb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues9as_binaryEPb"></span><span id="light::LightColorValues::as_binary__bPC"></span><span class="target" id="classlight_1_1_light_color_values_1a2d95a93f3c8ea9fef3aa0488add74f10"></span>void <code class="descname">as_binary</code><span class="sig-paren">(</span>bool *<em>binary</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9as_binaryEPb" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues13as_brightnessEPf">
-<span id="_CPPv2NK5light16LightColorValues13as_brightnessEPf"></span><span id="light::LightColorValues::as_brightness__floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1a35f2aa9f7a520e15b62ba95ed1c7fdec"></span>void <code class="descname">as_brightness</code><span class="sig-paren">(</span>float *<em>brightness</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues13as_brightnessEPf" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues13as_brightnessEPf"></span><span id="light::LightColorValues::as_brightness__floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1a79dfa02073d91450dba45ea6861448c1"></span>void <code class="descname">as_brightness</code><span class="sig-paren">(</span>float *<em>brightness</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues13as_brightnessEPf" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues6as_rgbEPfPfPf">
-<span id="_CPPv2NK5light16LightColorValues6as_rgbEPfPfPf"></span><span id="light::LightColorValues::as_rgb__floatP.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1ab298fc4588cf13552ceb4a0c2a57065e"></span>void <code class="descname">as_rgb</code><span class="sig-paren">(</span>float *<em>red</em>, float *<em>green</em>, float *<em>blue</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues6as_rgbEPfPfPf" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues6as_rgbEPfPfPf"></span><span id="light::LightColorValues::as_rgb__floatP.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1acb34ea215b131a2b13b0cfbf1f8cd079"></span>void <code class="descname">as_rgb</code><span class="sig-paren">(</span>float *<em>red</em>, float *<em>green</em>, float *<em>blue</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues6as_rgbEPfPfPf" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues7as_rgbwEPfPfPfPf">
-<span id="_CPPv2NK5light16LightColorValues7as_rgbwEPfPfPfPf"></span><span id="light::LightColorValues::as_rgbw__floatP.floatP.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1a9da3f9e05310856169d7f4778d57b8ee"></span>void <code class="descname">as_rgbw</code><span class="sig-paren">(</span>float *<em>red</em>, float *<em>green</em>, float *<em>blue</em>, float *<em>white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues7as_rgbwEPfPfPfPf" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues7as_rgbwEPfPfPfPf"></span><span id="light::LightColorValues::as_rgbw__floatP.floatP.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1ae7f152130e3067a43e3807740db6a924"></span>void <code class="descname">as_rgbw</code><span class="sig-paren">(</span>float *<em>red</em>, float *<em>green</em>, float *<em>blue</em>, float *<em>white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues7as_rgbwEPfPfPfPf" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues8as_rgbwwEffPfPfPfPfPf">
-<span id="_CPPv2NK5light16LightColorValues8as_rgbwwEffPfPfPfPfPf"></span><span id="light::LightColorValues::as_rgbww__float.float.floatP.floatP.floatP.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1a908369dda7617df4b69b08207dda7d2b"></span>void <code class="descname">as_rgbww</code><span class="sig-paren">(</span>float <em>color_temperature_cw</em>, float <em>color_temperature_ww</em>, float *<em>red</em>, float *<em>green</em>, float *<em>blue</em>, float *<em>cold_white</em>, float *<em>warm_white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues8as_rgbwwEffPfPfPfPfPf" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues8as_rgbwwEffPfPfPfPfPf"></span><span id="light::LightColorValues::as_rgbww__float.float.floatP.floatP.floatP.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1a8425d69fd223ac534f78a88980ff2b6e"></span>void <code class="descname">as_rgbww</code><span class="sig-paren">(</span>float <em>color_temperature_cw</em>, float <em>color_temperature_ww</em>, float *<em>red</em>, float *<em>green</em>, float *<em>blue</em>, float *<em>cold_white</em>, float *<em>warm_white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues8as_rgbwwEffPfPfPfPfPf" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues7as_cwwwEffPfPf">
-<span id="_CPPv2NK5light16LightColorValues7as_cwwwEffPfPf"></span><span id="light::LightColorValues::as_cwww__float.float.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1a220b54391722d77d61dc072efe9bc523"></span>void <code class="descname">as_cwww</code><span class="sig-paren">(</span>float <em>color_temperature_cw</em>, float <em>color_temperature_ww</em>, float *<em>cold_white</em>, float *<em>warm_white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues7as_cwwwEffPfPf" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues7as_cwwwEffPfPf"></span><span id="light::LightColorValues::as_cwww__float.float.floatP.floatPC"></span><span class="target" id="classlight_1_1_light_color_values_1ae12c4ed0559bb88f908e3dac5fb2342f"></span>void <code class="descname">as_cwww</code><span class="sig-paren">(</span>float <em>color_temperature_cw</em>, float <em>color_temperature_ww</em>, float *<em>cold_white</em>, float *<em>warm_white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues7as_cwwwEffPfPf" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValueseqERK16LightColorValues">
-<span id="_CPPv2NK5light16LightColorValueseqERK16LightColorValues"></span><span id="light::LightColorValues::eq-operator__LightColorValuesCRC"></span><span class="target" id="classlight_1_1_light_color_values_1ac6332e7bb7a622f82def87697b938554"></span>bool <code class="descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValueseqERK16LightColorValues" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValueseqERK16LightColorValues"></span><span id="light::LightColorValues::eq-operator__LightColorValuesCRC"></span><span class="target" id="classlight_1_1_light_color_values_1ae27e05a340d1a040ff7f1ad6e533d9de"></span>bool <code class="descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValueseqERK16LightColorValues" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Compare this <a class="reference internal" href="#classlight_1_1_light_color_values"><span class="std std-ref">LightColorValues</span></a> to rhs, return true iff all attributes match. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValuesneERK16LightColorValues">
-<span id="_CPPv2NK5light16LightColorValuesneERK16LightColorValues"></span><span id="light::LightColorValues::neq-operator__LightColorValuesCRC"></span><span class="target" id="classlight_1_1_light_color_values_1a822ea6f964e180b43e823680487a5632"></span>bool <code class="descname">operator!=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValuesneERK16LightColorValues" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValuesneERK16LightColorValues"></span><span id="light::LightColorValues::neq-operator__LightColorValuesCRC"></span><span class="target" id="classlight_1_1_light_color_values_1a1952a4fda1292af09a0ca6adfc39a606"></span>bool <code class="descname">operator!=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValuesneERK16LightColorValues" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues9get_stateEv">
-<span id="_CPPv2NK5light16LightColorValues9get_stateEv"></span><span id="light::LightColorValues::get_stateC"></span><span class="target" id="classlight_1_1_light_color_values_1af30df4cf9450511e980579d6dc655368"></span>float <code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues9get_stateEv"></span><span id="light::LightColorValues::get_stateC"></span><span class="target" id="classlight_1_1_light_color_values_1a7d004224ae8155ef5379d21a38014275"></span>float <code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -263,7 +264,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues14get_brightnessEv">
-<span id="_CPPv2NK5light16LightColorValues14get_brightnessEv"></span><span id="light::LightColorValues::get_brightnessC"></span><span class="target" id="classlight_1_1_light_color_values_1a9964adef2af94efcc8005be3aa84bf10"></span>float <code class="descname">get_brightness</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues14get_brightnessEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues14get_brightnessEv"></span><span id="light::LightColorValues::get_brightnessC"></span><span class="target" id="classlight_1_1_light_color_values_1a05293dbddd6f11fade450aad98591318"></span>float <code class="descname">get_brightness</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues14get_brightnessEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -273,7 +274,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues7get_redEv">
-<span id="_CPPv2NK5light16LightColorValues7get_redEv"></span><span id="light::LightColorValues::get_redC"></span><span class="target" id="classlight_1_1_light_color_values_1a03c92511400b3cc588ba2a17cd573104"></span>float <code class="descname">get_red</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues7get_redEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues7get_redEv"></span><span id="light::LightColorValues::get_redC"></span><span class="target" id="classlight_1_1_light_color_values_1a70853156108eea20766cf7b706912e25"></span>float <code class="descname">get_red</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues7get_redEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -283,7 +284,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues9get_greenEv">
-<span id="_CPPv2NK5light16LightColorValues9get_greenEv"></span><span id="light::LightColorValues::get_greenC"></span><span class="target" id="classlight_1_1_light_color_values_1a37e2b3e15992a91aa95971ff67033a02"></span>float <code class="descname">get_green</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9get_greenEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues9get_greenEv"></span><span id="light::LightColorValues::get_greenC"></span><span class="target" id="classlight_1_1_light_color_values_1a858c468c1cef72aa8109839a4bae3c41"></span>float <code class="descname">get_green</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9get_greenEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -293,7 +294,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues8get_blueEv">
-<span id="_CPPv2NK5light16LightColorValues8get_blueEv"></span><span id="light::LightColorValues::get_blueC"></span><span class="target" id="classlight_1_1_light_color_values_1a3b3c5975aba849a8351fe015e154fe91"></span>float <code class="descname">get_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues8get_blueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues8get_blueEv"></span><span id="light::LightColorValues::get_blueC"></span><span class="target" id="classlight_1_1_light_color_values_1a1b1b56cb807b98c8e382ca286f6ceb23"></span>float <code class="descname">get_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues8get_blueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -303,7 +304,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues9get_whiteEv">
-<span id="_CPPv2NK5light16LightColorValues9get_whiteEv"></span><span id="light::LightColorValues::get_whiteC"></span><span class="target" id="classlight_1_1_light_color_values_1a52854dae3ef683c6904424b326225dab"></span>float <code class="descname">get_white</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9get_whiteEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues9get_whiteEv"></span><span id="light::LightColorValues::get_whiteC"></span><span class="target" id="classlight_1_1_light_color_values_1afdf157aa6d8227b455d1a335eb6c6cd5"></span>float <code class="descname">get_white</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9get_whiteEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -313,7 +314,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues21get_color_temperatureEv">
-<span id="_CPPv2NK5light16LightColorValues21get_color_temperatureEv"></span><span id="light::LightColorValues::get_color_temperatureC"></span><span class="target" id="classlight_1_1_light_color_values_1ae0956de46c63ed64750f501d5cf29e5a"></span>float <code class="descname">get_color_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues21get_color_temperatureEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightColorValues21get_color_temperatureEv"></span><span id="light::LightColorValues::get_color_temperatureC"></span><span class="target" id="classlight_1_1_light_color_values_1afdce044c0ea9ffafdb94c74276a2cef9"></span>float <code class="descname">get_color_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues21get_color_temperatureEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -700,7 +701,7 @@ state updates.</p>
 <p class="breathe-sectiondef-title rubric">Protected Functions</p>
 <dl class="function">
 <dt id="_CPPv3NK5light22BaseFastLEDLightEffect19get_fastled_output_Ev">
-<span id="_CPPv2NK5light22BaseFastLEDLightEffect19get_fastled_output_Ev"></span><span id="light::BaseFastLEDLightEffect::get_fastled_output_C"></span><span class="target" id="classlight_1_1_base_fast_l_e_d_light_effect_1a70de1683571ca293daa5d63e6e7ada78"></span><a class="reference internal" href="fastled.html#_CPPv3N5light27FastLEDLightOutputComponentE" title="light::FastLEDLightOutputComponent">FastLEDLightOutputComponent</a> *<code class="descname">get_fastled_output_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light22BaseFastLEDLightEffect19get_fastled_output_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light22BaseFastLEDLightEffect19get_fastled_output_Ev"></span><span id="light::BaseFastLEDLightEffect::get_fastled_output_C"></span><span class="target" id="classlight_1_1_base_fast_l_e_d_light_effect_1a7082beaaad33642ce47cd155599defe0"></span><a class="reference internal" href="fastled.html#_CPPv3N5light27FastLEDLightOutputComponentE" title="light::FastLEDLightOutputComponent">FastLEDLightOutputComponent</a> *<code class="descname">get_fastled_output_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light22BaseFastLEDLightEffect19get_fastled_output_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1170,7 +1171,7 @@ state updates.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N5light17BinaryLightOutput17BinaryLightOutputEPN6output12BinaryOutputE">
-<span id="_CPPv2N5light17BinaryLightOutput17BinaryLightOutputEPN6output12BinaryOutputE"></span><span id="light::BinaryLightOutput::BinaryLightOutput__output::BinaryOutputP"></span><span class="target" id="classlight_1_1_binary_light_output_1ae58ae20ae2353ce6baa6baba43c0b4be"></span><code class="descname">BinaryLightOutput</code><span class="sig-paren">(</span>output::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light17BinaryLightOutput17BinaryLightOutputEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light17BinaryLightOutput17BinaryLightOutputEPN6output12BinaryOutputE"></span><span id="light::BinaryLightOutput::BinaryLightOutput__output::BinaryOutputP"></span><span class="target" id="classlight_1_1_binary_light_output_1ae58ae20ae2353ce6baa6baba43c0b4be"></span><code class="descname">BinaryLightOutput</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light17BinaryLightOutput17BinaryLightOutputEPN6output12BinaryOutputE" title="light::BinaryLightOutput::BinaryLightOutput::output">output</a>::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light17BinaryLightOutput17BinaryLightOutputEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1202,7 +1203,7 @@ state updates.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N5light24MonochromaticLightOutput24MonochromaticLightOutputEPN6output11FloatOutputE">
-<span id="_CPPv2N5light24MonochromaticLightOutput24MonochromaticLightOutputEPN6output11FloatOutputE"></span><span id="light::MonochromaticLightOutput::MonochromaticLightOutput__output::FloatOutputP"></span><span class="target" id="classlight_1_1_monochromatic_light_output_1a02bf55902464fe39d2a4a76fe58b5779"></span><code class="descname">MonochromaticLightOutput</code><span class="sig-paren">(</span>output::FloatOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24MonochromaticLightOutput24MonochromaticLightOutputEPN6output11FloatOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light24MonochromaticLightOutput24MonochromaticLightOutputEPN6output11FloatOutputE"></span><span id="light::MonochromaticLightOutput::MonochromaticLightOutput__output::FloatOutputP"></span><span class="target" id="classlight_1_1_monochromatic_light_output_1a02bf55902464fe39d2a4a76fe58b5779"></span><code class="descname">MonochromaticLightOutput</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light24MonochromaticLightOutput24MonochromaticLightOutputEPN6output11FloatOutputE" title="light::MonochromaticLightOutput::MonochromaticLightOutput::output">output</a>::FloatOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24MonochromaticLightOutput24MonochromaticLightOutputEPN6output11FloatOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1599,7 +1600,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light10LightState10get_outputEv">
-<span id="_CPPv2NK5light10LightState10get_outputEv"></span><span id="light::LightState::get_outputC"></span><span class="target" id="classlight_1_1_light_state_1aaff662934fecaf8326925404bd8405ed"></span><a class="reference internal" href="#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a> *<code class="descname">get_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState10get_outputEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light10LightState10get_outputEv"></span><span id="light::LightState::get_outputC"></span><span class="target" id="classlight_1_1_light_state_1acbc16a4a30d50162bb4b90b4bdee4b52"></span><a class="reference internal" href="#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a> *<code class="descname">get_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState10get_outputEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1661,7 +1662,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light10LightState29get_default_transition_lengthEv">
-<span id="_CPPv2NK5light10LightState29get_default_transition_lengthEv"></span><span id="light::LightState::get_default_transition_lengthC"></span><span class="target" id="classlight_1_1_light_state_1a5ac89f57c1ba1bf24a6d069f29577c92"></span>uint32_t <code class="descname">get_default_transition_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState29get_default_transition_lengthEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light10LightState29get_default_transition_lengthEv"></span><span id="light::LightState::get_default_transition_lengthC"></span><span class="target" id="classlight_1_1_light_state_1a8244d39760d66290c025a2047c983ede"></span>uint32_t <code class="descname">get_default_transition_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState29get_default_transition_lengthEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Defaults to 1 second (1000 ms). </p>
 </dd></dl>
 
@@ -1673,7 +1674,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light10LightState17get_gamma_correctEv">
-<span id="_CPPv2NK5light10LightState17get_gamma_correctEv"></span><span id="light::LightState::get_gamma_correctC"></span><span class="target" id="classlight_1_1_light_state_1a379cc4102856f08d5b03c8cec2de450b"></span>float <code class="descname">get_gamma_correct</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState17get_gamma_correctEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light10LightState17get_gamma_correctEv"></span><span id="light::LightState::get_gamma_correctC"></span><span class="target" id="classlight_1_1_light_state_1ae6f8bdc5d7fdb734e531dc8eb8d734f7"></span>float <code class="descname">get_gamma_correct</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState17get_gamma_correctEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1684,12 +1685,12 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light10LightState11get_effectsEv">
-<span id="_CPPv2NK5light10LightState11get_effectsEv"></span><span id="light::LightState::get_effectsC"></span><span class="target" id="classlight_1_1_light_state_1afcf3a97f431ef95dceb484fd5fdc9066"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv3N5light11LightEffectE" title="light::LightEffect">LightEffect</a> *&gt; &amp;<code class="descname">get_effects</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState11get_effectsEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light10LightState11get_effectsEv"></span><span id="light::LightState::get_effectsC"></span><span class="target" id="classlight_1_1_light_state_1ac6ca2ad24a2280668ec649414c858c87"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv3N5light11LightEffectE" title="light::LightEffect">LightEffect</a> *&gt; &amp;<code class="descname">get_effects</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState11get_effectsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N5light10LightState11add_effectsENSt6vectorIP11LightEffectEE">
-<span id="_CPPv2N5light10LightState11add_effectsENSt6vectorIP11LightEffectEE"></span><span id="light::LightState::add_effects__std::vector:LightEffectP:"></span><span class="target" id="classlight_1_1_light_state_1a6be7ea0f214c699495d7237fb8c3fc7c"></span>void <code class="descname">add_effects</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv3N5light11LightEffectE" title="light::LightEffect">LightEffect</a> *&gt; <em>effects</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState11add_effectsENSt6vectorIP11LightEffectEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light10LightState11add_effectsENSt6vectorIP11LightEffectEE"></span><span id="light::LightState::add_effects__std::vector:LightEffectP:"></span><span class="target" id="classlight_1_1_light_state_1a9e2d97ccf8d7bd2fc595f8627aa8abdf"></span>void <code class="descname">add_effects</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv3N5light11LightEffectE" title="light::LightEffect">LightEffect</a> *&gt; <em>effects</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState11add_effectsENSt6vectorIP11LightEffectEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1770,27 +1771,27 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light11LightTraits14has_brightnessEv">
-<span id="_CPPv2NK5light11LightTraits14has_brightnessEv"></span><span id="light::LightTraits::has_brightnessC"></span><span class="target" id="classlight_1_1_light_traits_1a50f8b4ac58a44ea02a74c2bce58db36f"></span>bool <code class="descname">has_brightness</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits14has_brightnessEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light11LightTraits14has_brightnessEv"></span><span id="light::LightTraits::has_brightnessC"></span><span class="target" id="classlight_1_1_light_traits_1ab03d2020a26087ef36504fbdf8040f6b"></span>bool <code class="descname">has_brightness</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits14has_brightnessEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light11LightTraits7has_rgbEv">
-<span id="_CPPv2NK5light11LightTraits7has_rgbEv"></span><span id="light::LightTraits::has_rgbC"></span><span class="target" id="classlight_1_1_light_traits_1af643f348986aa4d15233224f56d0dd2e"></span>bool <code class="descname">has_rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits7has_rgbEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light11LightTraits7has_rgbEv"></span><span id="light::LightTraits::has_rgbC"></span><span class="target" id="classlight_1_1_light_traits_1a3d0306a4320ef2228a149168dfb4927a"></span>bool <code class="descname">has_rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits7has_rgbEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light11LightTraits19has_rgb_white_valueEv">
-<span id="_CPPv2NK5light11LightTraits19has_rgb_white_valueEv"></span><span id="light::LightTraits::has_rgb_white_valueC"></span><span class="target" id="classlight_1_1_light_traits_1a37c1e5ec0a4b86573743365f7600ffa5"></span>bool <code class="descname">has_rgb_white_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits19has_rgb_white_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light11LightTraits19has_rgb_white_valueEv"></span><span id="light::LightTraits::has_rgb_white_valueC"></span><span class="target" id="classlight_1_1_light_traits_1af7bce8ed4c1e4a09e183f8cd24151962"></span>bool <code class="descname">has_rgb_white_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits19has_rgb_white_valueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light11LightTraits21has_color_temperatureEv">
-<span id="_CPPv2NK5light11LightTraits21has_color_temperatureEv"></span><span id="light::LightTraits::has_color_temperatureC"></span><span class="target" id="classlight_1_1_light_traits_1a087825d75d08738eec406b86da6ace9d"></span>bool <code class="descname">has_color_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits21has_color_temperatureEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light11LightTraits21has_color_temperatureEv"></span><span id="light::LightTraits::has_color_temperatureC"></span><span class="target" id="classlight_1_1_light_traits_1a71e4beb53cea3ee66bd8907fcd66768f"></span>bool <code class="descname">has_color_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits21has_color_temperatureEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light11LightTraits12has_fast_ledEv">
-<span id="_CPPv2NK5light11LightTraits12has_fast_ledEv"></span><span id="light::LightTraits::has_fast_ledC"></span><span class="target" id="classlight_1_1_light_traits_1ac66c490ca085f75300411789a1bdd2d6"></span>bool <code class="descname">has_fast_led</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits12has_fast_ledEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light11LightTraits12has_fast_ledEv"></span><span id="light::LightTraits::has_fast_ledC"></span><span class="target" id="classlight_1_1_light_traits_1aeb70bcecea620b8b04ff924e4baef538"></span>bool <code class="descname">has_fast_led</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light11LightTraits12has_fast_ledEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Hack to allow FastLED light effects without dynamic_cast. </p>
 </dd></dl>
 
@@ -1886,12 +1887,12 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightTransformer16get_start_valuesEv">
-<span id="_CPPv2NK5light16LightTransformer16get_start_valuesEv"></span><span id="light::LightTransformer::get_start_valuesC"></span><span class="target" id="classlight_1_1_light_transformer_1a9823c1222f2d2b2666dbc45c449612b0"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<code class="descname">get_start_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightTransformer16get_start_valuesEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightTransformer16get_start_valuesEv"></span><span id="light::LightTransformer::get_start_valuesC"></span><span class="target" id="classlight_1_1_light_transformer_1a55b0e4e06a7d9d102eb7291ef2b6bcdd"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<code class="descname">get_start_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightTransformer16get_start_valuesEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light16LightTransformer17get_target_valuesEv">
-<span id="_CPPv2NK5light16LightTransformer17get_target_valuesEv"></span><span id="light::LightTransformer::get_target_valuesC"></span><span class="target" id="classlight_1_1_light_transformer_1a8aab9c2f053b4f05fb20a713a8b9c599"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<code class="descname">get_target_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightTransformer17get_target_valuesEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light16LightTransformer17get_target_valuesEv"></span><span id="light::LightTransformer::get_target_valuesC"></span><span class="target" id="classlight_1_1_light_transformer_1a8f06145eacb0074eac9eda238008148f"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<code class="descname">get_target_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightTransformer17get_target_valuesEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1991,7 +1992,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light22MQTTJSONLightComponent9get_stateEv">
-<span id="_CPPv2NK5light22MQTTJSONLightComponent9get_stateEv"></span><span id="light::MQTTJSONLightComponent::get_stateC"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1a38a6679bbed023ed301c24e95b3d7046"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light22MQTTJSONLightComponent9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light22MQTTJSONLightComponent9get_stateEv"></span><span id="light::MQTTJSONLightComponent::get_stateC"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1ae3ac19e263e1c147f1a76da4afe28287"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light22MQTTJSONLightComponent9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -2063,7 +2064,7 @@ state updates.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

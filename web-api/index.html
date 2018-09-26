@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Web Server API</a><ul>
 <li><a class="reference internal" href="#event-source-api">Event Source API</a><ul>
@@ -133,7 +134,7 @@ some other aspects of a component, for example the brightness of a light.</p>
 <h4>Sensor<a class="headerlink" href="#sensor" title="Permalink to this headline">¶</a></h4>
 <p>Sensors only support GET requests by sending a request to <code class="docutils literal notranslate"><span class="pre">/sensor/&lt;id&gt;</span></code>. For example sending
 a GET request to <code class="docutils literal notranslate"><span class="pre">/sensor/outside_temperature</span></code> could yield this payload:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;sensor-outside_temperature&quot;</span><span class="p">,</span>
   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;19.8 °C&quot;</span><span class="p">,</span>
   <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">19.76666</span>
@@ -151,7 +152,7 @@ a GET request to <code class="docutils literal notranslate"><span class="pre">/s
 <p>Binary sensors have a similar payload and also only support GET requests. For example requesting
 the current state of a binary sensor using the URL <code class="docutils literal notranslate"><span class="pre">binary_sensor/living_room_status</span></code> could
 result in following payload:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;binary_sensor-living_room_status&quot;</span><span class="p">,</span>
   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ON&quot;</span><span class="p">,</span>
   <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span>
@@ -176,7 +177,7 @@ with a 200 OK HTTP return code if the call succeeded.</p>
 <h4>Light<a class="headerlink" href="#light" title="Permalink to this headline">¶</a></h4>
 <p>Lights support quite a few more complicated options, like brightness or color. But first, to get
 the state of a light, send a GET request to <code class="docutils literal notranslate"><span class="pre">/light/&lt;id&gt;</span></code>, for example <code class="docutils literal notranslate"><span class="pre">light/living_room_lights</span></code>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;light-living_room_lights&quot;</span><span class="p">,</span>
   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ON&quot;</span><span class="p">,</span>
   <span class="nt">&quot;brightness&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span>
@@ -230,7 +231,7 @@ creating a POST request at <code class="docutils literal notranslate"><span clas
 underlying fan supports it, fans in the web server also support the speed settings “low”,
 “medium” and “high” and an oscillation setting. To get the current state of a fan, create a
 GET request to <code class="docutils literal notranslate"><span class="pre">/fan/&lt;id&gt;</span></code>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fan-living_room_fan&quot;</span><span class="p">,</span>
   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ON&quot;</span><span class="p">,</span>
   <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -268,7 +269,7 @@ and <code class="docutils literal notranslate"><span class="pre">/fan/&lt;id&gt;
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

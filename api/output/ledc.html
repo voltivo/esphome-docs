@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">ESP32 LEDC Output</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -70,7 +71,7 @@
 <h1>ESP32 LEDC Output<a class="headerlink" href="#esp32-ledc-output" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_ledc_output</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
 <span class="c1">// Custom Frequency</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_ledc_output</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">);</span>
@@ -147,22 +148,22 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6output19LEDCOutputComponent13get_frequencyEv">
-<span id="_CPPv2NK6output19LEDCOutputComponent13get_frequencyEv"></span><span id="output::LEDCOutputComponent::get_frequencyC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a3ec7ed909f935314e3fc5aa4fc7ade1e"></span>float <code class="descname">get_frequency</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent13get_frequencyEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6output19LEDCOutputComponent13get_frequencyEv"></span><span id="output::LEDCOutputComponent::get_frequencyC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1ad226c2f814f30178483fe78fedb0c285"></span>float <code class="descname">get_frequency</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent13get_frequencyEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6output19LEDCOutputComponent13get_bit_depthEv">
-<span id="_CPPv2NK6output19LEDCOutputComponent13get_bit_depthEv"></span><span id="output::LEDCOutputComponent::get_bit_depthC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a7d8d02a2a4aa1dfb0cc007b0a638ffab"></span>uint8_t <code class="descname">get_bit_depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent13get_bit_depthEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6output19LEDCOutputComponent13get_bit_depthEv"></span><span id="output::LEDCOutputComponent::get_bit_depthC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a36b105c95885464fd5a792e80535ec1f"></span>uint8_t <code class="descname">get_bit_depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent13get_bit_depthEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6output19LEDCOutputComponent11get_channelEv">
-<span id="_CPPv2NK6output19LEDCOutputComponent11get_channelEv"></span><span id="output::LEDCOutputComponent::get_channelC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a0db4857f5e7bad45b59b09109031e240"></span>uint8_t <code class="descname">get_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent11get_channelEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6output19LEDCOutputComponent11get_channelEv"></span><span id="output::LEDCOutputComponent::get_channelC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a470d93e1a9a754758159582e5f6f363d"></span>uint8_t <code class="descname">get_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent11get_channelEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6output19LEDCOutputComponent7get_pinEv">
-<span id="_CPPv2NK6output19LEDCOutputComponent7get_pinEv"></span><span id="output::LEDCOutputComponent::get_pinC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a445415bf0c52d3ab2e6921ac409bb647"></span>uint8_t <code class="descname">get_pin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent7get_pinEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6output19LEDCOutputComponent7get_pinEv"></span><span id="output::LEDCOutputComponent::get_pinC"></span><span class="target" id="classoutput_1_1_l_e_d_c_output_component_1a79210dc9b978dd9e30efae5d01cee179"></span>uint8_t <code class="descname">get_pin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output19LEDCOutputComponent7get_pinEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -211,7 +212,7 @@
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

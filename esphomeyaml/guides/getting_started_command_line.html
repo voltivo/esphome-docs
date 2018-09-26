@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Getting Started with esphomeyaml</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
@@ -81,13 +82,13 @@ basic “node” in a few simple steps.</p>
 2.7</a> installed
 (because of platformio 😕) and install the console script script through
 <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">esphomeyaml</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">esphomeyaml</span>
 </pre></div>
 </div>
 <p>Alternatively, there’s also a docker image available for easy
 installation (the docker hub image is only available for amd64 right now, if you have
 an RPi, please install esphomelib through <code class="docutils literal notranslate"><span class="pre">pip</span></code> or use <a class="reference internal" href="getting_started_hassio.html"><span class="doc">the HassIO add-on</span></a>:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">docker</span> <span class="n">pull</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span>
 </pre></div>
 </div>
 </div>
@@ -97,7 +98,7 @@ an RPi, please install esphomelib through <code class="docutils literal notransl
 friendly setup wizard that will guide you through creating your first
 configuration file. For example, if you want to create a configuration
 file called <code class="docutils literal notranslate"><span class="pre">livingroom.yaml</span></code>:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">wizard</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">wizard</span>
 <span class="c1"># On Docker:</span>
 <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;`pwd`&quot;</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="o">-</span><span class="n">it</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">wizard</span>
 </pre></div>
@@ -116,7 +117,7 @@ the WiFi network and MQTT broker, but still it’s a first step.</p>
 <p>So now you should have a file called <code class="docutils literal notranslate"><span class="pre">livingroom.yaml</span></code> (or similar).
 Go open that file in an editor of your choice and let’s add a <a class="reference internal" href="../components/switch/gpio.html"><span class="doc">simple
 GPIO switch</span></a> to our app.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifer&quot;</span>
     <span class="n">pin</span><span class="p">:</span> <span class="mi">5</span>
@@ -138,7 +139,7 @@ well set <code class="docutils literal notranslate"><span class="pre">D1</span><
 you have something you want to upload to your ESP board, simply plug in
 the device via USB and type the following command (replacing
 <code class="docutils literal notranslate"><span class="pre">livingroom.yaml</span></code> with your configuration file):</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
 </pre></div>
 </div>
 <p>You should see esphomeyaml validating the configuration and telling you
@@ -150,7 +151,7 @@ that you can modify afterwards and play around with.</p>
 to map the serial device into docker with the <code class="docutils literal notranslate"><span class="pre">-v</span></code> option, or you just
 call <code class="docutils literal notranslate"><span class="pre">compile</span></code> within the container and let platformio do the
 uploading on the host system:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;`pwd`&quot;</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="o">-</span><span class="n">it</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="nb">compile</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;`pwd`&quot;</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="o">-</span><span class="n">it</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="nb">compile</span>
 <span class="n">platformio</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="n">livingroom</span> <span class="o">-</span><span class="n">t</span> <span class="n">upload</span>
 </pre></div>
 </div>
@@ -170,7 +171,7 @@ No more opening hidden boxes stowed in places hard to reach. Yay!</p>
 <p>Next, we’re going to add a very simple binary sensor that periodically
 checks a GPIO pin whether it’s pulled high or low - the <a class="reference internal" href="../components/binary_sensor/gpio.html"><span class="doc">GPIO Binary
 Sensor</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binary_sensor</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Window&quot;</span>
     <span class="n">pin</span><span class="p">:</span>
@@ -186,7 +187,7 @@ inversion and pinMode - the <a class="reference internal" href="configuration-ty
 through USB again. The upload will magically happen “over the air”.
 Using esphomeyaml directly, this is the same as from a USB cable, but
 for docker you need to supply an additional parameter:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
 <span class="c1"># On docker</span>
 <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">6123</span><span class="p">:</span><span class="mi">6123</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;`pwd`&quot;</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="o">-</span><span class="n">it</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
 </pre></div>
@@ -214,7 +215,7 @@ easily manage your nodes from a nice web interface. It was primarily designed fo
 <a class="reference internal" href="getting_started_hassio.html"><span class="doc">the HassIO add-on</span></a>, but also works with a simple command.</p>
 <p>To start the esphomeyaml dashboard, simply start esphomeyaml with the following command
 (with <code class="docutils literal notranslate"><span class="pre">config/</span></code> pointing to a directory where you want to store your configurations)</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install dashboard dependencies</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Install dashboard dependencies</span>
 <span class="n">pip2</span> <span class="n">install</span> <span class="n">tornado</span> <span class="n">esptool</span>
 <span class="n">esphomeyaml</span> <span class="n">config</span><span class="o">/</span> <span class="n">dashboard</span>
 
@@ -239,7 +240,7 @@ file in the platformio project folder. The lines in between
 be edited and all changes in there will be overriden, but outside of
 those comments you can safely create custom sensors while still using
 esphomeyaml’s great configuration options.</p>
-<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Auto</span> <span class="n">generated</span> <span class="n">code</span> <span class="n">by</span> <span class="n">esphomeyaml</span>
+<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">Auto</span> <span class="n">generated</span> <span class="n">code</span> <span class="n">by</span> <span class="n">esphomeyaml</span>
 <span class="c1">#include &quot;esphomelib/application.h&quot;</span>
 
 <span class="n">using</span> <span class="n">namespace</span> <span class="n">esphomelib</span><span class="p">;</span>
@@ -282,7 +283,7 @@ esphomeyaml’s great configuration options.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

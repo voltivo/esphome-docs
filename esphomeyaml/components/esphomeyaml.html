@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">esphomeyaml Core Configuration</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -74,7 +75,7 @@
 firmwares. Most importantly, this is the section of the configuration
 where you specify the <strong>name</strong> of the node, the <strong>platform</strong> and
 <strong>board</strong> you’re using.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">esphomeyaml</span><span class="p">:</span>
     <span class="n">name</span><span class="p">:</span> <span class="n">livingroom</span>
     <span class="n">platform</span><span class="p">:</span> <span class="n">ESP32</span>
@@ -126,7 +127,7 @@ version of esphomelib straight from github. Or you can configure the use of a lo
 using this configuration option.</p>
 <p>First, you can configure the use of either the latest esphomelib stable release (<code class="docutils literal notranslate"><span class="pre">latest</span></code>),
 the latest development code from GitHub (<code class="docutils literal notranslate"><span class="pre">dev</span></code>), or a specific version number (<code class="docutils literal notranslate"><span class="pre">1.8.0</span></code>).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Use the latest esphomelib stable release</span>
@@ -142,7 +143,7 @@ the latest development code from GitHub (<code class="docutils literal notransla
 <p>Alternatively, if you want to develop for esphomelib, you can download the
 <cite>latest code from GitHub &lt;https://github.com/OttoWinter/esphomelib/archive/master.zip&gt;</cite>, extract the contents,
 and point esphomeyaml to your local copy. Then you can modify the esphomelib to your needs or to fix bugs.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Use a local copy of esphomelib</span>
@@ -151,7 +152,7 @@ and point esphomeyaml to your local copy. Then you can modify the esphomelib to 
 </pre></div>
 </div>
 <p>And last, you can make esphomeyaml use a specific branch/commit/tag from a remote git repository:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Use a specific commit/branch/tag from a remote repository</span>
@@ -176,7 +177,7 @@ and point esphomeyaml to your local copy. Then you can modify the esphomelib to 
 initializing the WiFi driver and so on. Unfortunately, every arduino framework version often
 has its own quirks and bugs, especially concerning WiFi performance. With the <code class="docutils literal notranslate"><span class="pre">arduino_version</span></code>
 option you can tell esphomeyaml which arduino framework to use for compiling.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Default: use the recommended version, usually this equals</span>
@@ -213,7 +214,7 @@ version 2.3.0</p>
 <span id="esphomeyaml-on-boot"></span><h2><code class="docutils literal notranslate"><span class="pre">on_boot</span></code><a class="headerlink" href="#on-boot" title="Permalink to this headline">¶</a></h2>
 <p>This automation will be triggered when the ESP boots up. By default, it is executed after everything else
 is already set up. You can however change this using the <code class="docutils literal notranslate"><span class="pre">priority</span></code> parameter.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">on_boot</span><span class="p">:</span>
     <span class="n">priority</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span>
@@ -250,7 +251,7 @@ too many WiFi/MQTT connection attempts, Over-The-Air updates being applied or th
 <p class="last">It’s not guaranteed that all components are in a connected state when this automation is triggered. For
 example, the MQTT client may have already disconnected.</p>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">on_shutdown</span><span class="p">:</span>
     <span class="n">then</span><span class="p">:</span>
@@ -263,7 +264,7 @@ example, the MQTT client may have already disconnected.</p>
 <div class="section" id="on-loop">
 <span id="esphomeyaml-on-loop"></span><h2><code class="docutils literal notranslate"><span class="pre">on_loop</span></code><a class="headerlink" href="#on-loop" title="Permalink to this headline">¶</a></h2>
 <p>This automation will be triggered on every <code class="docutils literal notranslate"><span class="pre">loop()</span></code> iteration (usually around every 16 milliseconds).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">on_loop</span><span class="p">:</span>
     <span class="n">then</span><span class="p">:</span>
@@ -290,7 +291,7 @@ example, the MQTT client may have already disconnected.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

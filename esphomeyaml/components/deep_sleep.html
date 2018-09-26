@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Deep Sleep Component</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -82,7 +83,7 @@ to wake up on any RTC pin (<code class="docutils literal notranslate"><span clas
 <code class="docutils literal notranslate"><span class="pre">GPIO15</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO25</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO26</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO27</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO32</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO39</span></code>).</p>
 <p>While in deep sleep mode, the node will not do any work and not respond to any network traffic,
 even Over The Air updates.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">deep_sleep</span><span class="p">:</span>
   <span class="n">run_duration</span><span class="p">:</span> <span class="mi">10</span><span class="n">s</span>
   <span class="n">sleep_duration</span><span class="p">:</span> <span class="mi">10</span><span class="nb">min</span>
@@ -108,7 +109,7 @@ See <a class="reference internal" href="#deep-sleep-esp32-wakeup-pin-mode"><span
 <p>The <a class="reference internal" href="mqtt.html#mqtt-last-will-birth"><span class="std std-ref">availability feature</span></a> of the MQTT client will cause all values
 from the node to be displayed as “unavailable” while the node is in deep sleep mode. To disable availability
 reporting and not have any “unavailable” values, set <code class="docutils literal notranslate"><span class="pre">birth_message</span></code> and <code class="docutils literal notranslate"><span class="pre">will_message</span></code> to empty values:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt</span><span class="p">:</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">birth_message</span><span class="p">:</span>
   <span class="n">will_message</span><span class="p">:</span>
@@ -134,7 +135,7 @@ use observe the state changes of a pin using deep sleep and the ON/OFF values la
 <div class="section" id="deep-sleep-enter-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">deep_sleep.enter</span></code> Action<a class="headerlink" href="#deep-sleep-enter-action" title="Permalink to this headline">¶</a></h2>
 <p>This action makes the given deep sleep component enter deep sleep immediately.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">enter</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
 </pre></div>
@@ -144,7 +145,7 @@ use observe the state changes of a pin using deep sleep and the ON/OFF values la
 <span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">deep_sleep.prevent</span></code> Action<a class="headerlink" href="#deep-sleep-prevent-action" title="Permalink to this headline">¶</a></h2>
 <p>This action prevents the given deep sleep component from entering deep sleep.
 Useful for</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">prevent</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
 </pre></div>
@@ -159,7 +160,7 @@ use a MQTT client to publish a retained MQTT message described above. When the n
 it will no longer enter deep sleep mode and you can upload your OTA update.</p>
 <p>Remember to turn “OTA mode” off again after the OTA update by sending a MQTT message with the payload
 <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deep_sleep</span><span class="p">:</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">deep_sleep</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="nb">id</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
 <span class="n">mqtt</span><span class="p">:</span>
@@ -196,7 +197,7 @@ it will no longer enter deep sleep mode and you can upload your OTA update.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Status LED</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -75,7 +76,7 @@ esphomelib has found an error while setting up. In most cases, esphomelib will s
 recover from the error and continue with all other operations.</li>
 <li>Stay off otherwise.</li>
 </ul>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">status_led</span><span class="p">:</span>
   <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO2</span>
 </pre></div>
@@ -91,7 +92,7 @@ GPIO pin to operate the status LED on.</li>
 <p class="first admonition-title">Note</p>
 <p>If your LED is in an active-LOW mode (when it’s on if the output is enabled), use the
 <code class="docutils literal notranslate"><span class="pre">inverted</span></code> option of the <a class="reference internal" href="../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">status_led</span><span class="p">:</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">status_led</span><span class="p">:</span>
   <span class="n">pin</span><span class="p">:</span>
     <span class="n">number</span><span class="p">:</span> <span class="n">D0</span>
     <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
@@ -119,7 +120,7 @@ GPIO pin to operate the status LED on.</li>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">BME680 Temperature/Pressure/Humidity/Gas Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -70,7 +71,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <a class="reference external" href="https://www.adafruit.com/product/3660">adafruit</a>). It requires i2c to be setup to work.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="k">auto</span> <span class="n">bme680</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_bme680_sensor</span><span class="p">(</span><span class="s">&quot;BME680 Temperature&quot;</span><span class="p">,</span>
                                      <span class="s">&quot;BME680 Pressure&quot;</span><span class="p">,</span>
                                      <span class="s">&quot;BME680 Humidity&quot;</span><span class="p">,</span>
@@ -163,22 +164,22 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME680Component22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor15BME680Component22get_temperature_sensorEv"></span><span id="sensor::BME680Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1a51696b7b235883487cd31ab33ed310ee"></span>BME680TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME680Component22get_temperature_sensorEv"></span><span id="sensor::BME680Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1a4617dea223743bb86eab76632b8a55f7"></span>BME680TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME680Component19get_pressure_sensorEv">
-<span id="_CPPv2NK6sensor15BME680Component19get_pressure_sensorEv"></span><span id="sensor::BME680Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1a936928c6845fd6b44a282d3e84c49ba7"></span>BME680PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME680Component19get_pressure_sensorEv"></span><span id="sensor::BME680Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1a62b7af6f54a6afca697b41ddf1ab37cf"></span>BME680PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME680Component19get_humidity_sensorEv">
-<span id="_CPPv2NK6sensor15BME680Component19get_humidity_sensorEv"></span><span id="sensor::BME680Component::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1a53bb2835b5d6d0c4adcd74c656fa4bdd"></span>BME680HumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME680Component19get_humidity_sensorEv"></span><span id="sensor::BME680Component::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1afda9a84dab40cc4e3caf50f478c9bd97"></span>BME680HumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME680Component25get_gas_resistance_sensorEv">
-<span id="_CPPv2NK6sensor15BME680Component25get_gas_resistance_sensorEv"></span><span id="sensor::BME680Component::get_gas_resistance_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1af6cc67702d3468cbf8a1361c8ac1065c"></span>BME680GasResistanceSensor *<code class="descname">get_gas_resistance_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component25get_gas_resistance_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME680Component25get_gas_resistance_sensorEv"></span><span id="sensor::BME680Component::get_gas_resistance_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e680_component_1a8da1dd66e6418aae5f515f86e2af20b9"></span>BME680GasResistanceSensor *<code class="descname">get_gas_resistance_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME680Component25get_gas_resistance_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -560,7 +561,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

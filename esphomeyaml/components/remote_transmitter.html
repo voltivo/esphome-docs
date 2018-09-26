@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Remote Transmitter Component</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -75,7 +76,7 @@ switches</span></a> that each send a pre-defined remote signal to a device.</p>
 <p class="last">This component is <em>much</em> more accurate on the ESP32, since that chipset has a dedicated
 peripheral for sending exact signal sequences.</p>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">remote_transmitter</span><span class="p">:</span>
   <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO32</span>
   <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span>
@@ -126,7 +127,7 @@ the ID used for code generation. Use this if you have multiple remote transmitte
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

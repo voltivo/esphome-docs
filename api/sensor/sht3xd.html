@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">SHT3XD Temperature/Humidity Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -70,7 +71,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <a class="reference external" href="https://www.adafruit.com/product/2857">adafruit</a>). It requires i2c to be setup to work.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="k">auto</span> <span class="n">sht3xd</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_sht3xd_sensor</span><span class="p">(</span><span class="s">&quot;SHT31D Temperature&quot;</span><span class="p">,</span> <span class="s">&quot;SHT31D Humidity&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -91,12 +92,12 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15SHT3XDComponent22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor15SHT3XDComponent22get_temperature_sensorEv"></span><span id="sensor::SHT3XDComponent::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a495001cbfefb9d77d60959e51dbcc8d3"></span><a class="reference internal" href="#_CPPv3N6sensor23SHT3XDTemperatureSensorE" title="sensor::SHT3XDTemperatureSensor">SHT3XDTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15SHT3XDComponent22get_temperature_sensorEv"></span><span id="sensor::SHT3XDComponent::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1ab7e42d6e81c662dab2c16d983754db5e"></span><a class="reference internal" href="#_CPPv3N6sensor23SHT3XDTemperatureSensorE" title="sensor::SHT3XDTemperatureSensor">SHT3XDTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15SHT3XDComponent19get_humidity_sensorEv">
-<span id="_CPPv2NK6sensor15SHT3XDComponent19get_humidity_sensorEv"></span><span id="sensor::SHT3XDComponent::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a207c228aff10e6c37a087c4c3e5bd945"></span><a class="reference internal" href="#_CPPv3N6sensor20SHT3XDHumiditySensorE" title="sensor::SHT3XDHumiditySensor">SHT3XDHumiditySensor</a> *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15SHT3XDComponent19get_humidity_sensorEv"></span><span id="sensor::SHT3XDComponent::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a2fbe0851b55ed18dfae5dd961c590872"></span><a class="reference internal" href="#_CPPv3N6sensor20SHT3XDHumiditySensorE" title="sensor::SHT3XDHumiditySensor">SHT3XDHumiditySensor</a> *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -245,7 +246,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">ESP32 Touch Pad Binary Sensor</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -76,7 +77,7 @@ an <code class="docutils literal notranslate"><span class="pre">OFF</span></code
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/esp32_touch-ui.png"><img alt="../../../_images/esp32_touch-ui.png" src="../../../_images/esp32_touch-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">esp32_touch</span><span class="p">:</span>
 
 <span class="n">binary_sensor</span><span class="p">:</span>
@@ -128,7 +129,7 @@ mean the pad is probably being touched.</p>
 to output measured values using the <code class="docutils literal notranslate"><span class="pre">setup_mode:</span></code> configuration option. Next, add some binary sensors
 for the touch pads you want to observe. Also put some threshold in the configuration as seen below
 to make the validator happy, we are going to find good thresholds in a moment anyway.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry for finding threshold values</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry for finding threshold values</span>
 <span class="n">esp32_touch</span><span class="p">:</span>
   <span class="n">setup_mode</span><span class="p">:</span> <span class="kc">True</span>
 
@@ -173,7 +174,7 @@ down.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

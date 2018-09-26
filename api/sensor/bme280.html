@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">BME280 Temperature/Pressure/Humidity Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -70,7 +71,7 @@ esphomelib (<a class="reference external" href="https://cdn-shop.adafruit.com/da
 <a class="reference external" href="https://www.adafruit.com/product/2652">adafruit</a>). It requires i2c to be setup to work.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="k">auto</span> <span class="n">bme280</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_bme280_sensor</span><span class="p">(</span><span class="s">&quot;BME280 Temperature&quot;</span><span class="p">,</span> <span class="s">&quot;BME280 Pressure&quot;</span><span class="p">,</span> <span class="s">&quot;BME280 Humidity&quot;</span><span class="p">);</span>
 
 <span class="c1">// Advanced settings</span>
@@ -123,17 +124,17 @@ esphomelib (<a class="reference external" href="https://cdn-shop.adafruit.com/da
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME280Component22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor15BME280Component22get_temperature_sensorEv"></span><span id="sensor::BME280Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a71bcb567b8790ac7b2a1a6277ec93c00"></span>BME280TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME280Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME280Component22get_temperature_sensorEv"></span><span id="sensor::BME280Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1ae028ae455dce0ee92703d5c4ad812180"></span>BME280TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME280Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME280Component19get_pressure_sensorEv">
-<span id="_CPPv2NK6sensor15BME280Component19get_pressure_sensorEv"></span><span id="sensor::BME280Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1aed556ebba66340a9eabb56dda13d7e8d"></span>BME280PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME280Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME280Component19get_pressure_sensorEv"></span><span id="sensor::BME280Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a52252fa9716df6ea2edafd0c6bfff1c8"></span>BME280PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME280Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME280Component19get_humidity_sensorEv">
-<span id="_CPPv2NK6sensor15BME280Component19get_humidity_sensorEv"></span><span id="sensor::BME280Component::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a47101563dbf1e11c4bf699a1524ba6c1"></span>BME280HumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME280Component19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BME280Component19get_humidity_sensorEv"></span><span id="sensor::BME280Component::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a84da2b781961a74054af0f11e214ae6e"></span>BME280HumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BME280Component19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -442,7 +443,7 @@ esphomelib (<a class="reference external" href="https://cdn-shop.adafruit.com/da
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

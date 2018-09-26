@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Sensor</a><ul>
 <li><a class="reference internal" href="#api-reference">API Reference</a><ul>
@@ -177,7 +178,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE">
-<span id="_CPPv2N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE"></span><span id="sensor::Sensor::add_filters__std::list:FilterP:CR"></span><span class="target" id="classsensor_1_1_sensor_1a950bc5869a1297b7241edb74a25cbdef"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span><em class="property">const</em> std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; &amp;<em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE"></span><span id="sensor::Sensor::add_filters__std::list:FilterP:CR"></span><span class="target" id="classsensor_1_1_sensor_1a16a502ad3a2d91b8d5eac0fb233ae7a2"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span><em class="property">const</em> std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; &amp;<em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Add a list of vectors to the back of the filter chain. </p>
 <p>This may look like:</p>
 <p>sensor-&gt;add_filters({ <a class="reference internal" href="#classsensor_1_1_lambda_filter"><span class="std std-ref">LambdaFilter</span></a>([&amp;](float value) -&gt; optional&lt;float&gt; { return 42/value; }), OffsetFilter(1), SlidingWindowMovingAverageFilter(15, 15), // average over last 15 values }); </p>
@@ -185,7 +186,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE">
-<span id="_CPPv2N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE"></span><span id="sensor::Sensor::set_filters__std::list:FilterP:CR"></span><span class="target" id="classsensor_1_1_sensor_1a7a1fb7af447bbdb925d9aa053ecda986"></span>void <code class="descname">set_filters</code><span class="sig-paren">(</span><em class="property">const</em> std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; &amp;<em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE"></span><span id="sensor::Sensor::set_filters__std::list:FilterP:CR"></span><span class="target" id="classsensor_1_1_sensor_1ac3901e5c932b2af0373e79728e97e461"></span>void <code class="descname">set_filters</code><span class="sig-paren">(</span><em class="property">const</em> std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; &amp;<em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Clear the filters and replace them by filters. </p>
 </dd></dl>
 
@@ -261,13 +262,13 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor6Sensor9get_valueEv">
-<span id="_CPPv2NK6sensor6Sensor9get_valueEv"></span><span id="sensor::Sensor::get_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a603018a710ea75cb5a8c6fe4a718a9a7"></span>float <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor6Sensor9get_valueEv"></span><span id="sensor::Sensor::get_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a458d1c0b8df73232cedbf5e32fd299f2"></span>float <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the latest filtered value from this sensor. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor6Sensor13get_raw_valueEv">
-<span id="_CPPv2NK6sensor6Sensor13get_raw_valueEv"></span><span id="sensor::Sensor::get_raw_valueC"></span><span class="target" id="classsensor_1_1_sensor_1ae88bef80391efd51a9b2f213a347ba48"></span>float <code class="descname">get_raw_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor13get_raw_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor6Sensor13get_raw_valueEv"></span><span id="sensor::Sensor::get_raw_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a6a895772f415f8e9d6a5e5ba05c9dec5"></span>float <code class="descname">get_raw_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor13get_raw_valueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the latest raw value from this sensor. </p>
 </dd></dl>
 
@@ -726,7 +727,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor32SlidingWindowMovingAverageFilter14get_send_everyEv">
-<span id="_CPPv2NK6sensor32SlidingWindowMovingAverageFilter14get_send_everyEv"></span><span id="sensor::SlidingWindowMovingAverageFilter::get_send_everyC"></span><span class="target" id="classsensor_1_1_sliding_window_moving_average_filter_1ae934cb056e600857b00d077e054b290b"></span>size_t <code class="descname">get_send_every</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor32SlidingWindowMovingAverageFilter14get_send_everyEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor32SlidingWindowMovingAverageFilter14get_send_everyEv"></span><span id="sensor::SlidingWindowMovingAverageFilter::get_send_everyC"></span><span class="target" id="classsensor_1_1_sliding_window_moving_average_filter_1acc7a63c592d85a2917315c320be18109"></span>size_t <code class="descname">get_send_every</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor32SlidingWindowMovingAverageFilter14get_send_everyEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -736,7 +737,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor32SlidingWindowMovingAverageFilter15get_window_sizeEv">
-<span id="_CPPv2NK6sensor32SlidingWindowMovingAverageFilter15get_window_sizeEv"></span><span id="sensor::SlidingWindowMovingAverageFilter::get_window_sizeC"></span><span class="target" id="classsensor_1_1_sliding_window_moving_average_filter_1aed04c42b679c90bcad1fd3f9ad09c02e"></span>size_t <code class="descname">get_window_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor32SlidingWindowMovingAverageFilter15get_window_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor32SlidingWindowMovingAverageFilter15get_window_sizeEv"></span><span id="sensor::SlidingWindowMovingAverageFilter::get_window_sizeC"></span><span class="target" id="classsensor_1_1_sliding_window_moving_average_filter_1ac65968e44ea379728e5c15c6ba5198f7"></span>size_t <code class="descname">get_window_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor32SlidingWindowMovingAverageFilter15get_window_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -802,7 +803,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor30ExponentialMovingAverageFilter14get_send_everyEv">
-<span id="_CPPv2NK6sensor30ExponentialMovingAverageFilter14get_send_everyEv"></span><span id="sensor::ExponentialMovingAverageFilter::get_send_everyC"></span><span class="target" id="classsensor_1_1_exponential_moving_average_filter_1a0053f7525c4133fce5cf941529e1a6e7"></span>size_t <code class="descname">get_send_every</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor30ExponentialMovingAverageFilter14get_send_everyEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor30ExponentialMovingAverageFilter14get_send_everyEv"></span><span id="sensor::ExponentialMovingAverageFilter::get_send_everyC"></span><span class="target" id="classsensor_1_1_exponential_moving_average_filter_1a68b847074208fea44787d56efe93ebed"></span>size_t <code class="descname">get_send_every</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor30ExponentialMovingAverageFilter14get_send_everyEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -812,7 +813,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor30ExponentialMovingAverageFilter9get_alphaEv">
-<span id="_CPPv2NK6sensor30ExponentialMovingAverageFilter9get_alphaEv"></span><span id="sensor::ExponentialMovingAverageFilter::get_alphaC"></span><span class="target" id="classsensor_1_1_exponential_moving_average_filter_1a742cbfadfd562597de267f2cd481d999"></span>float <code class="descname">get_alpha</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor30ExponentialMovingAverageFilter9get_alphaEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor30ExponentialMovingAverageFilter9get_alphaEv"></span><span id="sensor::ExponentialMovingAverageFilter::get_alphaC"></span><span class="target" id="classsensor_1_1_exponential_moving_average_filter_1aec546bf38c6678f1f47c99490453f5e0"></span>float <code class="descname">get_alpha</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor30ExponentialMovingAverageFilter9get_alphaEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -888,7 +889,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor12LambdaFilter17get_lambda_filterEv">
-<span id="_CPPv2NK6sensor12LambdaFilter17get_lambda_filterEv"></span><span id="sensor::LambdaFilter::get_lambda_filterC"></span><span class="target" id="classsensor_1_1_lambda_filter_1a7cbde64cad455655b0a60795e495f4b0"></span><em class="property">const</em> lambda_filter_t &amp;<code class="descname">get_lambda_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor12LambdaFilter17get_lambda_filterEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor12LambdaFilter17get_lambda_filterEv"></span><span id="sensor::LambdaFilter::get_lambda_filterC"></span><span class="target" id="classsensor_1_1_lambda_filter_1af13892d2e443e9b54b1d981f3baa493c"></span><em class="property">const</em> lambda_filter_t &amp;<code class="descname">get_lambda_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor12LambdaFilter17get_lambda_filterEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1237,7 +1238,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6sensor8OrFilter8OrFilterENSt4listIP6FilterEE">
-<span id="_CPPv2N6sensor8OrFilter8OrFilterENSt4listIP6FilterEE"></span><span id="sensor::OrFilter::OrFilter__std::list:FilterP:"></span><span class="target" id="classsensor_1_1_or_filter_1ad116f2296d3f860b3f84ef34f92872c4"></span><code class="descname">OrFilter</code><span class="sig-paren">(</span>std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; <em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor8OrFilter8OrFilterENSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor8OrFilter8OrFilterENSt4listIP6FilterEE"></span><span id="sensor::OrFilter::OrFilter__std::list:FilterP:"></span><span class="target" id="classsensor_1_1_or_filter_1a7f063cff3a3c5aeeefa9085278054de0"></span><code class="descname">OrFilter</code><span class="sig-paren">(</span>std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; <em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor8OrFilter8OrFilterENSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1367,7 +1368,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor19MQTTSensorComponent16get_expire_afterEv">
-<span id="_CPPv2NK6sensor19MQTTSensorComponent16get_expire_afterEv"></span><span id="sensor::MQTTSensorComponent::get_expire_afterC"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1af75ef8832c2e535cb771ccddd54768ac"></span>uint32_t <code class="descname">get_expire_after</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor19MQTTSensorComponent16get_expire_afterEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor19MQTTSensorComponent16get_expire_afterEv"></span><span id="sensor::MQTTSensorComponent::get_expire_afterC"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1a940badd0462c6cdbee367113f1f59d5d"></span>uint32_t <code class="descname">get_expire_after</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor19MQTTSensorComponent16get_expire_afterEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the expire_after in milliseconds used for Home Assistant discovery, first checks override. </p>
 </dd></dl>
 
@@ -1432,7 +1433,7 @@
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

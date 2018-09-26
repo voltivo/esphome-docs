@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">MQTT Client Component</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -78,7 +79,7 @@ is currently required for esphomelib to work. In most cases, you will
 just be able to copy over the <a class="reference external" href="https://www.home-assistant.io/components/mqtt/">MQTT
 section</a> of your Home
 Assistant configuration.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">mqtt</span><span class="p">:</span>
   <span class="n">broker</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.2</span>
   <span class="n">username</span><span class="p">:</span> <span class="n">livingroom</span>
@@ -132,7 +133,7 @@ performed when a message on a specific MQTT topic is received. See <a class="ref
 <span id="mqtt-message"></span><h2>MQTTMessage<a class="headerlink" href="#mqttmessage" title="Permalink to this headline">¶</a></h2>
 <p>With the MQTT Message schema you can tell esphomeyaml how a specific MQTT message should be sent.
 It is used in several places like last will and birth messages or MQTT log options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Simple:</span>
 <span class="n">some_option</span><span class="p">:</span> <span class="n">topic</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">send</span><span class="o">/</span><span class="n">to</span>
 
 <span class="c1"># Disable:</span>
@@ -164,7 +165,7 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
 broker (like <a class="reference external" href="https://mosquitto.org/">mosquitto</a>) and point both your
 Home Assistant installation and esphomelib to that broker. Next, enable
 discovery in your Home Assistant configuration with the following:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Home Assistant configuration.yaml entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example Home Assistant configuration.yaml entry</span>
 <span class="n">mqtt</span><span class="p">:</span>
   <span class="n">broker</span><span class="p">:</span> <span class="o">...</span>
   <span class="n">discovery</span><span class="p">:</span> <span class="kc">True</span>
@@ -181,7 +182,7 @@ re-appear on every Home Assistant restart even though they’re in
 eshomeyaml anymore.</p>
 <p>To fix this, esphomeyaml has a simple helper script that purges stale
 retained messages for you:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">configuration</span><span class="o">.</span><span class="n">yaml</span> <span class="n">clean</span><span class="o">-</span><span class="n">mqtt</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">configuration</span><span class="o">.</span><span class="n">yaml</span> <span class="n">clean</span><span class="o">-</span><span class="n">mqtt</span>
 </pre></div>
 </div>
 <p>This will remove all retained messages with the topic
@@ -217,7 +218,7 @@ broker to send a message <code class="docutils literal notranslate"><span class=
 <code class="docutils literal notranslate"><span class="pre">offline</span></code> if the connection drops.</p>
 <p>You can change these messages by overriding the <code class="docutils literal notranslate"><span class="pre">birth_message</span></code> and
 <code class="docutils literal notranslate"><span class="pre">will_message</span></code> with the following options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">birth_message</span><span class="p">:</span>
     <span class="n">topic</span><span class="p">:</span> <span class="n">myavailability</span><span class="o">/</span><span class="n">topic</span>
@@ -245,12 +246,12 @@ update the fingerprints variable. Additionally, SHA1 is known to be partially in
 and with some computing power the fingerprint can be faked.</p>
 <p>To get this fingerprint, first put the broker and port options in the configuration and
 then run the <code class="docutils literal notranslate"><span class="pre">mqtt-fingerprint</span></code> script of esphomeyaml to get the certificate:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">mqtt</span><span class="o">-</span><span class="n">fingerprint</span>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">mqtt</span><span class="o">-</span><span class="n">fingerprint</span>
 <span class="o">&gt;</span> <span class="n">SHA1</span> <span class="n">Fingerprint</span><span class="p">:</span> <span class="n">a502ff13999f8b398ef1834f1123650b3236fc07</span>
 <span class="o">&gt;</span> <span class="n">Copy</span> <span class="n">above</span> <span class="n">string</span> <span class="n">into</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">ssl_fingerprints</span> <span class="n">section</span> <span class="n">of</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span>
 </pre></div>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">ssl_fingerprints</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">a502ff13999f8b398ef1834f1123650b3236fc07</span>
@@ -261,7 +262,7 @@ then run the <code class="docutils literal notranslate"><span class="pre">mqtt-f
 <span id="config-mqtt-component"></span><h2>MQTT Component Base Configuration<a class="headerlink" href="#mqtt-component-base-configuration" title="Permalink to this headline">¶</a></h2>
 <p>All components in esphomelib that do some sort of communication through
 MQTT can have some overrides for specific options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Component Name&quot;</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Component Name&quot;</span>
 <span class="c1"># Optional variables:</span>
 <span class="n">retain</span><span class="p">:</span> <span class="kc">True</span>
 <span class="n">discovery</span><span class="p">:</span> <span class="kc">True</span>
@@ -305,7 +306,7 @@ This is because Home Assistant only discovers a device once in every Home Assist
 <p>With this configuration option you can write complex automations whenever an MQTT
 message on a specific topic is received. To use the message content, use a <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>
 template, the message payload is available under the name <code class="docutils literal notranslate"><span class="pre">x</span></code> inside that lambda.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">on_message</span><span class="p">:</span>
     <span class="n">topic</span><span class="p">:</span> <span class="n">my</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">topic</span>
@@ -331,7 +332,7 @@ to 0.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>You can even specify multiple <code class="docutils literal notranslate"><span class="pre">on_message</span></code> triggers by using a YAML list:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt</span><span class="p">:</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
   <span class="n">on_message</span><span class="p">:</span>
      <span class="o">-</span> <span class="n">topic</span><span class="p">:</span> <span class="n">some</span><span class="o">/</span><span class="n">topic</span>
        <span class="n">then</span><span class="p">:</span>
@@ -346,7 +347,7 @@ to 0.</p>
 <div class="section" id="mqtt-publish-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">mqtt.publish</span></code> Action<a class="headerlink" href="#mqtt-publish-action" title="Permalink to this headline">¶</a></h2>
 <p>Publish an MQTT message on a topic using this action in automations.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>on_...:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
   then:
     - mqtt.publish:
         topic: some/topic
@@ -393,7 +394,7 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

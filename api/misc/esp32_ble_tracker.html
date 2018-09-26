@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">ESP32 Bluetooth Low Energy Tracker</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -67,7 +68,7 @@
 <h1>ESP32 Bluetooth Low Energy Tracker<a class="headerlink" href="#esp32-bluetooth-low-energy-tracker" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="o">*</span><span class="n">tracker</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_esp32_ble_tracker</span><span class="p">();</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="k">auto</span> <span class="o">*</span><span class="n">tracker</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_esp32_ble_tracker</span><span class="p">();</span>
 <span class="c1">// MAC address AC:37:43:77:5F:4C</span>
 <span class="n">App</span><span class="p">.</span><span class="n">register_binary_sensor</span><span class="p">(</span><span class="n">tracker</span><span class="o">-&gt;</span><span class="n">make_device</span><span class="p">(</span><span class="s">&quot;ESP32 Bluetooth Beacon&quot;</span><span class="p">,</span> <span class="p">{</span>
         <span class="mh">0xAC</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x4C</span>
@@ -91,7 +92,7 @@
 <dd><p>Create a simple binary sensor for a MAC address. </p>
 <p>Each time a BLE scan yields the MAC address in the address parameter, the binary sensor will immediately go to true. When a whole scan interval does not discover a device with this MAC address, the binary sensor will be set to false.</p>
 <p>The address parameter accepts a MAC address as an array of length 6 with each MAC address part in an unsigned int. To set it up, do something like this:</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">MAC</span> <span class="n">address</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">MAC</span> <span class="n">address</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span>
 <span class="n">App</span><span class="o">.</span><span class="n">register_binary_sensor</span><span class="p">(</span><span class="n">tracker</span><span class="o">-&gt;</span><span class="n">make_device</span><span class="p">(</span><span class="s2">&quot;ESP32 BLE Device&quot;</span><span class="p">,</span> <span class="p">{</span>
    <span class="mh">0xAC</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x4C</span>
 <span class="p">}));</span>
@@ -99,7 +100,7 @@
 </div>
 </p>
 <p>You can get this MAC address by navigating to the bluetooth screen of your device and looking for an advanced settings screen, you can usually find the MAC address there. Alternatively, you can set the global debug level to DEBUG and observe the logs. Then you will find messages like this:</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Found</span> <span class="n">device</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span> <span class="n">RSSI</span><span class="o">=-</span><span class="mi">80</span>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">Found</span> <span class="n">device</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span> <span class="n">RSSI</span><span class="o">=-</span><span class="mi">80</span>
     <span class="n">Address</span> <span class="n">Type</span><span class="p">:</span> <span class="n">PUBLIC</span>
     <span class="n">Name</span><span class="p">:</span> <span class="s1">&#39;Google Home Mini&#39;</span>
 </pre></div>
@@ -159,7 +160,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK15ESP32BLETracker17get_scan_intervalEv">
-<span id="_CPPv2NK15ESP32BLETracker17get_scan_intervalEv"></span><span id="ESP32BLETracker::get_scan_intervalC"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1a877b9e282c8e542c3b862bdfb674f1b4"></span>uint32_t <code class="descname">get_scan_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK15ESP32BLETracker17get_scan_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK15ESP32BLETracker17get_scan_intervalEv"></span><span id="ESP32BLETracker::get_scan_intervalC"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1aacbc70d356d44e9e02f1562e889cbcdf"></span>uint32_t <code class="descname">get_scan_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK15ESP32BLETracker17get_scan_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -411,17 +412,17 @@
 
 <dl class="function">
 <dt id="_CPPv3NK17XiaomiMiJiaDevice22get_temperature_sensorEv">
-<span id="_CPPv2NK17XiaomiMiJiaDevice22get_temperature_sensorEv"></span><span id="XiaomiMiJiaDevice::get_temperature_sensorC"></span><span class="target" id="class_xiaomi_mi_jia_device_1ab9308c4e0d222c7dcfb05c030d098bd2"></span><a class="reference internal" href="#_CPPv328XiaomiMiJiaTemperatureSensor" title="XiaomiMiJiaTemperatureSensor">XiaomiMiJiaTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17XiaomiMiJiaDevice22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK17XiaomiMiJiaDevice22get_temperature_sensorEv"></span><span id="XiaomiMiJiaDevice::get_temperature_sensorC"></span><span class="target" id="class_xiaomi_mi_jia_device_1aaef31e4d389234e366a732206bd8509a"></span><a class="reference internal" href="#_CPPv328XiaomiMiJiaTemperatureSensor" title="XiaomiMiJiaTemperatureSensor">XiaomiMiJiaTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17XiaomiMiJiaDevice22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK17XiaomiMiJiaDevice19get_humidity_sensorEv">
-<span id="_CPPv2NK17XiaomiMiJiaDevice19get_humidity_sensorEv"></span><span id="XiaomiMiJiaDevice::get_humidity_sensorC"></span><span class="target" id="class_xiaomi_mi_jia_device_1a6711e602069c427e89d2624ac2a4fe10"></span><a class="reference internal" href="#_CPPv325XiaomiMiJiaHumiditySensor" title="XiaomiMiJiaHumiditySensor">XiaomiMiJiaHumiditySensor</a> *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17XiaomiMiJiaDevice19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK17XiaomiMiJiaDevice19get_humidity_sensorEv"></span><span id="XiaomiMiJiaDevice::get_humidity_sensorC"></span><span class="target" id="class_xiaomi_mi_jia_device_1a063070630329292148879a780d0dc8c3"></span><a class="reference internal" href="#_CPPv325XiaomiMiJiaHumiditySensor" title="XiaomiMiJiaHumiditySensor">XiaomiMiJiaHumiditySensor</a> *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17XiaomiMiJiaDevice19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK17XiaomiMiJiaDevice24get_battery_level_sensorEv">
-<span id="_CPPv2NK17XiaomiMiJiaDevice24get_battery_level_sensorEv"></span><span id="XiaomiMiJiaDevice::get_battery_level_sensorC"></span><span class="target" id="class_xiaomi_mi_jia_device_1ab5bde041d219e4ba3caff9a3c08e4abf"></span><a class="reference internal" href="#_CPPv329XiaomiMiJiaBatteryLevelSensor" title="XiaomiMiJiaBatteryLevelSensor">XiaomiMiJiaBatteryLevelSensor</a> *<code class="descname">get_battery_level_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17XiaomiMiJiaDevice24get_battery_level_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK17XiaomiMiJiaDevice24get_battery_level_sensorEv"></span><span id="XiaomiMiJiaDevice::get_battery_level_sensorC"></span><span class="target" id="class_xiaomi_mi_jia_device_1a9e5bb7978726bfca48be4d8404bf9647"></span><a class="reference internal" href="#_CPPv329XiaomiMiJiaBatteryLevelSensor" title="XiaomiMiJiaBatteryLevelSensor">XiaomiMiJiaBatteryLevelSensor</a> *<code class="descname">get_battery_level_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17XiaomiMiJiaDevice24get_battery_level_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -472,27 +473,27 @@
 
 <dl class="function">
 <dt id="_CPPv3NK19XiaomiMiFloraDevice22get_temperature_sensorEv">
-<span id="_CPPv2NK19XiaomiMiFloraDevice22get_temperature_sensorEv"></span><span id="XiaomiMiFloraDevice::get_temperature_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a0a8d851dd0fa52d83d11b197b6a2b67c"></span><a class="reference internal" href="#_CPPv330XiaomiMiFloraTemperatureSensor" title="XiaomiMiFloraTemperatureSensor">XiaomiMiFloraTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK19XiaomiMiFloraDevice22get_temperature_sensorEv"></span><span id="XiaomiMiFloraDevice::get_temperature_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1af066279254083676e5fbad691a51f8de"></span><a class="reference internal" href="#_CPPv330XiaomiMiFloraTemperatureSensor" title="XiaomiMiFloraTemperatureSensor">XiaomiMiFloraTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK19XiaomiMiFloraDevice19get_moisture_sensorEv">
-<span id="_CPPv2NK19XiaomiMiFloraDevice19get_moisture_sensorEv"></span><span id="XiaomiMiFloraDevice::get_moisture_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a920f1014e43724076102b9a5544b80c0"></span><a class="reference internal" href="#_CPPv327XiaomiMiFloraMoistureSensor" title="XiaomiMiFloraMoistureSensor">XiaomiMiFloraMoistureSensor</a> *<code class="descname">get_moisture_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice19get_moisture_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK19XiaomiMiFloraDevice19get_moisture_sensorEv"></span><span id="XiaomiMiFloraDevice::get_moisture_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a8d26e38005033be81d5ea99701684b75"></span><a class="reference internal" href="#_CPPv327XiaomiMiFloraMoistureSensor" title="XiaomiMiFloraMoistureSensor">XiaomiMiFloraMoistureSensor</a> *<code class="descname">get_moisture_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice19get_moisture_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK19XiaomiMiFloraDevice22get_illuminance_sensorEv">
-<span id="_CPPv2NK19XiaomiMiFloraDevice22get_illuminance_sensorEv"></span><span id="XiaomiMiFloraDevice::get_illuminance_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a3f4714c7481e166524276f6591d4a614"></span><a class="reference internal" href="#_CPPv330XiaomiMiFloraIlluminanceSensor" title="XiaomiMiFloraIlluminanceSensor">XiaomiMiFloraIlluminanceSensor</a> *<code class="descname">get_illuminance_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice22get_illuminance_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK19XiaomiMiFloraDevice22get_illuminance_sensorEv"></span><span id="XiaomiMiFloraDevice::get_illuminance_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a4c237cd5a18cdbd6b444000891b64baf"></span><a class="reference internal" href="#_CPPv330XiaomiMiFloraIlluminanceSensor" title="XiaomiMiFloraIlluminanceSensor">XiaomiMiFloraIlluminanceSensor</a> *<code class="descname">get_illuminance_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice22get_illuminance_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK19XiaomiMiFloraDevice23get_conductivity_sensorEv">
-<span id="_CPPv2NK19XiaomiMiFloraDevice23get_conductivity_sensorEv"></span><span id="XiaomiMiFloraDevice::get_conductivity_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a0a5905dcb8702647ffc9a4bb34446158"></span><a class="reference internal" href="#_CPPv331XiaomiMiFloraConductivitySensor" title="XiaomiMiFloraConductivitySensor">XiaomiMiFloraConductivitySensor</a> *<code class="descname">get_conductivity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice23get_conductivity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK19XiaomiMiFloraDevice23get_conductivity_sensorEv"></span><span id="XiaomiMiFloraDevice::get_conductivity_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a882beaf18b03ed764478cc8789aad175"></span><a class="reference internal" href="#_CPPv331XiaomiMiFloraConductivitySensor" title="XiaomiMiFloraConductivitySensor">XiaomiMiFloraConductivitySensor</a> *<code class="descname">get_conductivity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice23get_conductivity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK19XiaomiMiFloraDevice24get_battery_level_sensorEv">
-<span id="_CPPv2NK19XiaomiMiFloraDevice24get_battery_level_sensorEv"></span><span id="XiaomiMiFloraDevice::get_battery_level_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1afc2f4735760c1f5f69f7073f5f06ad7b"></span><a class="reference internal" href="#_CPPv331XiaomiMiFloraBatteryLevelSensor" title="XiaomiMiFloraBatteryLevelSensor">XiaomiMiFloraBatteryLevelSensor</a> *<code class="descname">get_battery_level_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice24get_battery_level_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK19XiaomiMiFloraDevice24get_battery_level_sensorEv"></span><span id="XiaomiMiFloraDevice::get_battery_level_sensorC"></span><span class="target" id="class_xiaomi_mi_flora_device_1a8d7da618a396812933653490b7b14c2e"></span><a class="reference internal" href="#_CPPv331XiaomiMiFloraBatteryLevelSensor" title="XiaomiMiFloraBatteryLevelSensor">XiaomiMiFloraBatteryLevelSensor</a> *<code class="descname">get_battery_level_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19XiaomiMiFloraDevice24get_battery_level_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -578,62 +579,62 @@
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice11address_strEv">
-<span id="_CPPv2NK11ESPBTDevice11address_strEv"></span><span id="ESPBTDevice::address_strC"></span><span class="target" id="class_e_s_p_b_t_device_1a388003057b7a3f5a25dc60a44d3d0350"></span>std::string <code class="descname">address_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice11address_strEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice11address_strEv"></span><span id="ESPBTDevice::address_strC"></span><span class="target" id="class_e_s_p_b_t_device_1a9e9eed6b5d4c5a9a86ccd24d44bb9e1d"></span>std::string <code class="descname">address_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice11address_strEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice14address_uint64Ev">
-<span id="_CPPv2NK11ESPBTDevice14address_uint64Ev"></span><span id="ESPBTDevice::address_uint64C"></span><span class="target" id="class_e_s_p_b_t_device_1ac39a688db49eab8179fe818dc81d2163"></span>uint64_t <code class="descname">address_uint64</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice14address_uint64Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice14address_uint64Ev"></span><span id="ESPBTDevice::address_uint64C"></span><span class="target" id="class_e_s_p_b_t_device_1a6a40af7398195c226fafedcba4519236"></span>uint64_t <code class="descname">address_uint64</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice14address_uint64Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice16get_address_typeEv">
-<span id="_CPPv2NK11ESPBTDevice16get_address_typeEv"></span><span id="ESPBTDevice::get_address_typeC"></span><span class="target" id="class_e_s_p_b_t_device_1a7394eeebe3f513fa64866bcfbdf20035"></span>esp_ble_addr_type_t <code class="descname">get_address_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice16get_address_typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice16get_address_typeEv"></span><span id="ESPBTDevice::get_address_typeC"></span><span class="target" id="class_e_s_p_b_t_device_1aae12f99943fe8acfccd1d23ca652037c"></span>esp_ble_addr_type_t <code class="descname">get_address_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice16get_address_typeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice8get_rssiEv">
-<span id="_CPPv2NK11ESPBTDevice8get_rssiEv"></span><span id="ESPBTDevice::get_rssiC"></span><span class="target" id="class_e_s_p_b_t_device_1a2f843f72d3cd7caae2371258f45dd36b"></span>int <code class="descname">get_rssi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice8get_rssiEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice8get_rssiEv"></span><span id="ESPBTDevice::get_rssiC"></span><span class="target" id="class_e_s_p_b_t_device_1a96a89175c748146353f6c472da555d50"></span>int <code class="descname">get_rssi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice8get_rssiEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice8get_nameEv">
-<span id="_CPPv2NK11ESPBTDevice8get_nameEv"></span><span id="ESPBTDevice::get_nameC"></span><span class="target" id="class_e_s_p_b_t_device_1a84b1f332f16af4c11304aeaf55320e52"></span><em class="property">const</em> std::string &amp;<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice8get_nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice8get_nameEv"></span><span id="ESPBTDevice::get_nameC"></span><span class="target" id="class_e_s_p_b_t_device_1a7a9849375b0c3ddfe845537306e9ab1d"></span><em class="property">const</em> std::string &amp;<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice8get_nameEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice12get_tx_powerEv">
-<span id="_CPPv2NK11ESPBTDevice12get_tx_powerEv"></span><span id="ESPBTDevice::get_tx_powerC"></span><span class="target" id="class_e_s_p_b_t_device_1a58d24716663ff02cb2bec8ebcc122fb4"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;int8_t&gt; &amp;<code class="descname">get_tx_power</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice12get_tx_powerEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice12get_tx_powerEv"></span><span id="ESPBTDevice::get_tx_powerC"></span><span class="target" id="class_e_s_p_b_t_device_1a292ae8bc19ced3b9dcabbfca16db10ff"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;int8_t&gt; &amp;<code class="descname">get_tx_power</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice12get_tx_powerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice14get_appearanceEv">
-<span id="_CPPv2NK11ESPBTDevice14get_appearanceEv"></span><span id="ESPBTDevice::get_appearanceC"></span><span class="target" id="class_e_s_p_b_t_device_1aa1e7bc720b0e1bb221e3461350008d41"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint16_t&gt; &amp;<code class="descname">get_appearance</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice14get_appearanceEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice14get_appearanceEv"></span><span id="ESPBTDevice::get_appearanceC"></span><span class="target" id="class_e_s_p_b_t_device_1a7aa2f1e2708d22af39edcc7600c7f41c"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint16_t&gt; &amp;<code class="descname">get_appearance</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice14get_appearanceEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice11get_ad_flagEv">
-<span id="_CPPv2NK11ESPBTDevice11get_ad_flagEv"></span><span id="ESPBTDevice::get_ad_flagC"></span><span class="target" id="class_e_s_p_b_t_device_1a15f073957ca03441fe6746f82e652e61"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<code class="descname">get_ad_flag</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice11get_ad_flagEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice11get_ad_flagEv"></span><span id="ESPBTDevice::get_ad_flagC"></span><span class="target" id="class_e_s_p_b_t_device_1af60775b80301244f34c32a66e07fa230"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<code class="descname">get_ad_flag</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice11get_ad_flagEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice17get_service_uuidsEv">
-<span id="_CPPv2NK11ESPBTDevice17get_service_uuidsEv"></span><span id="ESPBTDevice::get_service_uuidsC"></span><span class="target" id="class_e_s_p_b_t_device_1a33c426b8db2d148844566859701ec93e"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_uuids</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice17get_service_uuidsEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice17get_service_uuidsEv"></span><span id="ESPBTDevice::get_service_uuidsC"></span><span class="target" id="class_e_s_p_b_t_device_1afcf1fd298f6ddf94cac88c116dfe1fd4"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_uuids</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice17get_service_uuidsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice21get_manufacturer_dataEv">
-<span id="_CPPv2NK11ESPBTDevice21get_manufacturer_dataEv"></span><span id="ESPBTDevice::get_manufacturer_dataC"></span><span class="target" id="class_e_s_p_b_t_device_1aa052ab7ed48d6d5428b97d21e1018ed3"></span><em class="property">const</em> std::string &amp;<code class="descname">get_manufacturer_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice21get_manufacturer_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice21get_manufacturer_dataEv"></span><span id="ESPBTDevice::get_manufacturer_dataC"></span><span class="target" id="class_e_s_p_b_t_device_1a951702b3b9f05cb11e44083160ac492a"></span><em class="property">const</em> std::string &amp;<code class="descname">get_manufacturer_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice21get_manufacturer_dataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice16get_service_dataEv">
-<span id="_CPPv2NK11ESPBTDevice16get_service_dataEv"></span><span id="ESPBTDevice::get_service_dataC"></span><span class="target" id="class_e_s_p_b_t_device_1ae942e86b9b580c8a00566d94e09be8a1"></span><em class="property">const</em> std::string &amp;<code class="descname">get_service_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice16get_service_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice16get_service_dataEv"></span><span id="ESPBTDevice::get_service_dataC"></span><span class="target" id="class_e_s_p_b_t_device_1aa3748f3023897ad3bba00307bbd2fa00"></span><em class="property">const</em> std::string &amp;<code class="descname">get_service_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice16get_service_dataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice21get_service_data_uuidEv">
-<span id="_CPPv2NK11ESPBTDevice21get_service_data_uuidEv"></span><span id="ESPBTDevice::get_service_data_uuidC"></span><span class="target" id="class_e_s_p_b_t_device_1aa5b95eb6eb05deb770fbf80cf697d2de"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_data_uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice21get_service_data_uuidEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice21get_service_data_uuidEv"></span><span id="ESPBTDevice::get_service_data_uuidC"></span><span class="target" id="class_e_s_p_b_t_device_1a21ef869c5716b762937fec71cff38f35"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_data_uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11ESPBTDevice21get_service_data_uuidEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -759,7 +760,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK9ESPBTUUID8containsE7uint8_t7uint8_t">
-<span id="_CPPv2NK9ESPBTUUID8containsE7uint8_t7uint8_t"></span><span id="ESPBTUUID::contains__uint8_t.uint8_tC"></span><span class="target" id="class_e_s_p_b_t_u_u_i_d_1a657346b703e4b965177cd0bea9eb3d19"></span>bool <code class="descname">contains</code><span class="sig-paren">(</span>uint8_t <em>data1</em>, uint8_t <em>data2</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9ESPBTUUID8containsE7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK9ESPBTUUID8containsE7uint8_t7uint8_t"></span><span id="ESPBTUUID::contains__uint8_t.uint8_tC"></span><span class="target" id="class_e_s_p_b_t_u_u_i_d_1ad7250558f08da4dfd0dafa7662bced30"></span>bool <code class="descname">contains</code><span class="sig-paren">(</span>uint8_t <em>data1</em>, uint8_t <em>data2</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9ESPBTUUID8containsE7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -808,62 +809,62 @@
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice11address_strEv">
-<span id="_CPPv2NK11ESPBTDevice11address_strEv"></span><span class="target" id="class_e_s_p_b_t_device_1a388003057b7a3f5a25dc60a44d3d0350"></span>std::string <code class="descname">address_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice11address_strEv"></span><span class="target" id="class_e_s_p_b_t_device_1a9e9eed6b5d4c5a9a86ccd24d44bb9e1d"></span>std::string <code class="descname">address_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice14address_uint64Ev">
-<span id="_CPPv2NK11ESPBTDevice14address_uint64Ev"></span><span class="target" id="class_e_s_p_b_t_device_1ac39a688db49eab8179fe818dc81d2163"></span>uint64_t <code class="descname">address_uint64</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice14address_uint64Ev"></span><span class="target" id="class_e_s_p_b_t_device_1a6a40af7398195c226fafedcba4519236"></span>uint64_t <code class="descname">address_uint64</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice16get_address_typeEv">
-<span id="_CPPv2NK11ESPBTDevice16get_address_typeEv"></span><span class="target" id="class_e_s_p_b_t_device_1a7394eeebe3f513fa64866bcfbdf20035"></span>esp_ble_addr_type_t <code class="descname">get_address_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice16get_address_typeEv"></span><span class="target" id="class_e_s_p_b_t_device_1aae12f99943fe8acfccd1d23ca652037c"></span>esp_ble_addr_type_t <code class="descname">get_address_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice8get_rssiEv">
-<span id="_CPPv2NK11ESPBTDevice8get_rssiEv"></span><span class="target" id="class_e_s_p_b_t_device_1a2f843f72d3cd7caae2371258f45dd36b"></span>int <code class="descname">get_rssi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice8get_rssiEv"></span><span class="target" id="class_e_s_p_b_t_device_1a96a89175c748146353f6c472da555d50"></span>int <code class="descname">get_rssi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice8get_nameEv">
-<span id="_CPPv2NK11ESPBTDevice8get_nameEv"></span><span class="target" id="class_e_s_p_b_t_device_1a84b1f332f16af4c11304aeaf55320e52"></span><em class="property">const</em> std::string &amp;<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice8get_nameEv"></span><span class="target" id="class_e_s_p_b_t_device_1a7a9849375b0c3ddfe845537306e9ab1d"></span><em class="property">const</em> std::string &amp;<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice12get_tx_powerEv">
-<span id="_CPPv2NK11ESPBTDevice12get_tx_powerEv"></span><span class="target" id="class_e_s_p_b_t_device_1a58d24716663ff02cb2bec8ebcc122fb4"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;int8_t&gt; &amp;<code class="descname">get_tx_power</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice12get_tx_powerEv"></span><span class="target" id="class_e_s_p_b_t_device_1a292ae8bc19ced3b9dcabbfca16db10ff"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;int8_t&gt; &amp;<code class="descname">get_tx_power</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice14get_appearanceEv">
-<span id="_CPPv2NK11ESPBTDevice14get_appearanceEv"></span><span class="target" id="class_e_s_p_b_t_device_1aa1e7bc720b0e1bb221e3461350008d41"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint16_t&gt; &amp;<code class="descname">get_appearance</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice14get_appearanceEv"></span><span class="target" id="class_e_s_p_b_t_device_1a7aa2f1e2708d22af39edcc7600c7f41c"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint16_t&gt; &amp;<code class="descname">get_appearance</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice11get_ad_flagEv">
-<span id="_CPPv2NK11ESPBTDevice11get_ad_flagEv"></span><span class="target" id="class_e_s_p_b_t_device_1a15f073957ca03441fe6746f82e652e61"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<code class="descname">get_ad_flag</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice11get_ad_flagEv"></span><span class="target" id="class_e_s_p_b_t_device_1af60775b80301244f34c32a66e07fa230"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<code class="descname">get_ad_flag</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice17get_service_uuidsEv">
-<span id="_CPPv2NK11ESPBTDevice17get_service_uuidsEv"></span><span class="target" id="class_e_s_p_b_t_device_1a33c426b8db2d148844566859701ec93e"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_uuids</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice17get_service_uuidsEv"></span><span class="target" id="class_e_s_p_b_t_device_1afcf1fd298f6ddf94cac88c116dfe1fd4"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_uuids</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice21get_manufacturer_dataEv">
-<span id="_CPPv2NK11ESPBTDevice21get_manufacturer_dataEv"></span><span class="target" id="class_e_s_p_b_t_device_1aa052ab7ed48d6d5428b97d21e1018ed3"></span><em class="property">const</em> std::string &amp;<code class="descname">get_manufacturer_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice21get_manufacturer_dataEv"></span><span class="target" id="class_e_s_p_b_t_device_1a951702b3b9f05cb11e44083160ac492a"></span><em class="property">const</em> std::string &amp;<code class="descname">get_manufacturer_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice16get_service_dataEv">
-<span id="_CPPv2NK11ESPBTDevice16get_service_dataEv"></span><span class="target" id="class_e_s_p_b_t_device_1ae942e86b9b580c8a00566d94e09be8a1"></span><em class="property">const</em> std::string &amp;<code class="descname">get_service_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice16get_service_dataEv"></span><span class="target" id="class_e_s_p_b_t_device_1aa3748f3023897ad3bba00307bbd2fa00"></span><em class="property">const</em> std::string &amp;<code class="descname">get_service_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11ESPBTDevice21get_service_data_uuidEv">
-<span id="_CPPv2NK11ESPBTDevice21get_service_data_uuidEv"></span><span class="target" id="class_e_s_p_b_t_device_1aa5b95eb6eb05deb770fbf80cf697d2de"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_data_uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
+<span id="_CPPv2NK11ESPBTDevice21get_service_data_uuidEv"></span><span class="target" id="class_e_s_p_b_t_device_1a21ef869c5716b762937fec71cff38f35"></span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv39ESPBTUUID" title="ESPBTUUID">ESPBTUUID</a>&gt; &amp;<code class="descname">get_service_data_uuid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -941,7 +942,7 @@
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

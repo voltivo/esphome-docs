@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Automations And Templates</a><ul>
 <li><a class="reference internal" href="#actions">Actions</a></li>
@@ -79,7 +80,7 @@ allow you to perfom actions under certain conditions and templates are a way to 
 customize everything about your node without having to dive into the full esphomelib C++
 API.</p>
 <p>Let’s begin with an example to explain these concepts. Suppose you have this configuration file:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO3</span>
     <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifer&quot;</span>
@@ -102,7 +103,7 @@ the MQTT server being online.</p>
 can write some basic (and also some more advanced) automations using a syntax that is
 hopefully a bit easier to read and understand than Home Assistant’s.</p>
 <p>For example, this configuration would achieve your desired behavior:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO3</span>
     <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier&quot;</span>
@@ -119,7 +120,7 @@ hopefully a bit easier to read and understand than Home Assistant’s.</p>
 </pre></div>
 </div>
 <p>Woah, hold on there. Please explain what’s going on here! Sure :) Let’s step through what’s happening here.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
    <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
      <span class="c1"># ...</span>
      <span class="nb">id</span><span class="p">:</span> <span class="n">dehumidifier1</span>
@@ -127,7 +128,7 @@ hopefully a bit easier to read and understand than Home Assistant’s.</p>
 </div>
 <p>First, we have to give the dehumidifier an <a class="reference internal" href="configuration-types.html#config-id"><span class="std std-ref">ID</span></a> so that we can
 later use it inside our awesome automation.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binary_sensor</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="c1"># ...</span>
     <span class="n">on_press</span><span class="p">:</span>
@@ -137,7 +138,7 @@ later use it inside our awesome automation.</p>
 the automation in the next few lines will execute whenever someone <em>begins</em> to press the button. Note the terminology
 follows what you would call these events on mouse buttons. A <em>press</em> happens when you begin pressing the button/mouse.
 There are also other triggers like <code class="docutils literal notranslate"><span class="pre">on_release</span></code>, <code class="docutils literal notranslate"><span class="pre">on_click</span></code> or <code class="docutils literal notranslate"><span class="pre">on_double_click</span></code> available.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
 <span class="n">on_press</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span>
@@ -150,7 +151,7 @@ There are also other triggers like <code class="docutils literal notranslate"><s
 Within this block, you can define several “actions”. For example, <code class="docutils literal notranslate"><span class="pre">switch.toggle</span></code> and the line after that form an
 action. Each action is separated by a dash and multiple actions can be executed in series by just adding another <code class="docutils literal notranslate"><span class="pre">-</span></code>
 like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
 <span class="n">on_press</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span>
@@ -162,7 +163,7 @@ like so:</p>
 </div>
 <p>With this automation, a press on the push button would cause the dehumidifier to turn on/off for 2 seconds, and then
 cycle back to its original state. Similarly you can have a single trigger with multiple automations:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
 <span class="n">on_press</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">then</span><span class="p">:</span>
       <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span>
@@ -182,7 +183,7 @@ cycle back to its original state. Similarly you can have a single trigger with m
 </div>
 <p>As a last example, let’s make our dehumidifier smart: Let’s make it turn on automatically when the humidity a sensor
 reports is above 65% and make it turn off again when it reaches 50%</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dht</span>
     <span class="n">humidity</span><span class="p">:</span>
       <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Humidity&quot;</span>
@@ -211,7 +212,7 @@ esphomelib has another extremely powerful tool to offer: Templates.</p>
 <p>With templates inside esphomelib, you can do almost <em>everything</em>. If for example you want to only perform a certain
 automation if a certain complex formula evaluates to true, you can do that with templates. Let’s look at an example
 first:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>binary_sensor:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>binary_sensor:
   - platform: gpio
     name: &quot;Cover End Stop&quot;
     id: top_end_stop
@@ -257,7 +258,7 @@ with lambdas, it’s always best to look at the generated C++ source file under 
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>An easy way to debug lambdas is to use esphomelib’s logging engine:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
   <span class="n">ESP_LOGE</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;This is a red error message&quot;</span><span class="p">);</span>
   <span class="n">ESP_LOGW</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;This is a yellow warning message&quot;</span><span class="p">);</span>
   <span class="n">ESP_LOGD</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;This is a blue debug message&quot;</span><span class="p">);</span>
@@ -273,7 +274,7 @@ with lambdas, it’s always best to look at the generated C++ source file under 
 <p>To store local variables inside lambdas that retain their value across executions, you can create <code class="docutils literal notranslate"><span class="pre">static</span></code>
 variables like so. In this example the variable <code class="docutils literal notranslate"><span class="pre">num_executions</span></code> is incremented by one each time the
 lambda is executed and the current value is logged.</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
   <span class="n">static</span> <span class="nb">int</span> <span class="n">num_executions</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="n">ESP_LOGD</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;I am at execution number </span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">num_executions</span><span class="p">);</span>
   <span class="n">num_executions</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
@@ -283,7 +284,7 @@ lambda is executed and the current value is logged.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>In some occasions, it can be useful to manually trigger an update for a component. You can do so like this:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="p">:</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">my_sensor</span>
@@ -299,7 +300,7 @@ lambda is executed and the current value is logged.</p>
 <span id="config-templatable"></span><h2>Bonus: Templating Actions<a class="headerlink" href="#bonus-templating-actions" title="Permalink to this headline">¶</a></h2>
 <p>Another feature of esphomeyaml is that you can template almost every parameter for actions in automations. For example
 if you have a light and want to set it to a pre-defined color when a button is pressed, you can do this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>on_press:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_press:
   then:
     - light.turn_on:
         id: some_light_id
@@ -360,7 +361,7 @@ all of the usual lambda syntax.</p>
 <span id="id1"></span><h3>Delay Action<a class="headerlink" href="#delay-action" title="Permalink to this headline">¶</a></h3>
 <p>This action delays the execution of the next action in the action list by a specified
 time period.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>on_...:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
   then:
      - switch.turn_on:
          id: relay_1
@@ -380,7 +381,7 @@ the delay is happening.</p>
 <div class="section" id="lambda-action">
 <span id="id2"></span><h3>Lambda Action<a class="headerlink" href="#lambda-action" title="Permalink to this headline">¶</a></h3>
 <p>This action executes an arbitrary piece of C++ code (see <a class="reference internal" href="#config-lambda"><span class="std std-ref">Lambda</span></a>).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
         <span class="nb">id</span><span class="p">(</span><span class="n">some_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">publish_state</span><span class="p">(</span><span class="n">false</span><span class="p">);</span>
@@ -394,7 +395,7 @@ executes the <code class="docutils literal notranslate"><span class="pre">then:<
 <p>After the chosen branch (<code class="docutils literal notranslate"><span class="pre">then</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span></code>) is done with execution, the next action is performed.</p>
 <p>For example below you can see an automation that checks if a sensor value is below 30 and if so
 turns on a light for 5 seconds. Otherwise, the light is turned off immediately.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="k">if</span><span class="p">:</span>
         <span class="k">lambda</span><span class="p">:</span> <span class="s1">&#39;return id(some_sensor).value &lt; 30;&#39;</span>
@@ -438,7 +439,7 @@ Defaults to doing nothing.</li>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

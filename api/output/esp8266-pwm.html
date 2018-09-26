@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">ESP8266 Software PWM</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -72,7 +73,7 @@
 Additionally, this software PWM can’t output values higher than 80%. That’s a known limitation.</p>
 <div class="section" id="example-usage">
 <span id="esp8266-pwm-example-usage"></span><h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="k">auto</span> <span class="o">*</span><span class="n">output</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_esp8266_pwm_output</span><span class="p">(</span><span class="n">D2</span><span class="p">);</span>
 <span class="c1">// Create a brightness-only light with it:</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_monochromatic_light</span><span class="p">(</span><span class="s">&quot;Desk Lamp&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">);</span>
@@ -92,7 +93,7 @@ Additionally, this software PWM can’t output values higher than 80%. That’s 
 <span id="_CPPv2N6output16ESP8266PWMOutputE"></span><span id="output::ESP8266PWMOutput"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output"></span><em class="property">class </em><code class="descname">ESP8266PWMOutput</code> : <em class="property">public</em> output::<a class="reference internal" href="index.html#_CPPv3N6output11FloatOutputE" title="output::FloatOutput">FloatOutput</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Software PWM output component for ESP8266. </p>
 <p>Supported pins are 0-16. By default, this uses a frequency of 1000Hz, and this can only be changed globally for all software PWM pins. To change the PWM frequency, do the following:</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">analogWriteFreq</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span> <span class="o">//</span> <span class="mi">500</span><span class="n">Hz</span> <span class="n">frequency</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">pins</span><span class="o">.</span>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">analogWriteFreq</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span> <span class="o">//</span> <span class="mi">500</span><span class="n">Hz</span> <span class="n">frequency</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">pins</span><span class="o">.</span>
 </pre></div>
 </div>
 </p>
@@ -149,7 +150,7 @@ Additionally, this software PWM can’t output values higher than 80%. That’s 
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

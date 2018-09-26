@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">HTU21D Temperature/Humidity Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -72,7 +73,7 @@ i2c-based devices, first initialize the i2c bus using the pins you have for SDA 
 then create the sensors themselves as in below example.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// inside setup()</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// inside setup()</span>
 <span class="n">App</span><span class="p">.</span><span class="n">init_i2c</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">,</span> <span class="n">SCL_PIN</span><span class="p">);</span> <span class="c1">// change these values for your pins.</span>
 <span class="c1">// create sensors</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_htu21d_sensor</span><span class="p">(</span><span class="s">&quot;Outside Temperature&quot;</span><span class="p">,</span> <span class="s">&quot;Outside Humidity&quot;</span><span class="p">);</span>
@@ -97,13 +98,13 @@ then create the sensors themselves as in below example.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15HTU21DComponent22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor15HTU21DComponent22get_temperature_sensorEv"></span><span id="sensor::HTU21DComponent::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_h_t_u21_d_component_1a21fb373cb9590e2d543e522f6f6ad61c"></span>HTU21DTemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15HTU21DComponent22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15HTU21DComponent22get_temperature_sensorEv"></span><span id="sensor::HTU21DComponent::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_h_t_u21_d_component_1a8701fe41af893e29c27e86cc7add2bf2"></span>HTU21DTemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15HTU21DComponent22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a pointer to the temperature sensor object used to expose temperatures as a sensor. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15HTU21DComponent19get_humidity_sensorEv">
-<span id="_CPPv2NK6sensor15HTU21DComponent19get_humidity_sensorEv"></span><span id="sensor::HTU21DComponent::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_h_t_u21_d_component_1a7f3f80d58775d00e7ad275455634b258"></span>HTU21DHumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15HTU21DComponent19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15HTU21DComponent19get_humidity_sensorEv"></span><span id="sensor::HTU21DComponent::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_h_t_u21_d_component_1afa39b2c2ff10839af6d001aaff6778d8"></span>HTU21DHumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15HTU21DComponent19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a pointer to the humidity sensor object used to expose humidities as a sensor. </p>
 </dd></dl>
 
@@ -162,7 +163,7 @@ then create the sensors themselves as in below example.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

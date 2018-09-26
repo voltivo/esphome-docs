@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Power Supply</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -70,7 +71,7 @@
 <h1>Power Supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="k">auto</span> <span class="o">*</span><span class="n">power_supply</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_power_supply</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
 <span class="c1">// Inverted, for ATX</span>
 <span class="k">auto</span> <span class="o">*</span><span class="n">atx</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_power_supply</span><span class="p">(</span><span class="n">GPIOOutputPin</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">,</span> <span class="nb">true</span><span class="p">));</span>
@@ -121,7 +122,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK20PowerSupplyComponent10is_enabledEv">
-<span id="_CPPv2NK20PowerSupplyComponent10is_enabledEv"></span><span id="PowerSupplyComponent::is_enabledC"></span><span class="target" id="class_power_supply_component_1a408eca847c0b32eb8735d78fdeb521d5"></span>bool <code class="descname">is_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK20PowerSupplyComponent10is_enabledEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK20PowerSupplyComponent10is_enabledEv"></span><span id="PowerSupplyComponent::is_enabledC"></span><span class="target" id="class_power_supply_component_1a8c47df07029aeac4b8a94bde304777d4"></span>bool <code class="descname">is_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK20PowerSupplyComponent10is_enabledEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Is this power supply currently on? </p>
 </dd></dl>
 
@@ -151,13 +152,13 @@
 
 <dl class="function">
 <dt id="_CPPv3NK20PowerSupplyComponent16get_keep_on_timeEv">
-<span id="_CPPv2NK20PowerSupplyComponent16get_keep_on_timeEv"></span><span id="PowerSupplyComponent::get_keep_on_timeC"></span><span class="target" id="class_power_supply_component_1ab41e627c0a2049742180b69105d0ff25"></span>uint32_t <code class="descname">get_keep_on_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK20PowerSupplyComponent16get_keep_on_timeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK20PowerSupplyComponent16get_keep_on_timeEv"></span><span id="PowerSupplyComponent::get_keep_on_timeC"></span><span class="target" id="class_power_supply_component_1a22784930292120401d0a2c25c0eaa608"></span>uint32_t <code class="descname">get_keep_on_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK20PowerSupplyComponent16get_keep_on_timeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the keep on time. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK20PowerSupplyComponent15get_enable_timeEv">
-<span id="_CPPv2NK20PowerSupplyComponent15get_enable_timeEv"></span><span id="PowerSupplyComponent::get_enable_timeC"></span><span class="target" id="class_power_supply_component_1a44f970359c11b94d0f3536303056eee3"></span>uint32_t <code class="descname">get_enable_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK20PowerSupplyComponent15get_enable_timeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK20PowerSupplyComponent15get_enable_timeEv"></span><span id="PowerSupplyComponent::get_enable_timeC"></span><span class="target" id="class_power_supply_component_1a54c1bfe924eef1db5d3abcf1fec4bf9c"></span>uint32_t <code class="descname">get_enable_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK20PowerSupplyComponent15get_enable_timeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the enable time. </p>
 </dd></dl>
 
@@ -207,7 +208,7 @@
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Output Component</a><ul>
 <li><a class="reference internal" href="#base-output-configuration">Base Output Configuration</a><ul>
@@ -77,7 +78,7 @@ any rational value between 0 and 1).</p>
 <div class="section" id="base-output-configuration">
 <span id="config-output"></span><h2>Base Output Configuration<a class="headerlink" href="#base-output-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Each output platform extends this configuration schema.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">output</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">myoutput_id</span>
@@ -102,7 +103,7 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
 <div class="section" id="output-turn-on-action">
 <span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">output.turn_on</span></code> Action<a class="headerlink" href="#output-turn-on-action" title="Permalink to this headline">¶</a></h3>
 <p>This action turns the output with the given ID on when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">relay_1</span>
 </pre></div>
@@ -111,7 +112,7 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
 <div class="section" id="output-turn-off-action">
 <span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">output.turn_off</span></code> Action<a class="headerlink" href="#output-turn-off-action" title="Permalink to this headline">¶</a></h3>
 <p>This action turns the output with the given ID off when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">relay_1</span>
 </pre></div>
@@ -121,7 +122,7 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
 <span id="id3"></span><h3><code class="docutils literal notranslate"><span class="pre">output.set_level</span></code> Action<a class="headerlink" href="#output-set-level-action" title="Permalink to this headline">¶</a></h3>
 <p>This action sets the float output to the given level when executed. Note: This only
 works with floating point outputs like ESP8266 PWM or LEDC.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">set_level</span><span class="p">:</span>
         <span class="nb">id</span><span class="p">:</span> <span class="n">output_1</span>
@@ -165,7 +166,7 @@ works with floating point outputs like ESP8266 PWM or LEDC.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

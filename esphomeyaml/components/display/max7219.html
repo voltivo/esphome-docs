@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">MAX7219 7-Segment Display</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -81,7 +82,7 @@ CS to your set <code class="docutils literal notranslate"><span class="pre">cs_p
 <p>You can even daisy-chain multiple MAX7219s by connecting the DOUT of the previous chip in the chain to the
 next DIN. With more than ~3 chips the 3.3V will probably not be enough, so then you will have to potentially
 use a logic level converted.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">spi</span><span class="p">:</span>
   <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
   <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D1</span>
@@ -125,7 +126,7 @@ means the first character of the first MAX7219. For example to start the first c
 the end of the first MAX7219, you would write <code class="docutils literal notranslate"><span class="pre">it.print(7,</span> <span class="pre">&quot;0&quot;);</span></code>.</p>
 <p>Also note that the <code class="docutils literal notranslate"><span class="pre">.</span></code> (dot) character is special because when esphomelib encounters it in the string the dot
 segment of the previous position will be enabled.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">max7219</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -349,7 +350,7 @@ for this documentation.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

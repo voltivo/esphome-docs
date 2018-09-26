@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Binary Sensor</a><ul>
 <li><a class="reference internal" href="#supported-binary-sensors">Supported Binary Sensors</a></li>
@@ -115,7 +116,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 </div>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="n">App</span><span class="p">.</span><span class="n">register_binary_sensor</span><span class="p">(</span><span class="n">custom_binary_sensor</span><span class="p">);</span>
 <span class="c1">// GPIO Binary Sensor</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_gpio_binary_sensor</span><span class="p">(</span><span class="s">&quot;Window Open&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">);</span>
@@ -180,7 +181,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 
 <dl class="function">
 <dt id="_CPPv3NK13binary_sensor12BinarySensor9get_valueEv">
-<span id="_CPPv2NK13binary_sensor12BinarySensor9get_valueEv"></span><span id="binary_sensor::BinarySensor::get_valueC"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a167d20f3ee37fdb9c0c6e3fc5786225c"></span>bool <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor12BinarySensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK13binary_sensor12BinarySensor9get_valueEv"></span><span id="binary_sensor::BinarySensor::get_valueC"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a92475bf51b5bbe01e7e589c0eb6a03d5"></span>bool <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor12BinarySensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current boolean value of this binary sensor. </p>
 </dd></dl>
 
@@ -223,7 +224,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE">
-<span id="_CPPv2N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE"></span><span id="binary_sensor::BinarySensor::add_filters__std::vector:FilterP:"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a67f08264c4e66ff3a4b98bba7adf4f68"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span>std::vector&lt;Filter *&gt; <em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE"></span><span id="binary_sensor::BinarySensor::add_filters__std::vector:FilterP:"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a0334ab5c88db530ca9f2c4f172412a43"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span>std::vector&lt;Filter *&gt; <em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -328,7 +329,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 
 <dl class="function">
 <dt id="_CPPv3NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv">
-<span id="_CPPv2NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::get_payload_onC"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1ae781d1488b76af280eed0dfc8101cd4e"></span><em class="property">const</em> std::string &amp;<code class="descname">get_payload_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::get_payload_onC"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a6672562619cc57e89b5fabc0b5dbe0bf"></span><em class="property">const</em> std::string &amp;<code class="descname">get_payload_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the payload this binary sensor uses for an ON value. </p>
 </dd></dl>
 
@@ -340,7 +341,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 
 <dl class="function">
 <dt id="_CPPv3NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv">
-<span id="_CPPv2NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::get_payload_offC"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a100271c6c720b95ffc8a8aadb0d1405d"></span><em class="property">const</em> std::string &amp;<code class="descname">get_payload_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::get_payload_offC"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1aa9e60c727437e5811c22f85ac8df3eb3"></span><em class="property">const</em> std::string &amp;<code class="descname">get_payload_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the payload this binary sensor uses for an OFF value. </p>
 </dd></dl>
 
@@ -416,7 +417,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

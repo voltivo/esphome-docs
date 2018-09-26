@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Dallas Component</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -72,7 +73,7 @@ individual sensors. You can get the addresses of dallas sensors by observing the
 at startup time.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Bus setup</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Bus setup</span>
 <span class="k">auto</span> <span class="o">*</span><span class="n">dallas</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_dallas_component</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
 
 <span class="c1">// By address</span>
@@ -160,7 +161,7 @@ at startup time.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15DallasComponent12get_one_wireEv">
-<span id="_CPPv2NK6sensor15DallasComponent12get_one_wireEv"></span><span id="sensor::DallasComponent::get_one_wireC"></span><span class="target" id="classsensor_1_1_dallas_component_1ae6b35dcd18f74b984e56211ed28d9d85"></span><a class="reference internal" href="../core/helpers.html#_CPPv310ESPOneWire" title="ESPOneWire">ESPOneWire</a> *<code class="descname">get_one_wire</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15DallasComponent12get_one_wireEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15DallasComponent12get_one_wireEv"></span><span id="sensor::DallasComponent::get_one_wireC"></span><span class="target" id="classsensor_1_1_dallas_component_1a81e73e0cfabc4c1baf860e3fa41bac09"></span><a class="reference internal" href="../core/helpers.html#_CPPv310ESPOneWire" title="ESPOneWire">ESPOneWire</a> *<code class="descname">get_one_wire</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15DallasComponent12get_one_wireEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -215,7 +216,7 @@ at startup time.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor23DallasTemperatureSensor11get_addressEv">
-<span id="_CPPv2NK6sensor23DallasTemperatureSensor11get_addressEv"></span><span id="sensor::DallasTemperatureSensor::get_addressC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1afdce0cb57cf899befcf54621965d2d52"></span>uint64_t <code class="descname">get_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor11get_addressEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor23DallasTemperatureSensor11get_addressEv"></span><span id="sensor::DallasTemperatureSensor::get_addressC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a0d590171d8c35cf8629f52626aa55f0c"></span>uint64_t <code class="descname">get_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor11get_addressEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the 64-bit unsigned address for this sensor. </p>
 </dd></dl>
 
@@ -227,7 +228,7 @@ at startup time.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor23DallasTemperatureSensor9get_indexEv">
-<span id="_CPPv2NK6sensor23DallasTemperatureSensor9get_indexEv"></span><span id="sensor::DallasTemperatureSensor::get_indexC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a750227e1576eac004f0c2f2832b7e72d"></span>uint8_t <code class="descname">get_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor9get_indexEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor23DallasTemperatureSensor9get_indexEv"></span><span id="sensor::DallasTemperatureSensor::get_indexC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a9d6c92f9a3a7809fcf07040d85348007"></span>uint8_t <code class="descname">get_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor9get_indexEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the index of this sensor. (0 if using address.) </p>
 </dd></dl>
 
@@ -239,7 +240,7 @@ at startup time.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor23DallasTemperatureSensor14get_resolutionEv">
-<span id="_CPPv2NK6sensor23DallasTemperatureSensor14get_resolutionEv"></span><span id="sensor::DallasTemperatureSensor::get_resolutionC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a665596716692191a98ec6159546a9504"></span>uint8_t <code class="descname">get_resolution</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor14get_resolutionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor23DallasTemperatureSensor14get_resolutionEv"></span><span id="sensor::DallasTemperatureSensor::get_resolutionC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a3378ef59e1b5297c2f80535030917edb"></span>uint8_t <code class="descname">get_resolution</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor14get_resolutionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the set resolution for this sensor. </p>
 </dd></dl>
 
@@ -251,7 +252,7 @@ at startup time.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor23DallasTemperatureSensor30millis_to_wait_for_conversion_Ev">
-<span id="_CPPv2NK6sensor23DallasTemperatureSensor30millis_to_wait_for_conversion_Ev"></span><span id="sensor::DallasTemperatureSensor::millis_to_wait_for_conversion_C"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a50af1cde035bad911af7c4c39c52fea8"></span>uint16_t <code class="descname">millis_to_wait_for_conversion_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor30millis_to_wait_for_conversion_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor23DallasTemperatureSensor30millis_to_wait_for_conversion_Ev"></span><span id="sensor::DallasTemperatureSensor::millis_to_wait_for_conversion_C"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a7b8681b06833b6ae9e8722e0174b3947"></span>uint16_t <code class="descname">millis_to_wait_for_conversion_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor30millis_to_wait_for_conversion_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the number of milliseconds we have to wait for the conversion phase. </p>
 </dd></dl>
 
@@ -332,7 +333,7 @@ at startup time.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Application</a><ul>
 <li><a class="reference internal" href="#api-reference">API Reference</a></li>
@@ -335,7 +336,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application22register_binary_sensorEPN13binary_sensor12BinarySensorE">
-<span id="_CPPv2N11Application22register_binary_sensorEPN13binary_sensor12BinarySensorE"></span><span id="Application::register_binary_sensor__binary_sensor::BinarySensorP"></span><span class="target" id="class_application_1a8a166a41f524ae91fcc3ff9dbb04276b"></span>MQTTBinarySensorComponent *<code class="descname">register_binary_sensor</code><span class="sig-paren">(</span>binary_sensor::BinarySensor *<em>binary_sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22register_binary_sensorEPN13binary_sensor12BinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application22register_binary_sensorEPN13binary_sensor12BinarySensorE"></span><span id="Application::register_binary_sensor__binary_sensor::BinarySensorP"></span><span class="target" id="class_application_1a8a166a41f524ae91fcc3ff9dbb04276b"></span>MQTTBinarySensorComponent *<code class="descname">register_binary_sensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application22register_binary_sensorEPN13binary_sensor12BinarySensorE" title="Application::register_binary_sensor::binary_sensor">binary_sensor</a>::BinarySensor *<em>binary_sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22register_binary_sensorEPN13binary_sensor12BinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a binary sensor and set it up for the front-end. </p>
 </dd></dl>
 
@@ -407,7 +408,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application15register_sensorEPN6sensor6SensorE">
-<span id="_CPPv2N11Application15register_sensorEPN6sensor6SensorE"></span><span id="Application::register_sensor__sensor::SensorP"></span><span class="target" id="class_application_1a669795bcabe075edfba67b7b9cbb77f8"></span>sensor::MQTTSensorComponent *<code class="descname">register_sensor</code><span class="sig-paren">(</span>sensor::Sensor *<em>sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application15register_sensorEPN6sensor6SensorE"></span><span id="Application::register_sensor__sensor::SensorP"></span><span class="target" id="class_application_1a669795bcabe075edfba67b7b9cbb77f8"></span><a class="reference internal" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor::sensor">sensor</a>::MQTTSensorComponent *<code class="descname">register_sensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor::sensor">sensor</a>::Sensor *<em>sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a sensor and create a MQTT Sensor if the MQTT client is set up. </p>
 </dd></dl>
 
@@ -977,7 +978,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application15register_switchEPN7switch_6SwitchE">
-<span id="_CPPv2N11Application15register_switchEPN7switch_6SwitchE"></span><span id="Application::register_switch__switch_::SwitchP"></span><span class="target" id="class_application_1a61c30aa76e0137a9f3dbb28fac68c578"></span>MQTTSwitchComponent *<code class="descname">register_switch</code><span class="sig-paren">(</span>switch_::Switch *<em>switch_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_switchEPN7switch_6SwitchE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application15register_switchEPN7switch_6SwitchE"></span><span id="Application::register_switch__switch_::SwitchP"></span><span class="target" id="class_application_1a61c30aa76e0137a9f3dbb28fac68c578"></span>MQTTSwitchComponent *<code class="descname">register_switch</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application15register_switchEPN7switch_6SwitchE" title="Application::register_switch::switch_">switch_</a>::Switch *<em>switch_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_switchEPN7switch_6SwitchE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a Switch internally, creating a MQTT Switch if the MQTT client is set up. </p>
 </dd></dl>
 
@@ -1012,7 +1013,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE">
-<span id="_CPPv2N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE"></span><span id="Application::make_simple_switch__ssCR.output::BinaryOutputP"></span><span class="target" id="class_application_1a3841baf4cd7b3948cea3caec5006f18d"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeSimpleSwitchE" title="Application::MakeSimpleSwitch">MakeSimpleSwitch</a> <code class="descname">make_simple_switch</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, output::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE"></span><span id="Application::make_simple_switch__ssCR.output::BinaryOutputP"></span><span class="target" id="class_application_1a3841baf4cd7b3948cea3caec5006f18d"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeSimpleSwitchE" title="Application::MakeSimpleSwitch">MakeSimpleSwitch</a> <code class="descname">make_simple_switch</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <a class="reference internal" href="#_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE" title="Application::make_simple_switch::output">output</a>::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Make a simple switch that exposes a binary output as a switch. </p>
 </dd></dl>
 
@@ -1055,7 +1056,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application14register_coverEPN5cover5CoverE">
-<span id="_CPPv2N11Application14register_coverEPN5cover5CoverE"></span><span id="Application::register_cover__cover::CoverP"></span><span class="target" id="class_application_1aa1edcd9402e9b8f5f698a32ecf3a37c0"></span>cover::MQTTCoverComponent *<code class="descname">register_cover</code><span class="sig-paren">(</span>cover::Cover *<em>cover</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application14register_coverEPN5cover5CoverE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application14register_coverEPN5cover5CoverE"></span><span id="Application::register_cover__cover::CoverP"></span><span class="target" id="class_application_1aa1edcd9402e9b8f5f698a32ecf3a37c0"></span><a class="reference internal" href="#_CPPv3N11Application14register_coverEPN5cover5CoverE" title="Application::register_cover::cover">cover</a>::MQTTCoverComponent *<code class="descname">register_cover</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application14register_coverEPN5cover5CoverE" title="Application::register_cover::cover">cover</a>::Cover *<em>cover</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application14register_coverEPN5cover5CoverE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1117,23 +1118,23 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3NK11Application8get_wifiEv">
-<span id="_CPPv2NK11Application8get_wifiEv"></span><span id="Application::get_wifiC"></span><span class="target" id="class_application_1a266a76e6ad6d0a92ddef403de2e352aa"></span><a class="reference internal" href="wifi.html#_CPPv313WiFiComponent" title="WiFiComponent">WiFiComponent</a> *<code class="descname">get_wifi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application8get_wifiEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11Application8get_wifiEv"></span><span id="Application::get_wifiC"></span><span class="target" id="class_application_1ae7187b5191ad5f2bc9166f22653434ae"></span><a class="reference internal" href="wifi.html#_CPPv313WiFiComponent" title="WiFiComponent">WiFiComponent</a> *<code class="descname">get_wifi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application8get_wifiEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11Application15get_mqtt_clientEv">
-<span id="_CPPv2NK11Application15get_mqtt_clientEv"></span><span id="Application::get_mqtt_clientC"></span><span class="target" id="class_application_1af6cb377200d7e2fe2a8030288cf03f38"></span>MQTTClientComponent *<code class="descname">get_mqtt_client</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application15get_mqtt_clientEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11Application15get_mqtt_clientEv"></span><span id="Application::get_mqtt_clientC"></span><span class="target" id="class_application_1a31e29df661b317435455fa8289f57ede"></span>MQTTClientComponent *<code class="descname">get_mqtt_client</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application15get_mqtt_clientEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11Application8get_nameEv">
-<span id="_CPPv2NK11Application8get_nameEv"></span><span id="Application::get_nameC"></span><span class="target" id="class_application_1a9f60309b30fb42250cf211bbb9de898d"></span><em class="property">const</em> std::string &amp;<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application8get_nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11Application8get_nameEv"></span><span id="Application::get_nameC"></span><span class="target" id="class_application_1a0187fb866938d5fe93c4e03e7b34fdb1"></span><em class="property">const</em> std::string &amp;<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application8get_nameEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the name of this <a class="reference internal" href="#class_application"><span class="std std-ref">Application</span></a> set by <a class="reference internal" href="#class_application_1a3c1364c85a1e0331d945d315c9048051"><span class="std std-ref">set_name()</span></a>. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11Application14is_fully_setupEv">
-<span id="_CPPv2NK11Application14is_fully_setupEv"></span><span id="Application::is_fully_setupC"></span><span class="target" id="class_application_1afa2cd2cd4764d90f15d5f0863b0c95bd"></span>bool <code class="descname">is_fully_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application14is_fully_setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK11Application14is_fully_setupEv"></span><span id="Application::is_fully_setupC"></span><span class="target" id="class_application_1a8fe9b8430a2038f2c9e3c30398c4535c"></span>bool <code class="descname">is_fully_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application14is_fully_setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1948,7 +1949,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

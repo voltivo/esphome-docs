@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Display Component</a><ul>
 <li><a class="reference internal" href="#display-rendering-engine">Display Rendering Engine</a><ul>
@@ -101,7 +102,7 @@ individually.</p>
 option called <code class="docutils literal notranslate"><span class="pre">lambda:</span></code> which will be called every time esphomelib wants to re-render the display.
 In there, you can write code like in any <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a> in esphomeyaml. Display
 lambdas are additionally passed a variable called <code class="docutils literal notranslate"><span class="pre">it</span></code> which represents the rendering engine object.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -128,7 +129,7 @@ the rendering engine is always first specify the <code class="docutils literal n
 <h3>Basic Shapes<a class="headerlink" href="#basic-shapes" title="Permalink to this headline">¶</a></h3>
 <p>Now that you know a bit more about esphomelib’s coordinate system, let’s draw some basic shapes like lines, rectangles
 and circles:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>display:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>display:
   - platform: ...
     # ...
     lambda: |-
@@ -148,7 +149,7 @@ and circles:</p>
 <p>All the above methods can optionally also be called with an argument at the end which specifies in which
 color to draw. Currently, only <code class="docutils literal notranslate"><span class="pre">COLOR_ON</span></code> (the default if color is not given) and <code class="docutils literal notranslate"><span class="pre">COLOR_OFF</span></code> are supported because
 esphomelib only has implemented binary displays.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -165,7 +166,7 @@ esphomelib only has implemented binary displays.</p>
 </pre></div>
 </div>
 <p>Additionally, you have access to two helper methods which will fetch the width and height of the display:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -183,7 +184,7 @@ specific sizes, with esphomeyaml you have the option to use <strong>any</strong>
 at <strong>any</strong> size! Granted the reason for it is actually not having to worry about the licensing of font files :)</p>
 <p>To use fonts you first have to define a font object in your esphomeyaml configuration file. Just grab
 a <code class="docutils literal notranslate"><span class="pre">.ttf</span></code> file from somewhere on the Internet and create a <code class="docutils literal notranslate"><span class="pre">font:</span></code> section in your configuration:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">font</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">font</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;Comic Sans MS.ttf&quot;</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">my_font</span>
     <span class="n">size</span><span class="p">:</span> <span class="mi">20</span>
@@ -214,7 +215,7 @@ the official esphomeyaml docker image, it should already be installed. Otherwise
 <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">installl</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>Then, in your display code just reference the font like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -228,7 +229,7 @@ text at the right side of the display, it is however sometimes useful to choose 
 When you enter <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code> you’re really telling esphomelib that it should position the <strong>anchor point</strong> of the text
 at <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code>. When using a different alignment, like <code class="docutils literal notranslate"><span class="pre">TOP_RIGHT</span></code>, the text will be positioned left of the anchor
 pointed, so that, as the name implies, the anchor point is a the <em>top right</em> corner of the text.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -240,7 +241,7 @@ pointed, so that, as the name implies, the anchor point is a the <em>top right</
 </pre></div>
 </div>
 <p>As with basic shapes, you can also specify a color for the text:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -257,7 +258,7 @@ chose to use because … well, I’m too lazy to create a fully-fledged format e
 is way better documented :)</p>
 <p><code class="docutils literal notranslate"><span class="pre">printf</span></code> can do way more stuff than you will probably ever need, but it’s also quite simple for the basic stuff.
 For example, a printf call can look like this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">my_sensor</span>
@@ -294,7 +295,7 @@ the result would be shorter than 7 characters long.</li>
 </ul>
 <p>You can even have as many format strings as you want in a single printf call. Just make sure the put the
 arguments after the format string in the right order.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -306,7 +307,7 @@ arguments after the format string in the right order.</p>
 <em>could</em> of course just check the state with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement as the first few lines in the example below, but if
 you want to be efficient you can use an <em>inline if</em> too. With the <code class="docutils literal notranslate"><span class="pre">%s</span></code> print specifier you can tell it to
 use any string you pass it, like <code class="docutils literal notranslate"><span class="pre">&quot;ON&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;OFF&quot;</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>binary_sensor:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>binary_sensor:
   - platform: ...
     # ...
     id: my_binary_sensor
@@ -330,7 +331,7 @@ display:
 <p>With esphomelib you can also display the current time using the NTP protocol. Please see the example <a class="reference internal" href="../time.html#strftime"><span class="std std-ref">here</span></a>.</p>
 <div class="section" id="images">
 <h4>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h4>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">image</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;image.png&quot;</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">my_image</span>
     <span class="n">resize</span><span class="p">:</span> <span class="mi">100</span><span class="n">x100</span>
@@ -351,7 +352,7 @@ If you’re running this as a HassIO add-on or with the official esphomeyaml doc
 installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">installl</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>And then later in code:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
@@ -393,7 +394,7 @@ installed. Otherwise you need to install it using <code class="docutils literal 
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

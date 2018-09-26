@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Light Component</a><ul>
 <li><a class="reference internal" href="#light-toggle-action"><code class="docutils literal notranslate"><span class="pre">light.toggle</span></code> Action</a></li>
@@ -87,7 +88,7 @@ features such as RGB colors, transitions, flashing and effects.</p>
 <div class="section" id="light-toggle-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">light.toggle</span></code> Action<a class="headerlink" href="#light-toggle-action" title="Permalink to this headline">¶</a></h2>
 <p>This action toggles a light with the given ID when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span>
         <span class="nb">id</span><span class="p">:</span> <span class="n">light_1</span>
@@ -103,7 +104,7 @@ if the light supports it.</li>
 <div class="section" id="light-turn-on-action">
 <span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">light.turn_on</span></code> Action<a class="headerlink" href="#light-turn-on-action" title="Permalink to this headline">¶</a></h2>
 <p>This action turns a light with the given ID on when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>on_...:
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
   then:
     - light.turn_on:
         id: light_1
@@ -144,7 +145,7 @@ start an effect with the given name.</li>
 <div class="section" id="light-turn-off-action">
 <span id="id3"></span><h2><code class="docutils literal notranslate"><span class="pre">light.turn_off</span></code> Action<a class="headerlink" href="#light-turn-off-action" title="Permalink to this headline">¶</a></h2>
 <p>This action turns a light with the given ID off when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span>
         <span class="nb">id</span><span class="p">:</span> <span class="n">light_1</span>
@@ -166,7 +167,7 @@ these parameters.</p>
 <p>With esphomelib’s light effects system you’re basically creating a bunch of entries for the effects dropdown in
 Home Assistant. If you wish to have several variants of the same effect you can of course also create multiple
 entries with each having a unique name like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -183,7 +184,7 @@ entries with each having a unique name like so:</p>
 <div class="section" id="random-effect">
 <h3>Random Effect<a class="headerlink" href="#random-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect makes a transition (of length <code class="docutils literal notranslate"><span class="pre">transition_length</span></code>) to a randomly-chosen color every <code class="docutils literal notranslate"><span class="pre">update_interval</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -205,7 +206,7 @@ to.</li>
 <div class="section" id="strobe-effect">
 <h3>Strobe Effect<a class="headerlink" href="#strobe-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect cycles through a list of colors with specific durations.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -247,7 +248,7 @@ to.</li>
 <div class="section" id="flicker-effect">
 <h3>Flicker Effect<a class="headerlink" href="#flicker-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect “hovers” around the active color of the light and flickers each color channel a bit.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -270,7 +271,7 @@ random offsets. Defaults to <code class="docutils literal notranslate"><span cla
 <div class="section" id="lambda-effect">
 <h3>Lambda Effect<a class="headerlink" href="#lambda-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect allows you to write completely custom light effects yourself using <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -306,7 +307,7 @@ especially useful.</li>
 <h3>FastLED Rainbow Effect<a class="headerlink" href="#fastled-rainbow-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LEDs that creates a moving rainbow over the whole LED strip using
 the HSV color wheel.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -328,7 +329,7 @@ the HSV color wheel.</p>
 <h3>FastLED Color Wipe Effect<a class="headerlink" href="#fastled-color-wipe-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LEDs that continuously introduces new colors at the beginning of
 the strip and shifts them forward every <code class="docutils literal notranslate"><span class="pre">add_led_interval</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -370,7 +371,7 @@ beginning of the strip. Defaults to <code class="docutils literal notranslate"><
 <h3>FastLED Scan Effect<a class="headerlink" href="#fastled-scan-effect" title="Permalink to this headline">¶</a></h3>
 <p>Create a single, fast-moving dot moving back and forth an individually-addressable LED strip. The color is chosen by the
 currently active light color.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -392,7 +393,7 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">100ms</
 <p>A light effect for individually-addressable LED strips that randomly chooses some LEDs and let’s them bright
 up for a moment, like a stars twinkling in the night’s sky. The color of the pixels will be chosen by the
 currently active light color.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -415,7 +416,7 @@ affects the duration of a twinkle animation. Defaults to <code class="docutils l
 <div class="section" id="fastled-random-twinkle-effect">
 <h3>FastLED Random Twinkle Effect<a class="headerlink" href="#fastled-random-twinkle-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect similar to <code class="docutils literal notranslate"><span class="pre">fastled_twinkle</span></code>, but using random colors for each twinkle animation.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -439,7 +440,7 @@ affects the duration of a twinkle animation. Defaults to <code class="docutils l
 <h3>FastLED Fireworks Effect<a class="headerlink" href="#fastled-fireworks-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LED strips that randomly sparks some fireworks at random positions
 and lets the sparkles cascade over the LED strip.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -470,7 +471,7 @@ sparks do not propagate for a long time. Defaults to <code class="docutils liter
 <h3>FastLED Flicker Effect<a class="headerlink" href="#fastled-flicker-effect" title="Permalink to this headline">¶</a></h3>
 <p>An effect similar to the <code class="docutils literal notranslate"><span class="pre">flicker</span></code> effect, but for individually-addressable LED strips. This effect flickers
 each LED by its own random amount around the currently active light color.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">:</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
     <span class="c1"># ...</span>
     <span class="n">effects</span><span class="p">:</span>
@@ -524,7 +525,7 @@ the currently active light color. Defaults to <code class="docutils literal notr
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GPIO Binary Sensor</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
@@ -72,7 +73,7 @@ device as a binary sensor.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/gpio-ui.png"><img alt="../../../_images/gpio-ui.png" src="../../../_images/gpio-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
@@ -93,7 +94,7 @@ and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><spa
 <p class="first admonition-title">Note</p>
 <p>For some applications such as reed switches you need to set the pin mode to <code class="docutils literal notranslate"><span class="pre">INPUT_PULLUP</span></code>
 like this:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binary_sensor</span><span class="p">:</span>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span>
       <span class="n">number</span><span class="p">:</span> <span class="n">D2</span>
@@ -107,7 +108,7 @@ like this:</p>
 <h2>Inverting Values<a class="headerlink" href="#inverting-values" title="Permalink to this headline">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">inverted</span></code> property of the <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a> to invert the binary
 sensor:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span>
@@ -121,7 +122,7 @@ sensor:</p>
 <h2>Debouncing Values<a class="headerlink" href="#debouncing-values" title="Permalink to this headline">¶</a></h2>
 <p>Some binary sensors are a bit unstable and quickly transition between the ON and OFF state while
 they’re pressed. To fix this and debounce the signal, use the <a class="reference internal" href="index.html#binary-sensor-filters"><span class="std std-ref">binary sensor filters</span></a>:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
@@ -133,7 +134,7 @@ they’re pressed. To fix this and debounce the signal, use the <a class="refere
 <p>Above example will only make the signal go high if the button has stayed high for more than 10ms.
 Alternatively, below configuration will make the binary sensor publish an ON value immediately, but
 will wait 10ms before publishing an OFF value:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">binary_sensor</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
     <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
@@ -165,7 +166,7 @@ will wait 10ms before publishing an OFF value:</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

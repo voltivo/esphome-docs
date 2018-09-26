@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Component</a><ul>
 <li><a class="reference internal" href="#api-reference">API Reference</a><ul>
@@ -80,7 +81,7 @@
 <span id="_CPPv29Component"></span><span id="Component"></span><span class="target" id="class_component"></span><em class="property">class </em><code class="descname">Component</code><a class="headerlink" href="#_CPPv39Component" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The base class for all esphomelib components. </p>
 <p>esphomelib uses components to separate code for self-contained units such as peripheral devices in order to keep the library clean and simple. Each component should be registered in the <a class="reference internal" href="application.html#class_application"><span class="std std-ref">Application</span></a> instance via add_component. The application will then call the component’s <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> and <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> methods at the appropriate time. Each component should save all the information required for setup in the constructor, and only do the actual hardware initialization, such as pinMode, in <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>.</p>
-<p>Additionally, the <a class="reference internal" href="#class_component_1a9fafca22739009166be9a47bacb74381"><span class="std std-ref">get_setup_priority()</span></a> and <a class="reference internal" href="#class_component_1a63e0e5d000d9d0bea20e18cc20f82bb9"><span class="std std-ref">get_loop_priority()</span></a> can be overwritten in order to force the <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> or <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> methods to be executed earlier than other components. For example, setting up a GPIO pin to be output-only should be done before WiFi and MQTT are initialized - so the component can assign itself a high priority via <a class="reference internal" href="#class_component_1a9fafca22739009166be9a47bacb74381"><span class="std std-ref">get_setup_priority()</span></a>.</p>
+<p>Additionally, the <a class="reference internal" href="#class_component_1ac6a4d200c2e273be69faabe54180904b"><span class="std std-ref">get_setup_priority()</span></a> and <a class="reference internal" href="#class_component_1a48744fb660d4e37052bd8bcb47a28ae3"><span class="std std-ref">get_loop_priority()</span></a> can be overwritten in order to force the <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> or <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> methods to be executed earlier than other components. For example, setting up a GPIO pin to be output-only should be done before WiFi and MQTT are initialized - so the component can assign itself a high priority via <a class="reference internal" href="#class_component_1ac6a4d200c2e273be69faabe54180904b"><span class="std std-ref">get_setup_priority()</span></a>.</p>
 <p><dl class="docutils">
 <dt><strong>See</strong></dt>
 <dd>Application::add_component() </dd>
@@ -105,7 +106,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK9Component18get_setup_priorityEv">
-<span id="_CPPv2NK9Component18get_setup_priorityEv"></span><span id="Component::get_setup_priorityC"></span><span class="target" id="class_component_1a9fafca22739009166be9a47bacb74381"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK9Component18get_setup_priorityEv"></span><span id="Component::get_setup_priorityC"></span><span class="target" id="class_component_1ac6a4d200c2e273be69faabe54180904b"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>priority of <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
 <p>higher -&gt; executed earlier</p>
 <p>Defaults to 0.</p>
@@ -118,7 +119,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK9Component17get_loop_priorityEv">
-<span id="_CPPv2NK9Component17get_loop_priorityEv"></span><span id="Component::get_loop_priorityC"></span><span class="target" id="class_component_1a63e0e5d000d9d0bea20e18cc20f82bb9"></span>float <code class="descname">get_loop_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component17get_loop_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK9Component17get_loop_priorityEv"></span><span id="Component::get_loop_priorityC"></span><span class="target" id="class_component_1a48744fb660d4e37052bd8bcb47a28ae3"></span>float <code class="descname">get_loop_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component17get_loop_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>priority of <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a>. </p>
 <p>higher -&gt; executed earlier</p>
 <p>Defaults to 0.</p>
@@ -145,7 +146,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK9Component19get_component_stateEv">
-<span id="_CPPv2NK9Component19get_component_stateEv"></span><span id="Component::get_component_stateC"></span><span class="target" id="class_component_1ab6f76868a965d13ea8ad1ec1835d6882"></span>uint32_t <code class="descname">get_component_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component19get_component_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK9Component19get_component_stateEv"></span><span id="Component::get_component_stateC"></span><span class="target" id="class_component_1a09b6ec16359bd6b01f57eba7217d44a9"></span>uint32_t <code class="descname">get_component_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component19get_component_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -385,7 +386,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3NK9Component12TimeFunction10should_runE8uint32_t">
-<span id="_CPPv2NK9Component12TimeFunction10should_runE8uint32_t"></span><span id="Component::TimeFunction::should_run__uint32_tC"></span><span class="target" id="struct_component_1_1_time_function_1a09c5e0fb228bdc53885d2508b2035b70"></span>bool <code class="descname">should_run</code><span class="sig-paren">(</span>uint32_t <em>now</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component12TimeFunction10should_runE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK9Component12TimeFunction10should_runE8uint32_t"></span><span id="Component::TimeFunction::should_run__uint32_tC"></span><span class="target" id="struct_component_1_1_time_function_1a0bc4ce9091b442fef9b4bb99400db7c8"></span>bool <code class="descname">should_run</code><span class="sig-paren">(</span>uint32_t <em>now</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component12TimeFunction10should_runE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -483,7 +484,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK16PollingComponent19get_update_intervalEv">
-<span id="_CPPv2NK16PollingComponent19get_update_intervalEv"></span><span id="PollingComponent::get_update_intervalC"></span><span class="target" id="class_polling_component_1a8b5a108c6e64efa389b798e085abd1bc"></span>uint32_t <code class="descname">get_update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK16PollingComponent19get_update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK16PollingComponent19get_update_intervalEv"></span><span id="PollingComponent::get_update_intervalC"></span><span class="target" id="class_polling_component_1a3e4e45313c7007df3e1a6d3547cb73b4"></span>uint32_t <code class="descname">get_update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK16PollingComponent19get_update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the update interval in ms of this sensor. </p>
 </dd></dl>
 
@@ -570,7 +571,7 @@
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

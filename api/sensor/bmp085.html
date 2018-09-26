@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">BMP085 Pressure/Temperature Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -76,7 +77,7 @@ i2c-based devices, first initialize the i2c bus using the pins you have for SDA 
 then create the sensors themselves as in below example.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// inside setup()</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// inside setup()</span>
 <span class="n">App</span><span class="p">.</span><span class="n">init_i2c</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">,</span> <span class="n">SCL_PIN</span><span class="p">);</span> <span class="c1">// change these values for your pins.</span>
 <span class="c1">// create sensors</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_bmp085_sensor</span><span class="p">(</span><span class="s">&quot;Outside Temperature&quot;</span><span class="p">,</span> <span class="s">&quot;Outside Pressure&quot;</span><span class="p">);</span>
@@ -101,13 +102,13 @@ then create the sensors themselves as in below example.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BMP085Component22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor15BMP085Component22get_temperature_sensorEv"></span><span id="sensor::BMP085Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_p085_component_1a3b16a91e043a90b1af309205aac59d66"></span>BMP085TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP085Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BMP085Component22get_temperature_sensorEv"></span><span id="sensor::BMP085Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_p085_component_1a7b394994be8f0aefe8f7aae8e5ce68e3"></span>BMP085TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP085Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the internal temperature sensor used to expose the temperature as a sensor object. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BMP085Component19get_pressure_sensorEv">
-<span id="_CPPv2NK6sensor15BMP085Component19get_pressure_sensorEv"></span><span id="sensor::BMP085Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_p085_component_1ab2f3c15d54c5e66edcf8d6f2c6207fb3"></span>BMP085PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP085Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor15BMP085Component19get_pressure_sensorEv"></span><span id="sensor::BMP085Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_p085_component_1a203d896eee6ed2e196cc4b639e372c82"></span>BMP085PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP085Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the internal pressure sensor used to expose the pressure as a sensor object. </p>
 </dd></dl>
 
@@ -259,7 +260,7 @@ then create the sensors themselves as in below example.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">PCF8574 I/O Expander</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -70,7 +71,7 @@ esphomelib’s components. With most components, you are able to specify GPIOOut
 GPIOInputPin for internal pins. The PCF8574 component subclasses those types.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="o">*</span><span class="n">pcf8574</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_pcf8574_component</span><span class="p">(</span><span class="mh">0x21</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="k">auto</span> <span class="o">*</span><span class="n">pcf8574</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_pcf8574_component</span><span class="p">(</span><span class="mh">0x21</span><span class="p">);</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_gpio_binary_sensor</span><span class="p">(</span><span class="s">&quot;PCF pin 0 sensor&quot;</span><span class="p">,</span> <span class="n">pcf8574</span><span class="o">-&gt;</span><span class="n">make_input_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">PCF8574_INPUT</span><span class="p">));</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_gpio_binary_sensor</span><span class="p">(</span><span class="s">&quot;PCF pin 0 sensor&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_gpio_switch</span><span class="p">(</span><span class="s">&quot;PCF pin 1 switch&quot;</span><span class="p">,</span> <span class="n">pcf8574</span><span class="o">-&gt;</span><span class="n">make_output_pin</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
@@ -344,7 +345,7 @@ GPIOInputPin for internal pins. The PCF8574 component subclasses those types.</p
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

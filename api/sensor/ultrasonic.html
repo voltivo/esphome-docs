@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Ultrasonic Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -67,7 +68,7 @@
 <h1>Ultrasonic Sensor<a class="headerlink" href="#ultrasonic-sensor" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="n">App</span><span class="p">.</span><span class="n">make_ultrasonic</span><span class="p">(</span><span class="s">&quot;Ultrasonic&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span> <span class="c1">// trigger pin: 12, echo pin: 13</span>
 <span class="c1">// Filter out timeouts</span>
 <span class="k">auto</span> <span class="n">ultrasonic</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_ultrasonic</span><span class="p">(</span><span class="s">&quot;Ultrasonic&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
@@ -122,13 +123,13 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor25UltrasonicSensorComponent13get_timeout_mEv">
-<span id="_CPPv2NK6sensor25UltrasonicSensorComponent13get_timeout_mEv"></span><span id="sensor::UltrasonicSensorComponent::get_timeout_mC"></span><span class="target" id="classsensor_1_1_ultrasonic_sensor_component_1a4db4fc4357a03f71f1cf587376d4bdb2"></span>float <code class="descname">get_timeout_m</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor25UltrasonicSensorComponent13get_timeout_mEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor25UltrasonicSensorComponent13get_timeout_mEv"></span><span id="sensor::UltrasonicSensorComponent::get_timeout_mC"></span><span class="target" id="classsensor_1_1_ultrasonic_sensor_component_1a04f309c73b52e78fb90c413c77c97b4a"></span>float <code class="descname">get_timeout_m</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor25UltrasonicSensorComponent13get_timeout_mEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the timeout in meters for waiting for the echo. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor25UltrasonicSensorComponent14get_timeout_usEv">
-<span id="_CPPv2NK6sensor25UltrasonicSensorComponent14get_timeout_usEv"></span><span id="sensor::UltrasonicSensorComponent::get_timeout_usC"></span><span class="target" id="classsensor_1_1_ultrasonic_sensor_component_1a43b3d8cad27e9e81765e1537f69307fc"></span>uint32_t <code class="descname">get_timeout_us</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor25UltrasonicSensorComponent14get_timeout_usEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor25UltrasonicSensorComponent14get_timeout_usEv"></span><span id="sensor::UltrasonicSensorComponent::get_timeout_usC"></span><span class="target" id="classsensor_1_1_ultrasonic_sensor_component_1a42d459e36e23a33a59400dbb3438ef31"></span>uint32_t <code class="descname">get_timeout_us</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor25UltrasonicSensorComponent14get_timeout_usEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the timeout in µs for waiting for the echo. </p>
 </dd></dl>
 
@@ -187,7 +188,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor25UltrasonicSensorComponent17get_pulse_time_usEv">
-<span id="_CPPv2NK6sensor25UltrasonicSensorComponent17get_pulse_time_usEv"></span><span id="sensor::UltrasonicSensorComponent::get_pulse_time_usC"></span><span class="target" id="classsensor_1_1_ultrasonic_sensor_component_1a1efaba0173a50255f00d4a6b7c768718"></span>uint32_t <code class="descname">get_pulse_time_us</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor25UltrasonicSensorComponent17get_pulse_time_usEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor25UltrasonicSensorComponent17get_pulse_time_usEv"></span><span id="sensor::UltrasonicSensorComponent::get_pulse_time_usC"></span><span class="target" id="classsensor_1_1_ultrasonic_sensor_component_1add2a5dc3bf57a8cb5758979381a7058c"></span>uint32_t <code class="descname">get_pulse_time_us</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor25UltrasonicSensorComponent17get_pulse_time_usEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Return the time in µs the trigger pin should be enabled for. </p>
 </dd></dl>
 
@@ -247,7 +248,7 @@
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

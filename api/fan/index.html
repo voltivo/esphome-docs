@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Fan</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -76,7 +77,7 @@ access a combined <a class="reference internal" href="#_CPPv3N3fan8FanStateE" ti
 state updates.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basic</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
 <span class="k">auto</span> <span class="n">fan</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_fan</span><span class="p">(</span><span class="s">&quot;Fan&quot;</span><span class="p">);</span>
 <span class="n">fan</span><span class="p">.</span><span class="n">output</span><span class="o">-&gt;</span><span class="n">set_binary</span><span class="p">(</span><span class="n">App</span><span class="p">.</span><span class="n">make_gpio_output</span><span class="p">(</span><span class="mi">34</span><span class="p">));</span>
 <span class="c1">// Speed</span>
@@ -115,7 +116,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan8FanState9get_stateEv">
-<span id="_CPPv2NK3fan8FanState9get_stateEv"></span><span id="fan::FanState::get_stateC"></span><span class="target" id="classfan_1_1_fan_state_1afa77123f0dbc9f172b94da32bb6f49a4"></span>bool <code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan8FanState9get_stateEv"></span><span id="fan::FanState::get_stateC"></span><span class="target" id="classfan_1_1_fan_state_1a7e44f74ea57d0d2b501a13b99029ecdb"></span>bool <code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current ON/OFF state of this fan. </p>
 </dd></dl>
 
@@ -127,7 +128,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan8FanState14is_oscillatingEv">
-<span id="_CPPv2NK3fan8FanState14is_oscillatingEv"></span><span id="fan::FanState::is_oscillatingC"></span><span class="target" id="classfan_1_1_fan_state_1a21398d3db9ce7c7b2924526b4f7649bf"></span>bool <code class="descname">is_oscillating</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState14is_oscillatingEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan8FanState14is_oscillatingEv"></span><span id="fan::FanState::is_oscillatingC"></span><span class="target" id="classfan_1_1_fan_state_1a1bbe6f8abaa4abb4fd9f186831d4a34d"></span>bool <code class="descname">is_oscillating</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState14is_oscillatingEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current oscillating state of this fan. </p>
 </dd></dl>
 
@@ -139,7 +140,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan8FanState9get_speedEv">
-<span id="_CPPv2NK3fan8FanState9get_speedEv"></span><span id="fan::FanState::get_speedC"></span><span class="target" id="classfan_1_1_fan_state_1a71df8c8c05ee879c489e9cd4836c16eb"></span>FanSpeed <code class="descname">get_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9get_speedEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan8FanState9get_speedEv"></span><span id="fan::FanState::get_speedC"></span><span class="target" id="classfan_1_1_fan_state_1a138aed561f5eedd61532305176ada875"></span>FanSpeed <code class="descname">get_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9get_speedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current speed of this fan. </p>
 </dd></dl>
 
@@ -156,7 +157,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan8FanState10get_traitsEv">
-<span id="_CPPv2NK3fan8FanState10get_traitsEv"></span><span id="fan::FanState::get_traitsC"></span><span class="target" id="classfan_1_1_fan_state_1aca0d125db3cf869963b6cdb324fac02c"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N3fan9FanTraitsE" title="fan::FanTraits">FanTraits</a> &amp;<code class="descname">get_traits</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState10get_traitsEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan8FanState10get_traitsEv"></span><span id="fan::FanState::get_traitsC"></span><span class="target" id="classfan_1_1_fan_state_1aed9d5a2fe0c94f41621cf44189d315b3"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N3fan9FanTraitsE" title="fan::FanTraits">FanTraits</a> &amp;<code class="descname">get_traits</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState10get_traitsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the traits of this fan (i.e. what features it supports). </p>
 </dd></dl>
 
@@ -247,7 +248,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan9FanTraits20supports_oscillationEv">
-<span id="_CPPv2NK3fan9FanTraits20supports_oscillationEv"></span><span id="fan::FanTraits::supports_oscillationC"></span><span class="target" id="classfan_1_1_fan_traits_1a41a09258aa7ffdc7ee712696688436d0"></span>bool <code class="descname">supports_oscillation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan9FanTraits20supports_oscillationEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan9FanTraits20supports_oscillationEv"></span><span id="fan::FanTraits::supports_oscillationC"></span><span class="target" id="classfan_1_1_fan_traits_1ab9159c27acc8bb7143c6293ab4ee4cd7"></span>bool <code class="descname">supports_oscillation</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan9FanTraits20supports_oscillationEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Return if this fan supports oscillation. </p>
 </dd></dl>
 
@@ -259,7 +260,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan9FanTraits14supports_speedEv">
-<span id="_CPPv2NK3fan9FanTraits14supports_speedEv"></span><span id="fan::FanTraits::supports_speedC"></span><span class="target" id="classfan_1_1_fan_traits_1affd6ca59af6bb782ac1baa6029816e17"></span>bool <code class="descname">supports_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan9FanTraits14supports_speedEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan9FanTraits14supports_speedEv"></span><span id="fan::FanTraits::supports_speedC"></span><span class="target" id="classfan_1_1_fan_traits_1ad1bb9d94f3387cbd5da41aca62d302b6"></span>bool <code class="descname">supports_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan9FanTraits14supports_speedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Return if this fan supports speed modes. </p>
 </dd></dl>
 
@@ -296,7 +297,7 @@ state updates.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N3fan17BasicFanComponent10set_binaryEPN6output12BinaryOutputE">
-<span id="_CPPv2N3fan17BasicFanComponent10set_binaryEPN6output12BinaryOutputE"></span><span id="fan::BasicFanComponent::set_binary__output::BinaryOutputP"></span><span class="target" id="classfan_1_1_basic_fan_component_1acd8883b841a26b5be39016a674810db1"></span>void <code class="descname">set_binary</code><span class="sig-paren">(</span>output::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent10set_binaryEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N3fan17BasicFanComponent10set_binaryEPN6output12BinaryOutputE"></span><span id="fan::BasicFanComponent::set_binary__output::BinaryOutputP"></span><span class="target" id="classfan_1_1_basic_fan_component_1acd8883b841a26b5be39016a674810db1"></span>void <code class="descname">set_binary</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan17BasicFanComponent10set_binaryEPN6output12BinaryOutputE" title="fan::BasicFanComponent::set_binary::output">output</a>::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent10set_binaryEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a fan that supports binary state operation (ON/OFF). </p>
 <p>Can’t be mixed with set_speed.</p>
 <p><dl class="docutils">
@@ -311,7 +312,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff">
-<span id="_CPPv2N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff"></span><span id="fan::BasicFanComponent::set_speed__output::FloatOutputP.float.float.float.float"></span><span class="target" id="classfan_1_1_basic_fan_component_1aa52ea51aab0d59d625643a4455f3f6d7"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span>output::FloatOutput *<em>output</em>, float <em>off_speed</em> = 0.0, float <em>low_speed</em> = 0.33, float <em>medium_speed</em> = 0.66, float <em>high_speed</em> = 1.0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff"></span><span id="fan::BasicFanComponent::set_speed__output::FloatOutputP.float.float.float.float"></span><span class="target" id="classfan_1_1_basic_fan_component_1aa52ea51aab0d59d625643a4455f3f6d7"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff" title="fan::BasicFanComponent::set_speed::output">output</a>::FloatOutput *<em>output</em>, float <em>off_speed</em> = 0.0, float <em>low_speed</em> = 0.33, float <em>medium_speed</em> = 0.66, float <em>high_speed</em> = 1.0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a fan that supports speed operation (OFF/LOW/MEDIUM/HIGH SPEED). </p>
 <p>Can’t be mixed with set_binary.</p>
 <p><dl class="docutils">
@@ -344,7 +345,7 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan17BasicFanComponent9get_stateEv">
-<span id="_CPPv2NK3fan17BasicFanComponent9get_stateEv"></span><span id="fan::BasicFanComponent::get_stateC"></span><span class="target" id="classfan_1_1_basic_fan_component_1a64956ccbe954e81bd9a9a9eacbf24ee4"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan17BasicFanComponent9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan17BasicFanComponent9get_stateEv"></span><span id="fan::BasicFanComponent::get_stateC"></span><span class="target" id="classfan_1_1_basic_fan_component_1a429e53ad520578f53bc06f5ab7bb2694"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan17BasicFanComponent9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -498,27 +499,27 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan16MQTTFanComponent29get_oscillation_command_topicEv">
-<span id="_CPPv2NK3fan16MQTTFanComponent29get_oscillation_command_topicEv"></span><span id="fan::MQTTFanComponent::get_oscillation_command_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a0a6fe69dfd09f94afc98dfe46f719c0b"></span><em class="property">const</em> std::string <code class="descname">get_oscillation_command_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent29get_oscillation_command_topicEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan16MQTTFanComponent29get_oscillation_command_topicEv"></span><span id="fan::MQTTFanComponent::get_oscillation_command_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a77674fa3747cfb30ec6a2251ef7933ae"></span><em class="property">const</em> std::string <code class="descname">get_oscillation_command_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent29get_oscillation_command_topicEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan16MQTTFanComponent27get_oscillation_state_topicEv">
-<span id="_CPPv2NK3fan16MQTTFanComponent27get_oscillation_state_topicEv"></span><span id="fan::MQTTFanComponent::get_oscillation_state_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1abb8b4b7594321be02e0a31c69f3fe54c"></span><em class="property">const</em> std::string <code class="descname">get_oscillation_state_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent27get_oscillation_state_topicEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan16MQTTFanComponent27get_oscillation_state_topicEv"></span><span id="fan::MQTTFanComponent::get_oscillation_state_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a2ba6a1ee9fa0fbef9102d1e1af83b0f3"></span><em class="property">const</em> std::string <code class="descname">get_oscillation_state_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent27get_oscillation_state_topicEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan16MQTTFanComponent23get_speed_command_topicEv">
-<span id="_CPPv2NK3fan16MQTTFanComponent23get_speed_command_topicEv"></span><span id="fan::MQTTFanComponent::get_speed_command_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a37238a05af71addd3dd273ed30d9f561"></span><em class="property">const</em> std::string <code class="descname">get_speed_command_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent23get_speed_command_topicEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan16MQTTFanComponent23get_speed_command_topicEv"></span><span id="fan::MQTTFanComponent::get_speed_command_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1ab88269d502ef10a6bddf2814add4fb26"></span><em class="property">const</em> std::string <code class="descname">get_speed_command_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent23get_speed_command_topicEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan16MQTTFanComponent21get_speed_state_topicEv">
-<span id="_CPPv2NK3fan16MQTTFanComponent21get_speed_state_topicEv"></span><span id="fan::MQTTFanComponent::get_speed_state_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1aec0541c4d6d8603255f7203ad542e1f8"></span><em class="property">const</em> std::string <code class="descname">get_speed_state_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent21get_speed_state_topicEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan16MQTTFanComponent21get_speed_state_topicEv"></span><span id="fan::MQTTFanComponent::get_speed_state_topicC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1af327809af051cc5f778136b3cf6e1815"></span><em class="property">const</em> std::string <code class="descname">get_speed_state_topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent21get_speed_state_topicEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan16MQTTFanComponent9get_stateEv">
-<span id="_CPPv2NK3fan16MQTTFanComponent9get_stateEv"></span><span id="fan::MQTTFanComponent::get_stateC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a38063c4c595efd95da47f457be3a3ab8"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK3fan16MQTTFanComponent9get_stateEv"></span><span id="fan::MQTTFanComponent::get_stateC"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a944068ebd7449e01e7cc7a6345ba3c4c"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan16MQTTFanComponent9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -561,7 +562,7 @@ state updates.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>

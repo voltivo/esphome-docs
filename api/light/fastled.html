@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,7 +47,7 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">FastLED Light Output</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
@@ -72,7 +73,7 @@
 library.</p>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Binary</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Binary</span>
 <span class="k">auto</span> <span class="n">fast_led</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_fast_led_light</span><span class="p">(</span><span class="s">&quot;Fast LED Light&quot;</span><span class="p">);</span>
 <span class="c1">// 60 NEOPIXEL LEDS on pin GPIO23</span>
 <span class="n">fast_led</span><span class="p">.</span><span class="n">fast_led</span><span class="o">-&gt;</span><span class="n">add_leds</span><span class="o">&lt;</span><span class="n">NEOPIXEL</span><span class="p">,</span> <span class="mi">23</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
@@ -100,23 +101,23 @@ library.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light27FastLEDLightOutputComponent14get_controllerEv">
-<span id="_CPPv2NK5light27FastLEDLightOutputComponent14get_controllerEv"></span><span id="light::FastLEDLightOutputComponent::get_controllerC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a79ac0826f435a3280bad84c5a632430b"></span>CLEDController *<code class="descname">get_controller</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent14get_controllerEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light27FastLEDLightOutputComponent14get_controllerEv"></span><span id="light::FastLEDLightOutputComponent::get_controllerC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a5c8e6d0b331678f7556c98b158f1ee20"></span>CLEDController *<code class="descname">get_controller</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent14get_controllerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Only for custom effects: Get the internal controller. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light27FastLEDLightOutputComponent4ledsEv">
-<span id="_CPPv2NK5light27FastLEDLightOutputComponent4ledsEv"></span><span id="light::FastLEDLightOutputComponent::ledsC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1ace8422459fbfa073959963e1b99288c0"></span>CRGB *<code class="descname">leds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent4ledsEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light27FastLEDLightOutputComponent4ledsEv"></span><span id="light::FastLEDLightOutputComponent::ledsC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a6c3d3acb39c8c5f0c60df9d80d5ca684"></span>CRGB *<code class="descname">leds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent4ledsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light27FastLEDLightOutputComponent4sizeEv">
-<span id="_CPPv2NK5light27FastLEDLightOutputComponent4sizeEv"></span><span id="light::FastLEDLightOutputComponent::sizeC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1af364d350c8e1e1d4826d62638a360178"></span>int <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light27FastLEDLightOutputComponent4sizeEv"></span><span id="light::FastLEDLightOutputComponent::sizeC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a5c84fcf4e14a71051dfe729ca758c44e"></span>int <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5light27FastLEDLightOutputComponentixEi">
-<span id="_CPPv2NK5light27FastLEDLightOutputComponentixEi"></span><span id="light::FastLEDLightOutputComponent::subscript-operator__iC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1ae9b8c1e713eeb41e6ed01b452b38be04"></span>CRGB &amp;<code class="descname">operator[]</code><span class="sig-paren">(</span>int <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponentixEi" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light27FastLEDLightOutputComponentixEi"></span><span id="light::FastLEDLightOutputComponent::subscript-operator__iC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a64d3864b40b279ad76fa4592f3051c3e"></span>CRGB &amp;<code class="descname">operator[]</code><span class="sig-paren">(</span>int <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponentixEi" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -131,7 +132,7 @@ library.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK5light27FastLEDLightOutputComponent11effect_dataEv">
-<span id="_CPPv2NK5light27FastLEDLightOutputComponent11effect_dataEv"></span><span id="light::FastLEDLightOutputComponent::effect_dataC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a65ba05e9b60e9bfbdb61f8f589eb0fd6"></span>uint8_t *<code class="descname">effect_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent11effect_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK5light27FastLEDLightOutputComponent11effect_dataEv"></span><span id="light::FastLEDLightOutputComponent::effect_dataC"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a10194b8662e2785b87016c00d7ed2535"></span>uint8_t *<code class="descname">effect_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light27FastLEDLightOutputComponent11effect_dataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -170,12 +171,12 @@ library.</p>
 
 <dl class="function">
 <dt id="_CPPv3N5light27FastLEDLightOutputComponent8add_ledsEi">
-<span id="_CPPv2N5light27FastLEDLightOutputComponent8add_ledsEi"></span><em class="property">template </em>&lt;ESPIChipsets <em>CHIPSET</em>, uint8_t <em>DATA_PIN</em>, uint8_t <em>CLOCK_PIN</em>&gt;<br /><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a9b326168c1842bdebba09f8f789f045d"></span>CLEDController &amp;<code class="descname">add_leds</code><span class="sig-paren">(</span>int <em>num_leds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light27FastLEDLightOutputComponent8add_ledsEi" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light27FastLEDLightOutputComponent8add_ledsEi"></span><em class="property">template </em>&lt;ESPIChipsets <em>CHIPSET</em>, uint8_t <em>DATA_PIN</em>, uint8_t <em>CLOCK_PIN</em>&gt;<br /><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a9b326168c1842bdebba09f8f789f045d"></span>CLEDController &amp;<code class="descname">add_leds</code><span class="sig-paren">(</span>int <em>num_leds</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N5light27FastLEDLightOutputComponent8add_ledsEi">
-<em class="property">template </em>&lt;ESPIChipsets <em>CHIPSET</em>, uint8_t <em>DATA_PIN</em>, uint8_t <em>CLOCK_PIN</em>, EOrder <em>RGB_ORDER</em>&gt;<br /><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a733a7e58e7d6401164fdba35df773e24"></span>CLEDController &amp;<code class="descname">add_leds</code><span class="sig-paren">(</span>int <em>num_leds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light27FastLEDLightOutputComponent8add_ledsEi" title="Permalink to this definition">¶</a><br /></dt>
+<em class="property">template </em>&lt;ESPIChipsets <em>CHIPSET</em>, uint8_t <em>DATA_PIN</em>, uint8_t <em>CLOCK_PIN</em>, EOrder <em>RGB_ORDER</em>&gt;<br /><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component_1a733a7e58e7d6401164fdba35df773e24"></span>CLEDController &amp;<code class="descname">add_leds</code><span class="sig-paren">(</span>int <em>num_leds</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -357,7 +358,7 @@ library.</p>
       &copy;2018, Otto Winter.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
     </div>
