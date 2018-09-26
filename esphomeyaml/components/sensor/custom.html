@@ -53,6 +53,7 @@
 <li><a class="reference internal" href="#step-1-custom-sensor-definition">Step 1: Custom Sensor Definition</a></li>
 <li><a class="reference internal" href="#step-2-registering-the-custom-sensor">Step 2: Registering the custom sensor</a></li>
 <li><a class="reference internal" href="#step-3-bmp180-support">Step 3: BMP180 support</a></li>
+<li><a class="reference internal" href="#bonus-sensors-with-multiple-output-values">Bonus: Sensors With Multiple Output Values</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -115,6 +116,8 @@ I’m here to help :) <a class="reference external" href="https://discord.gg/KhA
 
 <span class="k">class</span> <span class="nc">CustomSensor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">Component</span><span class="p">,</span> <span class="n">public</span> <span class="n">sensor</span><span class="p">::</span><span class="n">Sensor</span> <span class="p">{</span>
  <span class="n">public</span><span class="p">:</span>
+  <span class="n">CustomSensor</span><span class="p">(</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">:</span> <span class="n">Sensor</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{}</span>
+
   <span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span>
     <span class="o">//</span> <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">called</span> <span class="n">by</span> <span class="n">App</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
   <span class="p">}</span>
@@ -127,9 +130,8 @@ I’m here to help :) <a class="reference external" href="https://discord.gg/KhA
   <span class="o">//</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>Additionally, you need to turn off an internal flag that makes esphomelib only compile what it sees in
-the configuration, which can cause build issues with custom components. But don’t worry, this should only
-slow down build times a bit:</p>
+<p>Additionally, you need to change an internal flag that changes how esphomeyaml compiles files.
+The only downside is that this will make build times <em>a tiny bit</em> slower:</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
   <span class="c1"># ...</span>
   <span class="n">use_custom_code</span><span class="p">:</span> <span class="kc">True</span>
@@ -151,13 +153,14 @@ to do in an Arduino sketch.</p>
 <p>What this line is essentially saying is that we’re defining our own class that’s called <code class="docutils literal notranslate"><span class="pre">CustomSensor</span></code>
 which is also a subclass of <code class="docutils literal notranslate"><span class="pre">Component</span></code> and <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> (in the namespace <code class="docutils literal notranslate"><span class="pre">sensor::</span></code>).
 <code class="docutils literal notranslate"><span class="pre">Component</span></code> is there so that we can register it in our application and so that we will receive <code class="docutils literal notranslate"><span class="pre">setup()</span></code>
-and <code class="docutils literal notranslate"><span class="pre">loop()</span></code> calls. We’re also inheriting from the <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> class so that our custom sensor can be used
-by the MQTT sensor to automatically display it in the Home Assistant frontend.</p>
+and <code class="docutils literal notranslate"><span class="pre">loop()</span></code> calls. We’re also inheriting from the <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> class so that our custom sensor can send sensor
+values to the frontend (like MQTT).</p>
 <p>As most sensors really just setup some pins and then check the sensor every x seconds,
 there’s another abstraction that we’ll use to simplify our code: <code class="docutils literal notranslate"><span class="pre">PollingSensorComponent</span></code>.</p>
 <div class="code cpp highlight-default notranslate"><div class="highlight"><pre>class CustomSensor : public sensor::PollingSensorComponent {
  public:
-  CustomSensor(uint32_t update_interval) : sensor::PollingSensorComponent(update_interval) {}
+  CustomSensor(const std::string &amp;name, uint32_t update_interval)
+    : sensor::PollingSensorComponent(name, update_interval) {}
 
   void setup() override {
     // This will be called by App.setup()
@@ -173,9 +176,10 @@ just replace the <code class="docutils literal notranslate"><span class="pre">lo
 Because with most sensors, you really don’t need to get the latest values with every single <code class="docutils literal notranslate"><span class="pre">loop()</span></code>
 call (which can be called many times per second). If we forward the <code class="docutils literal notranslate"><span class="pre">update_interval</span></code> in our <em>constructor</em>
 (line 3), <code class="docutils literal notranslate"><span class="pre">PollingSensorComponent</span></code> will call <code class="docutils literal notranslate"><span class="pre">update()</span></code> for us every <code class="docutils literal notranslate"><span class="pre">update_interval</span></code>
-milliseconds, so that we don’t have to do time checking ourself.
-You don’t really need to know about constructors for now, but I would definitely recommend it.</p>
-<p>Let’s also now make our sensor actually <em>output</em> something (42 for now):</p>
+milliseconds, so that we don’t have to do time checking ourselves.
+You don’t really need to know about C++ constructors for now, but I would definitely recommend reading up on them
+in the Internet.</p>
+<p>Let’s also now make our sensor actually <em>output</em> values (42 for now):</p>
 <div class="code cpp highlight-default notranslate"><div class="highlight"><pre>// class CustomSensor ...
   // ... previous code
   void update() override {
@@ -187,8 +191,9 @@ You don’t really need to know about constructors for now, but I would definite
 };
 </pre></div>
 </div>
-<p>Every time <code class="docutils literal notranslate"><span class="pre">update</span></code> is called we will now <strong>push</strong> a new value to the MQTT sensor component that’s
-listening to our events. Additionally, we created a function that tells the sensor what unit of measurement the
+<p>Every time <code class="docutils literal notranslate"><span class="pre">update</span></code> is called we will now <strong>push</strong> a new value to the frontend.
+The front-end will then relay those values to MQTT and finally to Home Assistant.
+Additionally, we created a function that tells the sensor what unit of measurement the
 value is in, this is not strictly required and only used for a nice output in Home Assistant.</p>
 </div>
 <div class="section" id="step-2-registering-the-custom-sensor">
@@ -199,13 +204,12 @@ so esphomelib can’t know about it. Let’s change that.</p>
 <p>In your global <code class="docutils literal notranslate"><span class="pre">setup()</span></code> method, after you’ve setup all other components, do the following:</p>
 <div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
   <span class="o">//</span> <span class="o">...</span>
-  <span class="n">App</span><span class="o">.</span><span class="n">init_mqtt</span><span class="p">(</span><span class="o">...</span><span class="p">);</span>
-
-  <span class="o">//</span> <span class="o">...</span> <span class="n">other</span> <span class="n">stuff</span>
+  <span class="o">//</span> <span class="o">===========</span> <span class="n">AUTO</span> <span class="n">GENERATED</span> <span class="n">CODE</span> <span class="n">END</span> <span class="o">============</span>
+  <span class="o">//</span> <span class="o">=========</span> <span class="n">YOU</span> <span class="n">CAN</span> <span class="n">EDIT</span> <span class="n">AFTER</span> <span class="n">THIS</span> <span class="n">LINE</span> <span class="o">=========</span>
 
   <span class="n">auto</span> <span class="o">*</span><span class="n">custom_sensor</span> <span class="o">=</span> <span class="n">new</span> <span class="n">CustomSensor</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span> <span class="o">//</span> <span class="n">update</span> <span class="n">every</span> <span class="mi">5000</span><span class="n">ms</span> <span class="ow">or</span> <span class="n">every</span> <span class="mi">5</span> <span class="n">seconds</span><span class="o">.</span>
   <span class="n">App</span><span class="o">.</span><span class="n">register_component</span><span class="p">(</span><span class="n">custom_sensor</span><span class="p">);</span>
-  <span class="n">App</span><span class="o">.</span><span class="n">make_mqtt_sensor_for</span><span class="p">(</span><span class="n">custom_sensor</span><span class="p">,</span> <span class="s2">&quot;Custom Sensor Example&quot;</span><span class="p">);</span>
+  <span class="n">App</span><span class="o">.</span><span class="n">register_sensor</span><span class="p">(</span><span class="n">custom_sensor</span><span class="p">);</span>
 
   <span class="n">App</span><span class="o">.</span><span class="n">setup</span><span class="p">();</span>
 <span class="p">}</span>
@@ -228,9 +232,11 @@ variable <code class="docutils literal notranslate"><span class="pre">custom_sen
 
 <span class="o">//</span> <span class="n">you</span> <span class="n">could</span> <span class="n">also</span> <span class="n">write</span> <span class="n">this</span><span class="p">,</span> <span class="n">it</span><span class="s1">&#39;s a bit shorter and works the same way.</span>
 <span class="o">//</span> <span class="n">auto</span> <span class="o">*</span><span class="n">custom_sensor</span> <span class="o">=</span> <span class="n">App</span><span class="o">.</span><span class="n">register_component</span><span class="p">(</span><span class="n">new</span> <span class="n">CustomSensor</span><span class="p">(</span><span class="mi">5000</span><span class="p">));</span>
+
+<span class="n">App</span><span class="o">.</span><span class="n">register_sensor</span><span class="p">(</span><span class="n">custom_sensor</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Lastly, we’re setting up a <code class="docutils literal notranslate"><span class="pre">MQTTSensorComponent</span></code> for our sensor, this mqtt component will automatically set up a
+<p>Lastly, we’re registering the <em>sensor</em> with <code class="docutils literal notranslate"><span class="pre">register_sensor</span></code>, this will automatically set up a
 bunch of callbacks so that it can publish state changes to MQTT when you call <code class="docutils literal notranslate"><span class="pre">publish_new_value()</span></code>,
 create automatic MQTT discovery messages and setup a moving average over the sensor values
 (adjust these as you would with any other sensor).</p>
@@ -249,19 +255,26 @@ the <code class="docutils literal notranslate"><span class="pre">common</span></
 <span class="n">upload_flags</span> <span class="o">=</span>
 </pre></div>
 </div>
-<p>Next, include the library in your main sketch file:</p>
+<p>Next, include the library at the top of you main sketch file (<code class="docutils literal notranslate"><span class="pre">&lt;NODE_NAME&gt;/src/main.cpp</span></code>):</p>
 <div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="c1">#include &quot;esphomelib/application.h&quot;</span>
 <span class="c1">#include &lt;Adafruit_BMP085.h&gt;</span>
 
 <span class="n">using</span> <span class="n">namespace</span> <span class="n">esphomelib</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="o">...</span>
 </pre></div>
 </div>
 <p>Then update our sensor for BMP180 support:</p>
-<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BMP180Sensor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">sensor</span><span class="p">::</span><span class="n">PollingSensorComponent</span> <span class="p">{</span>
+<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">BMP180Sensor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">sensor</span><span class="p">::</span><span class="n">PollingSensorComponent</span> <span class="p">{</span>
  <span class="n">public</span><span class="p">:</span>
   <span class="n">Adafruit_BMP085</span> <span class="n">bmp</span><span class="p">;</span>
 
-  <span class="n">BMP180Sensor</span><span class="p">(</span><span class="n">uint32_t</span> <span class="n">update_interval</span><span class="p">)</span> <span class="p">:</span> <span class="n">sensor</span><span class="p">::</span><span class="n">PollingSensorComponent</span><span class="p">(</span><span class="n">update_interval</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="n">BMP180Sensor</span><span class="p">(</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">update_interval</span><span class="p">)</span>
+      <span class="p">:</span> <span class="n">sensor</span><span class="p">::</span><span class="n">PollingSensorComponent</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">update_interval</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
 
   <span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span>
     <span class="n">bmp</span><span class="o">.</span><span class="n">begin</span><span class="p">();</span>
@@ -275,12 +288,101 @@ the <code class="docutils literal notranslate"><span class="pre">common</span></
   <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">unit_of_measurement</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;hPa&quot;</span><span class="p">;</span> <span class="p">}</span>
   <span class="n">int8_t</span> <span class="n">accuracy_decimals</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="mi">2</span> <span class="n">decimal</span> <span class="n">places</span> <span class="n">of</span> <span class="n">accuracy</span><span class="o">.</span>
 <span class="p">};</span>
+
+<span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="o">...</span>
+
+  <span class="n">auto</span> <span class="o">*</span><span class="n">custom_sensor</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BMP180Sensor</span><span class="p">(</span><span class="s2">&quot;My BMP180 sensor&quot;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+  <span class="n">App</span><span class="o">.</span><span class="n">register_component</span><span class="p">(</span><span class="n">custom_sensor</span><span class="p">);</span>
+  <span class="n">App</span><span class="o">.</span><span class="n">register_sensor</span><span class="p">(</span><span class="n">custom_sensor</span><span class="p">);</span>
+
+  <span class="n">App</span><span class="o">.</span><span class="n">setup</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="o">...</span>
 </pre></div>
 </div>
 <p>There’s not too much going on there. First, we define the variable <code class="docutils literal notranslate"><span class="pre">bmp</span></code> of type <code class="docutils literal notranslate"><span class="pre">Adafruit_BMP085</span></code>
 inside our class as a class member. In <code class="docutils literal notranslate"><span class="pre">setup()</span></code> we initialize the library and in <code class="docutils literal notranslate"><span class="pre">update()</span></code> we read the
 pressure and send it out to MQTT.</p>
 <p>You’ve now successfully created your first custom sensor component 🎉 Happy coding!</p>
+</div>
+<div class="section" id="bonus-sensors-with-multiple-output-values">
+<h2>Bonus: Sensors With Multiple Output Values<a class="headerlink" href="#bonus-sensors-with-multiple-output-values" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">PollingSensorComponent</span></code> doesn’t fit every use-case. Sometimes, (as with the BMP180),
+a sensor can expose multiple values (temperature <em>and</em> pressure, for example).</p>
+<p>Doing so in esphomelib is a bit more difficult. Basically, we will have to change our sensor
+model to have <em>one component</em> that reads out the values and <em>one sensor class</em> for each value
+we want to expose.</p>
+<p>Let’s look at what that could look like in code:</p>
+<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">An</span> <span class="n">empty</span> <span class="n">sensor</span> <span class="n">subclass</span> <span class="n">that</span> <span class="n">will</span> <span class="s2">&quot;proxy&quot;</span> <span class="n">the</span> <span class="n">temperature</span> <span class="n">values</span>
+<span class="k">class</span> <span class="nc">BMP280TemperatureSensor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">sensor</span><span class="p">::</span><span class="n">Sensor</span> <span class="p">{</span>
+ <span class="n">public</span><span class="p">:</span>
+  <span class="n">BMP280TemperatureSensor</span><span class="p">(</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">:</span> <span class="n">sensor</span><span class="p">::</span><span class="n">Sensor</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">unit_of_measurement</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;°C&quot;</span><span class="p">;</span> <span class="p">}</span>
+  <span class="n">int8_t</span> <span class="n">accuracy_decimals</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="o">//</span> <span class="n">An</span> <span class="n">empty</span> <span class="n">sensor</span> <span class="n">subclass</span> <span class="n">that</span> <span class="n">will</span> <span class="s2">&quot;proxy&quot;</span> <span class="n">the</span> <span class="n">pressure</span> <span class="n">values</span>
+<span class="k">class</span> <span class="nc">BMP280PressureSensor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">sensor</span><span class="p">::</span><span class="n">Sensor</span> <span class="p">{</span>
+ <span class="n">public</span><span class="p">:</span>
+  <span class="n">BMP280PressureSensor</span><span class="p">(</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">:</span> <span class="n">sensor</span><span class="p">::</span><span class="n">Sensor</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">unit_of_measurement</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;hPa&quot;</span><span class="p">;</span> <span class="p">}</span>
+  <span class="n">int8_t</span> <span class="n">accuracy_decimals</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">BMP180Component</span> <span class="p">:</span> <span class="n">public</span> <span class="n">PollingComponent</span> <span class="p">{</span>
+ <span class="n">public</span><span class="p">:</span>
+  <span class="n">Adafruit_BMP085</span> <span class="n">bmp</span><span class="p">;</span>
+  <span class="n">BMP280TemperatureSensor</span> <span class="o">*</span><span class="n">temperature_sensor</span><span class="p">;</span>
+  <span class="n">BMP280PressureSensor</span> <span class="o">*</span><span class="n">pressure_sensor</span><span class="p">;</span>
+
+  <span class="n">BMP180Component</span><span class="p">(</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">temperature_name</span><span class="p">,</span> <span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">pressure_name</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">update_interval</span><span class="p">)</span>
+      <span class="p">:</span> <span class="n">PollingComponent</span><span class="p">(</span><span class="n">update_interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">this</span><span class="o">-&gt;</span><span class="n">temperature_sensor</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BMP280TemperatureSensor</span><span class="p">(</span><span class="n">temperature_name</span><span class="p">);</span>
+    <span class="n">this</span><span class="o">-&gt;</span><span class="n">pressure_sensor</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BMP280PressureSensor</span><span class="p">(</span><span class="n">pressure_name</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span>
+    <span class="n">bmp</span><span class="o">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="n">void</span> <span class="n">update</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">sensor</span> <span class="n">reading</span> <span class="n">logic</span><span class="o">.</span>
+    <span class="nb">int</span> <span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">readPressure</span><span class="p">();</span>
+    <span class="n">pressure_sensor</span><span class="o">-&gt;</span><span class="n">push_new_value</span><span class="p">(</span><span class="n">pressure</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">);</span>
+
+    <span class="nb">float</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">readTemperature</span><span class="p">();</span>
+    <span class="n">temperature_sensor</span><span class="o">-&gt;</span><span class="n">push_new_value</span><span class="p">(</span><span class="n">temperature</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="o">...</span>
+
+  <span class="n">auto</span> <span class="o">*</span><span class="n">custom_bmp180</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BMP180Component</span><span class="p">(</span><span class="s2">&quot;BMP180 Temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;BMP180 Pressure&quot;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+  <span class="o">//</span> <span class="n">The</span> <span class="n">BMP180Component</span> <span class="ow">is</span> <span class="n">a</span> <span class="o">*</span><span class="n">component</span><span class="o">*</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">registered</span><span class="o">.</span>
+  <span class="n">App</span><span class="o">.</span><span class="n">register_component</span><span class="p">(</span><span class="n">custom_bmp180</span><span class="p">);</span>
+
+  <span class="o">//</span> <span class="n">But</span> <span class="n">the</span> <span class="n">temperature</span><span class="o">&amp;</span><span class="n">pressure</span> <span class="n">classes</span> <span class="n">are</span> <span class="o">*</span><span class="n">sensors</span><span class="o">*</span><span class="p">,</span> <span class="n">so</span> <span class="n">each</span> <span class="n">of</span> <span class="n">them</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">registered</span>
+  <span class="n">App</span><span class="o">.</span><span class="n">register_sensor</span><span class="p">(</span><span class="n">custom_bmp180</span><span class="o">-&gt;</span><span class="n">temperature_sensor</span><span class="p">);</span>
+  <span class="n">App</span><span class="o">.</span><span class="n">register_sensor</span><span class="p">(</span><span class="n">custom_bmp180</span><span class="o">-&gt;</span><span class="n">pressure_sensor</span><span class="p">);</span>
+
+  <span class="n">App</span><span class="o">.</span><span class="n">setup</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>That’s a lot of code :P Basically, what it boils down to is you have one central component <code class="docutils literal notranslate"><span class="pre">BMP180Component</span></code>
+which handles the communication with the BMP180 and a <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> subclass for each value you want to expose.</p>
+<p>Most of the magic happens inside the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function. Here, the values are read from the BMP180 and are
+sent to esphomelib via the pressure/temperature sensor proxies we set up in the constructor.</p>
+<p>The only other thing you need to change is the registering inside <code class="docutils literal notranslate"><span class="pre">setup()</span></code>.
+Because <code class="docutils literal notranslate"><span class="pre">BMP180Component</span></code> is a <em>component</em> (because it has a lifecycle through the <code class="docutils literal notranslate"><span class="pre">setup()</span></code> and <code class="docutils literal notranslate"><span class="pre">loop()</span></code> methods),
+it needs to be registered with <code class="docutils literal notranslate"><span class="pre">App.register_component(...)</span></code>. However, as it’s now not a subclass
+of <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> anymore, it cannot be registered as a sensor.</p>
+<p>But because the <code class="docutils literal notranslate"><span class="pre">BMP280TemperatureSensor</span></code> and <code class="docutils literal notranslate"><span class="pre">BMP280PressureSensor</span></code> <em>are</em> subclasses of sensors,
+they do need to be registered so that esphomelib can do all the magic stuff like setting up MQTT discovery
+for them. That’s why we call <code class="docutils literal notranslate"><span class="pre">App.register_sensor</span></code> for each sensor we created in the end.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
