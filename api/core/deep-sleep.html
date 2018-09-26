@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Deep Sleep &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="I2CComponent" href="i2c.html" />
+    <link rel="prev" title="Web Server" href="web-server.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Deep Sleep</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#deepsleepcomponent">DeepSleepComponent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="deep-sleep">
+<h1>Deep Sleep<a class="headerlink" href="#deep-sleep" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deepsleepcomponent">
+<h3>DeepSleepComponent<a class="headerlink" href="#deepsleepcomponent" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv318DeepSleepComponent">
+<span id="_CPPv218DeepSleepComponent"></span><span id="DeepSleepComponent"></span><span class="target" id="class_deep_sleep_component"></span><em class="property">class </em><code class="descname">DeepSleepComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv318DeepSleepComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This component allows setting up the node to go into deep sleep mode to conserve battery. </p>
+<p>To set this component up, first set <em>when</em> the deep sleep should trigger using set_run_cycles and set_run_duration, then set how long the deep sleep should last using set_sleep_duration and optionally on the ESP32 set_wakeup_pin. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent18set_sleep_durationE8uint32_t">
+<span id="_CPPv2N18DeepSleepComponent18set_sleep_durationE8uint32_t"></span><span id="DeepSleepComponent::set_sleep_duration__uint32_t"></span><span class="target" id="class_deep_sleep_component_1af91032fd3383a39f125730d67d5f617e"></span>void <code class="descname">set_sleep_duration</code><span class="sig-paren">(</span>uint32_t <em>time_ms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent18set_sleep_durationE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the duration in ms the component should sleep once it’s in deep sleep mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent14set_wakeup_pinERK12GPIOInputPin">
+<span id="_CPPv2N18DeepSleepComponent14set_wakeup_pinERK12GPIOInputPin"></span><span id="DeepSleepComponent::set_wakeup_pin__GPIOInputPinCR"></span><span class="target" id="class_deep_sleep_component_1a4f2729c0c989856b135947ae459117b4"></span>void <code class="descname">set_wakeup_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent14set_wakeup_pinERK12GPIOInputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the pin to wake up to on the ESP32 once it’s in deep sleep mode. </p>
+<p>Use the inverted property to set the wakeup level. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent19set_wakeup_pin_modeE13WakeupPinMode">
+<span id="_CPPv2N18DeepSleepComponent19set_wakeup_pin_modeE13WakeupPinMode"></span><span id="DeepSleepComponent::set_wakeup_pin_mode__WakeupPinMode"></span><span class="target" id="class_deep_sleep_component_1ae658802d9f8b42ce8b792955124e17a5"></span>void <code class="descname">set_wakeup_pin_mode</code><span class="sig-paren">(</span>WakeupPinMode <em>wakeup_pin_mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent19set_wakeup_pin_modeE13WakeupPinMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent14set_run_cyclesE8uint32_t">
+<span id="_CPPv2N18DeepSleepComponent14set_run_cyclesE8uint32_t"></span><span id="DeepSleepComponent::set_run_cycles__uint32_t"></span><span class="target" id="class_deep_sleep_component_1abcbaff4847a3b6078a0e720aea2cc499"></span>void <code class="descname">set_run_cycles</code><span class="sig-paren">(</span>uint32_t <em>cycles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent14set_run_cyclesE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the number of loop cycles after which the node should go into deep sleep mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent16set_run_durationE8uint32_t">
+<span id="_CPPv2N18DeepSleepComponent16set_run_durationE8uint32_t"></span><span id="DeepSleepComponent::set_run_duration__uint32_t"></span><span class="target" id="class_deep_sleep_component_1a4c6d554907ddabd2d81baa6c253bd8d2"></span>void <code class="descname">set_run_duration</code><span class="sig-paren">(</span>uint32_t <em>time_ms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent16set_run_durationE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a duration in ms for how long the code should run before entering deep sleep mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent5setupEv">
+<span id="_CPPv2N18DeepSleepComponent5setupEv"></span><span id="DeepSleepComponent::setup"></span><span class="target" id="class_deep_sleep_component_1aff189f0bcc1b6f6d294d15c4255d3534"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_deep_sleep_component_1aff189f0bcc1b6f6d294d15c4255d3534"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent4loopEv">
+<span id="_CPPv2N18DeepSleepComponent4loopEv"></span><span id="DeepSleepComponent::loop"></span><span class="target" id="class_deep_sleep_component_1a0a1f7ca51ef51e595a1f436b642f69ed"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_deep_sleep_component_1a0a1f7ca51ef51e595a1f436b642f69ed"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#class_deep_sleep_component_1aff189f0bcc1b6f6d294d15c4255d3534"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK18DeepSleepComponent17get_loop_priorityEv">
+<span id="_CPPv2NK18DeepSleepComponent17get_loop_priorityEv"></span><span id="DeepSleepComponent::get_loop_priorityC"></span><span class="target" id="class_deep_sleep_component_1a02b279a2c0e6755dac8c3afaa04fc574"></span>float <code class="descname">get_loop_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK18DeepSleepComponent17get_loop_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_deep_sleep_component_1a0a1f7ca51ef51e595a1f436b642f69ed"><span class="std std-ref">loop()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The loop priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK18DeepSleepComponent18get_setup_priorityEv">
+<span id="_CPPv2NK18DeepSleepComponent18get_setup_priorityEv"></span><span id="DeepSleepComponent::get_setup_priorityC"></span><span class="target" id="class_deep_sleep_component_1a508726468b5ce2b301ef47016e3431d2"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK18DeepSleepComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_deep_sleep_component_1aff189f0bcc1b6f6d294d15c4255d3534"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent12begin_sleep_Eb">
+<span id="_CPPv2N18DeepSleepComponent12begin_sleep_Eb"></span><span id="DeepSleepComponent::begin_sleep___b"></span><span class="target" id="class_deep_sleep_component_1a5eb778135a25f8e8d45b84bd4ed45cce"></span>void <code class="descname">begin_sleep_</code><span class="sig-paren">(</span>bool <em>manual</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent12begin_sleep_Eb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Helper to enter deep sleep mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent28make_enter_deep_sleep_actionEv">
+<span id="_CPPv2N18DeepSleepComponent28make_enter_deep_sleep_actionEv"></span><span id="DeepSleepComponent::make_enter_deep_sleep_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_deep_sleep_component_1a6cb4697b5b33c0039914ff1424635f42"></span>EnterDeepSleepAction&lt;T&gt; *<code class="descname">make_enter_deep_sleep_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent28make_enter_deep_sleep_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent30make_prevent_deep_sleep_actionEv">
+<span id="_CPPv2N18DeepSleepComponent30make_prevent_deep_sleep_actionEv"></span><span id="DeepSleepComponent::make_prevent_deep_sleep_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_deep_sleep_component_1ae99ab105f111a139cbdbee4257e80844"></span>PreventDeepSleepAction&lt;T&gt; *<code class="descname">make_prevent_deep_sleep_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent30make_prevent_deep_sleep_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N18DeepSleepComponent18prevent_deep_sleepEv">
+<span id="_CPPv2N18DeepSleepComponent18prevent_deep_sleepEv"></span><span id="DeepSleepComponent::prevent_deep_sleep"></span><span class="target" id="class_deep_sleep_component_1a46fe4e7dc7dc7ecd27227685a1a163e5"></span>void <code class="descname">prevent_deep_sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N18DeepSleepComponent18prevent_deep_sleepEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent15sleep_duration_E">
+<span id="_CPPv2N18DeepSleepComponent15sleep_duration_E"></span><span id="DeepSleepComponent::sleep_duration___optional:uint64_t:"></span><span class="target" id="class_deep_sleep_component_1a21516bb6a8ed8ffe76a195cf44d93aa1"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint64_t&gt; <code class="descname">sleep_duration_</code><a class="headerlink" href="#_CPPv3N18DeepSleepComponent15sleep_duration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent11wakeup_pin_E">
+<span id="_CPPv2N18DeepSleepComponent11wakeup_pin_E"></span><span id="DeepSleepComponent::wakeup_pin___optional:GPIOPinP:"></span><span class="target" id="class_deep_sleep_component_1aa67cd350d7ff96284e91748caf5d4465"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *&gt; <code class="descname">wakeup_pin_</code><a class="headerlink" href="#_CPPv3N18DeepSleepComponent11wakeup_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent16wakeup_pin_mode_E">
+<span id="_CPPv2N18DeepSleepComponent16wakeup_pin_mode_E"></span><span id="DeepSleepComponent::wakeup_pin_mode___WakeupPinMode"></span><span class="target" id="class_deep_sleep_component_1ae5a1e5c19b4230c6b44f7dc10877ad14"></span>WakeupPinMode <code class="descname">wakeup_pin_mode_</code> = {WAKEUP_PIN_MODE_IGNORE}<a class="headerlink" href="#_CPPv3N18DeepSleepComponent16wakeup_pin_mode_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent12loop_cycles_E">
+<span id="_CPPv2N18DeepSleepComponent12loop_cycles_E"></span><span id="DeepSleepComponent::loop_cycles___optional:uint32_t:"></span><span class="target" id="class_deep_sleep_component_1a13e6fd8104f507463a7985d88d80f7dc"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">loop_cycles_</code><a class="headerlink" href="#_CPPv3N18DeepSleepComponent12loop_cycles_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent14at_loop_cycle_E">
+<span id="_CPPv2N18DeepSleepComponent14at_loop_cycle_E"></span><span id="DeepSleepComponent::at_loop_cycle___uint32_t"></span><span class="target" id="class_deep_sleep_component_1a9e25ffe4ec66e4728833f73f2247075e"></span>uint32_t <code class="descname">at_loop_cycle_</code> = {0}<a class="headerlink" href="#_CPPv3N18DeepSleepComponent14at_loop_cycle_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent13run_duration_E">
+<span id="_CPPv2N18DeepSleepComponent13run_duration_E"></span><span id="DeepSleepComponent::run_duration___optional:uint32_t:"></span><span class="target" id="class_deep_sleep_component_1ae4a1aa26e221d1b191d6fbf81e33484f"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">run_duration_</code><a class="headerlink" href="#_CPPv3N18DeepSleepComponent13run_duration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent22next_enter_deep_sleep_E">
+<span id="_CPPv2N18DeepSleepComponent22next_enter_deep_sleep_E"></span><span id="DeepSleepComponent::next_enter_deep_sleep___b"></span><span class="target" id="class_deep_sleep_component_1a30f815f44643c2bb7d6a2373b241c2c5"></span>bool <code class="descname">next_enter_deep_sleep_</code> = {false}<a class="headerlink" href="#_CPPv3N18DeepSleepComponent22next_enter_deep_sleep_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18DeepSleepComponent8prevent_E">
+<span id="_CPPv2N18DeepSleepComponent8prevent_E"></span><span id="DeepSleepComponent::prevent___b"></span><span class="target" id="class_deep_sleep_component_1a114cfeea33894afeffdc9e386ce2f240"></span>bool <code class="descname">prevent_</code> = {false}<a class="headerlink" href="#_CPPv3N18DeepSleepComponent8prevent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

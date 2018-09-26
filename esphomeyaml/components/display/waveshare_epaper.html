@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Waveshare E-Paper Display &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ADS1115 Hub" href="../ads1115.html" />
+    <link rel="prev" title="SSD1306 OLED Display over SPI" href="ssd1306_spi.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Waveshare E-Paper Display</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="waveshare-e-paper-display">
+<h1>Waveshare E-Paper Display<a class="headerlink" href="#waveshare-e-paper-display" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">waveshare_epaper</span></code> display platform allows you to use
+some E-Paper displays sold by <a class="reference external" href="https://www.waveshare.com/product/modules/oleds-lcds/e-paper.htm">Waveshare</a>
+with esphomelib. Similar modules sold by other vendors might also work but not have been tested yet. Currently only
+single-color E-Ink displays are implemented and of those only a few modules.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/waveshare_epaper-full.jpg"><img alt="../../../_images/waveshare_epaper-full.jpg" src="../../../_images/waveshare_epaper-full.jpg" style="width: 75.0%;" /></a>
+<p class="caption"><span class="caption-text">Waveshare E-Paper 2.9 Inch E-Paper Display.</span></p>
+</div>
+<p>The communication esphomelib has chosen to use for this integration is 4-wire <a class="reference internal" href="../spi.html#spi"><span class="std std-ref">SPI</span></a>, as it’s the most stable
+and high-speed. So you need to make sure your board is set to the 4-wire SPI mode and have an <code class="docutils literal notranslate"><span class="pre">spi:</span></code> section in your
+configuration.</p>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="32%" />
+<col width="34%" />
+<col width="34%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>E-Paper Pin</strong></td>
+<td><strong>ESP Pin</strong></td>
+<td><strong>esphomelib Option</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">VCC</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">3.3V</span></code></td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GND</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">GND</span></code></td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">CLK</span></code></td>
+<td>Any GPIO</td>
+<td><code class="docutils literal notranslate"><span class="pre">spi.clk_pin</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">DIN</span></code></td>
+<td>Any GPIO</td>
+<td><code class="docutils literal notranslate"><span class="pre">spi.mosi_pin</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">CS</span></code></td>
+<td>Any GPIO</td>
+<td><code class="docutils literal notranslate"><span class="pre">cs_pin</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">DC</span></code></td>
+<td>Any GPIO</td>
+<td><code class="docutils literal notranslate"><span class="pre">dc_pin</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">BUSY</span></code> (Optional)</td>
+<td>Any GPIO</td>
+<td><code class="docutils literal notranslate"><span class="pre">busy_pin</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">RESET</span></code> (Optional)</td>
+<td>Any GPIO</td>
+<td><code class="docutils literal notranslate"><span class="pre">reset_pin</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/waveshare_epaper-pins.jpg"><img alt="../../../_images/waveshare_epaper-pins.jpg" src="../../../_images/waveshare_epaper-pins.jpg" style="width: 60.0%;" /></a>
+</div>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">spi</span><span class="p">:</span>
+  <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D1</span>
+
+<span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">waveshare_epaper</span>
+    <span class="n">cs_pin</span><span class="p">:</span> <span class="n">D2</span>
+    <span class="n">dc_pin</span><span class="p">:</span> <span class="n">D3</span>
+    <span class="n">busy_pin</span><span class="p">:</span> <span class="n">D4</span>
+    <span class="n">reset_pin</span><span class="p">:</span> <span class="n">D5</span>
+    <span class="n">model</span><span class="p">:</span> <span class="mf">2.90</span><span class="ow">in</span>
+    <span class="n">full_update_every</span><span class="p">:</span> <span class="mi">30</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">font</span><span class="p">),</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>cs_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The CS pin.</li>
+<li><strong>dc_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The DC pin.</li>
+<li><strong>model</strong> (<strong>Required</strong>): The model of the E-Paper display. Options are:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">1.54in</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">2.13in</span></code> (not tested)</li>
+<li><code class="docutils literal notranslate"><span class="pre">2.70in</span></code> (not tested)</li>
+<li><code class="docutils literal notranslate"><span class="pre">2.90in</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">4.20in</span></code> (not tested)</li>
+<li><code class="docutils literal notranslate"><span class="pre">7.50in</span></code> (not tested)</li>
+</ul>
+</li>
+<li><strong>busy_pin</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The BUSY pin. Defaults to not connected.</li>
+<li><strong>reset_pin</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The RESET pin. Defaults to not connected.
+Make sure you pull this pin high (by connecting it to 3.3V with a resistor) if not connected to a GPIO pin.</li>
+<li><strong>rotation</strong> (<em>Optional</em>): Set the rotation of the display. Everything you draw in <code class="docutils literal notranslate"><span class="pre">lambda:</span></code> will be rotated
+by this option. One of <code class="docutils literal notranslate"><span class="pre">0°</span></code> (default), <code class="docutils literal notranslate"><span class="pre">90°</span></code>, <code class="docutils literal notranslate"><span class="pre">180°</span></code>, <code class="docutils literal notranslate"><span class="pre">270°</span></code>.</li>
+<li><strong>full_update_every</strong> (<em>Optional</em>, int): E-Paper displays have two modes of switching to the next image: A partial
+update that only changes the pixels that have changed and a full update mode that first clears the entire display
+and then re-draws the image. The former is much quicker and nicer, but every so often a full update needs to happen
+because artifacts accumulate. On the <code class="docutils literal notranslate"><span class="pre">1.54in</span></code>, <code class="docutils literal notranslate"><span class="pre">2.13in</span></code> and <code class="docutils literal notranslate"><span class="pre">2.90in</span></code> models you have the option to switch only
+do a full-redraw every x-th time using this option. Defaults to <code class="docutils literal notranslate"><span class="pre">30</span></code> on the described models and a full update for
+all other models.</li>
+<li><strong>lambda</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>): The lambda to use for rendering the content on the display.
+See <a class="reference internal" href="index.html#display-engine"><span class="std std-ref">Display Rendering Engine</span></a> for more information.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to re-draw the screen. Defaults to <code class="docutils literal notranslate"><span class="pre">10s</span></code>.</li>
+<li><strong>spi_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="../spi.html#spi"><span class="std std-ref">SPI Component</span></a> if you want
+to use multiple SPI buses.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html"><span class="doc">Display Component</span></a></li>
+<li><a class="reference internal" href="../../../api/display/waveshare_epaper.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/soonuse/epd-library-arduino">Arduino Waveshare E-Paper library</a> by <a class="reference external" href="https://github.com/soonuse">Yehui (&#64;soonuse)</a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/display/waveshare_epaper.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

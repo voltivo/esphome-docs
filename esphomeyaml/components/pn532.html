@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PN532 NFC/RFID Controller Hub &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="RDM6300 NFC/RFID Hub" href="rdm6300.html" />
+    <link rel="prev" title="Status LED" href="status_led.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PN532 NFC/RFID Controller Hub</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="pn532-nfc-rfid-controller-hub">
+<h1>PN532 NFC/RFID Controller Hub<a class="headerlink" href="#pn532-nfc-rfid-controller-hub" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">pn532</span></code> component allows you to use PN532 NFC/RFID controllers
+(<a class="reference external" href="https://cdn-shop.adafruit.com/datasheets/pn532ds.pdf">datasheet</a>, <a class="reference external" href="https://www.adafruit.com/product/364">adafruit</a>)
+with esphomelib. This component is a global hub that establishes the connection to the PN532 via <a class="reference internal" href="spi.html#spi"><span class="std std-ref">SPI</span></a> and
+outputs its data. Using the <a class="reference internal" href="binary_sensor/pn532.html"><span class="doc">PN532 binary sensors</span></a> you can then
+create individual binary sensors that track if an NFC/RFID tag is currently detected by the PN532.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/pn532-full.jpg"><img alt="../../_images/pn532-full.jpg" src="../../_images/pn532-full.jpg" style="width: 60.0%;" /></a>
+</div>
+<p>See <a class="reference internal" href="binary_sensor/pn532.html#pn532-setting-up-tags"><span class="std std-ref">Setting Up Tags</span></a> for information on how to setup individual binary sensors for this component.</p>
+<p>As the communication with the PN532 is done using SPI for this integration, you need to set the two switches on
+the board to the SPI mode (usually by setting the first one to OFF and the second one to ON). Additionally, you need
+to have an <a class="reference internal" href="spi.html#spi"><span class="std std-ref">spi bus</span></a> in your configuration with both the <strong>miso_pin</strong> and <strong>mosi_pin</strong> set.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">spi</span><span class="p">:</span>
+  <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="n">miso_pin</span><span class="p">:</span> <span class="n">D1</span>
+  <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D2</span>
+
+<span class="n">pn532</span><span class="p">:</span>
+  <span class="n">cs_pin</span><span class="p">:</span> <span class="n">D3</span>
+  <span class="n">update_interval</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
+
+<span class="n">binary_sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pn532</span>
+    <span class="n">uid</span><span class="p">:</span> <span class="mi">74</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">94</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;PN532 NFC Tag&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>cs_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The pin on the ESP that the chip select line
+is connected to.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The duration of each scan on the PN532. This affects the
+duration that the individual binary sensors stay active when they’re found.
+If a device is not found within this time window, it will be marked as not present. Defaults to 300s.</li>
+<li><strong>spi_id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="spi.html#spi"><span class="std std-ref">SPI Component</span></a> if you want
+to use multiple SPI buses.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID for this component.</li>
+</ul>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/pn532-spi.jpg"><img alt="../../_images/pn532-spi.jpg" src="../../_images/pn532-spi.jpg" style="width: 80.0%;" /></a>
+<p class="caption"><span class="caption-text">Example for hooking up the PN532 via SPI. Notice the position of the two switches on the right.</span></p>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="binary_sensor/pn532.html"><span class="doc">PN532 NFC/RFID Tag</span></a></li>
+<li><a class="reference internal" href="rdm6300.html"><span class="doc">RDM6300 NFC/RFID Hub</span></a></li>
+<li><a class="reference external" href="https://github.com/adafruit/Adafruit-PN532/blob/master/Adafruit_PN532.cpp">PN532 Library</a> by <a class="reference external" href="https://www.adafruit.com/">Adafruit</a></li>
+<li><a class="reference internal" href="../../api/binary_sensor/pn532.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/pn532.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

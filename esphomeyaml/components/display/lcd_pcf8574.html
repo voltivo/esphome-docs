@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PCF8574 Character-Based LCD Display &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MAX7219 7-Segment Display" href="max7219.html" />
+    <link rel="prev" title="GPIO Character-Based LCD Display" href="lcd_gpio.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PCF8574 Character-Based LCD Display</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="pcf8574-character-based-lcd-display">
+<h1>PCF8574 Character-Based LCD Display<a class="headerlink" href="#pcf8574-character-based-lcd-display" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">lcd_pcf8574</span></code> display platform allows you to use standard character-based LCD displays like <a class="reference external" href="https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/tutorial/driving-1602-lcd-with-pcf8574-pcf8574a">this one</a>
+with esphomelib. This integration is only for LCD displays that display individual characters on a screen (usually 16-20 columns
+and 2-4 rows), and not for LCD displays that can control each pixel individually.</p>
+<p>This version of the LCD integration is for LCD displays with an PCF8574 connected to all the data pins. This has
+the benefit that you only need to connect two data wires to the ESP instead of the 6 or 10 with the <a class="reference internal" href="lcd_gpio.html"><span class="doc">GPIO Character-Based LCD Display</span></a>.
+As the communication with the <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C Bus</span></a>, you need to have an <code class="docutils literal notranslate"><span class="pre">i2c:</span></code> section in your configuration.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/lcd-pcf8574.jpg"><img alt="../../../_images/lcd-pcf8574.jpg" src="../../../_images/lcd-pcf8574.jpg" style="width: 75.0%;" /></a>
+<p class="caption"><span class="caption-text">The PCF8574 chip attached to the LCD Display.</span></p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/lcd-hello_world.jpg"><img alt="../../../_images/lcd-hello_world.jpg" src="../../../_images/lcd-hello_world.jpg" style="width: 60.0%;" /></a>
+</div>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">i2c</span><span class="p">:</span>
+  <span class="n">sda</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="n">scl</span><span class="p">:</span> <span class="n">D1</span>
+
+<span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">lcd_pcf8574</span>
+    <span class="n">dimensions</span><span class="p">:</span> <span class="mi">18</span><span class="n">x4</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0x3F</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>dimensions</strong> (<strong>Required</strong>, string): The dimensions of the display with <code class="docutils literal notranslate"><span class="pre">ROWSxCOLUMNS</span></code>. If you’re not
+sure, power the display up and just count them.</li>
+<li><strong>address</strong> (<em>Optional</em>, int): The <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C</span></a> address of the PCF8574 chip, defaults to <code class="docutils literal notranslate"><span class="pre">0x3F</span></code>.</li>
+<li><strong>lambda</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>): The lambda to use for rendering the content on the display.
+See <a class="reference internal" href="lcd_gpio.html#display-lcd-lambda"><span class="std std-ref">Rendering Lambda</span></a> for more information.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to re-draw the screen. Defaults to <code class="docutils literal notranslate"><span class="pre">1s</span></code>.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html"><span class="doc">Display Component</span></a></li>
+<li><a class="reference internal" href="lcd_gpio.html"><span class="doc">GPIO Character-Based LCD Display</span></a></li>
+<li><a class="reference internal" href="../pcf8574.html"><span class="doc">PCF8574 I/O Expander</span></a></li>
+<li><a class="reference internal" href="../../../api/display/lcd_display.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://www.arduino.cc/en/Reference/LiquidCrystal">Arduino LiquidCrystal Library</a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/display/lcd_pcf8574.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

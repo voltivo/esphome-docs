@@ -1,0 +1,149 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SSD1306 OLED Display over I²C &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SSD1306 OLED Display over SPI" href="ssd1306_spi.html" />
+    <link rel="prev" title="Nextion TFT LCD Display" href="nextion.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SSD1306 OLED Display over I²C</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ssd1306-oled-display-over-i2c">
+<h1>SSD1306 OLED Display over I²C<a class="headerlink" href="#ssd1306-oled-display-over-i2c" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ssd1306_i2c</span></code> display platform allows you to use
+SSD1306 (<a class="reference external" href="https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf">datasheet</a>, <a class="reference external" href="https://www.adafruit.com/product/326">Adafruit</a>)
+and SH1106 (<a class="reference external" href="https://www.elecrow.com/download/SH1106%20datasheet.pdf">datasheet</a>, <a class="reference external" href="https://www.electrodragon.com/product/1-3-12864-blue-oled-display-iicspi/">electrodragon</a>)
+displays with esphomelib. Note that this component is for displays that are connected via the <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C Bus</span></a>.
+If your SSD1306 or SH1106 is connected via the 4-Wire <a class="reference internal" href="../spi.html#spi"><span class="std std-ref">SPI bus</span></a>, see <a class="reference internal" href="ssd1306_spi.html"><span class="doc">SSD1306 OLED Display over SPI</span></a>.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/ssd1306-full.jpg"><img alt="../../../_images/ssd1306-full.jpg" src="../../../_images/ssd1306-full.jpg" style="width: 75.0%;" /></a>
+<p class="caption"><span class="caption-text">SSD1306 OLED Display</span></p>
+</div>
+<p>Connect D0 to the SCL pin you chose for the <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C Bus</span></a>, and connect D1 to the SDA pin. For power, connect
+VCC to 3.3V and GND to GND. Optionally you can also connect the <code class="docutils literal notranslate"><span class="pre">RESET</span></code> pin to a pin on the ESP which may
+improve reliability.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">i2c</span><span class="p">:</span>
+  <span class="n">sda</span><span class="p">:</span> <span class="n">D1</span>
+  <span class="n">scl</span><span class="p">:</span> <span class="n">D2</span>
+
+<span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">ssd1306_i2c</span>
+    <span class="n">model</span><span class="p">:</span> <span class="s2">&quot;SSD1306 128x64&quot;</span>
+    <span class="n">reset_pin</span><span class="p">:</span> <span class="n">D0</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0x3C</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">font</span><span class="p">),</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>model</strong> (<strong>Required</strong>): The model of the display. Options are:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SSD1306</span> <span class="pre">128x32</span></code> (SSD1306 with 128 columns and 32 rows)</li>
+<li><code class="docutils literal notranslate"><span class="pre">SSD1306</span> <span class="pre">128x64</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SSD1306</span> <span class="pre">96x16</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SH1106</span> <span class="pre">128x32</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SH1106</span> <span class="pre">128x64</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SH1106</span> <span class="pre">96x16</span></code></li>
+</ul>
+</li>
+<li><strong>reset_pin</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The RESET pin. Defaults to not connected.</li>
+<li><strong>address</strong> (<em>Optional</em>, int): Manually specify the <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C</span></a> address of the display. Defaults to 0x3C.</li>
+<li><strong>rotation</strong> (<em>Optional</em>): Set the rotation of the display. Everything you draw in <code class="docutils literal notranslate"><span class="pre">lambda:</span></code> will be rotated
+by this option. One of <code class="docutils literal notranslate"><span class="pre">0°</span></code> (default), <code class="docutils literal notranslate"><span class="pre">90°</span></code>, <code class="docutils literal notranslate"><span class="pre">180°</span></code>, <code class="docutils literal notranslate"><span class="pre">270°</span></code>.</li>
+<li><strong>external_vcc</strong> (<em>Optional</em>, boolean): Set this to true if you have the VCC pin connected to an external power supply.
+Defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</li>
+<li><strong>lambda</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>): The lambda to use for rendering the content on the display.
+See <a class="reference internal" href="index.html#display-engine"><span class="std std-ref">Display Rendering Engine</span></a> for more information.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to re-draw the screen. Defaults to <code class="docutils literal notranslate"><span class="pre">5s</span></code>.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html"><span class="doc">Display Component</span></a></li>
+<li><a class="reference internal" href="../../../api/display/ssd1306.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/adafruit/Adafruit_SSD1306">SSD1306 Library</a> by <a class="reference external" href="http://adafruit.com/">Adafruit</a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/display/ssd1306_i2c.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

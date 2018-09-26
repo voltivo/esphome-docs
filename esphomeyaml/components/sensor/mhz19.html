@@ -1,0 +1,150 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MH-Z19 CO_2 and Temperature Sensor &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MPU6050 Accelerometer/Gyroscope Sensor" href="mpu6050.html" />
+    <link rel="prev" title="MAX6675 K-Type Thermocouple Temperature Sensor" href="max6675.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MH-Z19 CO_2 and Temperature Sensor</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mh-z19-co-2-and-temperature-sensor">
+<h1>MH-Z19 CO_2 and Temperature Sensor<a class="headerlink" href="#mh-z19-co-2-and-temperature-sensor" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">mhz19</span></code> sensor platform allows you to use MH-Z19 CO_2 and temperature sensors
+(<a class="reference external" href="https://revspace.nl/MHZ19">refspace</a>) with esphomelib.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/mhz19-full.jpg"><img alt="../../../_images/mhz19-full.jpg" src="../../../_images/mhz19-full.jpg" style="width: 50.0%;" /></a>
+<p class="caption"><span class="caption-text">MH-Z19 CO_2 and Temperature Sensor.</span></p>
+</div>
+<p>As the communication with the MH-Z19 is done using UART, you need
+to have an <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART bus</span></a> in your configuration with the <code class="docutils literal notranslate"><span class="pre">rx_pin</span></code> connected to the TX pin of the
+MH-Z19 and the <code class="docutils literal notranslate"><span class="pre">tx_pin</span></code> connected to the RX Pin of the MH-Z19 (it’s switched because the
+TX/RX labels are from the perspective of the MH-Z19). Additionally, you need to set the baud rate to 9600.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">uart</span><span class="p">:</span>
+  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="n">tx_pin</span><span class="p">:</span> <span class="n">D1</span>
+  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">9600</span>
+
+<span class="n">sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">mhz19</span>
+    <span class="n">co2</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MH-Z19 CO2 Value&quot;</span>
+    <span class="n">temperature</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MH-Z19 Temperature&quot;</span>
+    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>co2</strong> (<strong>Required</strong>): The CO_2 data from the sensor in parts per million (ppm).<ul>
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for the CO_2 sensor.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Set the ID of this sensor for use in lambdas.</li>
+<li>All other options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+</li>
+<li><strong>temperature</strong> (<strong>Required</strong>): The information for the temperature sensor. Please note that this is
+not officially documented in the datasheet and seems to be quite inaccurate.<ul>
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for the temperature sensor.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Set the ID of this sensor for use in lambdas.</li>
+<li>All other options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the
+sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>. See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">Default Filter</span></a>.</li>
+<li><strong>uart_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART Component</span></a> if you want
+to use multiple UART buses.</li>
+</ul>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../../_images/mhz19-pins.jpg"><img alt="../../../_images/mhz19-pins.jpg" src="../../../_images/mhz19-pins.jpg" style="width: 80.0%;" /></a>
+<p class="caption"><span class="caption-text">Pins on the MH-Z19. Only the ones marked with a red circle need to be connected.</span></p>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
+<li><a class="reference external" href="https://github.com/nara256/mhz19_uart">MH-Z19 library</a> by <a class="reference external" href="https://github.com/nara256">&#64;nara356</a></li>
+<li><a class="reference internal" href="../../../api/sensor/mhz19.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/mhz19.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

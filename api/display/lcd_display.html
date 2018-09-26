@@ -1,0 +1,370 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LCD Display &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MAX7219 7-Segment Display" href="max7219.html" />
+    <link rel="prev" title="Display" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LCD Display</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#lcddisplay">LCDDisplay</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lcd-display">
+<h1>LCD Display<a class="headerlink" href="#lcd-display" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lcddisplay">
+<span id="api-display-lcd-display"></span><h3>LCDDisplay<a class="headerlink" href="#lcddisplay" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N7display10LCDDisplayE">
+<span id="_CPPv2N7display10LCDDisplayE"></span><span id="display::LCDDisplay"></span><span class="target" id="classdisplay_1_1_l_c_d_display"></span><em class="property">class </em><code class="descname">LCDDisplay</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a><a class="headerlink" href="#_CPPv3N7display10LCDDisplayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classdisplay_1_1_g_p_i_o_l_c_d_display"><span class="std std-ref">display::GPIOLCDDisplay</span></a>, <a class="reference internal" href="#classdisplay_1_1_p_c_f8574_l_c_d_display"><span class="std std-ref">display::PCF8574LCDDisplay</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay10LCDDisplayE7uint8_t7uint8_t8uint32_t">
+<span id="_CPPv2N7display10LCDDisplay10LCDDisplayE7uint8_t7uint8_t8uint32_t"></span><span id="display::LCDDisplay::LCDDisplay__uint8_t.uint8_t.uint32_t"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a8ad82a1e094432f25f86cee28eef15c6"></span><code class="descname">LCDDisplay</code><span class="sig-paren">(</span>uint8_t <em>columns</em>, uint8_t <em>rows</em>, uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay10LCDDisplayE7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay10set_writerERR12lcd_writer_t">
+<span id="_CPPv2N7display10LCDDisplay10set_writerERR12lcd_writer_t"></span><span id="display::LCDDisplay::set_writer__lcd_writer_tRR"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a3462b4c53ed375736b255a64526b0104"></span>void <code class="descname">set_writer</code><span class="sig-paren">(</span>lcd_writer_t &amp;&amp;<em>writer</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay10set_writerERR12lcd_writer_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay5setupEv">
+<span id="_CPPv2N7display10LCDDisplay5setupEv"></span><span id="display::LCDDisplay::setup"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a0f21dd07099d6babc86c3e9d0fb18f75"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classdisplay_1_1_l_c_d_display_1a0f21dd07099d6babc86c3e9d0fb18f75"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display10LCDDisplay18get_setup_priorityEv">
+<span id="_CPPv2NK7display10LCDDisplay18get_setup_priorityEv"></span><span id="display::LCDDisplay::get_setup_priorityC"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a6b50f954c4bb6ffe53de99eb22893d45"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display10LCDDisplay18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classdisplay_1_1_l_c_d_display_1a0f21dd07099d6babc86c3e9d0fb18f75"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay6updateEv">
+<span id="_CPPv2N7display10LCDDisplay6updateEv"></span><span id="display::LCDDisplay::update"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a2b1c7b77058914b81943d4a541f8a439"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay7displayEv">
+<span id="_CPPv2N7display10LCDDisplay7displayEv"></span><span id="display::LCDDisplay::display"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a3bbd54e793f8283a7c0b584ca57a44f1"></span>void <code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay7displayEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay5printE7uint8_t7uint8_tPKc">
+<span id="_CPPv2N7display10LCDDisplay5printE7uint8_t7uint8_tPKc"></span><span id="display::LCDDisplay::print__uint8_t.uint8_t.cCP"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a8195df3c96650e102704fc18fab76fd4"></span>void <code class="descname">print</code><span class="sig-paren">(</span>uint8_t <em>column</em>, uint8_t <em>row</em>, <em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay5printE7uint8_t7uint8_tPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print the given text at the specified column and row. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay5printE7uint8_t7uint8_tRKNSt6stringE">
+<span id="_CPPv2N7display10LCDDisplay5printE7uint8_t7uint8_tRKNSt6stringE"></span><span id="display::LCDDisplay::print__uint8_t.uint8_t.ssCR"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1af893ceabaab476fc60a811ead3b16add"></span>void <code class="descname">print</code><span class="sig-paren">(</span>uint8_t <em>column</em>, uint8_t <em>row</em>, <em class="property">const</em> std::string &amp;<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay5printE7uint8_t7uint8_tRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print the given string at the specified column and row. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay5printEPKc">
+<span id="_CPPv2N7display10LCDDisplay5printEPKc"></span><span id="display::LCDDisplay::print__cCP"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1ab5fe6e6cb422746f2641b885e25601b7"></span>void <code class="descname">print</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay5printEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print the given text at column=0 and row=0. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay5printERKNSt6stringE">
+<span id="_CPPv2N7display10LCDDisplay5printERKNSt6stringE"></span><span id="display::LCDDisplay::print__ssCR"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a6dce3d842903ff6ef682c310540ffa10"></span>void <code class="descname">print</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay5printERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print the given string at column=0 and row=0. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay6printfE7uint8_t7uint8_tPKcz">
+<span id="_CPPv2N7display10LCDDisplay6printfE7uint8_t7uint8_tPKcz"></span><span id="display::LCDDisplay::printf__uint8_t.uint8_t.cCP.z"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a3b10b264a7c9313ef13a210dcef38445"></span>void <code class="descname">printf</code><span class="sig-paren">(</span>uint8_t <em>column</em>, uint8_t <em>row</em>, <em class="property">const</em> char *<em>format</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay6printfE7uint8_t7uint8_tPKcz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the printf-format and print the text at the specified column and row. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay6printfEPKcz">
+<span id="_CPPv2N7display10LCDDisplay6printfEPKcz"></span><span id="display::LCDDisplay::printf__cCP.z"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a70a34f213c6aa7a234aa1b479393941b"></span>void <code class="descname">printf</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>format</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay6printfEPKcz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the printf-format and print the text at column=0 and row=0. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay8strftimeE7uint8_t7uint8_tPKcN4time14EsphomelibTimeE">
+<span id="_CPPv2N7display10LCDDisplay8strftimeE7uint8_t7uint8_tPKcN4time14EsphomelibTimeE"></span><span id="display::LCDDisplay::strftime__uint8_t.uint8_t.cCP.time::EsphomelibTime"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a761c644b37273ba8f28fdb2f6c77188d"></span>void <code class="descname">strftime</code><span class="sig-paren">(</span>uint8_t <em>column</em>, uint8_t <em>row</em>, <em class="property">const</em> char *<em>format</em>, time::EsphomelibTime <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay8strftimeE7uint8_t7uint8_tPKcN4time14EsphomelibTimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the strftime-format and print the text at the specified column and row. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay8strftimeEPKcN4time14EsphomelibTimeE">
+<span id="_CPPv2N7display10LCDDisplay8strftimeEPKcN4time14EsphomelibTimeE"></span><span id="display::LCDDisplay::strftime__cCP.time::EsphomelibTime"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a12fd850c4cf768e3866c7f2fdebb4e47"></span>void <code class="descname">strftime</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>format</em>, time::EsphomelibTime <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay8strftimeEPKcN4time14EsphomelibTimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the strftime-format and print the text at column=0 and row=0. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay17is_four_bit_mode_Ev">
+<span id="_CPPv2N7display10LCDDisplay17is_four_bit_mode_Ev"></span><span id="display::LCDDisplay::is_four_bit_mode_"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1abf20dd8c867ff6124aaf3216ac479753"></span><em class="property">virtual</em> bool <code class="descname">is_four_bit_mode_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display10LCDDisplay17is_four_bit_mode_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay12write_n_bitsE7uint8_t7uint8_t">
+<span id="_CPPv2N7display10LCDDisplay12write_n_bitsE7uint8_t7uint8_t"></span><span id="display::LCDDisplay::write_n_bits__uint8_t.uint8_t"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a82f5080e099f282c5e496f4cd84ed5df"></span><em class="property">virtual</em> void <code class="descname">write_n_bits</code><span class="sig-paren">(</span>uint8_t <em>value</em>, uint8_t <em>n</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display10LCDDisplay12write_n_bitsE7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay4sendE7uint8_tb">
+<span id="_CPPv2N7display10LCDDisplay4sendE7uint8_tb"></span><span id="display::LCDDisplay::send__uint8_t.b"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a7991ec25b9868274d8124917a34c5d34"></span><em class="property">virtual</em> void <code class="descname">send</code><span class="sig-paren">(</span>uint8_t <em>value</em>, bool <em>rs</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display10LCDDisplay4sendE7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10LCDDisplay7commandE7uint8_t">
+<span id="_CPPv2N7display10LCDDisplay7commandE7uint8_t"></span><span id="display::LCDDisplay::command__uint8_t"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a170c492193cee3e768ad6ef115a62f89"></span>void <code class="descname">command</code><span class="sig-paren">(</span>uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10LCDDisplay7commandE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display10LCDDisplay8columns_E">
+<span id="_CPPv2N7display10LCDDisplay8columns_E"></span><span id="display::LCDDisplay::columns___uint8_t"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a93c1241f010763244a04ac4a4636557f"></span>uint8_t <code class="descname">columns_</code><a class="headerlink" href="#_CPPv3N7display10LCDDisplay8columns_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display10LCDDisplay5rows_E">
+<span id="_CPPv2N7display10LCDDisplay5rows_E"></span><span id="display::LCDDisplay::rows___uint8_t"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a4c3b6f13ef950507a877eb53418cb5ba"></span>uint8_t <code class="descname">rows_</code><a class="headerlink" href="#_CPPv3N7display10LCDDisplay5rows_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display10LCDDisplay7buffer_E">
+<span id="_CPPv2N7display10LCDDisplay7buffer_E"></span><span id="display::LCDDisplay::buffer___uint8_tP"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1a0111e79bcc84119a3c59da420c90b756"></span>uint8_t *<code class="descname">buffer_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7display10LCDDisplay7buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display10LCDDisplay7writer_E">
+<span id="_CPPv2N7display10LCDDisplay7writer_E"></span><span id="display::LCDDisplay::writer___lcd_writer_t"></span><span class="target" id="classdisplay_1_1_l_c_d_display_1aed95ee3ce6bcbd24f6827e3ef05b6a3d"></span>lcd_writer_t <code class="descname">writer_</code><a class="headerlink" href="#_CPPv3N7display10LCDDisplay7writer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7display14GPIOLCDDisplayE">
+<span id="_CPPv2N7display14GPIOLCDDisplayE"></span><span id="display::GPIOLCDDisplay"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display"></span><em class="property">class </em><code class="descname">GPIOLCDDisplay</code> : <em class="property">public</em> display::<a class="reference internal" href="#_CPPv3N7display10LCDDisplayE" title="display::LCDDisplay">LCDDisplay</a><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay14GPIOLCDDisplayE7uint8_t7uint8_t8uint32_t">
+<span id="_CPPv2N7display14GPIOLCDDisplay14GPIOLCDDisplayE7uint8_t7uint8_t8uint32_t"></span><span id="display::GPIOLCDDisplay::GPIOLCDDisplay__uint8_t.uint8_t.uint32_t"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a5408720fb373ec9f299e0784910cfb50"></span><code class="descname">GPIOLCDDisplay</code><span class="sig-paren">(</span>uint8_t <em>columns</em>, uint8_t <em>rows</em>, uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay14GPIOLCDDisplayE7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay5setupEv">
+<span id="_CPPv2N7display14GPIOLCDDisplay5setupEv"></span><span id="display::GPIOLCDDisplay::setup"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1ad977a33f4b190b60bee6278f41336f9a"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classdisplay_1_1_g_p_i_o_l_c_d_display_1ad977a33f4b190b60bee6278f41336f9a"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay13set_data_pinsERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin">
+<span id="_CPPv2N7display14GPIOLCDDisplay13set_data_pinsERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="display::GPIOLCDDisplay::set_data_pins__GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1af2512e04bc40b9bd0edddd85ebc5ab6e"></span>void <code class="descname">set_data_pins</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d0</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d1</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d2</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d3</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay13set_data_pinsERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay13set_data_pinsERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin">
+<span id="_CPPv2N7display14GPIOLCDDisplay13set_data_pinsERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="display::GPIOLCDDisplay::set_data_pins__GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1acb73f05bef802d9ac7524934ce5e25d3"></span>void <code class="descname">set_data_pins</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d0</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d1</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d2</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d3</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d4</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d5</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d6</em>, <em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>d7</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay13set_data_pinsERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay14set_enable_pinERK13GPIOOutputPin">
+<span id="_CPPv2N7display14GPIOLCDDisplay14set_enable_pinERK13GPIOOutputPin"></span><span id="display::GPIOLCDDisplay::set_enable_pin__GPIOOutputPinCR"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1aeef305c525da2cab6eb210853262d1c8"></span>void <code class="descname">set_enable_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay14set_enable_pinERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay10set_rs_pinERK13GPIOOutputPin">
+<span id="_CPPv2N7display14GPIOLCDDisplay10set_rs_pinERK13GPIOOutputPin"></span><span id="display::GPIOLCDDisplay::set_rs_pin__GPIOOutputPinCR"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1ab565e9395060e09c40016478a84ea2a5"></span>void <code class="descname">set_rs_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>rs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay10set_rs_pinERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay10set_rw_pinERK13GPIOOutputPin">
+<span id="_CPPv2N7display14GPIOLCDDisplay10set_rw_pinERK13GPIOOutputPin"></span><span id="display::GPIOLCDDisplay::set_rw_pin__GPIOOutputPinCR"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a2ea5e785fc3e6af1a087c9e1e6e30e1f"></span>void <code class="descname">set_rw_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>rw</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay10set_rw_pinERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay17is_four_bit_mode_Ev">
+<span id="_CPPv2N7display14GPIOLCDDisplay17is_four_bit_mode_Ev"></span><span id="display::GPIOLCDDisplay::is_four_bit_mode_"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a73666d0fdd9ab169a5f8d988d72bb31b"></span>bool <code class="descname">is_four_bit_mode_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay17is_four_bit_mode_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay12write_n_bitsE7uint8_t7uint8_t">
+<span id="_CPPv2N7display14GPIOLCDDisplay12write_n_bitsE7uint8_t7uint8_t"></span><span id="display::GPIOLCDDisplay::write_n_bits__uint8_t.uint8_t"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1afe2390f400154001d94a81391b11a9b9"></span>void <code class="descname">write_n_bits</code><span class="sig-paren">(</span>uint8_t <em>value</em>, uint8_t <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay12write_n_bitsE7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display14GPIOLCDDisplay4sendE7uint8_tb">
+<span id="_CPPv2N7display14GPIOLCDDisplay4sendE7uint8_tb"></span><span id="display::GPIOLCDDisplay::send__uint8_t.b"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a7c9b4c87801b7ea967c6173d78c6e54b"></span>void <code class="descname">send</code><span class="sig-paren">(</span>uint8_t <em>value</em>, bool <em>rs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay4sendE7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display14GPIOLCDDisplay7rs_pin_E">
+<span id="_CPPv2N7display14GPIOLCDDisplay7rs_pin_E"></span><span id="display::GPIOLCDDisplay::rs_pin___GPIOPinP"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a4f6bf69f981c251347c49c984c6c1b0f"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">rs_pin_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay7rs_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display14GPIOLCDDisplay7rw_pin_E">
+<span id="_CPPv2N7display14GPIOLCDDisplay7rw_pin_E"></span><span id="display::GPIOLCDDisplay::rw_pin___GPIOPinP"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a464afd2004939200fcd2a2d748b7a3b7"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">rw_pin_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay7rw_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display14GPIOLCDDisplay11enable_pin_E">
+<span id="_CPPv2N7display14GPIOLCDDisplay11enable_pin_E"></span><span id="display::GPIOLCDDisplay::enable_pin___GPIOPinP"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a83bbef2483838222d88e7ccf4ff3bca4"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">enable_pin_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay11enable_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display14GPIOLCDDisplay10data_pins_E">
+<span id="_CPPv2N7display14GPIOLCDDisplay10data_pins_E"></span><span id="display::GPIOLCDDisplay::data_pins___GPIOPinPA"></span><span class="target" id="classdisplay_1_1_g_p_i_o_l_c_d_display_1a3a8f47dd2b23a54189e5e86c88df6aab"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">data_pins_</code>[8] = {nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}<a class="headerlink" href="#_CPPv3N7display14GPIOLCDDisplay10data_pins_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7display17PCF8574LCDDisplayE">
+<span id="_CPPv2N7display17PCF8574LCDDisplayE"></span><span id="display::PCF8574LCDDisplay"></span><span class="target" id="classdisplay_1_1_p_c_f8574_l_c_d_display"></span><em class="property">class </em><code class="descname">PCF8574LCDDisplay</code> : <em class="property">public</em> display::<a class="reference internal" href="#_CPPv3N7display10LCDDisplayE" title="display::LCDDisplay">LCDDisplay</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N7display17PCF8574LCDDisplayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display17PCF8574LCDDisplay17PCF8574LCDDisplayEP12I2CComponent7uint8_t7uint8_t7uint8_t8uint32_t">
+<span id="_CPPv2N7display17PCF8574LCDDisplay17PCF8574LCDDisplayEP12I2CComponent7uint8_t7uint8_t7uint8_t8uint32_t"></span><span id="display::PCF8574LCDDisplay::PCF8574LCDDisplay__I2CComponentP.uint8_t.uint8_t.uint8_t.uint32_t"></span><span class="target" id="classdisplay_1_1_p_c_f8574_l_c_d_display_1a393da50c0249e3af1762522d9288d9e5"></span><code class="descname">PCF8574LCDDisplay</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, uint8_t <em>columns</em>, uint8_t <em>rows</em>, uint8_t <em>address</em> = 0x3F, uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display17PCF8574LCDDisplay17PCF8574LCDDisplayEP12I2CComponent7uint8_t7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display17PCF8574LCDDisplay5setupEv">
+<span id="_CPPv2N7display17PCF8574LCDDisplay5setupEv"></span><span id="display::PCF8574LCDDisplay::setup"></span><span class="target" id="classdisplay_1_1_p_c_f8574_l_c_d_display_1a3ce83352e7afba4d37af7f4980b7b1bb"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display17PCF8574LCDDisplay5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classdisplay_1_1_p_c_f8574_l_c_d_display_1a3ce83352e7afba4d37af7f4980b7b1bb"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display17PCF8574LCDDisplay17is_four_bit_mode_Ev">
+<span id="_CPPv2N7display17PCF8574LCDDisplay17is_four_bit_mode_Ev"></span><span id="display::PCF8574LCDDisplay::is_four_bit_mode_"></span><span class="target" id="classdisplay_1_1_p_c_f8574_l_c_d_display_1aeb15dedbea4a2cf64a89473348b43750"></span>bool <code class="descname">is_four_bit_mode_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display17PCF8574LCDDisplay17is_four_bit_mode_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display17PCF8574LCDDisplay12write_n_bitsE7uint8_t7uint8_t">
+<span id="_CPPv2N7display17PCF8574LCDDisplay12write_n_bitsE7uint8_t7uint8_t"></span><span id="display::PCF8574LCDDisplay::write_n_bits__uint8_t.uint8_t"></span><span class="target" id="classdisplay_1_1_p_c_f8574_l_c_d_display_1adcfc76b4ff276246565583eb9db99b1f"></span>void <code class="descname">write_n_bits</code><span class="sig-paren">(</span>uint8_t <em>value</em>, uint8_t <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display17PCF8574LCDDisplay12write_n_bitsE7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display17PCF8574LCDDisplay4sendE7uint8_tb">
+<span id="_CPPv2N7display17PCF8574LCDDisplay4sendE7uint8_tb"></span><span id="display::PCF8574LCDDisplay::send__uint8_t.b"></span><span class="target" id="classdisplay_1_1_p_c_f8574_l_c_d_display_1a471313cda7af87f8f93ff8fcc9c5e216"></span>void <code class="descname">send</code><span class="sig-paren">(</span>uint8_t <em>value</em>, bool <em>rs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display17PCF8574LCDDisplay4sendE7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="lcd__display_8h_1af67a3e04c0fac3754b592bf4f1ebd77a"></span><em class="property">using </em><code class="descname">display::lcd_writer_t = typedef std::function&lt;void(LCDDisplay &amp;)&gt;</code></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

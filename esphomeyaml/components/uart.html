@@ -1,0 +1,134 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>UART Bus &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cookbook" href="../cookbook/index.html" />
+    <link rel="prev" title="Time" href="time.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">UART Bus</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="uart-bus">
+<span id="uart"></span><h1>UART Bus<a class="headerlink" href="#uart-bus" title="Permalink to this headline">¶</a></h1>
+<p>UART is a common serial protocol for a lot of devices. For example, when uploading a binary to your ESP
+you have probably used UART to access the chip. UART (or for Arduino often also called Serial) usually
+consists of 2 pins:</p>
+<ul class="simple">
+<li><strong>TX</strong>: This line is used to send data to the device at the other end.</li>
+<li><strong>RX</strong>: This line is used to receive data from the device at the other end.</li>
+</ul>
+<p>Please note that these the naming of these two pins depends on the chosen perspective and can be ambiguous. For example,
+while the ESP might send (<code class="docutils literal notranslate"><span class="pre">TX</span></code>) on pin A and receive (<code class="docutils literal notranslate"><span class="pre">RX</span></code>) data on pin B, from the other devices
+perspective these two pins are switched (i.e. <em>it</em> sends on pin B and receives on pin A). So you might
+need to try with the two pins switched if it doesn’t work immediately.</p>
+<p>Additionally, each UART bus can operate at different speeds (baud rates), so esphomelib needs to know what speed to
+receive/send data at using the <code class="docutils literal notranslate"><span class="pre">baud_rate</span></code> option. The most common baud rates are 9600 and 115200.</p>
+<p>In some cases only <strong>TX</strong> or <strong>RX</strong> exists as the device at the other end only accepts data or sends data.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On the ESP32, this component uses the hardware UART units and is thus very accurate. On the ESP8266 however,
+esphomelib has to use a software implementation as there are no other hardware UART units available other than the
+ones used for logging. Therefore the UART data on the ESP8266 can have occasional data glitches especially with
+higher baud rates..</p>
+</div>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">uart</span><span class="p">:</span>
+  <span class="n">tx_pin</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">D1</span>
+  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">9600</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>baud_rate</strong> (<strong>Required</strong>, int): The baud rate of the UART bus.</li>
+<li><strong>tx_pin</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-pin"><span class="std std-ref">Pin</span></a>): The pin to send data to from the ESP’s perspective.</li>
+<li><strong>rx_pin</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-pin"><span class="std std-ref">Pin</span></a>): The pin to receive data on from the ESP’s perspective.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID for this UART hub if you need multiple UART hubs.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../api/core/uart.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/uart.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

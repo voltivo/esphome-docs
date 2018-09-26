@@ -1,0 +1,405 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Display Component &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="GPIO Character-Based LCD Display" href="lcd_gpio.html" />
+    <link rel="prev" title="UART Switch" href="../switch/uart.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Display Component</a><ul>
+<li><a class="reference internal" href="#display-rendering-engine">Display Rendering Engine</a><ul>
+<li><a class="reference internal" href="#basic-shapes">Basic Shapes</a></li>
+<li><a class="reference internal" href="#drawing-static-text">Drawing Static Text</a></li>
+<li><a class="reference internal" href="#formatted-text">Formatted Text</a></li>
+<li><a class="reference internal" href="#displaying-time">Displaying Time</a><ul>
+<li><a class="reference internal" href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="display-component">
+<h1>Display Component<a class="headerlink" href="#display-component" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">display</span></code> component houses esphomelib’s powerful rendering and display
+engine. Fundamentally, there are these types of displays:</p>
+<ul class="simple">
+<li>Text based displays like <a class="reference internal" href="max7219.html"><span class="doc">7-Segment displays</span></a> or
+<a class="reference internal" href="lcd_gpio.html"><span class="doc">some LCD displays</span></a>.</li>
+<li>Displays like the <a class="reference internal" href="nextion.html"><span class="doc">Nextion TFT LCD Display</span></a> that have their own processors for rendering.</li>
+<li>Binary displays which can toggle ON/OFF any pixel, like <a class="reference internal" href="waveshare_epaper.html"><span class="doc">E-Paper displays</span></a> or
+<a class="reference internal" href="ssd1306_spi.html"><span class="doc">OLED displays</span></a>.</li>
+</ul>
+<p>For the last type, esphomelib and esphomeyaml have a powerful rendering engine that can do
+many things like draw some basic shapes, print text with any font you want, or even show images.</p>
+<p>To achieve all this flexibility displays tie in directly into esphomeyaml’s <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda system</span></a>.
+So when you want to write some text or sensor values to the screen you will be writing in C++ code
+using an API that is designed to</p>
+<ul class="simple">
+<li>be simple and to be used without programming experience</li>
+<li>but also be flexible enough to work with more complex tasks like displaying an analog clock.</li>
+</ul>
+<div class="section" id="display-rendering-engine">
+<span id="display-engine"></span><h2>Display Rendering Engine<a class="headerlink" href="#display-rendering-engine" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will be discussing how to use esphomelib’s display rendering engine from esphomeyaml
+and some basic commands. Please note that this only applies to displays that can control each pixel
+individually.</p>
+<p>So, first a few basics: When setting up a display platform in esphomeyaml there will be a configuration
+option called <code class="docutils literal notranslate"><span class="pre">lambda:</span></code> which will be called every time esphomelib wants to re-render the display.
+In there, you can write code like in any <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a> in esphomeyaml. Display
+lambdas are additionally passed a variable called <code class="docutils literal notranslate"><span class="pre">it</span></code> which represents the rendering engine object.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Write</span> <span class="n">your</span> <span class="n">display</span> <span class="n">rendering</span> <span class="n">code</span> <span class="n">here</span>
+
+      <span class="o">//</span> <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">draw</span> <span class="n">a</span> <span class="n">line</span> <span class="kn">from</span> <span class="p">[</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">]</span> <span class="n">to</span> <span class="p">[</span><span class="n">x</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">]</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Lambdas are essentially just a lightly modified version of C++. So don’t forget to end each line
+with a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>). Otherwise you will be greeted by a long error message at the compilation stage.</p>
+</div>
+<p>If you compile and upload the configuration above, you should see a black (or white, depending on the display)
+line which starts at the top left and goes a few pixels down at a 45° angle. (If it’s in another corner, use the
+<code class="docutils literal notranslate"><span class="pre">rotation:</span></code> option to rotate the display to your liking)</p>
+<p>This already highlights one of the things you must learn before diving into writing your own custom display code:
+The <strong>top left</strong> is always the origin of the pixel coordinate system. Also, all points in this coordinate system
+are a pair of integers like <code class="docutils literal notranslate"><span class="pre">50,</span> <span class="pre">50</span></code> which represent the shift to the right and shift downwards. So, in other words,
+x always represents the horizontal axis (width) and y the vertical axis (height). And the convention in
+the rendering engine is always first specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate and then the <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinate.</p>
+<div class="section" id="basic-shapes">
+<h3>Basic Shapes<a class="headerlink" href="#basic-shapes" title="Permalink to this headline">¶</a></h3>
+<p>Now that you know a bit more about esphomelib’s coordinate system, let’s draw some basic shapes like lines, rectangles
+and circles:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>display:
+  - platform: ...
+    # ...
+    lambda: |-
+      // Draw a line from [0,0] to [100,50]
+      it.line(0, 0, 100, 50);
+      // Draw the outline of a rectangle with the top left at [50,60], a width of 30 and a height of 42
+      it.rectangle(50, 60, 30, 42);
+      // Draw the same rectangle, but this time filled.
+      it.filled_rectangle(50, 60, 30, 42);
+
+      // Circles! Let&#39;s draw one with the center at [25,25] and a radius of 10
+      it.circle(25, 25, 10);
+      // ... and the same thing filled again
+      it.filled_circle(25, 25, 10);
+</pre></div>
+</div>
+<p>All the above methods can optionally also be called with an argument at the end which specifies in which
+color to draw. Currently, only <code class="docutils literal notranslate"><span class="pre">COLOR_ON</span></code> (the default if color is not given) and <code class="docutils literal notranslate"><span class="pre">COLOR_OFF</span></code> are supported because
+esphomelib only has implemented binary displays.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Turn</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">display</span> <span class="n">on</span><span class="o">.</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">COLOR_ON</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">Turn</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">display</span> <span class="n">off</span><span class="o">.</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">COLOR_OFF</span><span class="p">);</span>
+
+      <span class="o">//</span> <span class="n">Turn</span> <span class="n">a</span> <span class="n">single</span> <span class="n">pixel</span> <span class="n">off</span> <span class="n">at</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">]</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">draw_pixel_at</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">COLOR_OFF</span><span class="p">);</span>
+
+      <span class="o">//</span> <span class="n">Turn</span> <span class="n">off</span> <span class="n">a</span> <span class="n">whole</span> <span class="n">display</span> <span class="n">portion</span><span class="o">.</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">COLOR_OFF</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Additionally, you have access to two helper methods which will fetch the width and height of the display:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Draw</span> <span class="n">a</span> <span class="n">circle</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">the</span> <span class="n">display</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">filled_circle</span><span class="p">(</span><span class="n">it</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">it</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can view the full API documentation for the rendering engine over at <a class="reference internal" href="../../../api/display/index.html#display-buffer"><span class="std std-ref">DisplayBuffer</span></a>.</p>
+</div>
+<div class="section" id="drawing-static-text">
+<span id="display-static-text"></span><h3>Drawing Static Text<a class="headerlink" href="#drawing-static-text" title="Permalink to this headline">¶</a></h3>
+<p>The rendering engine also has a powerful font drawer which integrates seamlessly into esphomeyaml.
+Whereas in most arduino display projects you have to use one of a few pre-defined fonts in very
+specific sizes, with esphomeyaml you have the option to use <strong>any</strong> truetype (<code class="docutils literal notranslate"><span class="pre">.ttf</span></code>) font file
+at <strong>any</strong> size! Granted the reason for it is actually not having to worry about the licensing of font files :)</p>
+<p>To use fonts you first have to define a font object in your esphomeyaml configuration file. Just grab
+a <code class="docutils literal notranslate"><span class="pre">.ttf</span></code> file from somewhere on the Internet and create a <code class="docutils literal notranslate"><span class="pre">font:</span></code> section in your configuration:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">font</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;Comic Sans MS.ttf&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">my_font</span>
+    <span class="n">size</span><span class="p">:</span> <span class="mi">20</span>
+
+<span class="n">display</span><span class="p">:</span>
+  <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul class="simple">
+<li><strong>file</strong> (<strong>Required</strong>, string): The path (relative to where the .yaml file is) of the truetype font
+file.</li>
+<li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The ID with which you will be able to reference the font later
+in your display code.</li>
+<li><strong>size</strong> (<em>Optional</em>, int): The size of the font in pt (not pixel!).
+If you want to use the same font in different sizes, create two font objects. Defaults to <code class="docutils literal notranslate"><span class="pre">20</span></code>.</li>
+<li><strong>glyphs</strong> (<em>Optional</em>, list): A list of characters you plan to use. Only the characters you specify
+here will be compiled into the binary. Adjust this if you need some special characters or want to
+reduce the size of the binary if you don’t plan to use some glyphs. The items in the list can also
+be more than one character long if you for example want to use font ligatures. Defaults to
+<code class="docutils literal notranslate"><span class="pre">!&quot;%()+,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</span> <span class="pre">abcdefghijklmnopqrstuvwxyz</span></code>.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To use fonts you will need to have the python <code class="docutils literal notranslate"><span class="pre">pillow</span></code> package installed, as esphomeyaml uses that package
+to translate the truetype files into an internal format. If you’re running this as a HassIO add-on or with
+the official esphomeyaml docker image, it should already be installed. Otherwise you need to install it using
+<code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">installl</span> <span class="pre">pillow</span></code>.</p>
+</div>
+<p>Then, in your display code just reference the font like so:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">string</span> <span class="s2">&quot;Hello World!&quot;</span> <span class="n">at</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>By default, esphomelib will <em>align</em> the text at the top left. That means if you enter the coordinates
+<code class="docutils literal notranslate"><span class="pre">[0,10]</span></code> for your text, the top left of the text will be at <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code>. If you want to draw some
+text at the right side of the display, it is however sometimes useful to choose a different <strong>text alignment</strong>.
+When you enter <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code> you’re really telling esphomelib that it should position the <strong>anchor point</strong> of the text
+at <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code>. When using a different alignment, like <code class="docutils literal notranslate"><span class="pre">TOP_RIGHT</span></code>, the text will be positioned left of the anchor
+pointed, so that, as the name implies, the anchor point is a the <em>top right</em> corner of the text.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Aligned</span> <span class="n">on</span> <span class="n">left</span> <span class="n">by</span> <span class="n">default</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Left aligned&quot;</span><span class="p">);</span>
+
+      <span class="o">//</span> <span class="n">Aligned</span> <span class="n">on</span> <span class="n">right</span> <span class="n">edge</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">it</span><span class="o">.</span><span class="n">get_width</span><span class="p">(),</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="n">TextAlign</span><span class="p">::</span><span class="n">TOP_RIGHT</span><span class="p">,</span> <span class="s2">&quot;Right aligned&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>As with basic shapes, you can also specify a color for the text:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Syntax</span> <span class="ow">is</span> <span class="n">always</span><span class="p">:</span> <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="o">&lt;</span><span class="n">x</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">y</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">font</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">COLOR_ON</span><span class="p">],</span> <span class="p">[</span><span class="n">align</span><span class="o">=</span><span class="n">TextAlign</span><span class="p">::</span><span class="n">TOP_LEFT</span><span class="p">],</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">);</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="n">COLOR_ON</span><span class="p">,</span> <span class="s2">&quot;Left aligned&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="formatted-text">
+<span id="display-printf"></span><h3>Formatted Text<a class="headerlink" href="#formatted-text" title="Permalink to this headline">¶</a></h3>
+<p>Static text by itself is not too impressive. What we really want is to display <em>dynamic</em> content like sensor values
+on the display!. That’s where <code class="docutils literal notranslate"><span class="pre">printf</span></code> comes in. <code class="docutils literal notranslate"><span class="pre">printf</span></code> is a formatting engine from the C era and esphomelib
+chose to use because … well, I’m too lazy to create a fully-fledged format engine where the existing stuff
+is way better documented :)</p>
+<p><code class="docutils literal notranslate"><span class="pre">printf</span></code> can do way more stuff than you will probably ever need, but it’s also quite simple for the basic stuff.
+For example, a printf call can look like this:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">my_sensor</span>
+
+<span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;The sensor value is: </span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">If</span> <span class="n">the</span> <span class="n">sensor</span> <span class="n">has</span> <span class="n">the</span> <span class="n">value</span> <span class="mf">30.02</span><span class="p">,</span> <span class="n">the</span> <span class="n">result</span> <span class="n">will</span> <span class="n">be</span><span class="p">:</span> <span class="s2">&quot;The sensor value is: 30.0&quot;</span>
+</pre></div>
+</div>
+<p>As you can see, when you call <code class="docutils literal notranslate"><span class="pre">printf</span></code> most of the string is printed as-is, but when this weird percent sign with some
+stuff after it is encountered, it is magically replaced by the argument after the format (here <code class="docutils literal notranslate"><span class="pre">id(my_sensor).value</span></code>).</p>
+<p>Every time you type a percent sign <code class="docutils literal notranslate"><span class="pre">%</span></code> in a printf format string, it will treat the following letters as a format tag
+until a so-called “specifier” is encountered (in this case <code class="docutils literal notranslate"><span class="pre">f</span></code>). You can read more about it <a class="reference external" href="https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm">here</a>,
+but for esphomelib there are really just a few things you need to know.</p>
+<p>Let’s break <code class="docutils literal notranslate"><span class="pre">%.1f</span></code> down:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">%</span></code> - initiate the format string</li>
+<li><code class="docutils literal notranslate"><span class="pre">.1</span></code> - round the decimal number to <code class="docutils literal notranslate"><span class="pre">1</span></code> digits after the decimal point.</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> - the specifier which tells printf the data type of the argument. Here it is a f(loat).</li>
+</ul>
+<p>For example, if you would like to print a sensor value with two digits of accuracy, you would write <code class="docutils literal notranslate"><span class="pre">%.2f</span></code> and with
+zero digits of accuracy (without a decimal) <code class="docutils literal notranslate"><span class="pre">%.0f</span></code>.</p>
+<p>Another interesting format string is <code class="docutils literal notranslate"><span class="pre">%7.2f</span></code>, which would become the right-justified string
+<code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">20.51&quot;</span></code> for a value of 20.506.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">%</span></code> - initiate the format</li>
+<li><code class="docutils literal notranslate"><span class="pre">7</span></code> - means that the number will be right-justified and be padded on the left by spaces if
+the result would be shorter than 7 characters long.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.1</span></code> - round the decimal number to <code class="docutils literal notranslate"><span class="pre">1</span></code> digits after the decimal point.</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> - specifier: f(loat).</li>
+</ul>
+<p>You can even have as many format strings as you want in a single printf call. Just make sure the put the
+arguments after the format string in the right order.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="o">%%</span> <span class="o">-</span> <span class="n">literal</span> <span class="o">%</span> <span class="n">sign</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Temperature: %.1°C, Humidity: </span><span class="si">%.1f%%</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">humidity</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The last printf tip for use in displays I will discuss here is how to display binary sensor values. You
+<em>could</em> of course just check the state with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement as the first few lines in the example below, but if
+you want to be efficient you can use an <em>inline if</em> too. With the <code class="docutils literal notranslate"><span class="pre">%s</span></code> print specifier you can tell it to
+use any string you pass it, like <code class="docutils literal notranslate"><span class="pre">&quot;ON&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;OFF&quot;</span></code>.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>binary_sensor:
+  - platform: ...
+    # ...
+    id: my_binary_sensor
+
+display:
+  - platform: ...
+    # ...
+    lambda: |-
+      if (id(my_binary_sensor).value) {
+        it.print(0, 0, id(my_font), &quot;state: ON&quot;);
+      } else {
+        it.print(0, 0, id(my_font), &quot;state: OFF&quot;);
+      }
+      // Shorthand:
+      it.printf(0, 0, id(my_font), &quot;State: %s&quot;, id(my_binary_sensor).value ? &quot;ON&quot; : &quot;OFF&quot;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="displaying-time">
+<span id="display-strftime"></span><h3>Displaying Time<a class="headerlink" href="#displaying-time" title="Permalink to this headline">¶</a></h3>
+<p>With esphomelib you can also display the current time using the NTP protocol. Please see the example <a class="reference internal" href="../time.html#strftime"><span class="std std-ref">here</span></a>.</p>
+<div class="section" id="images">
+<h4>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h4>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;image.png&quot;</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">my_image</span>
+    <span class="n">resize</span><span class="p">:</span> <span class="mi">100</span><span class="n">x100</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul class="simple">
+<li><strong>file</strong> (<strong>Required</strong>, string): The path (relative to where the .yaml file is) of the image file.</li>
+<li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The ID with which you will be able to reference the font later
+in your display code.</li>
+<li><strong>resize</strong> (<em>Optional</em>, int): If set, this will resize the image to fit inside the given dimensions <code class="docutils literal notranslate"><span class="pre">WIDTHxHEIGHT</span></code>
+and preserve the aspect ratio.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To use images you will need to have the python <code class="docutils literal notranslate"><span class="pre">pillow</span></code> package installed.
+If you’re running this as a HassIO add-on or with the official esphomeyaml docker image, it should already be
+installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">installl</span> <span class="pre">pillow</span></code>.</p>
+</div>
+<p>And then later in code:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Draw</span> <span class="n">the</span> <span class="n">image</span> <span class="n">my_image</span> <span class="n">at</span> <span class="n">position</span> <span class="p">[</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_image</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../../api/display/index.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/display/index.rst">Edit this page on GitHub</a></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lcd_gpio.html">GPIO Character-Based LCD Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcd_pcf8574.html">PCF8574 Character-Based LCD Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="max7219.html">MAX7219 7-Segment Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nextion.html">Nextion TFT LCD Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssd1306_i2c.html">SSD1306 OLED Display over I²C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssd1306_spi.html">SSD1306 OLED Display over SPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waveshare_epaper.html">Waveshare E-Paper Display</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

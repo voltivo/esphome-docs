@@ -1,0 +1,412 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Remote Transmitter Switch &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Restart Switch" href="restart.html" />
+    <link rel="prev" title="Generic Output Switch" href="output.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Remote Transmitter Switch</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#remote-codes">Remote Codes</a></li>
+<li><a class="reference internal" href="#finding-remote-codes">Finding Remote Codes</a><ul>
+<li><a class="reference internal" href="#raw-remote-codes">Raw Remote Codes</a></li>
+<li><a class="reference internal" href="#rcswitch-remote-codes">RCSwitch Remote Codes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#on-off-template">On/Off template</a></li>
+<li><a class="reference internal" href="#rcswitch-protocol">RCSwitch Protocol</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="remote-transmitter-switch">
+<h1>Remote Transmitter Switch<a class="headerlink" href="#remote-transmitter-switch" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">remote_transmitter</span></code> switch platform allows you to create switches
+that send a pre-defined remote control sequence
+using the <a class="reference internal" href="../remote_transmitter.html"><span class="doc">Remote Transmitter Component</span></a>. Every time
+the switch is turned on, the configured remote signal is sent.</p>
+<p>Use cases include, but are not limited to, infrared remotes, 433MHz signals and so on.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/remote_transmitter-ui.png"><img alt="../../../_images/remote_transmitter-ui.png" src="../../../_images/remote_transmitter-ui.png" style="width: 80.0%;" /></a>
+</div>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">remote_transmitter</span><span class="p">:</span>
+  <span class="n">pin</span><span class="p">:</span> <span class="mi">32</span>
+
+<span class="c1"># Individual switches</span>
+<span class="n">switch</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Panasonic TV Off&quot;</span>
+    <span class="n">panasonic</span><span class="p">:</span>
+      <span class="n">address</span><span class="p">:</span> <span class="mh">0x4004</span>
+      <span class="n">command</span><span class="p">:</span> <span class="mh">0x100BCBD</span>
+    <span class="n">repeat</span><span class="p">:</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for the switch.</li>
+<li>The remote code, see <a class="reference internal" href="#remote-transmitter-codes"><span class="std std-ref">Remote Codes</span></a>. Only one
+of them can be specified per switch.</li>
+<li><strong>repeat</strong> (<em>Optional</em>, int): How often the command should be sent.<ul>
+<li><strong>times</strong> (int): The number of times the code should be sent. Defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+<li><strong>wait_time</strong> (<a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">time</span></a>): The time to wait between repeats.</li>
+</ul>
+</li>
+<li><strong>remote_transmitter_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the <a class="reference internal" href="../remote_transmitter.html"><span class="doc">Remote Transmitter Component</span></a>.
+Defaults to the first hub specified.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+<li>All other options from <a class="reference internal" href="index.html#config-switch"><span class="std std-ref">Switch</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For the Sonoff RF Bridge you can use <a class="reference external" href="https://github.com/xoseperez/espurna/wiki/Hardware-Itead-Sonoff-RF-Bridge---Direct-Hack">this hack</a>
+created by the Github user wildwiz. Then use this configuration for the remote receiver/transmitter hubs:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote_receiver</span><span class="p">:</span>
+  <span class="n">pin</span><span class="p">:</span> <span class="mi">4</span>
+  <span class="n">dump</span><span class="p">:</span> <span class="nb">all</span>
+
+<span class="n">remote_transmitter</span><span class="p">:</span>
+  <span class="n">pin</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
+</pre></div>
+</div>
+<p class="last">Supporting the RF Bridge chip directly is currently only a long-term goal for esphomelib.</p>
+</div>
+</div>
+<div class="section" id="remote-codes">
+<span id="remote-transmitter-codes"></span><h2>Remote Codes<a class="headerlink" href="#remote-codes" title="Permalink to this headline">¶</a></h2>
+<p>Supported remote codes:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+  <span class="c1"># ... - Only one of these is allowed for one remote transmitter at a time</span>
+  <span class="n">nec</span><span class="p">:</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0x4242</span>
+    <span class="n">command</span><span class="p">:</span> <span class="mh">0x8484</span>
+  <span class="n">lg</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="mh">0x01234567890ABC</span>
+    <span class="n">nbits</span><span class="p">:</span> <span class="mi">28</span>
+  <span class="n">sony</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="mh">0xABCDEF</span>
+    <span class="n">nbits</span><span class="p">:</span> <span class="mi">12</span>
+  <span class="n">panasonic</span><span class="p">:</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mh">0x4004</span>
+    <span class="n">command</span><span class="p">:</span> <span class="mh">0x1000BCD</span>
+  <span class="n">rc_switch_raw</span><span class="p">:</span>
+    <span class="n">code</span><span class="p">:</span> <span class="s1">&#39;001010011001111101011011&#39;</span>
+    <span class="n">protocol</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">rc_switch_type_a</span><span class="p">:</span>
+    <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;11001&#39;</span>
+    <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;01000&#39;</span>
+    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="n">rc_switch_type_b</span><span class="p">:</span>
+    <span class="n">address</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="n">channel</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="n">rc_switch_type_c</span><span class="p">:</span>
+    <span class="n">family</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span>
+    <span class="n">group</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">device</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="n">rc_switch_type_d</span><span class="p">:</span>
+    <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span>
+    <span class="n">device</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="n">raw</span><span class="p">:</span>
+    <span class="n">carrier_frequency</span><span class="p">:</span> <span class="mi">35</span><span class="n">kHz</span>
+    <span class="n">data</span><span class="p">:</span>
+      <span class="o">-</span> <span class="mi">1000</span>
+      <span class="o">-</span> <span class="o">-</span><span class="mi">1000</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul class="simple">
+<li><strong>nec</strong>: Send a NEC IR code.<ul>
+<li><strong>address</strong>: The address of the device.</li>
+<li><strong>command</strong>: The command to send.</li>
+</ul>
+</li>
+<li><strong>lg</strong>: Send an LG IR code.<ul>
+<li><strong>data</strong>: The data bytes to send.</li>
+<li><strong>nbits</strong>: The number of bits to send, defaults to 28.</li>
+</ul>
+</li>
+<li><strong>sony</strong>: Send an Sony IR code.<ul>
+<li><strong>data</strong>: The data bytes to send.</li>
+<li><strong>nbits</strong>: The number of bits to send, defaults to 12.</li>
+</ul>
+</li>
+<li><strong>panasonic</strong>: Send an Panasonic IR code.<ul>
+<li><strong>address</strong>: The address of the device.</li>
+<li><strong>command</strong>: The command to send.</li>
+</ul>
+</li>
+<li><strong>rc_switch_raw</strong>: Send an RCSwitch raw code.<ul>
+<li><strong>code</strong> (<strong>Required</strong>, string): The code to send. Must be a string of 0s and 1s.
+<a class="reference external" href="https://github.com/sui77/rc-switch/wiki/HowTo_OperateLowCostOutlets#type-d-status">For example</a> <code class="docutils literal notranslate"><span class="pre">'001010011001111101011011'</span></code>.</li>
+<li><strong>protocol</strong> (<em>Optional</em>, <a class="reference internal" href="#rc-switch-protocol"><span class="std std-ref">RCSwitch protocol</span></a>): The RCSwitch protocol to use. Defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ul>
+</li>
+<li><strong>rc_switch_type_a</strong>: Send an RCSwitch <a class="reference external" href="https://github.com/sui77/rc-switch/wiki/HowTo_OperateLowCostOutlets#type-a-10-pole-dip-switches">type A code</a>.<ul>
+<li><strong>group</strong> (<strong>Required</strong>, string): The group to address, usually the state of the first 5 DIP switches.
+Must be a string of 0s and 1s. For example <code class="docutils literal notranslate"><span class="pre">'11001</span></code>.</li>
+<li><strong>device</strong> (<strong>Required</strong>, string): The device within the group, usually the state of the last 5 DIP switches.
+Must be a string of 0s and 1s. For example <code class="docutils literal notranslate"><span class="pre">'01000</span></code>.</li>
+<li><strong>state</strong> (<strong>Required</strong>, boolean): Whether to send a “turn on” or “turn off” signal when this switch is triggered. See <a class="reference internal" href="#remote-transmitter-on-off-template"><span class="std std-ref">On/Off template</span></a>.</li>
+<li><strong>protocol</strong> (<em>Optional</em>, <a class="reference internal" href="#rc-switch-protocol"><span class="std std-ref">RCSwitch protocol</span></a>): The RCSwitch protocol to use. Defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ul>
+</li>
+<li><strong>rc_switch_type_b</strong>: Send an RCSwitch <a class="reference external" href="https://github.com/sui77/rc-switch/wiki/HowTo_OperateLowCostOutlets#type-b-two-rotarysliding-switches">type B code</a>.<ul>
+<li><strong>address</strong> (<strong>Required</strong>, int): The number of the first rotary switch. For example <code class="docutils literal notranslate"><span class="pre">4</span></code>.</li>
+<li><strong>channel</strong> (<strong>Required</strong>, int): The number of the first rotary switch. For example <code class="docutils literal notranslate"><span class="pre">2</span></code>.</li>
+<li><strong>state</strong> (<strong>Required</strong>, boolean): Whether to send a “turn on” or “turn off” signal when this switch is triggered. See <a class="reference internal" href="#remote-transmitter-on-off-template"><span class="std std-ref">On/Off template</span></a>.</li>
+<li><strong>protocol</strong> (<em>Optional</em>, <a class="reference internal" href="#rc-switch-protocol"><span class="std std-ref">RCSwitch protocol</span></a>): The RCSwitch protocol to use. Defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ul>
+</li>
+<li><strong>rc_switch_type_c</strong>: Send an RCSwitch <a class="reference external" href="https://github.com/sui77/rc-switch/wiki/HowTo_OperateLowCostOutlets#type-c-intertechno">type C code</a>.<ul>
+<li><strong>family</strong> (<strong>Required</strong>, string): The family of the device. Must be a character from <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">p</span></code>.</li>
+<li><strong>group</strong> (<strong>Required</strong>, int): The group of the device. For example <code class="docutils literal notranslate"><span class="pre">4</span></code>.</li>
+<li><strong>address</strong> (<strong>Required</strong>, int): The address of the device. For example <code class="docutils literal notranslate"><span class="pre">2</span></code>.</li>
+<li><strong>state</strong> (<strong>Required</strong>, boolean): Whether to send a “turn on” or “turn off” signal when this switch is triggered. See <a class="reference internal" href="#remote-transmitter-on-off-template"><span class="std std-ref">On/Off template</span></a>.</li>
+<li><strong>protocol</strong> (<em>Optional</em>, <a class="reference internal" href="#rc-switch-protocol"><span class="std std-ref">RCSwitch protocol</span></a>): The RCSwitch protocol to use. Defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ul>
+</li>
+<li><strong>rc_switch_type_d</strong>: Send an RCSwitch type D code.<ul>
+<li><strong>group</strong> (<strong>Required</strong>, string): The group of the device. Must be a character from <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">d</span></code>.</li>
+<li><strong>device</strong> (<strong>Required</strong>, int): The address of the device. For example <code class="docutils literal notranslate"><span class="pre">3</span></code>.</li>
+<li><strong>state</strong> (<strong>Required</strong>, boolean): Whether to send a “turn on” or “turn off” signal when this switch is triggered. See <a class="reference internal" href="#remote-transmitter-on-off-template"><span class="std std-ref">On/Off template</span></a>.</li>
+<li><strong>protocol</strong> (<em>Optional</em>, <a class="reference internal" href="#rc-switch-protocol"><span class="std std-ref">RCSwitch protocol</span></a>): The RCSwitch protocol to use. Defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ul>
+</li>
+<li><strong>raw</strong>: Send an arbitrary signal.<ul>
+<li><strong>carrier_frequency</strong>: The frequency to use for the carrier. A lot
+of IR sensors only respond to a very specific frequency.</li>
+<li><strong>data</strong>: List containing integers describing the signal to send.
+Each value is a time in µs declaring how long the carrier should
+be switched on or off. Positive values mean ON, negative values
+mean OFF.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="finding-remote-codes">
+<span id="id1"></span><h2>Finding Remote Codes<a class="headerlink" href="#finding-remote-codes" title="Permalink to this headline">¶</a></h2>
+<p>Each remote transmitter uses a different protocol to send its information. So to replicate an infrared or 433MHz
+remote you will first need to “learn” these codes. You will first need to hook up a receiver and sniff the codes
+using the <a class="reference internal" href="../remote_receiver.html"><span class="doc">remote receiver component</span></a> like this:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote_receiver</span><span class="p">:</span>
+  <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO34</span>
+  <span class="c1"># dump all signals we find</span>
+  <span class="n">dump</span><span class="p">:</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<p>And then activate the remote control you want to have in esphomelib. you will see a log output like this:</p>
+<div class="figure align-center" id="id2">
+<img alt="../../../_images/rf_receiver-log_raw.png" src="../../../_images/rf_receiver-log_raw.png" />
+<p class="caption"><span class="caption-text">Example log output for a 433MHz proprietary remote control.</span></p>
+</div>
+<div class="section" id="raw-remote-codes">
+<h3>Raw Remote Codes<a class="headerlink" href="#raw-remote-codes" title="Permalink to this headline">¶</a></h3>
+<p>If esphomelib has a decoder set up for the code, it will spit out the decoded code in the logs. In this case,
+it’s a proprietary protocol which would be difficult to reverse engineer. Fortunately, we can just
+do a “replay attack” by repeating the signal we just saw for our own purposes. The output you see in above image
+is encoded in microseconds: A negative value represents the output being LOW for x microseconds and a positive
+value denotes the output being HIGH for the specified number of microseconds.</p>
+<p>Now you only need to set up the remote transmitter (which well <em>send</em> the code) like this:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote_transmitter</span><span class="p">:</span>
+   <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+   <span class="c1"># Set to 100% when working with RF signals, and 50% if working with IR leds</span>
+   <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
+</pre></div>
+</div>
+<p>And lastly, we need to set up the switch that, when turned on, will send our pre-defined remote code:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;My awesome RF switch&quot;</span>
+    <span class="n">raw</span><span class="p">:</span> <span class="p">[</span><span class="mi">4088</span><span class="p">,</span> <span class="o">-</span><span class="mi">1542</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">513</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span>
+          <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1022</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span>
+          <span class="mi">1020</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">511</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="mi">508</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1022</span><span class="p">,</span>
+          <span class="o">-</span><span class="mi">1021</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">1022</span><span class="p">,</span> <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span>
+          <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">511</span><span class="p">,</span> <span class="mi">1018</span><span class="p">,</span> <span class="o">-</span><span class="mi">1022</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1021</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span>
+          <span class="o">-</span><span class="mi">511</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="mi">508</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">511</span><span class="p">,</span>
+          <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that you don’t need to include the leading <code class="docutils literal notranslate"><span class="pre">32519</span></code> here, as it denotes a final space at the end of
+a transmission.</p>
+</div>
+<div class="section" id="rcswitch-remote-codes">
+<h3>RCSwitch Remote Codes<a class="headerlink" href="#rcswitch-remote-codes" title="Permalink to this headline">¶</a></h3>
+<p>Starting with version 1.8.0 esphomelib can also recognize a bunch of 433MHz RF codes directly using <a class="reference external" href="https://github.com/sui77/rc-switch">RCSwitch’s</a>
+remote protocol. If you have RF code dumping enabled for the receiver, you will then see log outputs like this one:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Received</span> <span class="n">RCSwitch</span><span class="p">:</span> <span class="n">protocol</span><span class="o">=</span><span class="mi">1</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;0100010101&#39;</span>
+</pre></div>
+</div>
+<p>Like before with raw codes, you can then use this code to create switches:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Lights On&quot;</span>
+    <span class="n">rc_switch_raw</span><span class="p">:</span>
+      <span class="n">code</span><span class="p">:</span> <span class="s1">&#39;0100010101&#39;</span>
+      <span class="n">protocol</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Alternatively, you can use the information on <a class="reference external" href="https://github.com/sui77/rc-switch/wiki/HowTo_OperateLowCostOutlets">this page</a>
+to manually find the RCSwitch codes without having to first find them using the remote receiver. For example, this would
+be the esphomelib equivalent of the first Type-A switch on that site:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Lights On&quot;</span>
+    <span class="n">rc_switch_type_a</span><span class="p">:</span>
+      <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;1101&#39;</span>
+      <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;0100&#39;</span>
+      <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="on-off-template">
+<span id="remote-transmitter-on-off-template"></span><h2>On/Off template<a class="headerlink" href="#on-off-template" title="Permalink to this headline">¶</a></h2>
+<p>Each switch of the <code class="docutils literal notranslate"><span class="pre">remote_transmitter</span></code> platform only sends a pre-defined remote code when switched on.
+For example the RCSwitch example above always <strong>sends the turn on</strong> RF code to the wall plug. In some cases
+you might want to have switches that can do both things, i.e. turn a light on when switched on and turn a light off
+when switched off. To do this, use the <a class="reference internal" href="template.html"><span class="doc">Template Switch</span></a> like this:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">switch</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">living_room_lights_on</span>
+    <span class="n">rc_switch_type_a</span><span class="p">:</span>
+      <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;1101&#39;</span>
+      <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;0100&#39;</span>
+      <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">living_room_lights_off</span>
+    <span class="n">rc_switch_type_a</span><span class="p">:</span>
+      <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;1101&#39;</span>
+      <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;0100&#39;</span>
+      <span class="n">state</span><span class="p">:</span> <span class="kc">False</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Living</span> <span class="n">Room</span> <span class="n">Lights</span>
+    <span class="n">optimistic</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="n">turn_on_action</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">living_room_lights_on</span>
+    <span class="n">turn_off_action</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">living_room_lights_off</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rcswitch-protocol">
+<span id="rc-switch-protocol"></span><h2>RCSwitch Protocol<a class="headerlink" href="#rcswitch-protocol" title="Permalink to this headline">¶</a></h2>
+<p>RCSwitch transmitters/receivers all have a <code class="docutils literal notranslate"><span class="pre">protocol:</span></code> option that can be used to tell esphomelib what timings to use
+for the transmission. This is necessary as many remotes use different timings to encode a logic zero or one.</p>
+<p>RCSwitch has 7 built-in protocols that cover most use cases. You can however also choose to use custom parameters
+for the protocol like so</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use one of RCSwitch&#39;s pre-defined protocols (1-7)</span>
+<span class="n">protocol</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="c1"># Use a custom protocol:</span>
+<span class="n">protocol</span><span class="p">:</span>
+  <span class="n">pulse_length</span><span class="p">:</span> <span class="mi">175</span>
+  <span class="n">sync</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+  <span class="n">zero</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+  <span class="n">one</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="n">inverted</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Configuration options for the custom variant:</p>
+<ul class="simple">
+<li><strong>pulse_length</strong> (<strong>Required</strong>, int): The length of each pulse in microseconds.</li>
+<li><strong>sync</strong> (<em>Optional</em>): The number of on and off pulses for a sync bit. Defaults to 1 pulse on and 31 pulses off.</li>
+<li><strong>zero</strong> (<em>Optional</em>): The number of on and off pulses to encode a logic zero. Defaults to 1 pulse on and 3 pulses off.</li>
+<li><strong>one</strong> (<em>Optional</em>): The number of on and off pulses to encode a logic one. Defaults to 3 pulses on and 1 pulse off.</li>
+<li><strong>inverted</strong> (<em>Optional</em>, boolean): Whether to treat this protocol as inverted, i.e. encode all on pulses by logic LOWs
+and vice versa.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html"><span class="doc">Switch Component</span></a></li>
+<li><a class="reference internal" href="../remote_transmitter.html"><span class="doc">Remote Transmitter Component</span></a></li>
+<li><a class="reference internal" href="../remote_receiver.html"><span class="doc">Remote Receiver Component</span></a></li>
+<li><a class="reference external" href="https://github.com/sui77/rc-switch">RCSwitch</a> by <a class="reference external" href="https://github.com/sui77">Suat Özgür</a></li>
+<li><a class="reference external" href="https://github.com/markszabo/IRremoteESP8266/">IRRemoteESP8266</a> by <a class="reference external" href="https://github.com/markszabo">Mark Szabo-Simon</a></li>
+<li><a class="reference internal" href="../../../api/switch/remote_transmitter.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/switch/remote_transmitter.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

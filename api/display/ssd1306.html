@@ -1,0 +1,333 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SSD1306 OLED Display &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Waveshare E-Paper Display" href="waveshare_epaper.html" />
+    <link rel="prev" title="Nextion Display" href="nextion.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SSD1306 OLED Display</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ssd1306-oled-display">
+<h1>SSD1306 OLED Display<a class="headerlink" href="#ssd1306-oled-display" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N7display7SSD1306E">
+<span id="_CPPv2N7display7SSD1306E"></span><span id="display::SSD1306"></span><span class="target" id="classdisplay_1_1_s_s_d1306"></span><em class="property">class </em><code class="descname">SSD1306</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="#_CPPv3N7display7SSD13067displayEv" title="display::SSD1306::display">display</a>::DisplayBuffer<a class="headerlink" href="#_CPPv3N7display7SSD1306E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classdisplay_1_1_i2_c_s_s_d1306"><span class="std std-ref">display::I2CSSD1306</span></a>, <a class="reference internal" href="#classdisplay_1_1_s_p_i_s_s_d1306"><span class="std std-ref">display::SPISSD1306</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13067SSD1306E8uint32_t">
+<span id="_CPPv2N7display7SSD13067SSD1306E8uint32_t"></span><span id="display::SSD1306::SSD1306__uint32_t"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a942dd17a9cb9b3dcfcc04cb4f522490f"></span><code class="descname">SSD1306</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD13067SSD1306E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13065setupEv">
+<span id="_CPPv2N7display7SSD13065setupEv"></span><span id="display::SSD1306::setup"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a4bb4cb5022321c2d99900cb46e6d9c6f"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD13065setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classdisplay_1_1_s_s_d1306_1a4bb4cb5022321c2d99900cb46e6d9c6f"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13067displayEv">
+<span id="_CPPv2N7display7SSD13067displayEv"></span><span id="display::SSD1306::display"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a6bbc18207dfc012ea27dd756b531919b"></span>void <code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD13067displayEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13066updateEv">
+<span id="_CPPv2N7display7SSD13066updateEv"></span><span id="display::SSD1306::update"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a0bcb0a644fa1623280e5ba48b841a0ca"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD13066updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13069set_modelE12SSD1306Model">
+<span id="_CPPv2N7display7SSD13069set_modelE12SSD1306Model"></span><span id="display::SSD1306::set_model__SSD1306Model"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a1469de6dfab620825435c2c8a8b43fc4"></span>void <code class="descname">set_model</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N7display12SSD1306ModelE" title="display::SSD1306Model">SSD1306Model</a> <em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD13069set_modelE12SSD1306Model" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130613set_reset_pinERK13GPIOOutputPin">
+<span id="_CPPv2N7display7SSD130613set_reset_pinERK13GPIOOutputPin"></span><span id="display::SSD1306::set_reset_pin__GPIOOutputPinCR"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a875e6104f3857701d37aa72906a95ec0"></span>void <code class="descname">set_reset_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>reset_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD130613set_reset_pinERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130616set_external_vccEb">
+<span id="_CPPv2N7display7SSD130616set_external_vccEb"></span><span id="display::SSD1306::set_external_vcc__b"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a11a127b1826e8a3f7363f2f2ad8b2079"></span>void <code class="descname">set_external_vcc</code><span class="sig-paren">(</span>bool <em>external_vcc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD130616set_external_vccEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display7SSD130618get_setup_priorityEv">
+<span id="_CPPv2NK7display7SSD130618get_setup_priorityEv"></span><span id="display::SSD1306::get_setup_priorityC"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1ad5a965ef6c968e9673800bd8b6718bbf"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display7SSD130618get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classdisplay_1_1_s_s_d1306_1a4bb4cb5022321c2d99900cb46e6d9c6f"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13064fillEi">
+<span id="_CPPv2N7display7SSD13064fillEi"></span><span id="display::SSD1306::fill__i"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a594dc60b6adc07d92cdf3de195452b25"></span>void <code class="descname">fill</code><span class="sig-paren">(</span>int <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD13064fillEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill the entire screen with the given color. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display7SSD13067commandE7uint8_t">
+<span id="_CPPv2N7display7SSD13067commandE7uint8_t"></span><span id="display::SSD1306::command__uint8_t"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a81fc562bba301d145b52ec4e0731b97e"></span><em class="property">virtual</em> void <code class="descname">command</code><span class="sig-paren">(</span>uint8_t <em>value</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display7SSD13067commandE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130618write_display_dataEv">
+<span id="_CPPv2N7display7SSD130618write_display_dataEv"></span><span id="display::SSD1306::write_display_data"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a76533923a16618563258f60fdcbd4b08"></span><em class="property">virtual</em> void <code class="descname">write_display_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display7SSD130618write_display_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display7SSD130610is_sh1106_Ev">
+<span id="_CPPv2NK7display7SSD130610is_sh1106_Ev"></span><span id="display::SSD1306::is_sh1106_C"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1aed8a0082c0ed4f0570b064a990e2ede0"></span>bool <code class="descname">is_sh1106_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display7SSD130610is_sh1106_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130629draw_absolute_pixel_internal_Eiii">
+<span id="_CPPv2N7display7SSD130629draw_absolute_pixel_internal_Eiii"></span><span id="display::SSD1306::draw_absolute_pixel_internal___i.i.i"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1afe79ff236eb15cb2a3801dd241fa86b0"></span>void <code class="descname">draw_absolute_pixel_internal_</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD130629draw_absolute_pixel_internal_Eiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130620get_height_internal_Ev">
+<span id="_CPPv2N7display7SSD130620get_height_internal_Ev"></span><span id="display::SSD1306::get_height_internal_"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1afdee551621de7bdcb7b203b78754988d"></span>int <code class="descname">get_height_internal_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD130620get_height_internal_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130619get_width_internal_Ev">
+<span id="_CPPv2N7display7SSD130619get_width_internal_Ev"></span><span id="display::SSD1306::get_width_internal_"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a38fbd5aa0e3be6eda617b77adee70e65"></span>int <code class="descname">get_width_internal_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD130619get_width_internal_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display7SSD130618get_buffer_length_Ev">
+<span id="_CPPv2N7display7SSD130618get_buffer_length_Ev"></span><span id="display::SSD1306::get_buffer_length_"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1abf1d9a23aa0d132aa60a6069586d4e4b"></span>size_t <code class="descname">get_buffer_length_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display7SSD130618get_buffer_length_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display7SSD13066model_E">
+<span id="_CPPv2N7display7SSD13066model_E"></span><span id="display::SSD1306::model___SSD1306Model"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1abe72ee56e376b7f335bb6f60cba69718"></span><a class="reference internal" href="#_CPPv3N7display12SSD1306ModelE" title="display::SSD1306Model">SSD1306Model</a> <code class="descname">model_</code> = {SSD1306_MODEL_128_64}<a class="headerlink" href="#_CPPv3N7display7SSD13066model_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display7SSD130610reset_pin_E">
+<span id="_CPPv2N7display7SSD130610reset_pin_E"></span><span id="display::SSD1306::reset_pin___GPIOPinP"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1a2c0fb748ccddeed4df414f7e1bf382eb"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">reset_pin_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7display7SSD130610reset_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display7SSD130613external_vcc_E">
+<span id="_CPPv2N7display7SSD130613external_vcc_E"></span><span id="display::SSD1306::external_vcc___b"></span><span class="target" id="classdisplay_1_1_s_s_d1306_1adef1d0ab45ca4cfe569c200836e513a1"></span>bool <code class="descname">external_vcc_</code> = {false}<a class="headerlink" href="#_CPPv3N7display7SSD130613external_vcc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7display10SPISSD1306E">
+<span id="_CPPv2N7display10SPISSD1306E"></span><span id="display::SPISSD1306"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306"></span><em class="property">class </em><code class="descname">SPISSD1306</code> : <em class="property">public</em> display::<a class="reference internal" href="#_CPPv3N7display7SSD1306E" title="display::SSD1306">SSD1306</a>, <em class="property">public</em> <a class="reference internal" href="../core/spi.html#_CPPv39SPIDevice" title="SPIDevice">SPIDevice</a><a class="headerlink" href="#_CPPv3N7display10SPISSD1306E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display10SPISSD130610SPISSD1306EP12SPIComponentP7GPIOPinP7GPIOPin8uint32_t">
+<span id="_CPPv2N7display10SPISSD130610SPISSD1306EP12SPIComponentP7GPIOPinP7GPIOPin8uint32_t"></span><span id="display::SPISSD1306::SPISSD1306__SPIComponentP.GPIOPinP.GPIOPinP.uint32_t"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1a83bfc5f4262a375e25521ebd10fc4752"></span><code class="descname">SPISSD1306</code><span class="sig-paren">(</span><a class="reference internal" href="../core/spi.html#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>parent</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>cs</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>dc_pin</em>, uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10SPISSD130610SPISSD1306EP12SPIComponentP7GPIOPinP7GPIOPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10SPISSD13065setupEv">
+<span id="_CPPv2N7display10SPISSD13065setupEv"></span><span id="display::SPISSD1306::setup"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1a88cab1e11736053e9541b7962e40da2d"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10SPISSD13065setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classdisplay_1_1_s_p_i_s_s_d1306_1a88cab1e11736053e9541b7962e40da2d"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display10SPISSD13067commandE7uint8_t">
+<span id="_CPPv2N7display10SPISSD13067commandE7uint8_t"></span><span id="display::SPISSD1306::command__uint8_t"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1a2ef8e6cd6cf10ae8f6df8855d406642d"></span>void <code class="descname">command</code><span class="sig-paren">(</span>uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10SPISSD13067commandE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10SPISSD130618write_display_dataEv">
+<span id="_CPPv2N7display10SPISSD130618write_display_dataEv"></span><span id="display::SPISSD1306::write_display_data"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1aee78c8f16984b5af074b28a65b958c90"></span>void <code class="descname">write_display_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10SPISSD130618write_display_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10SPISSD13069msb_firstEv">
+<span id="_CPPv2N7display10SPISSD13069msb_firstEv"></span><span id="display::SPISSD1306::msb_first"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1a9ce717e4d0cc2a8e7236d10691077035"></span>bool <code class="descname">msb_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10SPISSD13069msb_firstEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10SPISSD130610high_speedEv">
+<span id="_CPPv2N7display10SPISSD130610high_speedEv"></span><span id="display::SPISSD1306::high_speed"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1a424dfd55d88f5c83dce312a79a9cbb7f"></span>bool <code class="descname">high_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10SPISSD130610high_speedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display10SPISSD13067dc_pin_E">
+<span id="_CPPv2N7display10SPISSD13067dc_pin_E"></span><span id="display::SPISSD1306::dc_pin___GPIOPinP"></span><span class="target" id="classdisplay_1_1_s_p_i_s_s_d1306_1a066f23db3fc903544e033c5e3ce9c736"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">dc_pin_</code><a class="headerlink" href="#_CPPv3N7display10SPISSD13067dc_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7display10I2CSSD1306E">
+<span id="_CPPv2N7display10I2CSSD1306E"></span><span id="display::I2CSSD1306"></span><span class="target" id="classdisplay_1_1_i2_c_s_s_d1306"></span><em class="property">class </em><code class="descname">I2CSSD1306</code> : <em class="property">public</em> display::<a class="reference internal" href="#_CPPv3N7display7SSD1306E" title="display::SSD1306">SSD1306</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N7display10I2CSSD1306E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display10I2CSSD130610I2CSSD1306EP12I2CComponent8uint32_t">
+<span id="_CPPv2N7display10I2CSSD130610I2CSSD1306EP12I2CComponent8uint32_t"></span><span id="display::I2CSSD1306::I2CSSD1306__I2CComponentP.uint32_t"></span><span class="target" id="classdisplay_1_1_i2_c_s_s_d1306_1a1479dafa544c567f9b23c3e441ed712e"></span><code class="descname">I2CSSD1306</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10I2CSSD130610I2CSSD1306EP12I2CComponent8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10I2CSSD13065setupEv">
+<span id="_CPPv2N7display10I2CSSD13065setupEv"></span><span id="display::I2CSSD1306::setup"></span><span class="target" id="classdisplay_1_1_i2_c_s_s_d1306_1a98de852be9e47d28792f4bf1c38988a8"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10I2CSSD13065setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classdisplay_1_1_i2_c_s_s_d1306_1a98de852be9e47d28792f4bf1c38988a8"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display10I2CSSD13067commandE7uint8_t">
+<span id="_CPPv2N7display10I2CSSD13067commandE7uint8_t"></span><span id="display::I2CSSD1306::command__uint8_t"></span><span class="target" id="classdisplay_1_1_i2_c_s_s_d1306_1a377ef3c3d7ec5ae1e05767defc738828"></span>void <code class="descname">command</code><span class="sig-paren">(</span>uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10I2CSSD13067commandE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display10I2CSSD130618write_display_dataEv">
+<span id="_CPPv2N7display10I2CSSD130618write_display_dataEv"></span><span id="display::I2CSSD1306::write_display_data"></span><span class="target" id="classdisplay_1_1_i2_c_s_s_d1306_1a90675fd3fab388890e1c552661692c33"></span>void <code class="descname">write_display_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display10I2CSSD130618write_display_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N7display12SSD1306ModelE">
+<span id="_CPPv2N7display12SSD1306ModelE"></span><span id="display::SSD1306Model"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914"></span><em class="property">enum </em><code class="descclassname">display<code class="descclassname">::</code></code><code class="descname">SSD1306Model</code><a class="headerlink" href="#_CPPv3N7display12SSD1306ModelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N7display20SSD1306_MODEL_128_32E">
+<span id="_CPPv2N7display20SSD1306_MODEL_128_32E"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914a611ad61111b42be223fdbaf574304f59"></span><code class="descname">SSD1306_MODEL_128_32</code> = 0<a class="headerlink" href="#_CPPv3N7display20SSD1306_MODEL_128_32E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display20SSD1306_MODEL_128_64E">
+<span id="_CPPv2N7display20SSD1306_MODEL_128_64E"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914a024ecd1746c5691e4e034fa0f8432894"></span><code class="descname">SSD1306_MODEL_128_64</code><a class="headerlink" href="#_CPPv3N7display20SSD1306_MODEL_128_64E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display19SSD1306_MODEL_96_16E">
+<span id="_CPPv2N7display19SSD1306_MODEL_96_16E"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914abdfe18b5e100ce7fb023fd4b31309f25"></span><code class="descname">SSD1306_MODEL_96_16</code><a class="headerlink" href="#_CPPv3N7display19SSD1306_MODEL_96_16E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display19SH1106_MODEL_128_32E">
+<span id="_CPPv2N7display19SH1106_MODEL_128_32E"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914aada2fc2a6b6842828bf78bf379e592f7"></span><code class="descname">SH1106_MODEL_128_32</code><a class="headerlink" href="#_CPPv3N7display19SH1106_MODEL_128_32E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display19SH1106_MODEL_128_64E">
+<span id="_CPPv2N7display19SH1106_MODEL_128_64E"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914ac47cc7f98fd69df5fc74b497b477db14"></span><code class="descname">SH1106_MODEL_128_64</code><a class="headerlink" href="#_CPPv3N7display19SH1106_MODEL_128_64E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display18SH1106_MODEL_96_16E">
+<span id="_CPPv2N7display18SH1106_MODEL_96_16E"></span><span class="target" id="ssd1306_8h_1afceff9b120a27ae83c6f4052741b2914a4e1f2e7d874b5d08656f1f6ac3bede36"></span><code class="descname">SH1106_MODEL_96_16</code><a class="headerlink" href="#_CPPv3N7display18SH1106_MODEL_96_16E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

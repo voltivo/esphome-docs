@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ADS1115 Sensor &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BH1750 Ambient Light Sensor" href="bh1750.html" />
+    <link rel="prev" title="Analog To Digital Sensor" href="adc.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ADS1115 Sensor</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#multiplexer-and-gain">Multiplexer And Gain</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ads1115-sensor">
+<h1>ADS1115 Sensor<a class="headerlink" href="#ads1115-sensor" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ads1115</span></code> sensor allows you to use your ADS1115 sigma-delta ADC
+sensors (<a class="reference external" href="http://www.ti.com/lit/ds/symlink/ads1115.pdf">datasheet</a>, <a class="reference external" href="https://www.adafruit.com/product/1085">Adafruit</a>) with esphomelib.
+First, setup a <a class="reference internal" href="../ads1115.html"><span class="doc">ADS1115 Hub</span></a> for your ADS1115 sensor and then use this
+sensor platform to create individual sensors that will report the
+voltage to Home Assistant.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/ads1115-full.jpg"><img alt="../../../_images/ads1115-full.jpg" src="../../../_images/ads1115-full.jpg" style="width: 50.0%;" /></a>
+<p class="caption"><span class="caption-text">ADS1115 16-Bit ADC.</span></p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/ads1115-ui.png"><img alt="../../../_images/ads1115-ui.png" src="../../../_images/ads1115-ui.png" style="width: 80.0%;" /></a>
+</div>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ads1115</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">address</span><span class="p">:</span> <span class="mh">0x48</span>
+<span class="n">sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">ads1115</span>
+    <span class="n">multiplexer</span><span class="p">:</span> <span class="s1">&#39;A0_GND&#39;</span>
+    <span class="n">gain</span><span class="p">:</span> <span class="mf">6.144</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;ADS1115 Channel A0-GND&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>multiplexer</strong> (<strong>Required</strong>): The multiplexer channel of this sensor. Effectively means between which pins you
+want to measure voltage.</li>
+<li><strong>gain</strong> (<strong>Required</strong>, float): The gain of this sensor.</li>
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for this sensor.</li>
+<li><strong>ads1115_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the
+<a class="reference internal" href="../ads1115.html"><span class="doc">ADS1115 Hub</span></a> you want to use this sensor.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval
+to check the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>. See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">Default Filter</span></a>.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+</ul>
+</div>
+<div class="section" id="multiplexer-and-gain">
+<h2>Multiplexer And Gain<a class="headerlink" href="#multiplexer-and-gain" title="Permalink to this headline">¶</a></h2>
+<p>The ADS1115 has a multiplexer that can be configured to measure voltage between several pin configurations. These are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">A0_A1</span></code> (between Pin 0 and Pin 1)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A0_A3</span></code> (between Pin 0 and Pin 3)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A1_A3</span></code> (between Pin 1 and Pin 3)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A2_A3</span></code> (between Pin 2 and Pin 3)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A0_GND</span></code> (between Pin 0 and GND)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A1_GND</span></code> (between Pin 1 and GND)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A2_GND</span></code> (between Pin 2 and GND)</li>
+<li><code class="docutils literal notranslate"><span class="pre">A3_GND</span></code> (between Pin 3 and GND)</li>
+</ul>
+</div></blockquote>
+<p>Additionally, the ADS1115 has a Programmable Gain Amplifier (PGA) that can help you measure voltages in different ranges, these are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">6.144</span></code> (measures up to 6.144V)</li>
+<li><code class="docutils literal notranslate"><span class="pre">4.096</span></code> (measures up to 4.096V)</li>
+<li><code class="docutils literal notranslate"><span class="pre">2.048</span></code> (measures up to 2.048V)</li>
+<li><code class="docutils literal notranslate"><span class="pre">1.024</span></code> (measures up to 1.024V)</li>
+<li><code class="docutils literal notranslate"><span class="pre">0.512</span></code> (measures up to 0.512V)</li>
+<li><code class="docutils literal notranslate"><span class="pre">0.256</span></code> (measures up to 0.256V)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
+<li><a class="reference internal" href="adc.html"><span class="doc">Analog To Digital Sensor</span></a></li>
+<li><a class="reference internal" href="max6675.html"><span class="doc">MAX6675 K-Type Thermocouple Temperature Sensor</span></a></li>
+<li><a class="reference internal" href="../../../api/sensor/ads1115.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/jrowberg/i2cdevlib">i2cdevlib</a> by <a class="reference external" href="https://github.com/jrowberg">Jeff Rowberg</a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/ads1115.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

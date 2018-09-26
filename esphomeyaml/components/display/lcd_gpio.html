@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GPIO Character-Based LCD Display &#8212; esphomelib 1.8.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="PCF8574 Character-Based LCD Display" href="lcd_pcf8574.html" />
+    <link rel="prev" title="Display Component" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GPIO Character-Based LCD Display</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#rendering-lambda">Rendering Lambda</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="gpio-character-based-lcd-display">
+<h1>GPIO Character-Based LCD Display<a class="headerlink" href="#gpio-character-based-lcd-display" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">lcd_gpio</span></code> display platform allows you to use standard character-based LCD displays like <a class="reference external" href="https://www.adafruit.com/product/181">this one</a>
+with esphomelib. This integration is only for LCD displays that display individual characters on a screen (usually 16-20 columns
+and 2-4 rows), and not for LCD displays that can control each pixel individually. Also, this is the GPIO version of the LCD
+integration where each of the data pins of the LCD needs a dedicated GPIO pin on the ESP. These LCD displays are also
+commonly sold with a PCF8574 chip which only need two lines to the ESP, for that see <a class="reference internal" href="lcd_pcf8574.html"><span class="doc">PCF8574 Character-Based LCD Display</span></a>.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/lcd-full.jpg"><img alt="../../../_images/lcd-full.jpg" src="../../../_images/lcd-full.jpg" style="width: 75.0%;" /></a>
+<p class="caption"><span class="caption-text">LCD Display.</span></p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/lcd-hello_world.jpg"><img alt="../../../_images/lcd-hello_world.jpg" src="../../../_images/lcd-hello_world.jpg" style="width: 60.0%;" /></a>
+</div>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration entry</span>
+<span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">lcd_gpio</span>
+    <span class="n">dimensions</span><span class="p">:</span> <span class="mi">18</span><span class="n">x4</span>
+    <span class="n">data_pins</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">D0</span>
+      <span class="o">-</span> <span class="n">D1</span>
+      <span class="o">-</span> <span class="n">D2</span>
+      <span class="o">-</span> <span class="n">D3</span>
+    <span class="n">enable_pin</span><span class="p">:</span> <span class="n">D4</span>
+    <span class="n">rs_pin</span><span class="p">:</span> <span class="n">D5</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>dimensions</strong> (<strong>Required</strong>, string): The dimensions of the display with <code class="docutils literal notranslate"><span class="pre">ROWSxCOLUMNS</span></code>. If you’re not
+sure, power the display up and just count them.</li>
+<li><strong>data_pins</strong> (<strong>Required</strong>, list of <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schemas</span></a>): A list of the data pins you
+have hooked up to the LCD. The list can either be 8 items long (when you have connected all 8 data pins), or
+4 items long (if you’re operating in 4-bit mode with either the first 4 data pins connected or the last 4 data
+pins connected).</li>
+<li><strong>enable_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The pin you have <code class="docutils literal notranslate"><span class="pre">EN</span></code> hooked up to.</li>
+<li><strong>rs_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The pin you have <code class="docutils literal notranslate"><span class="pre">RS</span></code> hooked up to.</li>
+<li><strong>rw_pin</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): Optionally set the pin you have <code class="docutils literal notranslate"><span class="pre">RW</span></code> hooked up to.
+You can also just permanently connect that pin to GND.</li>
+<li><strong>lambda</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>): The lambda to use for rendering the content on the display.
+See <a class="reference internal" href="#display-lcd-lambda"><span class="std std-ref">Rendering Lambda</span></a> for more information.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to re-draw the screen. Defaults to <code class="docutils literal notranslate"><span class="pre">1s</span></code>.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+</ul>
+</div>
+<div class="section" id="rendering-lambda">
+<span id="display-lcd-lambda"></span><h2>Rendering Lambda<a class="headerlink" href="#rendering-lambda" title="Permalink to this headline">¶</a></h2>
+<p>The LCD displays has a similar API to the fully fledged :<a class="reference internal" href="index.html#display-engine"><span class="std std-ref">Display Rendering Engine</span></a>, but it’s only a subset as LCD displays
+don’t have a concept of individual pixels. In the lambda you’re passed a variable called <code class="docutils literal notranslate"><span class="pre">it</span></code>
+as with all other displays. In this case however, <code class="docutils literal notranslate"><span class="pre">it</span></code> is an <a class="reference internal" href="../../../api/display/lcd_display.html#api-display-lcd-display"><span class="std std-ref">LCDDisplay</span></a> instance.</p>
+<p>The most basic operation with LCD Displays is writing static text to the screen as in the configuration example
+at the top of this page.</p>
+<p>Each of the three methods (<code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">printf</span></code> and <code class="docutils literal notranslate"><span class="pre">strftime</span></code>) all optionally take a column and row arguments at the
+beginning which can be used to print the text at a specific position. These arguments are set to <code class="docutils literal notranslate"><span class="pre">0</span></code> (column) and <code class="docutils literal notranslate"><span class="pre">0</span></code> (row)
+by default which means the character at the top left.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">lcd_gpio</span> <span class="c1"># or lcd_pcf8574</span>
+    <span class="c1"># ...</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+      <span class="o">//</span> <span class="n">Print</span> <span class="mi">0</span> <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">left</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+
+      <span class="o">//</span> <span class="n">Print</span> <span class="mi">1</span> <span class="n">at</span> <span class="n">the</span> <span class="n">second</span> <span class="n">row</span> <span class="ow">and</span> <span class="n">second</span> <span class="n">column</span><span class="o">.</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
+
+      <span class="o">//</span> <span class="n">Let</span><span class="s1">&#39;s write a sensor value (let&#39;</span><span class="n">s</span> <span class="n">assume</span> <span class="n">it</span><span class="s1">&#39;s 42.1)</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;42.1&quot;</span> <span class="p">(</span><span class="n">the</span> <span class="n">dot</span> <span class="n">will</span> <span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="s2">&quot;2&quot;</span> <span class="n">segment</span><span class="p">)</span>
+
+      <span class="o">//</span> <span class="n">Print</span> <span class="n">a</span> <span class="n">right</span><span class="o">-</span><span class="n">padded</span> <span class="n">sensor</span> <span class="n">value</span> <span class="k">with</span> <span class="mi">0</span> <span class="n">digits</span> <span class="n">after</span> <span class="n">the</span> <span class="n">decimal</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Sensor value: </span><span class="si">%8.0f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;Sensor value:       42&quot;</span>
+
+      <span class="o">//</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">current</span> <span class="n">time</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;It is %H:%M on </span><span class="si">%d</span><span class="s2">.%m.%Y&quot;</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">Result</span> <span class="k">for</span> <span class="mi">10</span><span class="p">:</span><span class="mi">06</span> <span class="n">on</span> <span class="n">august</span> <span class="mi">21</span><span class="n">st</span> <span class="mi">2018</span> <span class="o">-&gt;</span> <span class="s2">&quot;It is 10:06 on 21.08.2018&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you’re not seeing anything on the display, make sure you try turning the contrast potentiometer around.</p>
+</div>
+<p>Please see <a class="reference internal" href="index.html#display-printf"><span class="std std-ref">Formatted Text</span></a> for a quick introduction into the <code class="docutils literal notranslate"><span class="pre">printf</span></code> formatting rules and
+<a class="reference internal" href="index.html#display-strftime"><span class="std std-ref">Displaying Time</span></a> for an introduction into the <code class="docutils literal notranslate"><span class="pre">strftime</span></code> time formatting.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html"><span class="doc">Display Component</span></a></li>
+<li><a class="reference internal" href="lcd_pcf8574.html"><span class="doc">PCF8574 Character-Based LCD Display</span></a></li>
+<li><a class="reference internal" href="../../../api/display/lcd_display.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://www.arduino.cc/en/Reference/LiquidCrystal">Arduino LiquidCrystal Library</a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/display/lcd_gpio.rst">Edit this page on GitHub</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
