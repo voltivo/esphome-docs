@@ -66,7 +66,7 @@
             
   <div class="section" id="speed-fan">
 <h1>Speed Fan<a class="headerlink" href="#speed-fan" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">speed</span></code> fan platform lets you represent any float <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">Generic Output Switch</span></a> as a fan that
+<p>The <code class="docutils literal notranslate"><span class="pre">speed</span></code> fan platform lets you represent any float <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">Output Component</span></a> as a fan that
 supports speed settings.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/fan-ui.png"><img alt="../../../_images/fan-ui.png" src="../../../_images/fan-ui.png" style="width: 80.0%;" /></a>
@@ -82,10 +82,10 @@ supports speed settings.</p>
 <h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>output</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the
-<a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">float output</span></a> to use for this fan.</li>
+<a class="reference internal" href="../output/index.html#output"><span class="std std-ref">float output</span></a> to use for this fan.</li>
 <li><strong>name</strong> (<strong>Required</strong>, string): The name for this fan.</li>
 <li><strong>oscillation_output</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the
-<a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">output</span></a> to use for the oscillation state of this fan. Default is empty.</li>
+<a class="reference internal" href="../output/index.html#output"><span class="std std-ref">output</span></a> to use for the oscillation state of this fan. Default is empty.</li>
 <li><strong>speed</strong> (<em>Optional</em>): Set the float values for each speed setting:<ul>
 <li><strong>low</strong> (<em>Required</em>, float): Set the value for the low speed
 setting. Must be in range 0 to 1. Defaults to 0.33.</li>

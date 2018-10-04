@@ -66,7 +66,7 @@
             
   <div class="section" id="rgb-light">
 <h1>RGB Light<a class="headerlink" href="#rgb-light" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">rgb</span></code> light platform creates an RGB light from 3 <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">float output components</span></a>
+<p>The <code class="docutils literal notranslate"><span class="pre">rgb</span></code> light platform creates an RGB light from 3 <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">float output components</span></a>
 (one for each color channel).</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../../../_images/rgb-strip.jpg"><img alt="../../../_images/rgb-strip.jpg" src="../../../_images/rgb-strip.jpg" style="width: 75.0%;" /></a>
@@ -88,9 +88,9 @@
 <h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>name</strong> (<strong>Required</strong>, string): The name of the light.</li>
-<li><strong>red</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">Generic Output Switch</span></a> to use for the red channel.</li>
-<li><strong>green</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">Generic Output Switch</span></a> to use for the green channel.</li>
-<li><strong>blue</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">Generic Output Switch</span></a> to use for the blue channel.</li>
+<li><strong>red</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">Output Component</span></a> to use for the red channel.</li>
+<li><strong>green</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">Output Component</span></a> to use for the green channel.</li>
+<li><strong>blue</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">Output Component</span></a> to use for the blue channel.</li>
 <li><strong>gamma_correct</strong> (<em>Optional</em>, float): The <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_correction">gamma correction
 factor</a> for the light. Defaults to <code class="docutils literal notranslate"><span class="pre">2.8</span></code>.</li>
 <li><strong>default_transition_length</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The length of
@@ -101,7 +101,7 @@ the transition if no transition parameter is provided by Home Assistant. Default
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The RGB light platform only works with <code class="docutils literal notranslate"><span class="pre">float</span></code> <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">outputs</span></a> that
+<p class="last">The RGB light platform only works with <code class="docutils literal notranslate"><span class="pre">float</span></code> <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">outputs</span></a> that
 can output any light intensity percentage like the <a class="reference internal" href="../output/ledc.html"><span class="doc">ESP32 LEDC</span></a> or
 <a class="reference internal" href="../output/esp8266_pwm.html"><span class="doc">ESP8266 PWM</span></a> components and does <strong>not</strong> work with output
 platforms like the <a class="reference internal" href="../output/gpio.html"><span class="doc">GPIO Output</span></a>.</p>

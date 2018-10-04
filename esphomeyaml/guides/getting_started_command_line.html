@@ -150,7 +150,9 @@ that you can modify afterwards and play around with.</p>
 <p>On docker, the first upload is a bit more complicated, either you manage
 to map the serial device into docker with the <code class="docutils literal notranslate"><span class="pre">-v</span></code> option, or you just
 call <code class="docutils literal notranslate"><span class="pre">compile</span></code> within the container and let platformio do the
-uploading on the host system:</p>
+uploading on the host system.</p>
+<p>If you are running docker on Linux you can add <code class="docutils literal notranslate"><span class="pre">--device=/dev/ttyUSB0</span></code>
+to your docker command to map a local USB device.</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;`pwd`&quot;</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="o">-</span><span class="n">it</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="nb">compile</span>
 <span class="n">platformio</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="n">livingroom</span> <span class="o">-</span><span class="n">t</span> <span class="n">upload</span>
 </pre></div>

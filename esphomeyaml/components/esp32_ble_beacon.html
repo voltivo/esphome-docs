@@ -121,6 +121,17 @@ know when I’m home or away.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/esp32_ble_beacon-ibeacon.png"><img alt="../../_images/esp32_ble_beacon-ibeacon.png" src="../../_images/esp32_ble_beacon-ibeacon.png" style="width: 75.0%;" /></a>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The latest arduino ESP32 framework has a bug with the bluetooth module. Please set
+<a class="reference internal" href="esphomeyaml.html#esphomeyaml-arduino-version"><span class="std std-ref">arduino_version</span></a> to <code class="docutils literal notranslate"><span class="pre">espressif32&#64;1.0.2</span></code> like so:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
+  <span class="c1"># ...</span>
+  <span class="n">arduino_version</span><span class="p">:</span> <span class="n">espressif32</span><span class="nd">@1</span><span class="o">.</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+<p class="last">See <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/issues/78#issuecomment-425746566">https://github.com/OttoWinter/esphomeyaml/issues/78#issuecomment-425746566</a></p>
+</div>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>

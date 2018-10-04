@@ -105,6 +105,22 @@ for information on how you can find out the MAC address of a device and track it
       <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Xiaomi MiJia Battery Level&quot;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The latest arduino ESP32 framework has a bug with the bluetooth module. Please set
+<a class="reference internal" href="esphomeyaml.html#esphomeyaml-arduino-version"><span class="std std-ref">arduino_version</span></a> to <code class="docutils literal notranslate"><span class="pre">espressif32&#64;1.0.2</span></code> like so:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
+  <span class="c1"># ...</span>
+  <span class="n">arduino_version</span><span class="p">:</span> <span class="n">espressif32</span><span class="nd">@1</span><span class="o">.</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+<p class="last">See <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/issues/78#issuecomment-425746566">https://github.com/OttoWinter/esphomeyaml/issues/78#issuecomment-425746566</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The first time this component is enabled for an ESP32, the code partition needs to be
+resized. Please flash the ESP32 via USB when adding this to your configuration.</p>
+</div>
 <div class="section" id="configuration-variables">
 <h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

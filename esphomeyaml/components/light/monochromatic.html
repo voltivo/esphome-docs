@@ -67,7 +67,7 @@
   <div class="section" id="monochromatic-light">
 <h1>Monochromatic Light<a class="headerlink" href="#monochromatic-light" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">monochromatic</span></code> light platform creates a simple brightness-only light from an
-<a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">float output component</span></a>.</p>
+<a class="reference internal" href="../output/index.html#output"><span class="std std-ref">float output component</span></a>.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../../../_images/monochromatic-strip.jpg"><img alt="../../../_images/monochromatic-strip.jpg" src="../../../_images/monochromatic-strip.jpg" style="width: 75.0%;" /></a>
 <p class="caption"><span class="caption-text">Example of a brightness-only LED strip that can be used with this component.</span></p>
@@ -86,7 +86,7 @@
 <h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>name</strong> (<strong>Required</strong>, string): The name of the light.</li>
-<li><strong>output</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">Generic Output Switch</span></a> to use for this light.</li>
+<li><strong>output</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id of the float <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">Output Component</span></a> to use for this light.</li>
 <li><strong>gamma_correct</strong> (<em>Optional</em>, float): The <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_correction">gamma correction
 factor</a> for the light. Defaults to <code class="docutils literal notranslate"><span class="pre">2.8</span></code>.</li>
 <li><strong>default_transition_length</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The length of
@@ -99,7 +99,7 @@ Assistant. Defaults to <code class="docutils literal notranslate"><span class="p
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <code class="docutils literal notranslate"><span class="pre">monochromatic</span></code> light platform only works with <code class="docutils literal notranslate"><span class="pre">float</span></code>
-<a class="reference internal" href="../switch/output.html#output"><span class="std std-ref">outputs</span></a> that can output any light intensity percentage like the
+<a class="reference internal" href="../output/index.html#output"><span class="std std-ref">outputs</span></a> that can output any light intensity percentage like the
 <a class="reference internal" href="../output/ledc.html"><span class="doc">ESP32 LEDC</span></a> or
 <a class="reference internal" href="../output/esp8266_pwm.html"><span class="doc">ESP8266 PWM</span></a> components and does <strong>not</strong> work with output
 platforms like the <a class="reference internal" href="../output/gpio.html"><span class="doc">GPIO Output</span></a>.</p>

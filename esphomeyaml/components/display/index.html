@@ -212,7 +212,7 @@ be more than one character long if you for example want to use font ligatures. D
 <p class="last">To use fonts you will need to have the python <code class="docutils literal notranslate"><span class="pre">pillow</span></code> package installed, as esphomeyaml uses that package
 to translate the truetype files into an internal format. If you’re running this as a HassIO add-on or with
 the official esphomeyaml docker image, it should already be installed. Otherwise you need to install it using
-<code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">installl</span> <span class="pre">pillow</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>Then, in your display code just reference the font like so:</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
@@ -290,7 +290,7 @@ zero digits of accuracy (without a decimal) <code class="docutils literal notran
 <li><code class="docutils literal notranslate"><span class="pre">%</span></code> - initiate the format</li>
 <li><code class="docutils literal notranslate"><span class="pre">7</span></code> - means that the number will be right-justified and be padded on the left by spaces if
 the result would be shorter than 7 characters long.</li>
-<li><code class="docutils literal notranslate"><span class="pre">.1</span></code> - round the decimal number to <code class="docutils literal notranslate"><span class="pre">1</span></code> digits after the decimal point.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.2</span></code> - round the decimal number to <code class="docutils literal notranslate"><span class="pre">2</span></code> digits after the decimal point.</li>
 <li><code class="docutils literal notranslate"><span class="pre">f</span></code> - specifier: f(loat).</li>
 </ul>
 <p>You can even have as many format strings as you want in a single printf call. Just make sure the put the
@@ -300,7 +300,7 @@ arguments after the format string in the right order.</p>
     <span class="c1"># ...</span>
     <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
       <span class="o">//</span> <span class="o">%%</span> <span class="o">-</span> <span class="n">literal</span> <span class="o">%</span> <span class="n">sign</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Temperature: %.1°C, Humidity: </span><span class="si">%.1f%%</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">humidity</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">);</span>
+      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Temperature: </span><span class="si">%.1f</span><span class="s2">°C, Humidity: </span><span class="si">%.1f%%</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">humidity</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The last printf tip for use in displays I will discuss here is how to display binary sensor values. You
@@ -340,7 +340,7 @@ display:
 <p>Configuration variables:</p>
 <ul class="simple">
 <li><strong>file</strong> (<strong>Required</strong>, string): The path (relative to where the .yaml file is) of the image file.</li>
-<li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The ID with which you will be able to reference the font later
+<li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The ID with which you will be able to reference the image later
 in your display code.</li>
 <li><strong>resize</strong> (<em>Optional</em>, int): If set, this will resize the image to fit inside the given dimensions <code class="docutils literal notranslate"><span class="pre">WIDTHxHEIGHT</span></code>
 and preserve the aspect ratio.</li>
@@ -349,7 +349,7 @@ and preserve the aspect ratio.</li>
 <p class="first admonition-title">Note</p>
 <p class="last">To use images you will need to have the python <code class="docutils literal notranslate"><span class="pre">pillow</span></code> package installed.
 If you’re running this as a HassIO add-on or with the official esphomeyaml docker image, it should already be
-installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">installl</span> <span class="pre">pillow</span></code>.</p>
+installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>And then later in code:</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>

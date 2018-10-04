@@ -76,9 +76,9 @@ that to your own unit like in below example.</p>
 <span class="n">App</span><span class="p">.</span><span class="n">make_pulse_counter_sensor</span><span class="p">(</span><span class="s">&quot;Stromverbrauch Wärmepumpe&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
 <span class="c1">// Unit conversion</span>
 <span class="k">auto</span> <span class="n">strom_warme</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_pulse_counter_sensor</span><span class="p">(</span><span class="s">&quot;Stromverbrauch Wärmepumpe&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
-<span class="n">strom_warme</span><span class="p">.</span><span class="n">mqtt</span><span class="o">-&gt;</span><span class="n">set_unit_of_measurement</span><span class="p">(</span><span class="s">&quot;kW&quot;</span><span class="p">);</span>
-<span class="n">strom_warme</span><span class="p">.</span><span class="n">mqtt</span><span class="o">-&gt;</span><span class="n">clear_filters</span><span class="p">();</span>
-<span class="n">strom_warme</span><span class="p">.</span><span class="n">mqtt</span><span class="o">-&gt;</span><span class="n">add_multiply_filter</span><span class="p">(</span><span class="mf">0.06f</span><span class="p">);</span> <span class="c1">// convert from Wh pulse to kW</span>
+<span class="n">strom_warme</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">set_unit_of_measurement</span><span class="p">(</span><span class="s">&quot;kW&quot;</span><span class="p">);</span>
+<span class="n">strom_warme</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">clear_filters</span><span class="p">();</span>
+<span class="n">strom_warme</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">add_multiply_filter</span><span class="p">(</span><span class="mf">0.06f</span><span class="p">);</span> <span class="c1">// convert from Wh pulse to kW</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t" title="Application::make_pulse_counter_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_pulse_counter_sensor()</span></code></a>.</p>
