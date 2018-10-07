@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>WiFi Component &#8212; esphomelib 1.8.1 documentation</title>
+    <title>WiFi Component &#8212; esphomelib 1.8.2 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -53,6 +53,7 @@
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
 <li><a class="reference internal" href="#access-point-mode">Access Point Mode</a></li>
 <li><a class="reference internal" href="#manual-ips">Manual IPs</a></li>
+<li><a class="reference internal" href="#power-save-mode">Power Save Mode</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -120,6 +121,8 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">.local<
 <li><strong>reboot_timeout</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-time"><span class="std std-ref">time</span></a>): The amount of time to wait before rebooting when no
 WiFi connection exists. Can be disabled by setting this to <code class="docutils literal notranslate"><span class="pre">0s</span></code>, but note that the low level IP stack currently
 seems to have issues with WiFi where a full reboot is required to get the interface back working. Defaults to <code class="docutils literal notranslate"><span class="pre">60s</span></code>.</li>
+<li><strong>power_save_mode</strong> (<em>Optional</em>, string): The power save mode for the WiFi interface. Defaults to no power saving.
+See <a class="reference internal" href="#wifi-power-save-mode"><span class="std std-ref">Power Save Mode</span></a></li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
 </ul>
 </div>
@@ -153,6 +156,25 @@ a dynamic IP address with the router, thus improving the time until connection.<
 <p>Additionally, this can help with <span class="xref std std-ref">Over-The-Air updates</span> if for example the
 home network doesn’t allow for <code class="docutils literal notranslate"><span class="pre">.local</span></code> addresses. When a manual IP is in your configuration,
 the OTA process will automatically choose that as the target for the upload.</p>
+</div>
+<div class="section" id="power-save-mode">
+<span id="wifi-power-save-mode"></span><h2>Power Save Mode<a class="headerlink" href="#power-save-mode" title="Permalink to this headline">¶</a></h2>
+<p>The WiFi interface of all ESPs offer three power save modes to reduce the amount of power spent on
+WiFi. While some options <em>can</em> reduce the power usage of the ESP, they generally also decrease the
+reliability of the WiFi connection, with frequent disconnections from the router in the highest
+power saving mode.</p>
+<p>If you know what you’re doing and the node doesn’t need to have an extremely reliable connection to WiFi,
+you can set the power saving mode to <code class="docutils literal notranslate"><span class="pre">LIGHT</span></code> or even <code class="docutils literal notranslate"><span class="pre">HIGH</span></code>. But for most situations <code class="docutils literal notranslate"><span class="pre">NONE</span></code> is the best.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">NONE</span></code> (Default, least power saving)</li>
+<li><code class="docutils literal notranslate"><span class="pre">LIGHT</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">HIGH</span></code> (most power saving)</li>
+</ul>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">wifi</span><span class="p">:</span>
+  <span class="c1"># ...</span>
+  <span class="n">power_save_mode</span><span class="p">:</span> <span class="n">none</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
