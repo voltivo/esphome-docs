@@ -61,7 +61,6 @@
 <li><a class="reference internal" href="#my-node-keeps-reconnecting-randomly">My node keeps reconnecting randomly</a></li>
 <li><a class="reference internal" href="#devices-that-will-hopefully-be-supported-soon">Devices that will (hopefully) be supported soon:</a></li>
 <li><a class="reference internal" href="#i-can-t-update-using-ota-because-of-to-little-space-now-what">I can’t update using OTA because of to little space, now what?</a></li>
-<li><a class="reference internal" href="#how-to-manully-flash-a-firmware-binary">How to manully flash a firmware binary</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -221,9 +220,7 @@ always takes some time to update and the most recent version often includes some
 patches. See <a class="reference internal" href="../components/esphomeyaml.html#esphomeyaml-arduino-version"><span class="std std-ref">arduino_version</span></a>.</li>
 <li>The issue seems to be happen with cheap boards more frequently. Especially the “cheap” NodeMCU
 boards from eBay sometimes have quite bad antennas.</li>
-<li>Play around with the <code class="docutils literal notranslate"><span class="pre">keepalive</span></code> option of the <a class="reference internal" href="../components/mqtt.html"><span class="doc">MQTT client</span></a>, sometimes
-increasing this value helps (because it’s causing more pings in the background), some other times a higher
-keepalive works better.</li>
+<li>Give your ESP a <a class="reference internal" href="../components/wifi.html#wifi-manual-ip"><span class="std std-ref">static IP</span></a>.</li>
 </ul>
 </div>
 <div class="section" id="devices-that-will-hopefully-be-supported-soon">
@@ -283,9 +280,6 @@ keepalive works better.</li>
 </pre></div>
 </div>
 <p>This will result in really small firmware data which has a high chance of fitting the remaining space on your device. After this OTA update has succeeded you are left with a device with no functionality except OTA. Now you can re-enable all components previously commented out and perform a ‘normal’ OTA update again.</p>
-</div>
-<div class="section" id="how-to-manully-flash-a-firmware-binary">
-<h2>How to manully flash a firmware binary<a class="headerlink" href="#how-to-manully-flash-a-firmware-binary" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>

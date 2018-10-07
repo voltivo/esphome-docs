@@ -52,6 +52,7 @@
 <li><a class="reference internal" href="#">WiFi Component</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
 <li><a class="reference internal" href="#access-point-mode">Access Point Mode</a></li>
+<li><a class="reference internal" href="#manual-ips">Manual IPs</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -129,6 +130,29 @@ in your wifi configuration, esphomelib will automatically set up an access point
 can connect to. Additionally, you can specify both a “normal” station mode and AP mode at the
 same time. This will cause esphomelib to only enable the access point when no connection
 to the wifi router can be made.</p>
+</div>
+<div class="section" id="manual-ips">
+<span id="wifi-manual-ip"></span><h2>Manual IPs<a class="headerlink" href="#manual-ips" title="Permalink to this headline">¶</a></h2>
+<p>If you’re having problems with your node not connecting to WiFi or the connection
+process taking a long time, it can be a good idea to assign a static IP address
+to the ESP. This way, the ESP doesn’t need to go through the slow DHCP process.</p>
+<p>You can do so with the <code class="docutils literal notranslate"><span class="pre">manual_ip:</span></code> option in the WiFi configuration.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">wifi</span><span class="p">:</span>
+  <span class="c1"># ...</span>
+  <span class="n">manual_ip</span><span class="p">:</span>
+    <span class="c1"># Set this to the IP of the ESP</span>
+    <span class="n">static_ip</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.42</span>
+    <span class="c1"># Set this to the IP address of the router. Often ends with .1</span>
+    <span class="n">gateway</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.1</span>
+    <span class="c1"># The subnet of the network. 255.255.255.0 works for most home networks.</span>
+    <span class="n">subnet</span><span class="p">:</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+</pre></div>
+</div>
+<p>After putting a manual IP in your configuration, the ESP will no longer need to negotiate
+a dynamic IP address with the router, thus improving the time until connection.</p>
+<p>Additionally, this can help with <span class="xref std std-ref">Over-The-Air updates</span> if for example the
+home network doesn’t allow for <code class="docutils literal notranslate"><span class="pre">.local</span></code> addresses. When a manual IP is in your configuration,
+the OTA process will automatically choose that as the target for the upload.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>

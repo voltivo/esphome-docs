@@ -105,6 +105,15 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">True</s
 to <code class="docutils literal notranslate"><span class="pre">3232</span></code> for the ESP32 and <code class="docutils literal notranslate"><span class="pre">8266</span></code> for the ESP8266.</li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you get errors like</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Failed</span>
+<span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Host</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">local</span> <span class="n">Not</span> <span class="n">Found</span>
+</pre></div>
+</div>
+<p class="last">when attempting to upload via OTA, please try setting a <a class="reference internal" href="wifi.html#wifi-manual-ip"><span class="std std-ref">manual IP for WiFi</span></a>.</p>
+</div>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
