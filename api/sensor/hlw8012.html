@@ -65,204 +65,25 @@
             
   <div class="section" id="hlw8012-power-sensor">
 <h1>HLW8012 Power Sensor<a class="headerlink" href="#hlw8012-power-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t" title="Application::make_hlw8012"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hlw8012()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hlw8012()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor16HLW8012ComponentE">
-<span id="_CPPv2N6sensor16HLW8012ComponentE"></span><span id="sensor::HLW8012Component"></span><span class="target" id="classsensor_1_1_h_l_w8012_component"></span><em class="property">class </em><code class="descname">HLW8012Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a><a class="headerlink" href="#_CPPv3N6sensor16HLW8012ComponentE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component16HLW8012ComponentEP7GPIOPin7uint8_t7uint8_t8uint32_t">
-<span id="_CPPv2N6sensor16HLW8012Component16HLW8012ComponentEP7GPIOPin7uint8_t7uint8_t8uint32_t"></span><span id="sensor::HLW8012Component::HLW8012Component__GPIOPinP.uint8_t.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a5e46aca74e0395cba407022edaec3474"></span><code class="descname">HLW8012Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>sel_pin</em>, uint8_t <em>cf_pin</em>, uint8_t <em>cf1_pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component16HLW8012ComponentEP7GPIOPin7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component5setupEv">
-<span id="_CPPv2N6sensor16HLW8012Component5setupEv"></span><span id="sensor::HLW8012Component::setup"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a6bf52e79577db126c92e7b63f1487acb"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_h_l_w8012_component_1a6bf52e79577db126c92e7b63f1487acb"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor16HLW8012Component18get_setup_priorityEv">
-<span id="_CPPv2NK6sensor16HLW8012Component18get_setup_priorityEv"></span><span id="sensor::HLW8012Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a4ae3d49e83e0a6bbf72b6409443127f0"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16HLW8012Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_h_l_w8012_component_1a6bf52e79577db126c92e7b63f1487acb"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component6updateEv">
-<span id="_CPPv2N6sensor16HLW8012Component6updateEv"></span><span id="sensor::HLW8012Component::update"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a10913b9221680f0b4f1cd47a62e741e1"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component19make_voltage_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor16HLW8012Component19make_voltage_sensorERKNSt6stringE"></span><span id="sensor::HLW8012Component::make_voltage_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a530b33eaedd9786b1cdf8493fb8d16f7"></span><a class="reference internal" href="#_CPPv3N6sensor20HLW8012VoltageSensorE" title="sensor::HLW8012VoltageSensor">HLW8012VoltageSensor</a> *<code class="descname">make_voltage_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component19make_voltage_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component19make_current_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor16HLW8012Component19make_current_sensorERKNSt6stringE"></span><span id="sensor::HLW8012Component::make_current_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a9ee44a87b54b73c21cdd949b43d80aac"></span><a class="reference internal" href="#_CPPv3N6sensor20HLW8012CurrentSensorE" title="sensor::HLW8012CurrentSensor">HLW8012CurrentSensor</a> *<code class="descname">make_current_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component19make_current_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component17make_power_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor16HLW8012Component17make_power_sensorERKNSt6stringE"></span><span id="sensor::HLW8012Component::make_power_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a135e2a2772b8ba950c89cf315a6eaa5e"></span>HLW8012PowerSensor *<code class="descname">make_power_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component17make_power_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component21set_change_mode_everyE8uint32_t">
-<span id="_CPPv2N6sensor16HLW8012Component21set_change_mode_everyE8uint32_t"></span><span id="sensor::HLW8012Component::set_change_mode_every__uint32_t"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1ac276467d1e89ab4ec7e7817860e57909"></span>void <code class="descname">set_change_mode_every</code><span class="sig-paren">(</span>uint32_t <em>change_mode_every</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component21set_change_mode_everyE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component20set_current_resistorEf">
-<span id="_CPPv2N6sensor16HLW8012Component20set_current_resistorEf"></span><span id="sensor::HLW8012Component::set_current_resistor__float"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a4e3691f96113dd0ef69ba3961b344e51"></span>void <code class="descname">set_current_resistor</code><span class="sig-paren">(</span>float <em>current_resistor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component20set_current_resistorEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HLW8012Component19set_voltage_dividerEf">
-<span id="_CPPv2N6sensor16HLW8012Component19set_voltage_dividerEf"></span><span id="sensor::HLW8012Component::set_voltage_divider__float"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a39c96db85891752f29bf27453d6a5cb4"></span>void <code class="descname">set_voltage_divider</code><span class="sig-paren">(</span>float <em>voltage_divider</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component19set_voltage_dividerEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::HLW8012Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt>
-<span class="target" id="classsensor_1_1_h_l_w8012_component_1a57aea569c58cfaf7d92d021183b0af64"></span><code class="descname">friend sensor::HLW8012Component::HLW8012CurrentSensor</code></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt>
-<span class="target" id="classsensor_1_1_h_l_w8012_component_1ae3060ccbf9fe83381add1c391d4d5314"></span><code class="descname">friend sensor::HLW8012Component::HLW8012VoltageSensor</code></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component13current_mode_E">
-<span id="_CPPv2N6sensor16HLW8012Component13current_mode_E"></span><span id="sensor::HLW8012Component::current_mode___b"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a76dc907bf0444194c9d0aa7c09c3e24b"></span>bool <code class="descname">current_mode_</code> = {false}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component13current_mode_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component15change_mode_at_E">
-<span id="_CPPv2N6sensor16HLW8012Component15change_mode_at_E"></span><span id="sensor::HLW8012Component::change_mode_at___uint32_t"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a1dd3e03ff41a0b598d8732ae9e6bb873"></span>uint32_t <code class="descname">change_mode_at_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component15change_mode_at_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component18change_mode_every_E">
-<span id="_CPPv2N6sensor16HLW8012Component18change_mode_every_E"></span><span id="sensor::HLW8012Component::change_mode_every___uint32_t"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a15d9ce9c1af7cdac87c333a6a57f3fd8"></span>uint32_t <code class="descname">change_mode_every_</code> = {8}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component18change_mode_every_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component17current_resistor_E">
-<span id="_CPPv2N6sensor16HLW8012Component17current_resistor_E"></span><span id="sensor::HLW8012Component::current_resistor___float"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a8e14c5756a4ccbcff942f7d7b33bbdf9"></span>float <code class="descname">current_resistor_</code> = {0.001}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component17current_resistor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component16voltage_divider_E">
-<span id="_CPPv2N6sensor16HLW8012Component16voltage_divider_E"></span><span id="sensor::HLW8012Component::voltage_divider___float"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a0620d29ee7ee82f7b5b2ae3e62705289"></span>float <code class="descname">voltage_divider_</code> = {2351}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component16voltage_divider_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component8sel_pin_E">
-<span id="_CPPv2N6sensor16HLW8012Component8sel_pin_E"></span><span id="sensor::HLW8012Component::sel_pin___GPIOPinP"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a485ce4781188c0af184392e1f0587f9c"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">sel_pin_</code><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component8sel_pin_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component3cf_E">
-<span id="_CPPv2N6sensor16HLW8012Component3cf_E"></span><span id="sensor::HLW8012Component::cf___PulseCounterBase"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1aae851b2bb8a9acc8c839b87276f023e4"></span>PulseCounterBase <code class="descname">cf_</code><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component3cf_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component4cf1_E">
-<span id="_CPPv2N6sensor16HLW8012Component4cf1_E"></span><span id="sensor::HLW8012Component::cf1___PulseCounterBase"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a4904a7f160ce176ab5984cd74b163813"></span>PulseCounterBase <code class="descname">cf1_</code><a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component4cf1_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component15voltage_sensor_E">
-<span id="_CPPv2N6sensor16HLW8012Component15voltage_sensor_E"></span><span id="sensor::HLW8012Component::voltage_sensor___HLW8012VoltageSensorP"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a7aeaa07b214320954053abb599851d4b"></span><a class="reference internal" href="#_CPPv3N6sensor20HLW8012VoltageSensorE" title="sensor::HLW8012VoltageSensor">HLW8012VoltageSensor</a> *<code class="descname">voltage_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component15voltage_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component15current_sensor_E">
-<span id="_CPPv2N6sensor16HLW8012Component15current_sensor_E"></span><span id="sensor::HLW8012Component::current_sensor___HLW8012CurrentSensorP"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a5df4d091cdd80907af4baea57c1d35a2"></span><a class="reference internal" href="#_CPPv3N6sensor20HLW8012CurrentSensorE" title="sensor::HLW8012CurrentSensor">HLW8012CurrentSensor</a> *<code class="descname">current_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component15current_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HLW8012Component13power_sensor_E">
-<span id="_CPPv2N6sensor16HLW8012Component13power_sensor_E"></span><span id="sensor::HLW8012Component::power_sensor___HLW8012PowerSensorP"></span><span class="target" id="classsensor_1_1_h_l_w8012_component_1a1ad3291254a6d7bcafa6abaa850dffc3"></span>HLW8012PowerSensor *<code class="descname">power_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16HLW8012Component13power_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::HLW8012VoltageSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-</dd></dl>
-
-<dl class="class">
-<dt id="_CPPv3N6sensor20HLW8012VoltageSensorE">
-<span id="_CPPv2N6sensor20HLW8012VoltageSensorE"></span><span id="sensor::HLW8012VoltageSensor"></span><span class="target" id="classsensor_1_1_h_l_w8012_voltage_sensor"></span><em class="property">class </em><code class="descname">HLW8012VoltageSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor11EmptySensorE" title="sensor::EmptySensor">EmptySensor</a>&lt;1, <a class="reference internal" href="index.html#_CPPv3N6sensor10ICON_FLASHE" title="sensor::ICON_FLASH">ICON_FLASH</a>, <a class="reference internal" href="index.html#_CPPv3N6sensor6UNIT_VE" title="sensor::UNIT_V">UNIT_V</a>&gt;<a class="headerlink" href="#_CPPv3N6sensor20HLW8012VoltageSensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor20HLW8012VoltageSensor20HLW8012VoltageSensorERKNSt6stringEP16HLW8012Component">
-<span id="_CPPv2N6sensor20HLW8012VoltageSensor20HLW8012VoltageSensorERKNSt6stringEP16HLW8012Component"></span><span id="sensor::HLW8012VoltageSensor::HLW8012VoltageSensor__ssCR.HLW8012ComponentP"></span><span class="target" id="classsensor_1_1_h_l_w8012_voltage_sensor_1a43b26a3496ff0719cbe02c340541179b"></span><code class="descname">HLW8012VoltageSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20HLW8012VoltageSensor20HLW8012VoltageSensorERKNSt6stringEP16HLW8012Component" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor20HLW8012VoltageSensor15update_intervalEv">
-<span id="_CPPv2N6sensor20HLW8012VoltageSensor15update_intervalEv"></span><span id="sensor::HLW8012VoltageSensor::update_interval"></span><span class="target" id="classsensor_1_1_h_l_w8012_voltage_sensor_1aee445dccb2fe5fcf9705847f6c0c673b"></span>uint32_t <code class="descname">update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20HLW8012VoltageSensor15update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Return with which interval the sensor is polled. Return 0 for non-polling mode. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::HLW8012CurrentSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor20HLW8012VoltageSensor7parent_E">
-<span id="_CPPv2N6sensor20HLW8012VoltageSensor7parent_E"></span><span id="sensor::HLW8012VoltageSensor::parent___HLW8012ComponentP"></span><span class="target" id="classsensor_1_1_h_l_w8012_voltage_sensor_1ab7023b77eaf05804e84e1fd6ee2e7a2c"></span><a class="reference internal" href="#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N6sensor20HLW8012VoltageSensor7parent_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygentypedef: Cannot find typedef “HLW8012PowerSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-</dd></dl>
-
-<dl class="class">
-<dt id="_CPPv3N6sensor20HLW8012CurrentSensorE">
-<span id="_CPPv2N6sensor20HLW8012CurrentSensorE"></span><span id="sensor::HLW8012CurrentSensor"></span><span class="target" id="classsensor_1_1_h_l_w8012_current_sensor"></span><em class="property">class </em><code class="descname">HLW8012CurrentSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor11EmptySensorE" title="sensor::EmptySensor">EmptySensor</a>&lt;1, <a class="reference internal" href="index.html#_CPPv3N6sensor10ICON_FLASHE" title="sensor::ICON_FLASH">ICON_FLASH</a>, UNIT_A&gt;<a class="headerlink" href="#_CPPv3N6sensor20HLW8012CurrentSensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor20HLW8012CurrentSensor20HLW8012CurrentSensorERKNSt6stringEP16HLW8012Component">
-<span id="_CPPv2N6sensor20HLW8012CurrentSensor20HLW8012CurrentSensorERKNSt6stringEP16HLW8012Component"></span><span id="sensor::HLW8012CurrentSensor::HLW8012CurrentSensor__ssCR.HLW8012ComponentP"></span><span class="target" id="classsensor_1_1_h_l_w8012_current_sensor_1a0be1abef8c95f87ed6c5980a243431f9"></span><code class="descname">HLW8012CurrentSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20HLW8012CurrentSensor20HLW8012CurrentSensorERKNSt6stringEP16HLW8012Component" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor20HLW8012CurrentSensor15update_intervalEv">
-<span id="_CPPv2N6sensor20HLW8012CurrentSensor15update_intervalEv"></span><span id="sensor::HLW8012CurrentSensor::update_interval"></span><span class="target" id="classsensor_1_1_h_l_w8012_current_sensor_1a7eb0787d652fd89d8ad52c7e23905202"></span>uint32_t <code class="descname">update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20HLW8012CurrentSensor15update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Return with which interval the sensor is polled. Return 0 for non-polling mode. </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor20HLW8012CurrentSensor7parent_E">
-<span id="_CPPv2N6sensor20HLW8012CurrentSensor7parent_E"></span><span id="sensor::HLW8012CurrentSensor::parent___HLW8012ComponentP"></span><span class="target" id="classsensor_1_1_h_l_w8012_current_sensor_1a43197c81a85ec61ed7f4e27468cf8722"></span><a class="reference internal" href="#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N6sensor20HLW8012CurrentSensor7parent_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="hlw8012_8h_1a47a7df9a20618d935bf7a794b3709760"></span><em class="property">using </em><code class="descname">sensor::HLW8012PowerSensor = typedef EmptyPollingParentSensor&lt;1, ICON_FLASH, UNIT_W&gt;</code></dt>
-<dd></dd></dl>
-
 </div>
 </div>
 

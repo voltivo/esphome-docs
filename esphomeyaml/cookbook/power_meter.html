@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -47,6 +48,14 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Non-Invasive Power Meter</a><ul>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
       </div>
       <div class="documentwrapper">
@@ -65,12 +74,6 @@ have a red LED on the front that blinks every time that one Wh has been used.</p
 IoT enabled? We just have to hook up a simple photoresistor in front of that aforementioned
 LED and track the amount of pulses we receive. Then using esphomelib we can instantly have
 the power meter show up in Home Assistant 🎉</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This guide currently only works with the ESP32, and even if it is ported back to the ESP8266
-at some point, the ESP32 will still achieve a much higher accuracy because it has a
-hardware-based pulse counter.</p>
-</div>
 <p>Hooking it all up is quite easy: Just buy a suitable photoresistor (make sure the wave length
 approximately matches the one from your power meter). Then connect it using a simple variable
 resistor divider (see <a class="reference external" href="https://blog.udemy.com/arduino-ldr/">this article</a> for inspiration).
@@ -95,6 +98,13 @@ Thus, rearranging the expression yields a proportional factor of <code class="do
 <code class="docutils literal notranslate"><span class="pre">kW</span></code>.</p>
 <p>And if a technician shows up and he looks confused about what the heck you have done to your
 power meter, tell them about esphomelib 😉</p>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../components/sensor/pulse_counter.html"><span class="doc">Pulse Counter Sensor</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/cookbook/power_meter.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-cookbook-power_meter" id="disqus_thread"></div></div>
 </div>
 
 

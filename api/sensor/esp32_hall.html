@@ -65,69 +65,13 @@
             
   <div class="section" id="esp32-hall-sensor">
 <h1>ESP32 Hall Sensor<a class="headerlink" href="#esp32-hall-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application22make_esp32_hall_sensorERKNSt6stringE8uint32_t" title="Application::make_esp32_hall_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_esp32_hall_sensor()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_esp32_hall_sensor()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor15ESP32HallSensorE">
-<span id="_CPPv2N6sensor15ESP32HallSensorE"></span><span id="sensor::ESP32HallSensor"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor"></span><em class="property">class </em><code class="descname">ESP32HallSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor22PollingSensorComponentE" title="sensor::PollingSensorComponent">PollingSensorComponent</a><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor15ESP32HallSensor15ESP32HallSensorERKNSt6stringE8uint32_t">
-<span id="_CPPv2N6sensor15ESP32HallSensor15ESP32HallSensorERKNSt6stringE8uint32_t"></span><span id="sensor::ESP32HallSensor::ESP32HallSensor__ssCR.uint32_t"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor_1a02cd86eeb78bda1477084fb06e1bd0e6"></span><code class="descname">ESP32HallSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensor15ESP32HallSensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15ESP32HallSensor6updateEv">
-<span id="_CPPv2N6sensor15ESP32HallSensor6updateEv"></span><span id="sensor::ESP32HallSensor::update"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor_1a013938a98b0a091897a159470b1cbb82"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensor6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15ESP32HallSensor19unit_of_measurementEv">
-<span id="_CPPv2N6sensor15ESP32HallSensor19unit_of_measurementEv"></span><span id="sensor::ESP32HallSensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor_1a55a33cbd388f3d9fd4185755917dabb1"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Override this to set the Home Assistant unit of measurement for this sensor. </p>
-<p>Return “” to disable this feature.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The icon of this sensor, for example “°C”. </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15ESP32HallSensor4iconEv">
-<span id="_CPPv2N6sensor15ESP32HallSensor4iconEv"></span><span id="sensor::ESP32HallSensor::icon"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor_1a104020f54b674e58eef76a9e468e262a"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Override this to set the Home Assistant icon for this sensor. </p>
-<p>Return “” to disable this feature.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The icon of this sensor, for example “mdi:battery”. </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15ESP32HallSensor17accuracy_decimalsEv">
-<span id="_CPPv2N6sensor15ESP32HallSensor17accuracy_decimalsEv"></span><span id="sensor::ESP32HallSensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor_1a1c7ef895765dd4c9598ede355cb54030"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Return the accuracy in decimals for this sensor. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15ESP32HallSensor9unique_idEv">
-<span id="_CPPv2N6sensor15ESP32HallSensor9unique_idEv"></span><span id="sensor::ESP32HallSensor::unique_id"></span><span class="target" id="classsensor_1_1_e_s_p32_hall_sensor_1a4b0c078a69d6c23311cec2ec2f6f30cb"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15ESP32HallSensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A unique ID for this sensor, empty for no unique id. </p>
-<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The unique id as a string. </dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::ESP32HallSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-</dd></dl>
-
 </div>
 </div>
 

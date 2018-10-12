@@ -79,76 +79,14 @@ then create the sensors themselves as in below example.</p>
 <span class="n">App</span><span class="p">.</span><span class="n">make_hdc1080_sensor</span><span class="p">(</span><span class="s">&quot;Outside Temperature&quot;</span><span class="p">,</span> <span class="s">&quot;Outside Humidity&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application19make_hdc1080_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Application::make_hdc1080_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hdc1080_sensor()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hdc1080_sensor()</span></code>.</p>
 </div>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor16HDC1080ComponentE">
-<span id="_CPPv2N6sensor16HDC1080ComponentE"></span><span id="sensor::HDC1080Component"></span><span class="target" id="classsensor_1_1_h_d_c1080_component"></span><em class="property">class </em><code class="descname">HDC1080Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor16HDC1080ComponentE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>HDC1080 temperature+humidity i2c sensor integration. </p>
-<p>Based off of implementation by ClosedCube: <a class="reference external" href="https://github.com/closedcube/ClosedCube_HDC1080_Arduino">https://github.com/closedcube/ClosedCube_HDC1080_Arduino</a> </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor16HDC1080Component16HDC1080ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N6sensor16HDC1080Component16HDC1080ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE8uint32_t"></span><span id="sensor::HDC1080Component::HDC1080Component__I2CComponentP.ssCR.ssCR.uint32_t"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1a48d93b4088f755eba2d65a0ceae13967"></span><code class="descname">HDC1080Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HDC1080Component16HDC1080ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Initialize the component with the provided update interval. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HDC1080Component5setupEv">
-<span id="_CPPv2N6sensor16HDC1080Component5setupEv"></span><span id="sensor::HDC1080Component::setup"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1aa1d5b501069bc9f7656de7dd277d932e"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HDC1080Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Setup the sensor and check for connection. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor16HDC1080Component6updateEv">
-<span id="_CPPv2N6sensor16HDC1080Component6updateEv"></span><span id="sensor::HDC1080Component::update"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1ae9af1abd07dd9b608935847f7b62577c"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16HDC1080Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Retrieve the latest sensor values. This operation takes approximately 16ms. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor16HDC1080Component22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor16HDC1080Component22get_temperature_sensorEv"></span><span id="sensor::HDC1080Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1a74468c1b9d13080ff26ab78284fb7955"></span>HDC1080TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16HDC1080Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the internal temperature sensor. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor16HDC1080Component19get_humidity_sensorEv">
-<span id="_CPPv2NK6sensor16HDC1080Component19get_humidity_sensorEv"></span><span id="sensor::HDC1080Component::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1ab489cfe00d2295468f19ffe838c18620"></span>HDC1080HumiditySensor *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16HDC1080Component19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the internal humidity sensor. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor16HDC1080Component18get_setup_priorityEv">
-<span id="_CPPv2NK6sensor16HDC1080Component18get_setup_priorityEv"></span><span id="sensor::HDC1080Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1a5e4405c3372f22079eba35d3412ec4a1"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16HDC1080Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_h_d_c1080_component_1aa1d5b501069bc9f7656de7dd277d932e"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::HDC1080Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor16HDC1080Component12temperature_E">
-<span id="_CPPv2N6sensor16HDC1080Component12temperature_E"></span><span id="sensor::HDC1080Component::temperature___HDC1080TemperatureSensorP"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1a30e1db528e1946a4dc7270e9e14343f6"></span>HDC1080TemperatureSensor *<code class="descname">temperature_</code><a class="headerlink" href="#_CPPv3N6sensor16HDC1080Component12temperature_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor16HDC1080Component9humidity_E">
-<span id="_CPPv2N6sensor16HDC1080Component9humidity_E"></span><span id="sensor::HDC1080Component::humidity___HDC1080HumiditySensorP"></span><span class="target" id="classsensor_1_1_h_d_c1080_component_1a76e9609fed8f88a1c7e17b0c407b4a07"></span>HDC1080HumiditySensor *<code class="descname">humidity_</code><a class="headerlink" href="#_CPPv3N6sensor16HDC1080Component9humidity_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 

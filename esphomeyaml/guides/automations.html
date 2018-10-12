@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -51,16 +52,16 @@
   <ul>
 <li><a class="reference internal" href="#">Automations And Templates</a><ul>
 <li><a class="reference internal" href="#actions">Actions</a></li>
-<li><a class="reference internal" href="#templates-lambdas">Templates (Lambdas)</a></li>
-<li><a class="reference internal" href="#bonus-templating-actions">Bonus: Templating Actions</a><ul>
-<li><a class="reference internal" href="#all-triggers">All Triggers</a></li>
-<li><a class="reference internal" href="#all-actions">All Actions</a></li>
-<li><a class="reference internal" href="#delay-action">Delay Action</a></li>
-<li><a class="reference internal" href="#lambda-action">Lambda Action</a></li>
-<li><a class="reference internal" href="#if-action">If Action</a></li>
-<li><a class="reference internal" href="#see-also">See Also</a></li>
+<li><a class="reference internal" href="#templates-lambdas">Templates (Lambdas)</a><ul>
+<li><a class="reference internal" href="#bonus-templating-actions">Bonus: Templating Actions</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#all-triggers">All Triggers</a></li>
+<li><a class="reference internal" href="#all-actions">All Actions</a></li>
+<li><a class="reference internal" href="#delay-action"><code class="docutils literal notranslate"><span class="pre">delay</span></code> Action</a></li>
+<li><a class="reference internal" href="#lambda-action"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> Action</a></li>
+<li><a class="reference internal" href="#if-action"><code class="docutils literal notranslate"><span class="pre">if</span></code> Action</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
 </ul>
@@ -295,9 +296,8 @@ lambda is executed and the current value is logged.</p>
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="bonus-templating-actions">
-<span id="config-templatable"></span><h2>Bonus: Templating Actions<a class="headerlink" href="#bonus-templating-actions" title="Permalink to this headline">¶</a></h2>
+<span id="config-templatable"></span><h3>Bonus: Templating Actions<a class="headerlink" href="#bonus-templating-actions" title="Permalink to this headline">¶</a></h3>
 <p>Another feature of esphomeyaml is that you can template almost every parameter for actions in automations. For example
 if you have a light and want to set it to a pre-defined color when a button is pressed, you can do this:</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_press:
@@ -315,8 +315,10 @@ if you have a light and want to set it to a pre-defined color when a button is p
 </div>
 <p>Every parameter in actions that has the label “templatable” in the docs can be templated like above, using
 all of the usual lambda syntax.</p>
+</div>
+</div>
 <div class="section" id="all-triggers">
-<h3>All Triggers<a class="headerlink" href="#all-triggers" title="Permalink to this headline">¶</a></h3>
+<h2>All Triggers<a class="headerlink" href="#all-triggers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="../components/mqtt.html#mqtt-on-message"><span class="std std-ref">mqtt.on_message</span></a></li>
 <li><a class="reference internal" href="../components/sensor/index.html#sensor-on-value"><span class="std std-ref">sensor.on_value</span></a></li>
@@ -332,7 +334,7 @@ all of the usual lambda syntax.</p>
 </ul>
 </div>
 <div class="section" id="all-actions">
-<h3>All Actions<a class="headerlink" href="#all-actions" title="Permalink to this headline">¶</a></h3>
+<h2>All Actions<a class="headerlink" href="#all-actions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="#delay-action"><span class="std std-ref">delay</span></a></li>
 <li><a class="reference internal" href="#lambda-action"><span class="std std-ref">lambda</span></a></li>
@@ -358,7 +360,7 @@ all of the usual lambda syntax.</p>
 </ul>
 </div>
 <div class="section" id="delay-action">
-<span id="id1"></span><h3>Delay Action<a class="headerlink" href="#delay-action" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">delay</span></code> Action<a class="headerlink" href="#delay-action" title="Permalink to this headline">¶</a></h2>
 <p>This action delays the execution of the next action in the action list by a specified
 time period.</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
@@ -379,7 +381,7 @@ the delay is happening.</p>
 </div>
 </div>
 <div class="section" id="lambda-action">
-<span id="id2"></span><h3>Lambda Action<a class="headerlink" href="#lambda-action" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">lambda</span></code> Action<a class="headerlink" href="#lambda-action" title="Permalink to this headline">¶</a></h2>
 <p>This action executes an arbitrary piece of C++ code (see <a class="reference internal" href="#config-lambda"><span class="std std-ref">Lambda</span></a>).</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
   <span class="n">then</span><span class="p">:</span>
@@ -389,7 +391,7 @@ the delay is happening.</p>
 </div>
 </div>
 <div class="section" id="if-action">
-<span id="id3"></span><h3>If Action<a class="headerlink" href="#if-action" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h2><code class="docutils literal notranslate"><span class="pre">if</span></code> Action<a class="headerlink" href="#if-action" title="Permalink to this headline">¶</a></h2>
 <p>This action first evaluated a certain condition (<code class="docutils literal notranslate"><span class="pre">if:</span></code>) and then either
 executes the <code class="docutils literal notranslate"><span class="pre">then:</span></code> branch or the <code class="docutils literal notranslate"><span class="pre">else:</span></code> branch depending on the output of the condition.</p>
 <p>After the chosen branch (<code class="docutils literal notranslate"><span class="pre">then</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span></code>) is done with execution, the next action is performed.</p>
@@ -418,14 +420,13 @@ Defaults to doing nothing.</li>
 </ul>
 </div>
 <div class="section" id="see-also">
-<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="configuration-types.html"><span class="doc">Configuration Types</span></a></li>
 <li><a class="reference internal" href="faq.html"><span class="doc">Frequently Asked Questions</span></a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/guides/automations.rst">Edit this page on GitHub</a></li>
 </ul>
-</div>
-</div>
+<div data-disqus-identifier="esphomeyaml-guides-automations" id="disqus_thread"></div></div>
 </div>
 
 

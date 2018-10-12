@@ -65,207 +65,33 @@
             
   <div class="section" id="tcs34725-rgb-color-sensor">
 <h1>TCS34725 RGB Color Sensor<a class="headerlink" href="#tcs34725-rgb-color-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application13make_tcs34725E8uint32_t" title="Application::make_tcs34725"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_tcs34725()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_tcs34725()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor17TCS34725ComponentE">
-<span id="_CPPv2N6sensor17TCS34725ComponentE"></span><span id="sensor::TCS34725Component"></span><span class="target" id="classsensor_1_1_t_c_s34725_component"></span><em class="property">class </em><code class="descname">TCS34725Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor17TCS34725ComponentE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component17TCS34725ComponentEP12I2CComponent8uint32_t">
-<span id="_CPPv2N6sensor17TCS34725Component17TCS34725ComponentEP12I2CComponent8uint32_t"></span><span id="sensor::TCS34725Component::TCS34725Component__I2CComponentP.uint32_t"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a9f7abff35f023e4db79387f2077a513b"></span><code class="descname">TCS34725Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component17TCS34725ComponentEP12I2CComponent8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component20set_integration_timeE23TCS34725IntegrationTime">
-<span id="_CPPv2N6sensor17TCS34725Component20set_integration_timeE23TCS34725IntegrationTime"></span><span id="sensor::TCS34725Component::set_integration_time__TCS34725IntegrationTime"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a2927da32c1c838f69b2f74b880e7d07e"></span>void <code class="descname">set_integration_time</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6sensor23TCS34725IntegrationTimeE" title="sensor::TCS34725IntegrationTime">TCS34725IntegrationTime</a> <em>integration_time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component20set_integration_timeE23TCS34725IntegrationTime" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component8set_gainE12TCS34725Gain">
-<span id="_CPPv2N6sensor17TCS34725Component8set_gainE12TCS34725Gain"></span><span id="sensor::TCS34725Component::set_gain__TCS34725Gain"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a83bfa401941967c92bfd9d0857fa7e31"></span>void <code class="descname">set_gain</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6sensor12TCS34725GainE" title="sensor::TCS34725Gain">TCS34725Gain</a> <em>gain</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component8set_gainE12TCS34725Gain" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component17make_clear_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17TCS34725Component17make_clear_sensorERKNSt6stringE"></span><span id="sensor::TCS34725Component::make_clear_sensor__ssCR"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a00c52a104c60fa10b0624f7e0e99878d"></span>TCS35725ColorChannelSensor *<code class="descname">make_clear_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component17make_clear_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component15make_red_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17TCS34725Component15make_red_sensorERKNSt6stringE"></span><span id="sensor::TCS34725Component::make_red_sensor__ssCR"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1aa2c24f68ad61ff1b95f937f203acc930"></span>TCS35725ColorChannelSensor *<code class="descname">make_red_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component15make_red_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component17make_green_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17TCS34725Component17make_green_sensorERKNSt6stringE"></span><span id="sensor::TCS34725Component::make_green_sensor__ssCR"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a9138c847a175a89fb310da864c1bc4ca"></span>TCS35725ColorChannelSensor *<code class="descname">make_green_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component17make_green_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component16make_blue_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17TCS34725Component16make_blue_sensorERKNSt6stringE"></span><span id="sensor::TCS34725Component::make_blue_sensor__ssCR"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a96bd545ceeb4948c95cb38bbcffa20b4"></span>TCS35725ColorChannelSensor *<code class="descname">make_blue_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component16make_blue_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component23make_illuminance_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17TCS34725Component23make_illuminance_sensorERKNSt6stringE"></span><span id="sensor::TCS34725Component::make_illuminance_sensor__ssCR"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a901b31280b30ba96910d23e4ceae1283"></span>TCS35725IlluminanceSensor *<code class="descname">make_illuminance_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component23make_illuminance_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component29make_color_temperature_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17TCS34725Component29make_color_temperature_sensorERKNSt6stringE"></span><span id="sensor::TCS34725Component::make_color_temperature_sensor__ssCR"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a326041baa3d63ec33bf323652026f922"></span>TCS35725ColorTemperatureSensor *<code class="descname">make_color_temperature_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component29make_color_temperature_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component5setupEv">
-<span id="_CPPv2N6sensor17TCS34725Component5setupEv"></span><span id="sensor::TCS34725Component::setup"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a0d6fd9614f0fc0575fbde3a741c8096f"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_t_c_s34725_component_1a0d6fd9614f0fc0575fbde3a741c8096f"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor17TCS34725Component18get_setup_priorityEv">
-<span id="_CPPv2NK6sensor17TCS34725Component18get_setup_priorityEv"></span><span id="sensor::TCS34725Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1ad61b3fd77ecfb4b91b627eddee36c593"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor17TCS34725Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_t_c_s34725_component_1a0d6fd9614f0fc0575fbde3a741c8096f"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17TCS34725Component6updateEv">
-<span id="_CPPv2N6sensor17TCS34725Component6updateEv"></span><span id="sensor::TCS34725Component::update"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a169545036180705becb5981ec8d36d4f"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::TCS34725Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component13clear_sensor_E">
-<span id="_CPPv2N6sensor17TCS34725Component13clear_sensor_E"></span><span id="sensor::TCS34725Component::clear_sensor___TCS35725ColorChannelSensorP"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1af621cece7c86556e9803e2df227511fd"></span>TCS35725ColorChannelSensor *<code class="descname">clear_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component13clear_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component11red_sensor_E">
-<span id="_CPPv2N6sensor17TCS34725Component11red_sensor_E"></span><span id="sensor::TCS34725Component::red_sensor___TCS35725ColorChannelSensorP"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1ae8cc1f223852a095282e78d7fe49c15b"></span>TCS35725ColorChannelSensor *<code class="descname">red_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component11red_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component13green_sensor_E">
-<span id="_CPPv2N6sensor17TCS34725Component13green_sensor_E"></span><span id="sensor::TCS34725Component::green_sensor___TCS35725ColorChannelSensorP"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a94020779725d1cd361f722e3e39279f4"></span>TCS35725ColorChannelSensor *<code class="descname">green_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component13green_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component12blue_sensor_E">
-<span id="_CPPv2N6sensor17TCS34725Component12blue_sensor_E"></span><span id="sensor::TCS34725Component::blue_sensor___TCS35725ColorChannelSensorP"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1afb576eb5c18b4d23f4905dd4db45beab"></span>TCS35725ColorChannelSensor *<code class="descname">blue_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component12blue_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component19illuminance_sensor_E">
-<span id="_CPPv2N6sensor17TCS34725Component19illuminance_sensor_E"></span><span id="sensor::TCS34725Component::illuminance_sensor___TCS35725IlluminanceSensorP"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a63e565ec83dd0e27381092aced59c60c"></span>TCS35725IlluminanceSensor *<code class="descname">illuminance_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component19illuminance_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component25color_temperature_sensor_E">
-<span id="_CPPv2N6sensor17TCS34725Component25color_temperature_sensor_E"></span><span id="sensor::TCS34725Component::color_temperature_sensor___TCS35725ColorTemperatureSensorP"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1ab754df9c1249d6972a181c0189593cdf"></span>TCS35725ColorTemperatureSensor *<code class="descname">color_temperature_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component25color_temperature_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component17integration_time_E">
-<span id="_CPPv2N6sensor17TCS34725Component17integration_time_E"></span><span id="sensor::TCS34725Component::integration_time___TCS34725IntegrationTime"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1a8f42f14d28dca935bc3f248dc945a076"></span><a class="reference internal" href="#_CPPv3N6sensor23TCS34725IntegrationTimeE" title="sensor::TCS34725IntegrationTime">TCS34725IntegrationTime</a> <code class="descname">integration_time_</code> = {TCS34725_INTEGRATION_TIME_2_4MS}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component17integration_time_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17TCS34725Component5gain_E">
-<span id="_CPPv2N6sensor17TCS34725Component5gain_E"></span><span id="sensor::TCS34725Component::gain___TCS34725Gain"></span><span class="target" id="classsensor_1_1_t_c_s34725_component_1ae6bcd7779a845115c94568b861e55304"></span><a class="reference internal" href="#_CPPv3N6sensor12TCS34725GainE" title="sensor::TCS34725Gain">TCS34725Gain</a> <code class="descname">gain_</code> = {TCS34725_GAIN_1X}<a class="headerlink" href="#_CPPv3N6sensor17TCS34725Component5gain_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenenum: Cannot find enum “TCS34725IntegrationTime” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-</dd></dl>
-
-<dl class="type">
-<dt id="_CPPv3N6sensor23TCS34725IntegrationTimeE">
-<span id="_CPPv2N6sensor23TCS34725IntegrationTimeE"></span><span id="sensor::TCS34725IntegrationTime"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">TCS34725IntegrationTime</code><a class="headerlink" href="#_CPPv3N6sensor23TCS34725IntegrationTimeE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><em>Values:</em></p>
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_2_4MSE">
-<span id="_CPPv2N6sensor31TCS34725_INTEGRATION_TIME_2_4MSE"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0afce322787ba9aa7721b982be9ad9d900"></span><code class="descname">TCS34725_INTEGRATION_TIME_2_4MS</code> = 0xFF<a class="headerlink" href="#_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_2_4MSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor30TCS34725_INTEGRATION_TIME_24MSE">
-<span id="_CPPv2N6sensor30TCS34725_INTEGRATION_TIME_24MSE"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0a3f8a4097e6f25f6675687533dbad6484"></span><code class="descname">TCS34725_INTEGRATION_TIME_24MS</code> = 0xF6<a class="headerlink" href="#_CPPv3N6sensor30TCS34725_INTEGRATION_TIME_24MSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor30TCS34725_INTEGRATION_TIME_50MSE">
-<span id="_CPPv2N6sensor30TCS34725_INTEGRATION_TIME_50MSE"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0aa73961458d2c253680c478bb069951cc"></span><code class="descname">TCS34725_INTEGRATION_TIME_50MS</code> = 0xEB<a class="headerlink" href="#_CPPv3N6sensor30TCS34725_INTEGRATION_TIME_50MSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_101MSE">
-<span id="_CPPv2N6sensor31TCS34725_INTEGRATION_TIME_101MSE"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0a1341525469c8b246bb900efecec377e0"></span><code class="descname">TCS34725_INTEGRATION_TIME_101MS</code> = 0xD5<a class="headerlink" href="#_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_101MSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_154MSE">
-<span id="_CPPv2N6sensor31TCS34725_INTEGRATION_TIME_154MSE"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0a1db75d91ead3c6af176cd5fd74c87512"></span><code class="descname">TCS34725_INTEGRATION_TIME_154MS</code> = 0xC0<a class="headerlink" href="#_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_154MSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_700MSE">
-<span id="_CPPv2N6sensor31TCS34725_INTEGRATION_TIME_700MSE"></span><span class="target" id="tcs34725_8h_1a44fca24a904e7d40d4247d74fdda9ec0a14ca4141ee1a24f6a4e0b0e08e770c05"></span><code class="descname">TCS34725_INTEGRATION_TIME_700MS</code> = 0x00<a class="headerlink" href="#_CPPv3N6sensor31TCS34725_INTEGRATION_TIME_700MSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="type">
-<dt id="_CPPv3N6sensor12TCS34725GainE">
-<span id="_CPPv2N6sensor12TCS34725GainE"></span><span id="sensor::TCS34725Gain"></span><span class="target" id="tcs34725_8h_1a44c7915f4c8427dea92b7e10d5711eb5"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">TCS34725Gain</code><a class="headerlink" href="#_CPPv3N6sensor12TCS34725GainE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><em>Values:</em></p>
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor16TCS34725_GAIN_1XE">
-<span id="_CPPv2N6sensor16TCS34725_GAIN_1XE"></span><span class="target" id="tcs34725_8h_1a44c7915f4c8427dea92b7e10d5711eb5ae449cd732abeb9470aec3f23f6fc52bf"></span><code class="descname">TCS34725_GAIN_1X</code> = 0x00<a class="headerlink" href="#_CPPv3N6sensor16TCS34725_GAIN_1XE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor16TCS34725_GAIN_4XE">
-<span id="_CPPv2N6sensor16TCS34725_GAIN_4XE"></span><span class="target" id="tcs34725_8h_1a44c7915f4c8427dea92b7e10d5711eb5a007cf642557c271079d70c4e98014362"></span><code class="descname">TCS34725_GAIN_4X</code> = 0x01<a class="headerlink" href="#_CPPv3N6sensor16TCS34725_GAIN_4XE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor17TCS34725_GAIN_16XE">
-<span id="_CPPv2N6sensor17TCS34725_GAIN_16XE"></span><span class="target" id="tcs34725_8h_1a44c7915f4c8427dea92b7e10d5711eb5a843123deec844bb0e3082d384bba980f"></span><code class="descname">TCS34725_GAIN_16X</code> = 0x02<a class="headerlink" href="#_CPPv3N6sensor17TCS34725_GAIN_16XE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor17TCS34725_GAIN_60XE">
-<span id="_CPPv2N6sensor17TCS34725_GAIN_60XE"></span><span class="target" id="tcs34725_8h_1a44c7915f4c8427dea92b7e10d5711eb5a3b8ff1520e302e9b9112064a5409a819"></span><code class="descname">TCS34725_GAIN_60X</code> = 0x03<a class="headerlink" href="#_CPPv3N6sensor17TCS34725_GAIN_60XE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="tcs34725_8h_1a4d51118bf68de196c6157f457a480089"></span><em class="property">using </em><code class="descname">sensor::TCS35725IlluminanceSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_BRIGHTNESS_5, UNIT_LX&gt;</code></dt>
-<dd></dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="tcs34725_8h_1a025f68798753c3ca878f3122fb866112"></span><em class="property">using </em><code class="descname">sensor::TCS35725ColorTemperatureSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_THERMOMETER, UNIT_K&gt;</code></dt>
-<dd></dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="tcs34725_8h_1a314abef97dc326a5b764401c2c07479a"></span><em class="property">using </em><code class="descname">sensor::TCS35725ColorChannelSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_LIGHTBULB, UNIT_PERCENT&gt;</code></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenenum: Cannot find enum “TCS34725Gain” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygentypedef: Cannot find typedef “TCS35725IlluminanceSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygentypedef: Cannot find typedef “TCS35725ColorTemperatureSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygentypedef: Cannot find typedef “TCS35725ColorChannelSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
 </div>
 </div>
 

@@ -64,93 +64,17 @@
             
   <div class="section" id="esp32-bluetooth-low-energy-beacon">
 <h1>ESP32 Bluetooth Low Energy Beacon<a class="headerlink" href="#esp32-bluetooth-low-energy-beacon" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application21make_esp32_ble_beaconERKNSt5arrayI7uint8_tXL16EEEE" title="Application::make_esp32_ble_beacon"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_esp32_ble_beacon()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_esp32_ble_beacon()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv314ESP32BLEBeacon">
-<span id="_CPPv214ESP32BLEBeacon"></span><span id="ESP32BLEBeacon"></span><span class="target" id="class_e_s_p32_b_l_e_beacon"></span><em class="property">class </em><code class="descname">ESP32BLEBeacon</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv314ESP32BLEBeacon" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon14ESP32BLEBeaconERKNSt5arrayI7uint8_tXL16EEEE">
-<span id="_CPPv2N14ESP32BLEBeacon14ESP32BLEBeaconERKNSt5arrayI7uint8_tX16EEE"></span><span id="ESP32BLEBeacon::ESP32BLEBeacon__std::array:uint8_t.16:CR"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1a54a8d9df6758d40233f5954bfe67243e"></span><code class="descname">ESP32BLEBeacon</code><span class="sig-paren">(</span><em class="property">const</em> std::array&lt;uint8_t, 16&gt; &amp;<em>uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon14ESP32BLEBeaconERKNSt5arrayI7uint8_tXL16EEEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon5setupEv">
-<span id="_CPPv2N14ESP32BLEBeacon5setupEv"></span><span id="ESP32BLEBeacon::setup"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1adaa65b4ed9d4236893271b4debf54b6d"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_e_s_p32_b_l_e_beacon_1adaa65b4ed9d4236893271b4debf54b6d"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK14ESP32BLEBeacon18get_setup_priorityEv">
-<span id="_CPPv2NK14ESP32BLEBeacon18get_setup_priorityEv"></span><span id="ESP32BLEBeacon::get_setup_priorityC"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1a0d2c636de0cb4b704bee402eb6c81985"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14ESP32BLEBeacon18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#class_e_s_p32_b_l_e_beacon_1adaa65b4ed9d4236893271b4debf54b6d"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon9set_majorE8uint16_t">
-<span id="_CPPv2N14ESP32BLEBeacon9set_majorE8uint16_t"></span><span id="ESP32BLEBeacon::set_major__uint16_t"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1a59e893c554fd8d79e1d0a7c1471bcbaf"></span>void <code class="descname">set_major</code><span class="sig-paren">(</span>uint16_t <em>major</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon9set_majorE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon9set_minorE8uint16_t">
-<span id="_CPPv2N14ESP32BLEBeacon9set_minorE8uint16_t"></span><span id="ESP32BLEBeacon::set_minor__uint16_t"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1a268548efb63380b8cfc3bc6199a7b04d"></span>void <code class="descname">set_minor</code><span class="sig-paren">(</span>uint16_t <em>minor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon9set_minorE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “ESP32BLEBeacon” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N14ESP32BLEBeacon4uuidE">
-<span id="_CPPv2N14ESP32BLEBeacon4uuidE"></span><span id="ESP32BLEBeacon::uuid__std::array:uint8_t.16:"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1acac3ae87a71d3a392526be28ab7ff228"></span>std::array&lt;uint8_t, 16&gt; <code class="descname">uuid</code><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon4uuidE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N14ESP32BLEBeacon5majorE">
-<span id="_CPPv2N14ESP32BLEBeacon5majorE"></span><span id="ESP32BLEBeacon::major__uint16_t"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1af651b497bd49769427021ce69b51811d"></span>uint16_t <code class="descname">major</code> = {10167}<a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon5majorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N14ESP32BLEBeacon5minorE">
-<span id="_CPPv2N14ESP32BLEBeacon5minorE"></span><span id="ESP32BLEBeacon::minor__uint16_t"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1a65b447b79b8cde897aa8dbe374b5488a"></span>uint16_t <code class="descname">minor</code> = {61958}<a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon5minorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenvariable: Cannot find variable “global_esp32_ble_beacon” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Static Functions</p>
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon17gap_event_handlerE22esp_gap_ble_cb_event_tP22esp_ble_gap_cb_param_t">
-<span id="_CPPv2N14ESP32BLEBeacon17gap_event_handlerE22esp_gap_ble_cb_event_tP22esp_ble_gap_cb_param_t"></span><span id="ESP32BLEBeacon::gap_event_handler__esp_gap_ble_cb_event_t.esp_ble_gap_cb_param_tP"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1ac9c585b230ae566999968619047b686e"></span>void <code class="descname">gap_event_handler</code><span class="sig-paren">(</span>esp_gap_ble_cb_event_t <em>event</em>, esp_ble_gap_cb_param_t *<em>param</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon17gap_event_handlerE22esp_gap_ble_cb_event_tP22esp_ble_gap_cb_param_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon13ble_core_taskEPv">
-<span id="_CPPv2N14ESP32BLEBeacon13ble_core_taskEPv"></span><span id="ESP32BLEBeacon::ble_core_task__voidP"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1ad31c93562435d445829389cd71ed24bc"></span>void <code class="descname">ble_core_task</code><span class="sig-paren">(</span>void *<em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon13ble_core_taskEPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESP32BLEBeacon9ble_setupEv">
-<span id="_CPPv2N14ESP32BLEBeacon9ble_setupEv"></span><span id="ESP32BLEBeacon::ble_setup"></span><span class="target" id="class_e_s_p32_b_l_e_beacon_1a47204105e5df2b9c878a247e7dbbe587"></span>void <code class="descname">ble_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESP32BLEBeacon9ble_setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv323global_esp32_ble_beacon">
-<span id="_CPPv223global_esp32_ble_beacon"></span><span id="global_esp32_ble_beacon__ESP32BLEBeaconP"></span><span class="target" id="esp32__ble__beacon_8h_1a4e8cae8845bcc38889c8728af8948236"></span><a class="reference internal" href="#_CPPv314ESP32BLEBeacon" title="ESP32BLEBeacon">ESP32BLEBeacon</a> *<code class="descname">global_esp32_ble_beacon</code><a class="headerlink" href="#_CPPv323global_esp32_ble_beacon" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
 </div>
 </div>
 

@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -50,10 +51,8 @@
   <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">HTU21D Temperature+Humidity Sensor</a><ul>
-<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -79,6 +78,10 @@ required to be set up in your configuration for this sensor to work.</p>
 </div>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/temperature-humidity.png"><img alt="../../../_images/temperature-humidity.png" src="../../../_images/temperature-humidity.png" style="width: 80.0%;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>SI7021</strong> sensor also works with this integration.</p>
 </div>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">sensor</span><span class="p">:</span>
@@ -108,8 +111,9 @@ required to be set up in your configuration for this sensor to work.</p>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>.
 See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">update_interval gotchas</span></a>.</li>
 </ul>
+</div>
 <div class="section" id="see-also">
-<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
 <li><a class="reference internal" href="dht.html"><span class="doc">DHT Temperature+Humidity Sensor</span></a></li>
@@ -120,8 +124,7 @@ See <a class="reference internal" href="index.html#sensor-default-filter"><span 
 <li><a class="reference external" href="https://github.com/jrowberg/i2cdevlib">i2cdevlib</a> by <a class="reference external" href="https://github.com/jrowberg">Jeff Rowberg</a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/htu21d.rst">Edit this page on GitHub</a></li>
 </ul>
-</div>
-</div>
+<div data-disqus-identifier="esphomeyaml-components-sensor-htu21d" id="disqus_thread"></div></div>
 </div>
 
 

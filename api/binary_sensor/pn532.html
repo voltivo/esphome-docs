@@ -65,141 +65,17 @@
             
   <div class="section" id="pn532-nfc-rfid-controller">
 <h1>PN532 NFC/RFID Controller<a class="headerlink" href="#pn532-nfc-rfid-controller" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application20make_pn532_componentEP12SPIComponentRK13GPIOOutputPin8uint32_t" title="Application::make_pn532_component"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_pn532_component()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_pn532_component()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N13binary_sensor14PN532ComponentE">
-<span id="_CPPv2N13binary_sensor14PN532ComponentE"></span><span id="binary_sensor::PN532Component"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component"></span><em class="property">class </em><code class="descname">PN532Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/spi.html#_CPPv39SPIDevice" title="SPIDevice">SPIDevice</a><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532ComponentE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component14PN532ComponentEP12SPIComponentP7GPIOPin8uint32_t">
-<span id="_CPPv2N13binary_sensor14PN532Component14PN532ComponentEP12SPIComponentP7GPIOPin8uint32_t"></span><span id="binary_sensor::PN532Component::PN532Component__SPIComponentP.GPIOPinP.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a76d287d46a857772f34ae83893c6fddf"></span><code class="descname">PN532Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/spi.html#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>parent</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>cs</em>, uint32_t <em>update_interval</em> = 1000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component14PN532ComponentEP12SPIComponentP7GPIOPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component5setupEv">
-<span id="_CPPv2N13binary_sensor14PN532Component5setupEv"></span><span id="binary_sensor::PN532Component::setup"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a7dcca0e4c0d04038797f911caef3351a"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classbinary__sensor_1_1_p_n532_component_1a7dcca0e4c0d04038797f911caef3351a"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component6updateEv">
-<span id="_CPPv2N13binary_sensor14PN532Component6updateEv"></span><span id="binary_sensor::PN532Component::update"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a43d67432d8ab6509d617bf3a9e655f03"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK13binary_sensor14PN532Component18get_setup_priorityEv">
-<span id="_CPPv2NK13binary_sensor14PN532Component18get_setup_priorityEv"></span><span id="binary_sensor::PN532Component::get_setup_priorityC"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a3296b911bcb42abbb58743ba31558a11"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor14PN532Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classbinary__sensor_1_1_p_n532_component_1a7dcca0e4c0d04038797f911caef3351a"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component4loopEv">
-<span id="_CPPv2N13binary_sensor14PN532Component4loopEv"></span><span id="binary_sensor::PN532Component::loop"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a5b4c013f22d0f6fa62c9aae1b48ea21a"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classbinary__sensor_1_1_p_n532_component_1a5b4c013f22d0f6fa62c9aae1b48ea21a"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#classbinary__sensor_1_1_p_n532_component_1a7dcca0e4c0d04038797f911caef3351a"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component8make_tagERKNSt6stringERKNSt6vectorI7uint8_tEE">
-<span id="_CPPv2N13binary_sensor14PN532Component8make_tagERKNSt6stringERKNSt6vectorI7uint8_tEE"></span><span id="binary_sensor::PN532Component::make_tag__ssCR.std::vector:uint8_t:CR"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a10dee3f60de79fe4e3a097397789230f"></span><a class="reference internal" href="#_CPPv3N13binary_sensor17PN532BinarySensorE" title="binary_sensor::PN532BinarySensor">PN532BinarySensor</a> *<code class="descname">make_tag</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> std::vector&lt;uint8_t&gt; &amp;<em>uid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component8make_tagERKNSt6stringERKNSt6vectorI7uint8_tEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “binary_sensor::PN532Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Functions</p>
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component9msb_firstEv">
-<span id="_CPPv2N13binary_sensor14PN532Component9msb_firstEv"></span><span id="binary_sensor::PN532Component::msb_first"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1ab995a88038e6480f7900c40eba8b8d50"></span>bool <code class="descname">msb_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component9msb_firstEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component20pn532_write_command_E7uint8_t">
-<span id="_CPPv2N13binary_sensor14PN532Component20pn532_write_command_E7uint8_t"></span><span id="binary_sensor::PN532Component::pn532_write_command___uint8_t"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1acd5db92dd2ddcb58d6d613816f78bdd5"></span>void <code class="descname">pn532_write_command_</code><span class="sig-paren">(</span>uint8_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component20pn532_write_command_E7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component30pn532_write_command_check_ack_E7uint8_tb">
-<span id="_CPPv2N13binary_sensor14PN532Component30pn532_write_command_check_ack_E7uint8_tb"></span><span id="binary_sensor::PN532Component::pn532_write_command_check_ack___uint8_t.b"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1aa0318a8ab2c84dda9af679efa158f826"></span>bool <code class="descname">pn532_write_command_check_ack_</code><span class="sig-paren">(</span>uint8_t <em>len</em>, bool <em>ignore</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component30pn532_write_command_check_ack_E7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component16pn532_read_data_E7uint8_t">
-<span id="_CPPv2N13binary_sensor14PN532Component16pn532_read_data_E7uint8_t"></span><span id="binary_sensor::PN532Component::pn532_read_data___uint8_t"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1ac610c18fd4c76cc83a7d535b6fa8ea20"></span>void <code class="descname">pn532_read_data_</code><span class="sig-paren">(</span>uint8_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component16pn532_read_data_E7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component8is_readyEv">
-<span id="_CPPv2N13binary_sensor14PN532Component8is_readyEv"></span><span id="binary_sensor::PN532Component::is_ready"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a880c109dba92b0c5fe3c8ac86120571e"></span>bool <code class="descname">is_ready</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component8is_readyEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor14PN532Component8read_ackEv">
-<span id="_CPPv2N13binary_sensor14PN532Component8read_ackEv"></span><span id="binary_sensor::PN532Component::read_ack"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a70caf4f8e45cb28468a01e4adb73c3d3"></span>bool <code class="descname">read_ack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component8read_ackEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “binary_sensor::PN532BinarySensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor14PN532Component7buffer_E">
-<span id="_CPPv2N13binary_sensor14PN532Component7buffer_E"></span><span id="binary_sensor::PN532Component::buffer___uint8_tA"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a843655920a5bd7ec13dee59083f0e653"></span>uint8_t <code class="descname">buffer_</code>[32]<a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component7buffer_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor14PN532Component15requested_read_E">
-<span id="_CPPv2N13binary_sensor14PN532Component15requested_read_E"></span><span id="binary_sensor::PN532Component::requested_read___b"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1ab41c821b4054a07a6de6aafa8799ea8e"></span>bool <code class="descname">requested_read_</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component15requested_read_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor14PN532Component15binary_sensors_E">
-<span id="_CPPv2N13binary_sensor14PN532Component15binary_sensors_E"></span><span id="binary_sensor::PN532Component::binary_sensors___std::vector:PN532BinarySensorP:"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1ac5240b759ae04bbbdf6d1401e40c4bd0"></span>std::vector&lt;<a class="reference internal" href="#_CPPv3N13binary_sensor17PN532BinarySensorE" title="binary_sensor::PN532BinarySensor">PN532BinarySensor</a> *&gt; <code class="descname">binary_sensors_</code><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component15binary_sensors_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor14PN532Component9last_uid_E">
-<span id="_CPPv2N13binary_sensor14PN532Component9last_uid_E"></span><span id="binary_sensor::PN532Component::last_uid___std::vector:uint8_t:"></span><span class="target" id="classbinary__sensor_1_1_p_n532_component_1a80193f4930d21771aa4247cc5496b8f6"></span>std::vector&lt;uint8_t&gt; <code class="descname">last_uid_</code><a class="headerlink" href="#_CPPv3N13binary_sensor14PN532Component9last_uid_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="class">
-<dt id="_CPPv3N13binary_sensor17PN532BinarySensorE">
-<span id="_CPPv2N13binary_sensor17PN532BinarySensorE"></span><span id="binary_sensor::PN532BinarySensor"></span><span class="target" id="classbinary__sensor_1_1_p_n532_binary_sensor"></span><em class="property">class </em><code class="descname">PN532BinarySensor</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a><a class="headerlink" href="#_CPPv3N13binary_sensor17PN532BinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor17PN532BinarySensor17PN532BinarySensorERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t">
-<span id="_CPPv2N13binary_sensor17PN532BinarySensor17PN532BinarySensorERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t"></span><span id="binary_sensor::PN532BinarySensor::PN532BinarySensor__ssCR.std::vector:uint8_t:CR.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_p_n532_binary_sensor_1a5ea3d2335d0c0694633396852f295dbb"></span><code class="descname">PN532BinarySensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> std::vector&lt;uint8_t&gt; &amp;<em>uid</em>, uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17PN532BinarySensor17PN532BinarySensorERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor17PN532BinarySensor7processEP7uint8_t7uint8_t">
-<span id="_CPPv2N13binary_sensor17PN532BinarySensor7processEP7uint8_t7uint8_t"></span><span id="binary_sensor::PN532BinarySensor::process__uint8_tP.uint8_t"></span><span class="target" id="classbinary__sensor_1_1_p_n532_binary_sensor_1aa16aa9970b481b245f107f23416e5686"></span>bool <code class="descname">process</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, uint8_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17PN532BinarySensor7processEP7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor17PN532BinarySensor4uid_E">
-<span id="_CPPv2N13binary_sensor17PN532BinarySensor4uid_E"></span><span id="binary_sensor::PN532BinarySensor::uid___std::vector:uint8_t:"></span><span class="target" id="classbinary__sensor_1_1_p_n532_binary_sensor_1af847f30cf5d0e249b1745690d9fa82b0"></span>std::vector&lt;uint8_t&gt; <code class="descname">uid_</code><a class="headerlink" href="#_CPPv3N13binary_sensor17PN532BinarySensor4uid_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 

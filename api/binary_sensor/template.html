@@ -65,55 +65,13 @@
             
   <div class="section" id="template-binary-sensor">
 <h1>Template Binary Sensor<a class="headerlink" href="#template-binary-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application27make_template_binary_sensorERKNSt6stringE" title="Application::make_template_binary_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_template_binary_sensor()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_template_binary_sensor()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N13binary_sensor20TemplateBinarySensorE">
-<span id="_CPPv2N13binary_sensor20TemplateBinarySensorE"></span><span id="binary_sensor::TemplateBinarySensor"></span><span class="target" id="classbinary__sensor_1_1_template_binary_sensor"></span><em class="property">class </em><code class="descname">TemplateBinarySensor</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> binary_sensor::<a class="reference internal" href="index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a><a class="headerlink" href="#_CPPv3N13binary_sensor20TemplateBinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor20TemplateBinarySensor20TemplateBinarySensorERKNSt6stringE">
-<span id="_CPPv2N13binary_sensor20TemplateBinarySensor20TemplateBinarySensorERKNSt6stringE"></span><span id="binary_sensor::TemplateBinarySensor::TemplateBinarySensor__ssCR"></span><span class="target" id="classbinary__sensor_1_1_template_binary_sensor_1a553155e3963c3ed48e03e0d750196ed2"></span><code class="descname">TemplateBinarySensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor20TemplateBinarySensor20TemplateBinarySensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor20TemplateBinarySensor12set_templateERRNSt8functionIF8optionalIbEvEEE">
-<span id="_CPPv2N13binary_sensor20TemplateBinarySensor12set_templateERRNSt8functionIF8optionalIbEvEEE"></span><span class="target" id="classbinary__sensor_1_1_template_binary_sensor_1a5f154749281d81098ea867a6229f42bf"></span>void <code class="descname">set_template</code><span class="sig-paren">(</span>std::function&lt;<a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt;<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor20TemplateBinarySensor12set_templateERRNSt8functionIF8optionalIbEvEEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor20TemplateBinarySensor4loopEv">
-<span id="_CPPv2N13binary_sensor20TemplateBinarySensor4loopEv"></span><span id="binary_sensor::TemplateBinarySensor::loop"></span><span class="target" id="classbinary__sensor_1_1_template_binary_sensor_1aa6b0ffc358d746cb32c81deafba944a2"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor20TemplateBinarySensor4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classbinary__sensor_1_1_template_binary_sensor_1aa6b0ffc358d746cb32c81deafba944a2"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK13binary_sensor20TemplateBinarySensor18get_setup_priorityEv">
-<span id="_CPPv2NK13binary_sensor20TemplateBinarySensor18get_setup_priorityEv"></span><span id="binary_sensor::TemplateBinarySensor::get_setup_priorityC"></span><span class="target" id="classbinary__sensor_1_1_template_binary_sensor_1a637d65d0ba5b37d8cdec35d3782b3768"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor20TemplateBinarySensor18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “binary_sensor::TemplateBinarySensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt>
-<span class="target" id="classbinary__sensor_1_1_template_binary_sensor_1a7b6bdc5fdb5802f7ce2f3812ae10c721"></span><code class="descname">std::function&lt;optional&lt;bool&gt;)&gt; binary_sensor::TemplateBinarySensor::f_</code></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 

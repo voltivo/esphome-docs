@@ -75,163 +75,22 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <span class="k">auto</span> <span class="n">sht3xd</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_sht3xd_sensor</span><span class="p">(</span><span class="s">&quot;SHT31D Temperature&quot;</span><span class="p">,</span> <span class="s">&quot;SHT31D Humidity&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application18make_sht3xd_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Application::make_sht3xd_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_sht3xd_sensor()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_sht3xd_sensor()</span></code>.</p>
 </div>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor15SHT3XDComponentE">
-<span id="_CPPv2N6sensor15SHT3XDComponentE"></span><span id="sensor::SHT3XDComponent"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component"></span><em class="property">class </em><code class="descname">SHT3XDComponent</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponentE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This class implements support for the SHT3x-DIS family of temperature+humidity i2c sensors. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="sensor::SHT3XDComponent::SHT3XDComponent__I2CComponentP.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a2c036d52519fbed5e226b9740f4b2fce"></span><code class="descname">SHT3XDComponent</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x44, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor15SHT3XDComponent22get_temperature_sensorEv">
-<span id="_CPPv2NK6sensor15SHT3XDComponent22get_temperature_sensorEv"></span><span id="sensor::SHT3XDComponent::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1ab7e42d6e81c662dab2c16d983754db5e"></span><a class="reference internal" href="#_CPPv3N6sensor23SHT3XDTemperatureSensorE" title="sensor::SHT3XDTemperatureSensor">SHT3XDTemperatureSensor</a> *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor15SHT3XDComponent19get_humidity_sensorEv">
-<span id="_CPPv2NK6sensor15SHT3XDComponent19get_humidity_sensorEv"></span><span id="sensor::SHT3XDComponent::get_humidity_sensorC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a2fbe0851b55ed18dfae5dd961c590872"></span><a class="reference internal" href="#_CPPv3N6sensor20SHT3XDHumiditySensorE" title="sensor::SHT3XDHumiditySensor">SHT3XDHumiditySensor</a> *<code class="descname">get_humidity_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent19get_humidity_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15SHT3XDComponent5setupEv">
-<span id="_CPPv2N6sensor15SHT3XDComponent5setupEv"></span><span id="sensor::SHT3XDComponent::setup"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1acb204536523d8289b7988129f4c1a2ad"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_s_h_t3_x_d_component_1acb204536523d8289b7988129f4c1a2ad"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor15SHT3XDComponent18get_setup_priorityEv">
-<span id="_CPPv2NK6sensor15SHT3XDComponent18get_setup_priorityEv"></span><span id="sensor::SHT3XDComponent::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a1db6c5b52ed9012b999b44047db931c7"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_s_h_t3_x_d_component_1acb204536523d8289b7988129f4c1a2ad"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15SHT3XDComponent6updateEv">
-<span id="_CPPv2N6sensor15SHT3XDComponent6updateEv"></span><span id="sensor::SHT3XDComponent::update"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a84aa8e3cd9ef99421231188ea8e858e9"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::SHT3XDComponent” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor15SHT3XDComponent13write_commandE8uint16_t">
-<span id="_CPPv2N6sensor15SHT3XDComponent13write_commandE8uint16_t"></span><span id="sensor::SHT3XDComponent::write_command__uint16_t"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1ae057e2de2540e3adfa0abf5361ce6046"></span>bool <code class="descname">write_command</code><span class="sig-paren">(</span>uint16_t <em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent13write_commandE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor15SHT3XDComponent9read_dataEP8uint16_t7uint8_t">
-<span id="_CPPv2N6sensor15SHT3XDComponent9read_dataEP8uint16_t7uint8_t"></span><span id="sensor::SHT3XDComponent::read_data__uint16_tP.uint8_t"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1acfa3916d550bc31be5ba9572bf0c3938"></span>bool <code class="descname">read_data</code><span class="sig-paren">(</span>uint16_t *<em>data</em>, uint8_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent9read_dataEP8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::SHT3XDTemperatureSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor15SHT3XDComponent19temperature_sensor_E">
-<span id="_CPPv2N6sensor15SHT3XDComponent19temperature_sensor_E"></span><span id="sensor::SHT3XDComponent::temperature_sensor___SHT3XDTemperatureSensorP"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a2fd3683cc94e7e72810a02d1c34cd2bc"></span><a class="reference internal" href="#_CPPv3N6sensor23SHT3XDTemperatureSensorE" title="sensor::SHT3XDTemperatureSensor">SHT3XDTemperatureSensor</a> *<code class="descname">temperature_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent19temperature_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor15SHT3XDComponent16humidity_sensor_E">
-<span id="_CPPv2N6sensor15SHT3XDComponent16humidity_sensor_E"></span><span id="sensor::SHT3XDComponent::humidity_sensor___SHT3XDHumiditySensorP"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a967d902be09a6194feac0e2c3293bc69"></span><a class="reference internal" href="#_CPPv3N6sensor20SHT3XDHumiditySensorE" title="sensor::SHT3XDHumiditySensor">SHT3XDHumiditySensor</a> *<code class="descname">humidity_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent16humidity_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::SHT3XDHumiditySensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-</dd></dl>
-
-<dl class="class">
-<dt id="_CPPv3N6sensor23SHT3XDTemperatureSensorE">
-<span id="_CPPv2N6sensor23SHT3XDTemperatureSensorE"></span><span id="sensor::SHT3XDTemperatureSensor"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_temperature_sensor"></span><em class="property">class </em><code class="descname">SHT3XDTemperatureSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor24EmptyPollingParentSensorE" title="sensor::EmptyPollingParentSensor">EmptyPollingParentSensor</a>&lt;1, <a class="reference internal" href="index.html#_CPPv3N6sensor10ICON_EMPTYE" title="sensor::ICON_EMPTY">ICON_EMPTY</a>, <a class="reference internal" href="index.html#_CPPv3N6sensor6UNIT_CE" title="sensor::UNIT_C">UNIT_C</a>, <a class="reference internal" href="#_CPPv3N6sensor15SHT3XDComponentE" title="sensor::SHT3XDComponent">SHT3XDComponent</a>&gt;<a class="headerlink" href="#_CPPv3N6sensor23SHT3XDTemperatureSensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper class exposing an SHT3xD temperature sensor with a unique id. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor23SHT3XDTemperatureSensor23SHT3XDTemperatureSensorERKNSt6stringEP15SHT3XDComponent">
-<span id="_CPPv2N6sensor23SHT3XDTemperatureSensor23SHT3XDTemperatureSensorERKNSt6stringEP15SHT3XDComponent"></span><span id="sensor::SHT3XDTemperatureSensor::SHT3XDTemperatureSensor__ssCR.SHT3XDComponentP"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_temperature_sensor_1a04e2116b9f88727dd5c7ed855e3bf297"></span><code class="descname">SHT3XDTemperatureSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N6sensor15SHT3XDComponentE" title="sensor::SHT3XDComponent">SHT3XDComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor23SHT3XDTemperatureSensor23SHT3XDTemperatureSensorERKNSt6stringEP15SHT3XDComponent" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor23SHT3XDTemperatureSensor9unique_idEv">
-<span id="_CPPv2N6sensor23SHT3XDTemperatureSensor9unique_idEv"></span><span id="sensor::SHT3XDTemperatureSensor::unique_id"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_temperature_sensor_1a04a0fff561c5cb31d1237ef9708e7ab4"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor23SHT3XDTemperatureSensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A unique ID for this sensor, empty for no unique id. </p>
-<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The unique id as a string. </dd>
-</dl>
-</p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt>
-<span class="target" id="classsensor_1_1_s_h_t3_x_d_temperature_sensor_1a57a63642a7384899d7d99f8459f385cf"></span><code class="descname">friend sensor::SHT3XDTemperatureSensor::SHT3XDComponent</code></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor23SHT3XDTemperatureSensor10unique_id_E">
-<span id="_CPPv2N6sensor23SHT3XDTemperatureSensor10unique_id_E"></span><span id="sensor::SHT3XDTemperatureSensor::unique_id___ss"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_temperature_sensor_1a27131ee704e03b0c3dc253bb4b46ffd6"></span>std::string <code class="descname">unique_id_</code><a class="headerlink" href="#_CPPv3N6sensor23SHT3XDTemperatureSensor10unique_id_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="class">
-<dt id="_CPPv3N6sensor20SHT3XDHumiditySensorE">
-<span id="_CPPv2N6sensor20SHT3XDHumiditySensorE"></span><span id="sensor::SHT3XDHumiditySensor"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_humidity_sensor"></span><em class="property">class </em><code class="descname">SHT3XDHumiditySensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor24EmptyPollingParentSensorE" title="sensor::EmptyPollingParentSensor">EmptyPollingParentSensor</a>&lt;1, <a class="reference internal" href="index.html#_CPPv3N6sensor18ICON_WATER_PERCENTE" title="sensor::ICON_WATER_PERCENT">ICON_WATER_PERCENT</a>, <a class="reference internal" href="index.html#_CPPv3N6sensor12UNIT_PERCENTE" title="sensor::UNIT_PERCENT">UNIT_PERCENT</a>, <a class="reference internal" href="#_CPPv3N6sensor15SHT3XDComponentE" title="sensor::SHT3XDComponent">SHT3XDComponent</a>&gt;<a class="headerlink" href="#_CPPv3N6sensor20SHT3XDHumiditySensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper class exposing an SHT3xD humidity sensor with a unique id. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor20SHT3XDHumiditySensor20SHT3XDHumiditySensorERKNSt6stringEP15SHT3XDComponent">
-<span id="_CPPv2N6sensor20SHT3XDHumiditySensor20SHT3XDHumiditySensorERKNSt6stringEP15SHT3XDComponent"></span><span id="sensor::SHT3XDHumiditySensor::SHT3XDHumiditySensor__ssCR.SHT3XDComponentP"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_humidity_sensor_1a0e9d58eaf554ff8f742c03e48a93ce60"></span><code class="descname">SHT3XDHumiditySensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N6sensor15SHT3XDComponentE" title="sensor::SHT3XDComponent">SHT3XDComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20SHT3XDHumiditySensor20SHT3XDHumiditySensorERKNSt6stringEP15SHT3XDComponent" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor20SHT3XDHumiditySensor9unique_idEv">
-<span id="_CPPv2N6sensor20SHT3XDHumiditySensor9unique_idEv"></span><span id="sensor::SHT3XDHumiditySensor::unique_id"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_humidity_sensor_1a34dc49f1f10f26a9a4e1c195898d5a4f"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20SHT3XDHumiditySensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A unique ID for this sensor, empty for no unique id. </p>
-<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The unique id as a string. </dd>
-</dl>
-</p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt>
-<span class="target" id="classsensor_1_1_s_h_t3_x_d_humidity_sensor_1a9a26d72aaa18892245016b8fe4f2014c"></span><code class="descname">friend sensor::SHT3XDHumiditySensor::SHT3XDComponent</code></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor20SHT3XDHumiditySensor10unique_id_E">
-<span id="_CPPv2N6sensor20SHT3XDHumiditySensor10unique_id_E"></span><span id="sensor::SHT3XDHumiditySensor::unique_id___ss"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_humidity_sensor_1aa782b0e10add284e964acaae65deefef"></span>std::string <code class="descname">unique_id_</code><a class="headerlink" href="#_CPPv3N6sensor20SHT3XDHumiditySensor10unique_id_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 

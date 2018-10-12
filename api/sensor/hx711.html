@@ -65,108 +65,13 @@
             
   <div class="section" id="hx711-load-cell-amplifier">
 <h1>HX711 Load Cell Amplifier<a class="headerlink" href="#hx711-load-cell-amplifier" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application17make_hx711_sensorERKNSt6stringERK12GPIOInputPinRK13GPIOOutputPin8uint32_t" title="Application::make_hx711_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hx711_sensor()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hx711_sensor()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor11HX711SensorE">
-<span id="_CPPv2N6sensor11HX711SensorE"></span><span id="sensor::HX711Sensor"></span><span class="target" id="classsensor_1_1_h_x711_sensor"></span><em class="property">class </em><code class="descname">HX711Sensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor22PollingSensorComponentE" title="sensor::PollingSensorComponent">PollingSensorComponent</a><a class="headerlink" href="#_CPPv3N6sensor11HX711SensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor11HX711SensorERKNSt6stringEP7GPIOPinP7GPIOPin8uint32_t">
-<span id="_CPPv2N6sensor11HX711Sensor11HX711SensorERKNSt6stringEP7GPIOPinP7GPIOPin8uint32_t"></span><span id="sensor::HX711Sensor::HX711Sensor__ssCR.GPIOPinP.GPIOPinP.uint32_t"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1ad71806122d9687f765412d29b10b3ffa"></span><code class="descname">HX711Sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>dout</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>sck</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor11HX711SensorERKNSt6stringEP7GPIOPinP7GPIOPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor5setupEv">
-<span id="_CPPv2N6sensor11HX711Sensor5setupEv"></span><span id="sensor::HX711Sensor::setup"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a0e8d2211ef747608edaa3bdd1e04ebc6"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_h_x711_sensor_1a0e8d2211ef747608edaa3bdd1e04ebc6"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor11HX711Sensor18get_setup_priorityEv">
-<span id="_CPPv2NK6sensor11HX711Sensor18get_setup_priorityEv"></span><span id="sensor::HX711Sensor::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1ae8178f2b14343c01f8a9d5989fff3263"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor11HX711Sensor18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_h_x711_sensor_1a0e8d2211ef747608edaa3bdd1e04ebc6"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor6updateEv">
-<span id="_CPPv2N6sensor11HX711Sensor6updateEv"></span><span id="sensor::HX711Sensor::update"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1af2043f846a77ea22dd483848bd763293"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor8set_gainE9HX711Gain">
-<span id="_CPPv2N6sensor11HX711Sensor8set_gainE9HX711Gain"></span><span id="sensor::HX711Sensor::set_gain__HX711Gain"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a9b9e1c45c11b71744de7bfa8d2cf8aba"></span>void <code class="descname">set_gain</code><span class="sig-paren">(</span>HX711Gain <em>gain</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor8set_gainE9HX711Gain" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor19unit_of_measurementEv">
-<span id="_CPPv2N6sensor11HX711Sensor19unit_of_measurementEv"></span><span id="sensor::HX711Sensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1aa034f87d19d9955cc098adaa16f38660"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Override this to set the Home Assistant unit of measurement for this sensor. </p>
-<p>Return “” to disable this feature.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The icon of this sensor, for example “°C”. </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor4iconEv">
-<span id="_CPPv2N6sensor11HX711Sensor4iconEv"></span><span id="sensor::HX711Sensor::icon"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a2112fece5e5077e8887f439652539f39"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Override this to set the Home Assistant icon for this sensor. </p>
-<p>Return “” to disable this feature.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The icon of this sensor, for example “mdi:battery”. </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor17accuracy_decimalsEv">
-<span id="_CPPv2N6sensor11HX711Sensor17accuracy_decimalsEv"></span><span id="sensor::HX711Sensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a27f8329cb51fc5adf5f424a7c9626962"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Return the accuracy in decimals for this sensor. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::HX711Sensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor11HX711Sensor12read_sensor_EP8uint32_t">
-<span id="_CPPv2N6sensor11HX711Sensor12read_sensor_EP8uint32_t"></span><span id="sensor::HX711Sensor::read_sensor___uint32_tP"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a5276b64e5ad588cb44a623196ce7a708"></span>bool <code class="descname">read_sensor_</code><span class="sig-paren">(</span>uint32_t *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor12read_sensor_EP8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor11HX711Sensor9dout_pin_E">
-<span id="_CPPv2N6sensor11HX711Sensor9dout_pin_E"></span><span id="sensor::HX711Sensor::dout_pin___GPIOPinP"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a7df64283fdae0bea3e0e48c9dcf0cd0e"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">dout_pin_</code><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor9dout_pin_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor11HX711Sensor8sck_pin_E">
-<span id="_CPPv2N6sensor11HX711Sensor8sck_pin_E"></span><span id="sensor::HX711Sensor::sck_pin___GPIOPinP"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a4576eacf8b00c72908e356d6c89b83e2"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">sck_pin_</code><a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor8sck_pin_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor11HX711Sensor5gain_E">
-<span id="_CPPv2N6sensor11HX711Sensor5gain_E"></span><span id="sensor::HX711Sensor::gain___HX711Gain"></span><span class="target" id="classsensor_1_1_h_x711_sensor_1a48b845e7b1158da53ca91142a53ee77a"></span>HX711Gain <code class="descname">gain_</code> = {HX711_GAIN_128}<a class="headerlink" href="#_CPPv3N6sensor11HX711Sensor5gain_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 

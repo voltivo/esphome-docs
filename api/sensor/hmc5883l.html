@@ -65,156 +65,25 @@
             
   <div class="section" id="hmc5883l-magnetometer">
 <h1>HMC5883L Magnetometer<a class="headerlink" href="#hmc5883l-magnetometer" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application13make_hmc5883lE8uint32_t" title="Application::make_hmc5883l"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hmc5883l()</span></code></a>.</p>
+<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_hmc5883l()</span></code>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="_CPPv3N6sensor17HMC5883LComponentE">
-<span id="_CPPv2N6sensor17HMC5883LComponentE"></span><span id="sensor::HMC5883LComponent"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component"></span><em class="property">class </em><code class="descname">HMC5883LComponent</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponentE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent17HMC5883LComponentEP12I2CComponent8uint32_t">
-<span id="_CPPv2N6sensor17HMC5883LComponent17HMC5883LComponentEP12I2CComponent8uint32_t"></span><span id="sensor::HMC5883LComponent::HMC5883LComponent__I2CComponentP.uint32_t"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a881c3c314eb22e7cea3ebdb4a19a812f"></span><code class="descname">HMC5883LComponent</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent17HMC5883LComponentEP12I2CComponent8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent5setupEv">
-<span id="_CPPv2N6sensor17HMC5883LComponent5setupEv"></span><span id="sensor::HMC5883LComponent::setup"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a002420818ce5711754462786dc567d2e"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_h_m_c5883_l_component_1a002420818ce5711754462786dc567d2e"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK6sensor17HMC5883LComponent18get_setup_priorityEv">
-<span id="_CPPv2NK6sensor17HMC5883LComponent18get_setup_priorityEv"></span><span id="sensor::HMC5883LComponent::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1ae267fa5d99be914826cf1cb5e1162c4c"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor17HMC5883LComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_h_m_c5883_l_component_1a002420818ce5711754462786dc567d2e"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent6updateEv">
-<span id="_CPPv2N6sensor17HMC5883LComponent6updateEv"></span><span id="sensor::HMC5883LComponent::update"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1ad8ac5b11a62a366870a723fc02994094"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent6updateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent13make_x_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17HMC5883LComponent13make_x_sensorERKNSt6stringE"></span><span id="sensor::HMC5883LComponent::make_x_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a3b800bf869d9dffa673f9a0407c2c24c"></span>HMC5883LFieldStrengthSensor *<code class="descname">make_x_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent13make_x_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent13make_y_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17HMC5883LComponent13make_y_sensorERKNSt6stringE"></span><span id="sensor::HMC5883LComponent::make_y_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1af80405df72f7d7b247c30d71f1554ed8"></span>HMC5883LFieldStrengthSensor *<code class="descname">make_y_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent13make_y_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent13make_z_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17HMC5883LComponent13make_z_sensorERKNSt6stringE"></span><span id="sensor::HMC5883LComponent::make_z_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1addce084a03c19dd2b1dac34ccfcd3e94"></span>HMC5883LFieldStrengthSensor *<code class="descname">make_z_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent13make_z_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent19make_heading_sensorERKNSt6stringE">
-<span id="_CPPv2N6sensor17HMC5883LComponent19make_heading_sensorERKNSt6stringE"></span><span id="sensor::HMC5883LComponent::make_heading_sensor__ssCR"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1af8ad80937856066007bde703a2f4bad7"></span>HMC5883LHeadingSensor *<code class="descname">make_heading_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent19make_heading_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor17HMC5883LComponent9set_rangeE13HMC5883LRange">
-<span id="_CPPv2N6sensor17HMC5883LComponent9set_rangeE13HMC5883LRange"></span><span id="sensor::HMC5883LComponent::set_range__HMC5883LRange"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1aeea79c5ae11ab7543afdaca92b97eafc"></span>void <code class="descname">set_range</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6sensor13HMC5883LRangeE" title="sensor::HMC5883LRange">HMC5883LRange</a> <em>range</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent9set_rangeE13HMC5883LRange" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class “sensor::HMC5883LComponent” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor17HMC5883LComponent6range_E">
-<span id="_CPPv2N6sensor17HMC5883LComponent6range_E"></span><span id="sensor::HMC5883LComponent::range___HMC5883LRange"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1ad41eb98a40a20c079c9344a267080a6e"></span><a class="reference internal" href="#_CPPv3N6sensor13HMC5883LRangeE" title="sensor::HMC5883LRange">HMC5883LRange</a> <code class="descname">range_</code> = {HMC5883L_RANGE_130_UT}<a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent6range_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17HMC5883LComponent9x_sensor_E">
-<span id="_CPPv2N6sensor17HMC5883LComponent9x_sensor_E"></span><span id="sensor::HMC5883LComponent::x_sensor___HMC5883LFieldStrengthSensorP"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a2d04bfe47012f5b7d2955ee38e79d29c"></span>HMC5883LFieldStrengthSensor *<code class="descname">x_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent9x_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17HMC5883LComponent9y_sensor_E">
-<span id="_CPPv2N6sensor17HMC5883LComponent9y_sensor_E"></span><span id="sensor::HMC5883LComponent::y_sensor___HMC5883LFieldStrengthSensorP"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a8a3e62bb3ea295b49cdf3b979cbbeb95"></span>HMC5883LFieldStrengthSensor *<code class="descname">y_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent9y_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17HMC5883LComponent9z_sensor_E">
-<span id="_CPPv2N6sensor17HMC5883LComponent9z_sensor_E"></span><span id="sensor::HMC5883LComponent::z_sensor___HMC5883LFieldStrengthSensorP"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a9b8e81c34984e33550530aa3330b5057"></span>HMC5883LFieldStrengthSensor *<code class="descname">z_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent9z_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor17HMC5883LComponent15heading_sensor_E">
-<span id="_CPPv2N6sensor17HMC5883LComponent15heading_sensor_E"></span><span id="sensor::HMC5883LComponent::heading_sensor___HMC5883LHeadingSensorP"></span><span class="target" id="classsensor_1_1_h_m_c5883_l_component_1a2d22f050296c7386faaea14d5a591fc6"></span>HMC5883LHeadingSensor *<code class="descname">heading_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor17HMC5883LComponent15heading_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenenum: Cannot find enum “sensor::HMC5883LRange” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
 </div>
-</dd></dl>
-
-<dl class="type">
-<dt id="_CPPv3N6sensor13HMC5883LRangeE">
-<span id="_CPPv2N6sensor13HMC5883LRangeE"></span><span id="sensor::HMC5883LRange"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">HMC5883LRange</code><a class="headerlink" href="#_CPPv3N6sensor13HMC5883LRangeE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p><em>Values:</em></p>
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor20HMC5883L_RANGE_88_UTE">
-<span id="_CPPv2N6sensor20HMC5883L_RANGE_88_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a6721222c22d90bcc300b2c8ada5923d8"></span><code class="descname">HMC5883L_RANGE_88_UT</code> = 0b000<a class="headerlink" href="#_CPPv3N6sensor20HMC5883L_RANGE_88_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_130_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_130_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a386e659d74014483db96504a99dc3ebe"></span><code class="descname">HMC5883L_RANGE_130_UT</code> = 0b001<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_130_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_190_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_190_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a20c4f2351e5b7c9a3712be706cf4e44d"></span><code class="descname">HMC5883L_RANGE_190_UT</code> = 0b010<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_190_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_250_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_250_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018ab030d9bcf4dc0cf62a954eca620cea67"></span><code class="descname">HMC5883L_RANGE_250_UT</code> = 0b011<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_250_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_400_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_400_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a4d1d65443f90c8bffc55a5670c38ee29"></span><code class="descname">HMC5883L_RANGE_400_UT</code> = 0b100<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_400_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_470_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_470_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a1e717f88eab3ca6b056827fcb4a238c7"></span><code class="descname">HMC5883L_RANGE_470_UT</code> = 0b101<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_470_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_560_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_560_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a6468b37095c09aadd0a7f434ddc15936"></span><code class="descname">HMC5883L_RANGE_560_UT</code> = 0b110<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_560_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="enumerator">
-<dt id="_CPPv3N6sensor21HMC5883L_RANGE_810_UTE">
-<span id="_CPPv2N6sensor21HMC5883L_RANGE_810_UTE"></span><span class="target" id="hmc5883l_8h_1a5ef8919ac12e7d356e1face3285c7018a5eac21c3f898be04de44fc3eddac88b8"></span><code class="descname">HMC5883L_RANGE_810_UT</code> = 0b111<a class="headerlink" href="#_CPPv3N6sensor21HMC5883L_RANGE_810_UTE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="hmc5883l_8h_1a7cb9fc4ba32f5f277f06d11b2c85ae2a"></span><em class="property">using </em><code class="descname">sensor::HMC5883LFieldStrengthSensor = typedef EmptyPollingParentSensor&lt;1, ICON_MAGNET, UNIT_UT&gt;</code></dt>
-<dd></dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="hmc5883l_8h_1ab16b1685236b8049c0345d440f9c7027"></span><em class="property">using </em><code class="descname">sensor::HMC5883LHeadingSensor = typedef EmptyPollingParentSensor&lt;1, ICON_SCREEN_ROTATION, UNIT_DEGREES&gt;</code></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygentypedef: Cannot find typedef “sensor::HMC5883LFieldStrengthSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygentypedef: Cannot find typedef “sensor::HMC5883LHeadingSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
 </div>
 </div>
 
