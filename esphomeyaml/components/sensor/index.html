@@ -53,7 +53,7 @@
 <li><a class="reference internal" href="#base-sensor-configuration">Base Sensor Configuration</a></li>
 <li><a class="reference internal" href="#sensor-filters">Sensor Filters</a></li>
 <li><a class="reference internal" href="#example-converting-celsius-to-fahrenheit">Example: Converting Celsius to Fahrenheit</a></li>
-<li><a class="reference internal" href="#default-filter">Default Filter</a></li>
+<li><a class="reference internal" href="#update-interval-gotchas"><code class="docutils literal notranslate"><span class="pre">update_interval</span></code> gotchas</a></li>
 <li><a class="reference internal" href="#sensor-automation">Sensor Automation</a><ul>
 <li><a class="reference internal" href="#on-value"><code class="docutils literal notranslate"><span class="pre">on_value</span></code></a></li>
 <li><a class="reference internal" href="#on-value-range"><code class="docutils literal notranslate"><span class="pre">on_value_range</span></code></a></li>
@@ -238,8 +238,8 @@ fahrenheit.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="default-filter">
-<span id="sensor-default-filter"></span><h2>Default Filter<a class="headerlink" href="#default-filter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="update-interval-gotchas">
+<span id="sensor-default-filter"></span><h2><code class="docutils literal notranslate"><span class="pre">update_interval</span></code> gotchas<a class="headerlink" href="#update-interval-gotchas" title="Permalink to this headline">¶</a></h2>
 <p>By default, esphomelib takes an average over the last 15 values before publishing updates.
 This was done in order to automatically decrease sensor noise.
 Therefore if you have an <code class="docutils literal notranslate"><span class="pre">update_interval</span></code> of 15 seconds, you will only see the values
