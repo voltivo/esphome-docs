@@ -110,50 +110,760 @@
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="displaybuffer">
 <span id="display-buffer"></span><h3>DisplayBuffer<a class="headerlink" href="#displaybuffer" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “display::DisplayBuffer” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N7display13DisplayBufferE">
+<span id="_CPPv2N7display13DisplayBufferE"></span><span id="display::DisplayBuffer"></span><span class="target" id="classdisplay_1_1_display_buffer"></span><em class="property">class </em><code class="descname">DisplayBuffer</code><a class="headerlink" href="#_CPPv3N7display13DisplayBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="ssd1306.html#classdisplay_1_1_s_s_d1306"><span class="std std-ref">display::SSD1306</span></a>, <a class="reference internal" href="waveshare_epaper.html#classdisplay_1_1_waveshare_e_paper"><span class="std std-ref">display::WaveshareEPaper</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer4fillEi">
+<span id="_CPPv2N7display13DisplayBuffer4fillEi"></span><span id="display::DisplayBuffer::fill__i"></span><span class="target" id="classdisplay_1_1_display_buffer_1adee3c10703ab900fd628ccc803c1e54e"></span>void <code class="descname">fill</code><span class="sig-paren">(</span>int <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer4fillEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill the entire screen with the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer5clearEv">
+<span id="_CPPv2N7display13DisplayBuffer5clearEv"></span><span id="display::DisplayBuffer::clear"></span><span class="target" id="classdisplay_1_1_display_buffer_1af6d6ca6d751c21aed07c12b294882aa9"></span>void <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear the entire screen by filling it with OFF pixels. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer9get_widthEv">
+<span id="_CPPv2N7display13DisplayBuffer9get_widthEv"></span><span id="display::DisplayBuffer::get_width"></span><span class="target" id="classdisplay_1_1_display_buffer_1a6e45d2cbe3a6fe1ec9d498cee33ed1e1"></span>int <code class="descname">get_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer9get_widthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the width of the image in pixels with rotation applied. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer10get_heightEv">
+<span id="_CPPv2N7display13DisplayBuffer10get_heightEv"></span><span id="display::DisplayBuffer::get_height"></span><span class="target" id="classdisplay_1_1_display_buffer_1a37acb8900004d8725b884e9a6dd22694"></span>int <code class="descname">get_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer10get_heightEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the height of the image in pixels with rotation applied. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer13draw_pixel_atEiii">
+<span id="_CPPv2N7display13DisplayBuffer13draw_pixel_atEiii"></span><span id="display::DisplayBuffer::draw_pixel_at__i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1a59e05dadfc65b55b1ec17eefd8590433"></span>void <code class="descname">draw_pixel_at</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer13draw_pixel_atEiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a single pixel at the specified coordinates to the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer4lineEiiiii">
+<span id="_CPPv2N7display13DisplayBuffer4lineEiiiii"></span><span id="display::DisplayBuffer::line__i.i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1ad22a48ef7039add5302271cfdf2669c3"></span>void <code class="descname">line</code><span class="sig-paren">(</span>int <em>x1</em>, int <em>y1</em>, int <em>x2</em>, int <em>y2</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer4lineEiiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draw a straight line from the point [x1,y1] to [x2,y2] with the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer15horizontal_lineEiiii">
+<span id="_CPPv2N7display13DisplayBuffer15horizontal_lineEiiii"></span><span id="display::DisplayBuffer::horizontal_line__i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1a711017c5e059b12b8eac1ae92bafc02f"></span>void <code class="descname">horizontal_line</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>width</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer15horizontal_lineEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draw a horizontal line from the point [x,y] to [x+width,y] with the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer13vertical_lineEiiii">
+<span id="_CPPv2N7display13DisplayBuffer13vertical_lineEiiii"></span><span id="display::DisplayBuffer::vertical_line__i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1a594075c89a526900702486e5688f1a3b"></span>void <code class="descname">vertical_line</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>height</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer13vertical_lineEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draw a vertical line from the point [x,y] to [x,y+width] with the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer9rectangleEiiiii">
+<span id="_CPPv2N7display13DisplayBuffer9rectangleEiiiii"></span><span id="display::DisplayBuffer::rectangle__i.i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1ad98cace8e87829193c89b188fe6173f6"></span>void <code class="descname">rectangle</code><span class="sig-paren">(</span>int <em>x1</em>, int <em>y1</em>, int <em>width</em>, int <em>height</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer9rectangleEiiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draw the outline of a rectangle with the top left point at [x1,y1] and the bottom right point at [x1+width,y1+height]. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer16filled_rectangleEiiiii">
+<span id="_CPPv2N7display13DisplayBuffer16filled_rectangleEiiiii"></span><span id="display::DisplayBuffer::filled_rectangle__i.i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1a03a15719c72302f2083d97432e858e26"></span>void <code class="descname">filled_rectangle</code><span class="sig-paren">(</span>int <em>x1</em>, int <em>y1</em>, int <em>width</em>, int <em>height</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer16filled_rectangleEiiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill a rectangle with the top left point at [x1,y1] and the bottom right point at [x1+width,y1+height]. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer6circleEiiii">
+<span id="_CPPv2N7display13DisplayBuffer6circleEiiii"></span><span id="display::DisplayBuffer::circle__i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1ac214f4d0920421f56665a3637bd3b9b9"></span>void <code class="descname">circle</code><span class="sig-paren">(</span>int <em>center_x</em>, int <em>center_xy</em>, int <em>radius</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer6circleEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draw the outline of a circle centered around [center_x,center_y] with the radius radius with the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer13filled_circleEiiii">
+<span id="_CPPv2N7display13DisplayBuffer13filled_circleEiiii"></span><span id="display::DisplayBuffer::filled_circle__i.i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1ad8daa72a60ea66f0c9c1a0b120ba63b9"></span>void <code class="descname">filled_circle</code><span class="sig-paren">(</span>int <em>center_x</em>, int <em>center_y</em>, int <em>radius</em>, int <em>color</em> = <a class="reference internal" href="#_CPPv38COLOR_ON" title="COLOR_ON">COLOR_ON</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer13filled_circleEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill a circle centered around [center_x,center_y] with the radius radius with the given color. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer5printEiiP4Fonti9TextAlignPKc">
+<span id="_CPPv2N7display13DisplayBuffer5printEiiP4Fonti9TextAlignPKc"></span><span id="display::DisplayBuffer::print__i.i.FontP.i.TextAlign.cCP"></span><span class="target" id="classdisplay_1_1_display_buffer_1a3044a7d590a86d82009d5afb89b324e8"></span>void <code class="descname">print</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer5printEiiP4Fonti9TextAlignPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print <code class="docutils literal notranslate"><span class="pre">text</span></code> with the anchor point at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: The color to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. </li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code>: The text to draw. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer5printEiiP4FontiPKc">
+<span id="_CPPv2N7display13DisplayBuffer5printEiiP4FontiPKc"></span><span id="display::DisplayBuffer::print__i.i.FontP.i.cCP"></span><span class="target" id="classdisplay_1_1_display_buffer_1a52c071aa95c1305f1ef935e78002c2aa"></span>void <code class="descname">print</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <em class="property">const</em> char *<em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer5printEiiP4FontiPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print <code class="docutils literal notranslate"><span class="pre">text</span></code> with the top left at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: The color to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code>: The text to draw. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer5printEiiP4Font9TextAlignPKc">
+<span id="_CPPv2N7display13DisplayBuffer5printEiiP4Font9TextAlignPKc"></span><span id="display::DisplayBuffer::print__i.i.FontP.TextAlign.cCP"></span><span class="target" id="classdisplay_1_1_display_buffer_1a4bff10e29f83f94ff9b8408ad4d8da52"></span>void <code class="descname">print</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer5printEiiP4Font9TextAlignPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print <code class="docutils literal notranslate"><span class="pre">text</span></code> with the anchor point at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. </li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code>: The text to draw. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer5printEiiP4FontPKc">
+<span id="_CPPv2N7display13DisplayBuffer5printEiiP4FontPKc"></span><span id="display::DisplayBuffer::print__i.i.FontP.cCP"></span><span class="target" id="classdisplay_1_1_display_buffer_1ac824a6f9ca95975e54bf37f71c23ac58"></span>void <code class="descname">print</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <em class="property">const</em> char *<em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer5printEiiP4FontPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print <code class="docutils literal notranslate"><span class="pre">text</span></code> with the top left at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code>: The text to draw. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer6printfEiiP4Fonti9TextAlignPKcz">
+<span id="_CPPv2N7display13DisplayBuffer6printfEiiP4Fonti9TextAlignPKcz"></span><span id="display::DisplayBuffer::printf__i.i.FontP.i.TextAlign.cCP.z"></span><span class="target" id="classdisplay_1_1_display_buffer_1aa68251c09f1479c508344bad222aa1d6"></span>void <code class="descname">printf</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>format</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer6printfEiiP4Fonti9TextAlignPKcz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the printf-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the anchor point at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: The color to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">...</span></code>: The arguments to use for the text formatting. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer6printfEiiP4FontiPKcz">
+<span id="_CPPv2N7display13DisplayBuffer6printfEiiP4FontiPKcz"></span><span id="display::DisplayBuffer::printf__i.i.FontP.i.cCP.z"></span><span class="target" id="classdisplay_1_1_display_buffer_1a2acd7c7e70863ec2300873bcbc86ddbd"></span>void <code class="descname">printf</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <em class="property">const</em> char *<em>format</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer6printfEiiP4FontiPKcz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the printf-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the top left at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: The color to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">...</span></code>: The arguments to use for the text formatting. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer6printfEiiP4Font9TextAlignPKcz">
+<span id="_CPPv2N7display13DisplayBuffer6printfEiiP4Font9TextAlignPKcz"></span><span id="display::DisplayBuffer::printf__i.i.FontP.TextAlign.cCP.z"></span><span class="target" id="classdisplay_1_1_display_buffer_1ae76e8c4ef0f556e24443a76433387aa4"></span>void <code class="descname">printf</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>format</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer6printfEiiP4Font9TextAlignPKcz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the printf-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the anchor point at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">...</span></code>: The arguments to use for the text formatting. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer6printfEiiP4FontPKcz">
+<span id="_CPPv2N7display13DisplayBuffer6printfEiiP4FontPKcz"></span><span id="display::DisplayBuffer::printf__i.i.FontP.cCP.z"></span><span class="target" id="classdisplay_1_1_display_buffer_1aaab5aa0fdd1f35ae79386216590c014b"></span>void <code class="descname">printf</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <em class="property">const</em> char *<em>format</em>, ...<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer6printfEiiP4FontPKcz" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the printf-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the top left at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">...</span></code>: The arguments to use for the text formatting. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE">
+<span id="_CPPv2N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE"></span><span id="display::DisplayBuffer::strftime__i.i.FontP.i.TextAlign.cCP.time::EsphomelibTime"></span><span class="target" id="classdisplay_1_1_display_buffer_1a53ffe50da0d490028addc077bb23778f"></span>void <code class="descname">strftime</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>format</em>, <a class="reference internal" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE" title="display::DisplayBuffer::strftime::time">time</a>::EsphomelibTime <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the strftime-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the anchor point at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: The color to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The strftime format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">time</span></code>: The time to format. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer8strftimeEiiP4FontiPKcN4time14EsphomelibTimeE">
+<span id="_CPPv2N7display13DisplayBuffer8strftimeEiiP4FontiPKcN4time14EsphomelibTimeE"></span><span id="display::DisplayBuffer::strftime__i.i.FontP.i.cCP.time::EsphomelibTime"></span><span class="target" id="classdisplay_1_1_display_buffer_1a70ad1a274cfa30320d92ecff6329fa3a"></span>void <code class="descname">strftime</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <em class="property">const</em> char *<em>format</em>, <a class="reference internal" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE" title="display::DisplayBuffer::strftime::time">time</a>::EsphomelibTime <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4FontiPKcN4time14EsphomelibTimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the strftime-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the top left at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: The color to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The strftime format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">time</span></code>: The time to format. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer8strftimeEiiP4Font9TextAlignPKcN4time14EsphomelibTimeE">
+<span id="_CPPv2N7display13DisplayBuffer8strftimeEiiP4Font9TextAlignPKcN4time14EsphomelibTimeE"></span><span id="display::DisplayBuffer::strftime__i.i.FontP.TextAlign.cCP.time::EsphomelibTime"></span><span class="target" id="classdisplay_1_1_display_buffer_1a2cc82479c296332380f782fa3059895d"></span>void <code class="descname">strftime</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>format</em>, <a class="reference internal" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE" title="display::DisplayBuffer::strftime::time">time</a>::EsphomelibTime <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4Font9TextAlignPKcN4time14EsphomelibTimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the strftime-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the anchor point at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the text alignment anchor point. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The strftime format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">time</span></code>: The time to format. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer8strftimeEiiP4FontPKcN4time14EsphomelibTimeE">
+<span id="_CPPv2N7display13DisplayBuffer8strftimeEiiP4FontPKcN4time14EsphomelibTimeE"></span><span id="display::DisplayBuffer::strftime__i.i.FontP.cCP.time::EsphomelibTime"></span><span class="target" id="classdisplay_1_1_display_buffer_1aa4677c779738a8e1dc6640b80521fdcc"></span>void <code class="descname">strftime</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <em class="property">const</em> char *<em>format</em>, <a class="reference internal" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4Fonti9TextAlignPKcN4time14EsphomelibTimeE" title="display::DisplayBuffer::strftime::time">time</a>::EsphomelibTime <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer8strftimeEiiP4FontPKcN4time14EsphomelibTimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate the strftime-format <code class="docutils literal notranslate"><span class="pre">format</span></code> and print the result with the top left at [x,y] with <code class="docutils literal notranslate"><span class="pre">font</span></code>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate of the upper left corner. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to draw the text with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: The strftime format to use. </li>
+<li><code class="docutils literal notranslate"><span class="pre">time</span></code>: The time to format. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer5imageEiiP5Image">
+<span id="_CPPv2N7display13DisplayBuffer5imageEiiP5Image"></span><span id="display::DisplayBuffer::image__i.i.ImageP"></span><span class="target" id="classdisplay_1_1_display_buffer_1af5882551024cd01ea6213da76de46c2a"></span>void <code class="descname">image</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display5ImageE" title="display::Image">Image</a> *<em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer5imageEiiP5Image" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Draw the <code class="docutils literal notranslate"><span class="pre">image</span></code> with the top-left corner at [x,y] to the screen. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer15get_text_boundsEiiPKcP4Font9TextAlignPiPiPiPi">
+<span id="_CPPv2N7display13DisplayBuffer15get_text_boundsEiiPKcP4Font9TextAlignPiPiPiPi"></span><span id="display::DisplayBuffer::get_text_bounds__i.i.cCP.FontP.TextAlign.iP.iP.iP.iP"></span><span class="target" id="classdisplay_1_1_display_buffer_1a1a293d99ff07690389d3c8bfd7e8fce0"></span>void <code class="descname">get_text_bounds</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <em class="property">const</em> char *<em>text</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, int *<em>x1</em>, int *<em>y1</em>, int *<em>width</em>, int *<em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer15get_text_boundsEiiPKcP4Font9TextAlignPiPiPiPi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the text bounds of the given string. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code>: The x coordinate to place the string at, can be 0 if only interested in dimensions. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code>: The y coordinate to place the string at, can be 0 if only interested in dimensions. </li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code>: The text to measure. </li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code>: The font to measure the text bounds with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">align</span></code>: The alignment of the text. Set to TextAlign::TOP_LEFT if only interested in dimensions. </li>
+<li><code class="docutils literal notranslate"><span class="pre">x1</span></code>: A pointer to store the returned x coordinate of the upper left corner in. </li>
+<li><code class="docutils literal notranslate"><span class="pre">y1</span></code>: A pointer to store the returned y coordinate of the upper left corner in. </li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code>: A pointer to store the returned text width in. </li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code>: A pointer to store the returned text height in. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer10set_writerERR16display_writer_t">
+<span id="_CPPv2N7display13DisplayBuffer10set_writerERR16display_writer_t"></span><span id="display::DisplayBuffer::set_writer__display_writer_tRR"></span><span class="target" id="classdisplay_1_1_display_buffer_1a094a697981bdfb87a75e57ce8928d25b"></span>void <code class="descname">set_writer</code><span class="sig-paren">(</span>display_writer_t &amp;&amp;<em>writer</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer10set_writerERR16display_writer_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Internal method to set the display writer lambda. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer12set_rotationE15DisplayRotation">
+<span id="_CPPv2N7display13DisplayBuffer12set_rotationE15DisplayRotation"></span><span id="display::DisplayBuffer::set_rotation__DisplayRotation"></span><span class="target" id="classdisplay_1_1_display_buffer_1a3900b39a81a022e198634faa439426a3"></span>void <code class="descname">set_rotation</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N7display15DisplayRotationE" title="display::DisplayRotation">DisplayRotation</a> <em>rotation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer12set_rotationE15DisplayRotation" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Internal method to set the display rotation with. </p>
+</dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenvariable: Cannot find variable “COLOR_OFF” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer8vprintf_EiiP4Fonti9TextAlignPKc7va_list">
+<span id="_CPPv2N7display13DisplayBuffer8vprintf_EiiP4Fonti9TextAlignPKc7va_list"></span><span id="display::DisplayBuffer::vprintf___i.i.FontP.i.TextAlign.cCP.va_list"></span><span class="target" id="classdisplay_1_1_display_buffer_1a68b5d9e0fe5065bfd71ad0bae75497c8"></span>void <code class="descname">vprintf_</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, <a class="reference internal" href="#_CPPv3N7display4FontE" title="display::Font">Font</a> *<em>font</em>, int <em>color</em>, <a class="reference internal" href="#_CPPv39TextAlign" title="TextAlign">TextAlign</a> <em>align</em>, <em class="property">const</em> char *<em>format</em>, va_list <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer8vprintf_EiiP4Fonti9TextAlignPKc7va_list" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer29draw_absolute_pixel_internal_Eiii">
+<span id="_CPPv2N7display13DisplayBuffer29draw_absolute_pixel_internal_Eiii"></span><span id="display::DisplayBuffer::draw_absolute_pixel_internal___i.i.i"></span><span class="target" id="classdisplay_1_1_display_buffer_1ae8783ae4f9070406efb9562fd0376ab9"></span><em class="property">virtual</em> void <code class="descname">draw_absolute_pixel_internal_</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em>, int <em>color</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display13DisplayBuffer29draw_absolute_pixel_internal_Eiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer20get_height_internal_Ev">
+<span id="_CPPv2N7display13DisplayBuffer20get_height_internal_Ev"></span><span id="display::DisplayBuffer::get_height_internal_"></span><span class="target" id="classdisplay_1_1_display_buffer_1aae3eb39b6febe7c1fc83ee2b8824ed3f"></span><em class="property">virtual</em> int <code class="descname">get_height_internal_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display13DisplayBuffer20get_height_internal_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer19get_width_internal_Ev">
+<span id="_CPPv2N7display13DisplayBuffer19get_width_internal_Ev"></span><span id="display::DisplayBuffer::get_width_internal_"></span><span class="target" id="classdisplay_1_1_display_buffer_1ae224b79435c398870ba07720656ce4f7"></span><em class="property">virtual</em> int <code class="descname">get_width_internal_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N7display13DisplayBuffer19get_width_internal_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer14init_internal_E8uint32_t">
+<span id="_CPPv2N7display13DisplayBuffer14init_internal_E8uint32_t"></span><span id="display::DisplayBuffer::init_internal___uint32_t"></span><span class="target" id="classdisplay_1_1_display_buffer_1ac7567984c088cbe363da0ef2f2dc7fe7"></span>void <code class="descname">init_internal_</code><span class="sig-paren">(</span>uint32_t <em>buffer_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer14init_internal_E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display13DisplayBuffer9do_updateEv">
+<span id="_CPPv2N7display13DisplayBuffer9do_updateEv"></span><span id="display::DisplayBuffer::do_update"></span><span class="target" id="classdisplay_1_1_display_buffer_1a6b0f75a2f52a7355b39c7e8872bd936e"></span>void <code class="descname">do_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display13DisplayBuffer9do_updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenvariable: Cannot find variable “COLOR_ON” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display13DisplayBuffer7buffer_E">
+<span id="_CPPv2N7display13DisplayBuffer7buffer_E"></span><span id="display::DisplayBuffer::buffer___uint8_tP"></span><span class="target" id="classdisplay_1_1_display_buffer_1a0a81b3d4fc8ef1eaa68110d50b7b122b"></span>uint8_t *<code class="descname">buffer_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7display13DisplayBuffer7buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display13DisplayBuffer9rotation_E">
+<span id="_CPPv2N7display13DisplayBuffer9rotation_E"></span><span id="display::DisplayBuffer::rotation___DisplayRotation"></span><span class="target" id="classdisplay_1_1_display_buffer_1afbfaba603b814bcbc1c1a965ec5289f2"></span><a class="reference internal" href="#_CPPv3N7display15DisplayRotationE" title="display::DisplayRotation">DisplayRotation</a> <code class="descname">rotation_</code> = {DISPLAY_ROTATION_0_DEGREES}<a class="headerlink" href="#_CPPv3N7display13DisplayBuffer9rotation_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display13DisplayBuffer7writer_E">
+<span id="_CPPv2N7display13DisplayBuffer7writer_E"></span><span id="display::DisplayBuffer::writer___optional:display_writer_t:"></span><span class="target" id="classdisplay_1_1_display_buffer_1a66f2f269825a05db2f1fc9877bb0ad91"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;display_writer_t&gt; <code class="descname">writer_</code> = {}<a class="headerlink" href="#_CPPv3N7display13DisplayBuffer7writer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv39COLOR_OFF">
+<span id="_CPPv29COLOR_OFF"></span><span id="COLOR_OFF__uint8_tC"></span><span class="target" id="display_8h_1aa1717c7049eb0247a7f63298f9d4926b"></span><em class="property">const</em> uint8_t <code class="descname">COLOR_OFF</code><a class="headerlink" href="#_CPPv39COLOR_OFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turn the pixel OFF. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv38COLOR_ON">
+<span id="_CPPv28COLOR_ON"></span><span id="COLOR_ON__uint8_tC"></span><span class="target" id="display_8h_1a998210013d42d781ac4d7020bb623b7d"></span><em class="property">const</em> uint8_t <code class="descname">COLOR_ON</code><a class="headerlink" href="#_CPPv38COLOR_ON" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turn the pixel ON. </p>
+</dd></dl>
+
 </div>
 <div class="section" id="textalign">
 <h3>TextAlign<a class="headerlink" href="#textalign" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenenum: Cannot find enum “TextAlign” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
-</div>
+<dl class="type">
+<dt id="_CPPv39TextAlign">
+<span id="_CPPv29TextAlign"></span><span id="TextAlign"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0b"></span><em class="property">enum </em><code class="descname">TextAlign</code><a class="headerlink" href="#_CPPv39TextAlign" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>TextAlign is used to tell the display class how to position a piece of text. </p>
+<p>By default the coordinates you enter for the print*() functions take the upper left corner of the text as the “anchor” point. You can customize this behavior to, for example, make the coordinates refer to the <em>center</em> of the text.</p>
+<p>All text alignments consist of an X and Y-coordinate alignment. For the alignment along the X-axis these options are allowed:</p>
+<p><ul class="simple">
+<li>LEFT (x-coordinate of anchor point is on left)</li>
+<li>CENTER_HORIZONTAL (x-coordinate of anchor point is in the horizontal center of the text)</li>
+<li>RIGHT (x-coordinate of anchor point is on right)</li>
+</ul>
+</p>
+<p>For the Y-Axis alignment these options are allowed:</p>
+<p><ul class="simple">
+<li>TOP (y-coordinate of anchor is on the top of the text)</li>
+<li>CENTER_VERTICAL (y-coordinate of anchor is in the vertical center of the text)</li>
+<li>BASELINE (y-coordinate of anchor is on the baseline of the text)</li>
+<li>BOTTOM (y-coordinate of anchor is on the bottom of the text)</li>
+</ul>
+</p>
+<p>These options are then combined to create combined TextAlignment options like:<ul class="simple">
+<li>TOP_LEFT (default)</li>
+<li>CENTER (anchor point is in the middle of the text bounds)</li>
+<li>… </li>
+</ul>
+</p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv33TOP">
+<span id="_CPPv23TOP"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba6705777b712ee811e76fb07162081d63"></span><code class="descname">TOP</code> = 0x00<a class="headerlink" href="#_CPPv33TOP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv315CENTER_VERTICAL">
+<span id="_CPPv215CENTER_VERTICAL"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba2cc924691e026a785a32f6843aeb8fba"></span><code class="descname">CENTER_VERTICAL</code> = 0x01<a class="headerlink" href="#_CPPv315CENTER_VERTICAL" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv38BASELINE">
+<span id="_CPPv28BASELINE"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba385881ed58577143e69edf478122d179"></span><code class="descname">BASELINE</code> = 0x02<a class="headerlink" href="#_CPPv38BASELINE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv36BOTTOM">
+<span id="_CPPv26BOTTOM"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba1fabf63de5c96c78e2a40805bcdeb73b"></span><code class="descname">BOTTOM</code> = 0x04<a class="headerlink" href="#_CPPv36BOTTOM" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv34LEFT">
+<span id="_CPPv24LEFT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba684d325a7303f52e64011467ff5c5758"></span><code class="descname">LEFT</code> = 0x00<a class="headerlink" href="#_CPPv34LEFT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv317CENTER_HORIZONTAL">
+<span id="_CPPv217CENTER_HORIZONTAL"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba8e0df4c9801cd8a497c6763895aeb1ab"></span><code class="descname">CENTER_HORIZONTAL</code> = 0x08<a class="headerlink" href="#_CPPv317CENTER_HORIZONTAL" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv35RIGHT">
+<span id="_CPPv25RIGHT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba21507b40c80068eda19865706fdc2403"></span><code class="descname">RIGHT</code> = 0x10<a class="headerlink" href="#_CPPv35RIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv38TOP_LEFT">
+<span id="_CPPv28TOP_LEFT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba747385047b85ae751f83adb36435a3c1"></span><code class="descname">TOP_LEFT</code> = TOP | LEFT<a class="headerlink" href="#_CPPv38TOP_LEFT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv310TOP_CENTER">
+<span id="_CPPv210TOP_CENTER"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0bae4e8367937db13de78dd9a710df92164"></span><code class="descname">TOP_CENTER</code> = TOP | CENTER_HORIZONTAL<a class="headerlink" href="#_CPPv310TOP_CENTER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv39TOP_RIGHT">
+<span id="_CPPv29TOP_RIGHT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba901d87dedda8db733f5e6d34c4eb5fe0"></span><code class="descname">TOP_RIGHT</code> = TOP | RIGHT<a class="headerlink" href="#_CPPv39TOP_RIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv311CENTER_LEFT">
+<span id="_CPPv211CENTER_LEFT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba3cd98a7cfaab4e96e43dc7cc0b9aefe6"></span><code class="descname">CENTER_LEFT</code> = CENTER_VERTICAL | LEFT<a class="headerlink" href="#_CPPv311CENTER_LEFT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv36CENTER">
+<span id="_CPPv26CENTER"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0bac397289ee45877be0cd49811fe245b4e"></span><code class="descname">CENTER</code> = CENTER_VERTICAL | CENTER_HORIZONTAL<a class="headerlink" href="#_CPPv36CENTER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv312CENTER_RIGHT">
+<span id="_CPPv212CENTER_RIGHT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba08ff9677a4ace6c15b6e6361985d4f9b"></span><code class="descname">CENTER_RIGHT</code> = CENTER_VERTICAL | RIGHT<a class="headerlink" href="#_CPPv312CENTER_RIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313BASELINE_LEFT">
+<span id="_CPPv213BASELINE_LEFT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba12a83a88c8235ab8d34acf3a8247a23f"></span><code class="descname">BASELINE_LEFT</code> = BASELINE | LEFT<a class="headerlink" href="#_CPPv313BASELINE_LEFT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv315BASELINE_CENTER">
+<span id="_CPPv215BASELINE_CENTER"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0bade068e5b081255eca66a4e31feda7e44"></span><code class="descname">BASELINE_CENTER</code> = BASELINE | CENTER_HORIZONTAL<a class="headerlink" href="#_CPPv315BASELINE_CENTER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv314BASELINE_RIGHT">
+<span id="_CPPv214BASELINE_RIGHT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba3f4a225a400dd558c4bbe88ea58489eb"></span><code class="descname">BASELINE_RIGHT</code> = BASELINE | RIGHT<a class="headerlink" href="#_CPPv314BASELINE_RIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv311BOTTOM_LEFT">
+<span id="_CPPv211BOTTOM_LEFT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba8d81ac82421d1b03da58fccb9174892e"></span><code class="descname">BOTTOM_LEFT</code> = BOTTOM | LEFT<a class="headerlink" href="#_CPPv311BOTTOM_LEFT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv313BOTTOM_CENTER">
+<span id="_CPPv213BOTTOM_CENTER"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba3480601794fd3b5473219ae158219fd4"></span><code class="descname">BOTTOM_CENTER</code> = BOTTOM | CENTER_HORIZONTAL<a class="headerlink" href="#_CPPv313BOTTOM_CENTER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv312BOTTOM_RIGHT">
+<span id="_CPPv212BOTTOM_RIGHT"></span><span class="target" id="display_8h_1abdd7e81d0fb7db7f8a4e6465765bac0ba341b72aaab1308a3e6667af1e52f5def"></span><code class="descname">BOTTOM_RIGHT</code> = BOTTOM | RIGHT<a class="headerlink" href="#_CPPv312BOTTOM_RIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="font">
 <h3>Font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “display::Font” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N7display4FontE">
+<span id="_CPPv2N7display4FontE"></span><span id="display::Font"></span><span class="target" id="classdisplay_1_1_font"></span><em class="property">class </em><code class="descname">Font</code><a class="headerlink" href="#_CPPv3N7display4FontE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display4Font4FontERRNSt6vectorI5GlyphEEii">
+<span id="_CPPv2N7display4Font4FontERRNSt6vectorI5GlyphEEii"></span><span id="display::Font::Font__std::vector:Glyph:RR.i.i"></span><span class="target" id="classdisplay_1_1_font_1adb5932fcca79f28f5947c75c75961261"></span><code class="descname">Font</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv3N7display5GlyphE" title="display::Glyph">Glyph</a>&gt; &amp;&amp;<em>glyphs</em>, int <em>baseline</em>, int <em>bottom</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display4Font4FontERRNSt6vectorI5GlyphEEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct the font with the given glyphs. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">glyphs</span></code>: A vector of glyphs, must be sorted lexicographically. </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseline</span></code>: The y-offset from the top of the text to the baseline. </li>
+<li><code class="docutils literal notranslate"><span class="pre">bottom</span></code>: The y-offset from the top of the text to the bottom (i.e. height). </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display4Font16match_next_glyphEPKcPi">
+<span id="_CPPv2N7display4Font16match_next_glyphEPKcPi"></span><span id="display::Font::match_next_glyph__cCP.iP"></span><span class="target" id="classdisplay_1_1_font_1aef6ddae8679a6a52589061d0a13d3c56"></span>int <code class="descname">match_next_glyph</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, int *<em>match_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display4Font16match_next_glyphEPKcPi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7display4Font7measureEPKcPiPiPiPi">
+<span id="_CPPv2N7display4Font7measureEPKcPiPiPiPi"></span><span id="display::Font::measure__cCP.iP.iP.iP.iP"></span><span class="target" id="classdisplay_1_1_font_1a119c9e8700edf3e7bd14fc17f2b44f3f"></span>void <code class="descname">measure</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, int *<em>width</em>, int *<em>x_offset</em>, int *<em>baseline</em>, int *<em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display4Font7measureEPKcPiPiPiPi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display4Font10get_glyphsEv">
+<span id="_CPPv2NK7display4Font10get_glyphsEv"></span><span id="display::Font::get_glyphsC"></span><span class="target" id="classdisplay_1_1_font_1addf889f0fb6e133f13fe09b27ff660e0"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv3N7display5GlyphE" title="display::Glyph">Glyph</a>&gt; &amp;<code class="descname">get_glyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display4Font10get_glyphsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “display::Glyph” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display4Font7glyphs_E">
+<span id="_CPPv2N7display4Font7glyphs_E"></span><span id="display::Font::glyphs___std::vector:Glyph:"></span><span class="target" id="classdisplay_1_1_font_1a1c31f04a8ea09a60f2f679e87f9d0df5"></span>std::vector&lt;<a class="reference internal" href="#_CPPv3N7display5GlyphE" title="display::Glyph">Glyph</a>&gt; <code class="descname">glyphs_</code><a class="headerlink" href="#_CPPv3N7display4Font7glyphs_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display4Font9baseline_E">
+<span id="_CPPv2N7display4Font9baseline_E"></span><span id="display::Font::baseline___i"></span><span class="target" id="classdisplay_1_1_font_1a78c80266bf5f68e36a60d908f924862d"></span>int <code class="descname">baseline_</code><a class="headerlink" href="#_CPPv3N7display4Font9baseline_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display4Font7bottom_E">
+<span id="_CPPv2N7display4Font7bottom_E"></span><span id="display::Font::bottom___i"></span><span class="target" id="classdisplay_1_1_font_1a6b4bb2c54eacb5e8ebbb4d06093c31f2"></span>int <code class="descname">bottom_</code><a class="headerlink" href="#_CPPv3N7display4Font7bottom_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7display5GlyphE">
+<span id="_CPPv2N7display5GlyphE"></span><span id="display::Glyph"></span><span class="target" id="classdisplay_1_1_glyph"></span><em class="property">class </em><code class="descname">Glyph</code><a class="headerlink" href="#_CPPv3N7display5GlyphE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display5Glyph5GlyphEPKcPK7uint8_t8uint32_tiiii">
+<span id="_CPPv2N7display5Glyph5GlyphEPKcPK7uint8_t8uint32_tiiii"></span><span id="display::Glyph::Glyph__cCP.uint8_tCP.uint32_t.i.i.i.i"></span><span class="target" id="classdisplay_1_1_glyph_1a0488480da4e82031b95636abf4dea34f"></span><code class="descname">Glyph</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>aChar</em>, <em class="property">const</em> uint8_t *<em>data_start</em>, uint32_t <em>offset</em>, int <em>offset_x</em>, int <em>offset_y</em>, int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display5Glyph5GlyphEPKcPK7uint8_t8uint32_tiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Glyph9get_pixelEii">
+<span id="_CPPv2NK7display5Glyph9get_pixelEii"></span><span id="display::Glyph::get_pixel__i.iC"></span><span class="target" id="classdisplay_1_1_glyph_1a1ed5a04f5f737e1e22c8003062d33af4"></span>bool <code class="descname">get_pixel</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Glyph9get_pixelEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Glyph8get_charEv">
+<span id="_CPPv2NK7display5Glyph8get_charEv"></span><span id="display::Glyph::get_charC"></span><span class="target" id="classdisplay_1_1_glyph_1a3f9c1efb00534455ec8e37c951b0e1fe"></span><em class="property">const</em> char *<code class="descname">get_char</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Glyph8get_charEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Glyph10compare_toEPKc">
+<span id="_CPPv2NK7display5Glyph10compare_toEPKc"></span><span id="display::Glyph::compare_to__cCPC"></span><span class="target" id="classdisplay_1_1_glyph_1a729e398bfc3d34b6b4db226ede7527cb"></span>bool <code class="descname">compare_to</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Glyph10compare_toEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Glyph12match_lengthEPKc">
+<span id="_CPPv2NK7display5Glyph12match_lengthEPKc"></span><span id="display::Glyph::match_length__cCPC"></span><span class="target" id="classdisplay_1_1_glyph_1aa5534352e08b613876c74a0a97410cf4"></span>int <code class="descname">match_length</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Glyph12match_lengthEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Glyph9scan_areaEPiPiPiPi">
+<span id="_CPPv2NK7display5Glyph9scan_areaEPiPiPiPi"></span><span id="display::Glyph::scan_area__iP.iP.iP.iPC"></span><span class="target" id="classdisplay_1_1_glyph_1a634a4dc04a045a7dabd454ac3b51ac21"></span>void <code class="descname">scan_area</code><span class="sig-paren">(</span>int *<em>x1</em>, int *<em>y1</em>, int *<em>width</em>, int *<em>height</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Glyph9scan_areaEPiPiPiPi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt>
+<span class="target" id="classdisplay_1_1_glyph_1afcb9c9d0ef674cc36072bde4ccafba1e"></span><code class="descname">friend display::Glyph::Font</code></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="classdisplay_1_1_glyph_1a78209b40e5fab847f1b605d583495d77"></span><code class="descname">friend display::Glyph::DisplayBuffer</code></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Glyph5char_E">
+<span id="_CPPv2N7display5Glyph5char_E"></span><span id="display::Glyph::char___cCP"></span><span class="target" id="classdisplay_1_1_glyph_1a8271b6b3e145a17e530287657e4bc976"></span><em class="property">const</em> char *<code class="descname">char_</code><a class="headerlink" href="#_CPPv3N7display5Glyph5char_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Glyph5data_E">
+<span id="_CPPv2N7display5Glyph5data_E"></span><span id="display::Glyph::data___uint8_tCP"></span><span class="target" id="classdisplay_1_1_glyph_1ab0a34d599414f56534953a492a8fa1f7"></span><em class="property">const</em> uint8_t *<code class="descname">data_</code><a class="headerlink" href="#_CPPv3N7display5Glyph5data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Glyph8offset_xE">
+<span id="_CPPv2N7display5Glyph8offset_xE"></span><span id="display::Glyph::offset_x__i"></span><span class="target" id="classdisplay_1_1_glyph_1ad3cc09b0b0a07b1956f8af76fcac0647"></span>int <code class="descname">offset_x</code><a class="headerlink" href="#_CPPv3N7display5Glyph8offset_xE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Glyph8offset_yE">
+<span id="_CPPv2N7display5Glyph8offset_yE"></span><span id="display::Glyph::offset_y__i"></span><span class="target" id="classdisplay_1_1_glyph_1af37a794aa9e7f1e60f4cf6e06536e45f"></span>int <code class="descname">offset_y</code><a class="headerlink" href="#_CPPv3N7display5Glyph8offset_yE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Glyph6width_E">
+<span id="_CPPv2N7display5Glyph6width_E"></span><span id="display::Glyph::width___i"></span><span class="target" id="classdisplay_1_1_glyph_1a02683f226336b22e63ce9176323726c4"></span>int <code class="descname">width_</code><a class="headerlink" href="#_CPPv3N7display5Glyph6width_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Glyph7height_E">
+<span id="_CPPv2N7display5Glyph7height_E"></span><span id="display::Glyph::height___i"></span><span class="target" id="classdisplay_1_1_glyph_1a3ac37735daed72c784dfb343b8367b4c"></span>int <code class="descname">height_</code><a class="headerlink" href="#_CPPv3N7display5Glyph7height_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="image">
 <h3>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “display::Image” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N7display5ImageE">
+<span id="_CPPv2N7display5ImageE"></span><span id="display::Image"></span><span class="target" id="classdisplay_1_1_image"></span><em class="property">class </em><code class="descname">Image</code><a class="headerlink" href="#_CPPv3N7display5ImageE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7display5Image5ImageEPK7uint8_tii">
+<span id="_CPPv2N7display5Image5ImageEPK7uint8_tii"></span><span id="display::Image::Image__uint8_tCP.i.i"></span><span class="target" id="classdisplay_1_1_image_1af642c4e8cf450159dea0a19af92fe1ea"></span><code class="descname">Image</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>data_start</em>, int <em>width</em>, int <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7display5Image5ImageEPK7uint8_tii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Image9get_pixelEii">
+<span id="_CPPv2NK7display5Image9get_pixelEii"></span><span id="display::Image::get_pixel__i.iC"></span><span class="target" id="classdisplay_1_1_image_1a00e9fa056e08104b49a1c16fcc2266cd"></span>bool <code class="descname">get_pixel</code><span class="sig-paren">(</span>int <em>x</em>, int <em>y</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Image9get_pixelEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Image9get_widthEv">
+<span id="_CPPv2NK7display5Image9get_widthEv"></span><span id="display::Image::get_widthC"></span><span class="target" id="classdisplay_1_1_image_1a92008ca4af4929f4c13713fdc698f0b8"></span>int <code class="descname">get_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Image9get_widthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7display5Image10get_heightEv">
+<span id="_CPPv2NK7display5Image10get_heightEv"></span><span id="display::Image::get_heightC"></span><span class="target" id="classdisplay_1_1_image_1a90200fdb8a71bc66fc524d3f9158cd43"></span>int <code class="descname">get_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7display5Image10get_heightEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7display5Image6width_E">
+<span id="_CPPv2N7display5Image6width_E"></span><span id="display::Image::width___i"></span><span class="target" id="classdisplay_1_1_image_1add33fb4fe09a92ed951551b2f99c2373"></span>int <code class="descname">width_</code><a class="headerlink" href="#_CPPv3N7display5Image6width_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Image7height_E">
+<span id="_CPPv2N7display5Image7height_E"></span><span id="display::Image::height___i"></span><span class="target" id="classdisplay_1_1_image_1a1acba6c7c38def7bac12d18b4c98b38a"></span>int <code class="descname">height_</code><a class="headerlink" href="#_CPPv3N7display5Image7height_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7display5Image11data_start_E">
+<span id="_CPPv2N7display5Image11data_start_E"></span><span id="display::Image::data_start___uint8_tCP"></span><span class="target" id="classdisplay_1_1_image_1ac6a3233bfbe436fe9390d34e9fe980c9"></span><em class="property">const</em> uint8_t *<code class="descname">data_start_</code><a class="headerlink" href="#_CPPv3N7display5Image11data_start_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="displayrotation">
 <h3>DisplayRotation<a class="headerlink" href="#displayrotation" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenenum: Cannot find enum “display::DisplayRotation” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
-</div>
+<dl class="type">
+<dt id="_CPPv3N7display15DisplayRotationE">
+<span id="_CPPv2N7display15DisplayRotationE"></span><span id="display::DisplayRotation"></span><span class="target" id="display_8h_1a2ebc0165da1b192de40e29f582296683"></span><em class="property">enum </em><code class="descclassname">display<code class="descclassname">::</code></code><code class="descname">DisplayRotation</code><a class="headerlink" href="#_CPPv3N7display15DisplayRotationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N7display26DISPLAY_ROTATION_0_DEGREESE">
+<span id="_CPPv2N7display26DISPLAY_ROTATION_0_DEGREESE"></span><span class="target" id="display_8h_1a2ebc0165da1b192de40e29f582296683a474cdfab4abbc6af8dda86f21604b2ad"></span><code class="descname">DISPLAY_ROTATION_0_DEGREES</code> = 0<a class="headerlink" href="#_CPPv3N7display26DISPLAY_ROTATION_0_DEGREESE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display27DISPLAY_ROTATION_90_DEGREESE">
+<span id="_CPPv2N7display27DISPLAY_ROTATION_90_DEGREESE"></span><span class="target" id="display_8h_1a2ebc0165da1b192de40e29f582296683abb77a8ec9d2313db81b057951b3ac0de"></span><code class="descname">DISPLAY_ROTATION_90_DEGREES</code><a class="headerlink" href="#_CPPv3N7display27DISPLAY_ROTATION_90_DEGREESE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display28DISPLAY_ROTATION_180_DEGREESE">
+<span id="_CPPv2N7display28DISPLAY_ROTATION_180_DEGREESE"></span><span class="target" id="display_8h_1a2ebc0165da1b192de40e29f582296683a455dea30fe2b39f344b079b325ccdd82"></span><code class="descname">DISPLAY_ROTATION_180_DEGREES</code><a class="headerlink" href="#_CPPv3N7display28DISPLAY_ROTATION_180_DEGREESE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N7display28DISPLAY_ROTATION_270_DEGREESE">
+<span id="_CPPv2N7display28DISPLAY_ROTATION_270_DEGREESE"></span><span class="target" id="display_8h_1a2ebc0165da1b192de40e29f582296683abc32cc668193d92989397b6fc78fee21"></span><code class="descname">DISPLAY_ROTATION_270_DEGREES</code><a class="headerlink" href="#_CPPv3N7display28DISPLAY_ROTATION_270_DEGREESE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 </div>

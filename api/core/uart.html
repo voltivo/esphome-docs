@@ -67,18 +67,286 @@
 <h1>UART Bus<a class="headerlink" href="#uart-bus" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “UARTComponent” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv313UARTComponent">
+<span id="_CPPv213UARTComponent"></span><span id="UARTComponent"></span><span class="target" id="class_u_a_r_t_component"></span><em class="property">class </em><code class="descname">UARTComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv313UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent13UARTComponentE6int8_t6int8_t8uint32_t">
+<span id="_CPPv2N13UARTComponent13UARTComponentE6int8_t6int8_t8uint32_t"></span><span id="UARTComponent::UARTComponent__int8_t.int8_t.uint32_t"></span><span class="target" id="class_u_a_r_t_component_1a538bdccaddb7ab455942e14b25e16fb3"></span><code class="descname">UARTComponent</code><span class="sig-paren">(</span>int8_t <em>tx_pin</em>, int8_t <em>rx_pin</em>, uint32_t <em>baud_rate</em> = 9600<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent13UARTComponentE6int8_t6int8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent5setupEv">
+<span id="_CPPv2N13UARTComponent5setupEv"></span><span id="UARTComponent::setup"></span><span class="target" id="class_u_a_r_t_component_1ad967834ca2391898dbb4c3d8200f2f21"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_u_a_r_t_component_1ad967834ca2391898dbb4c3d8200f2f21"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent10write_byteE7uint8_t">
+<span id="_CPPv2N13UARTComponent10write_byteE7uint8_t"></span><span id="UARTComponent::write_byte__uint8_t"></span><span class="target" id="class_u_a_r_t_component_1a6d194e8f799db2e57371964c59b0ba2a"></span>void <code class="descname">write_byte</code><span class="sig-paren">(</span>uint8_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent10write_byteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent11write_arrayEPK7uint8_t6size_t">
+<span id="_CPPv2N13UARTComponent11write_arrayEPK7uint8_t6size_t"></span><span id="UARTComponent::write_array__uint8_tCP.s"></span><span class="target" id="class_u_a_r_t_component_1a1d304470a76b9dd1915c06484230bd85"></span>void <code class="descname">write_array</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>data</em>, size_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent11write_arrayEPK7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent9write_strEPKc">
+<span id="_CPPv2N13UARTComponent9write_strEPKc"></span><span id="UARTComponent::write_str__cCP"></span><span class="target" id="class_u_a_r_t_component_1a417e4e0525c958456514f8a585ac30bf"></span>void <code class="descname">write_str</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent9write_strEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent9peek_byteEP7uint8_t">
+<span id="_CPPv2N13UARTComponent9peek_byteEP7uint8_t"></span><span id="UARTComponent::peek_byte__uint8_tP"></span><span class="target" id="class_u_a_r_t_component_1a35b419cd3a0d296b5bbf3e1edecedf4c"></span>bool <code class="descname">peek_byte</code><span class="sig-paren">(</span>uint8_t *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent9peek_byteEP7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent9read_byteEP7uint8_t">
+<span id="_CPPv2N13UARTComponent9read_byteEP7uint8_t"></span><span id="UARTComponent::read_byte__uint8_tP"></span><span class="target" id="class_u_a_r_t_component_1a80c892fddb79b53a51220bf28af0a63f"></span>bool <code class="descname">read_byte</code><span class="sig-paren">(</span>uint8_t *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent9read_byteEP7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent10read_arrayEP7uint8_t6size_t">
+<span id="_CPPv2N13UARTComponent10read_arrayEP7uint8_t6size_t"></span><span id="UARTComponent::read_array__uint8_tP.s"></span><span class="target" id="class_u_a_r_t_component_1a214a82ea6aed16d4403ee0ebdd22f828"></span>bool <code class="descname">read_array</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, size_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent10read_arrayEP7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent9availableEv">
+<span id="_CPPv2N13UARTComponent9availableEv"></span><span id="UARTComponent::available"></span><span class="target" id="class_u_a_r_t_component_1a80bb0a03dbae0dc31528a339a3c9608d"></span>size_t <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent5flushEv">
+<span id="_CPPv2N13UARTComponent5flushEv"></span><span id="UARTComponent::flush"></span><span class="target" id="class_u_a_r_t_component_1a62229d8513943979a5a7c3ebc51e9d79"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent5flushEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK13UARTComponent18get_setup_priorityEv">
+<span id="_CPPv2NK13UARTComponent18get_setup_priorityEv"></span><span id="UARTComponent::get_setup_priorityC"></span><span class="target" id="class_u_a_r_t_component_1a6104032efab0b1fdd00766e918fc8e26"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13UARTComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_u_a_r_t_component_1ad967834ca2391898dbb4c3d8200f2f21"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “UARTDevice” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent19check_read_timeout_E6size_t">
+<span id="_CPPv2N13UARTComponent19check_read_timeout_E6size_t"></span><span id="UARTComponent::check_read_timeout___s"></span><span class="target" id="class_u_a_r_t_component_1ae6471b27eecc464e39ad06bc577043d3"></span>bool <code class="descname">check_read_timeout_</code><span class="sig-paren">(</span>size_t <em>len</em> = 1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent19check_read_timeout_E6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “ESP8266SoftwareSerial” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13UARTComponent10hw_serial_E">
+<span id="_CPPv2N13UARTComponent10hw_serial_E"></span><span id="UARTComponent::hw_serial___HardwareSerialP"></span><span class="target" id="class_u_a_r_t_component_1a8e8cac3bd6eb9280f229cc76575037ee"></span>HardwareSerial *<code class="descname">hw_serial_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N13UARTComponent10hw_serial_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13UARTComponent10sw_serial_E">
+<span id="_CPPv2N13UARTComponent10sw_serial_E"></span><span id="UARTComponent::sw_serial___ESP8266SoftwareSerialP"></span><span class="target" id="class_u_a_r_t_component_1a4b48b51f161a297f38e8d3cbc4816700"></span><a class="reference internal" href="#_CPPv321ESP8266SoftwareSerial" title="ESP8266SoftwareSerial">ESP8266SoftwareSerial</a> *<code class="descname">sw_serial_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N13UARTComponent10sw_serial_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13UARTComponent7tx_pin_E">
+<span id="_CPPv2N13UARTComponent7tx_pin_E"></span><span id="UARTComponent::tx_pin___int8_t"></span><span class="target" id="class_u_a_r_t_component_1acb20585d7833963fe0f9f9dec7ca715f"></span>int8_t <code class="descname">tx_pin_</code><a class="headerlink" href="#_CPPv3N13UARTComponent7tx_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13UARTComponent7rx_pin_E">
+<span id="_CPPv2N13UARTComponent7rx_pin_E"></span><span id="UARTComponent::rx_pin___int8_t"></span><span class="target" id="class_u_a_r_t_component_1a7d637a1040de5a3d51e18e99c22eacce"></span>int8_t <code class="descname">rx_pin_</code><a class="headerlink" href="#_CPPv3N13UARTComponent7rx_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13UARTComponent10baud_rate_E">
+<span id="_CPPv2N13UARTComponent10baud_rate_E"></span><span id="UARTComponent::baud_rate___uint32_t"></span><span class="target" id="class_u_a_r_t_component_1af3ee3560ace384f8f4298110dad9cc7b"></span>uint32_t <code class="descname">baud_rate_</code><a class="headerlink" href="#_CPPv3N13UARTComponent10baud_rate_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv310UARTDevice">
+<span id="_CPPv210UARTDevice"></span><span id="UARTDevice"></span><span class="target" id="class_u_a_r_t_device"></span><em class="property">class </em><code class="descname">UARTDevice</code><a class="headerlink" href="#_CPPv310UARTDevice" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="../binary_sensor/rdm6300.html#classbinary__sensor_1_1_r_d_m6300_component"><span class="std std-ref">binary_sensor::RDM6300Component</span></a>, <a class="reference internal" href="../display/nextion.html#classdisplay_1_1_nextion"><span class="std std-ref">display::Nextion</span></a>, <a class="reference internal" href="../sensor/mhz19.html#classsensor_1_1_m_h_z19_component"><span class="std std-ref">sensor::MHZ19Component</span></a>, <a class="reference internal" href="../switch/uart.html#classswitch___1_1_u_a_r_t_switch"><span class="std std-ref">switch_::UARTSwitch</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice10UARTDeviceEP13UARTComponent">
+<span id="_CPPv2N10UARTDevice10UARTDeviceEP13UARTComponent"></span><span id="UARTDevice::UARTDevice__UARTComponentP"></span><span class="target" id="class_u_a_r_t_device_1a270f9d64e9d11fc7ac2f28bac7502454"></span><code class="descname">UARTDevice</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice10UARTDeviceEP13UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice10write_byteE7uint8_t">
+<span id="_CPPv2N10UARTDevice10write_byteE7uint8_t"></span><span id="UARTDevice::write_byte__uint8_t"></span><span class="target" id="class_u_a_r_t_device_1aabd909b5d31ddb6d5926006422919857"></span>void <code class="descname">write_byte</code><span class="sig-paren">(</span>uint8_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice10write_byteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice11write_arrayEPK7uint8_t6size_t">
+<span id="_CPPv2N10UARTDevice11write_arrayEPK7uint8_t6size_t"></span><span id="UARTDevice::write_array__uint8_tCP.s"></span><span class="target" id="class_u_a_r_t_device_1af6975b02fc0f0450151c7e4779684b61"></span>void <code class="descname">write_array</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>data</em>, size_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice11write_arrayEPK7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice9write_strEPKc">
+<span id="_CPPv2N10UARTDevice9write_strEPKc"></span><span id="UARTDevice::write_str__cCP"></span><span class="target" id="class_u_a_r_t_device_1ad2039175f643c08b6aa5b2029ba8cf2c"></span>void <code class="descname">write_str</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice9write_strEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice9read_byteEP7uint8_t">
+<span id="_CPPv2N10UARTDevice9read_byteEP7uint8_t"></span><span id="UARTDevice::read_byte__uint8_tP"></span><span class="target" id="class_u_a_r_t_device_1ad49d34b0f3b9b4d0038bba9a83fae715"></span>bool <code class="descname">read_byte</code><span class="sig-paren">(</span>uint8_t *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice9read_byteEP7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice9peek_byteEP7uint8_t">
+<span id="_CPPv2N10UARTDevice9peek_byteEP7uint8_t"></span><span id="UARTDevice::peek_byte__uint8_tP"></span><span class="target" id="class_u_a_r_t_device_1afac0668aa60405b00facbad20e5f5107"></span>bool <code class="descname">peek_byte</code><span class="sig-paren">(</span>uint8_t *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice9peek_byteEP7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice10read_arrayEP7uint8_t6size_t">
+<span id="_CPPv2N10UARTDevice10read_arrayEP7uint8_t6size_t"></span><span id="UARTDevice::read_array__uint8_tP.s"></span><span class="target" id="class_u_a_r_t_device_1a964844a128298d78f5d82671e1000489"></span>bool <code class="descname">read_array</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, size_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice10read_arrayEP7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice9availableEv">
+<span id="_CPPv2N10UARTDevice9availableEv"></span><span id="UARTDevice::available"></span><span class="target" id="class_u_a_r_t_device_1ac5b8e58214a15968596a787b34c1442a"></span>size_t <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice5flushEv">
+<span id="_CPPv2N10UARTDevice5flushEv"></span><span id="UARTDevice::flush"></span><span class="target" id="class_u_a_r_t_device_1a9987f665ef3ab7c8fe8d1b6d5f4336cf"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice5flushEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N10UARTDevice7parent_E">
+<span id="_CPPv2N10UARTDevice7parent_E"></span><span id="UARTDevice::parent___UARTComponentP"></span><span class="target" id="class_u_a_r_t_device_1aedcc8fb0b957588b01f6a28bea2261ce"></span><a class="reference internal" href="#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N10UARTDevice7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv321ESP8266SoftwareSerial">
+<span id="_CPPv221ESP8266SoftwareSerial"></span><span id="ESP8266SoftwareSerial"></span><span class="target" id="class_e_s_p8266_software_serial"></span><em class="property">class </em><code class="descname">ESP8266SoftwareSerial</code><a class="headerlink" href="#_CPPv321ESP8266SoftwareSerial" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial5setupE6int8_t6int8_t8uint32_t">
+<span id="_CPPv2N21ESP8266SoftwareSerial5setupE6int8_t6int8_t8uint32_t"></span><span id="ESP8266SoftwareSerial::setup__int8_t.int8_t.uint32_t"></span><span class="target" id="class_e_s_p8266_software_serial_1a96e4ba9cecbba13008440c8f27bd5092"></span>void <code class="descname">setup</code><span class="sig-paren">(</span>int8_t <em>tx_pin</em>, int8_t <em>rx_pin</em>, uint32_t <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial5setupE6int8_t6int8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial9read_byteEv">
+<span id="_CPPv2N21ESP8266SoftwareSerial9read_byteEv"></span><span id="ESP8266SoftwareSerial::read_byte"></span><span class="target" id="class_e_s_p8266_software_serial_1ac4b68017e57e8e253ff3aa76f917e7b8"></span>uint8_t <code class="descname">read_byte</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9read_byteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial9peek_byteEv">
+<span id="_CPPv2N21ESP8266SoftwareSerial9peek_byteEv"></span><span id="ESP8266SoftwareSerial::peek_byte"></span><span class="target" id="class_e_s_p8266_software_serial_1a88fb355c0ef61e2edf9b01019f4b06a5"></span>uint8_t <code class="descname">peek_byte</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9peek_byteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial5flushEv">
+<span id="_CPPv2N21ESP8266SoftwareSerial5flushEv"></span><span id="ESP8266SoftwareSerial::flush"></span><span class="target" id="class_e_s_p8266_software_serial_1a9c0de464791369eac0c34292b0ebe3d1"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial5flushEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_e_s_p8266_software_serial_1ae497a403e90d5501a6b3a126c1ac63b5"></span><code class="descname">void ICACHE_RAM_ATTR HOT ESP8266SoftwareSerial::write_byte(uint8_t data)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial9availableEv">
+<span id="_CPPv2N21ESP8266SoftwareSerial9availableEv"></span><span id="ESP8266SoftwareSerial::available"></span><span class="target" id="class_e_s_p8266_software_serial_1a433d74c5492a5ca5d055cc606d27229a"></span>size_t <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="class_e_s_p8266_software_serial_1a93be9e38f98a9d5568c690a9b45f55a8"></span><code class="descname">void ICACHE_RAM_ATTR HOT ESP8266SoftwareSerial::gpio_intr_()</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial5wait_ER8uint32_tRK8uint32_t">
+<span id="_CPPv2N21ESP8266SoftwareSerial5wait_ER8uint32_tRK8uint32_t"></span><span id="ESP8266SoftwareSerial::wait___uint32_tR.uint32_tCR"></span><span class="target" id="class_e_s_p8266_software_serial_1aa515b85fb84405b2604dfeae943ca859"></span>void <code class="descname">wait_</code><span class="sig-paren">(</span>uint32_t &amp;<em>wait</em>, <em class="property">const</em> uint32_t &amp;<em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial5wait_ER8uint32_tRK8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial9read_bit_ER8uint32_tRK8uint32_t">
+<span id="_CPPv2N21ESP8266SoftwareSerial9read_bit_ER8uint32_tRK8uint32_t"></span><span id="ESP8266SoftwareSerial::read_bit___uint32_tR.uint32_tCR"></span><span class="target" id="class_e_s_p8266_software_serial_1a6a05636550ca25c09d3e36d7c21078b4"></span>uint8_t <code class="descname">read_bit_</code><span class="sig-paren">(</span>uint32_t &amp;<em>wait</em>, <em class="property">const</em> uint32_t &amp;<em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9read_bit_ER8uint32_tRK8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial10write_bit_EbR8uint32_tRK8uint32_t">
+<span id="_CPPv2N21ESP8266SoftwareSerial10write_bit_EbR8uint32_tRK8uint32_t"></span><span id="ESP8266SoftwareSerial::write_bit___b.uint32_tR.uint32_tCR"></span><span class="target" id="class_e_s_p8266_software_serial_1ad424e45a4698bdcd218624f5479e272d"></span>void <code class="descname">write_bit_</code><span class="sig-paren">(</span>bool <em>bit</em>, uint32_t &amp;<em>wait</em>, <em class="property">const</em> uint32_t &amp;<em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial10write_bit_EbR8uint32_tRK8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial8tx_high_Ev">
+<span id="_CPPv2N21ESP8266SoftwareSerial8tx_high_Ev"></span><span id="ESP8266SoftwareSerial::tx_high_"></span><span class="target" id="class_e_s_p8266_software_serial_1a656dc9487ab9c7ad8a1531631c090cd1"></span>void <code class="descname">tx_high_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial8tx_high_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N21ESP8266SoftwareSerial7tx_low_Ev">
+<span id="_CPPv2N21ESP8266SoftwareSerial7tx_low_Ev"></span><span id="ESP8266SoftwareSerial::tx_low_"></span><span class="target" id="class_e_s_p8266_software_serial_1adb0d457402c9108380991766ebbfcfd0"></span>void <code class="descname">tx_low_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial7tx_low_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial8rx_mask_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial8rx_mask_E"></span><span id="ESP8266SoftwareSerial::rx_mask___uint32_t"></span><span class="target" id="class_e_s_p8266_software_serial_1a5e40ef80a43c5e197ea4b4aa698cfddd"></span>uint32_t <code class="descname">rx_mask_</code> = {0}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial8rx_mask_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial8tx_mask_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial8tx_mask_E"></span><span id="ESP8266SoftwareSerial::tx_mask___uint32_t"></span><span class="target" id="class_e_s_p8266_software_serial_1add97b9ff9e9de736e284c0e721ffa58a"></span>uint32_t <code class="descname">tx_mask_</code> = {0}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial8tx_mask_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial9bit_time_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial9bit_time_E"></span><span id="ESP8266SoftwareSerial::bit_time___uint32_t"></span><span class="target" id="class_e_s_p8266_software_serial_1a4bae449f701670e85b5c987dae6d16a7"></span>uint32_t <code class="descname">bit_time_</code> = {0}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9bit_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial10rx_buffer_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial10rx_buffer_E"></span><span id="ESP8266SoftwareSerial::rx_buffer___uint8_tP"></span><span class="target" id="class_e_s_p8266_software_serial_1adcd5b3f7ccca5d3d1638472dd205c746"></span>uint8_t *<code class="descname">rx_buffer_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial10rx_buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial15rx_buffer_size_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial15rx_buffer_size_E"></span><span id="ESP8266SoftwareSerial::rx_buffer_size___s"></span><span class="target" id="class_e_s_p8266_software_serial_1abdbebb9eeef971497c13567c872e0d86"></span>size_t <code class="descname">rx_buffer_size_</code> = {64}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial15rx_buffer_size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial10rx_in_pos_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial10rx_in_pos_E"></span><span id="ESP8266SoftwareSerial::rx_in_pos___sV"></span><span class="target" id="class_e_s_p8266_software_serial_1a255ffc6525d7119832b89157df1943a1"></span><em class="property">volatile</em> size_t <code class="descname">rx_in_pos_</code> = {0}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial10rx_in_pos_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N21ESP8266SoftwareSerial11rx_out_pos_E">
+<span id="_CPPv2N21ESP8266SoftwareSerial11rx_out_pos_E"></span><span id="ESP8266SoftwareSerial::rx_out_pos___s"></span><span class="target" id="class_e_s_p8266_software_serial_1a3a7a599f760cefaf694168dcdae85809"></span>size_t <code class="descname">rx_out_pos_</code> = {0}<a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial11rx_out_pos_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

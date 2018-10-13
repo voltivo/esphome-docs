@@ -65,13 +65,114 @@
             
   <div class="section" id="template-switch">
 <h1>Template Switch<a class="headerlink" href="#template-switch" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_template_switch()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application20make_template_switchERKNSt6stringE" title="Application::make_template_switch"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_template_switch()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “switch_::TemplateSwitch” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N7switch_14TemplateSwitchE">
+<span id="_CPPv2N7switch_14TemplateSwitchE"></span><span id="switch_::TemplateSwitch"></span><span class="target" id="classswitch___1_1_template_switch"></span><em class="property">class </em><code class="descname">TemplateSwitch</code> : <em class="property">public</em> switch_::<a class="reference internal" href="index.html#_CPPv3N7switch_6SwitchE" title="switch_::Switch">Switch</a><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitchE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch14TemplateSwitchERKNSt6stringE">
+<span id="_CPPv2N7switch_14TemplateSwitch14TemplateSwitchERKNSt6stringE"></span><span id="switch_::TemplateSwitch::TemplateSwitch__ssCR"></span><span class="target" id="classswitch___1_1_template_switch_1a1926ac6d1d34c6117499e5f3608c61cf"></span><code class="descname">TemplateSwitch</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch14TemplateSwitchERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch16set_state_lambdaERRNSt8functionIF8optionalIbEvEEE">
+<span id="_CPPv2N7switch_14TemplateSwitch16set_state_lambdaERRNSt8functionIF8optionalIbEvEEE"></span><span class="target" id="classswitch___1_1_template_switch_1aec8dae0f64f381a4b20131eb184b14f1"></span>void <code class="descname">set_state_lambda</code><span class="sig-paren">(</span>std::function&lt;<a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt;<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch16set_state_lambdaERRNSt8functionIF8optionalIbEvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7switch_14TemplateSwitch19get_turn_on_triggerEv">
+<span id="_CPPv2NK7switch_14TemplateSwitch19get_turn_on_triggerEv"></span><span id="switch_::TemplateSwitch::get_turn_on_triggerC"></span><span class="target" id="classswitch___1_1_template_switch_1a3d47ebe6ae2419914af0f80fca698595"></span><a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt; *<code class="descname">get_turn_on_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7switch_14TemplateSwitch19get_turn_on_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7switch_14TemplateSwitch20get_turn_off_triggerEv">
+<span id="_CPPv2NK7switch_14TemplateSwitch20get_turn_off_triggerEv"></span><span id="switch_::TemplateSwitch::get_turn_off_triggerC"></span><span class="target" id="classswitch___1_1_template_switch_1a07b5633cc960f866edaa810a6c31f524"></span><a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt; *<code class="descname">get_turn_off_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7switch_14TemplateSwitch20get_turn_off_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch14set_optimisticEb">
+<span id="_CPPv2N7switch_14TemplateSwitch14set_optimisticEb"></span><span id="switch_::TemplateSwitch::set_optimistic__b"></span><span class="target" id="classswitch___1_1_template_switch_1a6501c90b01ac2936b43fd92cd74d7ace"></span>void <code class="descname">set_optimistic</code><span class="sig-paren">(</span>bool <em>optimistic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch14set_optimisticEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch4loopEv">
+<span id="_CPPv2N7switch_14TemplateSwitch4loopEv"></span><span id="switch_::TemplateSwitch::loop"></span><span class="target" id="classswitch___1_1_template_switch_1a3639aa64771139d718d7a16495655cd6"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classswitch___1_1_template_switch_1a3639aa64771139d718d7a16495655cd6"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7switch_14TemplateSwitch18get_setup_priorityEv">
+<span id="_CPPv2NK7switch_14TemplateSwitch18get_setup_priorityEv"></span><span id="switch_::TemplateSwitch::get_setup_priorityC"></span><span class="target" id="classswitch___1_1_template_switch_1a8103e717e5f5951f11f518266b2a2e00"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7switch_14TemplateSwitch18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch16do_restore_stateEv">
+<span id="_CPPv2N7switch_14TemplateSwitch16do_restore_stateEv"></span><span id="switch_::TemplateSwitch::do_restore_state"></span><span class="target" id="classswitch___1_1_template_switch_1ae7fff6ebd438ac9bf2332c76579a4e80"></span>bool <code class="descname">do_restore_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch16do_restore_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclasses can override this to prevent the switch from automatically restoring the state. </p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch10optimisticEv">
+<span id="_CPPv2N7switch_14TemplateSwitch10optimisticEv"></span><span id="switch_::TemplateSwitch::optimistic"></span><span class="target" id="classswitch___1_1_template_switch_1a51591f76e6bc8f7563d1b35f43edfcfb"></span>bool <code class="descname">optimistic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch10optimisticEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return whether this switch is optimistic - i.e. </p>
+<p>if both the ON/OFF actions should be displayed in Home Assistant because the real state is unknown.</p>
+<p>Defaults to false. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch7turn_onEv">
+<span id="_CPPv2N7switch_14TemplateSwitch7turn_onEv"></span><span id="switch_::TemplateSwitch::turn_on"></span><span class="target" id="classswitch___1_1_template_switch_1ae650f9d30c3f66db500c92e42777816c"></span>void <code class="descname">turn_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch7turn_onEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turn this switch on. When creating a switch, you should implement this (inversion will already be applied). </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_14TemplateSwitch8turn_offEv">
+<span id="_CPPv2N7switch_14TemplateSwitch8turn_offEv"></span><span id="switch_::TemplateSwitch::turn_off"></span><span class="target" id="classswitch___1_1_template_switch_1a00022ed40692b11e93ace95f08081e11"></span>void <code class="descname">turn_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch8turn_offEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turn this switch off. When creating a switch, you should implement this (inversion will already be applied). </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt>
+<span class="target" id="classswitch___1_1_template_switch_1ad946262942980da34e351f377b68bb45"></span><code class="descname">optional&lt;std::function&lt;optional&lt;bool&gt;)&gt; &gt; switch_::TemplateSwitch::f_</code></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7switch_14TemplateSwitch11optimistic_E">
+<span id="_CPPv2N7switch_14TemplateSwitch11optimistic_E"></span><span id="switch_::TemplateSwitch::optimistic___b"></span><span class="target" id="classswitch___1_1_template_switch_1a4bf41b9e5bb6f615d69486485e437f7b"></span>bool <code class="descname">optimistic_</code> = {false}<a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch11optimistic_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7switch_14TemplateSwitch16turn_on_trigger_E">
+<span id="_CPPv2N7switch_14TemplateSwitch16turn_on_trigger_E"></span><span id="switch_::TemplateSwitch::turn_on_trigger___Trigger:NoArg:P"></span><span class="target" id="classswitch___1_1_template_switch_1a8627f43f5332917f453e8e5a53dfa79b"></span><a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt; *<code class="descname">turn_on_trigger_</code><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch16turn_on_trigger_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7switch_14TemplateSwitch17turn_off_trigger_E">
+<span id="_CPPv2N7switch_14TemplateSwitch17turn_off_trigger_E"></span><span id="switch_::TemplateSwitch::turn_off_trigger___Trigger:NoArg:P"></span><span class="target" id="classswitch___1_1_template_switch_1ac18fb01b283d085f8f39168743c93d24"></span><a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt; *<code class="descname">turn_off_trigger_</code><a class="headerlink" href="#_CPPv3N7switch_14TemplateSwitch17turn_off_trigger_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

@@ -65,21 +65,103 @@
             
   <div class="section" id="ms5611-atmospheric-pressure-sensor">
 <h1>MS5611 Atmospheric Pressure Sensor<a class="headerlink" href="#ms5611-atmospheric-pressure-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_ms5611_sensor()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application18make_ms5611_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Application::make_ms5611_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_ms5611_sensor()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “sensor::MS5611Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N6sensor15MS5611ComponentE">
+<span id="_CPPv2N6sensor15MS5611ComponentE"></span><span id="sensor::MS5611Component"></span><span class="target" id="classsensor_1_1_m_s5611_component"></span><em class="property">class </em><code class="descname">MS5611Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor15MS5611ComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor15MS5611Component15MS5611ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE8uint32_t">
+<span id="_CPPv2N6sensor15MS5611Component15MS5611ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE8uint32_t"></span><span id="sensor::MS5611Component::MS5611Component__I2CComponentP.ssCR.ssCR.uint32_t"></span><span class="target" id="classsensor_1_1_m_s5611_component_1a35e8f37b7c3b5e704d4266d0e96c39ce"></span><code class="descname">MS5611Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component15MS5611ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15MS5611Component5setupEv">
+<span id="_CPPv2N6sensor15MS5611Component5setupEv"></span><span id="sensor::MS5611Component::setup"></span><span class="target" id="classsensor_1_1_m_s5611_component_1a50c3e5819f75ffb62c54f8f278b7446c"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_m_s5611_component_1a50c3e5819f75ffb62c54f8f278b7446c"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15MS5611Component18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor15MS5611Component18get_setup_priorityEv"></span><span id="sensor::MS5611Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_m_s5611_component_1a14c1fb1466eeb952be6003d667071e61"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15MS5611Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_m_s5611_component_1a50c3e5819f75ffb62c54f8f278b7446c"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15MS5611Component6updateEv">
+<span id="_CPPv2N6sensor15MS5611Component6updateEv"></span><span id="sensor::MS5611Component::update"></span><span class="target" id="classsensor_1_1_m_s5611_component_1a7088e727d567be9195222910d8db241a"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15MS5611Component22get_temperature_sensorEv">
+<span id="_CPPv2NK6sensor15MS5611Component22get_temperature_sensorEv"></span><span id="sensor::MS5611Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_m_s5611_component_1aafe2d170c19e50f58b7fc3f6cbd2e574"></span>MS5611TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15MS5611Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15MS5611Component19get_pressure_sensorEv">
+<span id="_CPPv2NK6sensor15MS5611Component19get_pressure_sensorEv"></span><span id="sensor::MS5611Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_m_s5611_component_1ace8b8ddd7b2a243b2563aa3791730901"></span>MS5611PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15MS5611Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “MS5611TemperatureSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor15MS5611Component17read_temperature_Ev">
+<span id="_CPPv2N6sensor15MS5611Component17read_temperature_Ev"></span><span id="sensor::MS5611Component::read_temperature_"></span><span class="target" id="classsensor_1_1_m_s5611_component_1ad2b01ffe6d46f72cd5a7cfd609129447"></span>void <code class="descname">read_temperature_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component17read_temperature_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15MS5611Component14read_pressure_E8uint32_t">
+<span id="_CPPv2N6sensor15MS5611Component14read_pressure_E8uint32_t"></span><span id="sensor::MS5611Component::read_pressure___uint32_t"></span><span class="target" id="classsensor_1_1_m_s5611_component_1aa33fe13bbee6007df4b7c20aeb41adda"></span>void <code class="descname">read_pressure_</code><span class="sig-paren">(</span>uint32_t <em>raw_temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component14read_pressure_E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15MS5611Component16calculate_valuesE8uint32_t8uint32_t">
+<span id="_CPPv2N6sensor15MS5611Component16calculate_valuesE8uint32_t8uint32_t"></span><span id="sensor::MS5611Component::calculate_values__uint32_t.uint32_t"></span><span class="target" id="classsensor_1_1_m_s5611_component_1ab6174484a12c2a0399fd280a526c8dda"></span>void <code class="descname">calculate_values</code><span class="sig-paren">(</span>uint32_t <em>raw_temperature</em>, uint32_t <em>raw_pressure</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component16calculate_valuesE8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “MS5611PressureSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor15MS5611Component19temperature_sensor_E">
+<span id="_CPPv2N6sensor15MS5611Component19temperature_sensor_E"></span><span id="sensor::MS5611Component::temperature_sensor___MS5611TemperatureSensorP"></span><span class="target" id="classsensor_1_1_m_s5611_component_1ad16fcef2b53251482a51333e9ba7dfa3"></span>MS5611TemperatureSensor *<code class="descname">temperature_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component19temperature_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15MS5611Component16pressure_sensor_E">
+<span id="_CPPv2N6sensor15MS5611Component16pressure_sensor_E"></span><span id="sensor::MS5611Component::pressure_sensor___MS5611PressureSensorP"></span><span class="target" id="classsensor_1_1_m_s5611_component_1ae9bdf90388271b7570cf3eb473bb4473"></span>MS5611PressureSensor *<code class="descname">pressure_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15MS5611Component16pressure_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15MS5611Component4promE">
+<span id="_CPPv2N6sensor15MS5611Component4promE"></span><span id="sensor::MS5611Component::prom__uint16_tA"></span><span class="target" id="classsensor_1_1_m_s5611_component_1a28cf260eff57d4a3f8483a2a0e3000ec"></span>uint16_t <code class="descname">prom</code>[6]<a class="headerlink" href="#_CPPv3N6sensor15MS5611Component4promE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="ms5611_8h_1a0248e184606cb3e0b1f29b6c26067956"></span><em class="property">using </em><code class="descname">sensor::MS5611TemperatureSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_EMPTY, UNIT_C&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="ms5611_8h_1a42dc133738af960604637308615b7332"></span><em class="property">using </em><code class="descname">sensor::MS5611PressureSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_GAUGE, UNIT_HPA&gt;</code></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 

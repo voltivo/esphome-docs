@@ -73,14 +73,35 @@ messages by the MQTT client to show an ON/OFF state of the node.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="n">App</span><span class="p">.</span><span class="n">make_status_binary_sensor</span><span class="p">(</span><span class="s">&quot;Livingroom Node Status&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_status_binary_sensor()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application25make_status_binary_sensorERKNSt6stringE" title="Application::make_status_binary_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_status_binary_sensor()</span></code></a>.</p>
 </div>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “binary_sensor::StatusBinarySensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor18StatusBinarySensorE">
+<span id="_CPPv2N13binary_sensor18StatusBinarySensorE"></span><span id="binary_sensor::StatusBinarySensor"></span><span class="target" id="classbinary__sensor_1_1_status_binary_sensor"></span><em class="property">class </em><code class="descname">StatusBinarySensor</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a><a class="headerlink" href="#_CPPv3N13binary_sensor18StatusBinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Simple binary sensor that reports the online/offline state of the node using MQTT. </p>
+<p>Most of the magic doesn’t happen here, but in <a class="reference internal" href="../core/application.html#class_application_1ad6e4df6962c2ec5fd0d7f13cf9c3b2fe"><span class="std std-ref">Application.make_status_binary_sensor</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor18StatusBinarySensor18StatusBinarySensorERKNSt6stringE">
+<span id="_CPPv2N13binary_sensor18StatusBinarySensor18StatusBinarySensorERKNSt6stringE"></span><span id="binary_sensor::StatusBinarySensor::StatusBinarySensor__ssCR"></span><span class="target" id="classbinary__sensor_1_1_status_binary_sensor_1a21ab9b05fffd82679c83b4a27b4c783c"></span><code class="descname">StatusBinarySensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor18StatusBinarySensor18StatusBinarySensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct the status binary sensor. </p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor18StatusBinarySensor12device_classEv">
+<span id="_CPPv2N13binary_sensor18StatusBinarySensor12device_classEv"></span><span id="binary_sensor::StatusBinarySensor::device_class"></span><span class="target" id="classbinary__sensor_1_1_status_binary_sensor_1a4f6abefc12e8a988a298ee92b6db1476"></span>std::string <code class="descname">device_class</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor18StatusBinarySensor12device_classEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>“connectivity” device class. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

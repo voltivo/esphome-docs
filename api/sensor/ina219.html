@@ -65,25 +65,125 @@
             
   <div class="section" id="ina219-dc-current-sensor">
 <h1>INA219 DC Current Sensor<a class="headerlink" href="#ina219-dc-current-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_ina219()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application11make_ina219Efff7uint8_t8uint32_t" title="Application::make_ina219"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_ina219()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “sensor::INA219Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N6sensor15INA219ComponentE">
+<span id="_CPPv2N6sensor15INA219ComponentE"></span><span id="sensor::INA219Component"></span><span class="target" id="classsensor_1_1_i_n_a219_component"></span><em class="property">class </em><code class="descname">INA219Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor15INA219ComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component15INA219ComponentEP12I2CComponentfff7uint8_t8uint32_t">
+<span id="_CPPv2N6sensor15INA219Component15INA219ComponentEP12I2CComponentfff7uint8_t8uint32_t"></span><span id="sensor::INA219Component::INA219Component__I2CComponentP.float.float.float.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a3481c68a37ad00ca34e277b1c717bd35"></span><code class="descname">INA219Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, float <em>shunt_resistance_ohm</em>, float <em>max_current_a</em>, float <em>max_voltage_v</em>, uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component15INA219ComponentEP12I2CComponentfff7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component5setupEv">
+<span id="_CPPv2N6sensor15INA219Component5setupEv"></span><span id="sensor::INA219Component::setup"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1ae58fad80aa7db3e6d4ed615d8d2b2539"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_i_n_a219_component_1ae58fad80aa7db3e6d4ed615d8d2b2539"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15INA219Component18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor15INA219Component18get_setup_priorityEv"></span><span id="sensor::INA219Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a175294662ee6c3f9e98bd8a19f15d274"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15INA219Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_i_n_a219_component_1ae58fad80aa7db3e6d4ed615d8d2b2539"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component6updateEv">
+<span id="_CPPv2N6sensor15INA219Component6updateEv"></span><span id="sensor::INA219Component::update"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a0471539a8c6be44d8fdb9a279a97e045"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component23make_bus_voltage_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor15INA219Component23make_bus_voltage_sensorERKNSt6stringE"></span><span id="sensor::INA219Component::make_bus_voltage_sensor__ssCR"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1afa52603085c5db43f72d8a96ead9b7db"></span>INA219VoltageSensor *<code class="descname">make_bus_voltage_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component23make_bus_voltage_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component25make_shunt_voltage_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor15INA219Component25make_shunt_voltage_sensorERKNSt6stringE"></span><span id="sensor::INA219Component::make_shunt_voltage_sensor__ssCR"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a5a32b84b7d0776e5ce66d7658242b3db"></span>INA219VoltageSensor *<code class="descname">make_shunt_voltage_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component25make_shunt_voltage_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component19make_current_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor15INA219Component19make_current_sensorERKNSt6stringE"></span><span id="sensor::INA219Component::make_current_sensor__ssCR"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a1e0102c6a14ae90271ecc0f42ebc67cc"></span>INA219CurrentSensor *<code class="descname">make_current_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component19make_current_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15INA219Component17make_power_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor15INA219Component17make_power_sensorERKNSt6stringE"></span><span id="sensor::INA219Component::make_power_sensor__ssCR"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a7c5f13102b6fb3c68d6e4d805045375d"></span>INA219PowerSensor *<code class="descname">make_power_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15INA219Component17make_power_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “INA219VoltageSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component21shunt_resistance_ohm_E">
+<span id="_CPPv2N6sensor15INA219Component21shunt_resistance_ohm_E"></span><span id="sensor::INA219Component::shunt_resistance_ohm___float"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a1ae8625721e72403239532415837ca8e"></span>float <code class="descname">shunt_resistance_ohm_</code><a class="headerlink" href="#_CPPv3N6sensor15INA219Component21shunt_resistance_ohm_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component14max_current_a_E">
+<span id="_CPPv2N6sensor15INA219Component14max_current_a_E"></span><span id="sensor::INA219Component::max_current_a___float"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1ad15a96a173910f58534e047d18554079"></span>float <code class="descname">max_current_a_</code><a class="headerlink" href="#_CPPv3N6sensor15INA219Component14max_current_a_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component14max_voltage_v_E">
+<span id="_CPPv2N6sensor15INA219Component14max_voltage_v_E"></span><span id="sensor::INA219Component::max_voltage_v___float"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1ae9c9de6f0c4f80a063d8926a9f4bb702"></span>float <code class="descname">max_voltage_v_</code><a class="headerlink" href="#_CPPv3N6sensor15INA219Component14max_voltage_v_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component16calibration_lsb_E">
+<span id="_CPPv2N6sensor15INA219Component16calibration_lsb_E"></span><span id="sensor::INA219Component::calibration_lsb___uint32_t"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a1890b602775281cea57490f978df4be0"></span>uint32_t <code class="descname">calibration_lsb_</code><a class="headerlink" href="#_CPPv3N6sensor15INA219Component16calibration_lsb_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component19bus_voltage_sensor_E">
+<span id="_CPPv2N6sensor15INA219Component19bus_voltage_sensor_E"></span><span id="sensor::INA219Component::bus_voltage_sensor___INA219VoltageSensorP"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1aa52c0c671bd28bd7bd09540cf4a9b1ff"></span>INA219VoltageSensor *<code class="descname">bus_voltage_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor15INA219Component19bus_voltage_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component21shunt_voltage_sensor_E">
+<span id="_CPPv2N6sensor15INA219Component21shunt_voltage_sensor_E"></span><span id="sensor::INA219Component::shunt_voltage_sensor___INA219VoltageSensorP"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1aeef68b6d058dc5ee3b17e2da4c63243c"></span>INA219VoltageSensor *<code class="descname">shunt_voltage_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor15INA219Component21shunt_voltage_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component15current_sensor_E">
+<span id="_CPPv2N6sensor15INA219Component15current_sensor_E"></span><span id="sensor::INA219Component::current_sensor___INA219CurrentSensorP"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a125423e56bfa335fff1c98daab1eb8c3"></span>INA219CurrentSensor *<code class="descname">current_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor15INA219Component15current_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15INA219Component13power_sensor_E">
+<span id="_CPPv2N6sensor15INA219Component13power_sensor_E"></span><span id="sensor::INA219Component::power_sensor___INA219PowerSensorP"></span><span class="target" id="classsensor_1_1_i_n_a219_component_1a3c62fb710b277163eb73a660497de1a0"></span>INA219PowerSensor *<code class="descname">power_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor15INA219Component13power_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “INA219CurrentSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “INA219PowerSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
-</div>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="ina219_8h_1adae392a072700b7d00ec20dd06a11cc5"></span><em class="property">using </em><code class="descname">sensor::INA219VoltageSensor = typedef EmptyPollingParentSensor&lt;2, ICON_FLASH, UNIT_V&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="ina219_8h_1a4fa4bbc9bad61257090c78ea3f9496b3"></span><em class="property">using </em><code class="descname">sensor::INA219CurrentSensor = typedef EmptyPollingParentSensor&lt;3, ICON_FLASH, UNIT_A&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="ina219_8h_1abd71c2a6bb9a44ea84417f52978cb3f8"></span><em class="property">using </em><code class="descname">sensor::INA219PowerSensor = typedef EmptyPollingParentSensor&lt;2, ICON_FLASH, UNIT_W&gt;</code></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 

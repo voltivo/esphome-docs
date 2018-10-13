@@ -70,30 +70,492 @@
             
   <div class="section" id="component">
 <h1>Component<a class="headerlink" href="#component" title="Permalink to this headline">¶</a></h1>
-<p>Every object that should be handled by the Application instance and receive <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">setup()</span></code> and
-<code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">loop()</span></code> calls must be a subclass of <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Component</span></code>.</p>
+<p>Every object that should be handled by the Application instance and receive <a class="reference internal" href="#_CPPv3N9Component5setupEv" title="Component::setup"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">setup()</span></code></a> and
+<a class="reference internal" href="#_CPPv3N9Component4loopEv" title="Component::loop"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">loop()</span></code></a> calls must be a subclass of <a class="reference internal" href="#_CPPv39Component" title="Component"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Component</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Component<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv39Component">
+<span id="_CPPv29Component"></span><span id="Component"></span><span class="target" id="class_component"></span><em class="property">class </em><code class="descname">Component</code><a class="headerlink" href="#_CPPv39Component" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The base class for all esphomelib components. </p>
+<p>esphomelib uses components to separate code for self-contained units such as peripheral devices in order to keep the library clean and simple. Each component should be registered in the <a class="reference internal" href="application.html#class_application"><span class="std std-ref">Application</span></a> instance via add_component. The application will then call the component’s <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> and <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> methods at the appropriate time. Each component should save all the information required for setup in the constructor, and only do the actual hardware initialization, such as pinMode, in <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>.</p>
+<p>Additionally, the <a class="reference internal" href="#class_component_1ac6a4d200c2e273be69faabe54180904b"><span class="std std-ref">get_setup_priority()</span></a> and <a class="reference internal" href="#class_component_1a48744fb660d4e37052bd8bcb47a28ae3"><span class="std std-ref">get_loop_priority()</span></a> can be overwritten in order to force the <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> or <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> methods to be executed earlier than other components. For example, setting up a GPIO pin to be output-only should be done before WiFi and MQTT are initialized - so the component can assign itself a high priority via <a class="reference internal" href="#class_component_1ac6a4d200c2e273be69faabe54180904b"><span class="std std-ref">get_setup_priority()</span></a>.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>Application::add_component() </dd>
+</dl>
+</p>
+<p>Subclassed by binary_sensor::DelayedOffFilter, binary_sensor::DelayedOnFilter, <a class="reference internal" href="../binary_sensor/esp32_touch.html#classbinary__sensor_1_1_e_s_p32_touch_component"><span class="std std-ref">binary_sensor::ESP32TouchComponent</span></a>, <a class="reference internal" href="../binary_sensor/gpio.html#classbinary__sensor_1_1_g_p_i_o_binary_sensor_component"><span class="std std-ref">binary_sensor::GPIOBinarySensorComponent</span></a>, binary_sensor::HeartbeatFilter, <a class="reference internal" href="../binary_sensor/rdm6300.html#classbinary__sensor_1_1_r_d_m6300_component"><span class="std std-ref">binary_sensor::RDM6300Component</span></a>, <a class="reference internal" href="../binary_sensor/template.html#classbinary__sensor_1_1_template_binary_sensor"><span class="std std-ref">binary_sensor::TemplateBinarySensor</span></a>, <a class="reference internal" href="../cover/template.html#classcover_1_1_template_cover"><span class="std std-ref">cover::TemplateCover</span></a>, <a class="reference internal" href="../misc/debug.html#class_debug_component"><span class="std std-ref">DebugComponent</span></a>, <a class="reference internal" href="deep-sleep.html#class_deep_sleep_component"><span class="std std-ref">DeepSleepComponent</span></a>, <a class="reference internal" href="automation.html#class_delay_action"><span class="std std-ref">DelayAction&lt; T &gt;</span></a>, <a class="reference internal" href="../misc/esp32_ble_beacon.html#class_e_s_p32_b_l_e_beacon"><span class="std std-ref">ESP32BLEBeacon</span></a>, <a class="reference internal" href="../misc/esp32_ble_tracker.html#class_e_s_p32_b_l_e_tracker"><span class="std std-ref">ESP32BLETracker</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_basic_fan_component"><span class="std std-ref">fan::BasicFanComponent</span></a>, <a class="reference internal" href="i2c.html#class_i2_c_component"><span class="std std-ref">I2CComponent</span></a>, <a class="reference internal" href="../misc/pcf8574.html#classio_1_1_p_c_f8574_component"><span class="std std-ref">io::PCF8574Component</span></a>, <a class="reference internal" href="../light/fastled.html#classlight_1_1_fast_l_e_d_light_output_component"><span class="std std-ref">light::FastLEDLightOutputComponent</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_light_state"><span class="std std-ref">light::LightState</span></a>, <a class="reference internal" href="log.html#class_log_component"><span class="std std-ref">LogComponent</span></a>, <a class="reference internal" href="automation.html#class_loop_trigger"><span class="std std-ref">LoopTrigger</span></a>, <a class="reference internal" href="mqtt.html#classmqtt_1_1_m_q_t_t_client_component"><span class="std std-ref">mqtt::MQTTClientComponent</span></a>, <a class="reference internal" href="mqtt.html#classmqtt_1_1_m_q_t_t_component"><span class="std std-ref">mqtt::MQTTComponent</span></a>, <a class="reference internal" href="ota.html#class_o_t_a_component"><span class="std std-ref">OTAComponent</span></a>, <a class="reference internal" href="../output/esp8266-pwm.html#classoutput_1_1_e_s_p8266_p_w_m_output"><span class="std std-ref">output::ESP8266PWMOutput</span></a>, <a class="reference internal" href="../output/gpio-binary.html#classoutput_1_1_g_p_i_o_binary_output_component"><span class="std std-ref">output::GPIOBinaryOutputComponent</span></a>, <a class="reference internal" href="../output/ledc.html#classoutput_1_1_l_e_d_c_output_component"><span class="std std-ref">output::LEDCOutputComponent</span></a>, <a class="reference internal" href="../output/pca9685.html#classoutput_1_1_p_c_a9685_output_component"><span class="std std-ref">output::PCA9685OutputComponent</span></a>, <a class="reference internal" href="#class_polling_component"><span class="std std-ref">PollingComponent</span></a>, <a class="reference internal" href="power-supply.html#class_power_supply_component"><span class="std std-ref">PowerSupplyComponent</span></a>, <a class="reference internal" href="../binary_sensor/remote_receiver.html#classremote_1_1_remote_receiver_component"><span class="std std-ref">remote::RemoteReceiverComponent</span></a>, <a class="reference internal" href="../switch/remote_transmitter.html#classremote_1_1_remote_transmitter_component"><span class="std std-ref">remote::RemoteTransmitterComponent</span></a>, <a class="reference internal" href="../sensor/ads1115.html#classsensor_1_1_a_d_s1115_component"><span class="std std-ref">sensor::ADS1115Component</span></a>, <a class="reference internal" href="../sensor/index.html#classsensor_1_1_debounce_filter"><span class="std std-ref">sensor::DebounceFilter</span></a>, <a class="reference internal" href="../sensor/index.html#classsensor_1_1_heartbeat_filter"><span class="std std-ref">sensor::HeartbeatFilter</span></a>, <a class="reference internal" href="../sensor/rotary_encoder.html#classsensor_1_1_rotary_encoder_sensor"><span class="std std-ref">sensor::RotaryEncoderSensor</span></a>, <a class="reference internal" href="spi.html#class_s_p_i_component"><span class="std std-ref">SPIComponent</span></a>, <a class="reference internal" href="automation.html#class_startup_trigger"><span class="std std-ref">StartupTrigger</span></a>, <a class="reference internal" href="../misc/status_led.html#class_status_l_e_d_component"><span class="std std-ref">StatusLEDComponent</span></a>, <a class="reference internal" href="../switch/index.html#classswitch___1_1_switch"><span class="std std-ref">switch_::Switch</span></a>, time::CronTrigger, <a class="reference internal" href="time.html#classtime_1_1_r_t_c_component"><span class="std std-ref">time::RTCComponent</span></a>, <a class="reference internal" href="uart.html#class_u_a_r_t_component"><span class="std std-ref">UARTComponent</span></a>, <a class="reference internal" href="web-server.html#class_web_server"><span class="std std-ref">WebServer</span></a>, <a class="reference internal" href="wifi.html#class_wi_fi_component"><span class="std std-ref">WiFiComponent</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N9Component5setupEv">
+<span id="_CPPv2N9Component5setupEv"></span><span id="Component::setup"></span><span class="target" id="class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component4loopEv">
+<span id="_CPPv2N9Component4loopEv"></span><span id="Component::loop"></span><span class="target" id="class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK9Component18get_setup_priorityEv">
+<span id="_CPPv2NK9Component18get_setup_priorityEv"></span><span id="Component::get_setup_priorityC"></span><span class="target" id="class_component_1ac6a4d200c2e273be69faabe54180904b"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK9Component17get_loop_priorityEv">
+<span id="_CPPv2NK9Component17get_loop_priorityEv"></span><span id="Component::get_loop_priorityC"></span><span class="target" id="class_component_1a48744fb660d4e37052bd8bcb47a28ae3"></span>float <code class="descname">get_loop_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component17get_loop_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The loop priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component5loop_Ev">
+<span id="_CPPv2N9Component5loop_Ev"></span><span id="Component::loop_"></span><span class="target" id="class_component_1aa81c4eb012a399d0ab13501c52249bcf"></span>void <code class="descname">loop_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component5loop_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Public <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> functions. </p>
+<p>These will be called by the <a class="reference internal" href="application.html#class_application"><span class="std std-ref">Application</span></a> instance.</p>
+<p>Note: This should normally not be overriden, unless you know what you’re doing. They’re basically to make creating custom components easier. For example the SensorComponent can override these methods to not have the user call some super methods within their custom sensors. These methods should ALWAYS call the loop_internal() and setup_internal() methods.</p>
+<p>Basically, it handles stuff like interval/timeout functions and eventually calls <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component6setup_Ev">
+<span id="_CPPv2N9Component6setup_Ev"></span><span id="Component::setup_"></span><span class="target" id="class_component_1acf4a323051ede296ec6eea19000351c3"></span>void <code class="descname">setup_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component6setup_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK9Component19get_component_stateEv">
+<span id="_CPPv2NK9Component19get_component_stateEv"></span><span id="Component::get_component_stateC"></span><span class="target" id="class_component_1a09b6ec16359bd6b01f57eba7217d44a9"></span>uint32_t <code class="descname">get_component_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component19get_component_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component11mark_failedEv">
+<span id="_CPPv2N9Component11mark_failedEv"></span><span id="Component::mark_failed"></span><span class="target" id="class_component_1aa2de262f3afc9a30a277df73b4486e1d"></span>void <code class="descname">mark_failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component11mark_failedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Mark this component as failed. </p>
+<p>Any future timeouts/intervals/setup/loop will no longer be called.</p>
+<p>This might be useful if a component wants to indicate that a connection to its peripheral failed. For example, i2c based components can check if the remote device is responding and otherwise mark the component as failed. Eventually this will also enable smart status LEDs. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component9is_failedEv">
+<span id="_CPPv2N9Component9is_failedEv"></span><span id="Component::is_failed"></span><span class="target" id="class_component_1a834e027b077db0f50c439820bb53b2f9"></span>bool <code class="descname">is_failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component9is_failedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component11can_proceedEv">
+<span id="_CPPv2N9Component11can_proceedEv"></span><span id="Component::can_proceed"></span><span class="target" id="class_component_1a0df7d8b586e7dbb367e51224f5bbf35b"></span>bool <code class="descname">can_proceed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component11can_proceedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component18status_has_warningEv">
+<span id="_CPPv2N9Component18status_has_warningEv"></span><span id="Component::status_has_warning"></span><span class="target" id="class_component_1a4913a3e48f6332d3ee4a707284011a4f"></span>bool <code class="descname">status_has_warning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component18status_has_warningEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component16status_has_errorEv">
+<span id="_CPPv2N9Component16status_has_errorEv"></span><span id="Component::status_has_error"></span><span class="target" id="class_component_1aeba8ee57a67b64771c7aaf82b2b8df79"></span>bool <code class="descname">status_has_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component16status_has_errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component18status_set_warningEv">
+<span id="_CPPv2N9Component18status_set_warningEv"></span><span id="Component::status_set_warning"></span><span class="target" id="class_component_1a56abeeee50a5369525e33c31424c3686"></span>void <code class="descname">status_set_warning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component18status_set_warningEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component16status_set_errorEv">
+<span id="_CPPv2N9Component16status_set_errorEv"></span><span id="Component::status_set_error"></span><span class="target" id="class_component_1aa5c9cbc48f0cebacab7ae79555726409"></span>void <code class="descname">status_set_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component16status_set_errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component20status_clear_warningEv">
+<span id="_CPPv2N9Component20status_clear_warningEv"></span><span id="Component::status_clear_warning"></span><span class="target" id="class_component_1a13d29a14ee5a3f84ee93f1933dca03b8"></span>void <code class="descname">status_clear_warning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component20status_clear_warningEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component18status_clear_errorEv">
+<span id="_CPPv2N9Component18status_clear_errorEv"></span><span id="Component::status_clear_error"></span><span class="target" id="class_component_1adb230a46efc3eb426fce3eb65f88dd70"></span>void <code class="descname">status_clear_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component18status_clear_errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component24status_momentary_warningERKNSt6stringE8uint32_t">
+<span id="_CPPv2N9Component24status_momentary_warningERKNSt6stringE8uint32_t"></span><span id="Component::status_momentary_warning__ssCR.uint32_t"></span><span class="target" id="class_component_1a23e22543fa07dcaa761859647d8dd457"></span>void <code class="descname">status_momentary_warning</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>length</em> = 5000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component24status_momentary_warningERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component22status_momentary_errorERKNSt6stringE8uint32_t">
+<span id="_CPPv2N9Component22status_momentary_errorERKNSt6stringE8uint32_t"></span><span id="Component::status_momentary_error__ssCR.uint32_t"></span><span class="target" id="class_component_1a97ce987b9b6f2c81e9b65bf107d2a860"></span>void <code class="descname">status_momentary_error</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>length</em> = 5000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component22status_momentary_errorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N9Component13loop_internalEv">
+<span id="_CPPv2N9Component13loop_internalEv"></span><span id="Component::loop_internal"></span><span class="target" id="class_component_1aa4915830e5acf3687540ec1eadceeb30"></span>void <code class="descname">loop_internal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component13loop_internalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component14setup_internalEv">
+<span id="_CPPv2N9Component14setup_internalEv"></span><span id="Component::setup_internal"></span><span class="target" id="class_component_1aeedea103f6618b42389d6c43d7cac232"></span>void <code class="descname">setup_internal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component14setup_internalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component12set_intervalE8uint32_tRRNSt8functionIFvvEEE">
+<span id="_CPPv2N9Component12set_intervalE8uint32_tRRNSt8functionIFvvEEE"></span><span class="target" id="class_component_1a98bda84581d9c612baec0eb672926bf2"></span>void <code class="descname">set_interval</code><span class="sig-paren">(</span>uint32_t <em>interval</em>, std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component12set_intervalE8uint32_tRRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component12set_intervalERKNSt6stringE8uint32_tRRNSt8functionIFvvEEE">
+<span id="_CPPv2N9Component12set_intervalERKNSt6stringE8uint32_tRRNSt8functionIFvvEEE"></span><span class="target" id="class_component_1a9cde60b68a13eda3ed4912653dcd01b1"></span>void <code class="descname">set_interval</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>interval</em>, std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component12set_intervalERKNSt6stringE8uint32_tRRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set an interval function with a unique name. </p>
+<p>Empty name means no cancelling possible.</p>
+<p>This will call f every interval ms. Can be cancelled via CancelInterval(). Similar to javascript’s setInterval().</p>
+<p>IMPORTANT: Do not rely on this having correct timing. This is only called from <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> and therefore can be significantly delay. If you need exact timing please use hardware timers.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#class_component_1a837903d60f037cc7fee300f13757effb"><span class="std std-ref">cancel_interval()</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The identifier for this interval function. </li>
+<li><code class="docutils literal notranslate"><span class="pre">interval</span></code>: The interval in ms. </li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code>: The function (or lambda) that should be called</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component15cancel_intervalERKNSt6stringE">
+<span id="_CPPv2N9Component15cancel_intervalERKNSt6stringE"></span><span id="Component::cancel_interval__ssCR"></span><span class="target" id="class_component_1a837903d60f037cc7fee300f13757effb"></span>bool <code class="descname">cancel_interval</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component15cancel_intervalERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cancel an interval function. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether an interval functions was deleted. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The identifier for this interval function. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component11set_timeoutE8uint32_tRRNSt8functionIFvvEEE">
+<span id="_CPPv2N9Component11set_timeoutE8uint32_tRRNSt8functionIFvvEEE"></span><span class="target" id="class_component_1a3c1c74669d526c5bcdbef14c287935ec"></span>void <code class="descname">set_timeout</code><span class="sig-paren">(</span>uint32_t <em>timeout</em>, std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component11set_timeoutE8uint32_tRRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component11set_timeoutERKNSt6stringE8uint32_tRRNSt8functionIFvvEEE">
+<span id="_CPPv2N9Component11set_timeoutERKNSt6stringE8uint32_tRRNSt8functionIFvvEEE"></span><span class="target" id="class_component_1a08cad184e6052aa054e0ec00b9afb826"></span>void <code class="descname">set_timeout</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>timeout</em>, std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component11set_timeoutERKNSt6stringE8uint32_tRRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a timeout function with a unique name. </p>
+<p>Similar to javascript’s setTimeout(). Empty name means no cancelling possible.</p>
+<p>IMPORTANT: Do not rely on this having correct timing. This is only called from <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> and therefore can be significantly delay. If you need exact timing please use hardware timers.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#class_component_1a15c4ab735fe3e38bb21d97f4bd0f1c3e"><span class="std std-ref">cancel_timeout()</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The identifier for this timeout function. </li>
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: The timeout in ms. </li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code>: The function (or lambda) that should be called</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component14cancel_timeoutERKNSt6stringE">
+<span id="_CPPv2N9Component14cancel_timeoutERKNSt6stringE"></span><span id="Component::cancel_timeout__ssCR"></span><span class="target" id="class_component_1a15c4ab735fe3e38bb21d97f4bd0f1c3e"></span>bool <code class="descname">cancel_timeout</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component14cancel_timeoutERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cancel a timeout function. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Whether a timeout functions was deleted. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The identifier for this timeout function. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component5deferERKNSt6stringERRNSt8functionIFvvEEE">
+<span id="_CPPv2N9Component5deferERKNSt6stringERRNSt8functionIFvvEEE"></span><span class="target" id="class_component_1a90b15f598b685038d5ebbbab0941f2fa"></span>void <code class="descname">defer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component5deferERKNSt6stringERRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defer a callback to the next <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> call. </p>
+<p>If name is specified and a <a class="reference internal" href="#class_component_1a90b15f598b685038d5ebbbab0941f2fa"><span class="std std-ref">defer()</span></a> object with the same name exists, the old one is first removed.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the defer function. </li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code>: The callback. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component5deferERRNSt8functionIFvvEEE">
+<span id="_CPPv2N9Component5deferERRNSt8functionIFvvEEE"></span><span class="target" id="class_component_1a3619aa02eec976b2951d628f1c3665f2"></span>void <code class="descname">defer</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component5deferERRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defer a callback to the next <a class="reference internal" href="#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> call. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component12cancel_deferERKNSt6stringE">
+<span id="_CPPv2N9Component12cancel_deferERKNSt6stringE"></span><span id="Component::cancel_defer__ssCR"></span><span class="target" id="class_component_1a63a1f23ac8f7114b452ed0d3d75c8c6e"></span>bool <code class="descname">cancel_defer</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component12cancel_deferERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cancel a defer callback using the specified name, name must not be empty. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9Component20cancel_time_functionERKNSt6stringEN12TimeFunction4TypeE">
+<span id="_CPPv2N9Component20cancel_time_functionERKNSt6stringEN12TimeFunction4TypeE"></span><span id="Component::cancel_time_function__ssCR.TimeFunction::Type"></span><span class="target" id="class_component_1a00fb62fbd368cce827f7631639629ee3"></span>bool <code class="descname">cancel_time_function</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N9Component12TimeFunctionE" title="Component::TimeFunction">TimeFunction</a>::Type <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9Component20cancel_time_functionERKNSt6stringEN12TimeFunction4TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cancel an only time function. If name is empty, won’t do anything. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N9Component15time_functions_E">
+<span id="_CPPv2N9Component15time_functions_E"></span><span id="Component::time_functions___std::vector:TimeFunction:"></span><span class="target" id="class_component_1a7229ca862f0559f90772d2ef22c6aae9"></span>std::vector&lt;<a class="reference internal" href="#_CPPv3N9Component12TimeFunctionE" title="Component::TimeFunction">TimeFunction</a>&gt; <code class="descname">time_functions_</code><a class="headerlink" href="#_CPPv3N9Component15time_functions_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Storage for interval/timeout functions. </p>
+<p>Intentionally a vector despite its map-like nature, because of the memory overhead. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9Component16component_state_E">
+<span id="_CPPv2N9Component16component_state_E"></span><span id="Component::component_state___uint32_t"></span><span class="target" id="class_component_1a4b032c8cca6679b54a76e1ae428a89f9"></span>uint32_t <code class="descname">component_state_</code> = {0x0000}<a class="headerlink" href="#_CPPv3N9Component16component_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>State of this component. </p>
+</dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv3N9Component12TimeFunctionE">
+<span id="_CPPv2N9Component12TimeFunctionE"></span><span id="Component::TimeFunction"></span><span class="target" id="struct_component_1_1_time_function"></span><em class="property">struct </em><code class="descname">TimeFunction</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunctionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Internal struct for storing timeout/interval functions. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv3N9Component4TypeE">
+<span id="_CPPv2N9Component4TypeE"></span><span id="Component::Type"></span><span class="target" id="struct_component_1_1_time_function_1a430aaadb4baf9783fa5268601b1fe2cd"></span><em class="property">enum </em><code class="descname">Type</code><a class="headerlink" href="#_CPPv3N9Component4TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N9Component7TIMEOUTE">
+<span id="_CPPv2N9Component7TIMEOUTE"></span><span class="target" id="struct_component_1_1_time_function_1a430aaadb4baf9783fa5268601b1fe2cda102e7035fc4b6f7e016ba20ed53de43d"></span><code class="descname">TIMEOUT</code><a class="headerlink" href="#_CPPv3N9Component7TIMEOUTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N9Component8INTERVALE">
+<span id="_CPPv2N9Component8INTERVALE"></span><span class="target" id="struct_component_1_1_time_function_1a430aaadb4baf9783fa5268601b1fe2cda97199aae3bc6be4b7d524acad30f3fce"></span><code class="descname">INTERVAL</code><a class="headerlink" href="#_CPPv3N9Component8INTERVALE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N9Component5DEFERE">
+<span id="_CPPv2N9Component5DEFERE"></span><span class="target" id="struct_component_1_1_time_function_1a430aaadb4baf9783fa5268601b1fe2cda9f58aa8ae2470912723318dfb13c2ef9"></span><code class="descname">DEFER</code><a class="headerlink" href="#_CPPv3N9Component5DEFERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK9Component12TimeFunction10should_runE8uint32_t">
+<span id="_CPPv2NK9Component12TimeFunction10should_runE8uint32_t"></span><span id="Component::TimeFunction::should_run__uint32_tC"></span><span class="target" id="struct_component_1_1_time_function_1a0bc4ce9091b442fef9b4bb99400db7c8"></span>bool <code class="descname">should_run</code><span class="sig-paren">(</span>uint32_t <em>now</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK9Component12TimeFunction10should_runE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N9Component12TimeFunction4nameE">
+<span id="_CPPv2N9Component12TimeFunction4nameE"></span><span id="Component::TimeFunction::name__ss"></span><span class="target" id="struct_component_1_1_time_function_1adc6eb8e0ff1cf9138b85e48d9790d4a7"></span>std::string <code class="descname">name</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunction4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name/id of this <a class="reference internal" href="#struct_component_1_1_time_function"><span class="std std-ref">TimeFunction</span></a>. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9Component12TimeFunction4typeE">
+<span id="_CPPv2N9Component12TimeFunction4typeE"></span><span id="Component::TimeFunction::type__Component::TimeFunction::Type"></span><span class="target" id="struct_component_1_1_time_function_1ade87fea49a40aac538d2647827fece97"></span><a class="reference internal" href="#_CPPv39Component" title="Component">Component</a>::<a class="reference internal" href="#_CPPv3N9Component12TimeFunctionE" title="Component::TimeFunction">TimeFunction</a>::Type <code class="descname">type</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunction4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The type of this <a class="reference internal" href="#struct_component_1_1_time_function"><span class="std std-ref">TimeFunction</span></a>. Either TIMEOUT, INTERVAL or DEFER. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9Component12TimeFunction8intervalE">
+<span id="_CPPv2N9Component12TimeFunction8intervalE"></span><span id="Component::TimeFunction::interval__uint32_t"></span><span class="target" id="struct_component_1_1_time_function_1a582ded077df32802ff03ccdbb885c7a7"></span>uint32_t <code class="descname">interval</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunction8intervalE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The interval/timeout of this function. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9Component12TimeFunction14last_executionE">
+<span id="_CPPv2N9Component12TimeFunction14last_executionE"></span><span id="Component::TimeFunction::last_execution__uint32_t"></span><span class="target" id="struct_component_1_1_time_function_1aa3a52c084bec2a13680355840059cfb9"></span>uint32_t <code class="descname">last_execution</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunction14last_executionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The last execution for interval functions and the time, SetInterval was called, for timeout functions. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9Component12TimeFunction1fE">
+<span id="_CPPv2N9Component12TimeFunction1fE"></span><span class="target" id="struct_component_1_1_time_function_1ae815c668858c02280ba9234e7a70c91c"></span>std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; <code class="descname">f</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunction1fE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The function (or callback) itself. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9Component12TimeFunction6removeE">
+<span id="_CPPv2N9Component12TimeFunction6removeE"></span><span id="Component::TimeFunction::remove__b"></span><span class="target" id="struct_component_1_1_time_function_1a9356ef66c151b2f4507cf895c4e84df3"></span>bool <code class="descname">remove</code><a class="headerlink" href="#_CPPv3N9Component12TimeFunction6removeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="pollingcomponent">
 <h3>PollingComponent<a class="headerlink" href="#pollingcomponent" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “PollingComponent” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv316PollingComponent">
+<span id="_CPPv216PollingComponent"></span><span id="PollingComponent"></span><span class="target" id="class_polling_component"></span><em class="property">class </em><code class="descname">PollingComponent</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv316PollingComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This class simplifies creating components that periodically check a state. </p>
+<p>You basically just need to implement the update() function, it will be called every update_interval ms after startup. Note that this class cannot guarantee a correct timing, as it’s not using timers, just a software polling feature with set_interval() from <a class="reference internal" href="#class_component"><span class="std std-ref">Component</span></a>. </p>
+<p>Subclassed by <a class="reference internal" href="../binary_sensor/pn532.html#classbinary__sensor_1_1_p_n532_component"><span class="std std-ref">binary_sensor::PN532Component</span></a>, <a class="reference internal" href="../display/lcd_display.html#classdisplay_1_1_l_c_d_display"><span class="std std-ref">display::LCDDisplay</span></a>, <a class="reference internal" href="../display/max7219.html#classdisplay_1_1_m_a_x7219_component"><span class="std std-ref">display::MAX7219Component</span></a>, <a class="reference internal" href="../display/nextion.html#classdisplay_1_1_nextion"><span class="std std-ref">display::Nextion</span></a>, <a class="reference internal" href="../display/ssd1306.html#classdisplay_1_1_s_s_d1306"><span class="std std-ref">display::SSD1306</span></a>, <a class="reference internal" href="../display/waveshare_epaper.html#classdisplay_1_1_waveshare_e_paper"><span class="std std-ref">display::WaveshareEPaper</span></a>, <a class="reference internal" href="../sensor/bme280.html#classsensor_1_1_b_m_e280_component"><span class="std std-ref">sensor::BME280Component</span></a>, <a class="reference internal" href="../sensor/bme680.html#classsensor_1_1_b_m_e680_component"><span class="std std-ref">sensor::BME680Component</span></a>, <a class="reference internal" href="../sensor/bmp085.html#classsensor_1_1_b_m_p085_component"><span class="std std-ref">sensor::BMP085Component</span></a>, <a class="reference internal" href="../sensor/bmp280.html#classsensor_1_1_b_m_p280_component"><span class="std std-ref">sensor::BMP280Component</span></a>, <a class="reference internal" href="../sensor/dallas.html#classsensor_1_1_dallas_component"><span class="std std-ref">sensor::DallasComponent</span></a>, <a class="reference internal" href="../sensor/dht12.html#classsensor_1_1_d_h_t12_component"><span class="std std-ref">sensor::DHT12Component</span></a>, <a class="reference internal" href="../sensor/dht.html#classsensor_1_1_d_h_t_component"><span class="std std-ref">sensor::DHTComponent</span></a>, <a class="reference internal" href="../sensor/hdc1080.html#classsensor_1_1_h_d_c1080_component"><span class="std std-ref">sensor::HDC1080Component</span></a>, <a class="reference internal" href="../sensor/hlw8012.html#classsensor_1_1_h_l_w8012_component"><span class="std std-ref">sensor::HLW8012Component</span></a>, <a class="reference internal" href="../sensor/hmc5883l.html#classsensor_1_1_h_m_c5883_l_component"><span class="std std-ref">sensor::HMC5883LComponent</span></a>, <a class="reference internal" href="../sensor/htu21d.html#classsensor_1_1_h_t_u21_d_component"><span class="std std-ref">sensor::HTU21DComponent</span></a>, <a class="reference internal" href="../sensor/ina219.html#classsensor_1_1_i_n_a219_component"><span class="std std-ref">sensor::INA219Component</span></a>, <a class="reference internal" href="../sensor/ina3221.html#classsensor_1_1_i_n_a3221_component"><span class="std std-ref">sensor::INA3221Component</span></a>, <a class="reference internal" href="../sensor/mhz19.html#classsensor_1_1_m_h_z19_component"><span class="std std-ref">sensor::MHZ19Component</span></a>, <a class="reference internal" href="../sensor/mpu6050.html#classsensor_1_1_m_p_u6050_component"><span class="std std-ref">sensor::MPU6050Component</span></a>, <a class="reference internal" href="../sensor/ms5611.html#classsensor_1_1_m_s5611_component"><span class="std std-ref">sensor::MS5611Component</span></a>, <a class="reference internal" href="../sensor/index.html#classsensor_1_1_polling_sensor_component"><span class="std std-ref">sensor::PollingSensorComponent</span></a>, <a class="reference internal" href="../sensor/sht3xd.html#classsensor_1_1_s_h_t3_x_d_component"><span class="std std-ref">sensor::SHT3XDComponent</span></a>, <a class="reference internal" href="../sensor/tcs34725.html#classsensor_1_1_t_c_s34725_component"><span class="std std-ref">sensor::TCS34725Component</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16PollingComponent16PollingComponentE8uint32_t">
+<span id="_CPPv2N16PollingComponent16PollingComponentE8uint32_t"></span><span id="PollingComponent::PollingComponent__uint32_t"></span><span class="target" id="class_polling_component_1a66ea9ed8973afe1e445e050a849f0c55"></span><code class="descname">PollingComponent</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16PollingComponent16PollingComponentE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize this polling component with the given update interval in ms. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">update_interval</span></code>: The update interval in ms. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16PollingComponent19set_update_intervalE8uint32_t">
+<span id="_CPPv2N16PollingComponent19set_update_intervalE8uint32_t"></span><span id="PollingComponent::set_update_interval__uint32_t"></span><span class="target" id="class_polling_component_1a0d91f28668a38504e846e2d57346dbfb"></span>void <code class="descname">set_update_interval</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16PollingComponent19set_update_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Manually set the update interval in ms for this polling object. </p>
+<p>Override this if you want to do some validation for the update interval.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">update_interval</span></code>: The update interval in ms. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16PollingComponent6updateEv">
+<span id="_CPPv2N16PollingComponent6updateEv"></span><span id="PollingComponent::update"></span><span class="target" id="class_polling_component_1a074126a05f2138a4a2473d597bd16ac5"></span><em class="property">virtual</em> void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N16PollingComponent6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16PollingComponent6setup_Ev">
+<span id="_CPPv2N16PollingComponent6setup_Ev"></span><span id="PollingComponent::setup_"></span><span class="target" id="class_polling_component_1add586112645308d2ba3687121ed44c95"></span>void <code class="descname">setup_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16PollingComponent6setup_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK16PollingComponent19get_update_intervalEv">
+<span id="_CPPv2NK16PollingComponent19get_update_intervalEv"></span><span id="PollingComponent::get_update_intervalC"></span><span class="target" id="class_polling_component_1a3e4e45313c7007df3e1a6d3547cb73b4"></span>uint32_t <code class="descname">get_update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK16PollingComponent19get_update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the update interval in ms of this sensor. </p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N16PollingComponent16update_interval_E">
+<span id="_CPPv2N16PollingComponent16update_interval_E"></span><span id="PollingComponent::update_interval___uint32_t"></span><span class="target" id="class_polling_component_1a42ecc72dceab91579d9019474b0d8622"></span>uint32_t <code class="descname">update_interval_</code><a class="headerlink" href="#_CPPv3N16PollingComponent16update_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="setup-priorities">
 <h3>Setup Priorities<a class="headerlink" href="#setup-priorities" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygennamespace: Cannot find namespace “setup_priority” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="type">
+<dt id="_CPPv314setup_priority">
+<span id="_CPPv214setup_priority"></span><span id="setup_priority"></span><span class="target" id="namespacesetup__priority"></span><em class="property">namespace </em><code class="descname">setup_priority</code><a class="headerlink" href="#_CPPv314setup_priority" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>default setup priorities for components of different types. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv3N14setup_priority12PRE_HARDWAREE">
+<span id="_CPPv2N14setup_priority12PRE_HARDWAREE"></span><span id="setup_priority::PRE_HARDWARE__floatC"></span><span class="target" id="namespacesetup__priority_1a7b37e9a2ef240b1dbf87fc6fc0bad0e4"></span><em class="property">const</em> float <code class="descname">PRE_HARDWARE</code> = 110.0f<a class="headerlink" href="#_CPPv3N14setup_priority12PRE_HARDWAREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>only for internal components that are necessary for hardware component initialization (like i2c bus) </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority8HARDWAREE">
+<span id="_CPPv2N14setup_priority8HARDWAREE"></span><span id="setup_priority::HARDWARE__floatC"></span><span class="target" id="namespacesetup__priority_1aef77314adde78bf0a6687b7025b88673"></span><em class="property">const</em> float <code class="descname">HARDWARE</code> = 100.0f<a class="headerlink" href="#_CPPv3N14setup_priority8HARDWAREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>for hardware initialization, but only where it’s really necessary (like outputs) </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority13POST_HARDWAREE">
+<span id="_CPPv2N14setup_priority13POST_HARDWAREE"></span><span id="setup_priority::POST_HARDWARE__floatC"></span><span class="target" id="namespacesetup__priority_1a1b231bbf362b5268314148e63318f70e"></span><em class="property">const</em> float <code class="descname">POST_HARDWARE</code> = 90.0f<a class="headerlink" href="#_CPPv3N14setup_priority13POST_HARDWAREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority4WIFIE">
+<span id="_CPPv2N14setup_priority4WIFIE"></span><span id="setup_priority::WIFI__floatC"></span><span class="target" id="namespacesetup__priority_1a158ec04b9fb3f5f83ccdb03125b0881e"></span><em class="property">const</em> float <code class="descname">WIFI</code> = 10.0f<a class="headerlink" href="#_CPPv3N14setup_priority4WIFIE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>for WiFi initialization </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority11MQTT_CLIENTE">
+<span id="_CPPv2N14setup_priority11MQTT_CLIENTE"></span><span id="setup_priority::MQTT_CLIENT__floatC"></span><span class="target" id="namespacesetup__priority_1af2c9e8af806bb932875ec04429283cc7"></span><em class="property">const</em> float <code class="descname">MQTT_CLIENT</code> = 7.5f<a class="headerlink" href="#_CPPv3N14setup_priority11MQTT_CLIENTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>for the MQTT client initialization </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority13HARDWARE_LATEE">
+<span id="_CPPv2N14setup_priority13HARDWARE_LATEE"></span><span id="setup_priority::HARDWARE_LATE__floatC"></span><span class="target" id="namespacesetup__priority_1a3716fe689b7528ec42218ee3fa41cf59"></span><em class="property">const</em> float <code class="descname">HARDWARE_LATE</code> = 0.0f<a class="headerlink" href="#_CPPv3N14setup_priority13HARDWARE_LATEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority14MQTT_COMPONENTE">
+<span id="_CPPv2N14setup_priority14MQTT_COMPONENTE"></span><span id="setup_priority::MQTT_COMPONENT__floatC"></span><span class="target" id="namespacesetup__priority_1ae7e89592a05ee0c296d6db1f19de2824"></span><em class="property">const</em> float <code class="descname">MQTT_COMPONENT</code> = -5.0f<a class="headerlink" href="#_CPPv3N14setup_priority14MQTT_COMPONENTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>for MQTT component initialization </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14setup_priority4LATEE">
+<span id="_CPPv2N14setup_priority4LATEE"></span><span id="setup_priority::LATE__floatC"></span><span class="target" id="namespacesetup__priority_1a7ad578e65dec7045d60c7196e13df34c"></span><em class="property">const</em> float <code class="descname">LATE</code> = -10.0f<a class="headerlink" href="#_CPPv3N14setup_priority4LATEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+</dd></dl>
+
 </div>
 </div>
 </div>

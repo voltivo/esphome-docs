@@ -65,33 +65,289 @@
             
   <div class="section" id="bmp280-temperature-pressure-sensor">
 <h1>BMP280 Temperature/Pressure Sensor<a class="headerlink" href="#bmp280-temperature-pressure-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_bmp280_sensor()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application18make_bmp280_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Application::make_bmp280_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_bmp280_sensor()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “sensor::BMP280Component” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N6sensor15BMP280ComponentE">
+<span id="_CPPv2N6sensor15BMP280ComponentE"></span><span id="sensor::BMP280Component"></span><span class="target" id="classsensor_1_1_b_m_p280_component"></span><em class="property">class </em><code class="descname">BMP280Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/i2c.html#_CPPv39I2CDevice" title="I2CDevice">I2CDevice</a><a class="headerlink" href="#_CPPv3N6sensor15BMP280ComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This class implements support for the BMP280 Temperature+Pressure i2c sensor. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component15BMP280ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
+<span id="_CPPv2N6sensor15BMP280Component15BMP280ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="sensor::BMP280Component::BMP280Component__I2CComponentP.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a9915e933d5c7ddc8f18bebd35ec15de4"></span><code class="descname">BMP280Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, uint8_t <em>address</em> = 0x77, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component15BMP280ComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component28set_temperature_oversamplingE18BMP280Oversampling">
+<span id="_CPPv2N6sensor15BMP280Component28set_temperature_oversamplingE18BMP280Oversampling"></span><span id="sensor::BMP280Component::set_temperature_oversampling__BMP280Oversampling"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a4d36c7ef4ccd12530447343f925be05b"></span>void <code class="descname">set_temperature_oversampling</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6sensor18BMP280OversamplingE" title="sensor::BMP280Oversampling">BMP280Oversampling</a> <em>temperature_over_sampling</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component28set_temperature_oversamplingE18BMP280Oversampling" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the oversampling value for the temperature sensor. Default is 16x. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component25set_pressure_oversamplingE18BMP280Oversampling">
+<span id="_CPPv2N6sensor15BMP280Component25set_pressure_oversamplingE18BMP280Oversampling"></span><span id="sensor::BMP280Component::set_pressure_oversampling__BMP280Oversampling"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1ac12abed29a79ce8bbfd8f42dd79c64ee"></span>void <code class="descname">set_pressure_oversampling</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6sensor18BMP280OversamplingE" title="sensor::BMP280Oversampling">BMP280Oversampling</a> <em>pressure_over_sampling</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component25set_pressure_oversamplingE18BMP280Oversampling" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the oversampling value for the pressure sensor. Default is 16x. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component14set_iir_filterE15BMP280IIRFilter">
+<span id="_CPPv2N6sensor15BMP280Component14set_iir_filterE15BMP280IIRFilter"></span><span id="sensor::BMP280Component::set_iir_filter__BMP280IIRFilter"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1af23056820a523b1b5fd0b3b75eeac2c3"></span>void <code class="descname">set_iir_filter</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6sensor15BMP280IIRFilterE" title="sensor::BMP280IIRFilter">BMP280IIRFilter</a> <em>iir_filter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component14set_iir_filterE15BMP280IIRFilter" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the IIR <a class="reference internal" href="index.html#classsensor_1_1_filter"><span class="std std-ref">Filter</span></a> used to increase accuracy, defaults to no IIR <a class="reference internal" href="index.html#classsensor_1_1_filter"><span class="std std-ref">Filter</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15BMP280Component22get_temperature_sensorEv">
+<span id="_CPPv2NK6sensor15BMP280Component22get_temperature_sensorEv"></span><span id="sensor::BMP280Component::get_temperature_sensorC"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a8426a5ab1b6f5f18c5407ea45219b37a"></span>BMP280TemperatureSensor *<code class="descname">get_temperature_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP280Component22get_temperature_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15BMP280Component19get_pressure_sensorEv">
+<span id="_CPPv2NK6sensor15BMP280Component19get_pressure_sensorEv"></span><span id="sensor::BMP280Component::get_pressure_sensorC"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a1b975edf15b37db188e56bd7ecd689f5"></span>BMP280PressureSensor *<code class="descname">get_pressure_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP280Component19get_pressure_sensorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component5setupEv">
+<span id="_CPPv2N6sensor15BMP280Component5setupEv"></span><span id="sensor::BMP280Component::setup"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a54446000ba42d371b570bb595be8c7f7"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_b_m_p280_component_1a54446000ba42d371b570bb595be8c7f7"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15BMP280Component18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor15BMP280Component18get_setup_priorityEv"></span><span id="sensor::BMP280Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a0e9b7e833101c4a8c32996bdd5971d18"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15BMP280Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_b_m_p280_component_1a54446000ba42d371b570bb595be8c7f7"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component6updateEv">
+<span id="_CPPv2N6sensor15BMP280Component6updateEv"></span><span id="sensor::BMP280Component::update"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a9a22cff001a0f49d13c7809a80b26fcd"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenenum: Cannot find enum “sensor::BMP280Oversampling” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component17read_temperature_EP7int32_t">
+<span id="_CPPv2N6sensor15BMP280Component17read_temperature_EP7int32_t"></span><span id="sensor::BMP280Component::read_temperature___int32_tP"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1ac9dceb25c8240b25b5b3ee3efb22d471"></span>float <code class="descname">read_temperature_</code><span class="sig-paren">(</span>int32_t *<em>t_fine</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component17read_temperature_EP7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the temperature value and store the calculated ambient temperature in t_fine. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component14read_pressure_E7int32_t">
+<span id="_CPPv2N6sensor15BMP280Component14read_pressure_E7int32_t"></span><span id="sensor::BMP280Component::read_pressure___int32_t"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a011fedde2c127dff63a1a124b97008c0"></span>float <code class="descname">read_pressure_</code><span class="sig-paren">(</span>int32_t <em>t_fine</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component14read_pressure_E7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the pressure value in hPa using the provided t_fine value. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component7read_u8E7uint8_t">
+<span id="_CPPv2N6sensor15BMP280Component7read_u8E7uint8_t"></span><span id="sensor::BMP280Component::read_u8__uint8_t"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a501bbe78070e90f962f0fac953666240"></span>uint8_t <code class="descname">read_u8</code><span class="sig-paren">(</span>uint8_t <em>register_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component7read_u8E7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component11read_u16_leE7uint8_t">
+<span id="_CPPv2N6sensor15BMP280Component11read_u16_leE7uint8_t"></span><span id="sensor::BMP280Component::read_u16_le__uint8_t"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1aad28230e363818f45bdd8ff0bb82783b"></span>uint16_t <code class="descname">read_u16_le</code><span class="sig-paren">(</span>uint8_t <em>register_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component11read_u16_leE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BMP280Component11read_s16_leE7uint8_t">
+<span id="_CPPv2N6sensor15BMP280Component11read_s16_leE7uint8_t"></span><span id="sensor::BMP280Component::read_s16_le__uint8_t"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a086a69ee9075ad03f99f7762119d6ceb"></span>int16_t <code class="descname">read_s16_le</code><span class="sig-paren">(</span>uint8_t <em>register_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component11read_s16_leE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenenum: Cannot find enum “sensor::BMP280IIRFilter” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor15BMP280Component12calibration_E">
+<span id="_CPPv2N6sensor15BMP280Component12calibration_E"></span><span id="sensor::BMP280Component::calibration___BMP280CalibrationData"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1aa9881b153b157f31dd541a44d3c29941"></span><a class="reference internal" href="#_CPPv3N6sensor21BMP280CalibrationDataE" title="sensor::BMP280CalibrationData">BMP280CalibrationData</a> <code class="descname">calibration_</code><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component12calibration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15BMP280Component25temperature_oversampling_E">
+<span id="_CPPv2N6sensor15BMP280Component25temperature_oversampling_E"></span><span id="sensor::BMP280Component::temperature_oversampling___BMP280Oversampling"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a58719547a9b3f2439fd6b99b8cccdd92"></span><a class="reference internal" href="#_CPPv3N6sensor18BMP280OversamplingE" title="sensor::BMP280Oversampling">BMP280Oversampling</a> <code class="descname">temperature_oversampling_</code> = {BMP280_OVERSAMPLING_16X}<a class="headerlink" href="#_CPPv3N6sensor15BMP280Component25temperature_oversampling_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15BMP280Component22pressure_oversampling_E">
+<span id="_CPPv2N6sensor15BMP280Component22pressure_oversampling_E"></span><span id="sensor::BMP280Component::pressure_oversampling___BMP280Oversampling"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a2175fda326d3c12c17923b7963f43352"></span><a class="reference internal" href="#_CPPv3N6sensor18BMP280OversamplingE" title="sensor::BMP280Oversampling">BMP280Oversampling</a> <code class="descname">pressure_oversampling_</code> = {BMP280_OVERSAMPLING_16X}<a class="headerlink" href="#_CPPv3N6sensor15BMP280Component22pressure_oversampling_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15BMP280Component11iir_filter_E">
+<span id="_CPPv2N6sensor15BMP280Component11iir_filter_E"></span><span id="sensor::BMP280Component::iir_filter___BMP280IIRFilter"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a7b85eb4be43b02aab1ac611eb645ab63"></span><a class="reference internal" href="#_CPPv3N6sensor15BMP280IIRFilterE" title="sensor::BMP280IIRFilter">BMP280IIRFilter</a> <code class="descname">iir_filter_</code> = {BMP280_IIR_FILTER_OFF}<a class="headerlink" href="#_CPPv3N6sensor15BMP280Component11iir_filter_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15BMP280Component19temperature_sensor_E">
+<span id="_CPPv2N6sensor15BMP280Component19temperature_sensor_E"></span><span id="sensor::BMP280Component::temperature_sensor___BMP280TemperatureSensorP"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1ae29d8b3fcdb88c1585102811eeee4e09"></span>BMP280TemperatureSensor *<code class="descname">temperature_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component19temperature_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15BMP280Component16pressure_sensor_E">
+<span id="_CPPv2N6sensor15BMP280Component16pressure_sensor_E"></span><span id="sensor::BMP280Component::pressure_sensor___BMP280PressureSensorP"></span><span class="target" id="classsensor_1_1_b_m_p280_component_1a89c593ee84610bedf57bc075061842f8"></span>BMP280PressureSensor *<code class="descname">pressure_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15BMP280Component16pressure_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “sensor::BMP280TemperatureSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N6sensor18BMP280OversamplingE">
+<span id="_CPPv2N6sensor18BMP280OversamplingE"></span><span id="sensor::BMP280Oversampling"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">BMP280Oversampling</code><a class="headerlink" href="#_CPPv3N6sensor18BMP280OversamplingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enum listing all Oversampling values for the BMP280. </p>
+<p>Oversampling basically means measuring a condition multiple times. Higher oversampling values therefore increase the time required to read sensor values but increase accuracy. </p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor24BMP280_OVERSAMPLING_NONEE">
+<span id="_CPPv2N6sensor24BMP280_OVERSAMPLING_NONEE"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152a16c1fabb1fa95d2f66bc4e75650823fd"></span><code class="descname">BMP280_OVERSAMPLING_NONE</code> = 0b000<a class="headerlink" href="#_CPPv3N6sensor24BMP280_OVERSAMPLING_NONEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor22BMP280_OVERSAMPLING_1XE">
+<span id="_CPPv2N6sensor22BMP280_OVERSAMPLING_1XE"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152a086900b2aa6023281283251d3730e29f"></span><code class="descname">BMP280_OVERSAMPLING_1X</code> = 0b001<a class="headerlink" href="#_CPPv3N6sensor22BMP280_OVERSAMPLING_1XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor22BMP280_OVERSAMPLING_2XE">
+<span id="_CPPv2N6sensor22BMP280_OVERSAMPLING_2XE"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152ad1ed0c993d8c57cecc3d5faffe2c6a0b"></span><code class="descname">BMP280_OVERSAMPLING_2X</code> = 0b010<a class="headerlink" href="#_CPPv3N6sensor22BMP280_OVERSAMPLING_2XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor22BMP280_OVERSAMPLING_4XE">
+<span id="_CPPv2N6sensor22BMP280_OVERSAMPLING_4XE"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152a4efdaacb710c985433306b5eabc71502"></span><code class="descname">BMP280_OVERSAMPLING_4X</code> = 0b011<a class="headerlink" href="#_CPPv3N6sensor22BMP280_OVERSAMPLING_4XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor22BMP280_OVERSAMPLING_8XE">
+<span id="_CPPv2N6sensor22BMP280_OVERSAMPLING_8XE"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152abe5b4653fcd4ec2940c6271be9cdac25"></span><code class="descname">BMP280_OVERSAMPLING_8X</code> = 0b100<a class="headerlink" href="#_CPPv3N6sensor22BMP280_OVERSAMPLING_8XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor23BMP280_OVERSAMPLING_16XE">
+<span id="_CPPv2N6sensor23BMP280_OVERSAMPLING_16XE"></span><span class="target" id="bmp280__component_8h_1a2c1e73104bcfb3769d1e3c3ca1df4152a836ed59dea452e28a21832a6c294670c"></span><code class="descname">BMP280_OVERSAMPLING_16X</code> = 0b101<a class="headerlink" href="#_CPPv3N6sensor23BMP280_OVERSAMPLING_16XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N6sensor15BMP280IIRFilterE">
+<span id="_CPPv2N6sensor15BMP280IIRFilterE"></span><span id="sensor::BMP280IIRFilter"></span><span class="target" id="bmp280__component_8h_1addeb002c1380d1e54e4c1c85e64aba08"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">BMP280IIRFilter</code><a class="headerlink" href="#_CPPv3N6sensor15BMP280IIRFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enum listing all Infinite Impulse <a class="reference internal" href="index.html#classsensor_1_1_filter"><span class="std std-ref">Filter</span></a> values for the BMP280. </p>
+<p>Higher values increase accuracy, but decrease response time. </p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor21BMP280_IIR_FILTER_OFFE">
+<span id="_CPPv2N6sensor21BMP280_IIR_FILTER_OFFE"></span><span class="target" id="bmp280__component_8h_1addeb002c1380d1e54e4c1c85e64aba08aeadee48215a73382804adbc2bc351238"></span><code class="descname">BMP280_IIR_FILTER_OFF</code> = 0b000<a class="headerlink" href="#_CPPv3N6sensor21BMP280_IIR_FILTER_OFFE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor20BMP280_IIR_FILTER_2XE">
+<span id="_CPPv2N6sensor20BMP280_IIR_FILTER_2XE"></span><span class="target" id="bmp280__component_8h_1addeb002c1380d1e54e4c1c85e64aba08af3ea7cf06fecb8c4702004cc30a7b110"></span><code class="descname">BMP280_IIR_FILTER_2X</code> = 0b001<a class="headerlink" href="#_CPPv3N6sensor20BMP280_IIR_FILTER_2XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor20BMP280_IIR_FILTER_4XE">
+<span id="_CPPv2N6sensor20BMP280_IIR_FILTER_4XE"></span><span class="target" id="bmp280__component_8h_1addeb002c1380d1e54e4c1c85e64aba08a4da7511161dc022fe5cfd1d285ad1013"></span><code class="descname">BMP280_IIR_FILTER_4X</code> = 0b010<a class="headerlink" href="#_CPPv3N6sensor20BMP280_IIR_FILTER_4XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor20BMP280_IIR_FILTER_8XE">
+<span id="_CPPv2N6sensor20BMP280_IIR_FILTER_8XE"></span><span class="target" id="bmp280__component_8h_1addeb002c1380d1e54e4c1c85e64aba08a79bb4ed28a9d37cb4905b60b7b905e71"></span><code class="descname">BMP280_IIR_FILTER_8X</code> = 0b011<a class="headerlink" href="#_CPPv3N6sensor20BMP280_IIR_FILTER_8XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor21BMP280_IIR_FILTER_16XE">
+<span id="_CPPv2N6sensor21BMP280_IIR_FILTER_16XE"></span><span class="target" id="bmp280__component_8h_1addeb002c1380d1e54e4c1c85e64aba08a8cc4ca37a01a042abcc806b694d1eb6e"></span><code class="descname">BMP280_IIR_FILTER_16X</code> = 0b100<a class="headerlink" href="#_CPPv3N6sensor21BMP280_IIR_FILTER_16XE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="bmp280__component_8h_1a10fbc3139ac5b7a4bc5d22c8b05de401"></span><em class="property">using </em><code class="descname">sensor::BMP280TemperatureSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_EMPTY, UNIT_C&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="bmp280__component_8h_1a4d850acfc0e929beb5792fb245b04299"></span><em class="property">using </em><code class="descname">sensor::BMP280PressureSensor = typedef sensor::EmptyPollingParentSensor&lt;1, ICON_GAUGE, UNIT_HPA&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N6sensor21BMP280CalibrationDataE">
+<span id="_CPPv2N6sensor21BMP280CalibrationDataE"></span><span id="sensor::BMP280CalibrationData"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data"></span><em class="property">struct </em><code class="descname">BMP280CalibrationData</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationDataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Internal struct storing the calibration values of an BMP280. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2t1E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2t1E"></span><span id="sensor::BMP280CalibrationData::t1__uint16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a7387725006b88b1b5d6287e98d2c6d44"></span>uint16_t <code class="descname">t1</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2t1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2t2E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2t2E"></span><span id="sensor::BMP280CalibrationData::t2__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1af6eb7f645537fd0e1e870df6274b75c2"></span>int16_t <code class="descname">t2</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2t2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2t3E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2t3E"></span><span id="sensor::BMP280CalibrationData::t3__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a94f59c7938f760588324e34e1755b647"></span>int16_t <code class="descname">t3</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2t3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p1E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p1E"></span><span id="sensor::BMP280CalibrationData::p1__uint16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a8449268efd1e65fc7f820311ed9ad445"></span>uint16_t <code class="descname">p1</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p2E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p2E"></span><span id="sensor::BMP280CalibrationData::p2__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1aaef30500b16d2ea48fc6e2e8f3788290"></span>int16_t <code class="descname">p2</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p3E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p3E"></span><span id="sensor::BMP280CalibrationData::p3__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a413dad56a11d717d57bfdf0d9afd3bf8"></span>int16_t <code class="descname">p3</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p3E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p4E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p4E"></span><span id="sensor::BMP280CalibrationData::p4__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a2283cfdb4034e13d8029129eb0b5c2d0"></span>int16_t <code class="descname">p4</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p4E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p5E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p5E"></span><span id="sensor::BMP280CalibrationData::p5__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a93bdbf461bd80da2752d88561261209c"></span>int16_t <code class="descname">p5</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p5E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p6E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p6E"></span><span id="sensor::BMP280CalibrationData::p6__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a1578cbbcc972ad3b8f61b1c5d2ee022b"></span>int16_t <code class="descname">p6</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p6E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p7E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p7E"></span><span id="sensor::BMP280CalibrationData::p7__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1ad34f093a0b49a882f17f6d472dba3884"></span>int16_t <code class="descname">p7</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p7E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p8E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p8E"></span><span id="sensor::BMP280CalibrationData::p8__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a8aa450a73b9faa717548b88f30324257"></span>int16_t <code class="descname">p8</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p8E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor21BMP280CalibrationData2p9E">
+<span id="_CPPv2N6sensor21BMP280CalibrationData2p9E"></span><span id="sensor::BMP280CalibrationData::p9__int16_t"></span><span class="target" id="structsensor_1_1_b_m_p280_calibration_data_1a5c28042f463a064f1392ecb56f0e2610"></span>int16_t <code class="descname">p9</code><a class="headerlink" href="#_CPPv3N6sensor21BMP280CalibrationData2p9E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygentypedef: Cannot find typedef “sensor::BMP280PressureSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenstruct: Cannot find class “sensor::BMP280CalibrationData” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
-</div>
+</dd></dl>
+
 </div>
 </div>
 

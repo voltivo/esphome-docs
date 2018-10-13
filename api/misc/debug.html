@@ -71,14 +71,54 @@
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="n">App</span><span class="p">.</span><span class="n">make_debug_component</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_debug_component()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application20make_debug_componentEv" title="Application::make_debug_component"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_debug_component()</span></code></a>.</p>
 </div>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “DebugComponent” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv314DebugComponent">
+<span id="_CPPv214DebugComponent"></span><span id="DebugComponent"></span><span class="target" id="class_debug_component"></span><em class="property">class </em><code class="descname">DebugComponent</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv314DebugComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The debug component prints out debug information like free heap size on startup. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N14DebugComponent5setupEv">
+<span id="_CPPv2N14DebugComponent5setupEv"></span><span id="DebugComponent::setup"></span><span class="target" id="class_debug_component_1a076dfa2d9292b7dd2b2e3a9fc5724ec3"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14DebugComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_debug_component_1a076dfa2d9292b7dd2b2e3a9fc5724ec3"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14DebugComponent4loopEv">
+<span id="_CPPv2N14DebugComponent4loopEv"></span><span id="DebugComponent::loop"></span><span class="target" id="class_debug_component_1add90236a886004aadf564ffea52a828a"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14DebugComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_debug_component_1add90236a886004aadf564ffea52a828a"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#class_debug_component_1a076dfa2d9292b7dd2b2e3a9fc5724ec3"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14DebugComponent18get_setup_priorityEv">
+<span id="_CPPv2NK14DebugComponent18get_setup_priorityEv"></span><span id="DebugComponent::get_setup_priorityC"></span><span class="target" id="class_debug_component_1a6db68dda3dfdcd661261f4adaaa96c43"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14DebugComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_debug_component_1a076dfa2d9292b7dd2b2e3a9fc5724ec3"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N14DebugComponent10free_heap_E">
+<span id="_CPPv2N14DebugComponent10free_heap_E"></span><span id="DebugComponent::free_heap___uint32_t"></span><span class="target" id="class_debug_component_1a8686ca4b9061afe4016d7460f070760e"></span>uint32_t <code class="descname">free_heap_</code> = {}<a class="headerlink" href="#_CPPv3N14DebugComponent10free_heap_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

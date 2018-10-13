@@ -65,13 +65,157 @@
             
   <div class="section" id="rotary-encoder-sensor">
 <h1>Rotary Encoder Sensor<a class="headerlink" href="#rotary-encoder-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_rotary_encoder_sensor()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application26make_rotary_encoder_sensorERKNSt6stringERK12GPIOInputPinRK12GPIOInputPin" title="Application::make_rotary_encoder_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_rotary_encoder_sensor()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “sensor::RotaryEncoderSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensorE">
+<span id="_CPPv2N6sensor19RotaryEncoderSensorE"></span><span id="sensor::RotaryEncoderSensor"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor"></span><em class="property">class </em><code class="descname">RotaryEncoderSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor19RotaryEncoderSensorERKNSt6stringEP7GPIOPinP7GPIOPin">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor19RotaryEncoderSensorERKNSt6stringEP7GPIOPinP7GPIOPin"></span><span id="sensor::RotaryEncoderSensor::RotaryEncoderSensor__ssCR.GPIOPinP.GPIOPinP"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a7ae25324642a52b85d0a6daf0c7c028e"></span><code class="descname">RotaryEncoderSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>pin_a</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>pin_b</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor19RotaryEncoderSensorERKNSt6stringEP7GPIOPinP7GPIOPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor14set_resolutionE23RotaryEncoderResolution">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor14set_resolutionE23RotaryEncoderResolution"></span><span id="sensor::RotaryEncoderSensor::set_resolution__RotaryEncoderResolution"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1af530a9be4fa37b959d69895d75744cd4"></span>void <code class="descname">set_resolution</code><span class="sig-paren">(</span>RotaryEncoderResolution <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor14set_resolutionE23RotaryEncoderResolution" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the resolution of the rotary encoder. </p>
+<p>By default, this component will increment the counter by 1 with every A-B input cycle. You can however change this behavior to have more coarse resolutions like 4 counter increases per A-B cycle.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The new mode of the encoder. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor13set_reset_pinERK12GPIOInputPin">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor13set_reset_pinERK12GPIOInputPin"></span><span id="sensor::RotaryEncoderSensor::set_reset_pin__GPIOInputPinCR"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a10cdc4f9900d77b8872233dc2c97641d"></span>void <code class="descname">set_reset_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>pin_i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor13set_reset_pinERK12GPIOInputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor5setupEv">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor5setupEv"></span><span id="sensor::RotaryEncoderSensor::setup"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a4d2174491376671f5c1e8767a8b5f172"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_rotary_encoder_sensor_1a4d2174491376671f5c1e8767a8b5f172"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor4loopEv">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor4loopEv"></span><span id="sensor::RotaryEncoderSensor::loop"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a40c3641afa0f3ace7ca7ed3c69ce2d70"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_rotary_encoder_sensor_1a40c3641afa0f3ace7ca7ed3c69ce2d70"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#classsensor_1_1_rotary_encoder_sensor_1a4d2174491376671f5c1e8767a8b5f172"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor19unit_of_measurementEv">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor19unit_of_measurementEv"></span><span id="sensor::RotaryEncoderSensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1abcb7073cbd811386cfe37fc0e372bf4f"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this to set the Home Assistant unit of measurement for this sensor. </p>
+<p>Return “” to disable this feature.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The icon of this sensor, for example “°C”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor4iconEv">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor4iconEv"></span><span id="sensor::RotaryEncoderSensor::icon"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a11bf939c2654d9ef59f409891ddaeafe"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this to set the Home Assistant icon for this sensor. </p>
+<p>Return “” to disable this feature.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The icon of this sensor, for example “mdi:battery”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor17accuracy_decimalsEv">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor17accuracy_decimalsEv"></span><span id="sensor::RotaryEncoderSensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a50e418f148a2aff1a39910b137bbc070"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the accuracy in decimals for this sensor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor19RotaryEncoderSensor18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor19RotaryEncoderSensor18get_setup_priorityEv"></span><span id="sensor::RotaryEncoderSensor::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a767d42249221775f96e5c6a36c8fa674"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor19RotaryEncoderSensor18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_rotary_encoder_sensor_1a4d2174491376671f5c1e8767a8b5f172"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="classsensor_1_1_rotary_encoder_sensor_1ac09aac80dc315d2472bb42349d032e0d"></span><code class="descname">void ICACHE_RAM_ATTR sensor::RotaryEncoderSensor::process_state_machine_()</code></dt>
+<dd><p>Process the state machine state of this rotary encoder. Called from encoder_isr_. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor6pin_a_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor6pin_a_E"></span><span id="sensor::RotaryEncoderSensor::pin_a___GPIOPinP"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1af1b634438a2826e369e04a36a2ea84fb"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">pin_a_</code><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor6pin_a_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor6pin_b_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor6pin_b_E"></span><span id="sensor::RotaryEncoderSensor::pin_b___GPIOPinP"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a4011f4d014c4c7aa81d73520b02587ca"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">pin_b_</code><a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor6pin_b_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor6pin_i_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor6pin_i_E"></span><span id="sensor::RotaryEncoderSensor::pin_i___GPIOPinP"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a7d00fcd60ef4b0d0cb5cf5b2893196e1"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">pin_i_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor6pin_i_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor8counter_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor8counter_E"></span><span id="sensor::RotaryEncoderSensor::counter___int32_tV"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a95f894fd1806613e42ce93eec03ab7df"></span><em class="property">volatile</em> int32_t <code class="descname">counter_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor8counter_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Index pin, if this is not nullptr, the counter will reset to 0 once this pin is HIGH. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor12has_changed_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor12has_changed_E"></span><span id="sensor::RotaryEncoderSensor::has_changed___bV"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1afcc36d4be363e6967e04f6fbec5c78b9"></span><em class="property">volatile</em> bool <code class="descname">has_changed_</code> = {true}<a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor12has_changed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The internal counter for steps. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor6state_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor6state_E"></span><span id="sensor::RotaryEncoderSensor::state___uint16_t"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1ac51ef3d1ebddb678dc570355ac2ec4a8"></span>uint16_t <code class="descname">state_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor19RotaryEncoderSensor11resolution_E">
+<span id="_CPPv2N6sensor19RotaryEncoderSensor11resolution_E"></span><span id="sensor::RotaryEncoderSensor::resolution___RotaryEncoderResolution"></span><span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a8f52c4ef1cbd364d0fe9a65aef490d43"></span>RotaryEncoderResolution <code class="descname">resolution_</code> = {ROTARY_ENCODER_1_PULSE_PER_CYCLE}<a class="headerlink" href="#_CPPv3N6sensor19RotaryEncoderSensor11resolution_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Static Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="classsensor_1_1_rotary_encoder_sensor_1a5784b06939351d591e97ffaf88200623"></span><code class="descname">void ICACHE_RAM_ATTR sensor::RotaryEncoderSensor::encoder_isr_()</code></dt>
+<dd><p>The ISR that handles pushing all interrupts to process_state_machine_ of all rotary encoders. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

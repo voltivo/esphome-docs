@@ -67,14 +67,187 @@
 <h1>SPI Bus<a class="headerlink" href="#spi-bus" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “SPIComponent” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv312SPIComponent">
+<span id="_CPPv212SPIComponent"></span><span id="SPIComponent"></span><span class="target" id="class_s_p_i_component"></span><em class="property">class </em><code class="descname">SPIComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv312SPIComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N12SPIComponent12SPIComponentEP7GPIOPinP7GPIOPinP7GPIOPin">
+<span id="_CPPv2N12SPIComponent12SPIComponentEP7GPIOPinP7GPIOPinP7GPIOPin"></span><span id="SPIComponent::SPIComponent__GPIOPinP.GPIOPinP.GPIOPinP"></span><span class="target" id="class_s_p_i_component_1ad0f8f34684f6722e6c2dee2d87e4f13b"></span><code class="descname">SPIComponent</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>clk</em>, <a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>miso</em>, <a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>mosi</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12SPIComponent12SPIComponentEP7GPIOPinP7GPIOPinP7GPIOPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12SPIComponent5setupEv">
+<span id="_CPPv2N12SPIComponent5setupEv"></span><span id="SPIComponent::setup"></span><span class="target" id="class_s_p_i_component_1ade1d98eea61be67397733b919a3c4456"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12SPIComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_s_p_i_component_1ade1d98eea61be67397733b919a3c4456"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_s_p_i_component_1abeb655e062a442fa97901d72a0a6cd1f"></span><code class="descname">uint8_t ICACHE_RAM_ATTR HOT SPIComponent::read_byte()</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_s_p_i_component_1a14298b5cffcb0a33f21540a8b5dd2add"></span><code class="descname">void ICACHE_RAM_ATTR HOT SPIComponent::read_array(uint8_t * data, size_t length)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_s_p_i_component_1a72860b8fe7414f9e14a05c38a9f8643f"></span><code class="descname">void ICACHE_RAM_ATTR HOT SPIComponent::write_byte(uint8_t data)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_s_p_i_component_1a5ffa3c62a9b9b911b57098d4b4613bf5"></span><code class="descname">void ICACHE_RAM_ATTR HOT SPIComponent::write_array(uint8_t * data, size_t length)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_s_p_i_component_1a6d49966c741ca58091d86a8dd406fbbe"></span><code class="descname">void ICACHE_RAM_ATTR HOT SPIComponent::enable(GPIOPin  * cs, bool msb_first, bool high_speed)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="class_s_p_i_component_1a0c3d870ac0e6228d38e354d9af71a568"></span><code class="descname">void ICACHE_RAM_ATTR HOT SPIComponent::disable()</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK12SPIComponent18get_setup_priorityEv">
+<span id="_CPPv2NK12SPIComponent18get_setup_priorityEv"></span><span id="SPIComponent::get_setup_priorityC"></span><span class="target" id="class_s_p_i_component_1a77915318fca87fb064a68ae45279a4db"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK12SPIComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#class_s_p_i_component_1ade1d98eea61be67397733b919a3c4456"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12SPIComponent8set_misoERK12GPIOInputPin">
+<span id="_CPPv2N12SPIComponent8set_misoERK12GPIOInputPin"></span><span id="SPIComponent::set_miso__GPIOInputPinCR"></span><span class="target" id="class_s_p_i_component_1ab77ac904720737c51ae6a9102b2cedf0"></span>void <code class="descname">set_miso</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>miso</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12SPIComponent8set_misoERK12GPIOInputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12SPIComponent8set_mosiERK13GPIOOutputPin">
+<span id="_CPPv2N12SPIComponent8set_mosiERK13GPIOOutputPin"></span><span id="SPIComponent::set_mosi__GPIOOutputPinCR"></span><span class="target" id="class_s_p_i_component_1a6a564f7b46886d44fcd9ecf8ec45f060"></span>void <code class="descname">set_mosi</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>mosi</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12SPIComponent8set_mosiERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “SPIDevice” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N12SPIComponent4clk_E">
+<span id="_CPPv2N12SPIComponent4clk_E"></span><span id="SPIComponent::clk___GPIOPinP"></span><span class="target" id="class_s_p_i_component_1a71748c4432975eefae574a8051276367"></span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">clk_</code><a class="headerlink" href="#_CPPv3N12SPIComponent4clk_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N12SPIComponent5miso_E">
+<span id="_CPPv2N12SPIComponent5miso_E"></span><span id="SPIComponent::miso___GPIOPinP"></span><span class="target" id="class_s_p_i_component_1a4c78a3a4d9c2ea80585f557b017e2ac3"></span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">miso_</code><a class="headerlink" href="#_CPPv3N12SPIComponent5miso_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N12SPIComponent5mosi_E">
+<span id="_CPPv2N12SPIComponent5mosi_E"></span><span id="SPIComponent::mosi___GPIOPinP"></span><span class="target" id="class_s_p_i_component_1a0c357bd50a3d1d0ad6c6073b3c7d5b11"></span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">mosi_</code><a class="headerlink" href="#_CPPv3N12SPIComponent5mosi_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N12SPIComponent10active_cs_E">
+<span id="_CPPv2N12SPIComponent10active_cs_E"></span><span id="SPIComponent::active_cs___GPIOPinP"></span><span class="target" id="class_s_p_i_component_1ae7ec8e57f3c0fe42cc62b0caf81f1a95"></span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">active_cs_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N12SPIComponent10active_cs_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N12SPIComponent10msb_first_E">
+<span id="_CPPv2N12SPIComponent10msb_first_E"></span><span id="SPIComponent::msb_first___b"></span><span class="target" id="class_s_p_i_component_1a349bb60ee27a01cc68a70a550598d67b"></span>bool <code class="descname">msb_first_</code> = {true}<a class="headerlink" href="#_CPPv3N12SPIComponent10msb_first_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N12SPIComponent11high_speed_E">
+<span id="_CPPv2N12SPIComponent11high_speed_E"></span><span id="SPIComponent::high_speed___b"></span><span class="target" id="class_s_p_i_component_1ac701c2cd79957b0bad053590b4dbc8db"></span>bool <code class="descname">high_speed_</code> = {false}<a class="headerlink" href="#_CPPv3N12SPIComponent11high_speed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv39SPIDevice">
+<span id="_CPPv29SPIDevice"></span><span id="SPIDevice"></span><span class="target" id="class_s_p_i_device"></span><em class="property">class </em><code class="descname">SPIDevice</code><a class="headerlink" href="#_CPPv39SPIDevice" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="../binary_sensor/pn532.html#classbinary__sensor_1_1_p_n532_component"><span class="std std-ref">binary_sensor::PN532Component</span></a>, <a class="reference internal" href="../display/max7219.html#classdisplay_1_1_m_a_x7219_component"><span class="std std-ref">display::MAX7219Component</span></a>, <a class="reference internal" href="../display/ssd1306.html#classdisplay_1_1_s_p_i_s_s_d1306"><span class="std std-ref">display::SPISSD1306</span></a>, <a class="reference internal" href="../display/waveshare_epaper.html#classdisplay_1_1_waveshare_e_paper"><span class="std std-ref">display::WaveshareEPaper</span></a>, <a class="reference internal" href="../sensor/max6675.html#classsensor_1_1_m_a_x6675_sensor"><span class="std std-ref">sensor::MAX6675Sensor</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice9SPIDeviceEP12SPIComponentP7GPIOPin">
+<span id="_CPPv2N9SPIDevice9SPIDeviceEP12SPIComponentP7GPIOPin"></span><span id="SPIDevice::SPIDevice__SPIComponentP.GPIOPinP"></span><span class="target" id="class_s_p_i_device_1a11358d0bf90735c619a0519a0ac7c762"></span><code class="descname">SPIDevice</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>parent</em>, <a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>cs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice9SPIDeviceEP12SPIComponentP7GPIOPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice9spi_setupEv">
+<span id="_CPPv2N9SPIDevice9spi_setupEv"></span><span id="SPIDevice::spi_setup"></span><span class="target" id="class_s_p_i_device_1ad7a659230ca59a2c038ef0bf397d1039"></span>void <code class="descname">spi_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice9spi_setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice6enableEv">
+<span id="_CPPv2N9SPIDevice6enableEv"></span><span id="SPIDevice::enable"></span><span class="target" id="class_s_p_i_device_1aae4fdac5cfb15cb34367b1a13b978412"></span>void <code class="descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice6enableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice7disableEv">
+<span id="_CPPv2N9SPIDevice7disableEv"></span><span id="SPIDevice::disable"></span><span class="target" id="class_s_p_i_device_1ac9c40e1bcd4ccffd128269d6dc35a84d"></span>void <code class="descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice7disableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice9read_byteEv">
+<span id="_CPPv2N9SPIDevice9read_byteEv"></span><span id="SPIDevice::read_byte"></span><span class="target" id="class_s_p_i_device_1a78a11411086ffe767c58d900b8626dbf"></span>uint8_t <code class="descname">read_byte</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice9read_byteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice10read_arrayEP7uint8_t6size_t">
+<span id="_CPPv2N9SPIDevice10read_arrayEP7uint8_t6size_t"></span><span id="SPIDevice::read_array__uint8_tP.s"></span><span class="target" id="class_s_p_i_device_1af097e2d2317e64e4bc07ae510603435d"></span>void <code class="descname">read_array</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, size_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice10read_arrayEP7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice10write_byteE7uint8_t">
+<span id="_CPPv2N9SPIDevice10write_byteE7uint8_t"></span><span id="SPIDevice::write_byte__uint8_t"></span><span class="target" id="class_s_p_i_device_1ad10783e3e99e887b35199d7fc5e0b147"></span>void <code class="descname">write_byte</code><span class="sig-paren">(</span>uint8_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice10write_byteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice11write_arrayEP7uint8_t6size_t">
+<span id="_CPPv2N9SPIDevice11write_arrayEP7uint8_t6size_t"></span><span id="SPIDevice::write_array__uint8_tP.s"></span><span class="target" id="class_s_p_i_device_1aa6380460310e4f8030e958a2ab116779"></span>void <code class="descname">write_array</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, size_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice11write_arrayEP7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice9msb_firstEv">
+<span id="_CPPv2N9SPIDevice9msb_firstEv"></span><span id="SPIDevice::msb_first"></span><span class="target" id="class_s_p_i_device_1a62e9c7f0cbc450beb4db0d5f2eec3916"></span><em class="property">virtual</em> bool <code class="descname">msb_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N9SPIDevice9msb_firstEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N9SPIDevice10high_speedEv">
+<span id="_CPPv2N9SPIDevice10high_speedEv"></span><span id="SPIDevice::high_speed"></span><span class="target" id="class_s_p_i_device_1a79464e4391951dd8d17275d8edcf4fc7"></span>bool <code class="descname">high_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice10high_speedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N9SPIDevice7parent_E">
+<span id="_CPPv2N9SPIDevice7parent_E"></span><span id="SPIDevice::parent___SPIComponentP"></span><span class="target" id="class_s_p_i_device_1aa411a2de694aa3b6a581030eeecddfb4"></span><a class="reference internal" href="#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N9SPIDevice7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N9SPIDevice3cs_E">
+<span id="_CPPv2N9SPIDevice3cs_E"></span><span id="SPIDevice::cs___GPIOPinP"></span><span class="target" id="class_s_p_i_device_1a380eaa7ea5abff5bf85ed84853e4a28a"></span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">cs_</code><a class="headerlink" href="#_CPPv3N9SPIDevice3cs_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

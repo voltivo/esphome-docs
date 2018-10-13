@@ -65,13 +65,53 @@
             
   <div class="section" id="template-sensor">
 <h1>Template Sensor<a class="headerlink" href="#template-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_template_sensor()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application20make_template_sensorERKNSt6stringE8uint32_t" title="Application::make_template_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_template_sensor()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “sensor::TemplateSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N6sensor14TemplateSensorE">
+<span id="_CPPv2N6sensor14TemplateSensorE"></span><span id="sensor::TemplateSensor"></span><span class="target" id="classsensor_1_1_template_sensor"></span><em class="property">class </em><code class="descname">TemplateSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor22PollingSensorComponentE" title="sensor::PollingSensorComponent">PollingSensorComponent</a><a class="headerlink" href="#_CPPv3N6sensor14TemplateSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor14TemplateSensor14TemplateSensorERKNSt6stringE8uint32_t">
+<span id="_CPPv2N6sensor14TemplateSensor14TemplateSensorERKNSt6stringE8uint32_t"></span><span id="sensor::TemplateSensor::TemplateSensor__ssCR.uint32_t"></span><span class="target" id="classsensor_1_1_template_sensor_1ad316547150d0925c37220989874de919"></span><code class="descname">TemplateSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14TemplateSensor14TemplateSensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14TemplateSensor12set_templateERRNSt8functionIF8optionalIfEvEEE">
+<span id="_CPPv2N6sensor14TemplateSensor12set_templateERRNSt8functionIF8optionalIfEvEEE"></span><span class="target" id="classsensor_1_1_template_sensor_1a80a8024f40afbe43593d88f16f3b0dea"></span>void <code class="descname">set_template</code><span class="sig-paren">(</span>std::function&lt;<a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt;<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14TemplateSensor12set_templateERRNSt8functionIF8optionalIfEvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14TemplateSensor6updateEv">
+<span id="_CPPv2N6sensor14TemplateSensor6updateEv"></span><span id="sensor::TemplateSensor::update"></span><span class="target" id="classsensor_1_1_template_sensor_1afc4ae35d99fc6e19676d51962eddb235"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14TemplateSensor6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor14TemplateSensor18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor14TemplateSensor18get_setup_priorityEv"></span><span id="sensor::TemplateSensor::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_template_sensor_1a75c63618264653fb124eefadcbb91b3a"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor14TemplateSensor18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt>
+<span class="target" id="classsensor_1_1_template_sensor_1ae9f994fe0b4c0d5acc5951f211be5137"></span><code class="descname">std::function&lt;optional&lt;float&gt;)&gt; sensor::TemplateSensor::f_</code></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 

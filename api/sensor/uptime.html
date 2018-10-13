@@ -65,13 +65,90 @@
             
   <div class="section" id="uptime-sensor">
 <h1>Uptime Sensor<a class="headerlink" href="#uptime-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_uptime_sensor()</span></code>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application18make_uptime_sensorERKNSt6stringE8uint32_t" title="Application::make_uptime_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_uptime_sensor()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenclass: Cannot find class “sensor::UptimeSensor” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+<dl class="class">
+<dt id="_CPPv3N6sensor12UptimeSensorE">
+<span id="_CPPv2N6sensor12UptimeSensorE"></span><span id="sensor::UptimeSensor"></span><span class="target" id="classsensor_1_1_uptime_sensor"></span><em class="property">class </em><code class="descname">UptimeSensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor22PollingSensorComponentE" title="sensor::PollingSensorComponent">PollingSensorComponent</a><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor12UptimeSensor12UptimeSensorERKNSt6stringE8uint32_t">
+<span id="_CPPv2N6sensor12UptimeSensor12UptimeSensorERKNSt6stringE8uint32_t"></span><span id="sensor::UptimeSensor::UptimeSensor__ssCR.uint32_t"></span><span class="target" id="classsensor_1_1_uptime_sensor_1a12208519e7bc3770ccd742d55ec16f26"></span><code class="descname">UptimeSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor12UptimeSensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor12UptimeSensor6updateEv">
+<span id="_CPPv2N6sensor12UptimeSensor6updateEv"></span><span id="sensor::UptimeSensor::update"></span><span class="target" id="classsensor_1_1_uptime_sensor_1a4c00c0518618a2f1cc04df846657648b"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor12UptimeSensor19unit_of_measurementEv">
+<span id="_CPPv2N6sensor12UptimeSensor19unit_of_measurementEv"></span><span id="sensor::UptimeSensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_uptime_sensor_1a1ebf1623482855b4b0b2a876c8098881"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this to set the Home Assistant unit of measurement for this sensor. </p>
+<p>Return “” to disable this feature.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The icon of this sensor, for example “°C”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor12UptimeSensor4iconEv">
+<span id="_CPPv2N6sensor12UptimeSensor4iconEv"></span><span id="sensor::UptimeSensor::icon"></span><span class="target" id="classsensor_1_1_uptime_sensor_1a380fce1a311bc9ecf32c486229e5d55d"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this to set the Home Assistant icon for this sensor. </p>
+<p>Return “” to disable this feature.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The icon of this sensor, for example “mdi:battery”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor12UptimeSensor17accuracy_decimalsEv">
+<span id="_CPPv2N6sensor12UptimeSensor17accuracy_decimalsEv"></span><span id="sensor::UptimeSensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_uptime_sensor_1a4f60bac3308522f34328de131870feff"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the accuracy in decimals for this sensor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor12UptimeSensor9unique_idEv">
+<span id="_CPPv2N6sensor12UptimeSensor9unique_idEv"></span><span id="sensor::UptimeSensor::unique_id"></span><span class="target" id="classsensor_1_1_uptime_sensor_1ab7dcf412585d5dad63607b0b72bb2c87"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A unique ID for this sensor, empty for no unique id. </p>
+<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique id as a string. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor12UptimeSensor18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor12UptimeSensor18get_setup_priorityEv"></span><span id="sensor::UptimeSensor::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_uptime_sensor_1a35b4c4c5649ff0ac7b1544b8ba7fea5a"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor12UptimeSensor18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor12UptimeSensor7uptime_E">
+<span id="_CPPv2N6sensor12UptimeSensor7uptime_E"></span><span id="sensor::UptimeSensor::uptime___uint64_t"></span><span class="target" id="classsensor_1_1_uptime_sensor_1ad12ce372c8f54a181a1c917ef8824c6e"></span>uint64_t <code class="descname">uptime_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor12UptimeSensor7uptime_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 </div>
 
