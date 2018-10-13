@@ -98,11 +98,9 @@ detected. One of <code class="docutils literal notranslate"><span class="pre">DI
 Defaults to <code class="docutils literal notranslate"><span class="pre">DISABLE</span></code>.</li>
 </ul>
 </li>
-<li><strong>internal_filter</strong> (<em>Optional</em>, int): If a pulse shorter than this
-number of APB clock pulses (each 12.5 ns) is detected, it’s
-discarded. See <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html#filtering-pulses">esp-idf Filtering
-Pulses</a>
-for more information. Defaults to the max value 1023 or about 13 µs.</li>
+<li><strong>internal_filter</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): If a pulse shorter than this
+time is detected, it’s discarded and no pulse is counted. Defaults to <code class="docutils literal notranslate"><span class="pre">13us</span></code>. On the ESP32,
+this value can not be higher than <code class="docutils literal notranslate"><span class="pre">13us</span></code>, for the ESP8266 you can use larger intervals too.</li>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>.
 See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">update_interval gotchas</span></a>.</li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
