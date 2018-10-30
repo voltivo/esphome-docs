@@ -87,7 +87,7 @@ basic “node” in a few simple steps.</p>
 </pre></div>
 </div>
 <p>Alternatively, there’s also a docker image available for easy
-installation (the docker hub image is only available for amd64 right now, if you have
+installation (the docker hub image is only available for amd64 right now; if you have
 an RPi, please install esphomelib through <code class="docutils literal notranslate"><span class="pre">pip</span></code> or use <a class="reference internal" href="getting_started_hassio.html"><span class="doc">the HassIO add-on</span></a>:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">docker</span> <span class="n">pull</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span>
 </pre></div>
@@ -120,17 +120,17 @@ Go open that file in an editor of your choice and let’s add a <a class="refere
 GPIO switch</span></a> to our app.</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifer&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier&quot;</span>
     <span class="n">pin</span><span class="p">:</span> <span class="mi">5</span>
 </pre></div>
 </div>
 <p>The configuration format should hopefully immediately seem similar to
 you. esphomeyaml has tried to keep it as close to Home Assistant’s
-<code class="docutils literal notranslate"><span class="pre">configuration.yaml</span></code> schema as possible. In above example, we’re
-simply adding a switch that’s called “Living Room Relay” (could control
+<code class="docutils literal notranslate"><span class="pre">configuration.yaml</span></code> schema as possible. In the above example, we’re
+simply adding a switch that’s called “Living Room Dehumidifier” (could control
 anything really, for example lights) and is connected to pin <code class="docutils literal notranslate"><span class="pre">GPIO5</span></code>.
 The nice thing about esphomeyaml is that it will automatically also try
-to translate pin numbers for you based on the board. For example in
+to translate pin numbers for you based on the board. For example in the
 above configuration, if using a NodeMCU board, you could have just as
 well set <code class="docutils literal notranslate"><span class="pre">D1</span></code> as the <code class="docutils literal notranslate"><span class="pre">pin:</span></code> option.</p>
 </div>
@@ -183,7 +183,7 @@ Sensor</span></a>.</p>
       <span class="n">mode</span><span class="p">:</span> <span class="n">INPUT_PULLUP</span>
 </pre></div>
 </div>
-<p>This is an advanced feature of esphomeyaml, almost all pins can
+<p>This is an advanced feature of esphomeyaml. Almost all pins can
 optionally have a more complicated configuration schema with options for
 inversion and pinMode - the <a class="reference internal" href="configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>.</p>
 <p>This time when uploading, you don’t need to have the device plugged in
@@ -205,15 +205,15 @@ for docker you need to supply an additional parameter:</p>
 and uploaded your first esphomelib custom firmware to your node. You’ve
 also learned how to enable some basic components via the configuration
 file.</p>
-<p>So now is a great time to go take a look at the <a class="reference internal" href="../index.html"><span class="doc">Components Index</span></a>,
-hopefully you’ll find all sensors/outputs/… you’ll need in there. If you’re having any problems or
+<p>So now is a great time to go take a look at the <a class="reference internal" href="../index.html"><span class="doc">Components Index</span></a>.
+Hopefully you’ll find all sensors/outputs/… you’ll need in there. If you’re having any problems or
 want new features, please either create a new issue on the <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/issues">GitHub issue
 tracker</a> or contact
 me via the <a class="reference external" href="https://discord.gg/KhAMKrd">Discord chat</a>.</p>
 </div>
 <div class="section" id="bonus-esphomeyaml-dashboard">
 <h2>Bonus: esphomeyaml dashboard<a class="headerlink" href="#bonus-esphomeyaml-dashboard" title="Permalink to this headline">¶</a></h2>
-<p>Starting with version 1.6.0 esphomeyaml features a dashboard that you can use to
+<p>Starting with version 1.6.0, esphomeyaml features a dashboard that you can use to
 easily manage your nodes from a nice web interface. It was primarily designed for
 <a class="reference internal" href="getting_started_hassio.html"><span class="doc">the HassIO add-on</span></a>, but also works with a simple command.</p>
 <p>To start the esphomeyaml dashboard, simply start esphomeyaml with the following command

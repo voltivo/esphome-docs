@@ -98,6 +98,18 @@ Thus, rearranging the expression yields a proportional factor of <code class="do
 <code class="docutils literal notranslate"><span class="pre">kW</span></code>.</p>
 <p>And if a technician shows up and he looks confused about what the heck you have done to your
 power meter, tell them about esphomelib 😉</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Photoresistors often have a bit of noise during their switching phases. So in certain situations,
+a single power meter tick can result in many pulses being counted. This effect is especially big on
+ESP8266s. If you’re experiencing this, try enabling the <code class="docutils literal notranslate"><span class="pre">internal_filter:</span></code> filter option:</p>
+<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pulse_counter</span>
+    <span class="c1"># ...</span>
+    <span class="n">internal_filter</span><span class="p">:</span> <span class="mi">10</span><span class="n">us</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
