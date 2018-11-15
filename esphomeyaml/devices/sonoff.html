@@ -71,16 +71,25 @@
 <li><a class="reference internal" href="#">Generic Sonoff</a><ul>
 <li><a class="reference internal" href="#sonoff-rf">Sonoff RF</a></li>
 <li><a class="reference internal" href="#sonoff-sv">Sonoff SV</a></li>
-<li><a class="reference internal" href="#sonoff-th">Sonoff TH</a></li>
+<li><a class="reference internal" href="#sonoff-th10-th16">Sonoff TH10/TH16</a></li>
+<li><a class="reference internal" href="#sonoff-dual-r1">Sonoff Dual R1</a></li>
+<li><a class="reference internal" href="#sonoff-dual-r2">Sonoff Dual R2</a></li>
+<li><a class="reference internal" href="#sonoff-pow-r1">Sonoff Pow R1</a></li>
+<li><a class="reference internal" href="#sonoff-pow-r2">Sonoff Pow R2</a></li>
+<li><a class="reference internal" href="#sonoff-s20-sonoff-s22-sonoff-s26">Sonoff S20, Sonoff S22, Sonoff S26</a></li>
 <li><a class="reference internal" href="#slampher">Slampher</a></li>
 <li><a class="reference internal" href="#sonoff-touch">Sonoff Touch</a></li>
 <li><a class="reference internal" href="#sonoff-led">Sonoff LED</a></li>
-<li><a class="reference internal" href="#sonoff-t1-sonoff-t2-sonoff-t3">Sonoff T1, Sonoff T2, Sonoff T3</a></li>
+<li><a class="reference internal" href="#electrodragon">ElectroDragon</a></li>
+<li><a class="reference internal" href="#sonoff-sc">Sonoff SC</a></li>
+<li><a class="reference internal" href="#sonoff-4ch-pro">Sonoff 4CH Pro</a></li>
+<li><a class="reference internal" href="#sonoff-b1-ai-thinker-ailight">Sonoff B1, Ai-Thinker AiLight</a></li>
+<li><a class="reference internal" href="#sonoff-t1-1ch-2ch-3ch">Sonoff T1 1CH, 2CH, 3CH</a></li>
+<li><a class="reference internal" href="#arilux-lc10-magic-home">Arilux LC10, Magic Home</a></li>
 <li><a class="reference internal" href="#arilux-lc01">Arilux LC01</a></li>
 <li><a class="reference internal" href="#arilux-lc11">Arilux LC11</a></li>
-<li><a class="reference internal" href="#arilux-lc06">Arilux LC06</a></li>
-<li><a class="reference internal" href="#sonoff-dual-r2">Sonoff Dual R2</a></li>
 <li><a class="reference internal" href="#sonoff-s31">Sonoff S31</a></li>
+<li><a class="reference internal" href="#shelly-1">Shelly 1</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -119,27 +128,32 @@ This list has been compiled from the Sonoff Tasmota pin source file which can be
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
-<td>Optional Sensor</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay and Red LED</td>
+<td><strong> Relay and Red LED</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Green LED (inverted)</td>
+<td><strong> Green LED (inverted)</strong></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>Optional Sensor</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td> Optional sensor</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td> Optional sensor</td>
 </tr>
 </tbody>
 </table>
@@ -151,298 +165,106 @@ This list has been compiled from the Sonoff Tasmota pin source file which can be
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay and Red LED</strong></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
-<td>Optional Sensor</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Optional Sensor</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay and Red LED</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Green LED (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>Optional Sensor</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Green LED (inverted)</strong></td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO17</span></code></td>
-<td>Analog Input</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="sonoff-th">
-<h2>Sonoff TH<a class="headerlink" href="#sonoff-th" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="no-center docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
+<td><strong> Analog Input</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
+<td> UART RX pin (for external sensors)</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
+<td> UART TX pin (for external sensors)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
-<td>Optional Sensor</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay and Red LED</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Green LED (inverted)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>Optional Sensor</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="slampher">
-<h2>Slampher<a class="headerlink" href="#slampher" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="no-center docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay and Red LED</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue LED (inverted)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="sonoff-touch">
-<h2>Sonoff Touch<a class="headerlink" href="#sonoff-touch" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="no-center docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay and Red LED</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue LED (inverted)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="sonoff-led">
-<h2>Sonoff LED<a class="headerlink" href="#sonoff-led" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="no-center docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
-<td>Green Channel</td>
+<td> Optional sensor</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Red Channel</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Cold White Channel</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue LED (inverted)</td>
+<td> Optional sensor</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>Warm White Channel</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
-<td>Blue Channel</td>
+<td> Optional sensor</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="sonoff-t1-sonoff-t2-sonoff-t3">
-<h2>Sonoff T1, Sonoff T2, Sonoff T3<a class="headerlink" href="#sonoff-t1-sonoff-t2-sonoff-t3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sonoff-th10-th16">
+<h2>Sonoff TH10/TH16<a class="headerlink" href="#sonoff-th10-th16" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="no-center docutils">
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button #1 (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
-<td>Optional Sensor</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
-<td>Relay #3 and Blue LED</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Relay #2 and Blue LED</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO9</span></code></td>
-<td>Button #2 (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO10</span></code></td>
-<td>Button #3 (inverted)</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay #1 and Blue LED</td>
+<td><strong> Relay and Red LED</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue LED (inverted)</td>
+<td><strong> Green LED (inverted)</strong></td>
 </tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="arilux-lc01">
-<h2>Arilux LC01<a class="headerlink" href="#arilux-lc01" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="no-center docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Optional Button</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
-<td>RF receiver (unsupported yet)</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
+<td> UART TX pin (for external sensors)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Red Channel</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Green Channel</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue Channel</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td> Optional sensor</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>White Channel</td>
+<td> Optional sensor</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="arilux-lc11">
-<h2>Arilux LC11<a class="headerlink" href="#arilux-lc11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sonoff-dual-r1">
+<h2>Sonoff Dual R1<a class="headerlink" href="#sonoff-dual-r1" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="no-center docutils">
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Optional Button</td>
-</tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
-<td>RF receiver (unsupported yet)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
-<td>Green Channel</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Red Channel</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Warm White Channel</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Cold White Channel</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>Blue Channel</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
-<td>RF Receiver (unsupported yet)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="arilux-lc06">
-<h2>Arilux LC06<a class="headerlink" href="#arilux-lc06" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="no-center docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Optional Button</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
+<td><strong> Relay #1</strong></td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
+<td><strong> Relay #2</strong></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Green Channel</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue LED (inverted)</strong></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue Channel</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td> Optional sensor</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
-<td>Red Channel</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
-<td>White Channel</td>
+<td> Optional sensor</td>
 </tr>
 </tbody>
 </table>
@@ -454,33 +276,432 @@ This list has been compiled from the Sonoff Tasmota pin source file which can be
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button 0 on header (inverted)</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay #1</strong></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Relay #2</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO9</span></code></td>
-<td>Button 1 on header (inverted)</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> Relay #2</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO10</span></code></td>
-<td>Button on casing (inverted)</td>
+<td><strong> Button</strong></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay #1</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue LED (inverted)</strong></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Blue LED (inverted)</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td> Optional sensor</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td> Optional sensor</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="sonoff-pow-r1">
+<h2>Sonoff Pow R1<a class="headerlink" href="#sonoff-pow-r1" title="Permalink to this headline">¶</a></h2>
+<p>(equivalent to Huafan SS)</p>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay and Red LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
+<td><strong> Blue LED</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td> HLW8012 SEL Pin</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td> HLW8012 CF1 Pin</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td> HLW8012 CF Pin</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/sensor/hlw8012.html"><span class="doc">HLW8012 Power Sensor</span></a> for measuring power.</p>
+</div>
+<div class="section" id="sonoff-pow-r2">
+<h2>Sonoff Pow R2<a class="headerlink" href="#sonoff-pow-r2" title="Permalink to this headline">¶</a></h2>
+<p>(equivalent to Huafan SS)</p>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay and Red LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue LED (inverted)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/sensor/cse7766.html"><span class="doc">CSE7766 Power Sensor</span></a> for measuring power.</p>
+</div>
+<div class="section" id="sonoff-s20-sonoff-s22-sonoff-s26">
+<h2>Sonoff S20, Sonoff S22, Sonoff S26<a class="headerlink" href="#sonoff-s20-sonoff-s22-sonoff-s26" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="sonoff_s20.html"><span class="doc">Using With Sonoff S20</span></a>.</p>
+</div>
+<div class="section" id="slampher">
+<h2>Slampher<a class="headerlink" href="#slampher" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td><strong> Relay and Red LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue LED (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sonoff-touch">
+<h2>Sonoff Touch<a class="headerlink" href="#sonoff-touch" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay and Red LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue LED (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sonoff-led">
+<h2>Sonoff LED<a class="headerlink" href="#sonoff-led" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue LED (inverted)</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td> Red Channel</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td> Green Channel</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
+<td> Blue Channel</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td> Cold White Channel</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td> Warm White Channel</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/light/rgbww.html"><span class="doc">RGBWW Light</span></a> for controlling the lights together with
+<a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>.</p>
+</div>
+<div class="section" id="electrodragon">
+<h2>ElectroDragon<a class="headerlink" href="#electrodragon" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td><strong> Button 1 (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button 2 (inverted)</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Relay 1 and Red LED</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay 2 and Red LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO16</span></code></td>
+<td> Green/Blue LED</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO17</span></code></td>
+<td> Analog Input</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sonoff-sc">
+<h2>Sonoff SC<a class="headerlink" href="#sonoff-sc" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Light</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td> Red LED (inverted)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/light/monochromatic.html"><span class="doc">Monochromatic Light</span></a> and <a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>
+for controlling the light pin.</p>
+</div>
+<div class="section" id="sonoff-4ch-pro">
+<h2>Sonoff 4CH Pro<a class="headerlink" href="#sonoff-4ch-pro" title="Permalink to this headline">¶</a></h2>
+<p>Same configuration as the <a class="reference internal" href="sonoff_4ch.html"><span class="doc">Sonoff 4CH</span></a>.</p>
+</div>
+<div class="section" id="sonoff-b1-ai-thinker-ailight">
+<h2>Sonoff B1, Ai-Thinker AiLight<a class="headerlink" href="#sonoff-b1-ai-thinker-ailight" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../components/my9231.html"><span class="doc">MY9231/MY9291 LED driver Component</span></a>.</p>
+</div>
+<div class="section" id="sonoff-t1-1ch-2ch-3ch">
+<h2>Sonoff T1 1CH, 2CH, 3CH<a class="headerlink" href="#sonoff-t1-1ch-2ch-3ch" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button 1 (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Relay 1 and Blue LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO9</span></code></td>
+<td><strong> Button 2 (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> Relay 2 and Blue LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO10</span></code></td>
+<td><strong> Button 3 (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td><strong> Relay 3 and Blue LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="arilux-lc10-magic-home">
+<h2>Arilux LC10, Magic Home<a class="headerlink" href="#arilux-lc10-magic-home" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td><strong> Blue LED</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td><strong> Red Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> Green Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Blue Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> White Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/light/rgbw.html"><span class="doc">RGBW Light</span></a> for controlling the lights together with
+<a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>.</p>
+</div>
+<div class="section" id="arilux-lc01">
+<h2>Arilux LC01<a class="headerlink" href="#arilux-lc01" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td><strong> Blue LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> Red Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Green Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Blue Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td><strong> White Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/light/rgbw.html"><span class="doc">RGBW Light</span></a> for controlling the lights together with
+<a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>.</p>
+</div>
+<div class="section" id="arilux-lc11">
+<h2>Arilux LC11<a class="headerlink" href="#arilux-lc11" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td><strong> Blue LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> Red Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td><strong> Green Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td><strong> Blue Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td><strong> Cold White Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Warm White Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/light/rgbww.html"><span class="doc">RGBWW Light</span></a> for controlling the lights together with
+<a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>.</p>
 </div>
 <div class="section" id="sonoff-s31">
 <h2>Sonoff S31<a class="headerlink" href="#sonoff-s31" title="Permalink to this headline">¶</a></h2>
@@ -489,24 +710,43 @@ This list has been compiled from the Sonoff Tasmota pin source file which can be
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
-<td>Button (inverted)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">RX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">TX</span></code> pin (for external sensors)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
-<td>Relay #2</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
-<td>Relay and red LED</td>
+<td><strong> Relay and Red LED</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
-<td>Green LED (inverted)</td>
+<td><strong> Green LED (inverteD)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/sensor/cse7766.html"><span class="doc">CSE7766 Power Sensor</span></a> for measuring power</p>
+</div>
+<div class="section" id="shelly-1">
+<h2>Shelly 1<a class="headerlink" href="#shelly-1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
+<td><strong> Relay</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> SW Input</strong></td>
 </tr>
 </tbody>
 </table>
