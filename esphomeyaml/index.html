@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>esphomeyaml &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="esphomeyaml Component index - Reimagining DIY Home Automation">
+<meta itemprop="name" content="esphomeyaml">
+<meta itemprop="description" content="esphomeyaml Component index - Reimagining DIY Home Automation">
+<meta itemprop="image" content="https://esphomelib.com/_static/logo-full.png">
+<meta name="twitter:title" content="esphomeyaml">
+<meta name="twitter:image:src" content="https://esphomelib.com/_static/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="esphomeyaml Component index - Reimagining DIY Home Automation">
+<meta property="og:title" content="esphomeyaml"/>
+<meta property="og:image" content="https://esphomelib.com/_static/logo-full.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="esphomeyaml Component index - Reimagining DIY Home Automation"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>esphomeyaml &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -14,11 +31,12 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/index.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Components" href="components/index.html" />
-    <link rel="prev" title="esphomelib API Reference" href="../index.html" />
+    <link rel="prev" title="esphomelib" href="../index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -50,7 +68,6 @@
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">esphomeyaml</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#guides">Guides</a></li>
 <li><a class="reference internal" href="#devices">Devices</a></li>
 <li><a class="reference internal" href="#core-components">Core Components</a></li>
@@ -62,6 +79,7 @@
 <li><a class="reference internal" href="#fan-components">Fan Components</a></li>
 <li><a class="reference internal" href="#display-components">Display Components</a></li>
 <li><a class="reference internal" href="#cover-components">Cover Components</a></li>
+<li><a class="reference internal" href="#text-sensor-components">Text Sensor Components</a></li>
 <li><a class="reference internal" href="#misc-components">Misc Components</a></li>
 <li><a class="reference internal" href="#cookbook">Cookbook</a></li>
 </ul>
@@ -78,39 +96,10 @@
             
   <div class="section" id="esphomeyaml">
 <h1>esphomeyaml<a class="headerlink" href="#esphomeyaml" title="Permalink to this headline">¶</a></h1>
-<a href="https://github.com/OttoWinter/esphomelib"><img src="https://img.shields.io/github/stars/OttoWinter/esphomelib.svg?style=social&label=Star&maxAge=2592000" alt="GitHub stars" style="max-width:100%;"></a>
-<a href="https://esphomelib.com/esphomeyaml/guides/changelog.html"><img src="https://img.shields.io/pypi/v/esphomeyaml.svg" alt="Release" style="max-width:100%;"></a>
-<a href="https://discord.gg/KhAMKrd"><img src="https://img.shields.io/discord/429907082951524364.svg" alt="Discord Chat" style="max-width:100%;"></a><p>Hi there! This is the documentation for esphomeyaml, a project that aims to make using ESP8266/ESP32 boards with
-Home Assistant very easy with no programming experience required.</p>
-<p>esphomeyaml will:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Read your configuration file and warn you about potential errors (like using the invalid pins.)</li>
-<li>Create a custom C++ sketch file for you using esphomeyaml’s powerful C++ generation engine.</li>
-<li>Compile the sketch file for you using <a class="reference external" href="http://platformio.org/">platformio</a>.</li>
-<li>Upload the binary to your ESP via Over the Air updates.</li>
-<li>Automatically start remote logs via MQTT.</li>
-</ul>
-</div></blockquote>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><strong>No programming experience required:</strong> just edit YAML configuration
-files like you’re used to with Home Assistant.</li>
-<li><strong>Flexible:</strong> Use <a class="reference external" href="https://github.com/OttoWinter/esphomelib">esphomelib</a>’s powerful core to create custom sensors/outputs.</li>
-<li><strong>Fast and efficient:</strong> Written in C++ and keeps memory consumption to a minimum.</li>
-<li><strong>Small binaries:</strong> Only the sensors/devices you actually use will appear in the binary.</li>
-<li><strong>Made for Home Assistant:</strong> Almost all Home Assistant features are supported out of the box. Including RGB lights and many more.</li>
-<li><strong>Easy reproducible configuration:</strong> No need to go through a long setup process for every single node. Just copy a configuration file and run a single command.</li>
-<li><strong>Smart Over The Air Updates:</strong> esphomeyaml has OTA updates deeply integrated into the system. It even automatically enters a recovery mode if a boot loop is detected.</li>
-<li><strong>Powerful logging engine:</strong> View colorful logs and debug issues remotely.</li>
-<li><strong>It’s Open Source 😺</strong></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="guides">
-<h2>Guides<a class="headerlink" href="#guides" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/esphomeyaml-logo-full.svg" src="../_images/esphomeyaml-logo-full.svg" /><a href="https://github.com/OttoWinter/esphomelib"><img src="https://img.shields.io/github/stars/OttoWinter/esphomelib.svg?style=social&label=Star&maxAge=2592000" alt="GitHub stars" style="max-width:100%;"></a>
+<a href="https://esphomelib.com/esphomeyaml/changelog/index.html"><img src="https://img.shields.io/pypi/v/esphomeyaml.svg" alt="Release" style="max-width:100%;"></a>
+<a href="https://discord.gg/KhAMKrd"><img src="https://img.shields.io/discord/429907082951524364.svg" alt="Discord Chat" style="max-width:100%;"></a><div class="section" id="guides">
+<span id="id1"></span><h2>Guides<a class="headerlink" href="#guides" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="33%" />
@@ -142,19 +131,19 @@ files like you’re used to with Home Assistant.</li>
 <td><a class="reference external" href="/esphomeyaml/guides/faq.html">FAQ and Tips</a></td>
 <td><a class="reference external" href="/esphomeyaml/guides/contributing.html">Contributing</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/guides/changelog.html"><img alt="Changelog" class="component-image" src="../_images/new-box.svg" /></a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/changelog/index.html"><img alt="Changelog" class="component-image" src="../_images/new-box.svg" /></a></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/guides/changelog.html">Changelog</a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/changelog/index.html">Changelog</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="devices">
-<span id="id1"></span><h2>Devices<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Devices<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h2>
 <p>This list contains a bunch of getting started and more advanced guides for using esphomeyaml.
 Technically, all ESP8266/ESP32 devices (and therefore all Sonoff devices) are supported by esphomeyaml/lib.
 These are only the devices for which I’ve had the time to set up dedicated guides.</p>
@@ -183,11 +172,11 @@ These are only the devices for which I’ve had the time to set up dedicated gui
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/devices/sonoff.html"><img alt="Generic Sonoff" class="component-image" src="../_images/sonoff.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/devices/sonoff_basic.html"><img alt="Sonoff Basic" class="component-image" src="../_images/sonoff_basic.jpg" /></a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/devices/sonoff.html">Generic Sonoff</a></td>
 <td><a class="reference external" href="/esphomeyaml/devices/sonoff_basic.html">Sonoff Basic</a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -227,11 +216,11 @@ These are only the devices for which I’ve had the time to set up dedicated gui
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/power_supply.html"><img alt="Power Supply" class="component-image" src="../_images/power.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/deep_sleep.html"><img alt="Deep Sleep" class="component-image" src="../_images/hotel.svg" /></a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/power_supply.html">Power Supply</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/deep_sleep.html">Deep Sleep</a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -269,51 +258,59 @@ These are only the devices for which I’ve had the time to set up dedicated gui
 <td><a class="reference external" href="/esphomeyaml/components/sensor/bmp085.html">BMP085</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/bmp280.html">BMP280</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/dallas.html"><img alt="Dallas" class="component-image" src="../_images/dallas.jpg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/cse7766.html"><img alt="CSE7766" class="component-image" src="../_images/cse7766.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/dallas.html"><img alt="Dallas" class="component-image" src="../_images/dallas.jpg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/dht.html"><img alt="DHT" class="component-image" src="../_images/dht.jpg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/dht12.html"><img alt="DHT12" class="component-image" src="../_images/dht12.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/dallas.html">Dallas</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/cse7766.html">CSE7766</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/dallas.html">Dallas</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/dht.html">DHT</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/dht12.html">DHT12</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/duty_cycle.html"><img alt="Duty Cycle" class="component-image" src="../_images/percent.svg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/dht12.html"><img alt="DHT12" class="component-image" src="../_images/dht12.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/duty_cycle.html"><img alt="Duty Cycle" class="component-image" src="../_images/percent.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/esp32_hall.html"><img alt="ESP32 Hall Sensor" class="component-image" src="../_images/magnet.svg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/hdc1080.html"><img alt="HDC1080" class="component-image" src="../_images/hdc1080.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/duty_cycle.html">Duty Cycle</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/dht12.html">DHT12</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/duty_cycle.html">Duty Cycle</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/esp32_hall.html">ESP32 Hall Sensor</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/hdc1080.html">HDC1080</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/hlw8012.html"><img alt="HLW8012" class="component-image" src="../_images/hlw8012.svg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/hdc1080.html"><img alt="HDC1080" class="component-image" src="../_images/hdc1080.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/hlw8012.html"><img alt="HLW8012" class="component-image" src="../_images/hlw8012.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/hmc5883l.html"><img alt="HMC5883L" class="component-image" src="../_images/hmc5883l.jpg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/hx711.html"><img alt="HX711" class="component-image" src="../_images/hx711.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/hlw8012.html">HLW8012</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/hdc1080.html">HDC1080</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/hlw8012.html">HLW8012</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/hmc5883l.html">HMC5883L</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/hx711.html">HX711</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/ina219.html"><img alt="INA219" class="component-image" src="../_images/ina219.jpg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/hx711.html"><img alt="HX711" class="component-image" src="../_images/hx711.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ina219.html"><img alt="INA219" class="component-image" src="../_images/ina219.jpg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/ina3221.html"><img alt="INA3221" class="component-image" src="../_images/ina3221.jpg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/htu21d.html"><img alt="HTU21D" class="component-image" src="../_images/htu21d.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/ina219.html">INA219</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/hx711.html">HX711</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ina219.html">INA219</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/ina3221.html">INA3221</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/htu21d.html">HTU21D</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/max6675.html"><img alt="MAX6675" class="component-image" src="../_images/max6675.jpg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/htu21d.html"><img alt="HTU21D" class="component-image" src="../_images/htu21d.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/max6675.html"><img alt="MAX6675" class="component-image" src="../_images/max6675.jpg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/mhz19.html"><img alt="MH-Z19" class="component-image" src="../_images/mhz19.jpg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/mpu6050.html"><img alt="MPU6050" class="component-image" src="../_images/mpu6050.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/max6675.html">MAX6675</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/htu21d.html">HTU21D</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/max6675.html">MAX6675</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/mhz19.html">MH-Z19</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/mpu6050.html">MPU6050</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/ms5611.html"><img alt="MS5611" class="component-image" src="../_images/ms5611.jpg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/mpu6050.html"><img alt="MPU6050" class="component-image" src="../_images/mpu6050.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/mqtt_subscribe.html"><img alt="MQTT Subscribe" class="component-image" src="../_images/mqtt.png" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ms5611.html"><img alt="MS5611" class="component-image" src="../_images/ms5611.jpg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/mpu6050.html">MPU6050</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/mqtt_subscribe.html">MQTT Subscribe</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ms5611.html">MS5611</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/pmsx003.html"><img alt="PMSX003" class="component-image" src="../_images/pmsx003.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/pulse_counter.html"><img alt="Pulse Counter" class="component-image" src="../_images/pulse.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/rotary_encoder.html"><img alt="Rotary Encoder" class="component-image" src="../_images/rotary_encoder1.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/ms5611.html">MS5611</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/pmsx003.html">PMSX003</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/pulse_counter.html">Pulse Counter</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/rotary_encoder.html">Rotary Encoder</a></td>
 </tr>
@@ -325,29 +322,29 @@ These are only the devices for which I’ve had the time to set up dedicated gui
 <td><a class="reference external" href="/esphomeyaml/components/sensor/tcs34725.html">TCS34725</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/template.html">Template Sensor</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/tsl2561.html"><img alt="TSL2561" class="component-image" src="../_images/tsl2561.jpg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/total_daily_energy.html"><img alt="Total Daily Energy" class="component-image" src="../_images/sigma.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/tsl2561.html"><img alt="TSL2561" class="component-image" src="../_images/tsl2561.jpg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/ultrasonic.html"><img alt="Ultrasonic Sensor" class="component-image" src="../_images/ultrasonic.jpg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/uptime.html"><img alt="Uptime Sensor" class="component-image" src="../_images/timer.svg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/tsl2561.html">TSL2561</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/total_daily_energy.html">Total Daily Energy</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/tsl2561.html">TSL2561</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/ultrasonic.html">Ultrasonic Sensor</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/uptime.html">Uptime Sensor</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/wifi_signal.html"><img alt="WiFi Signal Strength" class="component-image" src="../_images/network-wifi.svg" /></a></td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/uptime.html"><img alt="Uptime Sensor" class="component-image" src="../_images/timer.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/wifi_signal.html"><img alt="WiFi Signal Strength" class="component-image" src="../_images/network-wifi.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_miflora.html"><img alt="Xiaomi MiFlora" class="component-image" src="../_images/xiaomi_miflora.jpg" /></a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_mijia.html"><img alt="Xiaomi MiJia" class="component-image" src="../_images/xiaomi_mijia.jpg" /></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/wifi_signal.html">WiFi Signal Strength</a></td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/uptime.html">Uptime Sensor</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/wifi_signal.html">WiFi Signal Strength</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_miflora.html">Xiaomi MiFlora</a></td>
-<td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_mijia.html">Xiaomi MiJia</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/custom.html"><img alt="Custom Sensor" class="component-image" src="../_images/language-cpp.svg" /></a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_mijia.html"><img alt="Xiaomi MiJia" class="component-image" src="../_images/xiaomi_mijia.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/custom.html"><img alt="Custom Sensor" class="component-image" src="../_images/language-cpp.svg" /></a></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/custom.html">Custom Sensor</a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_mijia.html">Xiaomi MiJia</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/custom.html">Custom Sensor</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -389,12 +386,12 @@ example</span></a>.</p>
 <td><a class="reference external" href="/esphomeyaml/components/binary_sensor/pn532.html">PN532 Tag</a></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/binary_sensor/rdm6300.html"><img alt="RDM6300 Tag" class="component-image" src="../_images/rdm6300.jpg" /></a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/binary_sensor/rdm6300.html">RDM6300 Tag</a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -418,11 +415,11 @@ example</span></a>.</p>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/output/ledc.html"><img alt="ESP32 LEDC" class="component-image" src="../_images/pwm.png" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/output/pca9685.html"><img alt="PCA9685" class="component-image" src="../_images/pca9685.jpg" /></a></td>
-<td>&#160;</td>
+<td><a class="reference external" href="/esphomeyaml/components/output/my9231.html"><img alt="MY9231/MY9291" class="component-image" src="../_images/my9231.svg" /></a></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/output/ledc.html">ESP32 LEDC</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/output/pca9685.html">PCA9685</a></td>
-<td>&#160;</td>
+<td><a class="reference external" href="/esphomeyaml/components/output/my9231.html">MY9231/MY9291</a></td>
 </tr>
 </tbody>
 </table>
@@ -492,11 +489,11 @@ example</span></a>.</p>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/switch/template.html"><img alt="Template Switch" class="component-image" src="../_images/description.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/switch/uart.html"><img alt="UART Switch" class="component-image" src="../_images/uart.svg" /></a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/switch/template.html">Template Switch</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/switch/uart.html">UART Switch</a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -548,11 +545,11 @@ example</span></a>.</p>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/display/ssd1306_spi.html"><img alt="SSD1306 SPI" class="component-image" src="../_images/ssd1306.jpg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/display/waveshare_epaper.html"><img alt="Waveshare E-Paper" class="component-image" src="../_images/waveshare_epaper.jpg" /></a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/display/ssd1306_spi.html">SSD1306 SPI</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/display/waveshare_epaper.html">Waveshare E-Paper</a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -568,11 +565,39 @@ example</span></a>.</p>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/cover/index.html"><img alt="Cover Core" class="component-image" src="../_images/folder-open.svg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/cover/template.html"><img alt="Template Cover" class="component-image" src="../_images/description.svg" /></a></td>
-<td>&#160;</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/cover/index.html">Cover Core</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/cover/template.html">Template Cover</a></td>
-<td>&#160;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="text-sensor-components">
+<h2>Text Sensor Components<a class="headerlink" href="#text-sensor-components" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/text_sensor/index.html"><img alt="Text Sensor Core" class="component-image" src="../_images/folder-open.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/text_sensor/mqtt_subscribe.html"><img alt="MQTT Subscribe Text" class="component-image" src="../_images/mqtt.png" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/text_sensor/version.html"><img alt="Version" class="component-image" src="../_images/new-box.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/text_sensor/index.html">Text Sensor Core</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/text_sensor/mqtt_subscribe.html">MQTT Subscribe Text</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/text_sensor/version.html">Version</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/text_sensor/template.html"><img alt="Template Text Sensor" class="component-image" src="../_images/description.svg" /></a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/text_sensor/template.html">Template Text Sensor</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -620,17 +645,25 @@ example</span></a>.</p>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/rdm6300.html"><img alt="RDM6300" class="component-image" src="../_images/rdm6300.jpg" /></a></td>
 <td><a class="reference external" href="/esphomeyaml/components/time.html"><img alt="Time" class="component-image" src="../_images/clock-outline.svg" /></a></td>
-<td>&#160;</td>
+<td><a class="reference external" href="/esphomeyaml/components/stepper/index.html"><img alt="Stepper" class="component-image" src="../_images/stepper.svg" /></a></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/rdm6300.html">RDM6300</a></td>
 <td><a class="reference external" href="/esphomeyaml/components/time.html">Time</a></td>
-<td>&#160;</td>
+<td><a class="reference external" href="/esphomeyaml/components/stepper/index.html">Stepper</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/my9231.html"><img alt="MY9231/MY9291 LED driver" class="component-image" src="../_images/my9231.svg" /></a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/my9231.html">MY9231/MY9291 LED driver</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="cookbook">
-<span id="id2"></span><h2>Cookbook<a class="headerlink" href="#cookbook" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Cookbook<a class="headerlink" href="#cookbook" title="Permalink to this headline">¶</a></h2>
 <p>This list contains items that are technically already supported by other components.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -655,13 +688,13 @@ example</span></a>.</p>
 <td><a class="reference external" href="/esphomeyaml/cookbook/temt6000.html">TEMT6000</a></td>
 <td><a class="reference external" href="/esphomeyaml/cookbook/power_meter.html">Non-Invasive Power Meter</a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/cookbook/dual-r2-cover.html"><img alt="Dual relay cover motor control" class="component-image" src="../_images/sonoff_dual_r2.jpg" /></a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/cookbook/dual-r2-cover.html"><img alt="Dual Relay Motor Cover" class="component-image" src="../_images/sonoff_dual_r2.jpg" /></a></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/cookbook/dual-r2-cover.html">Dual relay cover motor control</a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/cookbook/dual-r2-cover.html">Dual Relay Motor Cover</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

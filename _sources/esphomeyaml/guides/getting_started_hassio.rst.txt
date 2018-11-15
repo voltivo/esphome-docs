@@ -1,6 +1,10 @@
 Getting Started with esphomeyaml through HassIO
 ===============================================
 
+.. seo::
+    :description: Getting Started guide for installing esphomeyaml as a HassIO Add-on and creating a basic configuration.
+    :image: home-assistant.svg
+
 esphomeyaml is the perfect solution for creating custom firmwares for
 your ESP8266/ESP32 boards. In this guide we’ll go through how to setup a
 basic "node" by use of the HassIO add-on.
@@ -15,7 +19,7 @@ Assistant's UI.
 Installation
 ------------
 
-Installing the epshomeyaml HassIO add-on is easy. Just navigate to the HassIO
+Installing the esphomeyaml HassIO add-on is easy. Just navigate to the HassIO
 panel in your Home Assistant frontend and add the esphomeyaml add-on repository:
 https://github.com/OttoWinter/esphomeyaml
 
@@ -34,11 +38,6 @@ creating your first configuration.
 .. figure:: images/hassio_start.png
     :align: center
     :width: 95.0%
-
-.. note::
-
-    If the UI isn't showing up correctly, it's probably because your browser isn't
-    supported. Please try using Google Chrome in that case.
 
 Dashboard Interface
 -------------------
@@ -65,6 +64,11 @@ there are three basic actions you can perform:
 - **COMPILE**: This command compiles the firmware and gives you the option of downloading the generated
   binary so that you can upload it yourself from your computer.
 
+  .. note::
+
+      If you're having problems with flashing over USB, you can always download the firmware using the
+      ``COMPILE`` button and flash the firmware using :ref:`esphomeflasher <esphomeflasher>`.
+
 - **SHOW LOGS**: With this command you can view all the logs the node is outputting. If a USB device is
   connected, it will attempt to use the serial connection. Otherwise it will use the built-in MQTT logs.
 
@@ -80,13 +84,8 @@ Now go ahead and use one of the :ref:`devices guides <devices>` to extend your c
 intend to flash an esphomeyaml firmware onto. Then proceed with uploading the first firmware using the
 upload button.
 
-.. note::
-
-    Currently the build toolchain for the ESP32 does not work on RPis. If you need to compile
-    software for ESP32 (**not** ESP8266) boards, please install esphomeyaml on your computer.
-
 HassIO add-on options
-~~~~~~~~~~~~~~~~~~~~~
+*********************
 
 Since version 1.8.0, you can optionally specify a password to use for all traffic to esphomeyaml
 using the ``password`` option in the HassIO add-on page. By default, this is an empty string
@@ -104,7 +103,7 @@ to the configuration like this:
 
     switch:
       - platform: gpio
-        name: "Living Room Dehumidifer"
+        name: "Living Room Dehumidifier"
         pin: 5
 
 In above example, we're simply adding a switch that's called "Living Room Relay" (could control

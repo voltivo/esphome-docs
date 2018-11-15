@@ -5,8 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Custom Sensor Component &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up Custom C++ sensors with esphomelib.">
+<meta name="keywords" content="C++, Custom">
+<meta itemprop="name" content="Custom Sensor Component">
+<meta itemprop="description" content="Instructions for setting up Custom C++ sensors with esphomelib.">
+<meta itemprop="image" content="https://esphomelib.com/_images/language-cpp.svg">
+<meta name="twitter:title" content="Custom Sensor Component">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/language-cpp.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up Custom C++ sensors with esphomelib.">
+<meta property="og:title" content="Custom Sensor Component"/>
+<meta property="og:image" content="https://esphomelib.com/_images/language-cpp.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up Custom C++ sensors with esphomelib."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Custom Sensor Component &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,11 +33,12 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/custom.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Dallas Temperature Sensor" href="dallas.html" />
-    <link rel="prev" title="BMP280 Temperature+Pressure Sensor" href="bmp280.html" />
+    <link rel="prev" title="CSE7766 Power Sensor" href="cse7766.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -73,7 +92,7 @@
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">While I do try to keep the esphomeyaml configuration options as stable as possible
-and backport them, the esphomelib API is less stable. If something in the APIs needs
+and back-port them, the esphomelib API is less stable. If something in the APIs needs
 to be changed in order for something else to work, I will do so.</p>
 </div>
 <p>So, you just set up esphomelib for your ESP32/ESP8266, but sadly esphomelib is missing a sensor integration
@@ -184,7 +203,7 @@ in the Internet.</p>
 <div class="code cpp highlight-default notranslate"><div class="highlight"><pre>// class CustomSensor ...
   // ... previous code
   void update() override {
-    push_new_value(42.0);  // 42°C
+    publish_state(42.0);  // 42°C
   }
 
   std::string unit_of_measurement() override { return &quot;°C&quot;; }
@@ -283,7 +302,7 @@ the <code class="docutils literal notranslate"><span class="pre">common</span></
 
   <span class="n">void</span> <span class="n">update</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span>
     <span class="nb">int</span> <span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">readPressure</span><span class="p">();</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">Pa</span><span class="p">,</span> <span class="ow">or</span> <span class="mi">1</span><span class="o">/</span><span class="mi">100</span> <span class="n">hPa</span>
-    <span class="n">push_new_value</span><span class="p">(</span><span class="n">pressure</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">convert</span> <span class="n">to</span> <span class="n">hPa</span>
+    <span class="n">publish_state</span><span class="p">(</span><span class="n">pressure</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">convert</span> <span class="n">to</span> <span class="n">hPa</span>
   <span class="p">}</span>
 
   <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">unit_of_measurement</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;hPa&quot;</span><span class="p">;</span> <span class="p">}</span>
@@ -351,10 +370,10 @@ we want to expose.</p>
   <span class="n">void</span> <span class="n">update</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span>
     <span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">sensor</span> <span class="n">reading</span> <span class="n">logic</span><span class="o">.</span>
     <span class="nb">int</span> <span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">readPressure</span><span class="p">();</span>
-    <span class="n">pressure_sensor</span><span class="o">-&gt;</span><span class="n">push_new_value</span><span class="p">(</span><span class="n">pressure</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">);</span>
+    <span class="n">pressure_sensor</span><span class="o">-&gt;</span><span class="n">publish_state</span><span class="p">(</span><span class="n">pressure</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">);</span>
 
     <span class="nb">float</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">readTemperature</span><span class="p">();</span>
-    <span class="n">temperature_sensor</span><span class="o">-&gt;</span><span class="n">push_new_value</span><span class="p">(</span><span class="n">temperature</span><span class="p">);</span>
+    <span class="n">temperature_sensor</span><span class="o">-&gt;</span><span class="n">publish_state</span><span class="p">(</span><span class="n">temperature</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 

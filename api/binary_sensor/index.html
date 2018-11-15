@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Binary Sensor &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Binary Sensor &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/binary_sensor/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -55,6 +56,8 @@
 <li><a class="reference internal" href="#api-reference">API Reference</a><ul>
 <li><a class="reference internal" href="#binarysensor">BinarySensor</a></li>
 <li><a class="reference internal" href="#mqttbinarysensorcomponent">MQTTBinarySensorComponent</a></li>
+<li><a class="reference internal" href="#filters">Filters</a></li>
+<li><a class="reference internal" href="#triggers">Triggers</a></li>
 </ul>
 </li>
 </ul>
@@ -151,9 +154,9 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13binary_sensor12BinarySensor21add_on_state_callbackERR17binary_callback_t">
-<span id="_CPPv2N13binary_sensor12BinarySensor21add_on_state_callbackERR17binary_callback_t"></span><span id="binary_sensor::BinarySensor::add_on_state_callback__binary_callback_tRR"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1aa5316134e729e399e684149561713c41"></span>void <code class="descname">add_on_state_callback</code><span class="sig-paren">(</span>binary_callback_t &amp;&amp;<em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor21add_on_state_callbackERR17binary_callback_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set callback for state changes. </p>
+<dt id="_CPPv3N13binary_sensor12BinarySensor21add_on_state_callbackERRNSt8functionIFvbEEE">
+<span id="_CPPv2N13binary_sensor12BinarySensor21add_on_state_callbackERRNSt8functionIFvbEEE"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1ab4c5bfbdf49356c982917713c7958cb5"></span>void <code class="descname">add_on_state_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span>bool<span class="sig-paren">)</span>&gt; &amp;&amp;<em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor21add_on_state_callbackERRNSt8functionIFvbEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a callback to be notified of state changes. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
@@ -167,8 +170,7 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor13publish_stateEb">
 <span id="_CPPv2N13binary_sensor12BinarySensor13publish_stateEb"></span><span id="binary_sensor::BinarySensor::publish_state__b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1ab72d2fafbba8acd500408a6176bc2ee5"></span>void <code class="descname">publish_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor13publish_stateEb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Publish a new state. </p>
-<p>Inverted input is handled by this method and sub-classes don’t need to worry about inverting themselves.</p>
+<dd><p>Publish a new state to the front-end. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
@@ -177,12 +179,6 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 </dd>
 </dl>
 </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK13binary_sensor12BinarySensor9get_valueEv">
-<span id="_CPPv2NK13binary_sensor12BinarySensor9get_valueEv"></span><span id="binary_sensor::BinarySensor::get_valueC"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a92475bf51b5bbe01e7e589c0eb6a03d5"></span>bool <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor12BinarySensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the current boolean value of this binary sensor. </p>
 </dd></dl>
 
 <dl class="function">
@@ -199,45 +195,62 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor18make_press_triggerEv">
-<span id="_CPPv2N13binary_sensor12BinarySensor18make_press_triggerEv"></span><span id="binary_sensor::BinarySensor::make_press_trigger"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1ad09d685070a775d8226b8b15a2a4156b"></span>PressTrigger *<code class="descname">make_press_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor18make_press_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor18make_press_triggerEv"></span><span id="binary_sensor::BinarySensor::make_press_trigger"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1ad09d685070a775d8226b8b15a2a4156b"></span><a class="reference internal" href="#_CPPv3N13binary_sensor12PressTriggerE" title="binary_sensor::PressTrigger">PressTrigger</a> *<code class="descname">make_press_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor18make_press_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor20make_release_triggerEv">
-<span id="_CPPv2N13binary_sensor12BinarySensor20make_release_triggerEv"></span><span id="binary_sensor::BinarySensor::make_release_trigger"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a2ad9243c736fd894d84d1748e748cf65"></span>ReleaseTrigger *<code class="descname">make_release_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor20make_release_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor20make_release_triggerEv"></span><span id="binary_sensor::BinarySensor::make_release_trigger"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a2ad9243c736fd894d84d1748e748cf65"></span><a class="reference internal" href="#_CPPv3N13binary_sensor14ReleaseTriggerE" title="binary_sensor::ReleaseTrigger">ReleaseTrigger</a> *<code class="descname">make_release_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor20make_release_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor18make_click_triggerE8uint32_t8uint32_t">
-<span id="_CPPv2N13binary_sensor12BinarySensor18make_click_triggerE8uint32_t8uint32_t"></span><span id="binary_sensor::BinarySensor::make_click_trigger__uint32_t.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a1c967d49a8881d3ed5e25462500fb421"></span>ClickTrigger *<code class="descname">make_click_trigger</code><span class="sig-paren">(</span>uint32_t <em>min_length</em>, uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor18make_click_triggerE8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor18make_click_triggerE8uint32_t8uint32_t"></span><span id="binary_sensor::BinarySensor::make_click_trigger__uint32_t.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a1c967d49a8881d3ed5e25462500fb421"></span><a class="reference internal" href="#_CPPv3N13binary_sensor12ClickTriggerE" title="binary_sensor::ClickTrigger">ClickTrigger</a> *<code class="descname">make_click_trigger</code><span class="sig-paren">(</span>uint32_t <em>min_length</em>, uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor18make_click_triggerE8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor25make_double_click_triggerE8uint32_t8uint32_t">
-<span id="_CPPv2N13binary_sensor12BinarySensor25make_double_click_triggerE8uint32_t8uint32_t"></span><span id="binary_sensor::BinarySensor::make_double_click_trigger__uint32_t.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a6b20bbae9c346b26d5d1af078c56b16f"></span>DoubleClickTrigger *<code class="descname">make_double_click_trigger</code><span class="sig-paren">(</span>uint32_t <em>min_length</em>, uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor25make_double_click_triggerE8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor25make_double_click_triggerE8uint32_t8uint32_t"></span><span id="binary_sensor::BinarySensor::make_double_click_trigger__uint32_t.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a6b20bbae9c346b26d5d1af078c56b16f"></span><a class="reference internal" href="#_CPPv3N13binary_sensor18DoubleClickTriggerE" title="binary_sensor::DoubleClickTrigger">DoubleClickTrigger</a> *<code class="descname">make_double_click_trigger</code><span class="sig-paren">(</span>uint32_t <em>min_length</em>, uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor25make_double_click_triggerE8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12BinarySensor24make_multi_click_triggerERKNSt6vectorI22MultiClickTriggerEventEE">
+<span id="_CPPv2N13binary_sensor12BinarySensor24make_multi_click_triggerERKNSt6vectorI22MultiClickTriggerEventEE"></span><span id="binary_sensor::BinarySensor::make_multi_click_trigger__std::vector:MultiClickTriggerEvent:CR"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a0e7084d5a8684f947b96b4f564f1acaa"></span><a class="reference internal" href="#_CPPv3N13binary_sensor17MultiClickTriggerE" title="binary_sensor::MultiClickTrigger">MultiClickTrigger</a> *<code class="descname">make_multi_click_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;MultiClickTriggerEvent&gt; &amp;<em>timing</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor24make_multi_click_triggerERKNSt6vectorI22MultiClickTriggerEventEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor10add_filterEP6Filter">
-<span id="_CPPv2N13binary_sensor12BinarySensor10add_filterEP6Filter"></span><span id="binary_sensor::BinarySensor::add_filter__FilterP"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a9422ecf10c52d74a001e73f5b901894e"></span>void <code class="descname">add_filter</code><span class="sig-paren">(</span>Filter *<em>filter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor10add_filterEP6Filter" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor10add_filterEP6Filter"></span><span id="binary_sensor::BinarySensor::add_filter__FilterP"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a9422ecf10c52d74a001e73f5b901894e"></span>void <code class="descname">add_filter</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a> *<em>filter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor10add_filterEP6Filter" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE">
-<span id="_CPPv2N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE"></span><span id="binary_sensor::BinarySensor::add_filters__std::vector:FilterP:"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a0334ab5c88db530ca9f2c4f172412a43"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span>std::vector&lt;Filter *&gt; <em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE"></span><span id="binary_sensor::BinarySensor::add_filters__std::vector:FilterP:"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a0334ab5c88db530ca9f2c4f172412a43"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a> *&gt; <em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor11add_filtersENSt6vectorIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13binary_sensor12BinarySensor11send_value_Eb">
-<span id="_CPPv2N13binary_sensor12BinarySensor11send_value_Eb"></span><span id="binary_sensor::BinarySensor::send_value___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a2a877f114b86497254906e0f758f084c"></span>void <code class="descname">send_value_</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor11send_value_Eb" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13binary_sensor12BinarySensor20send_state_internal_Eb">
+<span id="_CPPv2N13binary_sensor12BinarySensor20send_state_internal_Eb"></span><span id="binary_sensor::BinarySensor::send_state_internal___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1ac71585b8061e8a4f703f4ff32f6a1f11"></span>void <code class="descname">send_state_internal_</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor20send_state_internal_Eb" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK13binary_sensor12BinarySensor9has_stateEv">
+<span id="_CPPv2NK13binary_sensor12BinarySensor9has_stateEv"></span><span id="binary_sensor::BinarySensor::has_stateC"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a49338065c307dada1155774654d373ac"></span>bool <code class="descname">has_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor12BinarySensor9has_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return whether this binary sensor has outputted a state. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
-<dt id="_CPPv3N13binary_sensor12BinarySensor5valueE">
-<span id="_CPPv2N13binary_sensor12BinarySensor5valueE"></span><span id="binary_sensor::BinarySensor::value__b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a61541413040a28d7167587f3ec7cfc12"></span>bool <code class="descname">value</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor5valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13binary_sensor12BinarySensor5stateE">
+<span id="_CPPv2N13binary_sensor12BinarySensor5stateE"></span><span id="binary_sensor::BinarySensor::state__b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a21e369e9358a1970d43d0c0e82bccf94"></span>bool <code class="descname">state</code><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The current reported state of the binary sensor. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor12BinarySensorUt1_1E">
+<span class="target" id="classbinary__sensor_1_1_binary_sensor_1a89b81629a5295d629e92b9b10c8cc810"></span><em class="property">union</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensorUt1_1E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -253,26 +266,6 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
-<dt id="_CPPv3N13binary_sensor12BinarySensor9last_raw_E">
-<span id="_CPPv2N13binary_sensor12BinarySensor9last_raw_E"></span><span id="binary_sensor::BinarySensor::last_raw___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a952098bcd8be198aafbc6d45b594bbe9"></span>bool <code class="descname">last_raw_</code><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor9last_raw_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor12BinarySensor13is_first_raw_E">
-<span id="_CPPv2N13binary_sensor12BinarySensor13is_first_raw_E"></span><span id="binary_sensor::BinarySensor::is_first_raw___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a4811c57d9de696ffe4e2960bfba9cc36"></span>bool <code class="descname">is_first_raw_</code> = {true}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor13is_first_raw_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor12BinarySensor11last_value_E">
-<span id="_CPPv2N13binary_sensor12BinarySensor11last_value_E"></span><span id="binary_sensor::BinarySensor::last_value___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a89de952177ef6bd52b832add0088b1d9"></span>bool <code class="descname">last_value_</code><a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor11last_value_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13binary_sensor12BinarySensor15is_first_value_E">
-<span id="_CPPv2N13binary_sensor12BinarySensor15is_first_value_E"></span><span id="binary_sensor::BinarySensor::is_first_value___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a89e7d13cae8d9c9cefcaf57d96d4f731"></span>bool <code class="descname">is_first_value_</code> = {true}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor15is_first_value_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
 <dt id="_CPPv3N13binary_sensor12BinarySensor15state_callback_E">
 <span id="_CPPv2N13binary_sensor12BinarySensor15state_callback_E"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1aafa21375f3a0f8b7e45071aa5aecab9d"></span>CallbackManager&lt;void<span class="sig-paren">(</span>bool<span class="sig-paren">)</span>&gt; <code class="descname">state_callback_</code> = {}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor15state_callback_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -285,7 +278,12 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 
 <dl class="member">
 <dt id="_CPPv3N13binary_sensor12BinarySensor12filter_list_E">
-<span id="_CPPv2N13binary_sensor12BinarySensor12filter_list_E"></span><span id="binary_sensor::BinarySensor::filter_list___FilterP"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a0b5240e54d6ffc8372af8768d2f89b4f"></span>Filter *<code class="descname">filter_list_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor12filter_list_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13binary_sensor12BinarySensor12filter_list_E"></span><span id="binary_sensor::BinarySensor::filter_list___FilterP"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a0b5240e54d6ffc8372af8768d2f89b4f"></span><a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a> *<code class="descname">filter_list_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor12filter_list_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor12BinarySensor10has_state_E">
+<span id="_CPPv2N13binary_sensor12BinarySensor10has_state_E"></span><span id="binary_sensor::BinarySensor::has_state___b"></span><span class="target" id="classbinary__sensor_1_1_binary_sensor_1a9f048c72b483f71708c7ba768af416f3"></span>bool <code class="descname">has_state_</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor12BinarySensor10has_state_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -322,34 +320,20 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE">
-<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="binary_sensor::MQTTBinarySensorComponent::send_discovery__JsonBufferR.JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1af2171020d5d85a2762beb0974c82c8b4"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonBuffer &amp;<em>buffer</em>, JsonObject &amp;<em>obj</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent11dump_configEv">
+<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent11dump_configEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::dump_config"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1aff71e06560ef0ad65c87b5ac55d3b7d5"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
+<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="binary_sensor::MQTTBinarySensorComponent::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a7da2d290be1f84733b395c67bd96396b"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>obj</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Send Home Assistant discovery info. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv">
-<span id="_CPPv2NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::get_payload_onC"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a6672562619cc57e89b5fabc0b5dbe0bf"></span><em class="property">const</em> std::string &amp;<code class="descname">get_payload_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor25MQTTBinarySensorComponent14get_payload_onEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the payload this binary sensor uses for an ON value. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent14set_payload_onENSt6stringE">
-<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent14set_payload_onENSt6stringE"></span><span id="binary_sensor::MQTTBinarySensorComponent::set_payload_on__ss"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a20c3ef1e76f357fe0fc586591e1be907"></span>void <code class="descname">set_payload_on</code><span class="sig-paren">(</span>std::string <em>payload_on</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent14set_payload_onENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the custom payload this binary sensor uses for an ON value. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv">
-<span id="_CPPv2NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv"></span><span id="binary_sensor::MQTTBinarySensorComponent::get_payload_offC"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1aa9e60c727437e5811c22f85ac8df3eb3"></span><em class="property">const</em> std::string &amp;<code class="descname">get_payload_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor25MQTTBinarySensorComponent15get_payload_offEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the payload this binary sensor uses for an OFF value. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent15set_payload_offENSt6stringE">
-<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent15set_payload_offENSt6stringE"></span><span id="binary_sensor::MQTTBinarySensorComponent::set_payload_off__ss"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a1dbcc0506224585593f05e5be3122084"></span>void <code class="descname">set_payload_off</code><span class="sig-paren">(</span>std::string <em>payload_off</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent15set_payload_offENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the custom payload this binary sensor uses for an OFF value. </p>
-</dd></dl>
+<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent13set_is_statusEb">
+<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent13set_is_statusEb"></span><span id="binary_sensor::MQTTBinarySensorComponent::set_is_status__b"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a16c2467f221cdf04e53b99f5ad6806fb"></span>void <code class="descname">set_is_status</code><span class="sig-paren">(</span>bool <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent13set_is_statusEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent18send_initial_stateEv">
@@ -390,13 +374,445 @@ user with <code class="xref cpp cpp-func docutils literal notranslate"><span cla
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent11payload_on_E">
-<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent11payload_on_E"></span><span id="binary_sensor::MQTTBinarySensorComponent::payload_on___ss"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a00b7ffd2c137d94a4c1843fb8afa1243"></span>std::string <code class="descname">payload_on_</code> = {&quot;ON&quot;}<a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent11payload_on_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent10is_status_E">
+<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent10is_status_E"></span><span id="binary_sensor::MQTTBinarySensorComponent::is_status___b"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1a37ae24f94ea0534295a79ba1782e526f"></span>bool <code class="descname">is_status_</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent10is_status_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="filters">
+<h3>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor6FilterE">
+<span id="_CPPv2N13binary_sensor6FilterE"></span><span id="binary_sensor::Filter"></span><span class="target" id="classbinary__sensor_1_1_filter"></span><em class="property">class </em><code class="descname">Filter</code><a class="headerlink" href="#_CPPv3N13binary_sensor6FilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classbinary__sensor_1_1_delayed_off_filter"><span class="std std-ref">binary_sensor::DelayedOffFilter</span></a>, <a class="reference internal" href="#classbinary__sensor_1_1_delayed_on_filter"><span class="std std-ref">binary_sensor::DelayedOnFilter</span></a>, <a class="reference internal" href="#classbinary__sensor_1_1_heartbeat_filter"><span class="std std-ref">binary_sensor::HeartbeatFilter</span></a>, <a class="reference internal" href="#classbinary__sensor_1_1_invert_filter"><span class="std std-ref">binary_sensor::InvertFilter</span></a>, <a class="reference internal" href="#classbinary__sensor_1_1_lambda_filter"><span class="std std-ref">binary_sensor::LambdaFilter</span></a>, <a class="reference internal" href="#classbinary__sensor_1_1_unique_filter"><span class="std std-ref">binary_sensor::UniqueFilter</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor6Filter9new_valueEb">
+<span id="_CPPv2N13binary_sensor6Filter9new_valueEb"></span><span id="binary_sensor::Filter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_filter_1a4b5bac514e3a80449194d1e80d792f7a"></span><em class="property">virtual</em> <a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N13binary_sensor6Filter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor6Filter5inputEb">
+<span id="_CPPv2N13binary_sensor6Filter5inputEb"></span><span id="binary_sensor::Filter::input__b"></span><span class="target" id="classbinary__sensor_1_1_filter_1a5fa00b03971674a945a53399d1e10b9c"></span>void <code class="descname">input</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor6Filter5inputEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor6Filter6outputEb">
+<span id="_CPPv2N13binary_sensor6Filter6outputEb"></span><span id="binary_sensor::Filter::output__b"></span><span class="target" id="classbinary__sensor_1_1_filter_1a42697f5bf19a5ac5d8796a6d24b4538c"></span>void <code class="descname">output</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor6Filter6outputEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt>
+<span class="target" id="classbinary__sensor_1_1_filter_1ad20054406fbeb0d1b728840d832209e6"></span><code class="descname">friend binary_sensor::Filter::BinarySensor</code></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N13binary_sensor25MQTTBinarySensorComponent12payload_off_E">
-<span id="_CPPv2N13binary_sensor25MQTTBinarySensorComponent12payload_off_E"></span><span id="binary_sensor::MQTTBinarySensorComponent::payload_off___ss"></span><span class="target" id="classbinary__sensor_1_1_m_q_t_t_binary_sensor_component_1ac404066486d34b8ea130e84b74481c6e"></span>std::string <code class="descname">payload_off_</code> = {&quot;OFF&quot;}<a class="headerlink" href="#_CPPv3N13binary_sensor25MQTTBinarySensorComponent12payload_off_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13binary_sensor6Filter5next_E">
+<span id="_CPPv2N13binary_sensor6Filter5next_E"></span><span id="binary_sensor::Filter::next___FilterP"></span><span class="target" id="classbinary__sensor_1_1_filter_1a8edc75ee4f4ba1e22c557482eb2d8c07"></span><a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a> *<code class="descname">next_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N13binary_sensor6Filter5next_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor6Filter7parent_E">
+<span id="_CPPv2N13binary_sensor6Filter7parent_E"></span><span id="binary_sensor::Filter::parent___BinarySensorP"></span><span class="target" id="classbinary__sensor_1_1_filter_1a618c7005948422da6d089c91f260188e"></span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<code class="descname">parent_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N13binary_sensor6Filter7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor15DelayedOnFilterE">
+<span id="_CPPv2N13binary_sensor15DelayedOnFilterE"></span><span id="binary_sensor::DelayedOnFilter"></span><span class="target" id="classbinary__sensor_1_1_delayed_on_filter"></span><em class="property">class </em><code class="descname">DelayedOnFilter</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N13binary_sensor15DelayedOnFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor15DelayedOnFilter15DelayedOnFilterE8uint32_t">
+<span id="_CPPv2N13binary_sensor15DelayedOnFilter15DelayedOnFilterE8uint32_t"></span><span id="binary_sensor::DelayedOnFilter::DelayedOnFilter__uint32_t"></span><span class="target" id="classbinary__sensor_1_1_delayed_on_filter_1a77a71ae7ba52594fd5fe42e22b15cce8"></span><code class="descname">DelayedOnFilter</code><span class="sig-paren">(</span>uint32_t <em>delay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor15DelayedOnFilter15DelayedOnFilterE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor15DelayedOnFilter9new_valueEb">
+<span id="_CPPv2N13binary_sensor15DelayedOnFilter9new_valueEb"></span><span id="binary_sensor::DelayedOnFilter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_delayed_on_filter_1a786229ee47ccf6c666b2c056b2492ca1"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor15DelayedOnFilter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK13binary_sensor15DelayedOnFilter18get_setup_priorityEv">
+<span id="_CPPv2NK13binary_sensor15DelayedOnFilter18get_setup_priorityEv"></span><span id="binary_sensor::DelayedOnFilter::get_setup_priorityC"></span><span class="target" id="classbinary__sensor_1_1_delayed_on_filter_1abfb4ae0c706b5de5e2ba3911607954a9"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor15DelayedOnFilter18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor15DelayedOnFilter6delay_E">
+<span id="_CPPv2N13binary_sensor15DelayedOnFilter6delay_E"></span><span id="binary_sensor::DelayedOnFilter::delay___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_delayed_on_filter_1afac11a86fdbaf3cb4734fa6cc65d8296"></span>uint32_t <code class="descname">delay_</code><a class="headerlink" href="#_CPPv3N13binary_sensor15DelayedOnFilter6delay_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor16DelayedOffFilterE">
+<span id="_CPPv2N13binary_sensor16DelayedOffFilterE"></span><span id="binary_sensor::DelayedOffFilter"></span><span class="target" id="classbinary__sensor_1_1_delayed_off_filter"></span><em class="property">class </em><code class="descname">DelayedOffFilter</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N13binary_sensor16DelayedOffFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor16DelayedOffFilter16DelayedOffFilterE8uint32_t">
+<span id="_CPPv2N13binary_sensor16DelayedOffFilter16DelayedOffFilterE8uint32_t"></span><span id="binary_sensor::DelayedOffFilter::DelayedOffFilter__uint32_t"></span><span class="target" id="classbinary__sensor_1_1_delayed_off_filter_1a7b897ec34305b7d4db763dae98036571"></span><code class="descname">DelayedOffFilter</code><span class="sig-paren">(</span>uint32_t <em>delay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor16DelayedOffFilter16DelayedOffFilterE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor16DelayedOffFilter9new_valueEb">
+<span id="_CPPv2N13binary_sensor16DelayedOffFilter9new_valueEb"></span><span id="binary_sensor::DelayedOffFilter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_delayed_off_filter_1acd17370a9616922005203f01167095ec"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor16DelayedOffFilter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK13binary_sensor16DelayedOffFilter18get_setup_priorityEv">
+<span id="_CPPv2NK13binary_sensor16DelayedOffFilter18get_setup_priorityEv"></span><span id="binary_sensor::DelayedOffFilter::get_setup_priorityC"></span><span class="target" id="classbinary__sensor_1_1_delayed_off_filter_1afb9e74ab62b69ef24700207163e00c8f"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor16DelayedOffFilter18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor16DelayedOffFilter6delay_E">
+<span id="_CPPv2N13binary_sensor16DelayedOffFilter6delay_E"></span><span id="binary_sensor::DelayedOffFilter::delay___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_delayed_off_filter_1a2b65d6ac0bdebb33198052d3db594755"></span>uint32_t <code class="descname">delay_</code><a class="headerlink" href="#_CPPv3N13binary_sensor16DelayedOffFilter6delay_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor15HeartbeatFilterE">
+<span id="_CPPv2N13binary_sensor15HeartbeatFilterE"></span><span id="binary_sensor::HeartbeatFilter"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter"></span><em class="property">class </em><code class="descname">HeartbeatFilter</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N13binary_sensor15HeartbeatFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor15HeartbeatFilter15HeartbeatFilterE8uint32_t">
+<span id="_CPPv2N13binary_sensor15HeartbeatFilter15HeartbeatFilterE8uint32_t"></span><span id="binary_sensor::HeartbeatFilter::HeartbeatFilter__uint32_t"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter_1a8dc1e0e5157e70981d0a43fbd578b08b"></span><code class="descname">HeartbeatFilter</code><span class="sig-paren">(</span>uint32_t <em>interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor15HeartbeatFilter15HeartbeatFilterE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor15HeartbeatFilter9new_valueEb">
+<span id="_CPPv2N13binary_sensor15HeartbeatFilter9new_valueEb"></span><span id="binary_sensor::HeartbeatFilter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter_1a86fc2610713a21f24005b174f0d11a95"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor15HeartbeatFilter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor15HeartbeatFilter5setupEv">
+<span id="_CPPv2N13binary_sensor15HeartbeatFilter5setupEv"></span><span id="binary_sensor::HeartbeatFilter::setup"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter_1ae50c25c21d9d712c1fae5a96274e94e3"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor15HeartbeatFilter5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classbinary__sensor_1_1_heartbeat_filter_1ae50c25c21d9d712c1fae5a96274e94e3"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK13binary_sensor15HeartbeatFilter18get_setup_priorityEv">
+<span id="_CPPv2NK13binary_sensor15HeartbeatFilter18get_setup_priorityEv"></span><span id="binary_sensor::HeartbeatFilter::get_setup_priorityC"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter_1a0800f29eca2f7becd9352b86d748f062"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor15HeartbeatFilter18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classbinary__sensor_1_1_heartbeat_filter_1ae50c25c21d9d712c1fae5a96274e94e3"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor15HeartbeatFilter9interval_E">
+<span id="_CPPv2N13binary_sensor15HeartbeatFilter9interval_E"></span><span id="binary_sensor::HeartbeatFilter::interval___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter_1ab61329492c6e988f4a5b559258298a3e"></span>uint32_t <code class="descname">interval_</code><a class="headerlink" href="#_CPPv3N13binary_sensor15HeartbeatFilter9interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor15HeartbeatFilter6value_E">
+<span id="_CPPv2N13binary_sensor15HeartbeatFilter6value_E"></span><span id="binary_sensor::HeartbeatFilter::value___optional:b:"></span><span class="target" id="classbinary__sensor_1_1_heartbeat_filter_1aa41bdebb5afd08ee6e09c3f21ba96358"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">value_</code> = {}<a class="headerlink" href="#_CPPv3N13binary_sensor15HeartbeatFilter6value_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor12InvertFilterE">
+<span id="_CPPv2N13binary_sensor12InvertFilterE"></span><span id="binary_sensor::InvertFilter"></span><span class="target" id="classbinary__sensor_1_1_invert_filter"></span><em class="property">class </em><code class="descname">InvertFilter</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a><a class="headerlink" href="#_CPPv3N13binary_sensor12InvertFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12InvertFilter9new_valueEb">
+<span id="_CPPv2N13binary_sensor12InvertFilter9new_valueEb"></span><span id="binary_sensor::InvertFilter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_invert_filter_1af4fca3d4344d88bea91a9dea5b93c4c7"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12InvertFilter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor12LambdaFilterE">
+<span id="_CPPv2N13binary_sensor12LambdaFilterE"></span><span id="binary_sensor::LambdaFilter"></span><span class="target" id="classbinary__sensor_1_1_lambda_filter"></span><em class="property">class </em><code class="descname">LambdaFilter</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a><a class="headerlink" href="#_CPPv3N13binary_sensor12LambdaFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12LambdaFilter12LambdaFilterERKNSt8functionIF8optionalIbEbEEE">
+<span id="_CPPv2N13binary_sensor12LambdaFilter12LambdaFilterERKNSt8functionIF8optionalIbEbEEE"></span><span class="target" id="classbinary__sensor_1_1_lambda_filter_1addda46e618ffdee95aa2be141c649e32"></span><code class="descname">LambdaFilter</code><span class="sig-paren">(</span><em class="property">const</em> std::function&lt;<a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt;<span class="sig-paren">(</span>bool<span class="sig-paren">)</span>&gt; &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12LambdaFilter12LambdaFilterERKNSt8functionIF8optionalIbEbEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12LambdaFilter9new_valueEb">
+<span id="_CPPv2N13binary_sensor12LambdaFilter9new_valueEb"></span><span id="binary_sensor::LambdaFilter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_lambda_filter_1a34eed8e60b30043f310fd52b64c54222"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12LambdaFilter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt>
+<span class="target" id="classbinary__sensor_1_1_lambda_filter_1aa19217611f4349200c2db174c5383fd9"></span><code class="descname">std::function&lt;optional&lt;bool&gt;bool)&gt; binary_sensor::LambdaFilter::f_</code></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor12UniqueFilterE">
+<span id="_CPPv2N13binary_sensor12UniqueFilterE"></span><span id="binary_sensor::UniqueFilter"></span><span class="target" id="classbinary__sensor_1_1_unique_filter"></span><em class="property">class </em><code class="descname">UniqueFilter</code> : <em class="property">public</em> binary_sensor::<a class="reference internal" href="#_CPPv3N13binary_sensor6FilterE" title="binary_sensor::Filter">Filter</a><a class="headerlink" href="#_CPPv3N13binary_sensor12UniqueFilterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12UniqueFilter9new_valueEb">
+<span id="_CPPv2N13binary_sensor12UniqueFilter9new_valueEb"></span><span id="binary_sensor::UniqueFilter::new_value__b"></span><span class="target" id="classbinary__sensor_1_1_unique_filter_1aa6a5b51c06eb862a4d7dfa56ce709cd7"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">new_value</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12UniqueFilter9new_valueEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor12UniqueFilter11last_value_E">
+<span id="_CPPv2N13binary_sensor12UniqueFilter11last_value_E"></span><span id="binary_sensor::UniqueFilter::last_value___optional:b:"></span><span class="target" id="classbinary__sensor_1_1_unique_filter_1a8e51c506066d7e8d694ec0d4fd94e7d6"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">last_value_</code> = {}<a class="headerlink" href="#_CPPv3N13binary_sensor12UniqueFilter11last_value_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="triggers">
+<h3>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor12PressTriggerE">
+<span id="_CPPv2N13binary_sensor12PressTriggerE"></span><span id="binary_sensor::PressTrigger"></span><span class="target" id="classbinary__sensor_1_1_press_trigger"></span><em class="property">class </em><code class="descname">PressTrigger</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;<a class="headerlink" href="#_CPPv3N13binary_sensor12PressTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12PressTrigger12PressTriggerEP12BinarySensor">
+<span id="_CPPv2N13binary_sensor12PressTrigger12PressTriggerEP12BinarySensor"></span><span id="binary_sensor::PressTrigger::PressTrigger__BinarySensorP"></span><span class="target" id="classbinary__sensor_1_1_press_trigger_1a6cdb2f4737bf0534686e9361a13bc7b7"></span><code class="descname">PressTrigger</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12PressTrigger12PressTriggerEP12BinarySensor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor14ReleaseTriggerE">
+<span id="_CPPv2N13binary_sensor14ReleaseTriggerE"></span><span id="binary_sensor::ReleaseTrigger"></span><span class="target" id="classbinary__sensor_1_1_release_trigger"></span><em class="property">class </em><code class="descname">ReleaseTrigger</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;<a class="headerlink" href="#_CPPv3N13binary_sensor14ReleaseTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor14ReleaseTrigger14ReleaseTriggerEP12BinarySensor">
+<span id="_CPPv2N13binary_sensor14ReleaseTrigger14ReleaseTriggerEP12BinarySensor"></span><span id="binary_sensor::ReleaseTrigger::ReleaseTrigger__BinarySensorP"></span><span class="target" id="classbinary__sensor_1_1_release_trigger_1a81fdcff0559fe2ede365b0fb25073a20"></span><code class="descname">ReleaseTrigger</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor14ReleaseTrigger14ReleaseTriggerEP12BinarySensor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor12ClickTriggerE">
+<span id="_CPPv2N13binary_sensor12ClickTriggerE"></span><span id="binary_sensor::ClickTrigger"></span><span class="target" id="classbinary__sensor_1_1_click_trigger"></span><em class="property">class </em><code class="descname">ClickTrigger</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;<a class="headerlink" href="#_CPPv3N13binary_sensor12ClickTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor12ClickTrigger12ClickTriggerEP12BinarySensor8uint32_t8uint32_t">
+<span id="_CPPv2N13binary_sensor12ClickTrigger12ClickTriggerEP12BinarySensor8uint32_t8uint32_t"></span><span id="binary_sensor::ClickTrigger::ClickTrigger__BinarySensorP.uint32_t.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_click_trigger_1a1881250e1519790c91c3b9b657b71452"></span><code class="descname">ClickTrigger</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>parent</em>, uint32_t <em>min_length</em>, uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor12ClickTrigger12ClickTriggerEP12BinarySensor8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor12ClickTrigger11start_time_E">
+<span id="_CPPv2N13binary_sensor12ClickTrigger11start_time_E"></span><span id="binary_sensor::ClickTrigger::start_time___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_click_trigger_1a944697a5be1f02458a51a2e740418eb4"></span>uint32_t <code class="descname">start_time_</code> = {0}<a class="headerlink" href="#_CPPv3N13binary_sensor12ClickTrigger11start_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor12ClickTrigger11min_length_E">
+<span id="_CPPv2N13binary_sensor12ClickTrigger11min_length_E"></span><span id="binary_sensor::ClickTrigger::min_length___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_click_trigger_1adbb2ec3601da73b8429beecabef7a176"></span>uint32_t <code class="descname">min_length_</code><a class="headerlink" href="#_CPPv3N13binary_sensor12ClickTrigger11min_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The millis() time when the click started. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor12ClickTrigger11max_length_E">
+<span id="_CPPv2N13binary_sensor12ClickTrigger11max_length_E"></span><span id="binary_sensor::ClickTrigger::max_length___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_click_trigger_1ae1f92b64044314f5013a52379ececedb"></span>uint32_t <code class="descname">max_length_</code><a class="headerlink" href="#_CPPv3N13binary_sensor12ClickTrigger11max_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Minimum length of click. 0 means no minimum. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor18DoubleClickTriggerE">
+<span id="_CPPv2N13binary_sensor18DoubleClickTriggerE"></span><span id="binary_sensor::DoubleClickTrigger"></span><span class="target" id="classbinary__sensor_1_1_double_click_trigger"></span><em class="property">class </em><code class="descname">DoubleClickTrigger</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;<a class="headerlink" href="#_CPPv3N13binary_sensor18DoubleClickTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor18DoubleClickTrigger18DoubleClickTriggerEP12BinarySensor8uint32_t8uint32_t">
+<span id="_CPPv2N13binary_sensor18DoubleClickTrigger18DoubleClickTriggerEP12BinarySensor8uint32_t8uint32_t"></span><span id="binary_sensor::DoubleClickTrigger::DoubleClickTrigger__BinarySensorP.uint32_t.uint32_t"></span><span class="target" id="classbinary__sensor_1_1_double_click_trigger_1a5418dd922700943cfbb8996a98e20fe1"></span><code class="descname">DoubleClickTrigger</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>parent</em>, uint32_t <em>min_length</em>, uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor18DoubleClickTrigger18DoubleClickTriggerEP12BinarySensor8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor18DoubleClickTrigger11start_time_E">
+<span id="_CPPv2N13binary_sensor18DoubleClickTrigger11start_time_E"></span><span id="binary_sensor::DoubleClickTrigger::start_time___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_double_click_trigger_1a1ef00146f0d61d0094cb0de182665fee"></span>uint32_t <code class="descname">start_time_</code> = {0}<a class="headerlink" href="#_CPPv3N13binary_sensor18DoubleClickTrigger11start_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor18DoubleClickTrigger9end_time_E">
+<span id="_CPPv2N13binary_sensor18DoubleClickTrigger9end_time_E"></span><span id="binary_sensor::DoubleClickTrigger::end_time___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_double_click_trigger_1ad5557ee0d1d64db261ec00e1241f68da"></span>uint32_t <code class="descname">end_time_</code> = {0}<a class="headerlink" href="#_CPPv3N13binary_sensor18DoubleClickTrigger9end_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor18DoubleClickTrigger11min_length_E">
+<span id="_CPPv2N13binary_sensor18DoubleClickTrigger11min_length_E"></span><span id="binary_sensor::DoubleClickTrigger::min_length___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_double_click_trigger_1a67a80ef5a7d545c5eab098edbf29b3eb"></span>uint32_t <code class="descname">min_length_</code><a class="headerlink" href="#_CPPv3N13binary_sensor18DoubleClickTrigger11min_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor18DoubleClickTrigger11max_length_E">
+<span id="_CPPv2N13binary_sensor18DoubleClickTrigger11max_length_E"></span><span id="binary_sensor::DoubleClickTrigger::max_length___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_double_click_trigger_1a67af17ca68d6976eddc90028f5dd253a"></span>uint32_t <code class="descname">max_length_</code><a class="headerlink" href="#_CPPv3N13binary_sensor18DoubleClickTrigger11max_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Minimum length of click. 0 means no minimum. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N13binary_sensor17MultiClickTriggerE">
+<span id="_CPPv2N13binary_sensor17MultiClickTriggerE"></span><span id="binary_sensor::MultiClickTrigger"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger"></span><em class="property">class </em><code class="descname">MultiClickTrigger</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="../core/automation.html#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger17MultiClickTriggerEP12BinarySensorRKNSt6vectorI22MultiClickTriggerEventEE">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger17MultiClickTriggerEP12BinarySensorRKNSt6vectorI22MultiClickTriggerEventEE"></span><span id="binary_sensor::MultiClickTrigger::MultiClickTrigger__BinarySensorP.std::vector:MultiClickTriggerEvent:CR"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1aba7441f476e3b1d563ff11ab06527465"></span><code class="descname">MultiClickTrigger</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>parent</em>, <em class="property">const</em> std::vector&lt;MultiClickTriggerEvent&gt; &amp;<em>timing</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger17MultiClickTriggerEP12BinarySensorRKNSt6vectorI22MultiClickTriggerEventEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger5setupEv">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger5setupEv"></span><span id="binary_sensor::MultiClickTrigger::setup"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a7af8cf28e5c2246c9f80b2ea1cf6c5b6"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classbinary__sensor_1_1_multi_click_trigger_1a7af8cf28e5c2246c9f80b2ea1cf6c5b6"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK13binary_sensor17MultiClickTrigger18get_setup_priorityEv">
+<span id="_CPPv2NK13binary_sensor17MultiClickTrigger18get_setup_priorityEv"></span><span id="binary_sensor::MultiClickTrigger::get_setup_priorityC"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a254ff1de063e360e1902a289a5bf3527"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13binary_sensor17MultiClickTrigger18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classbinary__sensor_1_1_multi_click_trigger_1a7af8cf28e5c2246c9f80b2ea1cf6c5b6"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger20set_invalid_cooldownE8uint32_t">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger20set_invalid_cooldownE8uint32_t"></span><span id="binary_sensor::MultiClickTrigger::set_invalid_cooldown__uint32_t"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1af776ed98fc35f64b181a0183cf463cc6"></span>void <code class="descname">set_invalid_cooldown</code><span class="sig-paren">(</span>uint32_t <em>invalid_cooldown</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger20set_invalid_cooldownE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger9on_state_Eb">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger9on_state_Eb"></span><span id="binary_sensor::MultiClickTrigger::on_state___b"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a52c6105fc722e7e0e7e38d7eca5aa303"></span>void <code class="descname">on_state_</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger9on_state_Eb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger18schedule_cooldown_Ev">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger18schedule_cooldown_Ev"></span><span id="binary_sensor::MultiClickTrigger::schedule_cooldown_"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a8bc7afebf79f63be764f81e48eb0aa71"></span>void <code class="descname">schedule_cooldown_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger18schedule_cooldown_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger18schedule_is_valid_E8uint32_t">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger18schedule_is_valid_E8uint32_t"></span><span id="binary_sensor::MultiClickTrigger::schedule_is_valid___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a72f4f2e0754dc9872cc0afa9b7e8ea21"></span>void <code class="descname">schedule_is_valid_</code><span class="sig-paren">(</span>uint32_t <em>min_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger18schedule_is_valid_E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger22schedule_is_not_valid_E8uint32_t">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger22schedule_is_not_valid_E8uint32_t"></span><span id="binary_sensor::MultiClickTrigger::schedule_is_not_valid___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a3fb7b1547154339fe461645fe34af3f1"></span>void <code class="descname">schedule_is_not_valid_</code><span class="sig-paren">(</span>uint32_t <em>max_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger22schedule_is_not_valid_E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger8trigger_Ev">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger8trigger_Ev"></span><span id="binary_sensor::MultiClickTrigger::trigger_"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1ad45ea0e84f662f6c8cfecdea7c39a268"></span>void <code class="descname">trigger_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger8trigger_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger7parent_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger7parent_E"></span><span id="binary_sensor::MultiClickTrigger::parent___BinarySensorP"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a79a09d79d13f8d9c87a8a4f6b8b77677"></span><a class="reference internal" href="#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger7timing_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger7timing_E"></span><span id="binary_sensor::MultiClickTrigger::timing___std::vector:MultiClickTriggerEvent:"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1aa0a40393cf761816349f88e0a64b7a65"></span>std::vector&lt;MultiClickTriggerEvent&gt; <code class="descname">timing_</code><a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger7timing_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger17invalid_cooldown_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger17invalid_cooldown_E"></span><span id="binary_sensor::MultiClickTrigger::invalid_cooldown___uint32_t"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1adb1b21bf45bf9c7b5ccd10dfe9bdfbce"></span>uint32_t <code class="descname">invalid_cooldown_</code> = {1000}<a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger17invalid_cooldown_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger9at_index_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger9at_index_E"></span><span id="binary_sensor::MultiClickTrigger::at_index___optional:s:"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a7b43182a3727e080530fe6555654f937"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;size_t&gt; <code class="descname">at_index_</code> = {}<a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger9at_index_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger11last_state_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger11last_state_E"></span><span id="binary_sensor::MultiClickTrigger::last_state___b"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a6e72ee01d914b1ebd4dedfb1fc4821b5"></span>bool <code class="descname">last_state_</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger11last_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger15is_in_cooldown_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger15is_in_cooldown_E"></span><span id="binary_sensor::MultiClickTrigger::is_in_cooldown___b"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a43e301d153f1f39c0fbe1037bc629bb1"></span>bool <code class="descname">is_in_cooldown_</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger15is_in_cooldown_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13binary_sensor17MultiClickTrigger9is_valid_E">
+<span id="_CPPv2N13binary_sensor17MultiClickTrigger9is_valid_E"></span><span id="binary_sensor::MultiClickTrigger::is_valid___b"></span><span class="target" id="classbinary__sensor_1_1_multi_click_trigger_1a29870c24a400d8853eef5c338d702751"></span>bool <code class="descname">is_valid_</code> = {false}<a class="headerlink" href="#_CPPv3N13binary_sensor17MultiClickTrigger9is_valid_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>

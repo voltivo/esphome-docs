@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Deep Sleep Component &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs.">
+<meta itemprop="name" content="Deep Sleep Component">
+<meta itemprop="description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs.">
+<meta itemprop="image" content="https://esphomelib.com/_images/hotel.svg">
+<meta name="twitter:title" content="Deep Sleep Component">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/hotel.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs.">
+<meta property="og:title" content="Deep Sleep Component"/>
+<meta property="og:image" content="https://esphomelib.com/_images/hotel.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Deep Sleep Component &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -15,10 +32,11 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/deep_sleep.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ESP32 Bluetooth Low Energy Tracker Hub" href="esp32_ble_tracker.html" />
+    <link rel="next" title="ESP32 Bluetooth Low Energy Beacon" href="esp32_ble_beacon.html" />
     <link rel="prev" title="Debug Component" href="debug.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -105,6 +123,16 @@ the wakeup pin is already in the state with which it would wake up when attempti
 See <a class="reference internal" href="#deep-sleep-esp32-wakeup-pin-mode"><span class="std std-ref">ESP32 Wakeup Pin Mode</span></a>. Defaults to <code class="docutils literal notranslate"><span class="pre">IGNORE</span></code></li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
 </ul>
+<p>Advanced features:</p>
+<ul class="simple">
+<li><strong>esp32_ext1_wakeup</strong> (<em>Optional</em>): Use the EXT1 wakeup source of the ESP32 to wake from deep sleep to
+wake up on multiple pins. This cannot be used together with wakeup pin.<ul>
+<li><strong>pins</strong> (<strong>Required</strong>, list of pin numbers): The pins to wake up on.</li>
+<li><strong>mode</strong> (<em>Optional</em>): The mode to use for the wakeup source. Must be one of <code class="docutils literal notranslate"><span class="pre">ALL_LOW</span></code> (wake up when
+all pins go LOW) or <code class="docutils literal notranslate"><span class="pre">ANY_HIGH</span></code> (wake up when any pin goes HIGH).</li>
+</ul>
+</li>
+</ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>The <a class="reference internal" href="mqtt.html#mqtt-last-will-birth"><span class="std std-ref">availability feature</span></a> of the MQTT client will cause all values
@@ -156,7 +184,7 @@ Useful for</p>
 <p>For example, if you want to upload a binary via OTA with deep sleep mode it can be difficult to
 catch the ESP being active.</p>
 <p>You can use this automation to automatically prevent deep sleep when a MQTT message on the topic
-<code class="docutils literal notranslate"><span class="pre">livingroom/ota_mode</span></code> with the payload <code class="docutils literal notranslate"><span class="pre">ON</span></code> is received. Then, to do the OTA update, just
+<code class="docutils literal notranslate"><span class="pre">livingroom/ota_mode</span></code> is received. Then, to do the OTA update, just
 use a MQTT client to publish a retained MQTT message described above. When the node wakes up again
 it will no longer enter deep sleep mode and you can upload your OTA update.</p>
 <p>Remember to turn “OTA mode” off again after the OTA update by sending a MQTT message with the payload
@@ -168,10 +196,8 @@ it will no longer enter deep sleep mode and you can upload your OTA update.</p>
   <span class="c1"># ...</span>
   <span class="n">on_message</span><span class="p">:</span>
     <span class="n">topic</span><span class="p">:</span> <span class="n">livingroom</span><span class="o">/</span><span class="n">ota_mode</span>
-    <span class="n">payload</span><span class="p">:</span> <span class="n">ON</span>
     <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">prevent</span><span class="p">:</span>
-          <span class="nb">id</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
+      <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">prevent</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
 </pre></div>
 </div>
 </div>

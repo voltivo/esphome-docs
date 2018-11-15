@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Over-The-Air Updates &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Over-The-Air Updates &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/core/ota.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -81,7 +82,6 @@
 <span class="n">ota</span><span class="o">-&gt;</span><span class="n">start_safe_mode</span><span class="p">();</span>
 <span class="c1">// OTA MD5 password</span>
 <span class="k">auto</span> <span class="o">*</span><span class="n">ota</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">init_ota</span><span class="p">();</span>
-<span class="n">ota</span><span class="o">-&gt;</span><span class="n">set_auth_password_hash</span><span class="p">(</span><span class="s">&quot;761d3a8c46989f1d357842e8dedf7712&quot;</span><span class="p">);</span>
 <span class="n">ota</span><span class="o">-&gt;</span><span class="n">start_safe_mode</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -97,15 +97,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3N12OTAComponent12OTAComponentE8uint16_tNSt6stringE">
-<span id="_CPPv2N12OTAComponent12OTAComponentE8uint16_tNSt6stringE"></span><span id="OTAComponent::OTAComponent__uint16_t.ss"></span><span class="target" id="class_o_t_a_component_1a36f54eac6753103274400c6bddf01dce"></span><code class="descname">OTAComponent</code><span class="sig-paren">(</span>uint16_t <em>port</em> = OTA_DEFAULT_PORT, std::string <em>hostname</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent12OTAComponentE8uint16_tNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N12OTAComponent12OTAComponentE8uint16_t">
+<span id="_CPPv2N12OTAComponent12OTAComponentE8uint16_t"></span><span id="OTAComponent::OTAComponent__uint16_t"></span><span class="target" id="class_o_t_a_component_1a41529f1c67644d7aa26d22c78768c04d"></span><code class="descname">OTAComponent</code><span class="sig-paren">(</span>uint16_t <em>port</em> = OTA_DEFAULT_PORT<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent12OTAComponentE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct an <a class="reference internal" href="#class_o_t_a_component"><span class="std std-ref">OTAComponent</span></a>. </p>
 <p>Defaults to no authentication.</p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">port</span></code>: The port ArduinoOTA will listen on. </li>
-<li><code class="docutils literal notranslate"><span class="pre">hostname</span></code>: The hostname ArduinoOTA will advertise. </li>
 </ul>
 </dd>
 </dl>
@@ -113,16 +112,10 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N12OTAComponent13set_auth_openEv">
-<span id="_CPPv2N12OTAComponent13set_auth_openEv"></span><span id="OTAComponent::set_auth_open"></span><span class="target" id="class_o_t_a_component_1a41808c068a71945a0db605faca2226a3"></span>void <code class="descname">set_auth_open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent13set_auth_openEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set ArduinoOTA to accept updates without authentication. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N12OTAComponent27set_auth_plaintext_passwordERKNSt6stringE">
-<span id="_CPPv2N12OTAComponent27set_auth_plaintext_passwordERKNSt6stringE"></span><span id="OTAComponent::set_auth_plaintext_password__ssCR"></span><span class="target" id="class_o_t_a_component_1a5009144083abe8dec920104ee51fc142"></span>void <code class="descname">set_auth_plaintext_password</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent27set_auth_plaintext_passwordERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set a plaintext password that ArduinoOTA will use for authentication. </p>
-<p>Note: theoretically this password can be read from ROM by an intruder.</p>
+<dt id="_CPPv3N12OTAComponent17set_auth_passwordERKNSt6stringE">
+<span id="_CPPv2N12OTAComponent17set_auth_passwordERKNSt6stringE"></span><span id="OTAComponent::set_auth_password__ssCR"></span><span class="target" id="class_o_t_a_component_1a02aedebaf74c36c4eb10443002bc8a80"></span>void <code class="descname">set_auth_password</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent17set_auth_passwordERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a plaintext password that OTA will use for authentication. </p>
+<p>Warning: This password will be stored in plaintext in the ROM and can be read by intruders. It is however secured somewhat secure again MITM attacks (attackers could still modify the binary while you’re sending it, but they can’t start OTA processes themselves.)</p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
@@ -134,13 +127,27 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N12OTAComponent22set_auth_password_hashERKNSt6stringE">
-<span id="_CPPv2N12OTAComponent22set_auth_password_hashERKNSt6stringE"></span><span id="OTAComponent::set_auth_password_hash__ssCR"></span><span class="target" id="class_o_t_a_component_1af81f8fd651ec57bbce8e2e068164192c"></span>void <code class="descname">set_auth_password_hash</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>hash</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent22set_auth_password_hashERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set a MD5 password hash that ArduinoOTA will use for authentication. </p>
+<dt id="_CPPv3N12OTAComponent27set_auth_plaintext_passwordERKNSt6stringE">
+<span id="_CPPv2N12OTAComponent27set_auth_plaintext_passwordERKNSt6stringE"></span><span id="OTAComponent::set_auth_plaintext_password__ssCR"></span><span class="target" id="class_o_t_a_component_1a5009144083abe8dec920104ee51fc142"></span>void <code class="descname">set_auth_plaintext_password</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent27set_auth_plaintext_passwordERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a plaintext password for legacy OTA. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">hash</span></code>: The MD5 hash of the password. </li>
+<li><code class="docutils literal notranslate"><span class="pre">password</span></code>: The password </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12OTAComponent22set_auth_password_hashERKNSt6stringE">
+<span id="_CPPv2N12OTAComponent22set_auth_password_hashERKNSt6stringE"></span><span id="OTAComponent::set_auth_password_hash__ssCR"></span><span class="target" id="class_o_t_a_component_1af81f8fd651ec57bbce8e2e068164192c"></span>void <code class="descname">set_auth_password_hash</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>hash</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent22set_auth_password_hashERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a hashed password for legacy OTA. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">password</span></code>: The MD5 password hash. </li>
 </ul>
 </dd>
 </dl>
@@ -151,12 +158,6 @@
 <dt id="_CPPv3N12OTAComponent8set_portE8uint16_t">
 <span id="_CPPv2N12OTAComponent8set_portE8uint16_t"></span><span id="OTAComponent::set_port__uint16_t"></span><span class="target" id="class_o_t_a_component_1aa297c1074376555e3a7a06687c84383a"></span>void <code class="descname">set_port</code><span class="sig-paren">(</span>uint16_t <em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent8set_portE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Manually set the port OTA should listen on. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N12OTAComponent12set_hostnameERKNSt6stringE">
-<span id="_CPPv2N12OTAComponent12set_hostnameERKNSt6stringE"></span><span id="OTAComponent::set_hostname__ssCR"></span><span class="target" id="class_o_t_a_component_1ae19e931af8c27e66120c0fb986717d8d"></span>void <code class="descname">set_hostname</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>hostname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent12set_hostnameERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the hostname advertised with mDNS. Empty for default hostname. </p>
 </dd></dl>
 
 <dl class="function">
@@ -181,8 +182,13 @@
 <dt id="_CPPv3N12OTAComponent5setupEv">
 <span id="_CPPv2N12OTAComponent5setupEv"></span><span id="OTAComponent::setup"></span><span class="target" id="class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12OTAComponent11dump_configEv">
+<span id="_CPPv2N12OTAComponent11dump_configEv"></span><span id="OTAComponent::dump_config"></span><span class="target" id="class_o_t_a_component_1a599790871b2c57353c31f32e7638fdf0"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK12OTAComponent18get_setup_priorityEv">
@@ -205,11 +211,6 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3NK12OTAComponent12get_hostnameEv">
-<span id="_CPPv2NK12OTAComponent12get_hostnameEv"></span><span id="OTAComponent::get_hostnameC"></span><span class="target" id="class_o_t_a_component_1a7436392442235e65015ffea684fe72e6"></span><em class="property">const</em> std::string &amp;<code class="descname">get_hostname</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK12OTAComponent12get_hostnameEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3NK12OTAComponent8get_portEv">
 <span id="_CPPv2NK12OTAComponent8get_portEv"></span><span id="OTAComponent::get_portC"></span><span class="target" id="class_o_t_a_component_1a262a86678519f3ebc9e667b6c8c2db03"></span>uint16_t <code class="descname">get_port</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK12OTAComponent8get_portEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -223,22 +224,22 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Types</p>
 <dl class="type">
-<dt id="_CPPv3N12OTAComponent12__anonymous1E">
-<span id="_CPPv2N12OTAComponent12__anonymous1E"></span><span id="OTAComponent::__anonymous1"></span><span class="target" id="class_o_t_a_component_1a44e7c8ab3b169c141d0a63b79c6247b0"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv3N12OTAComponent12__anonymous1E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N12OTAComponent12__anonymous3E">
+<span id="_CPPv2N12OTAComponent12__anonymous3E"></span><span id="OTAComponent::__anonymous3"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327a"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv3N12OTAComponent12__anonymous3E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><em>Values:</em></p>
 <dl class="enumerator">
 <dt id="_CPPv3N12OTAComponent4OPENE">
-<span id="_CPPv2N12OTAComponent4OPENE"></span><span class="target" id="class_o_t_a_component_1a44e7c8ab3b169c141d0a63b79c6247b0a60a01762a7dcc6b4db051fe8944205b5"></span><code class="descname">OPEN</code><a class="headerlink" href="#_CPPv3N12OTAComponent4OPENE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N12OTAComponent4OPENE"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327aa60a01762a7dcc6b4db051fe8944205b5"></span><code class="descname">OPEN</code><a class="headerlink" href="#_CPPv3N12OTAComponent4OPENE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv3N12OTAComponent9PLAINTEXTE">
-<span id="_CPPv2N12OTAComponent9PLAINTEXTE"></span><span class="target" id="class_o_t_a_component_1a44e7c8ab3b169c141d0a63b79c6247b0a75806a28007fd56686023a1f7b5bcb87"></span><code class="descname">PLAINTEXT</code><a class="headerlink" href="#_CPPv3N12OTAComponent9PLAINTEXTE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N12OTAComponent9PLAINTEXTE"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327aa75806a28007fd56686023a1f7b5bcb87"></span><code class="descname">PLAINTEXT</code><a class="headerlink" href="#_CPPv3N12OTAComponent9PLAINTEXTE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv3N12OTAComponent4HASHE">
-<span id="_CPPv2N12OTAComponent4HASHE"></span><span class="target" id="class_o_t_a_component_1a44e7c8ab3b169c141d0a63b79c6247b0acf6a87bc538c1dddee89c82b568683af"></span><code class="descname">HASH</code><a class="headerlink" href="#_CPPv3N12OTAComponent4HASHE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N12OTAComponent4HASHE"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327aacf6a87bc538c1dddee89c82b568683af"></span><code class="descname">HASH</code><a class="headerlink" href="#_CPPv3N12OTAComponent4HASHE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -256,12 +257,22 @@
 <span id="_CPPv2N12OTAComponent9read_rtc_Ev"></span><span id="OTAComponent::read_rtc_"></span><span class="target" id="class_o_t_a_component_1ab97a20dd0f753382ef0dac42b1920ee7"></span>uint8_t <code class="descname">read_rtc_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent9read_rtc_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N12OTAComponent7handle_Ev">
+<span id="_CPPv2N12OTAComponent7handle_Ev"></span><span id="OTAComponent::handle_"></span><span class="target" id="class_o_t_a_component_1a88c5e9c7bdcd9993106093b587e2aae0"></span>void <code class="descname">handle_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent7handle_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12OTAComponent13wait_receive_EP7uint8_t6size_tb">
+<span id="_CPPv2N12OTAComponent13wait_receive_EP7uint8_t6size_tb"></span><span id="OTAComponent::wait_receive___uint8_tP.s.b"></span><span class="target" id="class_o_t_a_component_1a7f08061fe08eda03ac9f7beff971039e"></span>size_t <code class="descname">wait_receive_</code><span class="sig-paren">(</span>uint8_t *<em>buf</em>, size_t <em>bytes</em>, bool <em>check_disconnected</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent13wait_receive_EP7uint8_t6size_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
-<dt id="_CPPv3N12OTAComponent10auth_type_E">
-<span id="_CPPv2N12OTAComponent10auth_type_E"></span><span class="target" id="class_o_t_a_component_1a4d004fd5def5a7651c42c3c368536ada"></span><a class="reference internal" href="#_CPPv312OTAComponent" title="OTAComponent">OTAComponent</a>::<strong>[anonymous]</strong> <code class="descname">auth_type_</code><a class="headerlink" href="#_CPPv3N12OTAComponent10auth_type_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N12OTAComponent4OPENE">
+<span class="target" id="class_o_t_a_component_1a1bfd7f924b501b7fc27ee51c3561c599"></span><a class="reference internal" href="#_CPPv312OTAComponent" title="OTAComponent">OTAComponent</a>::<strong>[anonymous]</strong> <code class="descname">OPEN</code><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -275,20 +286,19 @@
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N12OTAComponent9hostname_E">
-<span id="_CPPv2N12OTAComponent9hostname_E"></span><span id="OTAComponent::hostname___ss"></span><span class="target" id="class_o_t_a_component_1ad2356b7a69b5b940f255bac2b6beefdc"></span>std::string <code class="descname">hostname_</code><a class="headerlink" href="#_CPPv3N12OTAComponent9hostname_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N12OTAComponent7server_E">
+<span id="_CPPv2N12OTAComponent7server_E"></span><span id="OTAComponent::server___WiFiServerP"></span><span class="target" id="class_o_t_a_component_1a62d5e8b21fe6ed1b4c0c10966c897cc7"></span>WiFiServer *<code class="descname">server_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N12OTAComponent7server_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
-<dt id="_CPPv3N12OTAComponent7server_E">
-<span id="_CPPv2N12OTAComponent7server_E"></span><span id="OTAComponent::server___WiFiServerP"></span><span class="target" id="class_o_t_a_component_1a62d5e8b21fe6ed1b4c0c10966c897cc7"></span>WiFiServer *<code class="descname">server_</code><a class="headerlink" href="#_CPPv3N12OTAComponent7server_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N12OTAComponent7client_E">
+<span id="_CPPv2N12OTAComponent7client_E"></span><span id="OTAComponent::client___WiFiClient"></span><span class="target" id="class_o_t_a_component_1a28a1d3f615833281708e18e579cfc376"></span>WiFiClient <code class="descname">client_</code> = {}<a class="headerlink" href="#_CPPv3N12OTAComponent7client_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N12OTAComponent14ota_triggered_E">
 <span id="_CPPv2N12OTAComponent14ota_triggered_E"></span><span id="OTAComponent::ota_triggered___b"></span><span class="target" id="class_o_t_a_component_1a2f8814fd94d3bd34644b55f4b30be878"></span>bool <code class="descname">ota_triggered_</code> = {false}<a class="headerlink" href="#_CPPv3N12OTAComponent14ota_triggered_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>stores whether OTA is currently active. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N12OTAComponent14has_safe_mode_E">
@@ -323,6 +333,11 @@
 <span id="_CPPv2N12OTAComponent24at_ota_progress_message_E"></span><span id="OTAComponent::at_ota_progress_message___uint8_t"></span><span class="target" id="class_o_t_a_component_1ab2c38e45f5b4102e04090afa51f3ba11"></span>uint8_t <code class="descname">at_ota_progress_message_</code> = {0}<a class="headerlink" href="#_CPPv3N12OTAComponent24at_ota_progress_message_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>store OTA progress message index so that we don’t spam logs </p>
 </dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N12OTAComponent4rtc_E">
+<span id="_CPPv2N12OTAComponent4rtc_E"></span><span id="OTAComponent::rtc___ESPPreferenceObject"></span><span class="target" id="class_o_t_a_component_1a0f1cbfce57f254464d67df0dfa881f6f"></span><a class="reference internal" href="helpers.html#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">rtc_</code><a class="headerlink" href="#_CPPv3N12OTAComponent4rtc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>

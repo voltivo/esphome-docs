@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ESP32 Pulse Counter Sensor &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Pulse Counter Sensor &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,11 +14,12 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/pulse_counter.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Rotary Encoder Sensor" href="rotary_encoder.html" />
-    <link rel="prev" title="MS5611 Atmospheric Pressure Sensor" href="ms5611.html" />
+    <link rel="prev" title="PMSX003 Particulate Matter Sensor" href="pmsx003.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -49,7 +50,7 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">ESP32 Pulse Counter Sensor</a><ul>
+<li><a class="reference internal" href="#">Pulse Counter Sensor</a><ul>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
 <li><a class="reference internal" href="#api-reference">API Reference</a></li>
 </ul>
@@ -64,21 +65,17 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="esp32-pulse-counter-sensor">
-<h1>ESP32 Pulse Counter Sensor<a class="headerlink" href="#esp32-pulse-counter-sensor" title="Permalink to this headline">¶</a></h1>
-<p>This component allows you to count pulses on a PIN using the internal
-<a class="reference external" href="http://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html">pulse counter</a> peripheral of
-the ESP32. By default, the values by this sensor are reported in “pulses/min”. You can convert
-that to your own unit like in below example.</p>
+  <div class="section" id="pulse-counter-sensor">
+<h1>Pulse Counter Sensor<a class="headerlink" href="#pulse-counter-sensor" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
-<span class="n">App</span><span class="p">.</span><span class="n">make_pulse_counter_sensor</span><span class="p">(</span><span class="s">&quot;Stromverbrauch Wärmepumpe&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
+<span class="n">App</span><span class="p">.</span><span class="n">make_pulse_counter_sensor</span><span class="p">(</span><span class="s">&quot;Pulse Counter&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
 <span class="c1">// Unit conversion</span>
-<span class="k">auto</span> <span class="n">strom_warme</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_pulse_counter_sensor</span><span class="p">(</span><span class="s">&quot;Stromverbrauch Wärmepumpe&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
-<span class="n">strom_warme</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">set_unit_of_measurement</span><span class="p">(</span><span class="s">&quot;kW&quot;</span><span class="p">);</span>
-<span class="n">strom_warme</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">clear_filters</span><span class="p">();</span>
-<span class="n">strom_warme</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">add_multiply_filter</span><span class="p">(</span><span class="mf">0.06f</span><span class="p">);</span> <span class="c1">// convert from Wh pulse to kW</span>
+<span class="k">auto</span> <span class="n">pcnt_1</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_pulse_counter_sensor</span><span class="p">(</span><span class="s">&quot;Pulse Counter 2&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
+<span class="n">pcnt_1</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">set_unit_of_measurement</span><span class="p">(</span><span class="s">&quot;kW&quot;</span><span class="p">);</span>
+<span class="n">pcnt_1</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">clear_filters</span><span class="p">();</span>
+<span class="n">pcnt_1</span><span class="p">.</span><span class="n">pcnt</span><span class="o">-&gt;</span><span class="n">add_multiply_filter</span><span class="p">(</span><span class="mf">0.06f</span><span class="p">);</span> <span class="c1">// convert from Wh pulse to kW</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t" title="Application::make_pulse_counter_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_pulse_counter_sensor()</span></code></a>.</p>
@@ -148,7 +145,7 @@ that to your own unit like in below example.</p>
 <dt id="_CPPv3N6sensor27PulseCounterSensorComponent5setupEv">
 <span id="_CPPv2N6sensor27PulseCounterSensorComponent5setupEv"></span><span id="sensor::PulseCounterSensorComponent::setup"></span><span class="target" id="classsensor_1_1_pulse_counter_sensor_component_1abed279c2845da79ae829ce9f6a643619"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor27PulseCounterSensorComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_pulse_counter_sensor_component_1abed279c2845da79ae829ce9f6a643619"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_pulse_counter_sensor_component_1abed279c2845da79ae829ce9f6a643619"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
 
 <dl class="function">
@@ -168,6 +165,11 @@ that to your own unit like in below example.</p>
 </dl>
 </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor27PulseCounterSensorComponent11dump_configEv">
+<span id="_CPPv2N6sensor27PulseCounterSensorComponent11dump_configEv"></span><span id="sensor::PulseCounterSensorComponent::dump_config"></span><span class="target" id="classsensor_1_1_pulse_counter_sensor_component_1ace55c60fd742f457b06260f555e00af5"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor27PulseCounterSensorComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>

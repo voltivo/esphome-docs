@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GPIO Switch &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up GPIO pin switches in esphomelib that control GPIO outputs.">
+<meta itemprop="name" content="GPIO Switch">
+<meta itemprop="description" content="Instructions for setting up GPIO pin switches in esphomelib that control GPIO outputs.">
+<meta itemprop="image" content="https://esphomelib.com/_images/pin.svg">
+<meta name="twitter:title" content="GPIO Switch">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pin.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up GPIO pin switches in esphomelib that control GPIO outputs.">
+<meta property="og:title" content="GPIO Switch"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pin.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up GPIO pin switches in esphomelib that control GPIO outputs."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>GPIO Switch &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,6 +32,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/switch/gpio.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -91,17 +109,10 @@ GPIO pin to use for the switch.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>If you want the pin to default to HIGH on startup, you can use the inverted property
-of the <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="mi">25</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier&quot;</span>
-</pre></div>
-</div>
+<p>esphomelib will attempt to restore the state of the switch on boot-up and write the value
+very early in the boot process.</p>
+<p class="last">Please note that certain pins can have pull-up/down resistors that activate/deactivate a pin before
+esphomelib can initialize them. Please check with a multimeter and use another pin if necessary.</p>
 </div>
 </div>
 <div class="section" id="see-also">

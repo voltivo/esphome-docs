@@ -1,0 +1,379 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Changelog for esphomelib version 1.8.0.">
+<meta itemprop="name" content="Version 1.8.0">
+<meta itemprop="description" content="Changelog for esphomelib version 1.8.0.">
+<meta name="twitter:title" content="Version 1.8.0">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:creator" content="@OttoWinter_">
+<meta name="twitter:description" content="Changelog for esphomelib version 1.8.0.">
+<meta property="og:title" content="Version 1.8.0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Changelog for esphomelib version 1.8.0."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Version 1.8.0 &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.8.0.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Web Server API" href="../../web-api/index.html" />
+    <link rel="prev" title="Version 1.7.0" href="v1.7.0.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Version 1.8.0</a><ul>
+<li><a class="reference internal" href="#other-notable-changes">Other notable changes</a></li>
+<li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
+<li><a class="reference internal" href="#changes-in-1-8-1">Changes in 1.8.1</a></li>
+<li><a class="reference internal" href="#changes-in-1-8-2">Changes in 1.8.2</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="version-1-8-0">
+<h1>Version 1.8.0<a class="headerlink" href="#version-1-8-0" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/display/waveshare_epaper.html"><img alt="Waveshare E-Paper" class="component-image" src="../../_images/waveshare_epaper.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/display/nextion.html"><img alt="Nextion" class="component-image" src="../../_images/nextion.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/display/ssd1306_i2c.html"><img alt="SSD1306" class="component-image" src="../../_images/ssd1306.jpg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/display/waveshare_epaper.html">Waveshare E-Paper</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/display/nextion.html">Nextion</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/display/ssd1306_i2c.html">SSD1306</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/display/max7219.html"><img alt="MAX7219" class="component-image" src="../../_images/max7219.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/display/lcd_gpio.html"><img alt="LCD Display" class="component-image" src="../../_images/lcd.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/switch/remote_transmitter.html#rcswitch-remote-codes"><img alt="RCSwitch Integration" class="component-image" src="../../_images/remote.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/display/max7219.html">MAX7219</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/display/lcd_gpio.html">LCD Display</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/switch/remote_transmitter.html#rcswitch-remote-codes">RCSwitch Integration</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/spi.html"><img alt="SPI Bus" class="component-image" src="../../_images/spi.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/uart.html"><img alt="UART Bus" class="component-image" src="../../_images/uart.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/time.html"><img alt="Real Time Clock" class="component-image" src="../../_images/clock-outline.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/spi.html">SPI Bus</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/uart.html">UART Bus</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/time.html">Real Time Clock</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/uptime.html"><img alt="Uptime Sensor" class="component-image" src="../../_images/timer.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/pn532.html"><img alt="PN532" class="component-image" src="../../_images/pn532.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/rdm6300.html"><img alt="RDM6300" class="component-image" src="../../_images/rdm6300.jpg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/uptime.html">Uptime Sensor</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/pn532.html">PN532</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/rdm6300.html">RDM6300</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/ble_rssi.html"><img alt="BLE RSSI" class="component-image" src="../../_images/bluetooth.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_miflora.html"><img alt="Xiaomi MiFlora" class="component-image" src="../../_images/xiaomi_miflora.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_mijia.html"><img alt="Xiaomi MiJia" class="component-image" src="../../_images/xiaomi_mijia.jpg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/ble_rssi.html">BLE RSSI</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_miflora.html">Xiaomi MiFlora</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/xiaomi_mijia.html">Xiaomi MiJia</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/hmc5883l.html"><img alt="HMC5883L" class="component-image" src="../../_images/hmc5883l.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/hx711.html"><img alt="HX711" class="component-image" src="../../_images/hx711.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/hlw8012.html"><img alt="HLW8012" class="component-image" src="../../_images/hlw8012.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/hmc5883l.html">HMC5883L</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/hx711.html">HX711</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/hlw8012.html">HLW8012</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/bmp280.html"><img alt="BMP280" class="component-image" src="../../_images/bmp280.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ina219.html"><img alt="INA219" class="component-image" src="../../_images/ina219.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ina3221.html"><img alt="INA3221" class="component-image" src="../../_images/ina3221.jpg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/bmp280.html">BMP280</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ina219.html">INA219</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ina3221.html">INA3221</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/mhz19.html"><img alt="MH-Z19" class="component-image" src="../../_images/mhz19.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ms5611.html"><img alt="MS5611" class="component-image" src="../../_images/ms5611.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/tcs34725.html"><img alt="TCS34725" class="component-image" src="../../_images/tcs34725.jpg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/mhz19.html">MH-Z19</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/ms5611.html">MS5611</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/tcs34725.html">TCS34725</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/light/rgbww.html"><img alt="RGBWW Light" class="component-image" src="../../_images/rgbw.png" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/light/cwww.html"><img alt="Cold+Warm White Light" class="component-image" src="../../_images/brightness-medium.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/light/index#light-effects.html"><img alt="Light Effects" class="component-image" src="../../_images/creation.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/light/rgbww.html">RGBWW Light</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/light/cwww.html">Cold+Warm White Light</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/light/index#light-effects.html">Light Effects</a></td>
+</tr>
+</tbody>
+</table>
+<p>Hi everyone,</p>
+<p>Today I have a new version of esphomelib with lots of new features and tons of time put in to present to you and
+I hope you’re as excited as I am to try these new things out :)</p>
+<p>This release mainly focuses on these new features:</p>
+<ul class="simple">
+<li>Lots of Bug Fixes - Now that most of the hardware has arrived from china, I was able to fix a bunch
+of bugs with a lot of integrations.</li>
+<li><a class="reference internal" href="../components/display/index.html"><span class="doc">Displays!</span></a></li>
+<li>NFC/RFID Readers (<a class="reference internal" href="../components/pn532.html"><span class="doc">PN532</span></a> and <a class="reference internal" href="../components/rdm6300.html"><span class="doc">RDM6300</span></a>)</li>
+<li>New <a class="reference internal" href="../components/esp32_ble_tracker.html"><span class="doc">ESP32 BLE integrations</span></a> like <a class="reference internal" href="../components/sensor/xiaomi_miflora.html"><span class="doc">Xiaomi MiFlora</span></a></li>
+<li>Core Changes like the addition of the <a class="reference internal" href="../components/spi.html#spi"><span class="std std-ref">SPI bus</span></a> and <a class="reference internal" href="../components/uart.html#uart"><span class="std std-ref">UART bus</span></a></li>
+<li>Lots of new :<a class="reference internal" href="../components/light/index.html#light-effects"><span class="std std-ref">light effects</span></a> and support for cold-white/warm-white lights.</li>
+<li>A LOGO FOR THIS PROJECT!!! Thanks a lot to <a class="reference external" href="https://github.com/messismore">&#64;messimore</a> for
+this visual masterpiece.</li>
+</ul>
+<p>And if you find esphomelib great and have some of your projects using it, please do spread the word online
+(like <a class="reference external" href="https://www.dahlen.org/2018/08/esp8266-via-esphomelib-mit-home-assistant-verbinden/">Christoph Dahlen did</a>)
+and/or create <a class="reference internal" href="../index.html#cookbook"><span class="std std-ref">cookbook</span></a> entries so that others can learn from your work. Of course the main objective
+of this website is to document esphomelib’s features, but my vision is that it also inspires others to start
+awesome projects ☀️</p>
+<p>Special thanks to all the contributors for this release:</p>
+<ul class="simple">
+<li>esphomeyaml: Add ‘only-generate’ parameter to generate command to only generate the C++ code <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/84">#84</a> by <a class="reference external" href="https://github.com/apeeters">&#64;apeeters</a></li>
+<li>esphomeyaml: Fix esphomeyaml logs for tls enabled mqtt brokers <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/118">#118</a> by <a class="reference external" href="https://github.com/johnerikhalse">&#64;johnerikhalse</a></li>
+<li>esphomelib: Add Samsung IR codes <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/141">#141</a> by <a class="reference external" href="https://github.com/escoand">&#64;escoand</a></li>
+<li>esphomelib: Add support for SNTP and RTC <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/76">#76</a> by <a class="reference external" href="https://github.com/brandond">&#64;brandond</a></li>
+<li>esphomelib: Run travis jobs in parallel <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/123">#123</a> by <a class="reference external" href="https://github.com/lobradov">&#64;lobradov</a></li>
+<li>esphomelib: Fix typo in dallas error message <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/125">#125</a> by <a class="reference external" href="https://github.com/janpieper">&#64;janpieper</a></li>
+<li>esphomelib: Fix esphomelib examples <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/124">#124</a> by <a class="reference external" href="https://github.com/lobradov">&#64;lobradov</a></li>
+<li>esphomelib: Fix panic in binary_sensor template <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/111">#111</a> by <a class="reference external" href="https://github.com/nunofgs">&#64;nunofgs</a></li>
+<li>esphomelib: Add ESP8266 library dependency to Arduino IDE instructions <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/99">#99</a> by <a class="reference external" href="https://github.com/per1234">&#64;per1234</a></li>
+<li>esphomelib: Fixing I2C readings <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/98">#98</a> by <a class="reference external" href="https://github.com/exxamalte">&#64;exxamalte</a></li>
+<li>esphomedocs: Note added about resetting the ESP after serial upload before OTA upload <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/14">#14</a> by <a class="reference external" href="https://github.com/exxamalte">&#64;exxamalte</a></li>
+<li>esphomedocs: Add cookbook for dual relay cover <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/10">#10</a> by <a class="reference external" href="https://github.com/aequitas">&#64;aequitas</a></li>
+</ul>
+<p>And in some more personal news, you might have noticed that I was not very active in online communications (github, discord, …)
+and that’s partly been due to me concentrating on other stuff (university applications, work and
+<a class="reference external" href="http://blog.ocg.at/2018/09/dritter-blog-von-der-ioi-in-tsukuba-japan/">this year’s international olympiad of informatics</a>).
+But admittedly I must say being constantly active online is just very exhausting. As the next few weeks (or even months)
+will leave me with little time to due to the start of my studies, I plan on primarily focusing on GitHub communications.
+Plus I want to put an extra focus on reviewing PRs so that code submitters don’t have to wait for weeks.</p>
+<div class="section" id="other-notable-changes">
+<h2>Other notable changes<a class="headerlink" href="#other-notable-changes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Fixed certain occasions where esphomeyaml could run into recursive dependencies</p>
+</li>
+<li><p class="first">Fixed i2c scans not showing up via MQTT</p>
+</li>
+<li><p class="first">Improved build times by about 60%. Now, the build time should depend on the amount of components you’re using, not the total esphomelib code base size.</p>
+</li>
+<li><p class="first">Fixed ESP32 Touch setup mode</p>
+</li>
+<li><p class="first">Fixed template binary sensors</p>
+</li>
+<li><p class="first">Added the option to specify <code class="docutils literal notranslate"><span class="pre">never</span></code> for <code class="docutils literal notranslate"><span class="pre">update_interval</span></code> to never</p>
+</li>
+<li><p class="first">Added <code class="docutils literal notranslate"><span class="pre">deep_sleep.prevent</span></code> and <code class="docutils literal notranslate"><span class="pre">deep_sleep.enter</span></code> actions</p>
+</li>
+<li><p class="first">Fixed ESP32BLETracker surpassing the maximum code size</p>
+</li>
+<li><p class="first">Fixed ESP32BLETracker/Beacon throwing an exception when a warning occurs.</p>
+</li>
+<li><p class="first">Fixed FastLED effects not taking into account the light brightness</p>
+</li>
+<li><p class="first">Fixed compatibility with Arduino core versions below 2.0.4</p>
+</li>
+<li><p class="first">Added <code class="docutils literal notranslate"><span class="pre">output.turn_on</span></code>, <code class="docutils literal notranslate"><span class="pre">output.turn_off</span></code> and <code class="docutils literal notranslate"><span class="pre">output.set_level</span></code> actions.</p>
+</li>
+<li><p class="first">Fixed the remote transmitter/receiver using the heap inefficiently on the ESP8266 (was causing reboots)</p>
+</li>
+<li><p class="first">Fixed reliability with reading data from BME280s</p>
+</li>
+<li><p class="first">Fixed gas resistance readings from BME680s</p>
+</li>
+<li><p class="first">Fixed HTU21D readings only working in very verbose mode</p>
+</li>
+<li><p class="first">Sometimes the ESP would create a WiFi hotspot even though it was not configured to do so. That should be fixed now.</p>
+</li>
+<li><p class="first">You can now also have conditional actions. See <a class="reference internal" href="../guides/automations.html#if-action"><span class="std std-ref">if Action</span></a>.</p>
+</li>
+<li><p class="first">The esphomeyaml dashboard and HassIO add-on now can be configured with a password.</p>
+</li>
+<li><p class="first">Fixed YAML anchors not working (you can now prefix keys with <code class="docutils literal notranslate"><span class="pre">.</span></code> to make esphomeyaml ignore them)</p>
+</li>
+<li><p class="first">Made Dallas and DHT temperature sensor a bit more reliable by making the code a bit more efficient and thus resolving some timing issues.</p>
+</li>
+<li><p class="first">A <code class="docutils literal notranslate"><span class="pre">heartbeat</span></code> filter has been added to <a class="reference internal" href="../components/binary_sensor/index.html#binary-sensor-filters"><span class="std std-ref">binary sensors</span></a>.</p>
+</li>
+<li><p class="first">The <a class="reference internal" href="../components/esphomeyaml.html#esphomeyaml-on-loop"><span class="std std-ref">on_loop</span></a> trigger has been added.</p>
+</li>
+<li><p class="first">esphomeyaml now know about more ESP8266/ESP32 boards, so now you can use the board-specific pin
+names with even more board types.</p>
+</li>
+<li><p class="first">The mqtt client has a new option <code class="docutils literal notranslate"><span class="pre">shutdown_message</span></code> which will be sent when the board shuts down safely.</p>
+</li>
+<li><p class="first">In actions, instead of</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+  <span class="n">then</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span>
+                <span class="nb">id</span><span class="p">:</span> <span class="n">my_switch</span>
+</pre></div>
+</div>
+<p>You can now write:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+  <span class="n">then</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">my_switch</span>
+</pre></div>
+</div>
+<p>Or even shorter:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">my_switch</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="breaking-changes">
+<h2>Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The <a class="reference internal" href="../components/esphomeyaml.html"><span class="doc">core configuration</span></a> has been reworked a bit to a)
+make using different arduino framework version easier and b) make editing your local esphomelib
+copy easier.</li>
+<li>Light Effects now need to be manually declared in the config and will no longer show up automatically. Please see <a class="reference internal" href="../components/light/index.html#light-effects"><span class="std std-ref">Light Effects</span></a></li>
+<li>MAX6675 has been migrated to use the new SPI bus (and fixed!). Please see the docs for how to use it now.</li>
+</ul>
+</div>
+<div class="section" id="changes-in-1-8-1">
+<h2>Changes in 1.8.1<a class="headerlink" href="#changes-in-1-8-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>esphomeyaml: Limit upload speed to 115200 <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/122">#122</a></li>
+<li>esphomeyaml: Fix docker installs using old platformio version <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/125">#125</a></li>
+<li>esphomedocs: Waveshare E-Paper: 1.54in display works <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/22">#22</a> by <a class="reference external" href="https://github.com/fabaff">&#64;fabaff</a></li>
+</ul>
+</div>
+<div class="section" id="changes-in-1-8-2">
+<h2>Changes in 1.8.2<a class="headerlink" href="#changes-in-1-8-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>esphomedocs: Update custom sensor docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/25">#25</a></li>
+<li>esphomedocs: Fix typo in warning message <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/18">#18</a> by <a class="reference external" href="https://github.com/janpieper">&#64;janpieper</a></li>
+<li>esphomedocs: Add alternative SPI pin names <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/24">#24</a></li>
+<li>esphomelib: Add toggle payload to MQTT switch component <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/152">#152</a></li>
+<li>esphomelib: Update custom sensor example <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/154">#154</a></li>
+<li>esphomelib: Optimize MQTT client memory consumption a bit <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/155">#155</a></li>
+<li>esphomelib: Fix binary sensor initial value reporting <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/156">#156</a></li>
+<li>esphomeyaml: Fix binary sensor heartbeat not working <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/130">#130</a></li>
+<li>esphomeyaml: Fix MQTT discovery enabled when discovery_retain in config <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/131">#131</a></li>
+<li>esphomelib: Fix binary sensor heartbeat filter <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/157">#157</a></li>
+<li>esphomelib: Fix SSD1306 reset order for i2c <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/159">#159</a></li>
+<li>esphomeyaml: Fix SSD1306 lambda <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/132">#132</a></li>
+<li>esphomeyaml: Enable Travis Tests <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/133">#133</a></li>
+<li>esphomedocs: Fix typo in display docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/26">#26</a> by <a class="reference external" href="https://github.com/jblb">&#64;jblb</a></li>
+<li>esphomeyaml: Auto-Update esphomelib dev version <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/134">#134</a></li>
+<li>esphomeyaml: Add SSD1306 64x48 display <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/136">#136</a></li>
+<li>esphomedocs: Typo in display docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/28">#28</a> by <a class="reference external" href="https://github.com/yuanl">&#64;yuanl</a></li>
+<li>esphomedocs: Typo fix. <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/33">#33</a> by <a class="reference external" href="https://github.com/corbanmailloux">&#64;corbanmailloux</a></li>
+<li>esphomelib: Fix typo “noting” <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/172">#172</a> by <a class="reference external" href="https://github.com/TheJulianJES">&#64;TheJulianJES</a></li>
+<li>esphomedocs: Added docker local USB port mapping <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/31">#31</a> by <a class="reference external" href="https://github.com/ladefoged81">&#64;ladefoged81</a></li>
+<li>esphomedocs: Fixed typo <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/30">#30</a> by <a class="reference external" href="https://github.com/ladefoged81">&#64;ladefoged81</a></li>
+<li>esphomedocs: Add missing (required) name to example. <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/29">#29</a> by <a class="reference external" href="https://github.com/corbanmailloux">&#64;corbanmailloux</a></li>
+<li>esphomedocs: Add ESP32 BLE workaround docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/34">#34</a></li>
+<li>esphomelib: Apply effect after changing colors <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/169">#169</a> by <a class="reference external" href="https://github.com/TheJulianJES">&#64;TheJulianJES</a></li>
+<li>esphomelib: Add 64x48 SSD1306 Display <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/161">#161</a></li>
+<li>esphomedocs: Fix output link <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/35">#35</a></li>
+<li>esphomedocs: Fix pulse counter API typo <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/36">#36</a></li>
+<li>esphomedocs: Fix display docs format typo <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/37">#37</a></li>
+<li>esphomeyaml: Fix serial monitor opening when logger disabled <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/138">#138</a></li>
+<li>esphomeyaml: Add clean MQTT button to dashboard <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/139">#139</a></li>
+<li>esphomeyaml: Fix using unicode in lambdas <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/141">#141</a></li>
+<li>esphomeyaml: Bump platformio-espressif32 to 1.4.0 <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/142">#142</a></li>
+<li>esphomeyaml: Docker default to starting dashboard <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/143">#143</a></li>
+<li>esphomedocs: Improve WiFi&amp;Manual IP docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/38">#38</a></li>
+<li>esphomedocs: Fix PN532 update_interval typo <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/39">#39</a></li>
+<li>esphomedocs: Fix Sonoff S20/4CH example configurations <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/40">#40</a></li>
+<li>esphomelib: Split FastLED header from source <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/175">#175</a></li>
+<li>esphomelib: Fix WiFi AP-only mode <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/177">#177</a></li>
+<li>esphomelib: Fix RC Switch Transmitters <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/178">#178</a></li>
+<li>esphomelib: Use dynamic JSON buffer <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/179">#179</a></li>
+<li>esphomelib: Web Server Print incoming requests <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/180">#180</a></li>
+<li>esphomelib: Add option to have different log level over MQTT <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/176">#176</a></li>
+<li>esphomelib: Fix MQTT login with anonymous credentials <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/182">#182</a></li>
+<li>esphomelib: WiFi: Add power save mode option <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/181">#181</a></li>
+<li>esphomeyaml: Fix component loader value error <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/149">#149</a></li>
+<li>esphomelib: Fix VectorJsonBuffer for ESP8266 (unaligned address) <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/183">#183</a></li>
+<li>esphomedocs: WiFi: Add power save mode option <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/41">#41</a></li>
+<li>esphomedocs: Add SSD1306 64x48 Display <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/27">#27</a></li>
+<li>esphomeyaml: WiFi: Add power save mode option <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/150">#150</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-changelog-v1.8.0" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

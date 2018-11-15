@@ -1,6 +1,11 @@
 Remote Receiver Component
 =========================
 
+.. seo::
+    :description: Instructions for setting up remote receivers in esphomelib.
+    :image: remote.svg
+    :keywords: RF, infrared
+
 The ``remote_receiver`` component lets you receive and decode any remote signal, these can
 for example be infrared remotes or 433MHz signals.
 
@@ -27,11 +32,12 @@ Configuration variables:
   - **lg**: Decode and dump LG infrared codes.
   - **nec**: Decode and dump NEC infrared codes.
   - **panasonic**: Decode and dump Panasonic infrared codes.
+  - **samsung**: Decode and dump Samsung infrared codes.
   - **sony**: Decode and dump Sony infrared codes.
   - **rc_switch**: Decode and dump RCSwitch RF codes.
   - **raw**: Print all remote codes in their raw form. Useful for using arbitrary protocols.
 
-- **tolerance** (*Optional*, int): The percentage that the remote signal lengths can devicate in the
+- **tolerance** (*Optional*, int): The percentage that the remote signal lengths can deviate in the
   decoding process. Defaults to ``25%``.
 - **buffer_size** (*Optional*, int): The size of the internal buffer for storing the remote codes. Defaults to ``10kb``
   on the ESP32 and ``1kb`` on the ESP8266.

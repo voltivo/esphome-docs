@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>SPI Bus &#8212; esphomelib 1.8.2 documentation</title>
+    <title>SPI Bus &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/core/spi.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -81,8 +82,13 @@
 <dt id="_CPPv3N12SPIComponent5setupEv">
 <span id="_CPPv2N12SPIComponent5setupEv"></span><span id="SPIComponent::setup"></span><span class="target" id="class_s_p_i_component_1ade1d98eea61be67397733b919a3c4456"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12SPIComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_s_p_i_component_1ade1d98eea61be67397733b919a3c4456"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#class_s_p_i_component_1ade1d98eea61be67397733b919a3c4456"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N12SPIComponent11dump_configEv">
+<span id="_CPPv2N12SPIComponent11dump_configEv"></span><span id="SPIComponent::dump_config"></span><span class="target" id="class_s_p_i_component_1a45deed9408cd20d36954ea6d47e5871a"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12SPIComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
@@ -190,33 +196,33 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice6enableEv">
-<span id="_CPPv2N9SPIDevice6enableEv"></span><span id="SPIDevice::enable"></span><span class="target" id="class_s_p_i_device_1aae4fdac5cfb15cb34367b1a13b978412"></span>void <code class="descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice6enableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1acbdebdcd0f73f726337a5e3d6972cdd0"></span><code class="descname">void HOT SPIDevice::enable()</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice7disableEv">
-<span id="_CPPv2N9SPIDevice7disableEv"></span><span id="SPIDevice::disable"></span><span class="target" id="class_s_p_i_device_1ac9c40e1bcd4ccffd128269d6dc35a84d"></span>void <code class="descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice7disableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1ac8d3e656fbe41d71239e128f75ff9732"></span><code class="descname">void HOT SPIDevice::disable()</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice9read_byteEv">
-<span id="_CPPv2N9SPIDevice9read_byteEv"></span><span id="SPIDevice::read_byte"></span><span class="target" id="class_s_p_i_device_1a78a11411086ffe767c58d900b8626dbf"></span>uint8_t <code class="descname">read_byte</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice9read_byteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1a9226c48211e57e6c8fe6d534ba22a62b"></span><code class="descname">uint8_t HOT SPIDevice::read_byte()</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice10read_arrayEP7uint8_t6size_t">
-<span id="_CPPv2N9SPIDevice10read_arrayEP7uint8_t6size_t"></span><span id="SPIDevice::read_array__uint8_tP.s"></span><span class="target" id="class_s_p_i_device_1af097e2d2317e64e4bc07ae510603435d"></span>void <code class="descname">read_array</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, size_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice10read_arrayEP7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1a7b24a9e649b1ece77b00c7291e57c197"></span><code class="descname">void HOT SPIDevice::read_array(uint8_t * data, size_t length)</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice10write_byteE7uint8_t">
-<span id="_CPPv2N9SPIDevice10write_byteE7uint8_t"></span><span id="SPIDevice::write_byte__uint8_t"></span><span class="target" id="class_s_p_i_device_1ad10783e3e99e887b35199d7fc5e0b147"></span>void <code class="descname">write_byte</code><span class="sig-paren">(</span>uint8_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice10write_byteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1a4ab7594a9899663792d6cf2f98602873"></span><code class="descname">void HOT SPIDevice::write_byte(uint8_t data)</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice11write_arrayEP7uint8_t6size_t">
-<span id="_CPPv2N9SPIDevice11write_arrayEP7uint8_t6size_t"></span><span id="SPIDevice::write_array__uint8_tP.s"></span><span class="target" id="class_s_p_i_device_1aa6380460310e4f8030e958a2ab116779"></span>void <code class="descname">write_array</code><span class="sig-paren">(</span>uint8_t *<em>data</em>, size_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice11write_arrayEP7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1a52e6a74a6068a69337063eeb76296fc0"></span><code class="descname">void HOT SPIDevice::write_array(uint8_t * data, size_t length)</code></dt>
 <dd></dd></dl>
 
 </div>
@@ -228,8 +234,8 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9SPIDevice10high_speedEv">
-<span id="_CPPv2N9SPIDevice10high_speedEv"></span><span id="SPIDevice::high_speed"></span><span class="target" id="class_s_p_i_device_1a79464e4391951dd8d17275d8edcf4fc7"></span>bool <code class="descname">high_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9SPIDevice10high_speedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_s_p_i_device_1ad41d58443fa768844a0c23545a58f011"></span><code class="descname">bool HOT SPIDevice::high_speed()</code></dt>
 <dd></dd></dl>
 
 </div>

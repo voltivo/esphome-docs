@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>esphomeyaml Core Configuration &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the core esphomeyaml configuration.">
+<meta itemprop="name" content="esphomeyaml Core Configuration">
+<meta itemprop="description" content="Instructions for setting up the core esphomeyaml configuration.">
+<meta itemprop="image" content="https://esphomelib.com/_images/cloud-circle.svg">
+<meta name="twitter:title" content="esphomeyaml Core Configuration">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/cloud-circle.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up the core esphomeyaml configuration.">
+<meta property="og:title" content="esphomeyaml Core Configuration"/>
+<meta property="og:image" content="https://esphomelib.com/_images/cloud-circle.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up the core esphomeyaml configuration."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>esphomeyaml Core Configuration &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -15,6 +32,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/esphomeyaml.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -221,8 +239,7 @@ is already set up. You can however change this using the <code class="docutils l
     <span class="n">priority</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span>
     <span class="c1"># ...</span>
     <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span>
-          <span class="nb">id</span><span class="p">:</span> <span class="n">switch_1</span>
+      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">switch_1</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -232,11 +249,10 @@ positive values) mean a high priority and thus also your code being executed ear
 are executed very late. Defaults to <code class="docutils literal notranslate"><span class="pre">-10</span></code>. Priorities (you can use any value between them too):<ul>
 <li><code class="docutils literal notranslate"><span class="pre">100</span></code>: This is where all hardware initialization of vital components is executed. For example setting switches
 to their initial state.</li>
+<li><code class="docutils literal notranslate"><span class="pre">50.0</span></code>: This is where most sensors are set up.</li>
 <li><code class="docutils literal notranslate"><span class="pre">10</span></code>: At this priority, WiFi is initialized.</li>
 <li><code class="docutils literal notranslate"><span class="pre">7.5</span></code>: MQTT initialization takes place at this priority.</li>
-<li><code class="docutils literal notranslate"><span class="pre">0.0</span></code>: This is where most sensors are set up. They are usually set up this late so that they can dump their
-configuration in the MQTT logs.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-5.0</span></code>: The inidividual frontend counterparts for the backend components are configured at this priority</li>
+<li><code class="docutils literal notranslate"><span class="pre">-5.0</span></code>: The individual frontend counterparts for the backend components are configured at this priority</li>
 <li><code class="docutils literal notranslate"><span class="pre">-10.0</span></code>: At this priority, pretty much everything should already be initialized.</li>
 </ul>
 </li>
@@ -256,8 +272,7 @@ example, the MQTT client may have already disconnected.</p>
   <span class="c1"># ...</span>
   <span class="n">on_shutdown</span><span class="p">:</span>
     <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span>
-          <span class="nb">id</span><span class="p">:</span> <span class="n">switch_1</span>
+      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">switch_1</span>
 </pre></div>
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>

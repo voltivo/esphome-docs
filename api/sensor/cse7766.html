@@ -1,0 +1,209 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSE7766 Power Sensor &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/cse7766.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dallas Component" href="dallas.html" />
+    <link rel="prev" title="BMP280 Temperature/Pressure Sensor" href="bmp280.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CSE7766 Power Sensor</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cse7766-power-sensor">
+<h1>CSE7766 Power Sensor<a class="headerlink" href="#cse7766-power-sensor" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application12make_cse7766EP13UARTComponent" title="Application::make_cse7766"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_cse7766()</span></code></a>.</p>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N6sensor16CSE7766ComponentE">
+<span id="_CPPv2N6sensor16CSE7766ComponentE"></span><span id="sensor::CSE7766Component"></span><span class="target" id="classsensor_1_1_c_s_e7766_component"></span><em class="property">class </em><code class="descname">CSE7766Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> <a class="reference internal" href="../core/uart.html#_CPPv310UARTDevice" title="UARTDevice">UARTDevice</a><a class="headerlink" href="#_CPPv3N6sensor16CSE7766ComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent">
+<span id="_CPPv2N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent"></span><span id="sensor::CSE7766Component::CSE7766Component__UARTComponentP"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1ad733f1b3b51c2bd4d75221af542b6046"></span><code class="descname">CSE7766Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component19make_voltage_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16CSE7766Component19make_voltage_sensorERKNSt6stringE"></span><span id="sensor::CSE7766Component::make_voltage_sensor__ssCR"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a56ef80320cff9b1d653fa04517ff062b"></span>CSE7766VoltageSensor *<code class="descname">make_voltage_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component19make_voltage_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component19make_current_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16CSE7766Component19make_current_sensorERKNSt6stringE"></span><span id="sensor::CSE7766Component::make_current_sensor__ssCR"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a7b74df6c0fb88f03fbbd584aac059c79"></span>CSE7766CurrentSensor *<code class="descname">make_current_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component19make_current_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component17make_power_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16CSE7766Component17make_power_sensorERKNSt6stringE"></span><span id="sensor::CSE7766Component::make_power_sensor__ssCR"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a07a143a35f7014006cc3b0fcb49c7710"></span>CSE7766PowerSensor *<code class="descname">make_power_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component17make_power_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component4loopEv">
+<span id="_CPPv2N6sensor16CSE7766Component4loopEv"></span><span id="sensor::CSE7766Component::loop"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1af5c328fb44cdea769303ba6559650d30"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_c_s_e7766_component_1af5c328fb44cdea769303ba6559650d30"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor16CSE7766Component18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor16CSE7766Component18get_setup_priorityEv"></span><span id="sensor::CSE7766Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a565ab85e7564e1033dc22b59ee93c762"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16CSE7766Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component11check_byte_Ev">
+<span id="_CPPv2N6sensor16CSE7766Component11check_byte_Ev"></span><span id="sensor::CSE7766Component::check_byte_"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a4494fdb16809384b9febcc5ca60a7c0c"></span>bool <code class="descname">check_byte_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component11check_byte_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component11parse_data_Ev">
+<span id="_CPPv2N6sensor16CSE7766Component11parse_data_Ev"></span><span id="sensor::CSE7766Component::parse_data_"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a1b0e894efc6537624dc4e07ad772544f"></span>void <code class="descname">parse_data_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component11parse_data_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component15get_24_bit_uintE7uint8_t">
+<span id="_CPPv2N6sensor16CSE7766Component15get_24_bit_uintE7uint8_t"></span><span id="sensor::CSE7766Component::get_24_bit_uint__uint8_t"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1aafe5da2f414d62170977bf72696d7317"></span>uint32_t <code class="descname">get_24_bit_uint</code><span class="sig-paren">(</span>uint8_t <em>start_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component15get_24_bit_uintE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component9raw_data_E">
+<span id="_CPPv2N6sensor16CSE7766Component9raw_data_E"></span><span id="sensor::CSE7766Component::raw_data___uint8_tA"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a2add5dc62630fc1861329512f9da75ee"></span>uint8_t <code class="descname">raw_data_</code>[24]<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component9raw_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component15raw_data_index_E">
+<span id="_CPPv2N6sensor16CSE7766Component15raw_data_index_E"></span><span id="sensor::CSE7766Component::raw_data_index___uint8_t"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1adf5ff82349a7e3535f8e0522a274635c"></span>uint8_t <code class="descname">raw_data_index_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component15raw_data_index_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component18last_transmission_E">
+<span id="_CPPv2N6sensor16CSE7766Component18last_transmission_E"></span><span id="sensor::CSE7766Component::last_transmission___uint32_t"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1afb1bece67b2b0d258ae4a83fc5f79784"></span>uint32_t <code class="descname">last_transmission_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component18last_transmission_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component8voltage_E">
+<span id="_CPPv2N6sensor16CSE7766Component8voltage_E"></span><span id="sensor::CSE7766Component::voltage___CSE7766VoltageSensorP"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1ac1cc2a7cf3251d35b5d4a12c89d058e3"></span>CSE7766VoltageSensor *<code class="descname">voltage_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component8voltage_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component8current_E">
+<span id="_CPPv2N6sensor16CSE7766Component8current_E"></span><span id="sensor::CSE7766Component::current___CSE7766CurrentSensorP"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1ab5e5e1ec509bf6ba1fc6d42a2e711def"></span>CSE7766CurrentSensor *<code class="descname">current_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component8current_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component6power_E">
+<span id="_CPPv2N6sensor16CSE7766Component6power_E"></span><span id="sensor::CSE7766Component::power___CSE7766PowerSensorP"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a6f9dfe064691d92dfdce4134557cdb3a"></span>CSE7766PowerSensor *<code class="descname">power_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component6power_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="cse7766_8h_1a4782f708d6a41437b86a62b8893f77ce"></span><em class="property">using </em><code class="descname">sensor::CSE7766VoltageSensor = typedef EmptySensor&lt;1, ICON_FLASH, UNIT_V&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="cse7766_8h_1af32eb577bbdb7054b077351f001ea2da"></span><em class="property">using </em><code class="descname">sensor::CSE7766CurrentSensor = typedef EmptySensor&lt;1, ICON_FLASH, UNIT_A&gt;</code></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="cse7766_8h_1ae5153635b2f5d15fe26d390cc91dec1a"></span><em class="property">using </em><code class="descname">sensor::CSE7766PowerSensor = typedef EmptySensor&lt;1, ICON_FLASH, UNIT_W&gt;</code></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

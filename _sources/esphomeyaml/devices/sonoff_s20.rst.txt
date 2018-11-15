@@ -1,6 +1,10 @@
 Using With Sonoff S20
 =====================
 
+.. seo::
+    :description: Instructions for putting Sonoff S20 devices into flash mode and installing esphomelib on them.
+    :image: sonoff_s20.jpg
+
 esphomeyaml can also be used with Sonoff S20 smart sockets. These devices are
 basically just an ESP8266 chip with a relay to control the socket, a small button on the
 front and a blue and green LED light.
@@ -311,7 +315,7 @@ Step 6: Finishing Up
 --------------------
 
 Now you're pretty much done with setting up the Sonoff S20. The only steps left are to
-remove any cables within the housing and make sure everyhing in there is clean. If, for
+remove any cables within the housing and make sure everything in there is clean. If, for
 example, you used wires to connect the UART console, you should definitely remove them to avoid
 a short with mains.
 

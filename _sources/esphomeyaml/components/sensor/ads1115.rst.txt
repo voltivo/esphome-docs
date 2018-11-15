@@ -1,6 +1,11 @@
 ADS1115 Sensor
 ==============
 
+.. seo::
+    :description: Instructions for setting up ADS1115 multiplexed analog voltage sensors.
+    :image: ads1115.jpg
+    :keywords: ADS1115
+
 The ``ads1115`` sensor allows you to use your ADS1115 sigma-delta ADC
 sensors (`datasheet <http://www.ti.com/lit/ds/symlink/ads1115.pdf>`__, `Adafruit`_) with esphomelib.
 First, setup a :doc:`ADS1115 Hub </esphomeyaml/components/ads1115>` for your ADS1115 sensor and then use this
@@ -38,8 +43,8 @@ Configuration variables:
 -  **name** (**Required**, string): The name for this sensor.
 -  **ads1115_id** (*Optional*, :ref:`config-id`): Manually specify the ID of the
    :doc:`ADS1115 Hub </esphomeyaml/components/ads1115>` you want to use this sensor.
-- **update_interval** (*Optional*, :ref:`config-time`): The interval
-  to check the sensor. Defaults to ``15s``. See :ref:`sensor-default_filter`.
+-  **update_interval** (*Optional*, :ref:`config-time`): The interval
+   to check the sensor. Defaults to ``15s``. See :ref:`sensor-default_filter`.
 -  **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation.
 
 Multiplexer And Gain

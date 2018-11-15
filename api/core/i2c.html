@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>I2CComponent &#8212; esphomelib 1.8.2 documentation</title>
+    <title>I2CComponent &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/core/i2c.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -242,14 +243,14 @@ for the ESP32 the ability to have multiple i2c busses in operation at the same t
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N12I2CComponent6write_E7uint8_tPK7uint8_t7uint8_t">
-<span id="_CPPv2N12I2CComponent6write_E7uint8_tPK7uint8_t7uint8_t"></span><span id="I2CComponent::write___uint8_t.uint8_tCP.uint8_t"></span><span class="target" id="class_i2_c_component_1aceedd0e3ff588b91fd7fff4c1e72a88b"></span>void <code class="descname">write_</code><span class="sig-paren">(</span>uint8_t <em>address</em>, <em class="property">const</em> uint8_t *<em>data</em>, uint8_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12I2CComponent6write_E7uint8_tPK7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_i2_c_component_1a55ebcda182c80278c9ede1b15ae19971"></span><code class="descname">void HOT I2CComponent::write_(uint8_t address, const uint8_t * data, uint8_t len)</code></dt>
 <dd><p>Write len amount of bytes from data to address. begin_transmission_ must be called before this. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N12I2CComponent9write_16_E7uint8_tPK8uint16_t7uint8_t">
-<span id="_CPPv2N12I2CComponent9write_16_E7uint8_tPK8uint16_t7uint8_t"></span><span id="I2CComponent::write_16___uint8_t.uint16_tCP.uint8_t"></span><span class="target" id="class_i2_c_component_1acaf9f8adb058a785280600e20c637c42"></span>void <code class="descname">write_16_</code><span class="sig-paren">(</span>uint8_t <em>address</em>, <em class="property">const</em> uint16_t *<em>data</em>, uint8_t <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12I2CComponent9write_16_E7uint8_tPK8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="class_i2_c_component_1af2782e9ac8ba3986ed36c351dc764b4e"></span><code class="descname">void HOT I2CComponent::write_16_(uint8_t address, const uint16_t * data, uint8_t len)</code></dt>
 <dd><p>Write len amount of 16-bit words from data to address. begin_transmission_ must be called before this. </p>
 </dd></dl>
 
@@ -272,10 +273,9 @@ for the ESP32 the ability to have multiple i2c busses in operation at the same t
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N12I2CComponent4loopEv">
-<span id="_CPPv2N12I2CComponent4loopEv"></span><span id="I2CComponent::loop"></span><span class="target" id="class_i2_c_component_1abd4776ebdbc819d4f3e29dad90dc70e9"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12I2CComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Do an address range scan if necessary. </p>
-</dd></dl>
+<dt id="_CPPv3N12I2CComponent11dump_configEv">
+<span id="_CPPv2N12I2CComponent11dump_configEv"></span><span id="I2CComponent::dump_config"></span><span class="target" id="class_i2_c_component_1a402c50165f2cc055d4ea736f2908bb9f"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12I2CComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK12I2CComponent18get_setup_priorityEv">

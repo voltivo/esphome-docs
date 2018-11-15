@@ -5,8 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>HX711 Load Cell Amplifier &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib">
+<meta name="keywords" content="HX711">
+<meta itemprop="name" content="HX711 Load Cell Amplifier">
+<meta itemprop="description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib">
+<meta itemprop="image" content="https://esphomelib.com/_images/hx711.svg">
+<meta name="twitter:title" content="HX711 Load Cell Amplifier">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/hx711.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib">
+<meta property="og:title" content="HX711 Load Cell Amplifier"/>
+<meta property="og:image" content="https://esphomelib.com/_images/hx711.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>HX711 Load Cell Amplifier &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,6 +33,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/hx711.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -52,6 +71,7 @@
   <ul>
 <li><a class="reference internal" href="#">HX711 Load Cell Amplifier</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#converting-units">Converting Units</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -94,9 +114,37 @@ load cell amplifier
 <li><strong>clk_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The CLK pin.</li>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>.
 See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">update_interval gotchas</span></a>.</li>
-<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for codegeneration.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
 <li>All other options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
 </ul>
+</div>
+<div class="section" id="converting-units">
+<h2>Converting Units<a class="headerlink" href="#converting-units" title="Permalink to this headline">¶</a></h2>
+<p>As the HX711 does not have any calibration data, you have to convert the measurement to units yourself.
+To calibrate the sensor:</p>
+<ol class="arabic simple">
+<li>Place nothing or a known mass on the sensor, for example <code class="docutils literal notranslate"><span class="pre">0kg</span></code></li>
+<li>Wait for the data to arrive in the logs and write down the value. For example <code class="docutils literal notranslate"><span class="pre">120</span></code>.</li>
+<li>Place another (different) known mass on the sensor, for example <code class="docutils literal notranslate"><span class="pre">1kg</span></code></li>
+<li>Again wait for the data to arrive and note the value, for example <code class="docutils literal notranslate"><span class="pre">810</span></code>.</li>
+</ol>
+<p>Once you’ve done those steps, you can use the <code class="docutils literal notranslate"><span class="pre">map</span></code> function to map the incoming value to the calibrated one:</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="n">sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">hx711</span>
+    <span class="c1"># ... Other HX711 options</span>
+    <span class="n">filters</span><span class="p">:</span>
+      <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
+          <span class="n">auto</span> <span class="n">first_mass</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">first</span> <span class="n">known</span> <span class="n">mass</span> <span class="n">was</span> <span class="mi">0</span><span class="n">kg</span>
+          <span class="n">auto</span> <span class="n">first_value</span> <span class="o">=</span> <span class="mf">120.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">value</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">known</span> <span class="n">mass</span> <span class="n">was</span> <span class="mi">120</span>
+          <span class="n">auto</span> <span class="n">second_mass</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">second</span> <span class="n">mass</span> <span class="n">was</span> <span class="mi">1</span><span class="n">kg</span>
+          <span class="n">auto</span> <span class="n">second_value</span> <span class="o">=</span> <span class="mf">810.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">second</span> <span class="n">value</span> <span class="n">was</span> <span class="mi">810</span>
+
+          <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">first_value</span><span class="p">,</span> <span class="n">second_value</span><span class="p">,</span> <span class="n">first_mass</span><span class="p">,</span> <span class="n">second_mass</span><span class="p">);</span>
+    <span class="n">unit_of_measurement</span><span class="p">:</span> <span class="n">kg</span>
+</pre></div>
+</div>
+<p>Replace the masses and values <code class="docutils literal notranslate"><span class="pre">120.0</span></code>, <code class="docutils literal notranslate"><span class="pre">810.0</span></code>, etc with your values.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>

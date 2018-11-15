@@ -1,10 +1,16 @@
 Xiaomi MiJia BLE Sensor
 =======================
 
+.. seo::
+    :description: Instructions for setting up Xiaomi Mi Jia bluetooth-based temperature and humidity sensors in esphomelib.
+    :image: xiaomi_miflora.jpg
+    :keywords: Xiaomi, Mi Jia, BLE, Bluetooth
+
 The ``xiaomi_mijia`` sensor platform lets you track the output of Xiaomi MiJia Bluetooth Low Energy
 devices using the :doc:`/esphomeyaml/components/esp32_ble_tracker`. This component will track the
 temperature, humidity and optionally the battery level of the MiJia device every time the sensor
-sends out a BLE broadcast.
+sends out a BLE broadcast. Note that contrary to other implementations, esphomelib can track as many
+MiJia devices at once as you want.
 
 .. figure:: images/xiaomi_mijia-full.jpg
     :align: center
@@ -35,13 +41,13 @@ Configuration variables:
 ------------------------
 
 - **mac_address** (**Required**, MAC Address): The MAC address of the Xiaomi MiJia device.
-- **temperature** (**Required**): The information for the temperature sensor.
+- **temperature** (*Optional*): The information for the temperature sensor.
 
   - **name** (**Required**, string): The name for the temperature sensor.
   - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
   - All other options from :ref:`Sensor <config-sensor>` and :ref:`MQTT Component <config-mqtt-component>`.
 
-- **humidity** (**Required**): The information for the humidity sensor
+- **humidity** (*Optional*): The information for the humidity sensor
 
   - **name** (**Required**, string): The name for the humidity sensor.
   - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
@@ -85,7 +91,7 @@ See Also
 - :doc:`/esphomeyaml/components/sensor/xiaomi_miflora`
 - :doc:`/esphomeyaml/components/sensor/index`
 - :doc:`API Reference </api/misc/esp32_ble_tracker>`
-- `Xiaomi Mijia BLE protocl <https://github.com/mspider65/Xiaomi-Mijia-Bluetooth-Temperature-and-Humidity-Sensor>`__ by `@mspider65 <https://github.com/mspider65>`__
+- `Xiaomi Mijia BLE protocol <https://github.com/mspider65/Xiaomi-Mijia-Bluetooth-Temperature-and-Humidity-Sensor>`__ by `@mspider65 <https://github.com/mspider65>`__
 - `OpenMQTTGateway <https://github.com/1technophile/OpenMQTTGateway>`__ by `@1technophile <https://github.com/1technophile>`__
 - `Edit this page on GitHub <https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/xiaomi_mijia.rst>`__
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Shutdown Switch &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Shutdown Switch &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/switch/shutdown.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -91,18 +92,6 @@ be discharged too much.</p>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N7switch_14ShutdownSwitch7turn_onEv">
-<span id="_CPPv2N7switch_14ShutdownSwitch7turn_onEv"></span><span id="switch_::ShutdownSwitch::turn_on"></span><span class="target" id="classswitch___1_1_shutdown_switch_1ad16af3602814c5c53cd5cb3778eeef0d"></span>void <code class="descname">turn_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14ShutdownSwitch7turn_onEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Turn this switch on. When creating a switch, you should implement this (inversion will already be applied). </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N7switch_14ShutdownSwitch8turn_offEv">
-<span id="_CPPv2N7switch_14ShutdownSwitch8turn_offEv"></span><span id="switch_::ShutdownSwitch::turn_off"></span><span class="target" id="classswitch___1_1_shutdown_switch_1abbf88d9e07a2d59f8d2c2e4a45526a94"></span>void <code class="descname">turn_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14ShutdownSwitch8turn_offEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Turn this switch off. When creating a switch, you should implement this (inversion will already be applied). </p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3N7switch_14ShutdownSwitch4iconEv">
 <span id="_CPPv2N7switch_14ShutdownSwitch4iconEv"></span><span id="switch_::ShutdownSwitch::icon"></span><span class="target" id="classswitch___1_1_shutdown_switch_1a4da80e3daa5ac41f192b6856896cec81"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14ShutdownSwitch4iconEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Override this to set the Home Assistant icon for this switch. </p>
@@ -110,6 +99,25 @@ be discharged too much.</p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The icon of this switch, for example “mdi:fan”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7switch_14ShutdownSwitch11write_stateEb">
+<span id="_CPPv2N7switch_14ShutdownSwitch11write_stateEb"></span><span id="switch_::ShutdownSwitch::write_state__b"></span><span class="target" id="classswitch___1_1_shutdown_switch_1ad6922388afab9780e396b12d9824eabf"></span>void <code class="descname">write_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_14ShutdownSwitch11write_stateEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write the given state to hardware. </p>
+<p>You should implement this abstract method if you want to create your own switch.</p>
+<p>In the implementation of this method, you should also call publish_state to acknowledge that the state was written to the hardware.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">state</span></code>: The state to write. Inversion is already applied if user specified it. </li>
+</ul>
+</dd>
 </dl>
 </p>
 </dd></dl>

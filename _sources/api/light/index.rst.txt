@@ -8,7 +8,9 @@ access a combined :cpp:class:`LightState` object and use only that to set state 
 state updates.
 
 .. toctree::
-    fastled.rst
+    :glob:
+
+    *
 
 Example Usage
 -------------
@@ -204,6 +206,21 @@ MQTTJSONLightComponent
 **********************
 
 .. doxygenclass:: light::MQTTJSONLightComponent
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: light::TurnOffAction
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: light::TurnOnAction
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: light::ToggleAction
     :members:
     :protected-members:
     :undoc-members:

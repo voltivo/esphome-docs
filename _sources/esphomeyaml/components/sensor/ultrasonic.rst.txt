@@ -1,6 +1,11 @@
 Ultrasonic Distance Sensor
 ==========================
 
+.. seo::
+    :description: Instructions for setting up ultrasonic distance measurement sensors in esphomelib.
+    :image: ultrasonic.jpg
+    :keywords: ultrasonic, hc-sr04
+
 The ultrasonic distance sensor allows you to use simple ultrasonic
 sensors like the HC-SR04
 (`datasheet <https://www.electroschematics.com/wp-content/uploads/2013/07/HC-SR04-datasheet-version-2.pdf>`__,
@@ -14,7 +19,7 @@ pulse** on a specific pin and will send out a **echo pulse** once a
 measurement has been taken. Because sometimes (for example if no object
 is detected) the echo pulse is never returned, this sensor also has a
 timeout option which specifies how long to wait for values. During this
-timeout period the whole core will be blocked and therefore shouldn’t be
+timeout period the whole core will be blocked and therefore shouldn't be
 set too high.
 
 .. figure:: images/ultrasonic-full.jpg

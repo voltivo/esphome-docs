@@ -1,6 +1,10 @@
 Monochromatic Light
 ===================
 
+.. seo::
+    :description: Instructions for setting up monochromatic (brightness-only) lights.
+    :image: brightness-medium.svg
+
 The ``monochromatic`` light platform creates a simple brightness-only light from an
 :ref:`float output component <output>`.
 
@@ -58,6 +62,7 @@ See Also
 - :doc:`/esphomeyaml/components/output/ledc`
 - :doc:`/esphomeyaml/components/output/esp8266_pwm`
 - :doc:`/esphomeyaml/components/output/pca9685`
+- :doc:`/esphomeyaml/components/output/my9231`
 - :doc:`API Reference </api/light/index>`
 - `Edit this page on GitHub <https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/light/monochromatic.rst>`__
 

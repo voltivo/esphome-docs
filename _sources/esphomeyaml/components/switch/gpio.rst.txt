@@ -1,6 +1,10 @@
 GPIO Switch
 ===========
 
+.. seo::
+    :description: Instructions for setting up GPIO pin switches in esphomelib that control GPIO outputs.
+    :image: pin.svg
+
 The ``gpio`` switch platform allows you to use any pin on your node as a
 switch. You can for example hook up a relay to a GPIO pin and use it
 through this platform.
@@ -28,18 +32,11 @@ Configuration variables:
 
 .. note::
 
-    If you want the pin to default to HIGH on startup, you can use the inverted property
-    of the :ref:`Pin Schema <config-pin_schema>`:
+    esphomelib will attempt to restore the state of the switch on boot-up and write the value
+    very early in the boot process.
 
-    .. code:: yaml
-
-        # Example configuration entry
-        switch:
-          - platform: gpio
-            pin:
-              number: 25
-              inverted: True
-            name: "Living Room Dehumidifier"
+    Please note that certain pins can have pull-up/down resistors that activate/deactivate a pin before
+    esphomelib can initialize them. Please check with a multimeter and use another pin if necessary.
 
 See Also
 --------

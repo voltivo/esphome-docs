@@ -5,8 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PN532 NFC/RFID Controller Hub &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up PN532 NFC tag readers in esphomelib">
+<meta name="keywords" content="PN532, NFC, RFID">
+<meta itemprop="name" content="PN532 NFC/RFID Controller Hub">
+<meta itemprop="description" content="Instructions for setting up PN532 NFC tag readers in esphomelib">
+<meta itemprop="image" content="https://esphomelib.com/_images/pn532.jpg">
+<meta name="twitter:title" content="PN532 NFC/RFID Controller Hub">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pn532.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up PN532 NFC tag readers in esphomelib">
+<meta property="og:title" content="PN532 NFC/RFID Controller Hub"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pn532.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up PN532 NFC tag readers in esphomelib"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>PN532 NFC/RFID Controller Hub &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -15,11 +33,12 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/pn532.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="RDM6300 NFC/RFID Hub" href="rdm6300.html" />
-    <link rel="prev" title="Status LED" href="status_led.html" />
+    <link rel="next" title="Power Supply Component" href="power_supply.html" />
+    <link rel="prev" title="PCF8574 I/O Expander" href="pcf8574.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -52,6 +71,7 @@
   <ul>
 <li><a class="reference internal" href="#">PN532 NFC/RFID Controller Hub</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#on-tag"><code class="docutils literal notranslate"><span class="pre">on_tag</span></code></a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -103,6 +123,8 @@ is connected to.</li>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The duration of each scan on the PN532. This affects the
 duration that the individual binary sensors stay active when they’re found.
 If a device is not found within this time window, it will be marked as not present. Defaults to 1s.</li>
+<li><strong>on_tag</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): An automation to perform
+when a tag is read. See <a class="reference internal" href="#pn532-on-tag"><span class="std std-ref">on_tag</span></a>.</li>
 <li><strong>spi_id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="spi.html#spi"><span class="std std-ref">SPI Component</span></a> if you want
 to use multiple SPI buses.</li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID for this component.</li>
@@ -110,6 +132,23 @@ to use multiple SPI buses.</li>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/pn532-spi.jpg"><img alt="../../_images/pn532-spi.jpg" src="../../_images/pn532-spi.jpg" style="width: 80.0%;" /></a>
 <p class="caption"><span class="caption-text">Example for hooking up the PN532 via SPI. Notice the position of the two switches on the right.</span></p>
+</div>
+</div>
+<div class="section" id="on-tag">
+<span id="pn532-on-tag"></span><h2><code class="docutils literal notranslate"><span class="pre">on_tag</span></code><a class="headerlink" href="#on-tag" title="Permalink to this headline">¶</a></h2>
+<p>This automation will be triggered when the PN532 module responds with a tag. Please note that this
+can be called quite often (with an interval of <code class="docutils literal notranslate"><span class="pre">update_interval</span></code>) as it’s triggered repeatedly
+if the tag is re-read many times.</p>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">x</span></code> this trigger provides is of type <code class="docutils literal notranslate"><span class="pre">std::string</span></code> and is the tag UID in the format
+<code class="docutils literal notranslate"><span class="pre">74-10-37-94</span></code>. The configuration below will for example publish the tag ID on the MQTT topic <code class="docutils literal notranslate"><span class="pre">pn532/tag</span></code>.</p>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>pn532:
+  # ...
+  on_tag:
+    then:
+      - mqtt.publish:
+          topic: pn532/tag
+          payload: !lambda &#39;return x;&#39;
+</pre></div>
 </div>
 </div>
 <div class="section" id="see-also">

@@ -1,6 +1,10 @@
 Switch Component
 ================
 
+.. seo::
+    :description: Instructions for setting up generic switches in esphomelib.
+    :image: folder-open.svg
+
 The ``switch`` domain includes all platforms that should show up like a
 switch and can only be turned ON or OFF.
 
@@ -37,8 +41,7 @@ This action toggles a switch with the given ID when executed.
 
     on_...:
       then:
-        - switch.toggle:
-            id: relay_1
+        - switch.toggle: relay_1
 
 .. _switch-turn_on_action:
 
@@ -51,8 +54,7 @@ This action turns a switch with the given ID on when executed.
 
     on_...:
       then:
-        - switch.turn_on:
-            id: relay_1
+        - switch.turn_on: relay_1
 
 .. _switch-turn_off_action:
 
@@ -65,8 +67,7 @@ This action turns a switch with the given ID off when executed.
 
     on_...:
       then:
-        - switch.turn_off:
-            id: relay_1
+        - switch.turn_off: relay_1
 
 lambda calls
 ************
@@ -88,7 +89,7 @@ advanced stuff (see the full :doc:`API Reference </api/cover/index>` for more in
   .. code:: yaml
 
       // Within lambda, get the switch state and conditionally do something
-      if (id(my_switch).value) {
+      if (id(my_switch).state) {
         // Switch is ON, do something here
       } else {
         // Switch is OFF, do something else here
@@ -113,13 +114,8 @@ See Also
 
 .. toctree::
     :maxdepth: 1
+    :glob:
 
-    gpio
-    output
-    remote_transmitter
-    restart
-    shutdown
-    template
-    uart
+    *
 
 .. disqus::

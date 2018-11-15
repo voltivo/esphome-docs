@@ -1,6 +1,10 @@
 Light Component
 ===============
 
+.. seo::
+    :description: Instructions for setting up lights and light effects in esphomelib.
+    :image: folder-open.svg
+
 The ``light`` domain in esphomeyaml lets you create lights that will
 automatically be shown in Home Assistant’s frontend and have many
 features such as RGB colors, transitions, flashing and effects.
@@ -18,12 +22,24 @@ This action toggles a light with the given ID when executed.
       then:
         - light.toggle:
             id: light_1
+        # Shorthand:
+        - light.toggle: light_1
 
 Configuration options:
 
 - **id** (**Required**, :ref:`config-id`): The ID of the light.
 - **transition_length** (*Optional*, :ref:`config-time`, :ref:`templatable <config-templatable>`): The length of the transition
   if the light supports it.
+
+.. note::
+
+    This action can also be expressed in :ref:`lambdas <config-lambda>`:
+
+    .. code:: cpp
+
+        auto call = id(light_1).toggle();
+        // perform action:
+        call.perform();
 
 .. _light-turn_on_action:
 
@@ -48,7 +64,10 @@ This action turns a light with the given ID on when executed.
             id: light_1
             brightness: !lambda >-
               // output value must be in range 0 - 1.0
-              return id(some_sensor).value / 100.0;
+              return id(some_sensor).state / 100.0;
+
+        # Shorthand
+        - light.turn_on: light_1
 
 Configuration options:
 
@@ -70,6 +89,21 @@ Configuration options:
 - **effect** (*Optional*, string, :ref:`templatable <config-templatable>`): If set, will attempt to
   start an effect with the given name.
 
+.. note::
+
+    This action can also be expressed in :ref:`lambdas <config-lambda>`:
+
+    .. code:: cpp
+
+        auto call = id(light_1).turn_on();
+        // set parameters (optional)
+        call.set_transition_length(1000); // in ms
+        call.set_brightness(1.0); // 1.0 is full brightness
+        call.set_rgb(1.0, 1.0, 1.0); // color, 1.0 is fully lit
+        call.set_effect("The Effect");
+        // perform action:
+        call.perform();
+
 .. _light-turn_off_action:
 
 ``light.turn_off`` Action
@@ -84,13 +118,26 @@ This action turns a light with the given ID off when executed.
         - light.turn_off:
             id: light_1
 
+        # Shorthand
+        - light.turn_off: light_1
+
 Configuration options:
 
 - **id** (**Required**, :ref:`config-id`): The ID of the light.
 - **transition_length** (*Optional*, :ref:`config-time`, :ref:`templatable <config-templatable>`): The length of the transition
   if the light supports it.
 
-This action turns a switch with the given ID off when executed.
+.. note::
+
+    This action can also be expressed in :ref:`lambdas <config-lambda>`:
+
+    .. code:: cpp
+
+        auto call = id(light_1).turn_off();
+        // set parameters (optional)
+        call.set_transition_length(1000); // in ms
+        // perform action:
+        call.perform();
 
 .. _light-effects:
 
@@ -462,14 +509,8 @@ See Also
 
 .. toctree::
     :maxdepth: 1
+    :glob:
 
-    binary.rst
-    cwww.rst
-    monochromatic.rst
-    rgb.rst
-    rgbw.rst
-    rgbww.rst
-    fastled_clockless.rst
-    fastled_spi.rst
+    *
 
 .. disqus::

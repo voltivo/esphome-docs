@@ -5,8 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Remote Transmitter Switch &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals">
+<meta name="keywords" content="Infrared, IR, RF, Remote, TX">
+<meta itemprop="name" content="Remote Transmitter Switch">
+<meta itemprop="description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals">
+<meta itemprop="image" content="https://esphomelib.com/_images/remote.svg">
+<meta name="twitter:title" content="Remote Transmitter Switch">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals">
+<meta property="og:title" content="Remote Transmitter Switch"/>
+<meta property="og:image" content="https://esphomelib.com/_images/remote.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Remote Transmitter Switch &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,6 +33,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/switch/remote_transmitter.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -141,6 +160,8 @@ created by the Github user wildwiz. Then use this configuration for the remote r
   <span class="n">lg</span><span class="p">:</span>
     <span class="n">data</span><span class="p">:</span> <span class="mh">0x01234567890ABC</span>
     <span class="n">nbits</span><span class="p">:</span> <span class="mi">28</span>
+  <span class="n">samsung</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="mh">0xE0E01234</span>
   <span class="n">sony</span><span class="p">:</span>
     <span class="n">data</span><span class="p">:</span> <span class="mh">0xABCDEF</span>
     <span class="n">nbits</span><span class="p">:</span> <span class="mi">12</span>
@@ -184,6 +205,10 @@ created by the Github user wildwiz. Then use this configuration for the remote r
 <li><strong>lg</strong>: Send an LG IR code.<ul>
 <li><strong>data</strong>: The data bytes to send.</li>
 <li><strong>nbits</strong>: The number of bits to send, defaults to 28.</li>
+</ul>
+</li>
+<li><strong>samsung</strong>: Send an Samsung IR code.<ul>
+<li><strong>data</strong>: The data bytes to send.</li>
 </ul>
 </li>
 <li><strong>sony</strong>: Send an Sony IR code.<ul>

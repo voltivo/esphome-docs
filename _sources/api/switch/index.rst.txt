@@ -4,12 +4,9 @@ Switch
 The `switch_` namespace contains all switch helpers.
 
 .. toctree::
+    :glob:
 
-    remote_transmitter
-    restart
-    shutdown
-    template
-    uart
+    *
 
 API Reference
 -------------
@@ -24,10 +21,18 @@ Switch
     :protected-members:
     :undoc-members:
 
-SimpleSwitch
+OutputSwitch
 ************
 
-.. doxygenclass:: switch_::SimpleSwitch
+.. doxygenclass:: switch_::OutputSwitch
+    :members:
+    :protected-members:
+    :undoc-members:
+
+GPIOSwitch
+**********
+
+.. doxygenclass:: switch_::GPIOSwitch
     :members:
     :protected-members:
     :undoc-members:

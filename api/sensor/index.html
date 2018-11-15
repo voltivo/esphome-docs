@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Sensor &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Sensor &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -74,38 +75,166 @@
 <p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::register_sensor()</span></code></a>.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="adc.html">ADC Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ads1115.html">ADS1115 ADC Component</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bh1750.html">BH1750 Ambient Light Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bme280.html">BME280 Temperature/Pressure/Humidity Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bme680.html">BME680 Temperature/Pressure/Humidity/Gas Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bmp085.html">BMP085 Pressure/Temperature Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bmp280.html">BMP280 Temperature/Pressure Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dallas.html">Dallas Component</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dht.html">DHT Temperature/Humidity Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dht12.html">DHT12 Temperature/Humidity Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="duty_cycle.html">Duty Cycle Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="esp32_hall.html">ESP32 Hall Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hdc1080.html">HDC1080 Temperature/Humidity Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hlw8012.html">HLW8012 Power Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hmc5883l.html">HMC5883L Magnetometer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="htu21d.html">HTU21D Temperature/Humidity Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hx711.html">HX711 Load Cell Amplifier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ina219.html">INA219 DC Current Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ina3221.html">INA3221 3-Channel DC Current Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="max6675.html">MAX6675 K-Type Thermocouple Temperature Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mhz19.html">MH-Z19 CO_2 and Temperature Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mpu6050.html">MPU6050 Accelerometer/Gyroscope Component</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ms5611.html">MS5611 Atmospheric Pressure Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pulse_counter.html">ESP32 Pulse Counter Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rotary_encoder.html">Rotary Encoder Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sht3xd.html">SHT3XD Temperature/Humidity Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcs34725.html">TCS34725 RGB Color Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="template.html">Template Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tsl2561.html">TSL2561 Ambient Light Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ultrasonic.html">Ultrasonic Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uptime.html">Uptime Sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wifi_signal.html">WiFi Signal Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">ADC Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ads1115.html">ADS1115 ADC Component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ads1115.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bh1750.html">BH1750 Ambient Light Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bh1750.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bh1750.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bme280.html">BME280 Temperature/Pressure/Humidity Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bme280.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bme280.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bme680.html">BME680 Temperature/Pressure/Humidity/Gas Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bme680.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bme680.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bmp085.html">BMP085 Pressure/Temperature Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bmp085.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bmp085.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bmp280.html">BMP280 Temperature/Pressure Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bmp280.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cse7766.html">CSE7766 Power Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cse7766.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dallas.html">Dallas Component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dallas.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dallas.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dht.html">DHT Temperature/Humidity Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dht.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dht.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dht12.html">DHT12 Temperature/Humidity Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dht12.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dht12.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="duty_cycle.html">Duty Cycle Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="duty_cycle.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="esp32_hall.html">ESP32 Hall Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="esp32_hall.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hdc1080.html">HDC1080 Temperature/Humidity Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hdc1080.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdc1080.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hlw8012.html">HLW8012 Power Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hlw8012.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hmc5883l.html">HMC5883L Magnetometer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hmc5883l.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="htu21d.html">HTU21D Temperature/Humidity Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="htu21d.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htu21d.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hx711.html">HX711 Load Cell Amplifier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hx711.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ina219.html">INA219 DC Current Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ina219.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ina3221.html">INA3221 3-Channel DC Current Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ina3221.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="max6675.html">MAX6675 K-Type Thermocouple Temperature Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="max6675.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mhz19.html">MH-Z19 CO_2 and Temperature Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mhz19.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mpu6050.html">MPU6050 Accelerometer/Gyroscope Component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mpu6050.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mpu6050.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mqtt_subscribe.html">MQTT Subscribe Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mqtt_subscribe.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ms5611.html">MS5611 Atmospheric Pressure Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ms5611.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pmsx003.html">PMSX003 Particulate Matter Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pmsx003.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pulse_counter.html">Pulse Counter Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pulse_counter.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pulse_counter.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rotary_encoder.html">Rotary Encoder Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rotary_encoder.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sht3xd.html">SHT3XD Temperature/Humidity Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sht3xd.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sht3xd.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tcs34725.html">TCS34725 RGB Color Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tcs34725.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="template.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="total_daily_energy.html">Total Daily Energy Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="total_daily_energy.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tsl2561.html">TSL2561 Ambient Light Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tsl2561.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tsl2561.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ultrasonic.html">Ultrasonic Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ultrasonic.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ultrasonic.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uptime.html">Uptime Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uptime.html#api-reference">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wifi_signal.html">WiFi Signal Sensor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wifi_signal.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wifi_signal.html#api-reference">API Reference</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="api-reference">
@@ -116,8 +245,8 @@
 <dt id="_CPPv3N6sensor6SensorE">
 <span id="_CPPv2N6sensor6SensorE"></span><span id="sensor::Sensor"></span><span class="target" id="classsensor_1_1_sensor"></span><em class="property">class </em><code class="descname">Sensor</code> : <em class="property">public</em> Nameable<a class="headerlink" href="#_CPPv3N6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Base-class for all sensors. </p>
-<p>A sensor has unit of measurement and can use push_new_value to send out a new value with the specified accuracy. </p>
-<p>Subclassed by <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; 1, ICON_FLASH, UNIT_A &gt;</span></a>, <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; 1, ICON_FLASH, UNIT_V &gt;</span></a>, <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; 3, ICON_FLASH, UNIT_V &gt;</span></a>, <a class="reference internal" href="../misc/esp32_ble_tracker.html#class_e_s_p32_b_l_e_r_s_s_i_sensor"><span class="std std-ref">ESP32BLERSSISensor</span></a>, <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; default_accuracy_decimals, default_icon, default_unit_of_measurement &gt;</span></a>, <a class="reference internal" href="#classsensor_1_1_polling_sensor_component"><span class="std std-ref">sensor::PollingSensorComponent</span></a>, <a class="reference internal" href="rotary_encoder.html#classsensor_1_1_rotary_encoder_sensor"><span class="std std-ref">sensor::RotaryEncoderSensor</span></a></p>
+<p>A sensor has unit of measurement and can use publish_state to send out a new value with the specified accuracy. </p>
+<p>Subclassed by <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; 1, ICON_FLASH, UNIT_A &gt;</span></a>, <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; 1, ICON_FLASH, UNIT_V &gt;</span></a>, <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; 3, ICON_FLASH, UNIT_V &gt;</span></a>, <a class="reference internal" href="../misc/esp32_ble_tracker.html#class_e_s_p32_b_l_e_r_s_s_i_sensor"><span class="std std-ref">ESP32BLERSSISensor</span></a>, <a class="reference internal" href="#classsensor_1_1_empty_sensor"><span class="std std-ref">sensor::EmptySensor&lt; default_accuracy_decimals, default_icon, default_unit_of_measurement &gt;</span></a>, <a class="reference internal" href="mqtt_subscribe.html#classsensor_1_1_m_q_t_t_subscribe_sensor"><span class="std std-ref">sensor::MQTTSubscribeSensor</span></a>, <a class="reference internal" href="pmsx003.html#classsensor_1_1_p_m_s_x003_sensor"><span class="std std-ref">sensor::PMSX003Sensor</span></a>, <a class="reference internal" href="#classsensor_1_1_polling_sensor_component"><span class="std std-ref">sensor::PollingSensorComponent</span></a>, <a class="reference internal" href="rotary_encoder.html#classsensor_1_1_rotary_encoder_sensor"><span class="std std-ref">sensor::RotaryEncoderSensor</span></a>, <a class="reference internal" href="total_daily_energy.html#classsensor_1_1_total_daily_energy"><span class="std std-ref">sensor::TotalDailyEnergy</span></a>, <a class="reference internal" href="../misc/esp32_ble_tracker.html#class_xiaomi_sensor"><span class="std std-ref">XiaomiSensor</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -181,77 +310,13 @@
 <span id="_CPPv2N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE"></span><span id="sensor::Sensor::add_filters__std::list:FilterP:CR"></span><span class="target" id="classsensor_1_1_sensor_1a16a502ad3a2d91b8d5eac0fb233ae7a2"></span>void <code class="descname">add_filters</code><span class="sig-paren">(</span><em class="property">const</em> std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; &amp;<em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor11add_filtersERKNSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Add a list of vectors to the back of the filter chain. </p>
 <p>This may look like:</p>
-<p>sensor-&gt;add_filters({ <a class="reference internal" href="#classsensor_1_1_lambda_filter"><span class="std std-ref">LambdaFilter</span></a>([&amp;](float value) -&gt; optional&lt;float&gt; { return 42/value; }), OffsetFilter(1), SlidingWindowMovingAverageFilter(15, 15), // average over last 15 values }); </p>
+<p>sensor-&gt;add_filters({ <a class="reference internal" href="#classsensor_1_1_lambda_filter"><span class="std std-ref">LambdaFilter</span></a>([&amp;](float value) -&gt; <a class="reference internal" href="../core/helpers.html#classoptional"><span class="std std-ref">optional&lt;float&gt;</span></a> { return 42/value; }), OffsetFilter(1), SlidingWindowMovingAverageFilter(15, 15), // average over last 15 values }); </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE">
 <span id="_CPPv2N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE"></span><span id="sensor::Sensor::set_filters__std::list:FilterP:CR"></span><span class="target" id="classsensor_1_1_sensor_1ac3901e5c932b2af0373e79728e97e461"></span>void <code class="descname">set_filters</code><span class="sig-paren">(</span><em class="property">const</em> std::list&lt;<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a> *&gt; &amp;<em>filters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor11set_filtersERKNSt4listIP6FilterEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Clear the filters and replace them by filters. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor17add_lambda_filterE15lambda_filter_t">
-<span id="_CPPv2N6sensor6Sensor17add_lambda_filterE15lambda_filter_t"></span><span id="sensor::Sensor::add_lambda_filter__lambda_filter_t"></span><span class="target" id="classsensor_1_1_sensor_1a75955ab64c67236678addf5bbe81aef4"></span>void <code class="descname">add_lambda_filter</code><span class="sig-paren">(</span>lambda_filter_t <em>filter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor17add_lambda_filterE15lambda_filter_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Add a lambda filter to the back of the filter chain. </p>
-<p>For example: sensor-&gt;add_lambda_filter([](float value) -&gt; optional&lt;float&gt; { return value * 42; });</p>
-<p>If you return an unset Optional, the value will be discarded and no filters after this one will get the value. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor17add_offset_filterEf">
-<span id="_CPPv2N6sensor6Sensor17add_offset_filterEf"></span><span id="sensor::Sensor::add_offset_filter__float"></span><span class="target" id="classsensor_1_1_sensor_1a2581cf043ef39dd5745bcc61368408f1"></span>void <code class="descname">add_offset_filter</code><span class="sig-paren">(</span>float <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor17add_offset_filterEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper to add a simple offset filter to the back of the filter chain. </p>
-<p>This can be used to easily correct for sensors that have a small offset in their value reporting.</p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">offset</span></code>: The offset that will be added to each value. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor19add_multiply_filterEf">
-<span id="_CPPv2N6sensor6Sensor19add_multiply_filterEf"></span><span id="sensor::Sensor::add_multiply_filter__float"></span><span class="target" id="classsensor_1_1_sensor_1aad86d442a495f585c2f2874a50f12c2b"></span>void <code class="descname">add_multiply_filter</code><span class="sig-paren">(</span>float <em>multiplier</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor19add_multiply_filterEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper to add a simple multiply filter to the back of the filter chain. </p>
-<p>Each value will be multiplied by this multiplier. Can be used to convert units easily. For example converting “pulses/min” to a more reasonable unit like kW.</p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">multiplier</span></code>: The multiplier each value will be multiplied with. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor27add_filter_out_value_filterEf">
-<span id="_CPPv2N6sensor6Sensor27add_filter_out_value_filterEf"></span><span id="sensor::Sensor::add_filter_out_value_filter__float"></span><span class="target" id="classsensor_1_1_sensor_1a505c07c1ec836cfee3661f34210eed1f"></span>void <code class="descname">add_filter_out_value_filter</code><span class="sig-paren">(</span>float <em>values_to_filter_out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor27add_filter_out_value_filterEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper to add a simple filter that aborts the filter chain every time it receives a specific value. </p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">values_to_filter_out</span></code>: The value that should be filtered out. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor33add_sliding_window_average_filterE6size_t6size_t">
-<span id="_CPPv2N6sensor6Sensor33add_sliding_window_average_filterE6size_t6size_t"></span><span id="sensor::Sensor::add_sliding_window_average_filter__s.s"></span><span class="target" id="classsensor_1_1_sensor_1a19aa1cbf296f7af1cb39a15ab4565d0c"></span>void <code class="descname">add_sliding_window_average_filter</code><span class="sig-paren">(</span>size_t <em>window_size</em>, size_t <em>send_every</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor33add_sliding_window_average_filterE6size_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper to make adding sliding window moving average filters a bit easier. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor37add_exponential_moving_average_filterEf6size_t">
-<span id="_CPPv2N6sensor6Sensor37add_exponential_moving_average_filterEf6size_t"></span><span id="sensor::Sensor::add_exponential_moving_average_filter__float.s"></span><span class="target" id="classsensor_1_1_sensor_1ae367a6ff4f1ddd8220875471d4a6cfde"></span>void <code class="descname">add_exponential_moving_average_filter</code><span class="sig-paren">(</span>float <em>alpha</em>, size_t <em>send_every</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor37add_exponential_moving_average_filterEf6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper to make adding exponential decay average filters a bit easier. </p>
 </dd></dl>
 
 <dl class="function">
@@ -262,49 +327,166 @@
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor6Sensor9get_valueEv">
-<span id="_CPPv2NK6sensor6Sensor9get_valueEv"></span><span id="sensor::Sensor::get_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a458d1c0b8df73232cedbf5e32fd299f2"></span>float <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the latest filtered value from this sensor. </p>
+<span id="_CPPv2NK6sensor6Sensor9get_valueEv"></span><span id="sensor::Sensor::get_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a18d092dc4fa2d1b60be4a41d061723ca"></span>float <code class="descname">get_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor9get_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter-syntax for .value. Please use .state instead. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor6Sensor9get_stateEv">
+<span id="_CPPv2NK6sensor6Sensor9get_stateEv"></span><span id="sensor::Sensor::get_stateC"></span><span class="target" id="classsensor_1_1_sensor_1a04905826f0b7feba8ac12185de2f48be"></span>float <code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter-syntax for .state. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor6Sensor13get_raw_valueEv">
-<span id="_CPPv2NK6sensor6Sensor13get_raw_valueEv"></span><span id="sensor::Sensor::get_raw_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a6a895772f415f8e9d6a5e5ba05c9dec5"></span>float <code class="descname">get_raw_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor13get_raw_valueEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the latest raw value from this sensor. </p>
+<span id="_CPPv2NK6sensor6Sensor13get_raw_valueEv"></span><span id="sensor::Sensor::get_raw_valueC"></span><span class="target" id="classsensor_1_1_sensor_1a1bb4c9a9a5b02dda3c5087f28cd2d5ac"></span>float <code class="descname">get_raw_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor13get_raw_valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter-syntax for .raw_value. Please use .raw_state instead. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor6Sensor13get_raw_stateEv">
+<span id="_CPPv2NK6sensor6Sensor13get_raw_stateEv"></span><span id="sensor::Sensor::get_raw_stateC"></span><span class="target" id="classsensor_1_1_sensor_1af8fc68848f40c4209123d4e2e66fc711"></span>float <code class="descname">get_raw_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor13get_raw_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Getter-syntax for .raw_state. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor21get_accuracy_decimalsEv">
 <span id="_CPPv2N6sensor6Sensor21get_accuracy_decimalsEv"></span><span id="sensor::Sensor::get_accuracy_decimals"></span><span class="target" id="classsensor_1_1_sensor_1acaee989ba0bb24e727633eb50d0ae11f"></span>int8_t <code class="descname">get_accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor21get_accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the accuracy in decimals used by this MQTT <a class="reference internal" href="#classsensor_1_1_sensor"><span class="std std-ref">Sensor</span></a>, first checks override, then sensor. </p>
+<dd><p>Get the accuracy in decimals. Uses the manual override if specified or the default value instead. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor23get_unit_of_measurementEv">
 <span id="_CPPv2N6sensor6Sensor23get_unit_of_measurementEv"></span><span id="sensor::Sensor::get_unit_of_measurement"></span><span class="target" id="classsensor_1_1_sensor_1a996be64f4e95d8696e807cf0703affc8"></span>std::string <code class="descname">get_unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor23get_unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the unit of measurements advertised to Home Assistant. First checks override, then sensor. </p>
+<dd><p>Get the unit of measurement. Uses the manual override if specified or the default value instead. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor8get_iconEv">
 <span id="_CPPv2N6sensor6Sensor8get_iconEv"></span><span id="sensor::Sensor::get_icon"></span><span class="target" id="classsensor_1_1_sensor_1a8587b87364ba72e8abbb23532200c1ae"></span>std::string <code class="descname">get_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor8get_iconEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the icon advertised to Home Assistant. </p>
+<dd><p>Get the Home Assistant Icon. Uses the manual override if specified or the default value instead. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N6sensor6Sensor14push_new_valueEf">
-<span id="_CPPv2N6sensor6Sensor14push_new_valueEf"></span><span id="sensor::Sensor::push_new_value__float"></span><span class="target" id="classsensor_1_1_sensor_1a7218cdea05da686c39f39df6c9de63e8"></span>void <code class="descname">push_new_value</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor14push_new_valueEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Push a new value to the MQTT front-end. </p>
-<p>Note that you should publish the raw value here, i.e. without any rounding as the user can later override this accuracy.</p>
+<dt id="_CPPv3N6sensor6Sensor13publish_stateEf">
+<span id="_CPPv2N6sensor6Sensor13publish_stateEf"></span><span id="sensor::Sensor::publish_state__float"></span><span class="target" id="classsensor_1_1_sensor_1a7ffc6c3034822dc4b8ac4ebad5cded99"></span>void <code class="descname">publish_state</code><span class="sig-paren">(</span>float <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor13publish_stateEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publish a new state to the front-end. </p>
+<p>First, the new state will be assigned to the raw_value. Then it’s passed through all filters until it finally lands in the .value member variable and a callback is issued.</p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: The floating point value. </li>
+<li><code class="docutils literal notranslate"><span class="pre">state</span></code>: The state as a floating point number. </li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor14push_new_valueEf">
+<span id="_CPPv2N6sensor6Sensor14push_new_valueEf"></span><span id="sensor::Sensor::push_new_value__float"></span><span class="target" id="classsensor_1_1_sensor_1ad3a0dc7dce34ddc53601e0c83a085972"></span>void <code class="descname">push_new_value</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor14push_new_valueEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Push a new value to the MQTT front-end. </p>
+<p>Note: deprecated, please use publish_state. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor21add_on_state_callbackERRNSt8functionIFvfEEE">
+<span id="_CPPv2N6sensor6Sensor21add_on_state_callbackERRNSt8functionIFvfEEE"></span><span class="target" id="classsensor_1_1_sensor_1a34f02b0350c817cac0da0396eb44206a"></span>void <code class="descname">add_on_state_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span>float<span class="sig-paren">)</span>&gt; &amp;&amp;<em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor21add_on_state_callbackERRNSt8functionIFvfEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a callback that will be called every time a filtered value arrives. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor25add_on_raw_state_callbackERRNSt8functionIFvfEEE">
+<span id="_CPPv2N6sensor6Sensor25add_on_raw_state_callbackERRNSt8functionIFvfEEE"></span><span class="target" id="classsensor_1_1_sensor_1a41c598718a467fce428ff05ba134edab"></span>void <code class="descname">add_on_raw_state_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span>float<span class="sig-paren">)</span>&gt; &amp;&amp;<em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor25add_on_raw_state_callbackERRNSt8functionIFvfEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a callback that will be called every time the sensor sends a raw value. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor18make_state_triggerEv">
+<span id="_CPPv2N6sensor6Sensor18make_state_triggerEv"></span><span id="sensor::Sensor::make_state_trigger"></span><span class="target" id="classsensor_1_1_sensor_1a8ca514e6363f0af65285d42af5f76543"></span>SensorStateTrigger *<code class="descname">make_state_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor18make_state_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor22make_raw_state_triggerEv">
+<span id="_CPPv2N6sensor6Sensor22make_raw_state_triggerEv"></span><span id="sensor::Sensor::make_raw_state_trigger"></span><span class="target" id="classsensor_1_1_sensor_1af7c8eb153ae89cce0d82cc0e80e0d1bf"></span>SensorRawStateTrigger *<code class="descname">make_raw_state_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor22make_raw_state_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor24make_value_range_triggerEv">
+<span id="_CPPv2N6sensor6Sensor24make_value_range_triggerEv"></span><span id="sensor::Sensor::make_value_range_trigger"></span><span class="target" id="classsensor_1_1_sensor_1aeebfdb14b77e8ed79e93c5716db88c21"></span>ValueRangeTrigger *<code class="descname">make_value_range_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor24make_value_range_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor6Sensor9has_stateEv">
+<span id="_CPPv2NK6sensor6Sensor9has_stateEv"></span><span id="sensor::Sensor::has_stateC"></span><span class="target" id="classsensor_1_1_sensor_1a4b3ad39b14fa2d99668af4697956dc83"></span>bool <code class="descname">has_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor6Sensor9has_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return whether this sensor has gotten a full state (that passed through all filters) yet. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor9unique_idEv">
+<span id="_CPPv2N6sensor6Sensor9unique_idEv"></span><span id="sensor::Sensor::unique_id"></span><span class="target" id="classsensor_1_1_sensor_1a3a85bfa75b3e6908ac0693556a79755b"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A unique ID for this sensor, empty for no unique id. </p>
+<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique id as a string. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor15update_intervalEv">
+<span id="_CPPv2N6sensor6Sensor15update_intervalEv"></span><span id="sensor::Sensor::update_interval"></span><span class="target" id="classsensor_1_1_sensor_1a6b489936421d19970ded01c131825085"></span>uint32_t <code class="descname">update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor15update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return with which interval the sensor is polled. Return 0 for non-polling mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor6Sensor41calculate_expected_filter_update_intervalEv">
+<span id="_CPPv2N6sensor6Sensor41calculate_expected_filter_update_intervalEv"></span><span id="sensor::Sensor::calculate_expected_filter_update_interval"></span><span class="target" id="classsensor_1_1_sensor_1ab2cff06adaa82d98a7486c712f23c83c"></span>uint32_t <code class="descname">calculate_expected_filter_update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor41calculate_expected_filter_update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate the expected update interval for values that pass through all filters. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt>
+<span class="target" id="classsensor_1_1_sensor_1a78add84a4286fe22969fa65449ac1e1a"></span><code class="descname">float please use sensor::Sensor::state</code></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt>
+<span class="target" id="classsensor_1_1_sensor_1a12e6d2c769bb5eaf563c21d9784a30cb"></span><code class="descname">float please use sensor::Sensor::raw_state</code></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor6Sensor5stateE">
+<span id="_CPPv2N6sensor6Sensor5stateE"></span><span id="sensor::Sensor::state__float"></span><span class="target" id="classsensor_1_1_sensor_1a2569bf99301230bcdaa3ab1b75b7fecd"></span>float <code class="descname">state</code><a class="headerlink" href="#_CPPv3N6sensor6Sensor5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This member variable stores the last state that has passed through all filters. </p>
+<p>On startup, when no state is available yet, this is NAN (not-a-number) and the validity can be checked using <a class="reference internal" href="#classsensor_1_1_sensor_1a4b3ad39b14fa2d99668af4697956dc83"><span class="std std-ref">has_state()</span></a>.</p>
+<p>This is exposed through a member variable for ease of use in esphomeyaml lambdas. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor6SensorUt1_5E">
+<span class="target" id="classsensor_1_1_sensor_1ad9ee4d307d7578bdfa642b8c7c4b1b09"></span><em class="property">union</em> sensor::<a class="reference internal" href="#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv3N6sensor6SensorUt1_5E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor6Sensor9raw_stateE">
+<span id="_CPPv2N6sensor6Sensor9raw_stateE"></span><span id="sensor::Sensor::raw_state__float"></span><span class="target" id="classsensor_1_1_sensor_1ae8d43341d015169a4c33d5b582e2dd4a"></span>float <code class="descname">raw_state</code><a class="headerlink" href="#_CPPv3N6sensor6Sensor9raw_stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This member variable stores the current raw state of the sensor. </p>
+<p>Unlike .state, this will be updated immediately when publish_state is called. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor6SensorUt1_7E">
+<span class="target" id="classsensor_1_1_sensor_1a221f87b3380b001d068f182dab853b14"></span><em class="property">union</em> sensor::<a class="reference internal" href="#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv3N6sensor6SensorUt1_7E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6sensor6Sensor19unit_of_measurementEv">
 <span id="_CPPv2N6sensor6Sensor19unit_of_measurementEv"></span><span id="sensor::Sensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_sensor_1a0a1a10f947ff61e985c06a4148b05e28"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
@@ -330,102 +512,29 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N6sensor6Sensor15update_intervalEv">
-<span id="_CPPv2N6sensor6Sensor15update_intervalEv"></span><span id="sensor::Sensor::update_interval"></span><span class="target" id="classsensor_1_1_sensor_1a6b489936421d19970ded01c131825085"></span>uint32_t <code class="descname">update_interval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor15update_intervalEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Return with which interval the sensor is polled. Return 0 for non-polling mode. </p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3N6sensor6Sensor17accuracy_decimalsEv">
 <span id="_CPPv2N6sensor6Sensor17accuracy_decimalsEv"></span><span id="sensor::Sensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_sensor_1ac7fc00b7ca51f1b5e25befd5c4268f30"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Return the accuracy in decimals for this sensor. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N6sensor6Sensor21add_on_value_callbackE17sensor_callback_t">
-<span id="_CPPv2N6sensor6Sensor21add_on_value_callbackE17sensor_callback_t"></span><span id="sensor::Sensor::add_on_value_callback__sensor_callback_t"></span><span class="target" id="classsensor_1_1_sensor_1a9a362c9ca2916aaae60aed7c131a50da"></span>void <code class="descname">add_on_value_callback</code><span class="sig-paren">(</span>sensor_callback_t <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor21add_on_value_callbackE17sensor_callback_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Add a callback that will be called every time a filtered value arrives. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor25add_on_raw_value_callbackE17sensor_callback_t">
-<span id="_CPPv2N6sensor6Sensor25add_on_raw_value_callbackE17sensor_callback_t"></span><span id="sensor::Sensor::add_on_raw_value_callback__sensor_callback_t"></span><span class="target" id="classsensor_1_1_sensor_1a61494b7606b878513b63f8dd73561422"></span>void <code class="descname">add_on_raw_value_callback</code><span class="sig-paren">(</span>sensor_callback_t <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor25add_on_raw_value_callbackE17sensor_callback_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Add a callback that will be called every time the sensor sends a raw value. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor9unique_idEv">
-<span id="_CPPv2N6sensor6Sensor9unique_idEv"></span><span id="sensor::Sensor::unique_id"></span><span class="target" id="classsensor_1_1_sensor_1a3a85bfa75b3e6908ac0693556a79755b"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A unique ID for this sensor, empty for no unique id. </p>
-<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The unique id as a string. </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor18make_value_triggerEv">
-<span id="_CPPv2N6sensor6Sensor18make_value_triggerEv"></span><span id="sensor::Sensor::make_value_trigger"></span><span class="target" id="classsensor_1_1_sensor_1ae1d694f8bd16502a775c44975c09d801"></span>SensorValueTrigger *<code class="descname">make_value_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor18make_value_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor22make_raw_value_triggerEv">
-<span id="_CPPv2N6sensor6Sensor22make_raw_value_triggerEv"></span><span id="sensor::Sensor::make_raw_value_trigger"></span><span class="target" id="classsensor_1_1_sensor_1a945e2e053ba29badf2b8bcf0289a5eb9"></span>RawSensorValueTrigger *<code class="descname">make_raw_value_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor22make_raw_value_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor24make_value_range_triggerEv">
-<span id="_CPPv2N6sensor6Sensor24make_value_range_triggerEv"></span><span id="sensor::Sensor::make_value_range_trigger"></span><span class="target" id="classsensor_1_1_sensor_1aeebfdb14b77e8ed79e93c5716db88c21"></span>ValueRangeTrigger *<code class="descname">make_value_range_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor24make_value_range_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="member">
-<dt id="_CPPv3N6sensor6Sensor5valueE">
-<span id="_CPPv2N6sensor6Sensor5valueE"></span><span id="sensor::Sensor::value__float"></span><span class="target" id="classsensor_1_1_sensor_1a9da9cfad51e25d89534e7c81f62cb8bb"></span>float <code class="descname">value</code> = {NAN}<a class="headerlink" href="#_CPPv3N6sensor6Sensor5valueE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Stores the last filtered value. Public because of lambdas. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N6sensor6Sensor9raw_valueE">
-<span id="_CPPv2N6sensor6Sensor9raw_valueE"></span><span id="sensor::Sensor::raw_value__float"></span><span class="target" id="classsensor_1_1_sensor_1addf66f2cbe3654f22b0042fdde86b845"></span>float <code class="descname">raw_value</code> = {NAN}<a class="headerlink" href="#_CPPv3N6sensor6Sensor9raw_valueE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Stores the last raw value. Public because of lambdas. </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Functions</p>
-<dl class="function">
-<dt id="_CPPv3N6sensor6Sensor22send_value_to_frontendEf">
-<span id="_CPPv2N6sensor6Sensor22send_value_to_frontendEf"></span><span id="sensor::Sensor::send_value_to_frontend__float"></span><span class="target" id="classsensor_1_1_sensor_1a80a86b222bc821c7f9a06199f9c977c0"></span>void <code class="descname">send_value_to_frontend</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor22send_value_to_frontendEf" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N6sensor6Sensor32send_state_to_frontend_internal_Ef">
+<span id="_CPPv2N6sensor6Sensor32send_state_to_frontend_internal_Ef"></span><span id="sensor::Sensor::send_state_to_frontend_internal___float"></span><span class="target" id="classsensor_1_1_sensor_1ad7e1a71bc3573d82982105610dabc437"></span>void <code class="descname">send_state_to_frontend_internal_</code><span class="sig-paren">(</span>float <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor6Sensor32send_state_to_frontend_internal_Ef" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
-<dt>
-<span class="target" id="classsensor_1_1_sensor_1a2766e4cd6ea997dc177580fcc6dc1497"></span><code class="descname">friend sensor::Sensor::Filter</code></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt>
-<span class="target" id="classsensor_1_1_sensor_1afd1a7dc68e077ca7289d52648fc3b9aa"></span><code class="descname">friend sensor::Sensor::MQTTSensorComponent</code></dt>
-<dd></dd></dl>
-
-<dl class="member">
 <dt id="_CPPv3N6sensor6Sensor13raw_callback_E">
 <span id="_CPPv2N6sensor6Sensor13raw_callback_E"></span><span class="target" id="classsensor_1_1_sensor_1a503037741d50ddbaad63c97089b5474b"></span>CallbackManager&lt;void<span class="sig-paren">(</span>float<span class="sig-paren">)</span>&gt; <code class="descname">raw_callback_</code><a class="headerlink" href="#_CPPv3N6sensor6Sensor13raw_callback_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Storage for raw value callbacks. </p>
+<dd><p>Storage for raw state callbacks. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N6sensor6Sensor9callback_E">
 <span id="_CPPv2N6sensor6Sensor9callback_E"></span><span class="target" id="classsensor_1_1_sensor_1af63bb048a982d04715a3d72296db66ad"></span>CallbackManager&lt;void<span class="sig-paren">(</span>float<span class="sig-paren">)</span>&gt; <code class="descname">callback_</code><a class="headerlink" href="#_CPPv3N6sensor6Sensor9callback_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Storage for filtered value callbacks. </p>
+<dd><p>Storage for filtered state callbacks. </p>
 </dd></dl>
 
 <dl class="member">
@@ -452,13 +561,13 @@
 <dd><p>Store all active filters. </p>
 </dd></dl>
 
+<dl class="member">
+<dt id="_CPPv3N6sensor6Sensor10has_state_E">
+<span id="_CPPv2N6sensor6Sensor10has_state_E"></span><span id="sensor::Sensor::has_state___b"></span><span class="target" id="classsensor_1_1_sensor_1a5ff30a50aa9fc8b1113f06f4b14e4aa1"></span>bool <code class="descname">has_state_</code> = {false}<a class="headerlink" href="#_CPPv3N6sensor6Sensor10has_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
-
-<dl class="type">
-<dt>
-<span class="target" id="sensor_8h_1ab3c9416e71c99e27d945a9532d0a071f"></span><em class="property">using </em><code class="descname">sensor::sensor_callback_t = typedef std::function&lt;void(float)&gt;</code></dt>
-<dd></dd></dl>
 
 <dl class="class">
 <dt id="_CPPv3N6sensor22PollingSensorComponentE">
@@ -694,14 +803,15 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t">
-<span id="_CPPv2N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t"></span><span id="sensor::SlidingWindowMovingAverageFilter::SlidingWindowMovingAverageFilter__s.s"></span><span class="target" id="classsensor_1_1_sliding_window_moving_average_filter_1a873b7aa6a2ffd35bf1ee493dbe07b642"></span><code class="descname">SlidingWindowMovingAverageFilter</code><span class="sig-paren">(</span>size_t <em>window_size</em>, size_t <em>send_every</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t8uint32_t">
+<span id="_CPPv2N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t8uint32_t"></span><span id="sensor::SlidingWindowMovingAverageFilter::SlidingWindowMovingAverageFilter__s.s.uint32_t"></span><span class="target" id="classsensor_1_1_sliding_window_moving_average_filter_1a07365a3f3d06d50983c7e95d6b3e5f94"></span><code class="descname">SlidingWindowMovingAverageFilter</code><span class="sig-paren">(</span>size_t <em>window_size</em>, size_t <em>send_every</em>, uint32_t <em>send_first_at</em> = 1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct a <a class="reference internal" href="#classsensor_1_1_sliding_window_moving_average_filter"><span class="std std-ref">SlidingWindowMovingAverageFilter</span></a>. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">window_size</span></code>: The number of values that should be averaged. </li>
 <li><code class="docutils literal notranslate"><span class="pre">send_every</span></code>: After how many sensor values should a new one be pushed out. </li>
+<li><code class="docutils literal notranslate"><span class="pre">send_first_at</span></code>: After how many values to forward the very first value. Defaults to the first value on startup being published on the first <em>raw</em> value, so with no filter applied. Must be less than or equal to send_every. </li>
 </ul>
 </dd>
 </dl>
@@ -862,7 +972,7 @@
 <dt id="_CPPv3N6sensor12LambdaFilterE">
 <span id="_CPPv2N6sensor12LambdaFilterE"></span><span id="sensor::LambdaFilter"></span><span class="target" id="classsensor_1_1_lambda_filter"></span><em class="property">class </em><code class="descname">LambdaFilter</code> : <em class="property">public</em> sensor::<a class="reference internal" href="#_CPPv3N6sensor6FilterE" title="sensor::Filter">Filter</a><a class="headerlink" href="#_CPPv3N6sensor12LambdaFilterE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This class allows for creation of simple template filters. </p>
-<p>The constructor accepts a lambda of the form float -&gt; optional&lt;float&gt;. It will be called with each new value in the filter chain and returns the modified value that shall be passed down the filter chain. Returning an empty Optional means that the value shall be discarded. </p>
+<p>The constructor accepts a lambda of the form float -&gt; <a class="reference internal" href="../core/helpers.html#classoptional"><span class="std std-ref">optional&lt;float&gt;</span></a>. It will be called with each new value in the filter chain and returns the modified value that shall be passed down the filter chain. Returning an empty Optional means that the value shall be discarded. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -1108,7 +1218,7 @@
 <dt id="_CPPv3N6sensor15HeartbeatFilter5setupEv">
 <span id="_CPPv2N6sensor15HeartbeatFilter5setupEv"></span><span id="sensor::HeartbeatFilter::setup"></span><span class="target" id="classsensor_1_1_heartbeat_filter_1aa92b711765f5ae56a3f1d465462906ac"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15HeartbeatFilter5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_heartbeat_filter_1aa92b711765f5ae56a3f1d465462906ac"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_heartbeat_filter_1aa92b711765f5ae56a3f1d465462906ac"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
 
 <dl class="function">
@@ -1132,6 +1242,19 @@
 <dt id="_CPPv3N6sensor15HeartbeatFilter17expected_intervalE8uint32_t">
 <span id="_CPPv2N6sensor15HeartbeatFilter17expected_intervalE8uint32_t"></span><span id="sensor::HeartbeatFilter::expected_interval__uint32_t"></span><span class="target" id="classsensor_1_1_heartbeat_filter_1ad3f2d5b29160115456b1a021c11aea40"></span>uint32_t <code class="descname">expected_interval</code><span class="sig-paren">(</span>uint32_t <em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15HeartbeatFilter17expected_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Return the amount of time that this filter is expected to take based on the input time interval. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor15HeartbeatFilter18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor15HeartbeatFilter18get_setup_priorityEv"></span><span id="sensor::HeartbeatFilter::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_heartbeat_filter_1a7c09593c235f388b203e9d1b881e3f77"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15HeartbeatFilter18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_heartbeat_filter_1aa92b711765f5ae56a3f1d465462906ac"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
 </dd></dl>
 
 </div>
@@ -1173,6 +1296,19 @@
 <li><code class="docutils literal notranslate"><span class="pre">value</span></code>: The new value. </li>
 </ul>
 </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor14DebounceFilter18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor14DebounceFilter18get_setup_priorityEv"></span><span id="sensor::DebounceFilter::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_debounce_filter_1ae811052583b02e135e51a7eb15a4eb12"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor14DebounceFilter18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
 </dl>
 </p>
 </dd></dl>
@@ -1351,12 +1487,12 @@
 <dl class="function">
 <dt id="_CPPv3N6sensor19MQTTSensorComponent20disable_expire_afterEv">
 <span id="_CPPv2N6sensor19MQTTSensorComponent20disable_expire_afterEv"></span><span id="sensor::MQTTSensorComponent::disable_expire_after"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1ab0d083e3fe49bd783ace350acde3bd24"></span>void <code class="descname">disable_expire_after</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19MQTTSensorComponent20disable_expire_afterEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable Home Assistant value exiry. </p>
+<dd><p>Disable Home Assistant value expiry. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N6sensor19MQTTSensorComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE">
-<span id="_CPPv2N6sensor19MQTTSensorComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="sensor::MQTTSensorComponent::send_discovery__JsonBufferR.JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1a54199ac13de3da6409fbca8f753ea0e3"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonBuffer &amp;<em>buffer</em>, JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19MQTTSensorComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N6sensor19MQTTSensorComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
+<span id="_CPPv2N6sensor19MQTTSensorComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="sensor::MQTTSensorComponent::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1afa4d328ed9a4a7391a8886df967c2790"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19MQTTSensorComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Send discovery info the Home Assistant, override this. </p>
 </dd></dl>
 
@@ -1365,6 +1501,11 @@
 <span id="_CPPv2N6sensor19MQTTSensorComponent5setupEv"></span><span id="sensor::MQTTSensorComponent::setup"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1a8e215d69e22800a9001eff6b16f0b787"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19MQTTSensorComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Override setup. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19MQTTSensorComponent11dump_configEv">
+<span id="_CPPv2N6sensor19MQTTSensorComponent11dump_configEv"></span><span id="sensor::MQTTSensorComponent::dump_config"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1acdb16be242ac2e98667d51a30966dbef"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19MQTTSensorComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor19MQTTSensorComponent16get_expire_afterEv">
@@ -1400,6 +1541,18 @@
 <dt id="_CPPv3NK6sensor19MQTTSensorComponent13friendly_nameEv">
 <span id="_CPPv2NK6sensor19MQTTSensorComponent13friendly_nameEv"></span><span id="sensor::MQTTSensorComponent::friendly_nameC"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1a2df1412d4f85e76ff176b1200596b6c3"></span>std::string <code class="descname">friendly_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor19MQTTSensorComponent13friendly_nameEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the friendly name of this MQTT component. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor19MQTTSensorComponent9unique_idEv">
+<span id="_CPPv2N6sensor19MQTTSensorComponent9unique_idEv"></span><span id="sensor::MQTTSensorComponent::unique_id"></span><span class="target" id="classsensor_1_1_m_q_t_t_sensor_component_1a49f01e4f33a9968747a9efd630acd921"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor19MQTTSensorComponent9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A unique ID for this MQTT component, empty for no unique id. </p>
+<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique id as a string. </dd>
+</dl>
+</p>
 </dd></dl>
 
 </div>

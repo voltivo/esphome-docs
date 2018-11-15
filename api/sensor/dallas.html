@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Dallas Component &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Dallas Component &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,11 +14,12 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/dallas.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="DHT Temperature/Humidity Sensor" href="dht.html" />
-    <link rel="prev" title="BMP280 Temperature/Pressure Sensor" href="bmp280.html" />
+    <link rel="prev" title="CSE7766 Power Sensor" href="cse7766.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -149,6 +150,11 @@ at startup time.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N6sensor15DallasComponent11dump_configEv">
+<span id="_CPPv2N6sensor15DallasComponent11dump_configEv"></span><span id="sensor::DallasComponent::dump_config"></span><span class="target" id="classsensor_1_1_dallas_component_1a9f335488e16334453ecf86d774c8a120"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15DallasComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3NK6sensor15DallasComponent18get_setup_priorityEv">
 <span id="_CPPv2NK6sensor15DallasComponent18get_setup_priorityEv"></span><span id="sensor::DallasComponent::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_dallas_component_1a9334e55ad5ddc213bca2a96fd92c18bd"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15DallasComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>HARDWARE_LATE setup priority. </p>
@@ -175,6 +181,11 @@ at startup time.</p>
 <dl class="member">
 <dt id="_CPPv3N6sensor15DallasComponent8sensors_E">
 <span id="_CPPv2N6sensor15DallasComponent8sensors_E"></span><span id="sensor::DallasComponent::sensors___std::vector:DallasTemperatureSensorP:"></span><span class="target" id="classsensor_1_1_dallas_component_1a5ffbe12a349521da6711e0b91e66bdc9"></span>std::vector&lt;<a class="reference internal" href="#_CPPv3N6sensor23DallasTemperatureSensorE" title="sensor::DallasTemperatureSensor">DallasTemperatureSensor</a> *&gt; <code class="descname">sensors_</code><a class="headerlink" href="#_CPPv3N6sensor15DallasComponent8sensors_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15DallasComponent14found_sensors_E">
+<span id="_CPPv2N6sensor15DallasComponent14found_sensors_E"></span><span id="sensor::DallasComponent::found_sensors___std::vector:uint64_t:"></span><span class="target" id="classsensor_1_1_dallas_component_1a6515f3ff05c16cbf722c9e65685c4722"></span>std::vector&lt;uint64_t&gt; <code class="descname">found_sensors_</code><a class="headerlink" href="#_CPPv3N6sensor15DallasComponent14found_sensors_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -228,7 +239,7 @@ at startup time.</p>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor23DallasTemperatureSensor9get_indexEv">
-<span id="_CPPv2NK6sensor23DallasTemperatureSensor9get_indexEv"></span><span id="sensor::DallasTemperatureSensor::get_indexC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a9d6c92f9a3a7809fcf07040d85348007"></span>uint8_t <code class="descname">get_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor9get_indexEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK6sensor23DallasTemperatureSensor9get_indexEv"></span><span id="sensor::DallasTemperatureSensor::get_indexC"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1a09ce6ab30c2f6c7b89dee00072f45c78"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; <code class="descname">get_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor23DallasTemperatureSensor9get_indexEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the index of this sensor. (0 if using address.) </p>
 </dd></dl>
 
@@ -298,7 +309,7 @@ at startup time.</p>
 
 <dl class="member">
 <dt id="_CPPv3N6sensor23DallasTemperatureSensor6index_E">
-<span id="_CPPv2N6sensor23DallasTemperatureSensor6index_E"></span><span id="sensor::DallasTemperatureSensor::index___uint8_t"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1ac90d1d77768115d0e101275580010825"></span>uint8_t <code class="descname">index_</code><a class="headerlink" href="#_CPPv3N6sensor23DallasTemperatureSensor6index_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor23DallasTemperatureSensor6index_E"></span><span id="sensor::DallasTemperatureSensor::index___optional:uint8_t:"></span><span class="target" id="classsensor_1_1_dallas_temperature_sensor_1ac42d874a53537b3c28a8f3578a55144e"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; <code class="descname">index_</code><a class="headerlink" href="#_CPPv3N6sensor23DallasTemperatureSensor6index_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">

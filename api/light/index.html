@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Light &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Light &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/light/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -134,53 +135,6 @@ state updates.</p>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N5light16LightColorValues21load_from_preferencesERKNSt6stringERK11LightTraits">
-<span id="_CPPv2N5light16LightColorValues21load_from_preferencesERKNSt6stringERK11LightTraits"></span><span id="light::LightColorValues::load_from_preferences__ssCR.LightTraitsCR"></span><span class="target" id="classlight_1_1_light_color_values_1a58d6512db38c0eda302aad529d85bce6"></span>void <code class="descname">load_from_preferences</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light16LightColorValues21load_from_preferencesERKNSt6stringERK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Load the color values from the non-volatile storage container preferences into the this object. </p>
-<p><dl class="docutils">
-<dt><strong>See</strong></dt>
-<dd><a class="reference internal" href="#classlight_1_1_light_color_values_1a01cad28d369fdf40a89dd69f2deed471"><span class="std std-ref">save_to_preferences()</span></a> </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">friendly_name</span></code>: The friendly name of the component that’s calling this. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits">
-<span id="_CPPv2NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits"></span><span id="light::LightColorValues::save_to_preferences__ssCR.LightTraitsCRC"></span><span class="target" id="classlight_1_1_light_color_values_1a01cad28d369fdf40a89dd69f2deed471"></span>void <code class="descname">save_to_preferences</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues19save_to_preferencesERKNSt6stringERK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Store these <a class="reference internal" href="#classlight_1_1_light_color_values"><span class="std std-ref">LightColorValues</span></a> in the preferences object. </p>
-<p><dl class="docutils">
-<dt><strong>See</strong></dt>
-<dd><a class="reference internal" href="#classlight_1_1_light_color_values_1a58d6512db38c0eda302aad529d85bce6"><span class="std std-ref">load_from_preferences()</span></a> </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">friendly_name</span></code>: The friendly name of the component that’s calling this. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N5light16LightColorValues10parse_jsonERK10JsonObjectRK11LightTraits">
-<span id="_CPPv2N5light16LightColorValues10parse_jsonERK10JsonObjectRK11LightTraits"></span><span id="light::LightColorValues::parse_json__JsonObjectCR.LightTraitsCR"></span><span class="target" id="classlight_1_1_light_color_values_1afc2ac78103409279b75740174a65c53f"></span>void <code class="descname">parse_json</code><span class="sig-paren">(</span><em class="property">const</em> JsonObject &amp;<em>root</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light16LightColorValues10parse_jsonERK10JsonObjectRK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Parse a color from the provided JsonObject. </p>
-<p>See <a class="reference external" href="https://home-assistant.io/components/light.mqtt_json/">Home Assistant MQTT JSON light</a>.</p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">root</span></code>: The json root object. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits">
 <span id="_CPPv2NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits"></span><span id="light::LightColorValues::dump_json__JsonObjectR.LightTraitsCRC"></span><span class="target" id="classlight_1_1_light_color_values_1abf31f1d526cf048dbb69b5a297bbadcb"></span>void <code class="descname">dump_json</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> &amp;<em>traits</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16LightColorValues9dump_jsonER10JsonObjectRK11LightTraits" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Dump this color into a JsonObject. </p>
@@ -260,6 +214,11 @@ state updates.</p>
 <dl class="function">
 <dt id="_CPPv3N5light16LightColorValues9set_stateEf">
 <span id="_CPPv2N5light16LightColorValues9set_stateEf"></span><span id="light::LightColorValues::set_state__float"></span><span class="target" id="classlight_1_1_light_color_values_1a407cb6a25cf2d133ccc5be303cce06bd"></span>void <code class="descname">set_state</code><span class="sig-paren">(</span>float <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light16LightColorValues9set_stateEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light16LightColorValues9set_stateEb">
+<span id="_CPPv2N5light16LightColorValues9set_stateEb"></span><span id="light::LightColorValues::set_state__b"></span><span class="target" id="classlight_1_1_light_color_values_1a758211a5fa4b2525ef697a658cff3199"></span>void <code class="descname">set_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light16LightColorValues9set_stateEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1442,18 +1401,9 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N5light10LightState12start_effectERKNSt6stringE">
-<span id="_CPPv2N5light10LightState12start_effectERKNSt6stringE"></span><span id="light::LightState::start_effect__ssCR"></span><span class="target" id="classlight_1_1_light_state_1a03b3dffa92c02b57acdc7f3422106613"></span>void <code class="descname">start_effect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState12start_effectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Start an effect by name. </p>
-<p>Uses light_effect_entries in light_effect.h for finding the correct effect.</p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the effect, case insensitive. </li>
-</ul>
-</dd>
-</dl>
-</p>
+<dt id="_CPPv3N5light10LightState12start_effectE8uint32_t">
+<span id="_CPPv2N5light10LightState12start_effectE8uint32_t"></span><span id="light::LightState::start_effect__uint32_t"></span><span class="target" id="classlight_1_1_light_state_1abd885c06607557a24e74d66a60b36b87"></span>void <code class="descname">start_effect</code><span class="sig-paren">(</span>uint32_t <em>effect_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState12start_effectE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Start an effect with the given index. </p>
 </dd></dl>
 
 <dl class="function">
@@ -1507,11 +1457,6 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N5light10LightState24start_default_transitionERK16LightColorValues">
-<span id="_CPPv2N5light10LightState24start_default_transitionERK16LightColorValues"></span><span id="light::LightState::start_default_transition__LightColorValuesCR"></span><span class="target" id="classlight_1_1_light_state_1a58f827755bd180a5774c99403b3eed7b"></span>void <code class="descname">start_default_transition</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState24start_default_transitionERK16LightColorValues" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3N5light10LightState24current_values_as_binaryEPb">
 <span id="_CPPv2N5light10LightState24current_values_as_binaryEPb"></span><span id="light::LightState::current_values_as_binary__bP"></span><span class="target" id="classlight_1_1_light_state_1a7cdc84ee9999a6ed91b00f08a1740683"></span>void <code class="descname">current_values_as_binary</code><span class="sig-paren">(</span>bool *<em>binary</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState24current_values_as_binaryEPb" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -1548,17 +1493,37 @@ state updates.</p>
 
 <dl class="function">
 <dt id="_CPPv3N5light10LightState18make_toggle_actionEv">
-<span id="_CPPv2N5light10LightState18make_toggle_actionEv"></span><span id="light::LightState::make_toggle_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classlight_1_1_light_state_1af4c7aa17b449ad0fd890367b62a2782b"></span>ToggleAction&lt;T&gt; *<code class="descname">make_toggle_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState18make_toggle_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light10LightState18make_toggle_actionEv"></span><span id="light::LightState::make_toggle_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classlight_1_1_light_state_1af4c7aa17b449ad0fd890367b62a2782b"></span><a class="reference internal" href="#_CPPv3N5light12ToggleActionE" title="light::ToggleAction">ToggleAction</a>&lt;T&gt; *<code class="descname">make_toggle_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState18make_toggle_actionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N5light10LightState20make_turn_off_actionEv">
-<span id="_CPPv2N5light10LightState20make_turn_off_actionEv"></span><span id="light::LightState::make_turn_off_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classlight_1_1_light_state_1a68689077c725961368cc368c8f59a92a"></span>TurnOffAction&lt;T&gt; *<code class="descname">make_turn_off_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState20make_turn_off_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light10LightState20make_turn_off_actionEv"></span><span id="light::LightState::make_turn_off_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classlight_1_1_light_state_1a68689077c725961368cc368c8f59a92a"></span><a class="reference internal" href="#_CPPv3N5light13TurnOffActionE" title="light::TurnOffAction">TurnOffAction</a>&lt;T&gt; *<code class="descname">make_turn_off_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState20make_turn_off_actionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N5light10LightState19make_turn_on_actionEv">
-<span id="_CPPv2N5light10LightState19make_turn_on_actionEv"></span><span id="light::LightState::make_turn_on_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classlight_1_1_light_state_1a80418f5df9586ec4c6d5a9b787ea3544"></span>TurnOnAction&lt;T&gt; *<code class="descname">make_turn_on_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState19make_turn_on_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light10LightState19make_turn_on_actionEv"></span><span id="light::LightState::make_turn_on_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classlight_1_1_light_state_1a80418f5df9586ec4c6d5a9b787ea3544"></span><a class="reference internal" href="#_CPPv3N5light12TurnOnActionE" title="light::TurnOnAction">TurnOnAction</a>&lt;T&gt; *<code class="descname">make_turn_on_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState19make_turn_on_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState7turn_onEv">
+<span id="_CPPv2N5light10LightState7turn_onEv"></span><span id="light::LightState::turn_on"></span><span class="target" id="classlight_1_1_light_state_1ab173de149483d99c48a7c32dbea94ad3"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> <code class="descname">turn_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState7turn_onEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState8turn_offEv">
+<span id="_CPPv2N5light10LightState8turn_offEv"></span><span id="light::LightState::turn_off"></span><span class="target" id="classlight_1_1_light_state_1af2ab87cb6561481a356b5f111225d02d"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> <code class="descname">turn_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState8turn_offEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState6toggleEv">
+<span id="_CPPv2N5light10LightState6toggleEv"></span><span id="light::LightState::toggle"></span><span class="target" id="classlight_1_1_light_state_1a41e54661231a89a70fbc937f2834a658"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> <code class="descname">toggle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState6toggleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9make_callEv">
+<span id="_CPPv2N5light10LightState9make_callEv"></span><span id="light::LightState::make_call"></span><span class="target" id="classlight_1_1_light_state_1a784dcdab609a512768c06199978d057f"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> <code class="descname">make_call</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9make_callEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1616,11 +1581,6 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N5light10LightState22get_remote_values_lazyEv">
-<span id="_CPPv2N5light10LightState22get_remote_values_lazyEv"></span><span id="light::LightState::get_remote_values_lazy"></span><span class="target" id="classlight_1_1_light_state_1a66618c3942a166bf48476f1d9425dbf1"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light16LightColorValuesE" title="light::LightColorValues">LightColorValues</a> &amp;<code class="descname">get_remote_values_lazy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState22get_remote_values_lazyEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3N5light10LightState15get_effect_nameEv">
 <span id="_CPPv2N5light10LightState15get_effect_nameEv"></span><span id="light::LightState::get_effect_name"></span><span class="target" id="classlight_1_1_light_state_1a257119e35c3c57395ef6ff24d3dd2afa"></span>std::string <code class="descname">get_effect_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState15get_effect_nameEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Return the name of the current effect, or if no effect is active “None”. </p>
@@ -1649,14 +1609,8 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N5light10LightState10parse_jsonERK10JsonObject">
-<span id="_CPPv2N5light10LightState10parse_jsonERK10JsonObject"></span><span id="light::LightState::parse_json__JsonObjectCR"></span><span class="target" id="classlight_1_1_light_state_1ad97d655a9eaae945ad1e7fe64a597a88"></span>void <code class="descname">parse_json</code><span class="sig-paren">(</span><em class="property">const</em> JsonObject &amp;<em>root</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState10parse_jsonERK10JsonObject" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Parse and apply the provided JSON payload. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N5light10LightState9dump_jsonER10JsonBufferR10JsonObject">
-<span id="_CPPv2N5light10LightState9dump_jsonER10JsonBufferR10JsonObject"></span><span id="light::LightState::dump_json__JsonBufferR.JsonObjectR"></span><span class="target" id="classlight_1_1_light_state_1a1f3c056621ba786d0231b50080862f40"></span>void <code class="descname">dump_json</code><span class="sig-paren">(</span>JsonBuffer &amp;<em>buffer</em>, JsonObject &amp;<em>root</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9dump_jsonER10JsonBufferR10JsonObject" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N5light10LightState9dump_jsonER10JsonObject">
+<span id="_CPPv2N5light10LightState9dump_jsonER10JsonObject"></span><span id="light::LightState::dump_json__JsonObjectR"></span><span class="target" id="classlight_1_1_light_state_1af89c4f0089e0c4e57c9869eeebdd0fb4"></span>void <code class="descname">dump_json</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9dump_jsonER10JsonObject" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Dump the state of this light as JSON. </p>
 </dd></dl>
 
@@ -1697,6 +1651,11 @@ state updates.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
+<dt id="_CPPv3N5light10LightState4rtc_E">
+<span id="_CPPv2N5light10LightState4rtc_E"></span><span id="light::LightState::rtc___ESPPreferenceObject"></span><span class="target" id="classlight_1_1_light_state_1a26ada12dc43896286f64bfbd94c8511a"></span><a class="reference internal" href="../core/helpers.html#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">rtc_</code><a class="headerlink" href="#_CPPv3N5light10LightState4rtc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
 <dt id="_CPPv3N5light10LightState26default_transition_length_E">
 <span id="_CPPv2N5light10LightState26default_transition_length_E"></span><span id="light::LightState::default_transition_length___uint32_t"></span><span class="target" id="classlight_1_1_light_state_1aee84f83434ccba547d6c09bda2369c64"></span>uint32_t <code class="descname">default_transition_length_</code> = {1000}<a class="headerlink" href="#_CPPv3N5light10LightState26default_transition_length_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -1704,6 +1663,11 @@ state updates.</p>
 <dl class="member">
 <dt id="_CPPv3N5light10LightState14active_effect_E">
 <span id="_CPPv2N5light10LightState14active_effect_E"></span><span id="light::LightState::active_effect___LightEffectP"></span><span class="target" id="classlight_1_1_light_state_1a4c53503629a38999e96843ab8dfead0a"></span><a class="reference internal" href="#_CPPv3N5light11LightEffectE" title="light::LightEffect">LightEffect</a> *<code class="descname">active_effect_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N5light10LightState14active_effect_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState20active_effect_index_E">
+<span id="_CPPv2N5light10LightState20active_effect_index_E"></span><span id="light::LightState::active_effect_index___optional:uint32_t:"></span><span class="target" id="classlight_1_1_light_state_1ad5162e93e9ac9fd63e1618e70aa599b7"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">active_effect_index_</code> = {}<a class="headerlink" href="#_CPPv3N5light10LightState20active_effect_index_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -1748,6 +1712,157 @@ state updates.</p>
 <dd></dd></dl>
 
 </div>
+<dl class="class">
+<dt id="_CPPv3N5light10LightState9StateCallE">
+<span id="_CPPv2N5light10LightState9StateCallE"></span><span id="light::LightState::StateCall"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call"></span><em class="property">class </em><code class="descname">StateCall</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCallE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall9StateCallEP10LightState">
+<span id="_CPPv2N5light10LightState9StateCall9StateCallEP10LightState"></span><span id="light::LightState::StateCall::StateCall__LightStateP"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a410b9371f5bd2ca1e9c69f84a5ed0f86"></span><code class="descname">StateCall</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall9StateCallEP10LightState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall9set_stateEb">
+<span id="_CPPv2N5light10LightState9StateCall9set_stateEb"></span><span id="light::LightState::StateCall::set_state__b"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a0e446953ddf033af67fd1e3fe4e6279e"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall9set_stateEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall21set_transition_lengthE8uint32_t">
+<span id="_CPPv2N5light10LightState9StateCall21set_transition_lengthE8uint32_t"></span><span id="light::LightState::StateCall::set_transition_length__uint32_t"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a630bff99711a7309b94bc1bca5901c72"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_transition_length</code><span class="sig-paren">(</span>uint32_t <em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall21set_transition_lengthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall16set_flash_lengthE8uint32_t">
+<span id="_CPPv2N5light10LightState9StateCall16set_flash_lengthE8uint32_t"></span><span id="light::LightState::StateCall::set_flash_length__uint32_t"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a28a376e86cc29724280de19eea91b120"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_flash_length</code><span class="sig-paren">(</span>uint32_t <em>flash_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall16set_flash_lengthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall14set_brightnessEf">
+<span id="_CPPv2N5light10LightState9StateCall14set_brightnessEf"></span><span id="light::LightState::StateCall::set_brightness__float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a328c0c98869c6317e4633b609392f257"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_brightness</code><span class="sig-paren">(</span>float <em>brightness</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall14set_brightnessEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall7set_rgbEfff">
+<span id="_CPPv2N5light10LightState9StateCall7set_rgbEfff"></span><span id="light::LightState::StateCall::set_rgb__float.float.float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1ac684ab38bf36ab7233febb4836ac8871"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_rgb</code><span class="sig-paren">(</span>float <em>red</em>, float <em>green</em>, float <em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall7set_rgbEfff" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall8set_rgbwEffff">
+<span id="_CPPv2N5light10LightState9StateCall8set_rgbwEffff"></span><span id="light::LightState::StateCall::set_rgbw__float.float.float.float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1aed268e13062e0e1b3c727fa27a70ea9b"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_rgbw</code><span class="sig-paren">(</span>float <em>red</em>, float <em>green</em>, float <em>blue</em>, float <em>white</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall8set_rgbwEffff" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall7set_redEf">
+<span id="_CPPv2N5light10LightState9StateCall7set_redEf"></span><span id="light::LightState::StateCall::set_red__float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1aa36b97c8da5d64cf82a20835cb094346"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_red</code><span class="sig-paren">(</span>float <em>red</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall7set_redEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall9set_greenEf">
+<span id="_CPPv2N5light10LightState9StateCall9set_greenEf"></span><span id="light::LightState::StateCall::set_green__float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a78a9c4fdd4096fa3fe205ae48ac6ceef"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_green</code><span class="sig-paren">(</span>float <em>green</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall9set_greenEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall8set_blueEf">
+<span id="_CPPv2N5light10LightState9StateCall8set_blueEf"></span><span id="light::LightState::StateCall::set_blue__float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a1e00d03ce59ca5523761e8f47d86fcd8"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_blue</code><span class="sig-paren">(</span>float <em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall8set_blueEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall9set_whiteEf">
+<span id="_CPPv2N5light10LightState9StateCall9set_whiteEf"></span><span id="light::LightState::StateCall::set_white__float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1abbcf3d07703d2853ae2067c99f73f7d5"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_white</code><span class="sig-paren">(</span>float <em>white</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall9set_whiteEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall21set_color_temperatureEf">
+<span id="_CPPv2N5light10LightState9StateCall21set_color_temperatureEf"></span><span id="light::LightState::StateCall::set_color_temperature__float"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1ad29b7e7ae6d2367c2e47299717aeeea8"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_color_temperature</code><span class="sig-paren">(</span>float <em>color_temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall21set_color_temperatureEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall10set_effectERKNSt6stringE">
+<span id="_CPPv2N5light10LightState9StateCall10set_effectERKNSt6stringE"></span><span id="light::LightState::StateCall::set_effect__ssCR"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1ae54f3be4dbca92eb9f9c53ac2c9b09e0"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_effect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>effect</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall10set_effectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall10set_effectE8uint32_t">
+<span id="_CPPv2N5light10LightState9StateCall10set_effectE8uint32_t"></span><span id="light::LightState::StateCall::set_effect__uint32_t"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1ac781204647d9d6e55a2df3d751dccafc"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">set_effect</code><span class="sig-paren">(</span>uint32_t <em>effect_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall10set_effectE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall16parse_color_jsonER10JsonObject">
+<span id="_CPPv2N5light10LightState9StateCall16parse_color_jsonER10JsonObject"></span><span id="light::LightState::StateCall::parse_color_json__JsonObjectR"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a5fa15d2270d032e5af0e3371e051b852"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">parse_color_json</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall16parse_color_jsonER10JsonObject" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light10LightState9StateCall10parse_jsonER10JsonObject">
+<span id="_CPPv2N5light10LightState9StateCall10parse_jsonER10JsonObject"></span><span id="light::LightState::StateCall::parse_json__JsonObjectR"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1ac2d8ed7875b324c9fc65c8b56bcfc767"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a>::<a class="reference internal" href="#_CPPv3N5light10LightState9StateCallE" title="light::LightState::StateCall">StateCall</a> &amp;<code class="descname">parse_json</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall10parse_jsonER10JsonObject" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light10LightState9StateCall7performEv">
+<span id="_CPPv2NK5light10LightState9StateCall7performEv"></span><span id="light::LightState::StateCall::performC"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a043b0a9a341eb665fc55a4f9fde593c8"></span>void <code class="descname">perform</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light10LightState9StateCall7performEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall6state_E">
+<span id="_CPPv2N5light10LightState9StateCall6state_E"></span><span id="light::LightState::StateCall::state___LightStateP"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a3d895f62eb8ce9e78052365fba0e9801"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall13binary_state_E">
+<span id="_CPPv2N5light10LightState9StateCall13binary_state_E"></span><span id="light::LightState::StateCall::binary_state___optional:b:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a5241d4ffa7185f3b26cd0f590885fb2e"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">binary_state_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall13binary_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall11brightness_E">
+<span id="_CPPv2N5light10LightState9StateCall11brightness_E"></span><span id="light::LightState::StateCall::brightness___optional:float:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1aa6356b3e6febed584fa13f80ec70308b"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">brightness_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall11brightness_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall4red_E">
+<span id="_CPPv2N5light10LightState9StateCall4red_E"></span><span id="light::LightState::StateCall::red___optional:float:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1aa1f5738b2f2c078dcf354783e6403deb"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">red_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall4red_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall6green_E">
+<span id="_CPPv2N5light10LightState9StateCall6green_E"></span><span id="light::LightState::StateCall::green___optional:float:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a4faf42a8206131cfb1eddb1dffdf3b7f"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">green_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall6green_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall5blue_E">
+<span id="_CPPv2N5light10LightState9StateCall5blue_E"></span><span id="light::LightState::StateCall::blue___optional:float:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1abf3b2958ffcc331a050fb4a2a43be663"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">blue_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall5blue_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall6white_E">
+<span id="_CPPv2N5light10LightState9StateCall6white_E"></span><span id="light::LightState::StateCall::white___optional:float:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a21f22faa507b528f18d1d3c95a42f216"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">white_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall6white_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall18color_temperature_E">
+<span id="_CPPv2N5light10LightState9StateCall18color_temperature_E"></span><span id="light::LightState::StateCall::color_temperature___optional:float:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a47d36e9ec757ec99dec5047e98518b8f"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">color_temperature_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall18color_temperature_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall18transition_length_E">
+<span id="_CPPv2N5light10LightState9StateCall18transition_length_E"></span><span id="light::LightState::StateCall::transition_length___optional:uint32_t:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a6da3303df68bed3fc594bab6835a026c"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">transition_length_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall18transition_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall13flash_length_E">
+<span id="_CPPv2N5light10LightState9StateCall13flash_length_E"></span><span id="light::LightState::StateCall::flash_length___optional:uint32_t:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a21c219bcf3e323f323e8df529c575643"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">flash_length_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall13flash_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light10LightState9StateCall7effect_E">
+<span id="_CPPv2N5light10LightState9StateCall7effect_E"></span><span id="light::LightState::StateCall::effect___optional:uint32_t:"></span><span class="target" id="classlight_1_1_light_state_1_1_state_call_1a26b5c603d1eabaae425c4446dec2a62c"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">effect_</code><a class="headerlink" href="#_CPPv3N5light10LightState9StateCall7effect_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1999,12 +2114,17 @@ state updates.</p>
 <dt id="_CPPv3N5light22MQTTJSONLightComponent5setupEv">
 <span id="_CPPv2N5light22MQTTJSONLightComponent5setupEv"></span><span id="light::MQTTJSONLightComponent::setup"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1a03edd23c2fdfdba105fd67039c42debe"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22MQTTJSONLightComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classlight_1_1_m_q_t_t_j_s_o_n_light_component_1a03edd23c2fdfdba105fd67039c42debe"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classlight_1_1_m_q_t_t_j_s_o_n_light_component_1a03edd23c2fdfdba105fd67039c42debe"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N5light22MQTTJSONLightComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE">
-<span id="_CPPv2N5light22MQTTJSONLightComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="light::MQTTJSONLightComponent::send_discovery__JsonBufferR.JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1a9e834bff8a7ca22ffd3856d84593e056"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonBuffer &amp;<em>buffer</em>, JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22MQTTJSONLightComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N5light22MQTTJSONLightComponent11dump_configEv">
+<span id="_CPPv2N5light22MQTTJSONLightComponent11dump_configEv"></span><span id="light::MQTTJSONLightComponent::dump_config"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1a06e25f50ebe2140a543ac385a04d690c"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22MQTTJSONLightComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light22MQTTJSONLightComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
+<span id="_CPPv2N5light22MQTTJSONLightComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="light::MQTTJSONLightComponent::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1ad88956ebf2d32f5fd43adb43d7643b0d"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22MQTTJSONLightComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Send discovery info the Home Assistant, override this. </p>
 </dd></dl>
 
@@ -2044,6 +2164,249 @@ state updates.</p>
 <dl class="member">
 <dt id="_CPPv3N5light22MQTTJSONLightComponent6state_E">
 <span id="_CPPv2N5light22MQTTJSONLightComponent6state_E"></span><span id="light::MQTTJSONLightComponent::state___LightStateP"></span><span class="target" id="classlight_1_1_m_q_t_t_j_s_o_n_light_component_1ab27c3c7a801ada8b2773d08fe56b7c44"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N5light22MQTTJSONLightComponent6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light13TurnOffActionE">
+<span id="_CPPv2N5light13TurnOffActionE"></span><span id="light::TurnOffAction"></span><span class="target" id="classlight_1_1_turn_off_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">TurnOffAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N5light13TurnOffActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light13TurnOffAction13TurnOffActionEP10LightState">
+<span id="_CPPv2N5light13TurnOffAction13TurnOffActionEP10LightState"></span><span id="light::TurnOffAction::TurnOffAction__LightStateP"></span><span class="target" id="classlight_1_1_turn_off_action_1a682e4386fd4c42d420e6b591a5933c19"></span><code class="descname">TurnOffAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light13TurnOffAction13TurnOffActionEP10LightState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light13TurnOffAction21set_transition_lengthENSt8functionIF8uint32_t1TEEE">
+<span id="_CPPv2N5light13TurnOffAction21set_transition_lengthENSt8functionIF8uint32_t1TEEE"></span><span class="target" id="classlight_1_1_turn_off_action_1a1ea44ff095fce03229a997b5cba24015"></span>void <code class="descname">set_transition_length</code><span class="sig-paren">(</span>std::function&lt;uint32_t<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; <em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light13TurnOffAction21set_transition_lengthENSt8functionIF8uint32_t1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light13TurnOffAction21set_transition_lengthE8uint32_t">
+<span id="_CPPv2N5light13TurnOffAction21set_transition_lengthE8uint32_t"></span><span id="light::TurnOffAction::set_transition_length__uint32_t"></span><span class="target" id="classlight_1_1_turn_off_action_1aac83ba28051054a8c40ae8fabeed696d"></span>void <code class="descname">set_transition_length</code><span class="sig-paren">(</span>uint32_t <em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light13TurnOffAction21set_transition_lengthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light13TurnOffAction4playE1T">
+<span id="_CPPv2N5light13TurnOffAction4playE1T"></span><span id="light::TurnOffAction::play__T"></span><span class="target" id="classlight_1_1_turn_off_action_1a26e4ea43339a7b1d0c9fb68c0ae5ace8"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light13TurnOffAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light13TurnOffAction6state_E">
+<span id="_CPPv2N5light13TurnOffAction6state_E"></span><span id="light::TurnOffAction::state___LightStateP"></span><span class="target" id="classlight_1_1_turn_off_action_1acbb69dccc30b9c17c47240af3844f9e9"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N5light13TurnOffAction6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light13TurnOffAction18transition_length_E">
+<span id="_CPPv2N5light13TurnOffAction18transition_length_E"></span><span id="light::TurnOffAction::transition_length___TemplatableValue:uint32_t.T:"></span><span class="target" id="classlight_1_1_turn_off_action_1a085bb998b41e8d0adee4c2744912b830"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;uint32_t, T&gt; <code class="descname">transition_length_</code><a class="headerlink" href="#_CPPv3N5light13TurnOffAction18transition_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light12TurnOnActionE">
+<span id="_CPPv2N5light12TurnOnActionE"></span><span id="light::TurnOnAction"></span><span class="target" id="classlight_1_1_turn_on_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">TurnOnAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N5light12TurnOnActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction12TurnOnActionEP10LightState">
+<span id="_CPPv2N5light12TurnOnAction12TurnOnActionEP10LightState"></span><span id="light::TurnOnAction::TurnOnAction__LightStateP"></span><span class="target" id="classlight_1_1_turn_on_action_1a99831baa00aafcb501dfceefa1c8eece"></span><code class="descname">TurnOnAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction12TurnOnActionEP10LightState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction21set_transition_lengthERRNSt8functionIF8uint32_t1TEEE">
+<span id="_CPPv2N5light12TurnOnAction21set_transition_lengthERRNSt8functionIF8uint32_t1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1ac061d70027e42cb54da5fb4ea0c9d271"></span>void <code class="descname">set_transition_length</code><span class="sig-paren">(</span>std::function&lt;uint32_t<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction21set_transition_lengthERRNSt8functionIF8uint32_t1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction21set_transition_lengthE8uint32_t">
+<span id="_CPPv2N5light12TurnOnAction21set_transition_lengthE8uint32_t"></span><span id="light::TurnOnAction::set_transition_length__uint32_t"></span><span class="target" id="classlight_1_1_turn_on_action_1ae71f2cb99a91291ce705158992271e51"></span>void <code class="descname">set_transition_length</code><span class="sig-paren">(</span>uint32_t <em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction21set_transition_lengthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction16set_flash_lengthERRNSt8functionIF8uint32_t1TEEE">
+<span id="_CPPv2N5light12TurnOnAction16set_flash_lengthERRNSt8functionIF8uint32_t1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1ad44c08520eae6b85529fa36a922953d5"></span>void <code class="descname">set_flash_length</code><span class="sig-paren">(</span>std::function&lt;uint32_t<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>flash_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction16set_flash_lengthERRNSt8functionIF8uint32_t1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction16set_flash_lengthE8uint32_t">
+<span id="_CPPv2N5light12TurnOnAction16set_flash_lengthE8uint32_t"></span><span id="light::TurnOnAction::set_flash_length__uint32_t"></span><span class="target" id="classlight_1_1_turn_on_action_1a8adee9825b66d88cf3403d65a9a6e12f"></span>void <code class="descname">set_flash_length</code><span class="sig-paren">(</span>uint32_t <em>flash_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction16set_flash_lengthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction14set_brightnessERRNSt8functionIFf1TEEE">
+<span id="_CPPv2N5light12TurnOnAction14set_brightnessERRNSt8functionIFf1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1aba024145c9b59d040256ae0683da59ad"></span>void <code class="descname">set_brightness</code><span class="sig-paren">(</span>std::function&lt;float<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>brightness</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction14set_brightnessERRNSt8functionIFf1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction14set_brightnessEf">
+<span id="_CPPv2N5light12TurnOnAction14set_brightnessEf"></span><span id="light::TurnOnAction::set_brightness__float"></span><span class="target" id="classlight_1_1_turn_on_action_1a69f1c90977ec200a3b70a1d436cd1e5c"></span>void <code class="descname">set_brightness</code><span class="sig-paren">(</span>float <em>brightness</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction14set_brightnessEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction7set_redERRNSt8functionIFf1TEEE">
+<span id="_CPPv2N5light12TurnOnAction7set_redERRNSt8functionIFf1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1afcc2a94c8b519814635a9b3d2a8e339a"></span>void <code class="descname">set_red</code><span class="sig-paren">(</span>std::function&lt;float<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>red</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction7set_redERRNSt8functionIFf1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction7set_redEf">
+<span id="_CPPv2N5light12TurnOnAction7set_redEf"></span><span id="light::TurnOnAction::set_red__float"></span><span class="target" id="classlight_1_1_turn_on_action_1a59bc50e130c53cc0b9a9244d0f6bd05f"></span>void <code class="descname">set_red</code><span class="sig-paren">(</span>float <em>red</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction7set_redEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction9set_greenERRNSt8functionIFf1TEEE">
+<span id="_CPPv2N5light12TurnOnAction9set_greenERRNSt8functionIFf1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1a5a5a1cacdddf706a022a275b2d9d2471"></span>void <code class="descname">set_green</code><span class="sig-paren">(</span>std::function&lt;float<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>green</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction9set_greenERRNSt8functionIFf1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction9set_greenEf">
+<span id="_CPPv2N5light12TurnOnAction9set_greenEf"></span><span id="light::TurnOnAction::set_green__float"></span><span class="target" id="classlight_1_1_turn_on_action_1a845eb6e22fd50c7bc372647d9b884781"></span>void <code class="descname">set_green</code><span class="sig-paren">(</span>float <em>green</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction9set_greenEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction8set_blueERRNSt8functionIFf1TEEE">
+<span id="_CPPv2N5light12TurnOnAction8set_blueERRNSt8functionIFf1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1a73467f39a0688e5b62e0822c6b286c3a"></span>void <code class="descname">set_blue</code><span class="sig-paren">(</span>std::function&lt;float<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction8set_blueERRNSt8functionIFf1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction8set_blueEf">
+<span id="_CPPv2N5light12TurnOnAction8set_blueEf"></span><span id="light::TurnOnAction::set_blue__float"></span><span class="target" id="classlight_1_1_turn_on_action_1aa1f50be6f1aaceddfaf5dd6a65ecfe33"></span>void <code class="descname">set_blue</code><span class="sig-paren">(</span>float <em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction8set_blueEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction9set_whiteERRNSt8functionIFf1TEEE">
+<span id="_CPPv2N5light12TurnOnAction9set_whiteERRNSt8functionIFf1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1adbc1a89ade6fdfa6755e244b00a20073"></span>void <code class="descname">set_white</code><span class="sig-paren">(</span>std::function&lt;float<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>white</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction9set_whiteERRNSt8functionIFf1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction9set_whiteEf">
+<span id="_CPPv2N5light12TurnOnAction9set_whiteEf"></span><span id="light::TurnOnAction::set_white__float"></span><span class="target" id="classlight_1_1_turn_on_action_1ad2da3229fe5a6d26dd465c1ea2448066"></span>void <code class="descname">set_white</code><span class="sig-paren">(</span>float <em>white</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction9set_whiteEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction21set_color_temperatureERRNSt8functionIFf1TEEE">
+<span id="_CPPv2N5light12TurnOnAction21set_color_temperatureERRNSt8functionIFf1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1ae91c13a0dda314f50e166ca097a7212d"></span>void <code class="descname">set_color_temperature</code><span class="sig-paren">(</span>std::function&lt;float<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>color_temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction21set_color_temperatureERRNSt8functionIFf1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction21set_color_temperatureEf">
+<span id="_CPPv2N5light12TurnOnAction21set_color_temperatureEf"></span><span id="light::TurnOnAction::set_color_temperature__float"></span><span class="target" id="classlight_1_1_turn_on_action_1ad66aca8db202c28903a82184c6205abb"></span>void <code class="descname">set_color_temperature</code><span class="sig-paren">(</span>float <em>color_temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction21set_color_temperatureEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction10set_effectERRNSt8functionIFNSt6stringE1TEEE">
+<span id="_CPPv2N5light12TurnOnAction10set_effectERRNSt8functionIFNSt6stringE1TEEE"></span><span class="target" id="classlight_1_1_turn_on_action_1ad4269de41b6546c340d75f03fd4c7c72"></span>void <code class="descname">set_effect</code><span class="sig-paren">(</span>std::function&lt;std::string<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>effect</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction10set_effectERRNSt8functionIFNSt6stringE1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction10set_effectENSt6stringE">
+<span id="_CPPv2N5light12TurnOnAction10set_effectENSt6stringE"></span><span id="light::TurnOnAction::set_effect__ss"></span><span class="target" id="classlight_1_1_turn_on_action_1a88b37533d701a75481e418a12fcdb942"></span>void <code class="descname">set_effect</code><span class="sig-paren">(</span>std::string <em>effect</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction10set_effectENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12TurnOnAction4playE1T">
+<span id="_CPPv2N5light12TurnOnAction4playE1T"></span><span id="light::TurnOnAction::play__T"></span><span class="target" id="classlight_1_1_turn_on_action_1ac95928aaf175eae78ea11fc8bf619967"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12TurnOnAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction6state_E">
+<span id="_CPPv2N5light12TurnOnAction6state_E"></span><span id="light::TurnOnAction::state___LightStateP"></span><span class="target" id="classlight_1_1_turn_on_action_1a6591675fe2a80b3433c8fad542d0dc28"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction11brightness_E">
+<span id="_CPPv2N5light12TurnOnAction11brightness_E"></span><span id="light::TurnOnAction::brightness___TemplatableValue:float.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a8f70673acdd9444ec9a7f56242bd6fa5"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;float, T&gt; <code class="descname">brightness_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction11brightness_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction4red_E">
+<span id="_CPPv2N5light12TurnOnAction4red_E"></span><span id="light::TurnOnAction::red___TemplatableValue:float.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a15d9f5fe1ffef663bc3913061e9fae39"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;float, T&gt; <code class="descname">red_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction4red_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction6green_E">
+<span id="_CPPv2N5light12TurnOnAction6green_E"></span><span id="light::TurnOnAction::green___TemplatableValue:float.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1aa498d4c4a26f4e2404f031ec7676a943"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;float, T&gt; <code class="descname">green_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction6green_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction5blue_E">
+<span id="_CPPv2N5light12TurnOnAction5blue_E"></span><span id="light::TurnOnAction::blue___TemplatableValue:float.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a5d2c9a3374815f049ebd1359e775e233"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;float, T&gt; <code class="descname">blue_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction5blue_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction6white_E">
+<span id="_CPPv2N5light12TurnOnAction6white_E"></span><span id="light::TurnOnAction::white___TemplatableValue:float.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a665f1301c7b8ad1db3c2ba69ddb57bac"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;float, T&gt; <code class="descname">white_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction6white_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction18color_temperature_E">
+<span id="_CPPv2N5light12TurnOnAction18color_temperature_E"></span><span id="light::TurnOnAction::color_temperature___TemplatableValue:float.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a4ccaddb37ed024760134d826d61c00fc"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;float, T&gt; <code class="descname">color_temperature_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction18color_temperature_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction18transition_length_E">
+<span id="_CPPv2N5light12TurnOnAction18transition_length_E"></span><span id="light::TurnOnAction::transition_length___TemplatableValue:uint32_t.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a309991f46f7f519b30b3fb2bb38bc385"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;uint32_t, T&gt; <code class="descname">transition_length_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction18transition_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction13flash_length_E">
+<span id="_CPPv2N5light12TurnOnAction13flash_length_E"></span><span id="light::TurnOnAction::flash_length___TemplatableValue:uint32_t.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a9246c1082e5916af7e8e88909cc4df76"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;uint32_t, T&gt; <code class="descname">flash_length_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction13flash_length_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12TurnOnAction7effect_E">
+<span id="_CPPv2N5light12TurnOnAction7effect_E"></span><span id="light::TurnOnAction::effect___TemplatableValue:ss.T:"></span><span class="target" id="classlight_1_1_turn_on_action_1a8e262c1eb091911c2be68e97be57b4b8"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;std::string, T&gt; <code class="descname">effect_</code><a class="headerlink" href="#_CPPv3N5light12TurnOnAction7effect_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light12ToggleActionE">
+<span id="_CPPv2N5light12ToggleActionE"></span><span id="light::ToggleAction"></span><span class="target" id="classlight_1_1_toggle_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ToggleAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N5light12ToggleActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light12ToggleAction12ToggleActionEP10LightState">
+<span id="_CPPv2N5light12ToggleAction12ToggleActionEP10LightState"></span><span id="light::ToggleAction::ToggleAction__LightStateP"></span><span class="target" id="classlight_1_1_toggle_action_1a798561c6dce11c3da55a2f07348ccb18"></span><code class="descname">ToggleAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12ToggleAction12ToggleActionEP10LightState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12ToggleAction21set_transition_lengthENSt8functionIF8uint32_t1TEEE">
+<span id="_CPPv2N5light12ToggleAction21set_transition_lengthENSt8functionIF8uint32_t1TEEE"></span><span class="target" id="classlight_1_1_toggle_action_1aefd131b4a9142512cb7849dc84a9028b"></span>void <code class="descname">set_transition_length</code><span class="sig-paren">(</span>std::function&lt;uint32_t<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; <em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12ToggleAction21set_transition_lengthENSt8functionIF8uint32_t1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12ToggleAction21set_transition_lengthE8uint32_t">
+<span id="_CPPv2N5light12ToggleAction21set_transition_lengthE8uint32_t"></span><span id="light::ToggleAction::set_transition_length__uint32_t"></span><span class="target" id="classlight_1_1_toggle_action_1a20b3ab63a660091715c5a8081a9a79a6"></span>void <code class="descname">set_transition_length</code><span class="sig-paren">(</span>uint32_t <em>transition_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12ToggleAction21set_transition_lengthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light12ToggleAction4playE1T">
+<span id="_CPPv2N5light12ToggleAction4playE1T"></span><span id="light::ToggleAction::play__T"></span><span class="target" id="classlight_1_1_toggle_action_1a660b56a17499c8b32475f19d685589aa"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12ToggleAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light12ToggleAction6state_E">
+<span id="_CPPv2N5light12ToggleAction6state_E"></span><span id="light::ToggleAction::state___LightStateP"></span><span class="target" id="classlight_1_1_toggle_action_1a5791dfa6f3aba847f9c050f4261ccb75"></span><a class="reference internal" href="#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N5light12ToggleAction6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12ToggleAction18transition_length_E">
+<span id="_CPPv2N5light12ToggleAction18transition_length_E"></span><span id="light::ToggleAction::transition_length___TemplatableValue:uint32_t.T:"></span><span class="target" id="classlight_1_1_toggle_action_1a43577ae7e779db625d9a92178412c4a2"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;uint32_t, T&gt; <code class="descname">transition_length_</code><a class="headerlink" href="#_CPPv3N5light12ToggleAction18transition_length_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>

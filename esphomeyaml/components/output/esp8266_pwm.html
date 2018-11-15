@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ESP8266 Software PWM Output &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up ESP8266 software-based PWMs.">
+<meta itemprop="name" content="ESP8266 Software PWM Output">
+<meta itemprop="description" content="Instructions for setting up ESP8266 software-based PWMs.">
+<meta itemprop="image" content="https://esphomelib.com/_images/pwm.png">
+<meta name="twitter:title" content="ESP8266 Software PWM Output">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pwm.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up ESP8266 software-based PWMs.">
+<meta property="og:title" content="ESP8266 Software PWM Output"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pwm.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up ESP8266 software-based PWMs."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>ESP8266 Software PWM Output &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,6 +32,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/esp8266_pwm.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -74,8 +92,6 @@ limitations.</p>
 <ul class="simple">
 <li>There can be a noticeable amount of flickering with increased WiFi activity.</li>
 <li>The output range only goes up to about 80%.</li>
-<li>It’s mostly fixed to a frequency of 1kHz, you can <a class="reference internal" href="../../../api/output/esp8266-pwm.html#esp8266-pwm-example-usage"><span class="std std-ref">increase this a
-bit manually</span></a> in code though.</li>
 </ul>
 <p>If you need a stable PWM signal, it’s definitely recommended to use the
 successor of the ESP8266, the ESP32, and its <a class="reference internal" href="ledc.html"><span class="doc">ESP32 LEDC PWM</span></a> instead.</p>
@@ -83,6 +99,7 @@ successor of the ESP8266, the ESP32, and its <a class="reference internal" href=
 <span class="n">output</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
     <span class="n">pin</span><span class="p">:</span> <span class="n">D1</span>
+    <span class="n">frequency</span><span class="p">:</span> <span class="mi">1000</span> <span class="n">Hz</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">pwm</span><span class="o">-</span><span class="n">output</span>
 </pre></div>
 </div>
@@ -91,6 +108,8 @@ successor of the ESP8266, the ESP32, and its <a class="reference internal" href=
 <ul class="simple">
 <li><strong>pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The pin to use PWM on.</li>
 <li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The id to use for this output component.</li>
+<li><strong>frequency</strong> (<em>Optional</em>, frequency): The frequency to run the PWM with. Lower frequencies
+have more visual artifacts, but can represent much more colors. Defaults to <code class="docutils literal notranslate"><span class="pre">1000</span> <span class="pre">Hz</span></code>.</li>
 <li>All other options from <a class="reference internal" href="index.html#config-output"><span class="std std-ref">Output</span></a>.</li>
 </ul>
 </div>

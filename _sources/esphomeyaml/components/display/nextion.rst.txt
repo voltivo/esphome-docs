@@ -1,6 +1,10 @@
 Nextion TFT LCD Display
 =======================
 
+.. seo::
+    :description: Instructions for setting up Nextion TFT LCD displays
+    :image: nextion.jpg
+
 .. warning::
 
     This integration is experimental as I don't have the hardware to test it (yet).
@@ -72,7 +76,7 @@ you can call to populate data on the display:
           it.set_component_text("textview", "Hello World!");
 
           // set the text of a component with formatting
-          it.set_component_text("textview", "The uptime is: %.1f", id(uptime_sensor).value);
+          it.set_component_text("textview", "The uptime is: %.1f", id(uptime_sensor).state);
 
 
 Please see :ref:`display-printf` for a quick introduction into the ``printf`` formatting rules and

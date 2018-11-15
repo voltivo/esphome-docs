@@ -1,0 +1,316 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MY9231/MY9291 Output &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/output/my9231.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PCA9685 PWM" href="pca9685.html" />
+    <link rel="prev" title="ESP32 LEDC Output" href="ledc.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MY9231/MY9291 Output</a><ul>
+<li><a class="reference internal" href="#example-usage">Example Usage</a></li>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#my9231outputcomponent">MY9231OutputComponent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="my9231-my9291-output">
+<h1>MY9231/MY9291 Output<a class="headerlink" href="#my9231-my9291-output" title="Permalink to this headline">¶</a></h1>
+<p>FloatOutput support for an MY9231/MY9291 LED driver chain.</p>
+<div class="section" id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Create the MY9231 Output hub connected to GPIO12 (DI pin) and</span>
+<span class="c1">// GPIO14 (DCKI pin).</span>
+<span class="k">auto</span> <span class="o">*</span><span class="n">pmy9231</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">make_my9231_component</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application21make_my9231_componentERK13GPIOOutputPinRK13GPIOOutputPin" title="Application::make_my9231_component"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_my9231_component()</span></code></a>.</p>
+</div>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="my9231outputcomponent">
+<h3>MY9231OutputComponent<a class="headerlink" href="#my9231outputcomponent" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N6output21MY9231OutputComponentE">
+<span id="_CPPv2N6output21MY9231OutputComponentE"></span><span id="output::MY9231OutputComponent"></span><span class="target" id="classoutput_1_1_m_y9231_output_component"></span><em class="property">class </em><code class="descname">MY9231OutputComponent</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>MY9231 float output component. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent21MY9231OutputComponentEP7GPIOPinP7GPIOPin8uint16_t7uint8_t7uint8_tb">
+<span id="_CPPv2N6output21MY9231OutputComponent21MY9231OutputComponentEP7GPIOPinP7GPIOPin8uint16_t7uint8_t7uint8_tb"></span><span id="output::MY9231OutputComponent::MY9231OutputComponent__GPIOPinP.GPIOPinP.uint16_t.uint8_t.uint8_t.b"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a23076a80137fb088085d7f386efe0f95"></span><code class="descname">MY9231OutputComponent</code><span class="sig-paren">(</span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>pin_di</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>pin_dcki</em>, uint16_t <em>num_channels</em> = 6, uint8_t <em>num_chips</em> = 2, uint8_t <em>bit_depth</em> = 16, bool <em>update</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent21MY9231OutputComponentEP7GPIOPinP7GPIOPin8uint16_t7uint8_t7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct the component. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pin_di</span></code>: The pin which DI is connected to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">pin_dcki</span></code>: The pin which DCKI is connected to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">num_channels</span></code>: Total number of channels of the whole daisy chain. </li>
+<li><code class="docutils literal notranslate"><span class="pre">num_chips</span></code>: Number of chips in the daisy chain. </li>
+<li><code class="docutils literal notranslate"><span class="pre">bit_depth</span></code>: Bit depth of each channel </li>
+<li><code class="docutils literal notranslate"><span class="pre">update</span></code>: Update/reset duty data at boot (driver will keep configuration after powercycle) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent14create_channelE7uint8_tP20PowerSupplyComponentf">
+<span id="_CPPv2N6output21MY9231OutputComponent14create_channelE7uint8_tP20PowerSupplyComponentf"></span><span id="output::MY9231OutputComponent::create_channel__uint8_t.PowerSupplyComponentP.float"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1ab31904bdece06b807ce32cd286042752"></span><a class="reference internal" href="#_CPPv3N6output21MY9231OutputComponentE" title="output::MY9231OutputComponent">MY9231OutputComponent</a>::<a class="reference internal" href="#_CPPv3N6output21MY9231OutputComponent7ChannelE" title="output::MY9231OutputComponent::Channel">Channel</a> *<code class="descname">create_channel</code><span class="sig-paren">(</span>uint8_t <em>channel</em>, <a class="reference internal" href="../core/power-supply.html#_CPPv320PowerSupplyComponent" title="PowerSupplyComponent">PowerSupplyComponent</a> *<em>power_supply</em> = nullptr, float <em>max_power</em> = 1.0f<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent14create_channelE7uint8_tP20PowerSupplyComponentf" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a MY9231 output channel. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The new channel output component. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: The channel number. (0 is the closest channel) </li>
+<li><code class="docutils literal notranslate"><span class="pre">power_supply</span></code>: The power supply that should be set for this channel. Default: nullptr. </li>
+<li><code class="docutils literal notranslate"><span class="pre">max_power</span></code>: The maximum power output of this channel. Each value will be multiplied by this. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent16set_num_channelsE8uint16_t">
+<span id="_CPPv2N6output21MY9231OutputComponent16set_num_channelsE8uint16_t"></span><span id="output::MY9231OutputComponent::set_num_channels__uint16_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1aafbd9634f0351bcd543c345bc36b939b"></span>void <code class="descname">set_num_channels</code><span class="sig-paren">(</span>uint16_t <em>num_channels</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent16set_num_channelsE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Manually set the total number of channels. Defaults to 6. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent13set_num_chipsE7uint8_t">
+<span id="_CPPv2N6output21MY9231OutputComponent13set_num_chipsE7uint8_t"></span><span id="output::MY9231OutputComponent::set_num_chips__uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1adf3a75083fedf7d22ea2f7f48fc5d542"></span>void <code class="descname">set_num_chips</code><span class="sig-paren">(</span>uint8_t <em>num_chips</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent13set_num_chipsE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Manually set the number of chips. Defaults to 2. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent13set_bit_depthE7uint8_t">
+<span id="_CPPv2N6output21MY9231OutputComponent13set_bit_depthE7uint8_t"></span><span id="output::MY9231OutputComponent::set_bit_depth__uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a37985f85663c79a22cf2ba6dc8937dce"></span>void <code class="descname">set_bit_depth</code><span class="sig-paren">(</span>uint8_t <em>bit_depth</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent13set_bit_depthE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Manually set the bit depth. Defaults to 16. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent10set_updateEb">
+<span id="_CPPv2N6output21MY9231OutputComponent10set_updateEb"></span><span id="output::MY9231OutputComponent::set_update__b"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1ae891500dec8d5274f0033e3bd2bd7bf1"></span>void <code class="descname">set_update</code><span class="sig-paren">(</span>bool <em>update</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent10set_updateEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Manually set duty data update on boot. Defaults is true. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6output21MY9231OutputComponent16get_num_channelsEv">
+<span id="_CPPv2NK6output21MY9231OutputComponent16get_num_channelsEv"></span><span id="output::MY9231OutputComponent::get_num_channelsC"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a47926847e178e5b26c22ca4b078fe4d9"></span>uint16_t <code class="descname">get_num_channels</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output21MY9231OutputComponent16get_num_channelsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6output21MY9231OutputComponent13get_num_chipsEv">
+<span id="_CPPv2NK6output21MY9231OutputComponent13get_num_chipsEv"></span><span id="output::MY9231OutputComponent::get_num_chipsC"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a93922cd929bb4a8c4d126dec31631d50"></span>uint8_t <code class="descname">get_num_chips</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output21MY9231OutputComponent13get_num_chipsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6output21MY9231OutputComponent13get_bit_depthEv">
+<span id="_CPPv2NK6output21MY9231OutputComponent13get_bit_depthEv"></span><span id="output::MY9231OutputComponent::get_bit_depthC"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a962a95f2e1b479967d6b65ce55a91799"></span>uint8_t <code class="descname">get_bit_depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output21MY9231OutputComponent13get_bit_depthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6output21MY9231OutputComponent14get_max_amountEv">
+<span id="_CPPv2NK6output21MY9231OutputComponent14get_max_amountEv"></span><span id="output::MY9231OutputComponent::get_max_amountC"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a20547d5a674553c552be0b4bd4cff1e9"></span>uint16_t <code class="descname">get_max_amount</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output21MY9231OutputComponent14get_max_amountEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent5setupEv">
+<span id="_CPPv2N6output21MY9231OutputComponent5setupEv"></span><span id="output::MY9231OutputComponent::setup"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1ab6313b6699c2cdbe9e5bd26193602fc5"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Setup the MY9231. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent11dump_configEv">
+<span id="_CPPv2N6output21MY9231OutputComponent11dump_configEv"></span><span id="output::MY9231OutputComponent::dump_config"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a09e377e416698e2d97951c733737f219"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6output21MY9231OutputComponent18get_setup_priorityEv">
+<span id="_CPPv2NK6output21MY9231OutputComponent18get_setup_priorityEv"></span><span id="output::MY9231OutputComponent::get_setup_priorityC"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1abb597c4c74d8645cd79b0292fdf66454"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6output21MY9231OutputComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>HARDWARE <a class="reference internal" href="../core/component.html#namespacesetup__priority"><span class="std std-ref">setup_priority</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent4loopEv">
+<span id="_CPPv2N6output21MY9231OutputComponent4loopEv"></span><span id="output::MY9231OutputComponent::loop"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a88a0d674d5235bad7908681986707edf"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Send new values if they were updated. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent17set_channel_valueE7uint8_t8uint16_t">
+<span id="_CPPv2N6output21MY9231OutputComponent17set_channel_valueE7uint8_t8uint16_t"></span><span id="output::MY9231OutputComponent::set_channel_value__uint8_t.uint16_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a6dcdc88adaa0c7c502f0346fd34b2287"></span>void <code class="descname">set_channel_value</code><span class="sig-paren">(</span>uint8_t <em>channel</em>, uint16_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent17set_channel_valueE7uint8_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent10init_chipsE7uint8_t">
+<span id="_CPPv2N6output21MY9231OutputComponent10init_chipsE7uint8_t"></span><span id="output::MY9231OutputComponent::init_chips__uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a20465c05c3c6835f7c69b15c963b9bf0"></span>void <code class="descname">init_chips</code><span class="sig-paren">(</span>uint8_t <em>cmd</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent10init_chipsE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent10write_wordE8uint16_t7uint8_t">
+<span id="_CPPv2N6output21MY9231OutputComponent10write_wordE8uint16_t7uint8_t"></span><span id="output::MY9231OutputComponent::write_word__uint16_t.uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a288f37493d63cf94e5ff32003b55ed14"></span>void <code class="descname">write_word</code><span class="sig-paren">(</span>uint16_t <em>value</em>, uint8_t <em>bits</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent10write_wordE8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent14send_di_pulsesE7uint8_t">
+<span id="_CPPv2N6output21MY9231OutputComponent14send_di_pulsesE7uint8_t"></span><span id="output::MY9231OutputComponent::send_di_pulses__uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1ada47d27336cdf6dc84cdd9f9bfce9fb9"></span>void <code class="descname">send_di_pulses</code><span class="sig-paren">(</span>uint8_t <em>count</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent14send_di_pulsesE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent7pin_di_E">
+<span id="_CPPv2N6output21MY9231OutputComponent7pin_di_E"></span><span id="output::MY9231OutputComponent::pin_di___GPIOPinP"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a9cd43079bb8a44c470d7563af26112b0"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">pin_di_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7pin_di_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent9pin_dcki_E">
+<span id="_CPPv2N6output21MY9231OutputComponent9pin_dcki_E"></span><span id="output::MY9231OutputComponent::pin_dcki___GPIOPinP"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1afd1aa18df6a79ae9c4d94cdc29066c4f"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">pin_dcki_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent9pin_dcki_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent10bit_depth_E">
+<span id="_CPPv2N6output21MY9231OutputComponent10bit_depth_E"></span><span id="output::MY9231OutputComponent::bit_depth___uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1af48d2915fbe02c645e4da5da14e04062"></span>uint8_t <code class="descname">bit_depth_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent10bit_depth_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent13num_channels_E">
+<span id="_CPPv2N6output21MY9231OutputComponent13num_channels_E"></span><span id="output::MY9231OutputComponent::num_channels___uint16_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a57ba073646e46573b3bd190e5ef0a85b"></span>uint16_t <code class="descname">num_channels_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent13num_channels_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent10num_chips_E">
+<span id="_CPPv2N6output21MY9231OutputComponent10num_chips_E"></span><span id="output::MY9231OutputComponent::num_chips___uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1ab3dc8524a2febf4da39d02ef7f01168e"></span>uint8_t <code class="descname">num_chips_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent10num_chips_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent12pwm_amounts_E">
+<span id="_CPPv2N6output21MY9231OutputComponent12pwm_amounts_E"></span><span id="output::MY9231OutputComponent::pwm_amounts___std::vector:uint16_t:"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a8bc0274f837ead7cbe3cc23628bf64fc"></span>std::vector&lt;uint16_t&gt; <code class="descname">pwm_amounts_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent12pwm_amounts_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent7update_E">
+<span id="_CPPv2N6output21MY9231OutputComponent7update_E"></span><span id="output::MY9231OutputComponent::update___b"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1a6d1f1aae94982c61ef2909b5d9d49834"></span>bool <code class="descname">update_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7update_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv3N6output21MY9231OutputComponent7ChannelE">
+<span id="_CPPv2N6output21MY9231OutputComponent7ChannelE"></span><span id="output::MY9231OutputComponent::Channel"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1_1_channel"></span><em class="property">class </em><code class="descname">Channel</code> : <em class="property">public</em> output::<a class="reference internal" href="index.html#_CPPv3N6output11FloatOutputE" title="output::FloatOutput">FloatOutput</a><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7ChannelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent7Channel7ChannelEP21MY9231OutputComponent7uint8_t">
+<span id="_CPPv2N6output21MY9231OutputComponent7Channel7ChannelEP21MY9231OutputComponent7uint8_t"></span><span id="output::MY9231OutputComponent::Channel::Channel__MY9231OutputComponentP.uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1_1_channel_1a0d86184b432aa3fa986a8fa6e34bc439"></span><code class="descname">Channel</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6output21MY9231OutputComponentE" title="output::MY9231OutputComponent">MY9231OutputComponent</a> *<em>parent</em>, uint8_t <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7Channel7ChannelEP21MY9231OutputComponent7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output21MY9231OutputComponent7Channel11write_stateEf">
+<span id="_CPPv2N6output21MY9231OutputComponent7Channel11write_stateEf"></span><span id="output::MY9231OutputComponent::Channel::write_state__float"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1_1_channel_1ad5dd40229a4af6bbaf92a985787b1e72"></span>void <code class="descname">write_state</code><span class="sig-paren">(</span>float <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7Channel11write_stateEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent7Channel7parent_E">
+<span id="_CPPv2N6output21MY9231OutputComponent7Channel7parent_E"></span><span id="output::MY9231OutputComponent::Channel::parent___MY9231OutputComponentP"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1_1_channel_1a7d9ec9da9457e7d9f43fa084f02372f3"></span><a class="reference internal" href="#_CPPv3N6output21MY9231OutputComponentE" title="output::MY9231OutputComponent">MY9231OutputComponent</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7Channel7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output21MY9231OutputComponent7Channel8channel_E">
+<span id="_CPPv2N6output21MY9231OutputComponent7Channel8channel_E"></span><span id="output::MY9231OutputComponent::Channel::channel___uint8_t"></span><span class="target" id="classoutput_1_1_m_y9231_output_component_1_1_channel_1a6860aaa480559fa74fb7d9903ca59356"></span>uint8_t <code class="descname">channel_</code><a class="headerlink" href="#_CPPv3N6output21MY9231OutputComponent7Channel8channel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

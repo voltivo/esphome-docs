@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Documentation for the command line interface of esphomelib.">
+<meta itemprop="name" content="Command Line Interface">
+<meta itemprop="description" content="Documentation for the command line interface of esphomelib.">
+<meta name="twitter:title" content="Command Line Interface">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Documentation for the command line interface of esphomelib.">
+<meta property="og:title" content="Command Line Interface"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Documentation for the command line interface of esphomelib."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Command Line Interface &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/cli.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration Types" href="configuration-types.html" />
+    <link rel="prev" title="Changelog" href="changelog.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Command Line Interface</a><ul>
+<li><a class="reference internal" href="#base-usage">Base Usage</a></li>
+<li><a class="reference internal" href="#run-command"><code class="docutils literal notranslate"><span class="pre">run</span></code> Command</a></li>
+<li><a class="reference internal" href="#config-command"><code class="docutils literal notranslate"><span class="pre">config</span></code> Command</a></li>
+<li><a class="reference internal" href="#compile-command"><code class="docutils literal notranslate"><span class="pre">compile</span></code> Command</a></li>
+<li><a class="reference internal" href="#upload-command"><code class="docutils literal notranslate"><span class="pre">upload</span></code> Command</a></li>
+<li><a class="reference internal" href="#clean-mqtt-command"><code class="docutils literal notranslate"><span class="pre">clean-mqtt</span></code> Command</a></li>
+<li><a class="reference internal" href="#wizard-command"><code class="docutils literal notranslate"><span class="pre">wizard</span></code> Command</a></li>
+<li><a class="reference internal" href="#mqtt-fingerprint-command"><code class="docutils literal notranslate"><span class="pre">mqtt-fingerprint</span></code> Command</a></li>
+<li><a class="reference internal" href="#version-command"><code class="docutils literal notranslate"><span class="pre">version</span></code> Command</a></li>
+<li><a class="reference internal" href="#clean-command"><code class="docutils literal notranslate"><span class="pre">clean</span></code> Command</a></li>
+<li><a class="reference internal" href="#hass-config-command"><code class="docutils literal notranslate"><span class="pre">hass-config</span></code> Command</a></li>
+<li><a class="reference internal" href="#dashboard-command"><code class="docutils literal notranslate"><span class="pre">dashboard</span></code> Command</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="command-line-interface">
+<h1>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="base-usage">
+<h2>Base Usage<a class="headerlink" href="#base-usage" title="Permalink to this headline">¶</a></h2>
+<p>esphomeyaml’s command line interface always has the following format</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="o">&lt;</span><span class="n">CONFIGURATION</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMMAND</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">ARGUMENTS</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-command">
+<h2><code class="docutils literal notranslate"><span class="pre">run</span></code> Command<a class="headerlink" href="#run-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">run</span></code> command is the most common command for esphomeyaml. It</p>
+<ul class="simple">
+<li>Validates the configuration</li>
+<li>Compiles a firmware</li>
+<li>Uploads the firmware (over OTA or USB)</li>
+<li>Starts the log view</li>
+</ul>
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-upload-port">
+<code class="descname">--upload-port</code><code class="descclassname"> UPLOAD_PORT</code><a class="headerlink" href="#cmdoption-esphomeyaml-run-upload-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually specify the upload port/ip to use. For example <code class="docutils literal notranslate"><span class="pre">/dev/cu.SLAB_USBtoUART</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-no-logs">
+<code class="descname">--no-logs</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-esphomeyaml-run-no-logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable starting log view.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-topic">
+<code class="descname">--topic</code><code class="descclassname"> TOPIC</code><a class="headerlink" href="#cmdoption-esphomeyaml-run-topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the topic to subscribe to for MQTT logs (defaults to the one in the configuration).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-username">
+<code class="descname">--username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-esphomeyaml-run-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the username to subscribe with for MQTT logs (defaults to the one in the configuration).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-password">
+<code class="descname">--password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-esphomeyaml-run-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the password to subscribe with for MQTT logs (defaults to the one in the configuration).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-client-id">
+<code class="descname">--client-id</code><code class="descclassname"> CLIENT_ID</code><a class="headerlink" href="#cmdoption-esphomeyaml-run-client-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the client ID to subscribe with for MQTT logs (defaults to a randomly chosen one).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-run-host-port">
+<code class="descname">--host-port</code><code class="descclassname"> HOST_PORT</code><a class="headerlink" href="#cmdoption-esphomeyaml-run-host-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the host port to use for legacy Over the Air uploads.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="config-command">
+<h2><code class="docutils literal notranslate"><span class="pre">config</span></code> Command<a class="headerlink" href="#config-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">config</span></code> validates the configuration and displays the validation result.</p>
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-config-topic">
+<code class="descname">--topic</code><code class="descclassname"> TOPIC</code><a class="headerlink" href="#cmdoption-esphomeyaml-config-topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the topic to subscribe to for MQTT logs (defaults to the one in the configuration).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-config-username">
+<code class="descname">--username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-esphomeyaml-config-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the username to subscribe with for MQTT logs (defaults to the one in the configuration).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-config-password">
+<code class="descname">--password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-esphomeyaml-config-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the password to subscribe with for MQTT logs (defaults to the one in the configuration).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-config-client-id">
+<code class="descname">--client-id</code><code class="descclassname"> CLIENT_ID</code><a class="headerlink" href="#cmdoption-esphomeyaml-config-client-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the client ID to subscribe with for MQTT logs (defaults to a randomly chosen one).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-config-serial-port">
+<code class="descname">--serial-port</code><code class="descclassname"> SERIAL_PORT</code><a class="headerlink" href="#cmdoption-esphomeyaml-config-serial-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually specify the serial port to read the logs from. For example <code class="docutils literal notranslate"><span class="pre">/dev/cu.SLAB_USBtoUART</span></code>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="compile-command">
+<h2><code class="docutils literal notranslate"><span class="pre">compile</span></code> Command<a class="headerlink" href="#compile-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">compile</span></code> validates the configuration and compiles the firmware.</p>
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-compile-only-generate">
+<code class="descname">--only-generate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-esphomeyaml-compile-only-generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set, only generates the C++ source code and does not compile the firmware.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="upload-command">
+<h2><code class="docutils literal notranslate"><span class="pre">upload</span></code> Command<a class="headerlink" href="#upload-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">upload</span></code> validates the configuration and uploads the most recent firmware build.</p>
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-upload-upload-port">
+<code class="descname">--upload-port</code><code class="descclassname"> UPLOAD_PORT</code><a class="headerlink" href="#cmdoption-esphomeyaml-upload-upload-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually specify the upload port/ip to use. For example <code class="docutils literal notranslate"><span class="pre">/dev/cu.SLAB_USBtoUART</span></code>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-upload-host-port">
+<code class="descname">--host-port</code><code class="descclassname"> HOST_PORT</code><a class="headerlink" href="#cmdoption-esphomeyaml-upload-host-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the host port to use for legacy Over the Air uploads.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="clean-mqtt-command">
+<h2><code class="docutils literal notranslate"><span class="pre">clean-mqtt</span></code> Command<a class="headerlink" href="#clean-mqtt-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">clean-mqtt</span></code> cleans retained MQTT discovery messages from the MQTT broker.
+See <a class="reference internal" href="../components/mqtt.html#mqtt-using-with-home-assistant"><span class="std std-ref">Using with Home Assistant</span></a>.</p>
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-clean-mqtt-topic">
+<code class="descname">--topic</code><code class="descclassname"> TOPIC</code><a class="headerlink" href="#cmdoption-esphomeyaml-clean-mqtt-topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the topic to clean retained messages from (defaults to the MQTT discovery topic of the
+node).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-clean-mqtt-username">
+<code class="descname">--username</code><code class="descclassname"> USERNAME</code><a class="headerlink" href="#cmdoption-esphomeyaml-clean-mqtt-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the username to subscribe with.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-clean-mqtt-password">
+<code class="descname">--password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-esphomeyaml-clean-mqtt-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the password to subscribe with.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-clean-mqtt-client-id">
+<code class="descname">--client-id</code><code class="descclassname"> CLIENT_ID</code><a class="headerlink" href="#cmdoption-esphomeyaml-clean-mqtt-client-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the client ID to subscribe with.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="wizard-command">
+<h2><code class="docutils literal notranslate"><span class="pre">wizard</span></code> Command<a class="headerlink" href="#wizard-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">wizard</span></code> command starts the esphomeyaml configuration creation wizard.</p>
+</div>
+<div class="section" id="mqtt-fingerprint-command">
+<h2><code class="docutils literal notranslate"><span class="pre">mqtt-fingerprint</span></code> Command<a class="headerlink" href="#mqtt-fingerprint-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">mqtt-fingerprint</span></code> command shows the MQTT SSL fingerprints of the remote used
+for SSL MQTT connections. See <a class="reference internal" href="../components/mqtt.html#mqtt-ssl-fingerprints"><span class="std std-ref">SSL Fingerprints</span></a>.</p>
+</div>
+<div class="section" id="version-command">
+<h2><code class="docutils literal notranslate"><span class="pre">version</span></code> Command<a class="headerlink" href="#version-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">version</span></code> command shows the current esphomeyaml version and exits.</p>
+</div>
+<div class="section" id="clean-command">
+<h2><code class="docutils literal notranslate"><span class="pre">clean</span></code> Command<a class="headerlink" href="#clean-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">clean</span></code> command cleans all build files and can help with some build issues.</p>
+</div>
+<div class="section" id="hass-config-command">
+<h2><code class="docutils literal notranslate"><span class="pre">hass-config</span></code> Command<a class="headerlink" href="#hass-config-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">hass-config</span></code> command shows an auto-generated Home Assistant configuration for the esphomeyaml
+node configuration file. This is useful if you’re not using MQTT discovery.</p>
+</div>
+<div class="section" id="dashboard-command">
+<h2><code class="docutils literal notranslate"><span class="pre">dashboard</span></code> Command<a class="headerlink" href="#dashboard-command" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;CONFIG&gt;</span> <span class="pre">dashboard</span></code> command starts the esphomeyaml dashboard server for using esphomeyaml
+through a graphical user interface.</p>
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-dashboard-port">
+<code class="descname">--port</code><code class="descclassname"> PORT</code><a class="headerlink" href="#cmdoption-esphomeyaml-dashboard-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually set the HTTP port to open connections on (defaults to 6052)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-dashboard-password">
+<code class="descname">--password</code><code class="descclassname"> PASSWORD</code><a class="headerlink" href="#cmdoption-esphomeyaml-dashboard-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>The optional password to require for all requests.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-esphomeyaml-dashboard-open-ui">
+<code class="descname">--open-ui</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-esphomeyaml-dashboard-open-ui" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set, opens the dashboard UI in a browser once the server is up and running.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

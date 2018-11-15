@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Application &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Application &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/core/application.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -315,13 +316,23 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application20make_global_variableEv">
+<span id="_CPPv2N11Application20make_global_variableEv"></span><span id="Application::make_global_variable"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_application_1ae40afb7392939b3baa314b391d6ee280"></span><a class="reference internal" href="automation.html#_CPPv323GlobalVariableComponent" title="GlobalVariableComponent">GlobalVariableComponent</a>&lt;T&gt; *<code class="descname">make_global_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20make_global_variableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application20make_global_variableE1T">
+<span id="_CPPv2N11Application20make_global_variableE1T"></span><span id="Application::make_global_variable__T"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_application_1acde09af143067775d5533a5d43e875bc"></span><a class="reference internal" href="automation.html#_CPPv323GlobalVariableComponent" title="GlobalVariableComponent">GlobalVariableComponent</a>&lt;T&gt; *<code class="descname">make_global_variable</code><span class="sig-paren">(</span>T <em>initial_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20make_global_variableE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application15make_automationEP7TriggerI1TE">
 <span id="_CPPv2N11Application15make_automationEP7TriggerI1TE"></span><span id="Application::make_automation__Trigger:T:P"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_application_1af4690b96315046a57c418cf4be27f9cd"></span><a class="reference internal" href="automation.html#_CPPv310Automation" title="Automation">Automation</a>&lt;T&gt; *<code class="descname">make_automation</code><span class="sig-paren">(</span><a class="reference internal" href="automation.html#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<em>trigger</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15make_automationEP7TriggerI1TE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t">
-<span id="_CPPv2N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t"></span><span id="Application::make_mqtt_message_trigger__ssCR.uint8_t"></span><span class="target" id="class_application_1a960cc0628aa2c17398eb51b6b56c45db"></span>mqtt::MQTTMessageTrigger *<code class="descname">make_mqtt_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t"></span><span id="Application::make_mqtt_message_trigger__ssCR.uint8_t"></span><span class="target" id="class_application_1a960cc0628aa2c17398eb51b6b56c45db"></span>mqtt::<a class="reference internal" href="mqtt.html#_CPPv3N4mqtt18MQTTMessageTriggerE" title="mqtt::MQTTMessageTrigger">MQTTMessageTrigger</a> *<code class="descname">make_mqtt_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -410,6 +421,12 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dt id="_CPPv3N11Application15register_sensorEPN6sensor6SensorE">
 <span id="_CPPv2N11Application15register_sensorEPN6sensor6SensorE"></span><span id="Application::register_sensor__sensor::SensorP"></span><span class="target" id="class_application_1a669795bcabe075edfba67b7b9cbb77f8"></span><a class="reference internal" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor::sensor">sensor</a>::MQTTSensorComponent *<code class="descname">register_sensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor::sensor">sensor</a>::Sensor *<em>sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a sensor and create a MQTT Sensor if the MQTT client is set up. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application20register_text_sensorEPN11text_sensor10TextSensorE">
+<span id="_CPPv2N11Application20register_text_sensorEPN11text_sensor10TextSensorE"></span><span id="Application::register_text_sensor__text_sensor::TextSensorP"></span><span class="target" id="class_application_1abd38004455c90d60c522ff972ada3122"></span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor14MQTTTextSensorE" title="text_sensor::MQTTTextSensor">MQTTTextSensor</a> *<code class="descname">register_text_sensor</code><span class="sig-paren">(</span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor10TextSensorE" title="text_sensor::TextSensor">TextSensor</a> *<em>sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20register_text_sensorEPN11text_sensor10TextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Register a text sensor and create a MQTT Sensor if the MQTT client is set up. </p>
 </dd></dl>
 
 <dl class="function">
@@ -776,18 +793,48 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N11Application18make_rtc_componentERKNSt6stringE">
-<span id="_CPPv2N11Application18make_rtc_componentERKNSt6stringE"></span><span id="Application::make_rtc_component__ssCR"></span><span class="target" id="class_application_1a5dcb62f593eb3fc8865b9b8d05f2149f"></span>RTCComponent *<code class="descname">make_rtc_component</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>tz</em> = &quot;UTC&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_rtc_componentERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N11Application19make_sntp_componentERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE">
-<span id="_CPPv2N11Application19make_sntp_componentERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="Application::make_sntp_component__ssCR.ssCR.ssCR.ssCR"></span><span class="target" id="class_application_1af9b3ad01509b0bc1fd1d82804c9fbdd9"></span>SNTPComponent *<code class="descname">make_sntp_component</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>server_1</em> = &quot;0.pool.ntp.org&quot;, <em class="property">const</em> std::string &amp;<em>server_2</em> = &quot;1.pool.ntp.org&quot;, <em class="property">const</em> std::string &amp;<em>server_3</em> = &quot;2.pool.ntp.org&quot;, <em class="property">const</em> std::string &amp;<em>tz</em> = &quot;UTC&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_sntp_componentERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N11Application19make_sntp_componentEv">
+<span id="_CPPv2N11Application19make_sntp_componentEv"></span><span id="Application::make_sntp_component"></span><span class="target" id="class_application_1aa34e09da22b201c05fff377dfe4b5204"></span>SNTPComponent *<code class="descname">make_sntp_component</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_sntp_componentEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t">
 <span id="_CPPv2N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t"></span><span id="Application::make_hlw8012__GPIOOutputPinCR.uint8_t.uint8_t.uint32_t"></span><span class="target" id="class_application_1af133e1b15b23355811dbb78ea297e154"></span>sensor::<a class="reference internal" href="../sensor/hlw8012.html#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<code class="descname">make_hlw8012</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>sel_pin</em>, uint8_t <em>cf_pin</em>, uint8_t <em>cf1_pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application26make_mqtt_subscribe_sensorERKNSt6stringENSt6stringE">
+<span id="_CPPv2N11Application26make_mqtt_subscribe_sensorERKNSt6stringENSt6stringE"></span><span id="Application::make_mqtt_subscribe_sensor__ssCR.ss"></span><span class="target" id="class_application_1adfecfe67e52b12a6af6d507e6a0a8fd3"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application23MakeMQTTSubscribeSensorE" title="Application::MakeMQTTSubscribeSensor">MakeMQTTSubscribeSensor</a> <code class="descname">make_mqtt_subscribe_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::string <em>topic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application26make_mqtt_subscribe_sensorERKNSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application12make_cse7766EP13UARTComponent">
+<span id="_CPPv2N11Application12make_cse7766EP13UARTComponent"></span><span id="Application::make_cse7766__UARTComponentP"></span><span class="target" id="class_application_1a3a780b3cdefa1e6760c15e18aca0c2c9"></span>sensor::<a class="reference internal" href="../sensor/cse7766.html#_CPPv3N6sensor16CSE7766ComponentE" title="sensor::CSE7766Component">CSE7766Component</a> *<code class="descname">make_cse7766</code><span class="sig-paren">(</span><a class="reference internal" href="uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_cse7766EP13UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application31make_mqtt_subscribe_text_sensorERKNSt6stringENSt6stringE">
+<span id="_CPPv2N11Application31make_mqtt_subscribe_text_sensorERKNSt6stringENSt6stringE"></span><span id="Application::make_mqtt_subscribe_text_sensor__ssCR.ss"></span><span class="target" id="class_application_1a402b4e987a0d4bb78bd0a0f10811fb6f"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application27MakeMQTTSubscribeTextSensorE" title="Application::MakeMQTTSubscribeTextSensor">MakeMQTTSubscribeTextSensor</a> <code class="descname">make_mqtt_subscribe_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::string <em>topic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application31make_mqtt_subscribe_text_sensorERKNSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application24make_version_text_sensorERKNSt6stringE">
+<span id="_CPPv2N11Application24make_version_text_sensorERKNSt6stringE"></span><span id="Application::make_version_text_sensor__ssCR"></span><span class="target" id="class_application_1a0a31322ef036d498ea5773b493d7a494"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application21MakeVersionTextSensorE" title="Application::MakeVersionTextSensor">MakeVersionTextSensor</a> <code class="descname">make_version_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application24make_version_text_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application25make_template_text_sensorERKNSt6stringE8uint32_t">
+<span id="_CPPv2N11Application25make_template_text_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_template_text_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a0d59f9a17243d883be2d2d048ed8225b"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application22MakeTemplateTextSensorE" title="Application::MakeTemplateTextSensor">MakeTemplateTextSensor</a> <code class="descname">make_template_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_template_text_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application12make_pmsx003EP13UARTComponentN6sensor11PMSX003TypeE">
+<span id="_CPPv2N11Application12make_pmsx003EP13UARTComponentN6sensor11PMSX003TypeE"></span><span id="Application::make_pmsx003__UARTComponentP.sensor::PMSX003Type"></span><span class="target" id="class_application_1aad7065f41f75df12f7e3f7122e5075c9"></span>sensor::<a class="reference internal" href="../sensor/pmsx003.html#_CPPv3N6sensor16PMSX003ComponentE" title="sensor::PMSX003Component">PMSX003Component</a> *<code class="descname">make_pmsx003</code><span class="sig-paren">(</span><a class="reference internal" href="uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, sensor::<a class="reference internal" href="../sensor/pmsx003.html#_CPPv3N6sensor11PMSX003TypeE" title="sensor::PMSX003Type">PMSX003Type</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_pmsx003EP13UARTComponentN6sensor11PMSX003TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE">
+<span id="_CPPv2N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE"></span><span id="Application::make_total_daily_energy_sensor__ssCR.time::RealTimeClockComponentP.sensor::SensorP"></span><span class="target" id="class_application_1ac9b530602a0f225dcb6d09a978214cb1"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application26MakeTotalDailyEnergySensorE" title="Application::MakeTotalDailyEnergySensor">MakeTotalDailyEnergySensor</a> <code class="descname">make_total_daily_energy_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE" title="Application::make_total_daily_energy_sensor::time">time</a>::RealTimeClockComponent *<em>time</em>, sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -870,6 +917,23 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">pin</span></code>: The pin for this PWM output, supported pins are 0-16. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application21make_my9231_componentERK13GPIOOutputPinRK13GPIOOutputPin">
+<span id="_CPPv2N11Application21make_my9231_componentERK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="Application::make_my9231_component__GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="class_application_1a43be08df846fab79395b95637318f9d3"></span>MY9231OutputComponent *<code class="descname">make_my9231_component</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin_di</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin_dcki</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application21make_my9231_componentERK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a MY9231 component. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The MY9231 component. Use this for advanced settings. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pin_di</span></code>: The pin which DI is connected to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">pin_dcki</span></code>: The pin which DCKI is connected to. </li>
 </ul>
 </dd>
 </dl>
@@ -988,7 +1052,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd><p>Create a simple GPIO switch that can be toggled on/off and appears in the frontend. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A GPIOSwitchStruct, use this to set advanced settings. </dd>
+<dd>A <a class="reference internal" href="#struct_application_1_1_make_g_p_i_o_switch"><span class="std std-ref">MakeGPIOSwitch</span></a>, use this to set advanced settings. </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">pin</span></code>: The pin used for this switch. Can be integer or <a class="reference internal" href="helpers.html#class_g_p_i_o_output_pin"><span class="std std-ref">GPIOOutputPin</span></a>. </li>
@@ -1012,9 +1076,9 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE">
-<span id="_CPPv2N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE"></span><span id="Application::make_simple_switch__ssCR.output::BinaryOutputP"></span><span class="target" id="class_application_1a3841baf4cd7b3948cea3caec5006f18d"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeSimpleSwitchE" title="Application::MakeSimpleSwitch">MakeSimpleSwitch</a> <code class="descname">make_simple_switch</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <a class="reference internal" href="#_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE" title="Application::make_simple_switch::output">output</a>::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_simple_switchERKNSt6stringEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Make a simple switch that exposes a binary output as a switch. </p>
+<dt id="_CPPv3N11Application18make_output_switchERKNSt6stringEPN6output12BinaryOutputE">
+<span id="_CPPv2N11Application18make_output_switchERKNSt6stringEPN6output12BinaryOutputE"></span><span id="Application::make_output_switch__ssCR.output::BinaryOutputP"></span><span class="target" id="class_application_1ae5433a2e66c67c0c498509d0e29b71fb"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeOutputSwitchE" title="Application::MakeOutputSwitch">MakeOutputSwitch</a> <code class="descname">make_output_switch</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <a class="reference internal" href="#_CPPv3N11Application18make_output_switchERKNSt6stringEPN6output12BinaryOutputE" title="Application::make_output_switch::output">output</a>::BinaryOutput *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_output_switchERKNSt6stringEPN6output12BinaryOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Make an output switch that exposes a binary output as a switch. </p>
 </dd></dl>
 
 <dl class="function">
@@ -1062,6 +1126,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dl class="function">
 <dt id="_CPPv3N11Application19make_template_coverERKNSt6stringE">
 <span id="_CPPv2N11Application19make_template_coverERKNSt6stringE"></span><span id="Application::make_template_cover__ssCR"></span><span class="target" id="class_application_1a8110638501bbac212074771d0dfe2435"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeTemplateCoverE" title="Application::MakeTemplateCover">MakeTemplateCover</a> <code class="descname">make_template_cover</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_template_coverERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin">
+<span id="_CPPv2N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="Application::make_a4988__GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="class_application_1a072cee9593ddcbb8fd79e374575d3216"></span>stepper::<a class="reference internal" href="../misc/stepper.html#_CPPv3N7stepper5A4988E" title="stepper::A4988">A4988</a> *<code class="descname">make_a4988</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>step_pin</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>dir_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1137,6 +1206,31 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <span id="_CPPv2NK11Application14is_fully_setupEv"></span><span id="Application::is_fully_setupC"></span><span class="target" id="class_application_1a8fe9b8430a2038f2c9e3c30398c4535c"></span>bool <code class="descname">is_fully_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application14is_fully_setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N11Application24set_compilation_datetimeEPKc">
+<span id="_CPPv2N11Application24set_compilation_datetimeEPKc"></span><span id="Application::set_compilation_datetime__cCP"></span><span class="target" id="class_application_1a110054f19c6c793615fe41eeac555490"></span>void <code class="descname">set_compilation_datetime</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application24set_compilation_datetimeEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Tell esphomelib when your project was last compiled. </p>
+<p>This is used to show a message like “You’re running esphomelib v1.9.0 compiled on Oct 10 2018, 16:42:00”</p>
+<p>To use this method in code, put the following before App.setup():</p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">App</span><span class="o">.</span><span class="n">set_compilation_datetime</span><span class="p">(</span><span class="n">__DATE__</span> <span class="s2">&quot;, &quot;</span> <span class="n">__TIME__</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: The string of the time of compilation. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK11Application20get_compilation_timeEv">
+<span id="_CPPv2NK11Application20get_compilation_timeEv"></span><span id="Application::get_compilation_timeC"></span><span class="target" id="class_application_1ac4a1a0156175741532a6fe964c5bc7e7"></span><em class="property">const</em> std::string &amp;<code class="descname">get_compilation_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application20get_compilation_timeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
@@ -1163,6 +1257,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dl class="member">
 <dt id="_CPPv3N11Application5name_E">
 <span id="_CPPv2N11Application5name_E"></span><span id="Application::name___ss"></span><span class="target" id="class_application_1ad4b5c32cf22173c96123c832d9a3611c"></span>std::string <code class="descname">name_</code><a class="headerlink" href="#_CPPv3N11Application5name_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application17compilation_time_E">
+<span id="_CPPv2N11Application17compilation_time_E"></span><span id="Application::compilation_time___ss"></span><span class="target" id="class_application_1a8276675648c6e5fc30977eee03122de2"></span>std::string <code class="descname">compilation_time_</code><a class="headerlink" href="#_CPPv3N11Application17compilation_time_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -1471,13 +1570,8 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
-<dt id="_CPPv3N11Application14MakeGPIOSwitch4gpioE">
-<span id="_CPPv2N11Application14MakeGPIOSwitch4gpioE"></span><span id="Application::MakeGPIOSwitch::gpio__output::GPIOBinaryOutputComponentP"></span><span class="target" id="struct_application_1_1_make_g_p_i_o_switch_1a9c9807886a6bec8b8f8f20d17bd1baa4"></span>output::<a class="reference internal" href="../output/gpio-binary.html#_CPPv3N6output25GPIOBinaryOutputComponentE" title="output::GPIOBinaryOutputComponent">GPIOBinaryOutputComponent</a> *<code class="descname">gpio</code><a class="headerlink" href="#_CPPv3N11Application14MakeGPIOSwitch4gpioE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
 <dt id="_CPPv3N11Application14MakeGPIOSwitch7switch_E">
-<span id="_CPPv2N11Application14MakeGPIOSwitch7switch_E"></span><span id="Application::MakeGPIOSwitch::switch___switch_::SimpleSwitchP"></span><span class="target" id="struct_application_1_1_make_g_p_i_o_switch_1ad1fd2e50081818140f64529b84b08fb7"></span><a class="reference internal" href="#_CPPv3N11Application14MakeGPIOSwitch7switch_E" title="Application::MakeGPIOSwitch::switch_">switch_</a>::SimpleSwitch *<code class="descname">switch_</code><a class="headerlink" href="#_CPPv3N11Application14MakeGPIOSwitch7switch_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application14MakeGPIOSwitch7switch_E"></span><span id="Application::MakeGPIOSwitch::switch___switch_::GPIOSwitchP"></span><span class="target" id="struct_application_1_1_make_g_p_i_o_switch_1a9673c553272a7bbea6e8406d425772b0"></span><a class="reference internal" href="#_CPPv3N11Application14MakeGPIOSwitch7switch_E" title="Application::MakeGPIOSwitch::switch_">switch_</a>::GPIOSwitch *<code class="descname">switch_</code><a class="headerlink" href="#_CPPv3N11Application14MakeGPIOSwitch7switch_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -1612,6 +1706,42 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="class">
+<dt id="_CPPv3N11Application23MakeMQTTSubscribeSensorE">
+<span id="_CPPv2N11Application23MakeMQTTSubscribeSensorE"></span><span id="Application::MakeMQTTSubscribeSensor"></span><span class="target" id="struct_application_1_1_make_m_q_t_t_subscribe_sensor"></span><em class="property">struct </em><code class="descname">MakeMQTTSubscribeSensor</code><a class="headerlink" href="#_CPPv3N11Application23MakeMQTTSubscribeSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application23MakeMQTTSubscribeSensor6sensorE">
+<span id="_CPPv2N11Application23MakeMQTTSubscribeSensor6sensorE"></span><span id="Application::MakeMQTTSubscribeSensor::sensor__sensor::MQTTSubscribeSensorP"></span><span class="target" id="struct_application_1_1_make_m_q_t_t_subscribe_sensor_1acb4f01559595fe36476c80c88ede4b80"></span><a class="reference internal" href="#_CPPv3N11Application23MakeMQTTSubscribeSensor6sensorE" title="Application::MakeMQTTSubscribeSensor::sensor">sensor</a>::MQTTSubscribeSensor *<code class="descname">sensor</code><a class="headerlink" href="#_CPPv3N11Application23MakeMQTTSubscribeSensor6sensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application23MakeMQTTSubscribeSensor4mqttE">
+<span id="_CPPv2N11Application23MakeMQTTSubscribeSensor4mqttE"></span><span id="Application::MakeMQTTSubscribeSensor::mqtt__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_m_q_t_t_subscribe_sensor_1a925d03501d3310497bf806c1f81dd063"></span><a class="reference internal" href="#_CPPv3N11Application23MakeMQTTSubscribeSensor6sensorE" title="Application::MakeMQTTSubscribeSensor::sensor">sensor</a>::MQTTSensorComponent *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application23MakeMQTTSubscribeSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application27MakeMQTTSubscribeTextSensorE">
+<span id="_CPPv2N11Application27MakeMQTTSubscribeTextSensorE"></span><span id="Application::MakeMQTTSubscribeTextSensor"></span><span class="target" id="struct_application_1_1_make_m_q_t_t_subscribe_text_sensor"></span><em class="property">struct </em><code class="descname">MakeMQTTSubscribeTextSensor</code><a class="headerlink" href="#_CPPv3N11Application27MakeMQTTSubscribeTextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application27MakeMQTTSubscribeTextSensor6sensorE">
+<span id="_CPPv2N11Application27MakeMQTTSubscribeTextSensor6sensorE"></span><span id="Application::MakeMQTTSubscribeTextSensor::sensor__text_sensor::MQTTSubscribeTextSensorP"></span><span class="target" id="struct_application_1_1_make_m_q_t_t_subscribe_text_sensor_1a7b3d10588cb681137ecb2bec2a7bd199"></span>text_sensor::<a class="reference internal" href="../text_sensor/mqtt_subscribe.html#_CPPv3N11text_sensor23MQTTSubscribeTextSensorE" title="text_sensor::MQTTSubscribeTextSensor">MQTTSubscribeTextSensor</a> *<code class="descname">sensor</code><a class="headerlink" href="#_CPPv3N11Application27MakeMQTTSubscribeTextSensor6sensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application27MakeMQTTSubscribeTextSensor4mqttE">
+<span id="_CPPv2N11Application27MakeMQTTSubscribeTextSensor4mqttE"></span><span id="Application::MakeMQTTSubscribeTextSensor::mqtt__text_sensor::MQTTTextSensorP"></span><span class="target" id="struct_application_1_1_make_m_q_t_t_subscribe_text_sensor_1aec29d6115082dbb6ca9b6490a8403182"></span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor14MQTTTextSensorE" title="text_sensor::MQTTTextSensor">MQTTTextSensor</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application27MakeMQTTSubscribeTextSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
 <dt id="_CPPv3N11Application16MakeMS5611SensorE">
 <span id="_CPPv2N11Application16MakeMS5611SensorE"></span><span id="Application::MakeMS5611Sensor"></span><span class="target" id="struct_application_1_1_make_m_s5611_sensor"></span><em class="property">struct </em><code class="descname">MakeMS5611Sensor</code><a class="headerlink" href="#_CPPv3N11Application16MakeMS5611SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -1629,6 +1759,24 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dl class="member">
 <dt id="_CPPv3N11Application16MakeMS5611Sensor13mqtt_pressureE">
 <span id="_CPPv2N11Application16MakeMS5611Sensor13mqtt_pressureE"></span><span id="Application::MakeMS5611Sensor::mqtt_pressure__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_m_s5611_sensor_1a97c17248779258b26596e59f9d191c69"></span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor19MQTTSensorComponentE" title="sensor::MQTTSensorComponent">MQTTSensorComponent</a> *<code class="descname">mqtt_pressure</code><a class="headerlink" href="#_CPPv3N11Application16MakeMS5611Sensor13mqtt_pressureE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application16MakeOutputSwitchE">
+<span id="_CPPv2N11Application16MakeOutputSwitchE"></span><span id="Application::MakeOutputSwitch"></span><span class="target" id="struct_application_1_1_make_output_switch"></span><em class="property">struct </em><code class="descname">MakeOutputSwitch</code><a class="headerlink" href="#_CPPv3N11Application16MakeOutputSwitchE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application16MakeOutputSwitch7switch_E">
+<span id="_CPPv2N11Application16MakeOutputSwitch7switch_E"></span><span id="Application::MakeOutputSwitch::switch___switch_::OutputSwitchP"></span><span class="target" id="struct_application_1_1_make_output_switch_1aef780920ae75b7e036d117182dc5bf1e"></span><a class="reference internal" href="#_CPPv3N11Application16MakeOutputSwitch7switch_E" title="Application::MakeOutputSwitch::switch_">switch_</a>::OutputSwitch *<code class="descname">switch_</code><a class="headerlink" href="#_CPPv3N11Application16MakeOutputSwitch7switch_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application16MakeOutputSwitch4mqttE">
+<span id="_CPPv2N11Application16MakeOutputSwitch4mqttE"></span><span id="Application::MakeOutputSwitch::mqtt__switch_::MQTTSwitchComponentP"></span><span class="target" id="struct_application_1_1_make_output_switch_1a7b80d0d501007d12631cf0108be3bd92"></span><a class="reference internal" href="#_CPPv3N11Application16MakeOutputSwitch7switch_E" title="Application::MakeOutputSwitch::switch_">switch_</a>::MQTTSwitchComponent *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application16MakeOutputSwitch4mqttE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1730,24 +1878,6 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="class">
-<dt id="_CPPv3N11Application16MakeSimpleSwitchE">
-<span id="_CPPv2N11Application16MakeSimpleSwitchE"></span><span id="Application::MakeSimpleSwitch"></span><span class="target" id="struct_application_1_1_make_simple_switch"></span><em class="property">struct </em><code class="descname">MakeSimpleSwitch</code><a class="headerlink" href="#_CPPv3N11Application16MakeSimpleSwitchE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="member">
-<dt id="_CPPv3N11Application16MakeSimpleSwitch7switch_E">
-<span id="_CPPv2N11Application16MakeSimpleSwitch7switch_E"></span><span id="Application::MakeSimpleSwitch::switch___switch_::SimpleSwitchP"></span><span class="target" id="struct_application_1_1_make_simple_switch_1addaec6abb38ccfa3f1e64e5751e70bee"></span><a class="reference internal" href="#_CPPv3N11Application16MakeSimpleSwitch7switch_E" title="Application::MakeSimpleSwitch::switch_">switch_</a>::SimpleSwitch *<code class="descname">switch_</code><a class="headerlink" href="#_CPPv3N11Application16MakeSimpleSwitch7switch_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N11Application16MakeSimpleSwitch4mqttE">
-<span id="_CPPv2N11Application16MakeSimpleSwitch4mqttE"></span><span id="Application::MakeSimpleSwitch::mqtt__switch_::MQTTSwitchComponentP"></span><span class="target" id="struct_application_1_1_make_simple_switch_1a1809387f19944e9bf0b43b5fde3b185d"></span><a class="reference internal" href="#_CPPv3N11Application16MakeSimpleSwitch7switch_E" title="Application::MakeSimpleSwitch::switch_">switch_</a>::MQTTSwitchComponent *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application16MakeSimpleSwitch4mqttE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="class">
 <dt id="_CPPv3N11Application22MakeStatusBinarySensorE">
 <span id="_CPPv2N11Application22MakeStatusBinarySensorE"></span><span id="Application::MakeStatusBinarySensor"></span><span class="target" id="struct_application_1_1_make_status_binary_sensor"></span><em class="property">struct </em><code class="descname">MakeStatusBinarySensor</code><a class="headerlink" href="#_CPPv3N11Application22MakeStatusBinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -1838,6 +1968,42 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="class">
+<dt id="_CPPv3N11Application22MakeTemplateTextSensorE">
+<span id="_CPPv2N11Application22MakeTemplateTextSensorE"></span><span id="Application::MakeTemplateTextSensor"></span><span class="target" id="struct_application_1_1_make_template_text_sensor"></span><em class="property">struct </em><code class="descname">MakeTemplateTextSensor</code><a class="headerlink" href="#_CPPv3N11Application22MakeTemplateTextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application22MakeTemplateTextSensor9template_E">
+<span id="_CPPv2N11Application22MakeTemplateTextSensor9template_E"></span><span id="Application::MakeTemplateTextSensor::template___text_sensor::TemplateTextSensorP"></span><span class="target" id="struct_application_1_1_make_template_text_sensor_1a06b35b1cab7d26d479aff4fdab426091"></span>text_sensor::<a class="reference internal" href="../text_sensor/template.html#_CPPv3N11text_sensor18TemplateTextSensorE" title="text_sensor::TemplateTextSensor">TemplateTextSensor</a> *<code class="descname">template_</code><a class="headerlink" href="#_CPPv3N11Application22MakeTemplateTextSensor9template_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application22MakeTemplateTextSensor4mqttE">
+<span id="_CPPv2N11Application22MakeTemplateTextSensor4mqttE"></span><span id="Application::MakeTemplateTextSensor::mqtt__text_sensor::MQTTTextSensorP"></span><span class="target" id="struct_application_1_1_make_template_text_sensor_1ac71061d0148a46df3c3fece116ad013d"></span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor14MQTTTextSensorE" title="text_sensor::MQTTTextSensor">MQTTTextSensor</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application22MakeTemplateTextSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application26MakeTotalDailyEnergySensorE">
+<span id="_CPPv2N11Application26MakeTotalDailyEnergySensorE"></span><span id="Application::MakeTotalDailyEnergySensor"></span><span class="target" id="struct_application_1_1_make_total_daily_energy_sensor"></span><em class="property">struct </em><code class="descname">MakeTotalDailyEnergySensor</code><a class="headerlink" href="#_CPPv3N11Application26MakeTotalDailyEnergySensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application26MakeTotalDailyEnergySensor12total_energyE">
+<span id="_CPPv2N11Application26MakeTotalDailyEnergySensor12total_energyE"></span><span id="Application::MakeTotalDailyEnergySensor::total_energy__sensor::TotalDailyEnergyP"></span><span class="target" id="struct_application_1_1_make_total_daily_energy_sensor_1ad50ef63557c7cb569cc059ceb77b731f"></span>sensor::<a class="reference internal" href="../sensor/total_daily_energy.html#_CPPv3N6sensor16TotalDailyEnergyE" title="sensor::TotalDailyEnergy">TotalDailyEnergy</a> *<code class="descname">total_energy</code><a class="headerlink" href="#_CPPv3N11Application26MakeTotalDailyEnergySensor12total_energyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application26MakeTotalDailyEnergySensor4mqttE">
+<span id="_CPPv2N11Application26MakeTotalDailyEnergySensor4mqttE"></span><span id="Application::MakeTotalDailyEnergySensor::mqtt__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_total_daily_energy_sensor_1a08ae95dff6a37dd57e779206884c5c2a"></span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor19MQTTSensorComponentE" title="sensor::MQTTSensorComponent">MQTTSensorComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application26MakeTotalDailyEnergySensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
 <dt id="_CPPv3N11Application17MakeTSL2561SensorE">
 <span id="_CPPv2N11Application17MakeTSL2561SensorE"></span><span id="Application::MakeTSL2561Sensor"></span><span class="target" id="struct_application_1_1_make_t_s_l2561_sensor"></span><em class="property">struct </em><code class="descname">MakeTSL2561Sensor</code><a class="headerlink" href="#_CPPv3N11Application17MakeTSL2561SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -1904,6 +2070,24 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dl class="member">
 <dt id="_CPPv3N11Application16MakeUptimeSensor4mqttE">
 <span id="_CPPv2N11Application16MakeUptimeSensor4mqttE"></span><span id="Application::MakeUptimeSensor::mqtt__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_uptime_sensor_1a102f4325f145d35ef48e0954e76d369c"></span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor19MQTTSensorComponentE" title="sensor::MQTTSensorComponent">MQTTSensorComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application16MakeUptimeSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application21MakeVersionTextSensorE">
+<span id="_CPPv2N11Application21MakeVersionTextSensorE"></span><span id="Application::MakeVersionTextSensor"></span><span class="target" id="struct_application_1_1_make_version_text_sensor"></span><em class="property">struct </em><code class="descname">MakeVersionTextSensor</code><a class="headerlink" href="#_CPPv3N11Application21MakeVersionTextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application21MakeVersionTextSensor6sensorE">
+<span id="_CPPv2N11Application21MakeVersionTextSensor6sensorE"></span><span id="Application::MakeVersionTextSensor::sensor__text_sensor::VersionTextSensorP"></span><span class="target" id="struct_application_1_1_make_version_text_sensor_1a30cf3b91537d07be7b04b7f3548d7fe9"></span>text_sensor::<a class="reference internal" href="../text_sensor/version.html#_CPPv3N11text_sensor17VersionTextSensorE" title="text_sensor::VersionTextSensor">VersionTextSensor</a> *<code class="descname">sensor</code><a class="headerlink" href="#_CPPv3N11Application21MakeVersionTextSensor6sensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application21MakeVersionTextSensor4mqttE">
+<span id="_CPPv2N11Application21MakeVersionTextSensor4mqttE"></span><span id="Application::MakeVersionTextSensor::mqtt__text_sensor::MQTTTextSensorP"></span><span class="target" id="struct_application_1_1_make_version_text_sensor_1a29bf31bcd7060583a2ece717974aea42"></span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor14MQTTTextSensorE" title="text_sensor::MQTTTextSensor">MQTTTextSensor</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application21MakeVersionTextSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>

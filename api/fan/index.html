@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Fan &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Fan &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,11 +14,12 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/fan/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Light" href="../light/index.html" />
-    <link rel="prev" title="ESP8266 Software PWM" href="../output/esp8266-pwm.html" />
+    <link rel="prev" title="PCA9685 PWM" href="../output/pca9685.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -97,7 +98,7 @@ state updates.</p>
 <h3>FanState<a class="headerlink" href="#fanstate" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="_CPPv3N3fan8FanStateE">
-<span id="_CPPv2N3fan8FanStateE"></span><span id="fan::FanState"></span><span class="target" id="classfan_1_1_fan_state"></span><em class="property">class </em><code class="descname">FanState</code> : <em class="property">public</em> Nameable<a class="headerlink" href="#_CPPv3N3fan8FanStateE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N3fan8FanStateE"></span><span id="fan::FanState"></span><span class="target" id="classfan_1_1_fan_state"></span><em class="property">class </em><code class="descname">FanState</code> : <em class="property">public</em> Nameable, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N3fan8FanStateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This class is shared between the hardware backend and the MQTT frontend to share state. </p>
 <p>A fan state has several variables that determine the current state: state (ON/OFF), speed (OFF, LOW, MEDIUM, HIGH), oscillating (ON/OFF) and traits (what features are supported). Both the frontend and the backend can register callbacks whenever a state is changed from the frontend and whenever a state is actually changed and should be pushed to the frontend </p>
 <div class="breathe-sectiondef docutils container">
@@ -109,51 +110,10 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N3fan8FanState28add_on_state_change_callbackERRNSt8functionIFvvEEE">
-<span id="_CPPv2N3fan8FanState28add_on_state_change_callbackERRNSt8functionIFvvEEE"></span><span class="target" id="classfan_1_1_fan_state_1a710ca656bfec6b7587190d41951ef069"></span>void <code class="descname">add_on_state_change_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>update_callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState28add_on_state_change_callbackERRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N3fan8FanState21add_on_state_callbackERRNSt8functionIFvvEEE">
+<span id="_CPPv2N3fan8FanState21add_on_state_callbackERRNSt8functionIFvvEEE"></span><span class="target" id="classfan_1_1_fan_state_1aace6d2e2e7b9a2a3f3215fa1f4101fb7"></span>void <code class="descname">add_on_state_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;&amp;<em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState21add_on_state_callbackERRNSt8functionIFvvEEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a callback that will be called each time the state changes. </p>
 </dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK3fan8FanState9get_stateEv">
-<span id="_CPPv2NK3fan8FanState9get_stateEv"></span><span id="fan::FanState::get_stateC"></span><span class="target" id="classfan_1_1_fan_state_1a7e44f74ea57d0d2b501a13b99029ecdb"></span>bool <code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9get_stateEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the current ON/OFF state of this fan. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N3fan8FanState9set_stateEb">
-<span id="_CPPv2N3fan8FanState9set_stateEb"></span><span id="fan::FanState::set_state__b"></span><span class="target" id="classfan_1_1_fan_state_1aa467e9ab3ca2a6eddbf904604cac3dee"></span>void <code class="descname">set_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9set_stateEb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the current ON/OFF state of this fan. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK3fan8FanState14is_oscillatingEv">
-<span id="_CPPv2NK3fan8FanState14is_oscillatingEv"></span><span id="fan::FanState::is_oscillatingC"></span><span class="target" id="classfan_1_1_fan_state_1a1bbe6f8abaa4abb4fd9f186831d4a34d"></span>bool <code class="descname">is_oscillating</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState14is_oscillatingEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the current oscillating state of this fan. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N3fan8FanState15set_oscillatingEb">
-<span id="_CPPv2N3fan8FanState15set_oscillatingEb"></span><span id="fan::FanState::set_oscillating__b"></span><span class="target" id="classfan_1_1_fan_state_1a4d95a54850ba0794f6700faceb5473b1"></span>void <code class="descname">set_oscillating</code><span class="sig-paren">(</span>bool <em>oscillating</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState15set_oscillatingEb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the current oscillating state of this fan. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3NK3fan8FanState9get_speedEv">
-<span id="_CPPv2NK3fan8FanState9get_speedEv"></span><span id="fan::FanState::get_speedC"></span><span class="target" id="classfan_1_1_fan_state_1a138aed561f5eedd61532305176ada875"></span>FanSpeed <code class="descname">get_speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9get_speedEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the current speed of this fan. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N3fan8FanState9set_speedE8FanSpeed">
-<span id="_CPPv2N3fan8FanState9set_speedE8FanSpeed"></span><span id="fan::FanState::set_speed__FanSpeed"></span><span class="target" id="classfan_1_1_fan_state_1a1cebdfd19d3a805ae5952e89b1bfce4d"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span>FanSpeed <em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9set_speedE8FanSpeed" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the current speed of this fan. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N3fan8FanState9set_speedEPKc">
-<span id="_CPPv2N3fan8FanState9set_speedEPKc"></span><span id="fan::FanState::set_speed__cCP"></span><span class="target" id="classfan_1_1_fan_state_1afccbb3f89c1495736d4c5bb013ba1585"></span>bool <code class="descname">set_speed</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9set_speedEPKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK3fan8FanState10get_traitsEv">
@@ -168,50 +128,84 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N3fan8FanState21load_from_preferencesEv">
-<span id="_CPPv2N3fan8FanState21load_from_preferencesEv"></span><span id="fan::FanState::load_from_preferences"></span><span class="target" id="classfan_1_1_fan_state_1ad65e2530f3fc7be24c494ebe4bffe892"></span>void <code class="descname">load_from_preferences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState21load_from_preferencesEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Load a fan state from the preferences into this object. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N3fan8FanState19save_to_preferencesEv">
-<span id="_CPPv2N3fan8FanState19save_to_preferencesEv"></span><span id="fan::FanState::save_to_preferences"></span><span class="target" id="classfan_1_1_fan_state_1a5bf802fe3171c722ca823f715050214d"></span>void <code class="descname">save_to_preferences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState19save_to_preferencesEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Save the fan state from this object into the preferences. </p>
-</dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3N3fan8FanState19make_turn_on_actionEv">
-<span id="_CPPv2N3fan8FanState19make_turn_on_actionEv"></span><span id="fan::FanState::make_turn_on_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classfan_1_1_fan_state_1a3c77304a22cac945de45a611e933893b"></span>TurnOnAction&lt;T&gt; *<code class="descname">make_turn_on_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState19make_turn_on_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N3fan8FanState19make_turn_on_actionEv"></span><span id="fan::FanState::make_turn_on_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classfan_1_1_fan_state_1a3c77304a22cac945de45a611e933893b"></span><a class="reference internal" href="#_CPPv3N3fan12TurnOnActionE" title="fan::TurnOnAction">TurnOnAction</a>&lt;T&gt; *<code class="descname">make_turn_on_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState19make_turn_on_actionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N3fan8FanState20make_turn_off_actionEv">
-<span id="_CPPv2N3fan8FanState20make_turn_off_actionEv"></span><span id="fan::FanState::make_turn_off_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classfan_1_1_fan_state_1aa5d7b59f4dfc74ce454a2f96d7654061"></span>TurnOffAction&lt;T&gt; *<code class="descname">make_turn_off_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState20make_turn_off_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N3fan8FanState20make_turn_off_actionEv"></span><span id="fan::FanState::make_turn_off_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classfan_1_1_fan_state_1aa5d7b59f4dfc74ce454a2f96d7654061"></span><a class="reference internal" href="#_CPPv3N3fan13TurnOffActionE" title="fan::TurnOffAction">TurnOffAction</a>&lt;T&gt; *<code class="descname">make_turn_off_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState20make_turn_off_actionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N3fan8FanState18make_toggle_actionEv">
-<span id="_CPPv2N3fan8FanState18make_toggle_actionEv"></span><span id="fan::FanState::make_toggle_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classfan_1_1_fan_state_1a17b0dee4ef6a45b7fd41bf1c90af2c9d"></span>ToggleAction&lt;T&gt; *<code class="descname">make_toggle_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState18make_toggle_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N3fan8FanState18make_toggle_actionEv"></span><span id="fan::FanState::make_toggle_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classfan_1_1_fan_state_1a17b0dee4ef6a45b7fd41bf1c90af2c9d"></span><a class="reference internal" href="#_CPPv3N3fan12ToggleActionE" title="fan::ToggleAction">ToggleAction</a>&lt;T&gt; *<code class="descname">make_toggle_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState18make_toggle_actionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState7turn_onEv">
+<span id="_CPPv2N3fan8FanState7turn_onEv"></span><span id="fan::FanState::turn_on"></span><span class="target" id="classfan_1_1_fan_state_1a273171f117b243ccc1a13318c9637568"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> <code class="descname">turn_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState7turn_onEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState8turn_offEv">
+<span id="_CPPv2N3fan8FanState8turn_offEv"></span><span id="fan::FanState::turn_off"></span><span class="target" id="classfan_1_1_fan_state_1a96d9009a2a1242e152b20642025ffd35"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> <code class="descname">turn_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState8turn_offEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState6toggleEv">
+<span id="_CPPv2N3fan8FanState6toggleEv"></span><span id="fan::FanState::toggle"></span><span class="target" id="classfan_1_1_fan_state_1a251d4f9ac22d04fb7aee9beed4156710"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> <code class="descname">toggle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState6toggleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState9make_callEv">
+<span id="_CPPv2N3fan8FanState9make_callEv"></span><span id="fan::FanState::make_call"></span><span class="target" id="classfan_1_1_fan_state_1a071b71e331bbdc0094a6177cd8fcf85b"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> <code class="descname">make_call</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9make_callEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState5setupEv">
+<span id="_CPPv2N3fan8FanState5setupEv"></span><span id="fan::FanState::setup"></span><span class="target" id="classfan_1_1_fan_state_1a8a23cc46b5cc392faabf054f87c0b945"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classfan_1_1_fan_state_1a8a23cc46b5cc392faabf054f87c0b945"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK3fan8FanState18get_setup_priorityEv">
+<span id="_CPPv2NK3fan8FanState18get_setup_priorityEv"></span><span id="fan::FanState::get_setup_priorityC"></span><span class="target" id="classfan_1_1_fan_state_1a1a0a78bc3ca5b7569b9a049f3fd466de"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classfan_1_1_fan_state_1a8a23cc46b5cc392faabf054f87c0b945"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState5stateE">
+<span id="_CPPv2N3fan8FanState5stateE"></span><span id="fan::FanState::state__b"></span><span class="target" id="classfan_1_1_fan_state_1a5a697a7f531846158748cf9ef6f2d953"></span>bool <code class="descname">state</code> = {false}<a class="headerlink" href="#_CPPv3N3fan8FanState5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The current ON/OFF state of the fan. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState11oscillatingE">
+<span id="_CPPv2N3fan8FanState11oscillatingE"></span><span id="fan::FanState::oscillating__b"></span><span class="target" id="classfan_1_1_fan_state_1a7e98c7fe28bb03e3e20a853291ac4fd5"></span>bool <code class="descname">oscillating</code> = {false}<a class="headerlink" href="#_CPPv3N3fan8FanState11oscillatingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The current oscillation state of the fan. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState5speedE">
+<span id="_CPPv2N3fan8FanState5speedE"></span><span id="fan::FanState::speed__FanSpeed"></span><span class="target" id="classfan_1_1_fan_state_1abf376b7911096136b2870b86ab02c700"></span>FanSpeed <code class="descname">speed</code> = {FAN_SPEED_HIGH}<a class="headerlink" href="#_CPPv3N3fan8FanState5speedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The current fan speed. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
-<dl class="member">
-<dt id="_CPPv3N3fan8FanState6state_E">
-<span id="_CPPv2N3fan8FanState6state_E"></span><span id="fan::FanState::state___b"></span><span class="target" id="classfan_1_1_fan_state_1a4c6e0d88d5c937203b29f44f43861ca7"></span>bool <code class="descname">state_</code> = {false}<a class="headerlink" href="#_CPPv3N3fan8FanState6state_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N3fan8FanState12oscillating_E">
-<span id="_CPPv2N3fan8FanState12oscillating_E"></span><span id="fan::FanState::oscillating___b"></span><span class="target" id="classfan_1_1_fan_state_1a42cb4da00b136814d73ee2cb4c266c6d"></span>bool <code class="descname">oscillating_</code> = {false}<a class="headerlink" href="#_CPPv3N3fan8FanState12oscillating_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N3fan8FanState6speed_E">
-<span id="_CPPv2N3fan8FanState6speed_E"></span><span id="fan::FanState::speed___FanSpeed"></span><span class="target" id="classfan_1_1_fan_state_1a8aa4f3a8cfa8d0c2fc124606d7781604"></span>FanSpeed <code class="descname">speed_</code> = {FAN_SPEED_HIGH}<a class="headerlink" href="#_CPPv3N3fan8FanState6speed_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
 <dl class="member">
 <dt id="_CPPv3N3fan8FanState7traits_E">
 <span id="_CPPv2N3fan8FanState7traits_E"></span><span id="fan::FanState::traits___FanTraits"></span><span class="target" id="classfan_1_1_fan_state_1a709433df0446e264eb22f517dbc60ccd"></span><a class="reference internal" href="#_CPPv3N3fan9FanTraitsE" title="fan::FanTraits">FanTraits</a> <code class="descname">traits_</code> = {}<a class="headerlink" href="#_CPPv3N3fan8FanState7traits_E" title="Permalink to this definition">¶</a><br /></dt>
@@ -222,7 +216,73 @@ state updates.</p>
 <span id="_CPPv2N3fan8FanState15state_callback_E"></span><span class="target" id="classfan_1_1_fan_state_1ad4c200ddd2efc9cd1e232fc64a478a4f"></span>CallbackManager&lt;void<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; <code class="descname">state_callback_</code> = {}<a class="headerlink" href="#_CPPv3N3fan8FanState15state_callback_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState4rtc_E">
+<span id="_CPPv2N3fan8FanState4rtc_E"></span><span id="fan::FanState::rtc___ESPPreferenceObject"></span><span class="target" id="classfan_1_1_fan_state_1ae51f2c97c4923b985da01b9b9bccd967"></span><a class="reference internal" href="../core/helpers.html#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">rtc_</code><a class="headerlink" href="#_CPPv3N3fan8FanState4rtc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
+<dl class="class">
+<dt id="_CPPv3N3fan8FanState9StateCallE">
+<span id="_CPPv2N3fan8FanState9StateCallE"></span><span id="fan::FanState::StateCall"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call"></span><em class="property">class </em><code class="descname">StateCall</code><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCallE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState9StateCall9StateCallEP8FanState">
+<span id="_CPPv2N3fan8FanState9StateCall9StateCallEP8FanState"></span><span id="fan::FanState::StateCall::StateCall__FanStateP"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1a8f0d3cd90a4860aa79227c783540e35d"></span><code class="descname">StateCall</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall9StateCallEP8FanState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState9StateCall9set_stateEb">
+<span id="_CPPv2N3fan8FanState9StateCall9set_stateEb"></span><span id="fan::FanState::StateCall::set_state__b"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1aa29ae9a3619e4ff675a0a104dc66c22e"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> &amp;<code class="descname">set_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall9set_stateEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState9StateCall15set_oscillatingEb">
+<span id="_CPPv2N3fan8FanState9StateCall15set_oscillatingEb"></span><span id="fan::FanState::StateCall::set_oscillating__b"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1ac3fcf39f8e73a29380ce4a82a487101e"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> &amp;<code class="descname">set_oscillating</code><span class="sig-paren">(</span>bool <em>oscillating</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall15set_oscillatingEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState9StateCall9set_speedE8FanSpeed">
+<span id="_CPPv2N3fan8FanState9StateCall9set_speedE8FanSpeed"></span><span id="fan::FanState::StateCall::set_speed__FanSpeed"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1aa7cc60991ebd0168059b81a03d3db09c"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> &amp;<code class="descname">set_speed</code><span class="sig-paren">(</span>FanSpeed <em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall9set_speedE8FanSpeed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan8FanState9StateCall9set_speedEPKc">
+<span id="_CPPv2N3fan8FanState9StateCall9set_speedEPKc"></span><span id="fan::FanState::StateCall::set_speed__cCP"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1acad8a85542fc93a291ccd938b9599487"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a>::<a class="reference internal" href="#_CPPv3N3fan8FanState9StateCallE" title="fan::FanState::StateCall">StateCall</a> &amp;<code class="descname">set_speed</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall9set_speedEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK3fan8FanState9StateCall7performEv">
+<span id="_CPPv2NK3fan8FanState9StateCall7performEv"></span><span id="fan::FanState::StateCall::performC"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1a2d3d334deb2e08ee4ffdc0cb453b8e89"></span>void <code class="descname">perform</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK3fan8FanState9StateCall7performEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState9StateCall6state_E">
+<span id="_CPPv2N3fan8FanState9StateCall6state_E"></span><span id="fan::FanState::StateCall::state___FanStatePC"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1a1f0fa1903d37fef541b67a9614cf5e08"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em class="property">const</em> <code class="descname">state_</code><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState9StateCall13binary_state_E">
+<span id="_CPPv2N3fan8FanState9StateCall13binary_state_E"></span><span id="fan::FanState::StateCall::binary_state___optional:b:"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1af8a91083a5f3a5051c1a0addf1e867c3"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">binary_state_</code><a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall13binary_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState9StateCall12oscillating_E">
+<span id="_CPPv2N3fan8FanState9StateCall12oscillating_E"></span><span id="fan::FanState::StateCall::oscillating___optional:b:"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1ae67210b64fc242f32bdb7f78b9ed9b8b"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">oscillating_</code> = {}<a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall12oscillating_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan8FanState9StateCall6speed_E">
+<span id="_CPPv2N3fan8FanState9StateCall6speed_E"></span><span id="fan::FanState::StateCall::speed___optional:FanSpeed:"></span><span class="target" id="classfan_1_1_fan_state_1_1_state_call_1af05a37f643e9f00ed351086532c4d217"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;FanSpeed&gt; <code class="descname">speed_</code> = {}<a class="headerlink" href="#_CPPv3N3fan8FanState9StateCall6speed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -311,15 +371,14 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff">
-<span id="_CPPv2N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff"></span><span id="fan::BasicFanComponent::set_speed__output::FloatOutputP.float.float.float.float"></span><span class="target" id="classfan_1_1_basic_fan_component_1aa52ea51aab0d59d625643a4455f3f6d7"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff" title="fan::BasicFanComponent::set_speed::output">output</a>::FloatOutput *<em>output</em>, float <em>off_speed</em> = 0.0, float <em>low_speed</em> = 0.33, float <em>medium_speed</em> = 0.66, float <em>high_speed</em> = 1.0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEffff" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEfff">
+<span id="_CPPv2N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEfff"></span><span id="fan::BasicFanComponent::set_speed__output::FloatOutputP.float.float.float"></span><span class="target" id="classfan_1_1_basic_fan_component_1aca98b465327a297bad4aa10518376e7d"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEfff" title="fan::BasicFanComponent::set_speed::output">output</a>::FloatOutput *<em>output</em>, float <em>low_speed</em> = 0.33, float <em>medium_speed</em> = 0.66, float <em>high_speed</em> = 1.0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent9set_speedEPN6output11FloatOutputEfff" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a fan that supports speed operation (OFF/LOW/MEDIUM/HIGH SPEED). </p>
 <p>Can’t be mixed with set_binary.</p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">output</span></code>: The FloatOutput where all speed/state commands should land. </li>
-<li><code class="docutils literal notranslate"><span class="pre">off_speed</span></code>: The speed that should be sent to the output if the fan is OFF. </li>
 <li><code class="docutils literal notranslate"><span class="pre">low_speed</span></code>: The speed that should be sent to the output if the fan is in LOW speed mode. </li>
 <li><code class="docutils literal notranslate"><span class="pre">medium_speed</span></code>: The speed that should be sent to the output if the fan is in MEDIUM speed mode. </li>
 <li><code class="docutils literal notranslate"><span class="pre">high_speed</span></code>: The speed that should be sent to the output if the fan is in HIGH speed mode. </li>
@@ -357,8 +416,13 @@ state updates.</p>
 <dt id="_CPPv3N3fan17BasicFanComponent5setupEv">
 <span id="_CPPv2N3fan17BasicFanComponent5setupEv"></span><span id="fan::BasicFanComponent::setup"></span><span class="target" id="classfan_1_1_basic_fan_component_1aace34e2a5c9b139b7f96c743a8f8b291"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classfan_1_1_basic_fan_component_1aace34e2a5c9b139b7f96c743a8f8b291"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classfan_1_1_basic_fan_component_1aace34e2a5c9b139b7f96c743a8f8b291"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan17BasicFanComponent11dump_configEv">
+<span id="_CPPv2N3fan17BasicFanComponent11dump_configEv"></span><span id="fan::BasicFanComponent::dump_config"></span><span class="target" id="classfan_1_1_basic_fan_component_1ae42232e14cb32a9d81d74f6f7f156338"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N3fan17BasicFanComponent4loopEv">
@@ -396,11 +460,6 @@ state updates.</p>
 <dl class="member">
 <dt id="_CPPv3N3fan17BasicFanComponent13speed_output_E">
 <span id="_CPPv2N3fan17BasicFanComponent13speed_output_E"></span><span id="fan::BasicFanComponent::speed_output___output::FloatOutputP"></span><span class="target" id="classfan_1_1_basic_fan_component_1a3dcc0f3b6ccceab46d195ab9fa6dab3f"></span>output::<a class="reference internal" href="../output/index.html#_CPPv3N6output11FloatOutputE" title="output::FloatOutput">FloatOutput</a> *<code class="descname">speed_output_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent13speed_output_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N3fan17BasicFanComponent10off_speed_E">
-<span id="_CPPv2N3fan17BasicFanComponent10off_speed_E"></span><span id="fan::BasicFanComponent::off_speed___float"></span><span class="target" id="classfan_1_1_basic_fan_component_1a0e933ef18757504cba0345d8f75d4baf"></span>float <code class="descname">off_speed_</code> = {}<a class="headerlink" href="#_CPPv3N3fan17BasicFanComponent10off_speed_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -469,8 +528,8 @@ state updates.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N3fan16MQTTFanComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE">
-<span id="_CPPv2N3fan16MQTTFanComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="fan::MQTTFanComponent::send_discovery__JsonBufferR.JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a1688c0ad070881195116d47709c6b121"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonBuffer &amp;<em>buffer</em>, JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent14send_discoveryER10JsonBufferR10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N3fan16MQTTFanComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
+<span id="_CPPv2N3fan16MQTTFanComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="fan::MQTTFanComponent::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a117399e0389a67a930e602bd8906cbd8"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Send discovery info the Home Assistant, override this. </p>
 </dd></dl>
 
@@ -540,8 +599,136 @@ state updates.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
+<dt id="_CPPv3N3fan16MQTTFanComponent33custom_oscillation_command_topic_E">
+<span id="_CPPv2N3fan16MQTTFanComponent33custom_oscillation_command_topic_E"></span><span id="fan::MQTTFanComponent::custom_oscillation_command_topic___ss"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a925417cdd6ee6a8574d066c127d63d87"></span>std::string <code class="descname">custom_oscillation_command_topic_</code><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent33custom_oscillation_command_topic_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan16MQTTFanComponent31custom_oscillation_state_topic_E">
+<span id="_CPPv2N3fan16MQTTFanComponent31custom_oscillation_state_topic_E"></span><span id="fan::MQTTFanComponent::custom_oscillation_state_topic___ss"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a9e3f4ee4773ca13dd0abb71134f1ebf3"></span>std::string <code class="descname">custom_oscillation_state_topic_</code><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent31custom_oscillation_state_topic_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan16MQTTFanComponent27custom_speed_command_topic_E">
+<span id="_CPPv2N3fan16MQTTFanComponent27custom_speed_command_topic_E"></span><span id="fan::MQTTFanComponent::custom_speed_command_topic___ss"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1af0a54296563c57085e320179cf464b6d"></span>std::string <code class="descname">custom_speed_command_topic_</code><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent27custom_speed_command_topic_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan16MQTTFanComponent25custom_speed_state_topic_E">
+<span id="_CPPv2N3fan16MQTTFanComponent25custom_speed_state_topic_E"></span><span id="fan::MQTTFanComponent::custom_speed_state_topic___ss"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1acbe8237d8e04771369be8cd5ad6b769c"></span>std::string <code class="descname">custom_speed_state_topic_</code><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent25custom_speed_state_topic_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
 <dt id="_CPPv3N3fan16MQTTFanComponent6state_E">
 <span id="_CPPv2N3fan16MQTTFanComponent6state_E"></span><span id="fan::MQTTFanComponent::state___FanStateP"></span><span class="target" id="classfan_1_1_m_q_t_t_fan_component_1a1786c94b5697a234600ace3f4f3a629c"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N3fan16MQTTFanComponent6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N3fan12ToggleActionE">
+<span id="_CPPv2N3fan12ToggleActionE"></span><span id="fan::ToggleAction"></span><span class="target" id="classfan_1_1_toggle_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ToggleAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N3fan12ToggleActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N3fan12ToggleAction12ToggleActionEP8FanState">
+<span id="_CPPv2N3fan12ToggleAction12ToggleActionEP8FanState"></span><span id="fan::ToggleAction::ToggleAction__FanStateP"></span><span class="target" id="classfan_1_1_toggle_action_1a2c037bbba8646710da596cc088f6730d"></span><code class="descname">ToggleAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12ToggleAction12ToggleActionEP8FanState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan12ToggleAction4playE1T">
+<span id="_CPPv2N3fan12ToggleAction4playE1T"></span><span id="fan::ToggleAction::play__T"></span><span class="target" id="classfan_1_1_toggle_action_1a33f15a42f908cb137b9b5d5039f350a4"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12ToggleAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N3fan12ToggleAction6state_E">
+<span id="_CPPv2N3fan12ToggleAction6state_E"></span><span id="fan::ToggleAction::state___FanStateP"></span><span class="target" id="classfan_1_1_toggle_action_1ad8acc5672a8dc76f080744dc675102eb"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N3fan12ToggleAction6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N3fan12TurnOnActionE">
+<span id="_CPPv2N3fan12TurnOnActionE"></span><span id="fan::TurnOnAction"></span><span class="target" id="classfan_1_1_turn_on_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">TurnOnAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N3fan12TurnOnActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N3fan12TurnOnAction12TurnOnActionEP8FanState">
+<span id="_CPPv2N3fan12TurnOnAction12TurnOnActionEP8FanState"></span><span id="fan::TurnOnAction::TurnOnAction__FanStateP"></span><span class="target" id="classfan_1_1_turn_on_action_1afc13759511ddea0c3be9faca5ffbd4ee"></span><code class="descname">TurnOnAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction12TurnOnActionEP8FanState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan12TurnOnAction15set_oscillatingERRNSt8functionIFb1TEEE">
+<span id="_CPPv2N3fan12TurnOnAction15set_oscillatingERRNSt8functionIFb1TEEE"></span><span class="target" id="classfan_1_1_turn_on_action_1a024bfe6225b3847b136a2fe36195e518"></span>void <code class="descname">set_oscillating</code><span class="sig-paren">(</span>std::function&lt;bool<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>oscillating</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction15set_oscillatingERRNSt8functionIFb1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan12TurnOnAction15set_oscillatingEb">
+<span id="_CPPv2N3fan12TurnOnAction15set_oscillatingEb"></span><span id="fan::TurnOnAction::set_oscillating__b"></span><span class="target" id="classfan_1_1_turn_on_action_1acd2d1bb9b8aa97da81cac478e39815a8"></span>void <code class="descname">set_oscillating</code><span class="sig-paren">(</span>bool <em>oscillating</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction15set_oscillatingEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan12TurnOnAction9set_speedERRNSt8functionIF8FanSpeed1TEEE">
+<span id="_CPPv2N3fan12TurnOnAction9set_speedERRNSt8functionIF8FanSpeed1TEEE"></span><span class="target" id="classfan_1_1_turn_on_action_1a19088fc565316de1f8966b89435d2fcb"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span>std::function&lt;FanSpeed<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction9set_speedERRNSt8functionIF8FanSpeed1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan12TurnOnAction9set_speedE8FanSpeed">
+<span id="_CPPv2N3fan12TurnOnAction9set_speedE8FanSpeed"></span><span id="fan::TurnOnAction::set_speed__FanSpeed"></span><span class="target" id="classfan_1_1_turn_on_action_1aecefe8aeb5986b296e3d3a8b24c7d3c6"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span>FanSpeed <em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction9set_speedE8FanSpeed" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan12TurnOnAction4playE1T">
+<span id="_CPPv2N3fan12TurnOnAction4playE1T"></span><span id="fan::TurnOnAction::play__T"></span><span class="target" id="classfan_1_1_turn_on_action_1a8a12a2b819db6a1022d98f3cd40e2564"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N3fan12TurnOnAction6state_E">
+<span id="_CPPv2N3fan12TurnOnAction6state_E"></span><span id="fan::TurnOnAction::state___FanStateP"></span><span class="target" id="classfan_1_1_turn_on_action_1a474186a43281a800f3e22045df2242dc"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan12TurnOnAction12oscillating_E">
+<span id="_CPPv2N3fan12TurnOnAction12oscillating_E"></span><span id="fan::TurnOnAction::oscillating___TemplatableValue:b.T:"></span><span class="target" id="classfan_1_1_turn_on_action_1a2a57c39278d20643010cf8910f77d565"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;bool, T&gt; <code class="descname">oscillating_</code><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction12oscillating_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N3fan12TurnOnAction6speed_E">
+<span id="_CPPv2N3fan12TurnOnAction6speed_E"></span><span id="fan::TurnOnAction::speed___TemplatableValue:FanSpeed.T:"></span><span class="target" id="classfan_1_1_turn_on_action_1a82d3cd15488896639ae09ef33e3a36a4"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;FanSpeed, T&gt; <code class="descname">speed_</code><a class="headerlink" href="#_CPPv3N3fan12TurnOnAction6speed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N3fan13TurnOffActionE">
+<span id="_CPPv2N3fan13TurnOffActionE"></span><span id="fan::TurnOffAction"></span><span class="target" id="classfan_1_1_turn_off_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">TurnOffAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N3fan13TurnOffActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N3fan13TurnOffAction13TurnOffActionEP8FanState">
+<span id="_CPPv2N3fan13TurnOffAction13TurnOffActionEP8FanState"></span><span id="fan::TurnOffAction::TurnOffAction__FanStateP"></span><span class="target" id="classfan_1_1_turn_off_action_1a2619672493a3ab83dca762cdc623c1d9"></span><code class="descname">TurnOffAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan13TurnOffAction13TurnOffActionEP8FanState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N3fan13TurnOffAction4playE1T">
+<span id="_CPPv2N3fan13TurnOffAction4playE1T"></span><span id="fan::TurnOffAction::play__T"></span><span class="target" id="classfan_1_1_turn_off_action_1a358c0aeab8077da9c1c6d3891901ca97"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N3fan13TurnOffAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N3fan13TurnOffAction6state_E">
+<span id="_CPPv2N3fan13TurnOffAction6state_E"></span><span id="fan::TurnOffAction::state___FanStateP"></span><span class="target" id="classfan_1_1_turn_off_action_1a9fa4ab6d2728758394ca6a0655fe6a65"></span><a class="reference internal" href="#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<code class="descname">state_</code><a class="headerlink" href="#_CPPv3N3fan13TurnOffAction6state_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>

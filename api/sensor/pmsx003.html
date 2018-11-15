@@ -1,0 +1,343 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PMSX003 Particulate Matter Sensor &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/pmsx003.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pulse Counter Sensor" href="pulse_counter.html" />
+    <link rel="prev" title="MS5611 Atmospheric Pressure Sensor" href="ms5611.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PMSX003 Particulate Matter Sensor</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="pmsx003-particulate-matter-sensor">
+<h1>PMSX003 Particulate Matter Sensor<a class="headerlink" href="#pmsx003-particulate-matter-sensor" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application12make_pmsx003EP13UARTComponentN6sensor11PMSX003TypeE" title="Application::make_pmsx003"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_pmsx003()</span></code></a>.</p>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N6sensor16PMSX003ComponentE">
+<span id="_CPPv2N6sensor16PMSX003ComponentE"></span><span id="sensor::PMSX003Component"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component"></span><em class="property">class </em><code class="descname">PMSX003Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/uart.html#_CPPv310UARTDevice" title="UARTDevice">UARTDevice</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N6sensor16PMSX003ComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component16PMSX003ComponentEP13UARTComponent11PMSX003Type">
+<span id="_CPPv2N6sensor16PMSX003Component16PMSX003ComponentEP13UARTComponent11PMSX003Type"></span><span id="sensor::PMSX003Component::PMSX003Component__UARTComponentP.PMSX003Type"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a8eef250cc916d6e703ee6680721c8476"></span><code class="descname">PMSX003Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, <a class="reference internal" href="#_CPPv3N6sensor11PMSX003TypeE" title="sensor::PMSX003Type">PMSX003Type</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component16PMSX003ComponentEP13UARTComponent11PMSX003Type" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component4loopEv">
+<span id="_CPPv2N6sensor16PMSX003Component4loopEv"></span><span id="sensor::PMSX003Component::loop"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1aa0ab58d70dfbf9113bfd3de68c7cf52f"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_p_m_s_x003_component_1aa0ab58d70dfbf9113bfd3de68c7cf52f"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor16PMSX003Component18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor16PMSX003Component18get_setup_priorityEv"></span><span id="sensor::PMSX003Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a6e56d22af9794eb6b637e69bdc22414e"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16PMSX003Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component18make_pm_1_0_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16PMSX003Component18make_pm_1_0_sensorERKNSt6stringE"></span><span id="sensor::PMSX003Component::make_pm_1_0_sensor__ssCR"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1aa416a620fe0ccbe7a989e572fa5a6a20"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">make_pm_1_0_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component18make_pm_1_0_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component18make_pm_2_5_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16PMSX003Component18make_pm_2_5_sensorERKNSt6stringE"></span><span id="sensor::PMSX003Component::make_pm_2_5_sensor__ssCR"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a3e8713c34b811249e3db7557d1999f33"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">make_pm_2_5_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component18make_pm_2_5_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component19make_pm_10_0_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16PMSX003Component19make_pm_10_0_sensorERKNSt6stringE"></span><span id="sensor::PMSX003Component::make_pm_10_0_sensor__ssCR"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a416d92b02cdd2dc70e954d3b6b3ba933"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">make_pm_10_0_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component19make_pm_10_0_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component23make_temperature_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16PMSX003Component23make_temperature_sensorERKNSt6stringE"></span><span id="sensor::PMSX003Component::make_temperature_sensor__ssCR"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a836d3b4e168ab05e4cfd19d0d0bd0476"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">make_temperature_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component23make_temperature_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component20make_humidity_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16PMSX003Component20make_humidity_sensorERKNSt6stringE"></span><span id="sensor::PMSX003Component::make_humidity_sensor__ssCR"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1aef8c45cc3992fa54818edd303531732a"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">make_humidity_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component20make_humidity_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component24make_formaldehyde_sensorERKNSt6stringE">
+<span id="_CPPv2N6sensor16PMSX003Component24make_formaldehyde_sensorERKNSt6stringE"></span><span id="sensor::PMSX003Component::make_formaldehyde_sensor__ssCR"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a87ba8cb5303037a4a94c479c0e31274b"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">make_formaldehyde_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component24make_formaldehyde_sensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component11check_byte_Ev">
+<span id="_CPPv2N6sensor16PMSX003Component11check_byte_Ev"></span><span id="sensor::PMSX003Component::check_byte_"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1ad160c5e488c7480d90c0f4d9038afd36"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">check_byte_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component11check_byte_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component11parse_data_Ev">
+<span id="_CPPv2N6sensor16PMSX003Component11parse_data_Ev"></span><span id="sensor::PMSX003Component::parse_data_"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1aa355a4a1f90634d46b5f9155c2cdf3f8"></span>void <code class="descname">parse_data_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component11parse_data_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16PMSX003Component16get_16_bit_uint_E7uint8_t">
+<span id="_CPPv2N6sensor16PMSX003Component16get_16_bit_uint_E7uint8_t"></span><span id="sensor::PMSX003Component::get_16_bit_uint___uint8_t"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1aba3f660a0b58108406f6c67429ba8776"></span>uint16_t <code class="descname">get_16_bit_uint_</code><span class="sig-paren">(</span>uint8_t <em>start_index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component16get_16_bit_uint_E7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component5data_E">
+<span id="_CPPv2N6sensor16PMSX003Component5data_E"></span><span id="sensor::PMSX003Component::data___uint8_tA"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a34730e182010dd4b56b2a92c14932bc7"></span>uint8_t <code class="descname">data_</code>[64]<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component5data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component11data_index_E">
+<span id="_CPPv2N6sensor16PMSX003Component11data_index_E"></span><span id="sensor::PMSX003Component::data_index___uint8_t"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a03d17d170bb7f31bce744eedbc10d1c1"></span>uint8_t <code class="descname">data_index_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component11data_index_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component18last_transmission_E">
+<span id="_CPPv2N6sensor16PMSX003Component18last_transmission_E"></span><span id="sensor::PMSX003Component::last_transmission___uint32_t"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a8bbfb7785a1fa1f4f36686edfeb0fdad"></span>uint32_t <code class="descname">last_transmission_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component18last_transmission_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component5type_E">
+<span id="_CPPv2N6sensor16PMSX003Component5type_E"></span><span id="sensor::PMSX003Component::type___PMSX003TypeC"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a0a2944195010c755e9145178ac141a13"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N6sensor11PMSX003TypeE" title="sensor::PMSX003Type">PMSX003Type</a> <code class="descname">type_</code><a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component5type_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component14pm_1_0_sensor_E">
+<span id="_CPPv2N6sensor16PMSX003Component14pm_1_0_sensor_E"></span><span id="sensor::PMSX003Component::pm_1_0_sensor___PMSX003SensorP"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a10dcb8c5aebae4ebf322d98d305be911"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">pm_1_0_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component14pm_1_0_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component14pm_2_5_sensor_E">
+<span id="_CPPv2N6sensor16PMSX003Component14pm_2_5_sensor_E"></span><span id="sensor::PMSX003Component::pm_2_5_sensor___PMSX003SensorP"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a202003c92a23c660efc0cca648a1eb7c"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">pm_2_5_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component14pm_2_5_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component15pm_10_0_sensor_E">
+<span id="_CPPv2N6sensor16PMSX003Component15pm_10_0_sensor_E"></span><span id="sensor::PMSX003Component::pm_10_0_sensor___PMSX003SensorP"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a894479b2013a2132df9c86b5cb50dca0"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">pm_10_0_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component15pm_10_0_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component19temperature_sensor_E">
+<span id="_CPPv2N6sensor16PMSX003Component19temperature_sensor_E"></span><span id="sensor::PMSX003Component::temperature_sensor___PMSX003SensorP"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a4eb2b8470c4eb0d85b8518740c5a2897"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">temperature_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component19temperature_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component16humidity_sensor_E">
+<span id="_CPPv2N6sensor16PMSX003Component16humidity_sensor_E"></span><span id="sensor::PMSX003Component::humidity_sensor___PMSX003SensorP"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a1c57bb921e36ad7086c25ad965be7398"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">humidity_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component16humidity_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16PMSX003Component20formaldehyde_sensor_E">
+<span id="_CPPv2N6sensor16PMSX003Component20formaldehyde_sensor_E"></span><span id="sensor::PMSX003Component::formaldehyde_sensor___PMSX003SensorP"></span><span class="target" id="classsensor_1_1_p_m_s_x003_component_1a8e224084c55e4fe4ab527886d86aed61"></span><a class="reference internal" href="#_CPPv3N6sensor13PMSX003SensorE" title="sensor::PMSX003Sensor">PMSX003Sensor</a> *<code class="descname">formaldehyde_sensor_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16PMSX003Component20formaldehyde_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N6sensor13PMSX003SensorE">
+<span id="_CPPv2N6sensor13PMSX003SensorE"></span><span id="sensor::PMSX003Sensor"></span><span class="target" id="classsensor_1_1_p_m_s_x003_sensor"></span><em class="property">class </em><code class="descname">PMSX003Sensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a><a class="headerlink" href="#_CPPv3N6sensor13PMSX003SensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor13PMSX003Sensor13PMSX003SensorERKNSt6stringE17PMSX003SensorType">
+<span id="_CPPv2N6sensor13PMSX003Sensor13PMSX003SensorERKNSt6stringE17PMSX003SensorType"></span><span id="sensor::PMSX003Sensor::PMSX003Sensor__ssCR.PMSX003SensorType"></span><span class="target" id="classsensor_1_1_p_m_s_x003_sensor_1afb06f3b8fcf7dc6e206d40139f7aa76d"></span><code class="descname">PMSX003Sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N6sensor17PMSX003SensorTypeE" title="sensor::PMSX003SensorType">PMSX003SensorType</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor13PMSX003Sensor13PMSX003SensorERKNSt6stringE17PMSX003SensorType" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor13PMSX003Sensor19unit_of_measurementEv">
+<span id="_CPPv2N6sensor13PMSX003Sensor19unit_of_measurementEv"></span><span id="sensor::PMSX003Sensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_p_m_s_x003_sensor_1aff23f14c6df32581b05acac5199d5baf"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor13PMSX003Sensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this to set the Home Assistant unit of measurement for this sensor. </p>
+<p>Return “” to disable this feature.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The icon of this sensor, for example “°C”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor13PMSX003Sensor4iconEv">
+<span id="_CPPv2N6sensor13PMSX003Sensor4iconEv"></span><span id="sensor::PMSX003Sensor::icon"></span><span class="target" id="classsensor_1_1_p_m_s_x003_sensor_1a15711cac6f80a61a6cde0f43976ce237"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor13PMSX003Sensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this to set the Home Assistant icon for this sensor. </p>
+<p>Return “” to disable this feature.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The icon of this sensor, for example “mdi:battery”. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor13PMSX003Sensor17accuracy_decimalsEv">
+<span id="_CPPv2N6sensor13PMSX003Sensor17accuracy_decimalsEv"></span><span id="sensor::PMSX003Sensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_p_m_s_x003_sensor_1a29e4823edee09d42bbc5ee2abe5902e3"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor13PMSX003Sensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the accuracy in decimals for this sensor. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6sensor13PMSX003Sensor5type_E">
+<span id="_CPPv2N6sensor13PMSX003Sensor5type_E"></span><span id="sensor::PMSX003Sensor::type___PMSX003SensorTypeC"></span><span class="target" id="classsensor_1_1_p_m_s_x003_sensor_1a505316706fa233b1c6fd62ac727840e2"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N6sensor17PMSX003SensorTypeE" title="sensor::PMSX003SensorType">PMSX003SensorType</a> <code class="descname">type_</code><a class="headerlink" href="#_CPPv3N6sensor13PMSX003Sensor5type_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N6sensor17PMSX003SensorTypeE">
+<span id="_CPPv2N6sensor17PMSX003SensorTypeE"></span><span id="sensor::PMSX003SensorType"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">PMSX003SensorType</code><a class="headerlink" href="#_CPPv3N6sensor17PMSX003SensorTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor26PMSX003_SENSOR_TYPE_PM_1_0E">
+<span id="_CPPv2N6sensor26PMSX003_SENSOR_TYPE_PM_1_0E"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629aa3d70fbd29bc07e0e23325c52103ee16"></span><code class="descname">PMSX003_SENSOR_TYPE_PM_1_0</code> = 0<a class="headerlink" href="#_CPPv3N6sensor26PMSX003_SENSOR_TYPE_PM_1_0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PM1.0 concentration in µg/m^3, PMSX003. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor26PMSX003_SENSOR_TYPE_PM_2_5E">
+<span id="_CPPv2N6sensor26PMSX003_SENSOR_TYPE_PM_2_5E"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629a94e7f3447dc064d7d3270b21fa8ccd74"></span><code class="descname">PMSX003_SENSOR_TYPE_PM_2_5</code><a class="headerlink" href="#_CPPv3N6sensor26PMSX003_SENSOR_TYPE_PM_2_5E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PM2.5 concentration in µg/m^3, PMSX003, PMS5003T, PMS5003ST. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor27PMSX003_SENSOR_TYPE_PM_10_0E">
+<span id="_CPPv2N6sensor27PMSX003_SENSOR_TYPE_PM_10_0E"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629a5c85dd5801a9bfae0c4296aa2072aa82"></span><code class="descname">PMSX003_SENSOR_TYPE_PM_10_0</code><a class="headerlink" href="#_CPPv3N6sensor27PMSX003_SENSOR_TYPE_PM_10_0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>PM10.0 concentration in µg/m^3, PMSX003. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor31PMSX003_SENSOR_TYPE_TEMPERATUREE">
+<span id="_CPPv2N6sensor31PMSX003_SENSOR_TYPE_TEMPERATUREE"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629ad583c350f124392240c453758d60ae00"></span><code class="descname">PMSX003_SENSOR_TYPE_TEMPERATURE</code><a class="headerlink" href="#_CPPv3N6sensor31PMSX003_SENSOR_TYPE_TEMPERATUREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Temperature in °C, PMS5003T, PMS5003ST. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor28PMSX003_SENSOR_TYPE_HUMIDITYE">
+<span id="_CPPv2N6sensor28PMSX003_SENSOR_TYPE_HUMIDITYE"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629ae8f1e6c5971100e3aa34637145fc884d"></span><code class="descname">PMSX003_SENSOR_TYPE_HUMIDITY</code><a class="headerlink" href="#_CPPv3N6sensor28PMSX003_SENSOR_TYPE_HUMIDITYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Relative Humidity in %, PMS5003T, PMS5003T. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor32PMSX003_SENSOR_TYPE_FORMALDEHYDEE">
+<span id="_CPPv2N6sensor32PMSX003_SENSOR_TYPE_FORMALDEHYDEE"></span><span class="target" id="pmsx003_8h_1a4079bfe8a99e4d956d157f19f5de1629a26a78636b852355b590ad95ec3899272"></span><code class="descname">PMSX003_SENSOR_TYPE_FORMALDEHYDE</code><a class="headerlink" href="#_CPPv3N6sensor32PMSX003_SENSOR_TYPE_FORMALDEHYDEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Formaldehyde in µg/m^3, PMS5003ST. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv3N6sensor11PMSX003TypeE">
+<span id="_CPPv2N6sensor11PMSX003TypeE"></span><span id="sensor::PMSX003Type"></span><span class="target" id="pmsx003_8h_1a6e2515928830f32d4ace1872413c55ce"></span><em class="property">enum </em><code class="descclassname">sensor<code class="descclassname">::</code></code><code class="descname">PMSX003Type</code><a class="headerlink" href="#_CPPv3N6sensor11PMSX003TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor17PMSX003_TYPE_X003E">
+<span id="_CPPv2N6sensor17PMSX003_TYPE_X003E"></span><span class="target" id="pmsx003_8h_1a6e2515928830f32d4ace1872413c55cea66d429644b907d61acf9edbbac3f49c5"></span><code class="descname">PMSX003_TYPE_X003</code> = 0<a class="headerlink" href="#_CPPv3N6sensor17PMSX003_TYPE_X003E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor18PMSX003_TYPE_5003TE">
+<span id="_CPPv2N6sensor18PMSX003_TYPE_5003TE"></span><span class="target" id="pmsx003_8h_1a6e2515928830f32d4ace1872413c55cea303d41cee1be384ea2ec3d9ec63279b5"></span><code class="descname">PMSX003_TYPE_5003T</code><a class="headerlink" href="#_CPPv3N6sensor18PMSX003_TYPE_5003TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor19PMSX003_TYPE_5003STE">
+<span id="_CPPv2N6sensor19PMSX003_TYPE_5003STE"></span><span class="target" id="pmsx003_8h_1a6e2515928830f32d4ace1872413c55ceaea5e97b7c94d33b7ce9e9baad2d8e04b"></span><code class="descname">PMSX003_TYPE_5003ST</code><a class="headerlink" href="#_CPPv3N6sensor19PMSX003_TYPE_5003STE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

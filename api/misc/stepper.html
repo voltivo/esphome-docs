@@ -1,0 +1,361 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Stepper Component &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/misc/stepper.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Status LED" href="status_led.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Stepper Component</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#stepper">Stepper</a></li>
+<li><a class="reference internal" href="#a4988">A4988</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="stepper-component">
+<h1>Stepper Component<a class="headerlink" href="#stepper-component" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stepper">
+<h3>Stepper<a class="headerlink" href="#stepper" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N7stepper7StepperE">
+<span id="_CPPv2N7stepper7StepperE"></span><span id="stepper::Stepper"></span><span class="target" id="classstepper_1_1_stepper"></span><em class="property">class </em><code class="descname">Stepper</code><a class="headerlink" href="#_CPPv3N7stepper7StepperE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classstepper_1_1_a4988"><span class="std std-ref">stepper::A4988</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper10set_targetE7int32_t">
+<span id="_CPPv2N7stepper7Stepper10set_targetE7int32_t"></span><span id="stepper::Stepper::set_target__int32_t"></span><span class="target" id="classstepper_1_1_stepper_1a6407fd5a971bc2a4e7c0ff529e3750e4"></span>void <code class="descname">set_target</code><span class="sig-paren">(</span>int32_t <em>steps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper10set_targetE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper15report_positionE7int32_t">
+<span id="_CPPv2N7stepper7Stepper15report_positionE7int32_t"></span><span id="stepper::Stepper::report_position__int32_t"></span><span class="target" id="classstepper_1_1_stepper_1ad7b50bda2925d517cf1054423f8c11ba"></span>void <code class="descname">report_position</code><span class="sig-paren">(</span>int32_t <em>steps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper15report_positionE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper16set_accelerationEf">
+<span id="_CPPv2N7stepper7Stepper16set_accelerationEf"></span><span id="stepper::Stepper::set_acceleration__float"></span><span class="target" id="classstepper_1_1_stepper_1a7c75246645a57f4d0aea0abf7eb7b18c"></span>void <code class="descname">set_acceleration</code><span class="sig-paren">(</span>float <em>acceleration</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper16set_accelerationEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper16set_decelerationEf">
+<span id="_CPPv2N7stepper7Stepper16set_decelerationEf"></span><span id="stepper::Stepper::set_deceleration__float"></span><span class="target" id="classstepper_1_1_stepper_1a74475b8b53e62b9c7afff77c9a90de9f"></span>void <code class="descname">set_deceleration</code><span class="sig-paren">(</span>float <em>deceleration</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper16set_decelerationEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper13set_max_speedEf">
+<span id="_CPPv2N7stepper7Stepper13set_max_speedEf"></span><span id="stepper::Stepper::set_max_speed__float"></span><span class="target" id="classstepper_1_1_stepper_1a0c0701dac28bed2004b408b73aa8fa5c"></span>void <code class="descname">set_max_speed</code><span class="sig-paren">(</span>float <em>max_speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper13set_max_speedEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper18has_reached_targetEv">
+<span id="_CPPv2N7stepper7Stepper18has_reached_targetEv"></span><span id="stepper::Stepper::has_reached_target"></span><span class="target" id="classstepper_1_1_stepper_1a26abd9d3d27343fde44b346fafdce306"></span>bool <code class="descname">has_reached_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper18has_reached_targetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper22make_set_target_actionEv">
+<span id="_CPPv2N7stepper7Stepper22make_set_target_actionEv"></span><span id="stepper::Stepper::make_set_target_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classstepper_1_1_stepper_1a469d8a627bb87d4508e55dbd44cc779f"></span><a class="reference internal" href="#_CPPv3N7stepper15SetTargetActionE" title="stepper::SetTargetAction">SetTargetAction</a>&lt;T&gt; *<code class="descname">make_set_target_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper22make_set_target_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper27make_report_position_actionEv">
+<span id="_CPPv2N7stepper7Stepper27make_report_position_actionEv"></span><span id="stepper::Stepper::make_report_position_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classstepper_1_1_stepper_1a98a1d215b5985be5b680f9e93f18923e"></span><a class="reference internal" href="#_CPPv3N7stepper20ReportPositionActionE" title="stepper::ReportPositionAction">ReportPositionAction</a>&lt;T&gt; *<code class="descname">make_report_position_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper27make_report_position_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper16current_positionE">
+<span id="_CPPv2N7stepper7Stepper16current_positionE"></span><span id="stepper::Stepper::current_position__int32_t"></span><span class="target" id="classstepper_1_1_stepper_1a87e5ac00e2ca3c841873d365f0fa8d02"></span>int32_t <code class="descname">current_position</code> = {0}<a class="headerlink" href="#_CPPv3N7stepper7Stepper16current_positionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper15target_positionE">
+<span id="_CPPv2N7stepper7Stepper15target_positionE"></span><span id="stepper::Stepper::target_position__int32_t"></span><span class="target" id="classstepper_1_1_stepper_1affa8a13e33dd2c1ddc3c41f084824d58"></span>int32_t <code class="descname">target_position</code> = {0}<a class="headerlink" href="#_CPPv3N7stepper7Stepper15target_positionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper16calculate_speed_E8uint32_t">
+<span id="_CPPv2N7stepper7Stepper16calculate_speed_E8uint32_t"></span><span id="stepper::Stepper::calculate_speed___uint32_t"></span><span class="target" id="classstepper_1_1_stepper_1a8578ddd44e06c1e7d4c1c0468ca7538d"></span>void <code class="descname">calculate_speed_</code><span class="sig-paren">(</span>uint32_t <em>now</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper16calculate_speed_E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper7Stepper12should_step_Ev">
+<span id="_CPPv2N7stepper7Stepper12should_step_Ev"></span><span id="stepper::Stepper::should_step_"></span><span class="target" id="classstepper_1_1_stepper_1abf15c4ce191fd0576054a6368ed60013"></span>int32_t <code class="descname">should_step_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper7Stepper12should_step_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper13acceleration_E">
+<span id="_CPPv2N7stepper7Stepper13acceleration_E"></span><span id="stepper::Stepper::acceleration___float"></span><span class="target" id="classstepper_1_1_stepper_1af6f7001ed61544896d22ea9f1ad8cfb2"></span>float <code class="descname">acceleration_</code> = {1e6f}<a class="headerlink" href="#_CPPv3N7stepper7Stepper13acceleration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper13deceleration_E">
+<span id="_CPPv2N7stepper7Stepper13deceleration_E"></span><span id="stepper::Stepper::deceleration___float"></span><span class="target" id="classstepper_1_1_stepper_1a93f609de10bf3be4fd7db581617156f4"></span>float <code class="descname">deceleration_</code> = {1e6f}<a class="headerlink" href="#_CPPv3N7stepper7Stepper13deceleration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper14current_speed_E">
+<span id="_CPPv2N7stepper7Stepper14current_speed_E"></span><span id="stepper::Stepper::current_speed___float"></span><span class="target" id="classstepper_1_1_stepper_1a649f114281a4bf8a45346146eb64aefd"></span>float <code class="descname">current_speed_</code> = {0.0f}<a class="headerlink" href="#_CPPv3N7stepper7Stepper14current_speed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper10max_speed_E">
+<span id="_CPPv2N7stepper7Stepper10max_speed_E"></span><span id="stepper::Stepper::max_speed___float"></span><span class="target" id="classstepper_1_1_stepper_1a8edef53d424c20fc11d225759c990103"></span>float <code class="descname">max_speed_</code> = {1e6f}<a class="headerlink" href="#_CPPv3N7stepper7Stepper10max_speed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper17last_calculation_E">
+<span id="_CPPv2N7stepper7Stepper17last_calculation_E"></span><span id="stepper::Stepper::last_calculation___uint32_t"></span><span class="target" id="classstepper_1_1_stepper_1a30fb61a6b5d6a6c198f7fad162041961"></span>uint32_t <code class="descname">last_calculation_</code> = {0}<a class="headerlink" href="#_CPPv3N7stepper7Stepper17last_calculation_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper7Stepper10last_step_E">
+<span id="_CPPv2N7stepper7Stepper10last_step_E"></span><span id="stepper::Stepper::last_step___uint32_t"></span><span class="target" id="classstepper_1_1_stepper_1a6b6b7ecdfa0ecdf008d47a8e38c278ba"></span>uint32_t <code class="descname">last_step_</code> = {0}<a class="headerlink" href="#_CPPv3N7stepper7Stepper10last_step_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7stepper15SetTargetActionE">
+<span id="_CPPv2N7stepper15SetTargetActionE"></span><span id="stepper::SetTargetAction"></span><span class="target" id="classstepper_1_1_set_target_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">SetTargetAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N7stepper15SetTargetActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7stepper15SetTargetAction15SetTargetActionEP7Stepper">
+<span id="_CPPv2N7stepper15SetTargetAction15SetTargetActionEP7Stepper"></span><span id="stepper::SetTargetAction::SetTargetAction__StepperP"></span><span class="target" id="classstepper_1_1_set_target_action_1af99bb53a3d79ddc27795ed3e71165f7e"></span><code class="descname">SetTargetAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N7stepper7StepperE" title="stepper::Stepper">Stepper</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper15SetTargetAction15SetTargetActionEP7Stepper" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper15SetTargetAction10set_targetENSt8functionIF7int32_t1TEEE">
+<span id="_CPPv2N7stepper15SetTargetAction10set_targetENSt8functionIF7int32_t1TEEE"></span><span class="target" id="classstepper_1_1_set_target_action_1ae4b19edde6602e2caa1782c232bfb5ed"></span>void <code class="descname">set_target</code><span class="sig-paren">(</span>std::function&lt;int32_t<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper15SetTargetAction10set_targetENSt8functionIF7int32_t1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper15SetTargetAction10set_targetE7int32_t">
+<span id="_CPPv2N7stepper15SetTargetAction10set_targetE7int32_t"></span><span id="stepper::SetTargetAction::set_target__int32_t"></span><span class="target" id="classstepper_1_1_set_target_action_1a16baa34a31b157dc241b995c915e1c20"></span>void <code class="descname">set_target</code><span class="sig-paren">(</span>int32_t <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper15SetTargetAction10set_targetE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper15SetTargetAction4playE1T">
+<span id="_CPPv2N7stepper15SetTargetAction4playE1T"></span><span id="stepper::SetTargetAction::play__T"></span><span class="target" id="classstepper_1_1_set_target_action_1ad489572c7ee9eba0242f520dcb6b2717"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper15SetTargetAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7stepper15SetTargetAction7parent_E">
+<span id="_CPPv2N7stepper15SetTargetAction7parent_E"></span><span id="stepper::SetTargetAction::parent___StepperP"></span><span class="target" id="classstepper_1_1_set_target_action_1aefb69abb4a01f617470e2f35a5fc40ee"></span><a class="reference internal" href="#_CPPv3N7stepper7StepperE" title="stepper::Stepper">Stepper</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N7stepper15SetTargetAction7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper15SetTargetAction7target_E">
+<span id="_CPPv2N7stepper15SetTargetAction7target_E"></span><span id="stepper::SetTargetAction::target___TemplatableValue:int32_t.T:"></span><span class="target" id="classstepper_1_1_set_target_action_1ae71bc8353d9c3b580baf789ca48da253"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;int32_t, T&gt; <code class="descname">target_</code><a class="headerlink" href="#_CPPv3N7stepper15SetTargetAction7target_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N7stepper20ReportPositionActionE">
+<span id="_CPPv2N7stepper20ReportPositionActionE"></span><span id="stepper::ReportPositionAction"></span><span class="target" id="classstepper_1_1_report_position_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ReportPositionAction</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv3N7stepper20ReportPositionActionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7stepper20ReportPositionAction20ReportPositionActionEP7Stepper">
+<span id="_CPPv2N7stepper20ReportPositionAction20ReportPositionActionEP7Stepper"></span><span id="stepper::ReportPositionAction::ReportPositionAction__StepperP"></span><span class="target" id="classstepper_1_1_report_position_action_1a88db5cae03e29650563617874819049a"></span><code class="descname">ReportPositionAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N7stepper7StepperE" title="stepper::Stepper">Stepper</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper20ReportPositionAction20ReportPositionActionEP7Stepper" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper20ReportPositionAction12set_positionENSt8functionIF7int32_t1TEEE">
+<span id="_CPPv2N7stepper20ReportPositionAction12set_positionENSt8functionIF7int32_t1TEEE"></span><span class="target" id="classstepper_1_1_report_position_action_1a94423f389d03eb4fcb1c305465d15a34"></span>void <code class="descname">set_position</code><span class="sig-paren">(</span>std::function&lt;int32_t<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper20ReportPositionAction12set_positionENSt8functionIF7int32_t1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper20ReportPositionAction12set_positionE7int32_t">
+<span id="_CPPv2N7stepper20ReportPositionAction12set_positionE7int32_t"></span><span id="stepper::ReportPositionAction::set_position__int32_t"></span><span class="target" id="classstepper_1_1_report_position_action_1abc761fa53696f4b8462fff55bc717f27"></span>void <code class="descname">set_position</code><span class="sig-paren">(</span>int32_t <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper20ReportPositionAction12set_positionE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper20ReportPositionAction4playE1T">
+<span id="_CPPv2N7stepper20ReportPositionAction4playE1T"></span><span id="stepper::ReportPositionAction::play__T"></span><span class="target" id="classstepper_1_1_report_position_action_1acc4e2834ecf0198b09ff4fd2bfcb82d2"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper20ReportPositionAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7stepper20ReportPositionAction7parent_E">
+<span id="_CPPv2N7stepper20ReportPositionAction7parent_E"></span><span id="stepper::ReportPositionAction::parent___StepperP"></span><span class="target" id="classstepper_1_1_report_position_action_1a2c4b5d98a130a42520f87a681e988126"></span><a class="reference internal" href="#_CPPv3N7stepper7StepperE" title="stepper::Stepper">Stepper</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N7stepper20ReportPositionAction7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper20ReportPositionAction4pos_E">
+<span id="_CPPv2N7stepper20ReportPositionAction4pos_E"></span><span id="stepper::ReportPositionAction::pos___TemplatableValue:int32_t.T:"></span><span class="target" id="classstepper_1_1_report_position_action_1a9e7e9261c716351ffeb345e7e8776bfa"></span><a class="reference internal" href="../core/helpers.html#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>&lt;int32_t, T&gt; <code class="descname">pos_</code><a class="headerlink" href="#_CPPv3N7stepper20ReportPositionAction4pos_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="a4988">
+<h3>A4988<a class="headerlink" href="#a4988" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N7stepper5A4988E">
+<span id="_CPPv2N7stepper5A4988E"></span><span id="stepper::A4988"></span><span class="target" id="classstepper_1_1_a4988"></span><em class="property">class </em><code class="descname">A4988</code> : <em class="property">public</em> stepper::<a class="reference internal" href="#_CPPv3N7stepper7StepperE" title="stepper::Stepper">Stepper</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N7stepper5A4988E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7stepper5A49885A4988EP7GPIOPinP7GPIOPin">
+<span id="_CPPv2N7stepper5A49885A4988EP7GPIOPinP7GPIOPin"></span><span id="stepper::A4988::A4988__GPIOPinP.GPIOPinP"></span><span class="target" id="classstepper_1_1_a4988_1a08e01fe5751ab4dca76b89a10c231f16"></span><code class="descname">A4988</code><span class="sig-paren">(</span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>step_pin</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>dir_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper5A49885A4988EP7GPIOPinP7GPIOPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper5A498813set_sleep_pinERK13GPIOOutputPin">
+<span id="_CPPv2N7stepper5A498813set_sleep_pinERK13GPIOOutputPin"></span><span id="stepper::A4988::set_sleep_pin__GPIOOutputPinCR"></span><span class="target" id="classstepper_1_1_a4988_1ab770f4c3da831088eec6bc520d06c807"></span>void <code class="descname">set_sleep_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>sleep_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper5A498813set_sleep_pinERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper5A49885setupEv">
+<span id="_CPPv2N7stepper5A49885setupEv"></span><span id="stepper::A4988::setup"></span><span class="target" id="classstepper_1_1_a4988_1ae9bdf292f174dacde58ab2eebc02053a"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper5A49885setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classstepper_1_1_a4988_1ae9bdf292f174dacde58ab2eebc02053a"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper5A498811dump_configEv">
+<span id="_CPPv2N7stepper5A498811dump_configEv"></span><span id="stepper::A4988::dump_config"></span><span class="target" id="classstepper_1_1_a4988_1a5a85c88ae34eba4fc7f9fada8f44c229"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper5A498811dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7stepper5A49884loopEv">
+<span id="_CPPv2N7stepper5A49884loopEv"></span><span id="stepper::A4988::loop"></span><span class="target" id="classstepper_1_1_a4988_1a322ce23d0e8f858d483b5b6ff9f27f12"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7stepper5A49884loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This method will be called repeatedly. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classstepper_1_1_a4988_1a322ce23d0e8f858d483b5b6ff9f27f12"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#classstepper_1_1_a4988_1ae9bdf292f174dacde58ab2eebc02053a"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK7stepper5A498818get_setup_priorityEv">
+<span id="_CPPv2NK7stepper5A498818get_setup_priorityEv"></span><span id="stepper::A4988::get_setup_priorityC"></span><span class="target" id="classstepper_1_1_a4988_1a2eaf3227432447b7d8863ef83db00ea4"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7stepper5A498818get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>priority of <a class="reference internal" href="#classstepper_1_1_a4988_1ae9bdf292f174dacde58ab2eebc02053a"><span class="std std-ref">setup()</span></a>. </p>
+<p>higher -&gt; executed earlier</p>
+<p>Defaults to 0.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The setup priority of this component </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7stepper5A49889step_pin_E">
+<span id="_CPPv2N7stepper5A49889step_pin_E"></span><span id="stepper::A4988::step_pin___GPIOPinP"></span><span class="target" id="classstepper_1_1_a4988_1a4d97ab818456cf3e2f309b85fdd91ab1"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">step_pin_</code><a class="headerlink" href="#_CPPv3N7stepper5A49889step_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper5A49888dir_pin_E">
+<span id="_CPPv2N7stepper5A49888dir_pin_E"></span><span id="stepper::A4988::dir_pin___GPIOPinP"></span><span class="target" id="classstepper_1_1_a4988_1a0994b4f25f536a6c89d9d03d6a4d23cc"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">dir_pin_</code><a class="headerlink" href="#_CPPv3N7stepper5A49888dir_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N7stepper5A498810sleep_pin_E">
+<span id="_CPPv2N7stepper5A498810sleep_pin_E"></span><span id="stepper::A4988::sleep_pin___GPIOPinP"></span><span class="target" id="classstepper_1_1_a4988_1a2cce7f39cbb8c7de16d93c9bf9ef8abf"></span><a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">sleep_pin_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N7stepper5A498810sleep_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,6 +1,11 @@
 WiFi Component
 ==============
 
+.. seo::
+    :description: Instructions for setting up the WiFi configuration for your ESP node in esphomelib.
+    :image: network-wifi.svg
+    :keywords: WiFi, WLAN, ESP8266, ESP32
+
 This core esphomelib component sets up WiFi connections to access points
 for you. It needs to be in your configuration or otherwise esphomeyaml
 will fail in the config validation stage.
@@ -55,7 +60,7 @@ Configuration variables:
   Defaults to ``.local``.
 - **reboot_timeout** (*Optional*, :ref:`time <config-time>`): The amount of time to wait before rebooting when no
   WiFi connection exists. Can be disabled by setting this to ``0s``, but note that the low level IP stack currently
-  seems to have issues with WiFi where a full reboot is required to get the interface back working. Defaults to ``60s``.
+  seems to have issues with WiFi where a full reboot is required to get the interface back working. Defaults to ``5min``.
 - **power_save_mode** (*Optional*, string): The power save mode for the WiFi interface. Defaults to no power saving.
   See :ref:`wifi-power_save_mode`
 - **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation.
@@ -95,7 +100,7 @@ You can do so with the ``manual_ip:`` option in the WiFi configuration.
 After putting a manual IP in your configuration, the ESP will no longer need to negotiate
 a dynamic IP address with the router, thus improving the time until connection.
 
-Additionally, this can help with :ref:`Over-The-Air updates <ota>` if for example the
+Additionally, this can help with :doc:`Over-The-Air updates <ota>` if for example the
 home network doesn't allow for ``.local`` addresses. When a manual IP is in your configuration,
 the OTA process will automatically choose that as the target for the upload.
 
@@ -109,10 +114,10 @@ WiFi. While some options *can* reduce the power usage of the ESP, they generally
 reliability of the WiFi connection, with frequent disconnections from the router in the highest
 power saving mode.
 
-If you know what you're doing and the node doesn't need to have an extremely reliable connection to WiFi,
-you can set the power saving mode to ``LIGHT`` or even ``HIGH``. But for most situations ``NONE`` is the best.
+The default is ``none`` (a bit of power saving). If you experience frequent WiFi disconnection problems,
+please also try ``light``.
 
-- ``NONE`` (Default, least power saving)
+- ``NONE`` (least power saving, Default)
 - ``LIGHT``
 - ``HIGH`` (most power saving)
 

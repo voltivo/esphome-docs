@@ -1,6 +1,10 @@
 Duty Cycle Sensor
 =================
 
+.. seo::
+    :description: Instructions for setting up duty cycle sensors in esphomelib
+    :image: percent.svg
+
 The duty cycle sensor allows you to measure for what percentage of time a signal
 on a GPIO pin is HIGH or LOW.
 
@@ -28,5 +32,12 @@ Configuration variables:
   See :ref:`sensor-default_filter`.
 - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
 - All other options from :ref:`Sensor <config-sensor>` and :ref:`MQTT Component <config-mqtt-component>`.
+
+See Also
+--------
+
+- :ref:`sensor-filters`
+- :doc:`API Reference </api/sensor/duty_cycle>`
+- `Edit this page on GitHub <https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/duty_cycle.rst>`__
 
 .. disqus::

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Helpers &#8212; esphomelib 1.8.2 documentation</title>
+    <title>Helpers &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/core/helpers.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -88,8 +89,37 @@
 
 <dl class="type">
 <dt id="_CPPv312json_build_t">
-<span id="_CPPv212json_build_t"></span><span class="target" id="helpers_8h_1ad9e3c493793df737fec9f96e90911a95"></span><em class="property">using </em><code class="descname">json_build_t</code> = std::function&lt;void<span class="sig-paren">(</span>JsonBuffer&amp;, JsonObject&amp;<span class="sig-paren">)</span>&gt;<a class="headerlink" href="#_CPPv312json_build_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv212json_build_t"></span><span class="target" id="helpers_8h_1a5f341c72fd67f98ba4efad86cc3cf423"></span><em class="property">using </em><code class="descname">json_build_t</code> = std::function&lt;void<span class="sig-paren">(</span>JsonObject&amp;<span class="sig-paren">)</span>&gt;<a class="headerlink" href="#_CPPv312json_build_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Callback function typedef for building JsonObjects. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="type">
+<dt id="_CPPv315ParseOnOffState">
+<span id="_CPPv215ParseOnOffState"></span><span id="ParseOnOffState"></span><span class="target" id="helpers_8h_1ad75480c0a3bd5f78045f6def8d1e34ef"></span><em class="property">enum </em><code class="descname">ParseOnOffState</code><a class="headerlink" href="#_CPPv315ParseOnOffState" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv310PARSE_NONE">
+<span id="_CPPv210PARSE_NONE"></span><span class="target" id="helpers_8h_1ad75480c0a3bd5f78045f6def8d1e34efa8a30f0ecee4fcc93547e142b71ed123f"></span><code class="descname">PARSE_NONE</code> = 0<a class="headerlink" href="#_CPPv310PARSE_NONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv38PARSE_ON">
+<span id="_CPPv28PARSE_ON"></span><span class="target" id="helpers_8h_1ad75480c0a3bd5f78045f6def8d1e34efa1028b851b4e5e0c94497ecc62ad9672c"></span><code class="descname">PARSE_ON</code><a class="headerlink" href="#_CPPv38PARSE_ON" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv39PARSE_OFF">
+<span id="_CPPv29PARSE_OFF"></span><span class="target" id="helpers_8h_1ad75480c0a3bd5f78045f6def8d1e34efada3d8c786a2e935f4740ab3112bd6f94"></span><code class="descname">PARSE_OFF</code><a class="headerlink" href="#_CPPv39PARSE_OFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv312PARSE_TOGGLE">
+<span id="_CPPv212PARSE_TOGGLE"></span><span class="target" id="helpers_8h_1ad75480c0a3bd5f78045f6def8d1e34efaa63768c6b505736f6dafcf577f9cf0cd"></span><code class="descname">PARSE_TOGGLE</code><a class="headerlink" href="#_CPPv312PARSE_TOGGLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -100,6 +130,16 @@
 <span id="_CPPv215get_mac_addressv"></span><span id="get_mac_address"></span><span class="target" id="helpers_8h_1ae85954b30d23902990446129c386baf9"></span>std::string <code class="descname">get_mac_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315get_mac_addressv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Gets the MAC address as a string, this can be used as way to identify this ESP32. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315tick_status_ledv">
+<span id="_CPPv215tick_status_ledv"></span><span id="tick_status_led"></span><span class="target" id="helpers_8h_1acd7e4b7be9df0cf32322d5aabc390cfd"></span>void <code class="descname">tick_status_led</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315tick_status_ledv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38feed_wdtv">
+<span id="_CPPv28feed_wdtv"></span><span id="feed_wdt"></span><span class="target" id="helpers_8h_1a31caff2afb2566a779b9842bc03ac298"></span>void <code class="descname">feed_wdt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38feed_wdtv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv317generate_hostnameRKNSt6stringE">
@@ -127,7 +167,7 @@
 
 <dl class="function">
 <dt id="_CPPv36rebootPKc">
-<span id="_CPPv26rebootPKc"></span><span id="reboot__cCP"></span><span class="target" id="helpers_8h_1af19d038c38571250501b5164709e4af4"></span>void <code class="descname">reboot</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>cause</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv36rebootPKc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv26rebootPKc"></span><span id="reboot__cCP"></span><span class="target" id="helpers_8h_1aa41d0033c98bfc8c705ee5920e6fa7b8"></span>void <code class="descname">reboot</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>cause</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv36rebootPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Force a shutdown (and reboot) of the ESP, calling any registered shutdown hooks. </p>
 </dd></dl>
 
@@ -139,7 +179,7 @@
 
 <dl class="function">
 <dt id="_CPPv311safe_rebootPKc">
-<span id="_CPPv211safe_rebootPKc"></span><span id="safe_reboot__cCP"></span><span class="target" id="helpers_8h_1a4e7f0ee15d2b5f6d780757a9028086f6"></span>void <code class="descname">safe_reboot</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>cause</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311safe_rebootPKc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv211safe_rebootPKc"></span><span id="safe_reboot__cCP"></span><span class="target" id="helpers_8h_1a315aeb96f366e3599e69513d870f455f"></span>void <code class="descname">safe_reboot</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>cause</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311safe_rebootPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a safe shutdown (and reboot) of the ESP, calling any registered shutdown and safe shutdown hooks. </p>
 </dd></dl>
 
@@ -168,10 +208,15 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv310build_jsonRK12json_build_t">
-<span id="_CPPv210build_jsonRK12json_build_t"></span><span id="build_json__json_build_tCR"></span><span class="target" id="helpers_8h_1a050ff2e9b0f37312ac12c12094f772d0"></span>std::string <code class="descname">build_json</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310build_jsonRK12json_build_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv310build_jsonRK12json_build_tP6size_t">
+<span id="_CPPv210build_jsonRK12json_build_tP6size_t"></span><span id="build_json__json_build_tCR.sP"></span><span class="target" id="helpers_8h_1a9b491a7ceb6a38bb3ce5a50d3a0f45b5"></span><em class="property">const</em> char *<code class="descname">build_json</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em>, size_t *<em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310build_jsonRK12json_build_tP6size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Build a JSON string with the provided json build function. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310build_jsonRK12json_build_t">
+<span id="_CPPv210build_jsonRK12json_build_t"></span><span id="build_json__json_build_tCR"></span><span class="target" id="helpers_8h_1a050ff2e9b0f37312ac12c12094f772d0"></span>std::string <code class="descname">build_json</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310build_jsonRK12json_build_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv310parse_jsonRKNSt6stringERK12json_parse_t">
@@ -321,7 +366,7 @@
 
 <dl class="function">
 <dt id="_CPPv312parse_on_offPKcPKcPKc">
-<span id="_CPPv212parse_on_offPKcPKcPKc"></span><span id="parse_on_off__cCP.cCP.cCP"></span><span class="target" id="helpers_8h_1ac6b8316a9e2096a4b884f2487d752b0b"></span><a class="reference internal" href="#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <code class="descname">parse_on_off</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, <em class="property">const</em> char *<em>payload_on</em> = &quot;on&quot;, <em class="property">const</em> char *<em>payload_off</em> = &quot;off&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312parse_on_offPKcPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv212parse_on_offPKcPKcPKc"></span><span id="parse_on_off__cCP.cCP.cCP"></span><span class="target" id="helpers_8h_1ac23c12d2e36913bbf711ac3b8c882d9f"></span><a class="reference internal" href="#_CPPv315ParseOnOffState" title="ParseOnOffState">ParseOnOffState</a> <code class="descname">parse_on_off</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, <em class="property">const</em> char *<em>on</em> = nullptr, <em class="property">const</em> char *<em>off</em> = nullptr<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312parse_on_offPKcPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -356,6 +401,11 @@
 <dl class="member">
 <dt id="_CPPv316next_rmt_channel">
 <span id="_CPPv216next_rmt_channel"></span><span id="next_rmt_channel__rmt_channel_t"></span><span class="target" id="helpers_8h_1aea352b7e002e0c3f8005bf73c72c081d"></span>rmt_channel_t <code class="descname">next_rmt_channel</code><a class="headerlink" href="#_CPPv316next_rmt_channel" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv318global_json_buffer">
+<span id="_CPPv218global_json_buffer"></span><span id="global_json_buffer__VectorJsonBuffer"></span><span class="target" id="helpers_8h_1a63e536e81df6d51e47dd64497fcfd29d"></span><a class="reference internal" href="#_CPPv316VectorJsonBuffer" title="VectorJsonBuffer">VectorJsonBuffer</a> <code class="descname">global_json_buffer</code><a class="headerlink" href="#_CPPv318global_json_buffer" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -555,22 +605,22 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Types</p>
 <dl class="type">
-<dt id="_CPPv312__anonymous0">
-<span id="_CPPv212__anonymous0"></span><span id="__anonymous0"></span><span class="target" id="class_templatable_value_1a2b36ba8986d6d0cdfa8b9ecb3aca8995"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv312__anonymous0" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv312__anonymous2">
+<span id="_CPPv212__anonymous2"></span><span id="__anonymous2"></span><span class="target" id="class_templatable_value_1a97b6c6d12a7a6355d47f87fa1833dada"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv312__anonymous2" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><em>Values:</em></p>
 <dl class="enumerator">
 <dt id="_CPPv35EMPTY">
-<span id="_CPPv25EMPTY"></span><span class="target" id="class_templatable_value_1a2b36ba8986d6d0cdfa8b9ecb3aca8995ac81168dbfc6455670644ad35789589d4"></span><code class="descname">EMPTY</code><a class="headerlink" href="#_CPPv35EMPTY" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv25EMPTY"></span><span class="target" id="class_templatable_value_1a97b6c6d12a7a6355d47f87fa1833dadaac81168dbfc6455670644ad35789589d4"></span><code class="descname">EMPTY</code><a class="headerlink" href="#_CPPv35EMPTY" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv35VALUE">
-<span id="_CPPv25VALUE"></span><span class="target" id="class_templatable_value_1a2b36ba8986d6d0cdfa8b9ecb3aca8995a25f45362c279d5fdb115325b180bf56a"></span><code class="descname">VALUE</code><a class="headerlink" href="#_CPPv35VALUE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv25VALUE"></span><span class="target" id="class_templatable_value_1a97b6c6d12a7a6355d47f87fa1833dadaa25f45362c279d5fdb115325b180bf56a"></span><code class="descname">VALUE</code><a class="headerlink" href="#_CPPv35VALUE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv36LAMBDA">
-<span id="_CPPv26LAMBDA"></span><span class="target" id="class_templatable_value_1a2b36ba8986d6d0cdfa8b9ecb3aca8995a9c0533d454a460cf758b61617e41d154"></span><code class="descname">LAMBDA</code><a class="headerlink" href="#_CPPv36LAMBDA" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv26LAMBDA"></span><span class="target" id="class_templatable_value_1a97b6c6d12a7a6355d47f87fa1833dadaa9c0533d454a460cf758b61617e41d154"></span><code class="descname">LAMBDA</code><a class="headerlink" href="#_CPPv36LAMBDA" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -580,7 +630,7 @@
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
 <dt id="_CPPv3N16TemplatableValue5type_E">
-<span id="_CPPv2N16TemplatableValue5type_E"></span><span class="target" id="class_templatable_value_1a35d6d1ed025b9d05b5827d007de9d08f"></span><a class="reference internal" href="#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>::<strong>[anonymous]</strong> <code class="descname">type_</code><a class="headerlink" href="#_CPPv3N16TemplatableValue5type_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N16TemplatableValue5type_E"></span><span class="target" id="class_templatable_value_1ac20fd24a00a346d1ffde298a18e3f142"></span><a class="reference internal" href="#_CPPv316TemplatableValue" title="TemplatableValue">TemplatableValue</a>::<strong>[anonymous]</strong> <code class="descname">type_</code><a class="headerlink" href="#_CPPv3N16TemplatableValue5type_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -594,6 +644,111 @@
 <dd></dd></dl>
 
 </div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv316VectorJsonBuffer">
+<span id="_CPPv216VectorJsonBuffer"></span><span id="VectorJsonBuffer"></span><span class="target" id="class_vector_json_buffer"></span><em class="property">class </em><code class="descname">VectorJsonBuffer</code> : <em class="property">public</em> ArduinoJson::Internals::JsonBufferBase&lt;<a class="reference internal" href="#_CPPv316VectorJsonBuffer" title="VectorJsonBuffer">VectorJsonBuffer</a>&gt;<a class="headerlink" href="#_CPPv316VectorJsonBuffer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer5allocE6size_t">
+<span id="_CPPv2N16VectorJsonBuffer5allocE6size_t"></span><span id="VectorJsonBuffer::alloc__s"></span><span class="target" id="class_vector_json_buffer_1a94affb3981770630fd67757a0a9795e2"></span>void *<code class="descname">alloc</code><span class="sig-paren">(</span>size_t <em>bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer5allocE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK16VectorJsonBuffer4sizeEv">
+<span id="_CPPv2NK16VectorJsonBuffer4sizeEv"></span><span id="VectorJsonBuffer::sizeC"></span><span class="target" id="class_vector_json_buffer_1af5cdd7eff010add534080470c8d192c0"></span>size_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK16VectorJsonBuffer4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer5clearEv">
+<span id="_CPPv2N16VectorJsonBuffer5clearEv"></span><span id="VectorJsonBuffer::clear"></span><span class="target" id="class_vector_json_buffer_1a180e8d4a46b6fbffbcec3ce9073b509b"></span>void <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer11startStringEv">
+<span id="_CPPv2N16VectorJsonBuffer11startStringEv"></span><span id="VectorJsonBuffer::startString"></span><span class="target" id="class_vector_json_buffer_1a7c9653b4b566f3bc90e1ce107e0b5118"></span><a class="reference internal" href="#_CPPv316VectorJsonBuffer" title="VectorJsonBuffer">VectorJsonBuffer</a>::<a class="reference internal" href="#_CPPv3N16VectorJsonBuffer6StringE" title="VectorJsonBuffer::String">String</a> <code class="descname">startString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer11startStringEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer8do_allocE6size_t">
+<span id="_CPPv2N16VectorJsonBuffer8do_allocE6size_t"></span><span id="VectorJsonBuffer::do_alloc__s"></span><span class="target" id="class_vector_json_buffer_1a8468749c16290f94b0f1eb0c931762dd"></span>void *<code class="descname">do_alloc</code><span class="sig-paren">(</span>size_t <em>bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer8do_allocE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer6resizeE6size_t">
+<span id="_CPPv2N16VectorJsonBuffer6resizeE6size_t"></span><span id="VectorJsonBuffer::resize__s"></span><span class="target" id="class_vector_json_buffer_1aee41ad17858312af6d2d499b8f90d8d4"></span>void <code class="descname">resize</code><span class="sig-paren">(</span>size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer6resizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer7reserveE6size_t">
+<span id="_CPPv2N16VectorJsonBuffer7reserveE6size_t"></span><span id="VectorJsonBuffer::reserve__s"></span><span class="target" id="class_vector_json_buffer_1a5efe7e39be8bae742e2f5d9fd8934735"></span>void <code class="descname">reserve</code><span class="sig-paren">(</span>size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer7reserveE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N16VectorJsonBuffer7buffer_E">
+<span id="_CPPv2N16VectorJsonBuffer7buffer_E"></span><span id="VectorJsonBuffer::buffer___cP"></span><span class="target" id="class_vector_json_buffer_1a0af8140fc8fd864d0e7c6f8688d84e06"></span>char *<code class="descname">buffer_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N16VectorJsonBuffer7buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N16VectorJsonBuffer5size_E">
+<span id="_CPPv2N16VectorJsonBuffer5size_E"></span><span id="VectorJsonBuffer::size___s"></span><span class="target" id="class_vector_json_buffer_1aa3363bd98c467b4312397000e0546e12"></span>size_t <code class="descname">size_</code> = {0}<a class="headerlink" href="#_CPPv3N16VectorJsonBuffer5size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N16VectorJsonBuffer9capacity_E">
+<span id="_CPPv2N16VectorJsonBuffer9capacity_E"></span><span id="VectorJsonBuffer::capacity___s"></span><span class="target" id="class_vector_json_buffer_1ad49c3e4e262f8ab80e1057961bfb9757"></span>size_t <code class="descname">capacity_</code> = {0}<a class="headerlink" href="#_CPPv3N16VectorJsonBuffer9capacity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N16VectorJsonBuffer12free_blocks_E">
+<span id="_CPPv2N16VectorJsonBuffer12free_blocks_E"></span><span id="VectorJsonBuffer::free_blocks___std::vector:cP:"></span><span class="target" id="class_vector_json_buffer_1a03f329ae3a82420f12f4040f18373699"></span>std::vector&lt;char *&gt; <code class="descname">free_blocks_</code><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer12free_blocks_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv3N16VectorJsonBuffer6StringE">
+<span id="_CPPv2N16VectorJsonBuffer6StringE"></span><span id="VectorJsonBuffer::String"></span><span class="target" id="class_vector_json_buffer_1_1_string"></span><em class="property">class </em><code class="descname">String</code><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer6StringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16VectorJsonBuffer6String6StringEP16VectorJsonBuffer">
+<span id="_CPPv2N16VectorJsonBuffer6String6StringEP16VectorJsonBuffer"></span><span id="VectorJsonBuffer::String::String__VectorJsonBufferP"></span><span class="target" id="class_vector_json_buffer_1_1_string_1a94f749916e846b8a266e2cca21a024ba"></span><code class="descname">String</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv316VectorJsonBuffer" title="VectorJsonBuffer">VectorJsonBuffer</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer6String6StringEP16VectorJsonBuffer" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK16VectorJsonBuffer6String6appendEc">
+<span id="_CPPv2NK16VectorJsonBuffer6String6appendEc"></span><span id="VectorJsonBuffer::String::append__cC"></span><span class="target" id="class_vector_json_buffer_1_1_string_1acd15fa0f2a7693b13d38e70f9fe774e7"></span>void <code class="descname">append</code><span class="sig-paren">(</span>char <em>c</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK16VectorJsonBuffer6String6appendEc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK16VectorJsonBuffer6String5c_strEv">
+<span id="_CPPv2NK16VectorJsonBuffer6String5c_strEv"></span><span id="VectorJsonBuffer::String::c_strC"></span><span class="target" id="class_vector_json_buffer_1_1_string_1a395fbbd7b6a5ce840ec42a8a908a4442"></span><em class="property">const</em> char *<code class="descname">c_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK16VectorJsonBuffer6String5c_strEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv3N16VectorJsonBuffer6String7parent_E">
+<span id="_CPPv2N16VectorJsonBuffer6String7parent_E"></span><span id="VectorJsonBuffer::String::parent___VectorJsonBufferP"></span><span class="target" id="class_vector_json_buffer_1_1_string_1a8bef98fee4d422b25640e4319104c0cf"></span><a class="reference internal" href="#_CPPv316VectorJsonBuffer" title="VectorJsonBuffer">VectorJsonBuffer</a> *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer6String7parent_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N16VectorJsonBuffer6String6start_E">
+<span id="_CPPv2N16VectorJsonBuffer6String6start_E"></span><span id="VectorJsonBuffer::String::start___uint32_t"></span><span class="target" id="class_vector_json_buffer_1_1_string_1a11c2dc912ea4c7f71401076bdab6f915"></span>uint32_t <code class="descname">start_</code><a class="headerlink" href="#_CPPv3N16VectorJsonBuffer6String6start_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -921,140 +1076,158 @@
 <dl class="class">
 <dt id="_CPPv314ESPPreferences">
 <span id="_CPPv214ESPPreferences"></span><span id="ESPPreferences"></span><span class="target" id="class_e_s_p_preferences"></span><em class="property">class </em><code class="descname">ESPPreferences</code><a class="headerlink" href="#_CPPv314ESPPreferences" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Helper class to allow easy access to non-volatile storage like SPIFFS to save preferences. </p>
-<div class="breathe-sectiondef docutils container">
+<dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N14ESPPreferences14ESPPreferencesEv">
+<span id="_CPPv2N14ESPPreferences14ESPPreferencesEv"></span><span id="ESPPreferences::ESPPreferences"></span><span class="target" id="class_e_s_p_preferences_1a1ffb292376b4c0a2d0be2699ec17a974"></span><code class="descname">ESPPreferences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences14ESPPreferencesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 <dl class="function">
 <dt id="_CPPv3N14ESPPreferences5beginERKNSt6stringE">
 <span id="_CPPv2N14ESPPreferences5beginERKNSt6stringE"></span><span id="ESPPreferences::begin__ssCR"></span><span class="target" id="class_e_s_p_preferences_1a185a383d53ef2af24fa2f310fd57a0c9"></span>void <code class="descname">begin</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences5beginERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Start the preferences object with the specified app name. </p>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14ESPPreferences15make_preferenceE6size_t8uint32_t">
+<span id="_CPPv2N14ESPPreferences15make_preferenceE6size_t8uint32_t"></span><span id="ESPPreferences::make_preference__s.uint32_t"></span><span class="target" id="class_e_s_p_preferences_1a3172d8541e62d34171366ac1a3dc322d"></span><a class="reference internal" href="#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">make_preference</code><span class="sig-paren">(</span>size_t <em>length</em>, uint32_t <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences15make_preferenceE6size_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14ESPPreferences15make_preferenceE8uint32_t">
+<span id="_CPPv2N14ESPPreferences15make_preferenceE8uint32_t"></span><span id="ESPPreferences::make_preference__uint32_t"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_e_s_p_preferences_1a65acab8fcd06f0e7bc76d00a71c7dad9"></span><a class="reference internal" href="#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">make_preference</code><span class="sig-paren">(</span>uint32_t <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences15make_preferenceE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14ESPPreferences15make_preferenceE8uint32_tRKNSt6stringE">
+<span id="_CPPv2N14ESPPreferences15make_preferenceE8uint32_tRKNSt6stringE"></span><span id="ESPPreferences::make_preference__uint32_t.ssCR"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_e_s_p_preferences_1a6431f49868f31c789b8a28a20d339371"></span><a class="reference internal" href="#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">make_preference</code><span class="sig-paren">(</span>uint32_t <em>type</em>, <em class="property">const</em> std::string &amp;<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences15make_preferenceE8uint32_tRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14ESPPreferences13prevent_writeEb">
+<span id="_CPPv2N14ESPPreferences13prevent_writeEb"></span><span id="ESPPreferences::prevent_write__b"></span><span class="target" id="class_e_s_p_preferences_1aba3000e64b0cfc4fd25e2661323f3444"></span>void <code class="descname">prevent_write</code><span class="sig-paren">(</span>bool <em>prevent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences13prevent_writeEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>On the ESP8266, we can’t override the first 128 bytes during OTA uploads as the eboot parameters are stored there. </p>
+<p>Writing there during an OTA upload would invalidate applying the new firmware. During normal operation, we use this part of the RTC user memory, but stop writing to it during OTA uploads.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">prevent</span></code>: Whether to prevent writing to the first 32 words of RTC user memory. </li>
+</ul>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N14ESPPreferences8put_boolERKNSt6stringERKNSt6stringEb">
-<span id="_CPPv2N14ESPPreferences8put_boolERKNSt6stringERKNSt6stringEb"></span><span id="ESPPreferences::put_bool__ssCR.ssCR.b"></span><span class="target" id="class_e_s_p_preferences_1a83de91b53e4bb6610f8f621785fb0066"></span>size_t <code class="descname">put_bool</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences8put_boolERKNSt6stringERKNSt6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N14ESPPreferences16is_prevent_writeEv">
+<span id="_CPPv2N14ESPPreferences16is_prevent_writeEv"></span><span id="ESPPreferences::is_prevent_write"></span><span class="target" id="class_e_s_p_preferences_1aa7fa81a09f3fc1b27d0dd70218497bdf"></span>bool <code class="descname">is_prevent_write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences16is_prevent_writeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt>
+<span class="target" id="class_e_s_p_preferences_1a0b4117acf259da2912712a16009fcb7a"></span><code class="descname">friend ESPPreferences::ESPPreferenceObject</code></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14ESPPreferences15current_offset_E">
+<span id="_CPPv2N14ESPPreferences15current_offset_E"></span><span id="ESPPreferences::current_offset___uint32_t"></span><span class="target" id="class_e_s_p_preferences_1ad154e7516ddc9c4a4b9583d76bd49ef6"></span>uint32_t <code class="descname">current_offset_</code><a class="headerlink" href="#_CPPv3N14ESPPreferences15current_offset_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14ESPPreferences12preferences_E">
+<span id="_CPPv2N14ESPPreferences12preferences_E"></span><span id="ESPPreferences::preferences___Preferences"></span><span class="target" id="class_e_s_p_preferences_1a94e1b2434879df2fa67cedfc213d22c1"></span>Preferences <code class="descname">preferences_</code><a class="headerlink" href="#_CPPv3N14ESPPreferences12preferences_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14ESPPreferences14prevent_write_E">
+<span id="_CPPv2N14ESPPreferences14prevent_write_E"></span><span id="ESPPreferences::prevent_write___b"></span><span class="target" id="class_e_s_p_preferences_1abde9680dff1d3d90aef0edb9ebb23096"></span>bool <code class="descname">prevent_write_</code> = {false}<a class="headerlink" href="#_CPPv3N14ESPPreferences14prevent_write_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv319ESPPreferenceObject">
+<span id="_CPPv219ESPPreferenceObject"></span><span id="ESPPreferenceObject"></span><span class="target" id="class_e_s_p_preference_object"></span><em class="property">class </em><code class="descname">ESPPreferenceObject</code><a class="headerlink" href="#_CPPv319ESPPreferenceObject" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N19ESPPreferenceObject19ESPPreferenceObjectEv">
+<span id="_CPPv2N19ESPPreferenceObject19ESPPreferenceObjectEv"></span><span id="ESPPreferenceObject::ESPPreferenceObject"></span><span class="target" id="class_e_s_p_preference_object_1ada8f3ab7280b6b918b6d69de285d830f"></span><code class="descname">ESPPreferenceObject</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject19ESPPreferenceObjectEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N14ESPPreferences8put_int8ERKNSt6stringERKNSt6stringE6int8_t">
-<span id="_CPPv2N14ESPPreferences8put_int8ERKNSt6stringERKNSt6stringE6int8_t"></span><span id="ESPPreferences::put_int8__ssCR.ssCR.int8_t"></span><span class="target" id="class_e_s_p_preferences_1adf8ecc0948e621f97bb3a3464b011e7a"></span>size_t <code class="descname">put_int8</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences8put_int8ERKNSt6stringERKNSt6stringE6int8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N19ESPPreferenceObject19ESPPreferenceObjectE6size_t6size_t8uint32_t">
+<span id="_CPPv2N19ESPPreferenceObject19ESPPreferenceObjectE6size_t6size_t8uint32_t"></span><span id="ESPPreferenceObject::ESPPreferenceObject__s.s.uint32_t"></span><span class="target" id="class_e_s_p_preference_object_1a7d163ba1c821f61b622f8b201a5eceaf"></span><code class="descname">ESPPreferenceObject</code><span class="sig-paren">(</span>size_t <em>rtc_offset</em>, size_t <em>length</em>, uint32_t <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject19ESPPreferenceObjectE6size_t6size_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N14ESPPreferences9put_uint8ERKNSt6stringERKNSt6stringE7uint8_t">
-<span id="_CPPv2N14ESPPreferences9put_uint8ERKNSt6stringERKNSt6stringE7uint8_t"></span><span id="ESPPreferences::put_uint8__ssCR.ssCR.uint8_t"></span><span class="target" id="class_e_s_p_preferences_1aadf9ebc486b921f6198d9fa9c1baa567"></span>size_t <code class="descname">put_uint8</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9put_uint8ERKNSt6stringERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N19ESPPreferenceObject4saveEP1T">
+<span id="_CPPv2N19ESPPreferenceObject4saveEP1T"></span><span id="ESPPreferenceObject::save__TP"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_e_s_p_preference_object_1ae5601b99ac939cfa895fbfafb3140532"></span>bool <code class="descname">save</code><span class="sig-paren">(</span>T *<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject4saveEP1T" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N14ESPPreferences9put_int16ERKNSt6stringERKNSt6stringE7int16_t">
-<span id="_CPPv2N14ESPPreferences9put_int16ERKNSt6stringERKNSt6stringE7int16_t"></span><span id="ESPPreferences::put_int16__ssCR.ssCR.int16_t"></span><span class="target" id="class_e_s_p_preferences_1af9267a5b92b2184af294bbc6d4e853ce"></span>size_t <code class="descname">put_int16</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int16_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9put_int16ERKNSt6stringERKNSt6stringE7int16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N19ESPPreferenceObject4loadEP1T">
+<span id="_CPPv2N19ESPPreferenceObject4loadEP1T"></span><span id="ESPPreferenceObject::load__TP"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_e_s_p_preference_object_1a164926c04d27c48737424a43a3822a60"></span>bool <code class="descname">load</code><span class="sig-paren">(</span>T *<em>dest</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject4loadEP1T" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N14ESPPreferences10put_uint16ERKNSt6stringERKNSt6stringE8uint16_t">
-<span id="_CPPv2N14ESPPreferences10put_uint16ERKNSt6stringERKNSt6stringE8uint16_t"></span><span id="ESPPreferences::put_uint16__ssCR.ssCR.uint16_t"></span><span class="target" id="class_e_s_p_preferences_1a8c48a1960f4d6637612b1413e9a1e8bc"></span>size_t <code class="descname">put_uint16</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint16_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10put_uint16ERKNSt6stringERKNSt6stringE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9put_int32ERKNSt6stringERKNSt6stringE7int32_t">
-<span id="_CPPv2N14ESPPreferences9put_int32ERKNSt6stringERKNSt6stringE7int32_t"></span><span id="ESPPreferences::put_int32__ssCR.ssCR.int32_t"></span><span class="target" id="class_e_s_p_preferences_1a5f2a9fddaca4a8f7b0805b67dd2f6a8f"></span>size_t <code class="descname">put_int32</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int32_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9put_int32ERKNSt6stringERKNSt6stringE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10put_uint32ERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N14ESPPreferences10put_uint32ERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="ESPPreferences::put_uint32__ssCR.ssCR.uint32_t"></span><span class="target" id="class_e_s_p_preferences_1a6bf0b77f5e220742f8546b10861bc70a"></span>size_t <code class="descname">put_uint32</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint32_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10put_uint32ERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9put_int64ERKNSt6stringERKNSt6stringE7int64_t">
-<span id="_CPPv2N14ESPPreferences9put_int64ERKNSt6stringERKNSt6stringE7int64_t"></span><span id="ESPPreferences::put_int64__ssCR.ssCR.int64_t"></span><span class="target" id="class_e_s_p_preferences_1a6752db7c354ed0f1b77a47074c4483da"></span>size_t <code class="descname">put_int64</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int64_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9put_int64ERKNSt6stringERKNSt6stringE7int64_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10put_uint64ERKNSt6stringERKNSt6stringE8uint64_t">
-<span id="_CPPv2N14ESPPreferences10put_uint64ERKNSt6stringERKNSt6stringE8uint64_t"></span><span id="ESPPreferences::put_uint64__ssCR.ssCR.uint64_t"></span><span class="target" id="class_e_s_p_preferences_1a82b92c346ab37885d91060e71b632b9a"></span>size_t <code class="descname">put_uint64</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint64_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10put_uint64ERKNSt6stringERKNSt6stringE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9put_floatERKNSt6stringERKNSt6stringEf">
-<span id="_CPPv2N14ESPPreferences9put_floatERKNSt6stringERKNSt6stringEf"></span><span id="ESPPreferences::put_float__ssCR.ssCR.float"></span><span class="target" id="class_e_s_p_preferences_1a17900d5dd0025ed83b4c1ec27a05ace8"></span>size_t <code class="descname">put_float</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9put_floatERKNSt6stringERKNSt6stringEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10put_doubleERKNSt6stringERKNSt6stringEd">
-<span id="_CPPv2N14ESPPreferences10put_doubleERKNSt6stringERKNSt6stringEd"></span><span id="ESPPreferences::put_double__ssCR.ssCR.double"></span><span class="target" id="class_e_s_p_preferences_1a42989660e440c254207939cd60e21196"></span>size_t <code class="descname">put_double</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10put_doubleERKNSt6stringERKNSt6stringEd" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences8get_boolERKNSt6stringERKNSt6stringEb">
-<span id="_CPPv2N14ESPPreferences8get_boolERKNSt6stringERKNSt6stringEb"></span><span id="ESPPreferences::get_bool__ssCR.ssCR.b"></span><span class="target" id="class_e_s_p_preferences_1ac64c73034ea1d3af0663594f3a447188"></span>bool <code class="descname">get_bool</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, bool <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences8get_boolERKNSt6stringERKNSt6stringEb" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences8get_int8ERKNSt6stringERKNSt6stringE6int8_t">
-<span id="_CPPv2N14ESPPreferences8get_int8ERKNSt6stringERKNSt6stringE6int8_t"></span><span id="ESPPreferences::get_int8__ssCR.ssCR.int8_t"></span><span class="target" id="class_e_s_p_preferences_1acd29917c7371c09869992d1a84c6d657"></span>int8_t <code class="descname">get_int8</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int8_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences8get_int8ERKNSt6stringERKNSt6stringE6int8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9get_uint8ERKNSt6stringERKNSt6stringE7uint8_t">
-<span id="_CPPv2N14ESPPreferences9get_uint8ERKNSt6stringERKNSt6stringE7uint8_t"></span><span id="ESPPreferences::get_uint8__ssCR.ssCR.uint8_t"></span><span class="target" id="class_e_s_p_preferences_1a2dd433b8feab65e170458c96aea0c344"></span>uint8_t <code class="descname">get_uint8</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint8_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9get_uint8ERKNSt6stringERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9get_int16ERKNSt6stringERKNSt6stringE7int16_t">
-<span id="_CPPv2N14ESPPreferences9get_int16ERKNSt6stringERKNSt6stringE7int16_t"></span><span id="ESPPreferences::get_int16__ssCR.ssCR.int16_t"></span><span class="target" id="class_e_s_p_preferences_1a9ccc5bdbde4b650adeb1436c02a5814f"></span>int16_t <code class="descname">get_int16</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int16_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9get_int16ERKNSt6stringERKNSt6stringE7int16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10get_uint16ERKNSt6stringERKNSt6stringE8uint16_t">
-<span id="_CPPv2N14ESPPreferences10get_uint16ERKNSt6stringERKNSt6stringE8uint16_t"></span><span id="ESPPreferences::get_uint16__ssCR.ssCR.uint16_t"></span><span class="target" id="class_e_s_p_preferences_1a785329b35a52b4d52d204e62273f305e"></span>uint16_t <code class="descname">get_uint16</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint16_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10get_uint16ERKNSt6stringERKNSt6stringE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9get_int32ERKNSt6stringERKNSt6stringE7int32_t">
-<span id="_CPPv2N14ESPPreferences9get_int32ERKNSt6stringERKNSt6stringE7int32_t"></span><span id="ESPPreferences::get_int32__ssCR.ssCR.int32_t"></span><span class="target" id="class_e_s_p_preferences_1a298fd3d5c7ffb9deccf789e346949025"></span>int32_t <code class="descname">get_int32</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int32_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9get_int32ERKNSt6stringERKNSt6stringE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10get_uint32ERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N14ESPPreferences10get_uint32ERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="ESPPreferences::get_uint32__ssCR.ssCR.uint32_t"></span><span class="target" id="class_e_s_p_preferences_1ae27654a3ff1e39edce274990e002c093"></span>uint32_t <code class="descname">get_uint32</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint32_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10get_uint32ERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9get_int64ERKNSt6stringERKNSt6stringE7int64_t">
-<span id="_CPPv2N14ESPPreferences9get_int64ERKNSt6stringERKNSt6stringE7int64_t"></span><span id="ESPPreferences::get_int64__ssCR.ssCR.int64_t"></span><span class="target" id="class_e_s_p_preferences_1a25db95d415eea60ab0047a6a68f47fae"></span>int64_t <code class="descname">get_int64</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, int64_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9get_int64ERKNSt6stringERKNSt6stringE7int64_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10get_uint64ERKNSt6stringERKNSt6stringE8uint64_t">
-<span id="_CPPv2N14ESPPreferences10get_uint64ERKNSt6stringERKNSt6stringE8uint64_t"></span><span id="ESPPreferences::get_uint64__ssCR.ssCR.uint64_t"></span><span class="target" id="class_e_s_p_preferences_1a92d140b10a13682983bc3aea595e1f16"></span>uint64_t <code class="descname">get_uint64</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, uint64_t <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10get_uint64ERKNSt6stringERKNSt6stringE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences9get_floatERKNSt6stringERKNSt6stringEf">
-<span id="_CPPv2N14ESPPreferences9get_floatERKNSt6stringERKNSt6stringEf"></span><span id="ESPPreferences::get_float__ssCR.ssCR.float"></span><span class="target" id="class_e_s_p_preferences_1ad5db6b11ba73a243745290a3736e8411"></span>float <code class="descname">get_float</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, float <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences9get_floatERKNSt6stringERKNSt6stringEf" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences10get_doubleERKNSt6stringERKNSt6stringEd">
-<span id="_CPPv2N14ESPPreferences10get_doubleERKNSt6stringERKNSt6stringEd"></span><span id="ESPPreferences::get_double__ssCR.ssCR.double"></span><span class="target" id="class_e_s_p_preferences_1abcc7a8c67c4f84d1cf78b17d5e2da95b"></span>double <code class="descname">get_double</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em>, double <em>default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences10get_doubleERKNSt6stringERKNSt6stringEd" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3NK19ESPPreferenceObject14is_initializedEv">
+<span id="_CPPv2NK19ESPPreferenceObject14is_initializedEv"></span><span id="ESPPreferenceObject::is_initializedC"></span><span class="target" id="class_e_s_p_preference_object_1a87c5ec8879d466282d23c87b2dbd8eb3"></span>bool <code class="descname">is_initialized</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19ESPPreferenceObject14is_initializedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Functions</p>
 <dl class="function">
-<dt id="_CPPv3N14ESPPreferences18get_preference_keyERKNSt6stringERKNSt6stringE">
-<span id="_CPPv2N14ESPPreferences18get_preference_keyERKNSt6stringERKNSt6stringE"></span><span id="ESPPreferences::get_preference_key__ssCR.ssCR"></span><span class="target" id="class_e_s_p_preferences_1a4f916f048fd75adabc3a7329a97be4b4"></span>std::string <code class="descname">get_preference_key</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> std::string &amp;<em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences18get_preference_keyERKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Return a key for the nvs storage by hashing the friendly name and truncating the key to 7 characters. </p>
-</dd></dl>
+<dt id="_CPPv3N19ESPPreferenceObject5save_Ev">
+<span id="_CPPv2N19ESPPreferenceObject5save_Ev"></span><span id="ESPPreferenceObject::save_"></span><span class="target" id="class_e_s_p_preference_object_1a04ae43eba4495a54d04b5a26a11a65e1"></span>bool <code class="descname">save_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject5save_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N19ESPPreferenceObject5load_Ev">
+<span id="_CPPv2N19ESPPreferenceObject5load_Ev"></span><span id="ESPPreferenceObject::load_"></span><span class="target" id="class_e_s_p_preference_object_1a37774df803ffa51dad615835ea46c605"></span>bool <code class="descname">load_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject5load_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N19ESPPreferenceObject14save_internal_Ev">
+<span id="_CPPv2N19ESPPreferenceObject14save_internal_Ev"></span><span id="ESPPreferenceObject::save_internal_"></span><span class="target" id="class_e_s_p_preference_object_1a8270720f19a538dc1740bd423d444a90"></span>bool <code class="descname">save_internal_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject14save_internal_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N19ESPPreferenceObject14load_internal_Ev">
+<span id="_CPPv2N19ESPPreferenceObject14load_internal_Ev"></span><span id="ESPPreferenceObject::load_internal_"></span><span class="target" id="class_e_s_p_preference_object_1ae9422cc633d45b3650b9de1b0586088d"></span>bool <code class="descname">load_internal_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject14load_internal_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK19ESPPreferenceObject14calculate_crc_Ev">
+<span id="_CPPv2NK19ESPPreferenceObject14calculate_crc_Ev"></span><span id="ESPPreferenceObject::calculate_crc_C"></span><span class="target" id="class_e_s_p_preference_object_1aa05e2ba56b3643cb770344dacacd1ee6"></span>uint32_t <code class="descname">calculate_crc_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK19ESPPreferenceObject14calculate_crc_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
-<dt id="_CPPv3N14ESPPreferences12preferences_E">
-<span id="_CPPv2N14ESPPreferences12preferences_E"></span><span id="ESPPreferences::preferences___Preferences"></span><span class="target" id="class_e_s_p_preferences_1a94e1b2434879df2fa67cedfc213d22c1"></span>Preferences <code class="descname">preferences_</code><a class="headerlink" href="#_CPPv3N14ESPPreferences12preferences_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N19ESPPreferenceObject11rtc_offset_E">
+<span id="_CPPv2N19ESPPreferenceObject11rtc_offset_E"></span><span id="ESPPreferenceObject::rtc_offset___s"></span><span class="target" id="class_e_s_p_preference_object_1ac605657cd84555037bd7ee98dc21120f"></span>size_t <code class="descname">rtc_offset_</code><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject11rtc_offset_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N19ESPPreferenceObject13length_words_E">
+<span id="_CPPv2N19ESPPreferenceObject13length_words_E"></span><span id="ESPPreferenceObject::length_words___s"></span><span class="target" id="class_e_s_p_preference_object_1a05ced7318284efe823169f3eaf55aed0"></span>size_t <code class="descname">length_words_</code><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject13length_words_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N19ESPPreferenceObject5type_E">
+<span id="_CPPv2N19ESPPreferenceObject5type_E"></span><span id="ESPPreferenceObject::type___uint32_t"></span><span class="target" id="class_e_s_p_preference_object_1a4885eeb3e1ab6ec347a3a0d190ecf701"></span>uint32_t <code class="descname">type_</code><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject5type_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N19ESPPreferenceObject5data_E">
+<span id="_CPPv2N19ESPPreferenceObject5data_E"></span><span id="ESPPreferenceObject::data___uint32_tP"></span><span class="target" id="class_e_s_p_preference_object_1a301d2ad0415c12adebee2d1c4b058fe5"></span>uint32_t *<code class="descname">data_</code><a class="headerlink" href="#_CPPv3N19ESPPreferenceObject5data_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1073,7 +1246,7 @@
 <dt id="_CPPv37GPIOPin">
 <span id="_CPPv27GPIOPin"></span><span id="GPIOPin"></span><span class="target" id="class_g_p_i_o_pin"></span><em class="property">class </em><code class="descname">GPIOPin</code><a class="headerlink" href="#_CPPv37GPIOPin" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A high-level abstraction class that can expose a pin together with useful options like pinMode. </p>
-<p>Set the parameters for this at construction time and use <a class="reference internal" href="#class_g_p_i_o_pin_1ae7b50c490d2f14b55c4ac849f26b58c5"><span class="std std-ref">setup()</span></a> to apply them. The inverted parameter will automatically invert the input/output for you.</p>
+<p>Set the parameters for this at construction time and use <a class="reference internal" href="#class_g_p_i_o_pin_1a10ea310705bc319f5520501578b0c74c"><span class="std std-ref">setup()</span></a> to apply them. The inverted parameter will automatically invert the input/output for you.</p>
 <p>Use read_value() and write_value() to use digitalRead() and digitalWrite(), respectively. </p>
 <p>Subclassed by <a class="reference internal" href="#class_g_p_i_o_input_pin"><span class="std std-ref">GPIOInputPin</span></a>, <a class="reference internal" href="#class_g_p_i_o_output_pin"><span class="std std-ref">GPIOOutputPin</span></a></p>
 <div class="breathe-sectiondef docutils container">
@@ -1086,7 +1259,7 @@
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">pin</span></code>: The GPIO pin number of this instance. </li>
-<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The Arduino pinMode that this pin should be put into at <a class="reference internal" href="#class_g_p_i_o_pin_1ae7b50c490d2f14b55c4ac849f26b58c5"><span class="std std-ref">setup()</span></a>. </li>
+<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The Arduino pinMode that this pin should be put into at <a class="reference internal" href="#class_g_p_i_o_pin_1a10ea310705bc319f5520501578b0c74c"><span class="std std-ref">setup()</span></a>. </li>
 <li><code class="docutils literal notranslate"><span class="pre">inverted</span></code>: Whether all digitalRead/digitalWrite calls should be inverted. </li>
 </ul>
 </dd>
@@ -1101,7 +1274,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N7GPIOPin5setupEv">
-<span id="_CPPv2N7GPIOPin5setupEv"></span><span id="GPIOPin::setup"></span><span class="target" id="class_g_p_i_o_pin_1ae7b50c490d2f14b55c4ac849f26b58c5"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7GPIOPin5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N7GPIOPin5setupEv"></span><span id="GPIOPin::setup"></span><span class="target" id="class_g_p_i_o_pin_1a10ea310705bc319f5520501578b0c74c"></span><em class="property">virtual</em> void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7GPIOPin5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Setup the pin mode. </p>
 </dd></dl>
 
@@ -1125,13 +1298,18 @@
 
 <dl class="function">
 <dt id="_CPPv3NK7GPIOPin7get_pinEv">
-<span id="_CPPv2NK7GPIOPin7get_pinEv"></span><span id="GPIOPin::get_pinC"></span><span class="target" id="class_g_p_i_o_pin_1ab558552e3eb2ca2ebc3f6f482d9c38ca"></span>unsigned char <code class="descname">get_pin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7GPIOPin7get_pinEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK7GPIOPin7get_pinEv"></span><span id="GPIOPin::get_pinC"></span><span class="target" id="class_g_p_i_o_pin_1aef4ab0c03a4618d6ea4ff0b68110d1a9"></span>uint8_t <code class="descname">get_pin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7GPIOPin7get_pinEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the GPIO pin number. </p>
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3NK7GPIOPin17get_pin_mode_nameEv">
+<span id="_CPPv2NK7GPIOPin17get_pin_mode_nameEv"></span><span id="GPIOPin::get_pin_mode_nameC"></span><span class="target" id="class_g_p_i_o_pin_1a2f7672a18493d3644e318bddf338c4a5"></span><em class="property">const</em> char *<code class="descname">get_pin_mode_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7GPIOPin17get_pin_mode_nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3NK7GPIOPin8get_modeEv">
-<span id="_CPPv2NK7GPIOPin8get_modeEv"></span><span id="GPIOPin::get_modeC"></span><span class="target" id="class_g_p_i_o_pin_1a2c45498457a7605442c1d2b2b16f6ac1"></span>unsigned char <code class="descname">get_mode</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7GPIOPin8get_modeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK7GPIOPin8get_modeEv"></span><span id="GPIOPin::get_modeC"></span><span class="target" id="class_g_p_i_o_pin_1a59dd3420ea85248ef0d871715adb12e0"></span>uint8_t <code class="descname">get_mode</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK7GPIOPin8get_modeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the pinMode of this pin. </p>
 </dd></dl>
 
@@ -1311,6 +1489,11 @@ seems to have lots of timing issues with the ESP8266/ESP32. That’s why ESPOneW
 <span id="_CPPv2N10ESPOneWire10search_vecEv"></span><span id="ESPOneWire::search_vec"></span><span class="target" id="class_e_s_p_one_wire_1a2c52b606dd6853a5fe8361ad2b7b48e4"></span>std::vector&lt;uint64_t&gt; <code class="descname">search_vec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10ESPOneWire10search_vecEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Helper that wraps search in a std::vector. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10ESPOneWire7get_pinEv">
+<span id="_CPPv2N10ESPOneWire7get_pinEv"></span><span id="ESPOneWire::get_pin"></span><span class="target" id="class_e_s_p_one_wire_1a4dbf92f0b9895f8850b77adffe1b9c05"></span><a class="reference internal" href="#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">get_pin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10ESPOneWire7get_pinEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up PMSX003 Particulate matter sensors">
+<meta itemprop="name" content="PMSX003 Particulate Matter Sensor">
+<meta itemprop="description" content="Instructions for setting up PMSX003 Particulate matter sensors">
+<meta itemprop="image" content="https://esphomelib.com/_images/pmsx003.svg">
+<meta name="twitter:title" content="PMSX003 Particulate Matter Sensor">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pmsx003.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up PMSX003 Particulate matter sensors">
+<meta property="og:title" content="PMSX003 Particulate Matter Sensor"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pmsx003.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up PMSX003 Particulate matter sensors"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>PMSX003 Particulate Matter Sensor &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/pmsx003.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Pulse Counter Sensor" href="pulse_counter.html" />
+    <link rel="prev" title="MS5611 Atmospheric Pressure Sensor" href="ms5611.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PMSX003 Particulate Matter Sensor</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="pmsx003-particulate-matter-sensor">
+<h1>PMSX003 Particulate Matter Sensor<a class="headerlink" href="#pmsx003-particulate-matter-sensor" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This integration is experimental as I don’t have the hardware to test it (yet).
+If you can verify it works (or if it doesn’t), notify me on <a class="reference external" href="https://discord.gg/KhAMKrd">discord</a>.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pmsx003</span></code> sensor platform allows you to use your PMS5003, PMS7003, … particulate matter
+(<a class="reference external" href="http://www.aqmd.gov/docs/default-source/aq-spec/resources-page/plantower-pms5003-manual_v2-3.pdf">datasheet</a>)
+sensors with esphomelib.</p>
+<p>As the communication with the PMSX003 is done using UART, you need
+to have an <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART bus</span></a> in your configuration with the <code class="docutils literal notranslate"><span class="pre">rx_pin</span></code> connected to the SEND/TX pin
+(may also be called the RX pin, depending on the model) of the PMS. Additionally, you need to set the baud rate to 9600.</p>
+<p>This platform supports three sensor types, which you need to specify using the <code class="docutils literal notranslate"><span class="pre">type:</span></code> configuration
+value:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">PMSX003</span></code> for generic PMS5003, PMS7003, …; these sensors support <code class="docutils literal notranslate"><span class="pre">pm_1_0</span></code>, <code class="docutils literal notranslate"><span class="pre">pm_2_5</span></code> and <code class="docutils literal notranslate"><span class="pre">pm_10_0</span></code> output.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PMS5003T</span></code> for PMS5003T. These support <code class="docutils literal notranslate"><span class="pre">pm_2_5</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code> and <code class="docutils literal notranslate"><span class="pre">humidity</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PMS5003ST</span></code> for PMS5003ST. These support <code class="docutils literal notranslate"><span class="pre">pm_2_5</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code>, <code class="docutils literal notranslate"><span class="pre">humidity</span></code> and <code class="docutils literal notranslate"><span class="pre">formaldehyde</span></code>.</li>
+</ul>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="n">uart</span><span class="p">:</span>
+  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+
+<span class="n">sensor</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pmsx003</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">PMX003</span>
+    <span class="n">pm_1_0</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Particulate Matter &lt;1.0µm Concentration&quot;</span>
+    <span class="n">pm_2_5</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Particulate Matter &lt;2.5µm Concentration&quot;</span>
+    <span class="n">pm_10_0</span><span class="p">:</span>
+      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Particulate Matter &lt;10.0µm Concentration&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>pm_1_0</strong> (<em>Optional</em>): Use the concentration of particulates of size less than 1.0µm in µg per cubic meter.
+All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>pm_2_5</strong> (<em>Optional</em>): Use the concentration of particulates of size less than 2.5µm in µg per cubic meter.
+All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>pm_10_0</strong> (<em>Optional</em>): Use the concentration of particulates of size less than 10.0µm in µg per cubic meter.
+All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>temperature</strong> (<em>Optional</em>): Use the temperature value in °C for the <code class="docutils literal notranslate"><span class="pre">PMS5003T</span></code> and <code class="docutils literal notranslate"><span class="pre">PMS5003ST</span></code>.
+All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>humidity</strong> (<em>Optional</em>): Use the humidity value in % for the <code class="docutils literal notranslate"><span class="pre">PMS5003T</span></code> and <code class="docutils literal notranslate"><span class="pre">PMS5003ST</span></code>.
+All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>formaldehyde</strong> (<em>Optional</em>): Use the formaldehyde (HCHO) concentration in µg per cubic meter for the <code class="docutils literal notranslate"><span class="pre">PMS5003ST</span></code>.
+All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>uart_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART Component</span></a> if you want
+to use multiple UART buses.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
+<li><a class="reference internal" href="../../../api/sensor/pmsx003.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/pmsx003.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-components-sensor-pmsx003" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

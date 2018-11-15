@@ -1,6 +1,10 @@
 esphomeyaml Core Configuration
 ==============================
 
+.. seo::
+    :description: Instructions for setting up the core esphomeyaml configuration.
+    :image: cloud-circle.svg
+
 Here you specify some core information that esphomeyaml needs to create
 firmwares. Most importantly, this is the section of the configuration
 where you specify the **name** of the node, the **platform** and
@@ -171,8 +175,7 @@ is already set up. You can however change this using the ``priority`` parameter.
         priority: -10
         # ...
         then:
-          - switch.turn_off:
-              id: switch_1
+          - switch.turn_off: switch_1
 
 Configuration variables:
 
@@ -182,11 +185,10 @@ Configuration variables:
 
   - ``100``: This is where all hardware initialization of vital components is executed. For example setting switches
     to their initial state.
+  - ``50.0``: This is where most sensors are set up.
   - ``10``: At this priority, WiFi is initialized.
   - ``7.5``: MQTT initialization takes place at this priority.
-  - ``0.0``: This is where most sensors are set up. They are usually set up this late so that they can dump their
-    configuration in the MQTT logs.
-  - ``-5.0``: The inidividual frontend counterparts for the backend components are configured at this priority
+  - ``-5.0``: The individual frontend counterparts for the backend components are configured at this priority
   - ``-10.0``: At this priority, pretty much everything should already be initialized.
 
 - See :ref:`Automation <automation>`.
@@ -210,8 +212,7 @@ too many WiFi/MQTT connection attempts, Over-The-Air updates being applied or th
       # ...
       on_shutdown:
         then:
-          - switch.turn_off:
-              id: switch_1
+          - switch.turn_off: switch_1
 
 Configuration variables: See :ref:`Automation <automation>`.
 

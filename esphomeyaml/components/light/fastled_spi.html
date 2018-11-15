@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>FastLED SPI Light &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up other FastLED addressable lights.">
+<meta itemprop="name" content="FastLED SPI Light">
+<meta itemprop="description" content="Instructions for setting up other FastLED addressable lights.">
+<meta itemprop="image" content="https://esphomelib.com/_images/color_lens.svg">
+<meta name="twitter:title" content="FastLED SPI Light">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/color_lens.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up other FastLED addressable lights.">
+<meta property="og:title" content="FastLED SPI Light"/>
+<meta property="og:image" content="https://esphomelib.com/_images/color_lens.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up other FastLED addressable lights."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>FastLED SPI Light &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,10 +32,11 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/light/fastled_spi.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Output Component" href="../output/index.html" />
+    <link rel="next" title="Monochromatic Light" href="monochromatic.html" />
     <link rel="prev" title="FastLED Clockless Light" href="fastled_clockless.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -104,6 +122,8 @@ A time interval used to limit the number of commands a light can handle per seco
 16ms will limit the light to a refresh rate of about 60Hz. Defaults to the default value for the used chipset.</li>
 <li><strong>gamma_correct</strong> (<em>Optional</em>, float): The <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_correction">gamma correction
 factor</a> for the light. Defaults to <code class="docutils literal notranslate"><span class="pre">2.8</span></code>.</li>
+<li><strong>color_correct</strong> (<em>Optional</em>, list of percentages): The color correction for each channel. This denotes
+the maximum brightness of the red, green and blue channel. Defaults to <code class="docutils literal notranslate"><span class="pre">color_correct:</span> <span class="pre">[100%,</span> <span class="pre">100%,</span> <span class="pre">100%]</span></code>.</li>
 <li><strong>default_transition_length</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The length of
 the transition if no transition parameter is provided by Home Assistant. Defaults to <code class="docutils literal notranslate"><span class="pre">1s</span></code>.</li>
 <li><strong>power_supply</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): The <a class="reference internal" href="../power_supply.html"><span class="doc">Power Supply Component</span></a> to connect to

@@ -1,6 +1,11 @@
 Web Server Component
 ====================
 
+.. seo::
+    :description: Instructions for setting up a web server in esphomelib.
+    :image: http.svg
+    :keywords: web server, http, REST API
+
 The ``web_server`` component creates a simple web server on the node that can be accessed
 through any browser and a simple `REST API`_. Please note that enabling this component
 will take up *a lot* of memory and can lead to problems, especially on the ESP8266.
@@ -34,6 +39,10 @@ Configuration variables:
 - **js_url** (*Optional*, url): The URL that should be used for the JS script. Defaults
   to https://esphomelib.com/_static/webserver-v1.min.js.
 - **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation.
+
+.. note::
+
+    Starting with version 1.9.0, you can also upload firmware files OTA with the web server.
 
 See Also
 --------

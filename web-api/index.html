@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Web Server API &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Migration guide for installing esphomelib on ESPs running ESPEasy.">
+<meta itemprop="name" content="Web Server API">
+<meta itemprop="description" content="Migration guide for installing esphomelib on ESPs running ESPEasy.">
+<meta itemprop="image" content="https://esphomelib.com/_images/espeasy.svg">
+<meta name="twitter:title" content="Web Server API">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/espeasy.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Migration guide for installing esphomelib on ESPs running ESPEasy.">
+<meta property="og:title" content="Web Server API"/>
+<meta property="og:image" content="https://esphomelib.com/_images/espeasy.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Migration guide for installing esphomelib on ESPs running ESPEasy."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Web Server API &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -14,11 +31,12 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/web-api/index.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="API Reference" href="../api/index.html" />
-    <link rel="prev" title="Changelog" href="../esphomeyaml/guides/changelog.html" />
+    <link rel="prev" title="Version 1.8.0" href="../esphomeyaml/changelog/v1.8.0.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -169,8 +187,8 @@ result in following payload:</p>
 <h4>Switch<a class="headerlink" href="#switch" title="Permalink to this headline">¶</a></h4>
 <p>Switches have the exact same properties as a binary sensor in the state reporting aspect, but they
 additionally support setting states with the <code class="docutils literal notranslate"><span class="pre">turn_on</span></code>, <code class="docutils literal notranslate"><span class="pre">turn_off</span></code> and <code class="docutils literal notranslate"><span class="pre">toggle</span></code> methods.</p>
-<p>Each of these is quite self explanatory. Creating a POST request to <code class="docutils literal notranslate"><span class="pre">/switch/dehumidifer/turn_on</span></code>
-would for example result in the component called “Dehumidifer” to be turned on. The server will respond
+<p>Each of these is quite self explanatory. Creating a POST request to <code class="docutils literal notranslate"><span class="pre">/switch/dehumidifier/turn_on</span></code>
+would for example result in the component called “Dehumidifier” to be turned on. The server will respond
 with a 200 OK HTTP return code if the call succeeded.</p>
 </div>
 <div class="section" id="light">

@@ -5,8 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Output Component &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up generic outputs in esphomelib">
+<meta itemprop="name" content="Output Component">
+<meta itemprop="description" content="Instructions for setting up generic outputs in esphomelib">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:title" content="Output Component">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up generic outputs in esphomelib">
+<meta property="og:title" content="Output Component"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up generic outputs in esphomelib"/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Output Component &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,11 +32,12 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ESP8266 Software PWM Output" href="esp8266_pwm.html" />
-    <link rel="prev" title="FastLED SPI Light" href="../light/fastled_spi.html" />
+    <link rel="prev" title="RGBWW Light" href="../light/rgbww.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -82,7 +100,7 @@ any rational value between 0 and 1).</p>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="n">output</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">myoutput_id</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">my_output_id</span>
     <span class="n">power_supply</span><span class="p">:</span> <span class="n">power_supply_id</span>
     <span class="n">inverted</span><span class="p">:</span> <span class="kc">False</span>
     <span class="n">max_power</span><span class="p">:</span> <span class="mf">0.75</span>
@@ -109,6 +127,13 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
     <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">relay_1</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
+<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">)</span><span class="o">.</span><span class="n">turn_on</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="output-turn-off-action">
 <span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">output.turn_off</span></code> Action<a class="headerlink" href="#output-turn-off-action" title="Permalink to this headline">¶</a></h3>
@@ -117,6 +142,13 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
   <span class="n">then</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">relay_1</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
+<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">)</span><span class="o">.</span><span class="n">turn_off</span><span class="p">();</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="output-set-level-action">
@@ -129,6 +161,14 @@ works with floating point outputs like ESP8266 PWM or LEDC.</p>
         <span class="nb">id</span><span class="p">:</span> <span class="n">output_1</span>
         <span class="n">level</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
+<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="nb">range</span> <span class="ow">is</span> <span class="mf">0.0</span> <span class="p">(</span><span class="n">off</span><span class="p">)</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="p">(</span><span class="n">on</span><span class="p">)</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">)</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -150,6 +190,7 @@ works with floating point outputs like ESP8266 PWM or LEDC.</p>
 <li class="toctree-l1"><a class="reference internal" href="esp8266_pwm.html">ESP8266 Software PWM Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpio.html">GPIO Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ledc.html">ESP32 LEDC Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="my9231.html">MY9231/MY9291 Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pca9685.html">PCA9685 PWM Output</a></li>
 </ul>
 </div>

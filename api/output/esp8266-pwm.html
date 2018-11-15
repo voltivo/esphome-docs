@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ESP8266 Software PWM &#8212; esphomelib 1.8.2 documentation</title>
+    <title>ESP8266 Software PWM &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,11 +14,12 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/output/esp8266-pwm.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Fan" href="../fan/index.html" />
-    <link rel="prev" title="PCA9685 PWM" href="pca9685.html" />
+    <link rel="next" title="GPIO Binary Output" href="gpio-binary.html" />
+    <link rel="prev" title="Output" href="index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -107,10 +108,20 @@ Additionally, this software PWM can’t output values higher than 80%. That’s 
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N6output16ESP8266PWMOutput13set_frequencyEf">
+<span id="_CPPv2N6output16ESP8266PWMOutput13set_frequencyEf"></span><span id="output::ESP8266PWMOutput::set_frequency__float"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1a1744b85aa653e3155874d7253a471afd"></span>void <code class="descname">set_frequency</code><span class="sig-paren">(</span>float <em>frequency</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutput13set_frequencyEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N6output16ESP8266PWMOutput5setupEv">
 <span id="_CPPv2N6output16ESP8266PWMOutput5setupEv"></span><span id="output::ESP8266PWMOutput::setup"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1ad15e1fc5c27f7b97884f0cb86ab40b3b"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutput5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize pin. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6output16ESP8266PWMOutput11dump_configEv">
+<span id="_CPPv2N6output16ESP8266PWMOutput11dump_configEv"></span><span id="output::ESP8266PWMOutput::dump_config"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1aaa059b14fae3b312cc89930248ec5781"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutput11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6output16ESP8266PWMOutput18get_setup_priorityEv">
@@ -119,8 +130,8 @@ Additionally, this software PWM can’t output values higher than 80%. That’s 
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N6output16ESP8266PWMOutput11write_stateEf">
-<span id="_CPPv2N6output16ESP8266PWMOutput11write_stateEf"></span><span id="output::ESP8266PWMOutput::write_state__float"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1abe24528f3d78913cc1ec5e25a4b6be75"></span>void <code class="descname">write_state</code><span class="sig-paren">(</span>float <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutput11write_stateEf" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1afcf4b5e6ec5f686886541bae03797bfd"></span><code class="descname">void HOT output::ESP8266PWMOutput::write_state(float state)</code></dt>
 <dd><p>Override <a class="reference internal" href="index.html#classoutput_1_1_float_output"><span class="std std-ref">FloatOutput</span></a>’s write_state for analogWrite. </p>
 </dd></dl>
 
@@ -130,6 +141,11 @@ Additionally, this software PWM can’t output values higher than 80%. That’s 
 <dl class="member">
 <dt id="_CPPv3N6output16ESP8266PWMOutput4pin_E">
 <span id="_CPPv2N6output16ESP8266PWMOutput4pin_E"></span><span id="output::ESP8266PWMOutput::pin___GPIOOutputPin"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1aafec03416bcffc7de0f0cae9d7c4fc98"></span><a class="reference internal" href="../core/helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> <code class="descname">pin_</code><a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutput4pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6output16ESP8266PWMOutput10frequency_E">
+<span id="_CPPv2N6output16ESP8266PWMOutput10frequency_E"></span><span id="output::ESP8266PWMOutput::frequency___float"></span><span class="target" id="classoutput_1_1_e_s_p8266_p_w_m_output_1acabd865018c9b00e0fd720ebd30ff7f2"></span>float <code class="descname">frequency_</code> = {1000.0}<a class="headerlink" href="#_CPPv3N6output16ESP8266PWMOutput10frequency_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>

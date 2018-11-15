@@ -5,8 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>WiFi Component &#8212; esphomelib 1.8.2 documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib.">
+<meta name="keywords" content="WiFi, WLAN, ESP8266, ESP32">
+<meta itemprop="name" content="WiFi Component">
+<meta itemprop="description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib.">
+<meta itemprop="image" content="https://esphomelib.com/_images/network-wifi.svg">
+<meta name="twitter:title" content="WiFi Component">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/network-wifi.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib.">
+<meta property="og:title" content="WiFi Component"/>
+<meta property="og:image" content="https://esphomelib.com/_images/network-wifi.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>WiFi Component &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -15,10 +33,11 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/wifi.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ESP32 Bluetooth Low Energy Beacon" href="esp32_ble_beacon.html" />
+    <link rel="next" title="Cookbook" href="../cookbook/index.html" />
     <link rel="prev" title="Web Server Component" href="web_server.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -121,7 +140,7 @@ For example, if it’s set to <code class="docutils literal notranslate"><span c
 Defaults to <code class="docutils literal notranslate"><span class="pre">.local</span></code>.</li>
 <li><strong>reboot_timeout</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-time"><span class="std std-ref">time</span></a>): The amount of time to wait before rebooting when no
 WiFi connection exists. Can be disabled by setting this to <code class="docutils literal notranslate"><span class="pre">0s</span></code>, but note that the low level IP stack currently
-seems to have issues with WiFi where a full reboot is required to get the interface back working. Defaults to <code class="docutils literal notranslate"><span class="pre">60s</span></code>.</li>
+seems to have issues with WiFi where a full reboot is required to get the interface back working. Defaults to <code class="docutils literal notranslate"><span class="pre">5min</span></code>.</li>
 <li><strong>power_save_mode</strong> (<em>Optional</em>, string): The power save mode for the WiFi interface. Defaults to no power saving.
 See <a class="reference internal" href="#wifi-power-save-mode"><span class="std std-ref">Power Save Mode</span></a></li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
@@ -154,7 +173,7 @@ to the ESP. This way, the ESP doesn’t need to go through the slow DHCP process
 </div>
 <p>After putting a manual IP in your configuration, the ESP will no longer need to negotiate
 a dynamic IP address with the router, thus improving the time until connection.</p>
-<p>Additionally, this can help with <span class="xref std std-ref">Over-The-Air updates</span> if for example the
+<p>Additionally, this can help with <a class="reference internal" href="ota.html"><span class="doc">Over-The-Air updates</span></a> if for example the
 home network doesn’t allow for <code class="docutils literal notranslate"><span class="pre">.local</span></code> addresses. When a manual IP is in your configuration,
 the OTA process will automatically choose that as the target for the upload.</p>
 </div>
@@ -164,10 +183,10 @@ the OTA process will automatically choose that as the target for the upload.</p>
 WiFi. While some options <em>can</em> reduce the power usage of the ESP, they generally also decrease the
 reliability of the WiFi connection, with frequent disconnections from the router in the highest
 power saving mode.</p>
-<p>If you know what you’re doing and the node doesn’t need to have an extremely reliable connection to WiFi,
-you can set the power saving mode to <code class="docutils literal notranslate"><span class="pre">LIGHT</span></code> or even <code class="docutils literal notranslate"><span class="pre">HIGH</span></code>. But for most situations <code class="docutils literal notranslate"><span class="pre">NONE</span></code> is the best.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">none</span></code> (a bit of power saving). If you experience frequent WiFi disconnection problems,
+please also try <code class="docutils literal notranslate"><span class="pre">light</span></code>.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">NONE</span></code> (Default, least power saving)</li>
+<li><code class="docutils literal notranslate"><span class="pre">NONE</span></code> (least power saving, Default)</li>
 <li><code class="docutils literal notranslate"><span class="pre">LIGHT</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">HIGH</span></code> (most power saving)</li>
 </ul>

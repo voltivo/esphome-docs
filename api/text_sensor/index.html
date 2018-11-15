@@ -1,0 +1,274 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Text Sensor &#8212; esphomelib 1.9.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/text_sensor/index.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Version Text Sensor" href="version.html" />
+    <link rel="prev" title="Waveshare E-Paper Display" href="../display/waveshare_epaper.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Text Sensor</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#textsensor">TextSensor</a></li>
+<li><a class="reference internal" href="#mqtttextsensor">MQTTTextSensor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="text-sensor">
+<h1>Text Sensor<a class="headerlink" href="#text-sensor" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application20register_text_sensorEPN11text_sensor10TextSensorE" title="Application::register_text_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::register_text_sensor()</span></code></a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="version.html">Version Text Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mqtt_subscribe.html">MQTT Subscribe Text Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template Text Sensor</a></li>
+</ul>
+</div>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="textsensor">
+<h3>TextSensor<a class="headerlink" href="#textsensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N11text_sensor10TextSensorE">
+<span id="_CPPv2N11text_sensor10TextSensorE"></span><span id="text_sensor::TextSensor"></span><span class="target" id="classtext__sensor_1_1_text_sensor"></span><em class="property">class </em><code class="descname">TextSensor</code> : <em class="property">public</em> Nameable<a class="headerlink" href="#_CPPv3N11text_sensor10TextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="mqtt_subscribe.html#classtext__sensor_1_1_m_q_t_t_subscribe_text_sensor"><span class="std std-ref">text_sensor::MQTTSubscribeTextSensor</span></a>, <a class="reference internal" href="template.html#classtext__sensor_1_1_template_text_sensor"><span class="std std-ref">text_sensor::TemplateTextSensor</span></a>, <a class="reference internal" href="version.html#classtext__sensor_1_1_version_text_sensor"><span class="std std-ref">text_sensor::VersionTextSensor</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor10TextSensorERKNSt6stringE">
+<span id="_CPPv2N11text_sensor10TextSensor10TextSensorERKNSt6stringE"></span><span id="text_sensor::TextSensor::TextSensor__ssCR"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a4fbc00ce1f34ee196a252e46aa58e5ab"></span><code class="descname">TextSensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor10TextSensorERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor13publish_stateENSt6stringE">
+<span id="_CPPv2N11text_sensor10TextSensor13publish_stateENSt6stringE"></span><span id="text_sensor::TextSensor::publish_state__ss"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a1cb096e546e1ac6a68490185b15e2093"></span>void <code class="descname">publish_state</code><span class="sig-paren">(</span>std::string <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor13publish_stateENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor8set_iconERKNSt6stringE">
+<span id="_CPPv2N11text_sensor10TextSensor8set_iconERKNSt6stringE"></span><span id="text_sensor::TextSensor::set_icon__ssCR"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a962d4e93181198cf3028fa2fcbc15000"></span>void <code class="descname">set_icon</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>icon</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor8set_iconERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor21add_on_state_callbackENSt8functionIFvNSt6stringEEEE">
+<span id="_CPPv2N11text_sensor10TextSensor21add_on_state_callbackENSt8functionIFvNSt6stringEEEE"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1ae3d07baf98983020f21cbc338f796c3a"></span>void <code class="descname">add_on_state_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span>std::string<span class="sig-paren">)</span>&gt; <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor21add_on_state_callbackENSt8functionIFvNSt6stringEEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor8get_iconEv">
+<span id="_CPPv2N11text_sensor10TextSensor8get_iconEv"></span><span id="text_sensor::TextSensor::get_icon"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1af030c3e28ffa250a62fb04a38321bfa7"></span>std::string <code class="descname">get_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor8get_iconEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor4iconEv">
+<span id="_CPPv2N11text_sensor10TextSensor4iconEv"></span><span id="text_sensor::TextSensor::icon"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a53d2670c097ad6e1ac8f94a97873283d"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor9unique_idEv">
+<span id="_CPPv2N11text_sensor10TextSensor9unique_idEv"></span><span id="text_sensor::TextSensor::unique_id"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1aece99e266eb1bcc83944733333c80b09"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor18make_state_triggerEv">
+<span id="_CPPv2N11text_sensor10TextSensor18make_state_triggerEv"></span><span id="text_sensor::TextSensor::make_state_trigger"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a0b361555f560fb124cd6778adc354276"></span><a class="reference internal" href="#_CPPv3N11text_sensor22TextSensorStateTriggerE" title="text_sensor::TextSensorStateTrigger">TextSensorStateTrigger</a> *<code class="descname">make_state_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor18make_state_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor9has_stateEv">
+<span id="_CPPv2N11text_sensor10TextSensor9has_stateEv"></span><span id="text_sensor::TextSensor::has_state"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a026170d55009144c1f63f692fda7201e"></span>bool <code class="descname">has_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor9has_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11text_sensor10TextSensor5stateE">
+<span id="_CPPv2N11text_sensor10TextSensor5stateE"></span><span id="text_sensor::TextSensor::state__ss"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1af7d9dd9d84c3ea9893719783e36b8118"></span>std::string <code class="descname">state</code><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N11text_sensor10TextSensor9callback_E">
+<span id="_CPPv2N11text_sensor10TextSensor9callback_E"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1ad848066177332b66cb7fe46f8c2de311"></span>CallbackManager&lt;void<span class="sig-paren">(</span>std::string<span class="sig-paren">)</span>&gt; <code class="descname">callback_</code><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor9callback_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11text_sensor10TextSensor5icon_E">
+<span id="_CPPv2N11text_sensor10TextSensor5icon_E"></span><span id="text_sensor::TextSensor::icon___optional:ss:"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1af25de06306b916220ff588b4e8ce14b0"></span><a class="reference internal" href="../core/helpers.html#_CPPv38optional" title="optional">optional</a>&lt;std::string&gt; <code class="descname">icon_</code><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor5icon_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11text_sensor10TextSensor10has_state_E">
+<span id="_CPPv2N11text_sensor10TextSensor10has_state_E"></span><span id="text_sensor::TextSensor::has_state___b"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a8f9e93ebee108344579505dbc30bddb9"></span>bool <code class="descname">has_state_</code> = {false}<a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor10has_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11text_sensor22TextSensorStateTriggerE">
+<span id="_CPPv2N11text_sensor22TextSensorStateTriggerE"></span><span id="text_sensor::TextSensorStateTrigger"></span><span class="target" id="classtext__sensor_1_1_text_sensor_state_trigger"></span><em class="property">class </em><code class="descname">TextSensorStateTrigger</code> : <em class="property">public</em> <a class="reference internal" href="../core/automation.html#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;std::string&gt;<a class="headerlink" href="#_CPPv3N11text_sensor22TextSensorStateTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N11text_sensor22TextSensorStateTrigger22TextSensorStateTriggerEP10TextSensor">
+<span id="_CPPv2N11text_sensor22TextSensorStateTrigger22TextSensorStateTriggerEP10TextSensor"></span><span id="text_sensor::TextSensorStateTrigger::TextSensorStateTrigger__TextSensorP"></span><span class="target" id="classtext__sensor_1_1_text_sensor_state_trigger_1a64806ea66acd247adf1cc2fda74c6259"></span><code class="descname">TextSensorStateTrigger</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11text_sensor10TextSensorE" title="text_sensor::TextSensor">TextSensor</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor22TextSensorStateTrigger22TextSensorStateTriggerEP10TextSensor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="mqtttextsensor">
+<h3>MQTTTextSensor<a class="headerlink" href="#mqtttextsensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensorE">
+<span id="_CPPv2N11text_sensor14MQTTTextSensorE"></span><span id="text_sensor::MQTTTextSensor"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor"></span><em class="property">class </em><code class="descname">MQTTTextSensor</code> : <em class="property">public</em> mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt13MQTTComponentE" title="mqtt::MQTTComponent">MQTTComponent</a><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor14MQTTTextSensorEP10TextSensor">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor14MQTTTextSensorEP10TextSensor"></span><span id="text_sensor::MQTTTextSensor::MQTTTextSensor__TextSensorP"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1accf227b248fb463dfdcd9325a273a9d6"></span><code class="descname">MQTTTextSensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11text_sensor10TextSensorE" title="text_sensor::TextSensor">TextSensor</a> *<em>sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor14MQTTTextSensorEP10TextSensor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="text_sensor::MQTTTextSensor::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a38a44035e7dcedf2b4c65b24d41adbda"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Send discovery info the Home Assistant, override this. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor5setupEv">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor5setupEv"></span><span id="text_sensor::MQTTTextSensor::setup"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a0045c602e790e849c5c8190ebd37dcf2"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Where the component’s initialization should happen. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classtext__sensor_1_1_m_q_t_t_text_sensor_1a0045c602e790e849c5c8190ebd37dcf2"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor11dump_configEv">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor11dump_configEv"></span><span id="text_sensor::MQTTTextSensor::dump_config"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a7f989becdd20926f08822cbde3c55611"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE"></span><span id="text_sensor::MQTTTextSensor::publish_state__ssCR"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a411834f1e0f57aa7aef28cb3cc367edc"></span>void <code class="descname">publish_state</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor18send_initial_stateEv">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor18send_initial_stateEv"></span><span id="text_sensor::MQTTTextSensor::send_initial_state"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1abaae3568211b25d7fb8333899cd8c1aa"></span>void <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor11is_internalEv">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor11is_internalEv"></span><span id="text_sensor::MQTTTextSensor::is_internal"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1ad25747c4b1d559ae5e91776912750e75"></span>bool <code class="descname">is_internal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor11is_internalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK11text_sensor14MQTTTextSensor14component_typeEv">
+<span id="_CPPv2NK11text_sensor14MQTTTextSensor14component_typeEv"></span><span id="text_sensor::MQTTTextSensor::component_typeC"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1ad48f25de6cede906add7a9409b646760"></span>std::string <code class="descname">component_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11text_sensor14MQTTTextSensor14component_typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Override this method to return the component type (e.g. “light”, “sensor”, …) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK11text_sensor14MQTTTextSensor13friendly_nameEv">
+<span id="_CPPv2NK11text_sensor14MQTTTextSensor13friendly_nameEv"></span><span id="text_sensor::MQTTTextSensor::friendly_nameC"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1ac20f78baeeb9d71da82a7c012e370af1"></span>std::string <code class="descname">friendly_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11text_sensor14MQTTTextSensor13friendly_nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the friendly name of this MQTT component. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N11text_sensor14MQTTTextSensor7sensor_E">
+<span id="_CPPv2N11text_sensor14MQTTTextSensor7sensor_E"></span><span id="text_sensor::MQTTTextSensor::sensor___TextSensorP"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a968f422f0a2b959f3bbbc705dcf39d3e"></span><a class="reference internal" href="#_CPPv3N11text_sensor10TextSensorE" title="text_sensor::TextSensor">TextSensor</a> *<code class="descname">sensor_</code><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor7sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Otto Winter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

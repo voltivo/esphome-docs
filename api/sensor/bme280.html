@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BME280 Temperature/Pressure/Humidity Sensor &#8212; esphomelib 1.8.2 documentation</title>
+    <title>BME280 Temperature/Pressure/Humidity Sensor &#8212; esphomelib 1.9.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/bme280.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -141,8 +142,13 @@ esphomelib (<a class="reference external" href="https://cdn-shop.adafruit.com/da
 <dt id="_CPPv3N6sensor15BME280Component5setupEv">
 <span id="_CPPv2N6sensor15BME280Component5setupEv"></span><span id="sensor::BME280Component::setup"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a24f0ba8086e1c607c91ffd09a7cf2b1b"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BME280Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_b_m_e280_component_1a24f0ba8086e1c607c91ffd09a7cf2b1b"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing noting. </p>
+<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_b_m_e280_component_1a24f0ba8086e1c607c91ffd09a7cf2b1b"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor15BME280Component11dump_configEv">
+<span id="_CPPv2N6sensor15BME280Component11dump_configEv"></span><span id="sensor::BME280Component::dump_config"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1ad82b665f5df240de1291cceaf03a9f71"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BME280Component11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor15BME280Component18get_setup_priorityEv">
@@ -161,6 +167,30 @@ esphomelib (<a class="reference external" href="https://cdn-shop.adafruit.com/da
 <dt id="_CPPv3N6sensor15BME280Component6updateEv">
 <span id="_CPPv2N6sensor15BME280Component6updateEv"></span><span id="sensor::BME280Component::update"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1aa0ce508029e228f55f27dcb2dc31f579"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15BME280Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Types</p>
+<dl class="type">
+<dt id="_CPPv3N6sensor15BME280Component9ErrorCodeE">
+<span id="_CPPv2N6sensor15BME280Component9ErrorCodeE"></span><span id="sensor::BME280Component::ErrorCode"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a6e97af26095eabaee11d15f240ae0712"></span><em class="property">enum </em><code class="descname">ErrorCode</code><a class="headerlink" href="#_CPPv3N6sensor15BME280Component9ErrorCodeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor15BME280Component4NONEE">
+<span id="_CPPv2N6sensor15BME280Component4NONEE"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a6e97af26095eabaee11d15f240ae0712a83472308805a35921b40882cf7bb5643"></span><code class="descname">NONE</code> = 0<a class="headerlink" href="#_CPPv3N6sensor15BME280Component4NONEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor15BME280Component20COMMUNICATION_FAILEDE">
+<span id="_CPPv2N6sensor15BME280Component20COMMUNICATION_FAILEDE"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a6e97af26095eabaee11d15f240ae0712a5adcd369ec03d57c79122a35c8edcb44"></span><code class="descname">COMMUNICATION_FAILED</code><a class="headerlink" href="#_CPPv3N6sensor15BME280Component20COMMUNICATION_FAILEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N6sensor15BME280Component13WRONG_CHIP_IDE">
+<span id="_CPPv2N6sensor15BME280Component13WRONG_CHIP_IDE"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a6e97af26095eabaee11d15f240ae0712a6a99a55f6a580063898a38d8f6b125cc"></span><code class="descname">WRONG_CHIP_ID</code><a class="headerlink" href="#_CPPv3N6sensor15BME280Component13WRONG_CHIP_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -239,6 +269,11 @@ esphomelib (<a class="reference external" href="https://cdn-shop.adafruit.com/da
 <dl class="member">
 <dt id="_CPPv3N6sensor15BME280Component16humidity_sensor_E">
 <span id="_CPPv2N6sensor15BME280Component16humidity_sensor_E"></span><span id="sensor::BME280Component::humidity_sensor___BME280HumiditySensorP"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1a9c6f45759540a82e9db09664b8443145"></span>BME280HumiditySensor *<code class="descname">humidity_sensor_</code><a class="headerlink" href="#_CPPv3N6sensor15BME280Component16humidity_sensor_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor15BME280Component4NONEE">
+<span id="sensor::BME280Component::NONE__sensor::BME280Component::ErrorCode"></span><span class="target" id="classsensor_1_1_b_m_e280_component_1abc164a7a6c5daa48cbe44487df44fc3f"></span>sensor::<a class="reference internal" href="#_CPPv3N6sensor15BME280ComponentE" title="sensor::BME280Component">BME280Component</a>::<a class="reference internal" href="#_CPPv3N6sensor15BME280Component9ErrorCodeE" title="sensor::BME280Component::ErrorCode">ErrorCode</a> <code class="descname">NONE</code><br /></dt>
 <dd></dd></dl>
 
 </div>
