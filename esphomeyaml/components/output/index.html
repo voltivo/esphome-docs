@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up generic outputs in esphomelib">
 <meta itemprop="name" content="Output Component">
 <meta itemprop="description" content="Instructions for setting up generic outputs in esphomelib">
-<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:title" content="Output Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up generic outputs in esphomelib">
 <meta property="og:title" content="Output Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up generic outputs in esphomelib"/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -97,13 +96,13 @@ any rational value between 0 and 1).</p>
 <div class="section" id="base-output-configuration">
 <span id="config-output"></span><h2>Base Output Configuration<a class="headerlink" href="#base-output-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Each output platform extends this configuration schema.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">my_output_id</span>
-    <span class="n">power_supply</span><span class="p">:</span> <span class="n">power_supply_id</span>
-    <span class="n">inverted</span><span class="p">:</span> <span class="kc">False</span>
-    <span class="n">max_power</span><span class="p">:</span> <span class="mf">0.75</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_output_id</span>
+    <span class="l l-Scalar l-Scalar-Plain">power_supply</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">power_supply_id</span>
+    <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+    <span class="l l-Scalar l-Scalar-Plain">max_power</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.75</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -122,15 +121,15 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
 <div class="section" id="output-turn-on-action">
 <span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">output.turn_on</span></code> Action<a class="headerlink" href="#output-turn-on-action" title="Permalink to this headline">¶</a></h3>
 <p>This action turns the output with the given ID on when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">relay_1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">)</span><span class="o">.</span><span class="n">turn_on</span><span class="p">();</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">).</span><span class="n">turn_on</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -138,15 +137,15 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
 <div class="section" id="output-turn-off-action">
 <span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">output.turn_off</span></code> Action<a class="headerlink" href="#output-turn-off-action" title="Permalink to this headline">¶</a></h3>
 <p>This action turns the output with the given ID off when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">relay_1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">)</span><span class="o">.</span><span class="n">turn_off</span><span class="p">();</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">).</span><span class="n">turn_off</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -155,18 +154,18 @@ multiplied by this. Must be in range from 0 to 1. Defaults to 1.</li>
 <span id="id3"></span><h3><code class="docutils literal notranslate"><span class="pre">output.set_level</span></code> Action<a class="headerlink" href="#output-set-level-action" title="Permalink to this headline">¶</a></h3>
 <p>This action sets the float output to the given level when executed. Note: This only
 works with floating point outputs like ESP8266 PWM or LEDC.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">set_level</span><span class="p">:</span>
-        <span class="nb">id</span><span class="p">:</span> <span class="n">output_1</span>
-        <span class="n">level</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output.set_level</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_1</span>
+        <span class="l l-Scalar l-Scalar-Plain">level</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50%</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="nb">range</span> <span class="ow">is</span> <span class="mf">0.0</span> <span class="p">(</span><span class="n">off</span><span class="p">)</span> <span class="n">to</span> <span class="mf">1.0</span> <span class="p">(</span><span class="n">on</span><span class="p">)</span>
-<span class="nb">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">)</span><span class="o">.</span><span class="n">set_level</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// range is 0.0 (off) to 1.0 (on)</span>
+<span class="n">id</span><span class="p">(</span><span class="n">relay_1</span><span class="p">).</span><span class="n">set_level</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -205,11 +204,11 @@ works with floating point outputs like ESP8266 PWM or LEDC.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

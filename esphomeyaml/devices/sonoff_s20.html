@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/devices/sonoff_s20.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -187,24 +186,24 @@ or alternatively, you can just take the below configuration file and modify it t
 as seen below. The version of the uploader used by esphomeyaml should automatically detect that
 the Sonoff S20 uses the <code class="docutils literal notranslate"><span class="pre">dout</span></code> SPI flash chip mode. But, as some users of other firmwares have
 said that other flash modes can brick the device, it’s always good to specify it explicitly.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">NAME_OF_NODE</span><span class="o">&gt;</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;NAME_OF_NODE&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_SSID</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_SSID&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_PASSWORD&gt;</span>
 
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_MQTT_BROKER</span><span class="o">&gt;</span>
-  <span class="n">username</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_USERNAME</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_MQTT_BROKER&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_USERNAME&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_PASSWORD&gt;</span>
 
-<span class="n">logger</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
 
-<span class="n">ota</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
 </pre></div>
 </div>
 <p>Now run <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">sonoff_s20.yaml</span> <span class="pre">compile</span></code> to validate the configuration and
@@ -224,7 +223,7 @@ bridge is not connected to your USB port, start pressing the small push button i
 Then plug in the UART bridge into your computer and just keep holding the button pressed for 2-4 seconds.
 The S20 should now be in a flash mode and should not blink with any LED.</p>
 <p>Now you can finally run the upload command:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">sonoff_s20</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml sonoff_s20.yaml run
 </pre></div>
 </div>
 <p>If successful, you should see something like this:</p>
@@ -271,54 +270,54 @@ of the basic functions.</p>
 </tr>
 </tbody>
 </table>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">NAME_OF_NODE</span><span class="o">&gt;</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;NAME_OF_NODE&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_SSID</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_SSID&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_PASSWORD&gt;</span>
 
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_MQTT_BROKER</span><span class="o">&gt;</span>
-  <span class="n">username</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_USERNAME</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_MQTT_BROKER&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_USERNAME&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_PASSWORD&gt;</span>
 
-<span class="n">logger</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
 
-<span class="n">ota</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">GPIO0</span>
-      <span class="n">mode</span><span class="p">:</span> <span class="n">INPUT_PULLUP</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Button&quot;</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">status</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Status&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO0</span>
+      <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">INPUT_PULLUP</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Button&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">status</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Status&quot;</span>
 
 
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Relay&quot;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO12</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Relay&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO12</span>
 
-<span class="n">output</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
   <span class="c1"># Register the green LED as a dimmable output ....</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">s20_green_led</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">GPIO13</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">s20_green_led</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO13</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 
-<span class="n">light</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
   <span class="c1"># ... and then make a light out of it.</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">monochromatic</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Green LED&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">s20_green_led</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">monochromatic</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Green</span><span class="nv"> </span><span class="s">LED&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">s20_green_led</span>
 </pre></div>
 </div>
 <p>Above example also showcases an important concept of esphomeyaml: IDs and linking. In order
@@ -328,28 +327,28 @@ output being created with the ID <code class="docutils literal notranslate"><spa
 into a <a class="reference internal" href="../components/light/monochromatic.html"><span class="doc">monochromatic light</span></a>.</p>
 <p>And if you want the thing that’s connected through the output of the S20 to appear as a light
 in Home Assistant, replace the last part with this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">restart</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Restart&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">restart</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Restart&quot;</span>
 
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">s20_green_led</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">GPIO13</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">s20_green_led</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO13</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
   <span class="c1"># Note: do *not* make the relay a dimmable (PWM) signal, relays cannot handle that</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">binary</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">s20_relay</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO12</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">binary</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">s20_relay</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO12</span>
 
-<span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">monochromatic</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Green LED&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">s20_green_led</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">binary</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff S20 Relay&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">s20_relay</span>
+<span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">monochromatic</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Green</span><span class="nv"> </span><span class="s">LED&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">s20_green_led</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">binary</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">S20</span><span class="nv"> </span><span class="s">Relay&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">s20_relay</span>
 </pre></div>
 </div>
 <p>To make pressing the button on the front toggle the relay, have a look at the <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/devices/sonoff_s20.yaml">the complete Sonoff S20
@@ -395,11 +394,11 @@ plug it into the socket.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

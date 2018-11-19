@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/xiaomi_miflora.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,22 +91,22 @@ devices using the <a class="reference internal" href="../esp32_ble_tracker.html"
 temperature, humidity and optionally the battery level of the MiFlora device every time the sensor
 sends out a BLE broadcast. Note that contrary to other implementations, esphomelib can track as many
 MiFlora devices at once as you want.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esp32_ble_tracker</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span><span class="p p-Indicator">:</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">xiaomi_miflora</span>
-    <span class="n">mac_address</span><span class="p">:</span> <span class="mi">94</span><span class="p">:</span><span class="mi">2</span><span class="n">B</span><span class="p">:</span><span class="n">FF</span><span class="p">:</span><span class="mi">5</span><span class="n">C</span><span class="p">:</span><span class="mi">91</span><span class="p">:</span><span class="mi">61</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Xiaomi MiFlora Temperature&quot;</span>
-    <span class="n">moisture</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Xiaomi MiFlora Moisture&quot;</span>
-    <span class="n">illuminance</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Xiaomi MiFlora Illuminance&quot;</span>
-    <span class="n">conductivity</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Xiaomi MiFlora Soil Conductivity&quot;</span>
-    <span class="n">battery_level</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Xiaomi MiFlora Battery Level&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">xiaomi_miflora</span>
+    <span class="l l-Scalar l-Scalar-Plain">mac_address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">94:2B:FF:5C:91:61</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Xiaomi</span><span class="nv"> </span><span class="s">MiFlora</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">moisture</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Xiaomi</span><span class="nv"> </span><span class="s">MiFlora</span><span class="nv"> </span><span class="s">Moisture&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">illuminance</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Xiaomi</span><span class="nv"> </span><span class="s">MiFlora</span><span class="nv"> </span><span class="s">Illuminance&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">conductivity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Xiaomi</span><span class="nv"> </span><span class="s">MiFlora</span><span class="nv"> </span><span class="s">Soil</span><span class="nv"> </span><span class="s">Conductivity&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">battery_level</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Xiaomi</span><span class="nv"> </span><span class="s">MiFlora</span><span class="nv"> </span><span class="s">Battery</span><span class="nv"> </span><span class="s">Level&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -150,12 +149,12 @@ MiFlora devices at once as you want.</p>
 <h2>Setting Up Devices<a class="headerlink" href="#setting-up-devices" title="Permalink to this headline">¶</a></h2>
 <p>To set up Xiaomi MiFlora devices you first need to find their MAC Address so that esphomelib can
 identify them. So first, create a simple configuration without any <code class="docutils literal notranslate"><span class="pre">xiaomi_miflora</span></code> entries like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esp32_ble_tracker</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span><span class="p p-Indicator">:</span>
 </pre></div>
 </div>
 <p>After uploading the ESP32 will immediately try to scan for BLE devices such as the Xiaomi MiFlora. When
 it detects these sensors, it will automatically parse the BLE message print a message like this one:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre>Xiaomi MiFlora 94:2B:FF:5C:91:61 Got temperature=23.4°C
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">Xiaomi MiFlora 94:2B:FF:5C:91:61 Got temperature=23.4°C</span>
 </pre></div>
 </div>
 <p>Note that it can sometimes take some time for the first BLE broadcast to be received.</p>
@@ -183,11 +182,11 @@ in the configuration example at the top.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -13,7 +13,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="canonical" href="https://esphomelib.com/api/binary_sensor/esp32_touch.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -109,9 +108,9 @@
 </ul>
 </p>
 <p>Additionally, you need to register the touch pad in the application instance like this:</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">App</span><span class="o">.</span><span class="n">register_binary_sensor</span><span class="p">(</span>
-    <span class="n">touch_hub</span><span class="o">-&gt;</span><span class="n">make_touch_pad</span><span class="p">(</span><span class="s2">&quot;ESP32 Touch Pad 9&quot;</span><span class="p">,</span> <span class="n">TOUCH_PAD_NUM9</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="p">);</span>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">App.register_binary_sensor(</span>
+    <span class="l l-Scalar l-Scalar-Plain">touch_hub-&gt;make_touch_pad(&quot;ESP32 Touch Pad 9&quot;, TOUCH_PAD_NUM9, 1000)</span>
+<span class="l l-Scalar l-Scalar-Plain">);</span>
 </pre></div>
 </div>
 </p>
@@ -419,11 +418,11 @@
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

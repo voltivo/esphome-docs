@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/pn532.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -99,20 +98,20 @@ create individual binary sensors that track if an NFC/RFID tag is currently dete
 <p>As the communication with the PN532 is done using SPI for this integration, you need to set the two switches on
 the board to the SPI mode (usually by setting the first one to OFF and the second one to ON). Additionally, you need
 to have an <a class="reference internal" href="spi.html#spi"><span class="std std-ref">spi bus</span></a> in your configuration with both the <strong>miso_pin</strong> and <strong>mosi_pin</strong> set.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">spi</span><span class="p">:</span>
-  <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">miso_pin</span><span class="p">:</span> <span class="n">D1</span>
-  <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">spi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">clk_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">miso_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+  <span class="l l-Scalar l-Scalar-Plain">mosi_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
 
-<span class="n">pn532</span><span class="p">:</span>
-  <span class="n">cs_pin</span><span class="p">:</span> <span class="n">D3</span>
-  <span class="n">update_interval</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
+<span class="l l-Scalar l-Scalar-Plain">pn532</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">cs_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+  <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pn532</span>
-    <span class="n">uid</span><span class="p">:</span> <span class="mi">74</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">94</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;PN532 NFC Tag&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pn532</span>
+    <span class="l l-Scalar l-Scalar-Plain">uid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">74-10-37-94</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;PN532</span><span class="nv"> </span><span class="s">NFC</span><span class="nv"> </span><span class="s">Tag&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -141,13 +140,13 @@ can be called quite often (with an interval of <code class="docutils literal not
 if the tag is re-read many times.</p>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">x</span></code> this trigger provides is of type <code class="docutils literal notranslate"><span class="pre">std::string</span></code> and is the tag UID in the format
 <code class="docutils literal notranslate"><span class="pre">74-10-37-94</span></code>. The configuration below will for example publish the tag ID on the MQTT topic <code class="docutils literal notranslate"><span class="pre">pn532/tag</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>pn532:
-  # ...
-  on_tag:
-    then:
-      - mqtt.publish:
-          topic: pn532/tag
-          payload: !lambda &#39;return x;&#39;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">pn532</span><span class="p p-Indicator">:</span>
+  <span class="c1"># ...</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_tag</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pn532/tag</span>
+          <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="s">&#39;return</span><span class="nv"> </span><span class="s">x;&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -171,11 +170,11 @@ if the tag is re-read many times.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

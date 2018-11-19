@@ -9,14 +9,14 @@
 <meta name="keywords" content="HLW8012, Sonoff Pow R1">
 <meta itemprop="name" content="HLW8012 Power Sensor">
 <meta itemprop="description" content="Instructions for setting up HLW8012 power sensors for the Sonoff Pow R1">
-<meta itemprop="image" content="https://esphomelib.com/_images/hlw8012.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/hlw8012.png">
 <meta name="twitter:title" content="HLW8012 Power Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/hlw8012.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/hlw8012.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up HLW8012 power sensors for the Sonoff Pow R1">
 <meta property="og:title" content="HLW8012 Power Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/hlw8012.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/hlw8012.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up HLW8012 power sensors for the Sonoff Pow R1"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/hlw8012.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -94,19 +93,19 @@ CF’s frequency is proportional to the (active) power measured and CF1 is propo
 the SEL pin, one can choose between which mode to use.</p>
 <p>esphomelib will continuously cycle the state of the SEL pin to measure current <em>and</em> voltage, though both cannot
 be measured at the same exact points in time.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">hlw8012</span>
-    <span class="n">sel_pin</span><span class="p">:</span> <span class="mi">5</span>
-    <span class="n">cf_pin</span><span class="p">:</span> <span class="mi">14</span>
-    <span class="n">cf1_pin</span><span class="p">:</span> <span class="mi">13</span>
-    <span class="n">current</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;HLW8012 Current&quot;</span>
-    <span class="n">voltage</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;HLW8012 Voltage&quot;</span>
-    <span class="n">power</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;HLW8012 Power&quot;</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hlw8012</span>
+    <span class="l l-Scalar l-Scalar-Plain">sel_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+    <span class="l l-Scalar l-Scalar-Plain">cf_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">14</span>
+    <span class="l l-Scalar l-Scalar-Plain">cf1_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">13</span>
+    <span class="l l-Scalar l-Scalar-Plain">current</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;HLW8012</span><span class="nv"> </span><span class="s">Current&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">voltage</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;HLW8012</span><span class="nv"> </span><span class="s">Voltage&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">power</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;HLW8012</span><span class="nv"> </span><span class="s">Power&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -154,11 +153,11 @@ See <a class="reference internal" href="index.html#sensor-default-filter"><span 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

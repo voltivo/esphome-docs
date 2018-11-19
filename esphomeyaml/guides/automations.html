@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Getting started guide for automations in esphomelib.">
 <meta itemprop="name" content="Automations And Templates">
 <meta itemprop="description" content="Getting started guide for automations in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/auto-fix.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/auto-fix.png">
 <meta name="twitter:title" content="Automations And Templates">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/auto-fix.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/auto-fix.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Getting started guide for automations in esphomelib.">
 <meta property="og:title" content="Automations And Templates"/>
-<meta property="og:image" content="https://esphomelib.com/_images/auto-fix.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/auto-fix.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Getting started guide for automations in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/automations.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -103,15 +102,15 @@ allow you to perform actions under certain conditions and templates are a way to
 customize everything about your node without having to dive into the full esphomelib C++
 API.</p>
 <p>Let’s begin with an example to explain these concepts. Suppose you have this configuration file:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO3</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO3</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Dehumidifier&quot;</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO4</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier Toggle Button&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO4</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Dehumidifier</span><span class="nv"> </span><span class="s">Toggle</span><span class="nv"> </span><span class="s">Button&quot;</span>
 </pre></div>
 </div>
 <p>With this file you can already perform some basic tasks. You can control the ON/OFF state
@@ -126,44 +125,44 @@ the MQTT server being online.</p>
 can write some basic (and also some more advanced) automations using a syntax that is
 hopefully a bit easier to read and understand than Home Assistant’s.</p>
 <p>For example, this configuration would achieve your desired behavior:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO3</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">dehumidifier1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO3</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Dehumidifier&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO4</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Dehumidifier Toggle Button&quot;</span>
-    <span class="n">on_press</span><span class="p">:</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier1</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO4</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Dehumidifier</span><span class="nv"> </span><span class="s">Toggle</span><span class="nv"> </span><span class="s">Button&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
 </pre></div>
 </div>
 <p>Woah, hold on there. Please explain what’s going on here! Sure :) Let’s step through what’s happening here.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-   <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
      <span class="c1"># ...</span>
-     <span class="nb">id</span><span class="p">:</span> <span class="n">dehumidifier1</span>
+     <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
 </pre></div>
 </div>
 <p>First, we have to give the dehumidifier an <a class="reference internal" href="configuration-types.html#config-id"><span class="std std-ref">ID</span></a> so that we can
 later use it inside our awesome automation.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
-    <span class="n">on_press</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
 </pre></div>
 </div>
 <p>We now attach a special attribute <code class="docutils literal notranslate"><span class="pre">on_press</span></code> to the toggle button. This part is called a “trigger”. In this example,
 the automation in the next few lines will execute whenever someone <em>begins</em> to press the button. Note the terminology
 follows what you would call these events on mouse buttons. A <em>press</em> happens when you begin pressing the button/mouse.
 There are also other triggers like <code class="docutils literal notranslate"><span class="pre">on_release</span></code>, <code class="docutils literal notranslate"><span class="pre">on_click</span></code> or <code class="docutils literal notranslate"><span class="pre">on_double_click</span></code> available.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
-<span class="n">on_press</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
+<span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
 </pre></div>
 </div>
 <div class="section" id="actions">
@@ -172,45 +171,45 @@ There are also other triggers like <code class="docutils literal notranslate"><s
 Within this block, you can define several “actions”. For example, <code class="docutils literal notranslate"><span class="pre">switch.toggle</span></code> and the line after that form an
 action. Each action is separated by a dash and multiple actions can be executed in series by just adding another <code class="docutils literal notranslate"><span class="pre">-</span></code>
 like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
-<span class="n">on_press</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier1</span>
-    <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mi">2</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
+<span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
 </pre></div>
 </div>
 <p>With this automation, a press on the push button would cause the dehumidifier to turn on/off for 2 seconds, and then
 cycle back to its original state. Similarly you can have a single trigger with multiple automations:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
-<span class="n">on_press</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier1</span>
-  <span class="o">-</span> <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier_indicator_light</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># ...</span>
+<span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier_indicator_light</span>
 
 <span class="c1"># Same as:</span>
-<span class="n">on_press</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier1</span>
-    <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">dehumidifier_indicator_light</span>
+<span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier_indicator_light</span>
 </pre></div>
 </div>
 <p>As a last example, let’s make our dehumidifier smart: Let’s make it turn on automatically when the humidity a sensor
 reports is above 65% and make it turn off again when it reaches 50%</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dht</span>
-    <span class="n">humidity</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Humidity&quot;</span>
-      <span class="n">on_value_range</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">above</span><span class="p">:</span> <span class="mf">65.0</span>
-          <span class="n">then</span><span class="p">:</span>
-            <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">dehumidifier1</span>
-        <span class="o">-</span> <span class="n">below</span><span class="p">:</span> <span class="mf">50.0</span>
-          <span class="n">then</span><span class="p">:</span>
-            <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">dehumidifier1</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Temperature&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dht</span>
+    <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">on_value_range</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">above</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">65.0</span>
+          <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">below</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50.0</span>
+          <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dehumidifier1</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
 </pre></div>
 </div>
 <p>That’s a lot of indentation 😉 <code class="docutils literal notranslate"><span class="pre">on_value_range</span></code> is a special trigger for sensors that triggers when the value output
@@ -225,19 +224,19 @@ esphomelib has another extremely powerful tool to offer: Templates.</p>
 <p>With templates inside esphomelib, you can do almost <em>everything</em>. If for example you want to only perform a certain
 automation if a certain complex formula evaluates to true, you can do that with templates. Let’s look at an example
 first:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>binary_sensor:
-  - platform: gpio
-    name: &quot;Cover End Stop&quot;
-    id: top_end_stop
-cover:
-  - platform: template
-    name: Living Room Cover
-    lambda: !lambda &gt;-
-      if (id(top_end_stop).state) {
-        return cover::COVER_OPEN;
-      } else {
-        return cover::COVER_CLOSED;
-      }
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Cover</span><span class="nv"> </span><span class="s">End</span><span class="nv"> </span><span class="s">Stop&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">top_end_stop</span>
+<span class="l l-Scalar l-Scalar-Plain">cover</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Living Room Cover</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">if (id(top_end_stop).state) {</span>
+        <span class="no">return cover::COVER_OPEN;</span>
+      <span class="no">} else {</span>
+        <span class="no">return cover::COVER_CLOSED;</span>
+      <span class="no">}</span>
 </pre></div>
 </div>
 <p>What’s happening here? First, we define a binary sensor (with the id <code class="docutils literal notranslate"><span class="pre">top_end_stop</span></code>) and then a
@@ -273,10 +272,10 @@ with lambdas, it’s always best to look at the generated C++ source file under 
 <p>To store local variables inside lambdas that retain their value across executions, you can create <code class="docutils literal notranslate"><span class="pre">static</span></code>
 variables like so. In this example the variable <code class="docutils literal notranslate"><span class="pre">num_executions</span></code> is incremented by one each time the
 lambda is executed and the current value is logged.</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-  <span class="n">static</span> <span class="nb">int</span> <span class="n">num_executions</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="n">ESP_LOGD</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;I am at execution number </span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">num_executions</span><span class="p">);</span>
-  <span class="n">num_executions</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+  <span class="no">static int num_executions = 0;</span>
+  <span class="no">ESP_LOGD(&quot;main&quot;, &quot;I am at execution number %d&quot;, num_executions);</span>
+  <span class="no">num_executions += 1;</span>
 </pre></div>
 </div>
 </div>
@@ -284,17 +283,17 @@ lambda is executed and the current value is logged.</p>
 <span id="config-templatable"></span><h3>Bonus: Templating Actions<a class="headerlink" href="#bonus-templating-actions" title="Permalink to this headline">¶</a></h3>
 <p>Another feature of esphomeyaml is that you can template almost every parameter for actions in automations. For example
 if you have a light and want to set it to a pre-defined color when a button is pressed, you can do this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_press:
-  then:
-    - light.turn_on:
-        id: some_light_id
-        transition_length: 0.5s
-        red: 0.8
-        green: 1.0
-        blue: !lambda &gt;-
-          # The sensor outputs values from 0 to 100. The blue
-          # part of the light color will be determined by the sensor value.
-          return id(some_sensor).state / 100.0;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some_light_id</span>
+        <span class="l l-Scalar l-Scalar-Plain">transition_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5s</span>
+        <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.8</span>
+        <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
+        <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">// The sensor outputs values from 0 to 100. The blue</span>
+          <span class="no">// part of the light color will be determined by the sensor value.</span>
+          <span class="no">return id(some_sensor).state / 100.0;</span>
 </pre></div>
 </div>
 <p>Every parameter in actions that has the label “templatable” in the docs can be templated like above, using
@@ -304,25 +303,25 @@ all of the usual lambda syntax.</p>
 <span id="config-globals"></span><h3>Bonus 2: Global Variables<a class="headerlink" href="#bonus-2-global-variables" title="Permalink to this headline">¶</a></h3>
 <p>In some cases you might require to share a global variable across multiple lambdas. For example,
 global variables can be used to store the state of a garage door.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre> <span class="c1"># Example configuration entry</span>
- <span class="nb">globals</span><span class="p">:</span>
-   <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">my_global_int</span>
-     <span class="nb">type</span><span class="p">:</span> <span class="nb">int</span>
-     <span class="n">restore_state</span><span class="p">:</span> <span class="n">no</span>
-     <span class="n">initial_value</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre> <span class="c1"># Example configuration entry</span>
+ <span class="l l-Scalar l-Scalar-Plain">globals</span><span class="p p-Indicator">:</span>
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_global_int</span>
+     <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">int</span>
+     <span class="l l-Scalar l-Scalar-Plain">restore_state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+     <span class="l l-Scalar l-Scalar-Plain">initial_value</span><span class="p p-Indicator">:</span> <span class="s">&#39;0&#39;</span>
 
 <span class="c1"># In an automation</span>
-<span class="n">on_press</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">my_global_int</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-          <span class="o">//</span> <span class="k">global</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="mi">5</span>
-          <span class="nb">id</span><span class="p">(</span><span class="n">my_global_int</span><span class="p">)</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="nb">id</span><span class="p">(</span><span class="n">my_global_int</span><span class="p">)</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+        <span class="no">if (id(my_global_int) &gt; 5) {</span>
+          <span class="no">// global value is greater than 5</span>
+          <span class="no">id(my_global_int) += 1;</span>
+        <span class="no">} else {</span>
+          <span class="no">id(my_global_int) += 10;</span>
+        <span class="no">}</span>
 
-        <span class="n">ESP_LOGD</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s2">&quot;Global value is: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_global_int</span><span class="p">));</span>
+        <span class="no">ESP_LOGD(TAG, &quot;Global value is: %d&quot;, id(my_global_int));</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -401,13 +400,13 @@ in the <a class="reference internal" href="../components/wifi.html"><span class=
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">delay</span></code> Action<a class="headerlink" href="#delay-action" title="Permalink to this headline">¶</a></h2>
 <p>This action delays the execution of the next action in the action list by a specified
 time period.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
-  then:
-     - switch.turn_on: relay_1
-     - delay: 2s
-     - switch.turn_off: relay_1
-     # Templated, waits for 1s (1000ms) only if a reed switch is active
-     - delay: !lambda &quot;if (id(reed_switch).state) return 1000; else return 0;&quot;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2s</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
+     <span class="c1"># Templated, waits for 1s (1000ms) only if a reed switch is active</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="s">&quot;if</span><span class="nv"> </span><span class="s">(id(reed_switch).state)</span><span class="nv"> </span><span class="s">return</span><span class="nv"> </span><span class="s">1000;</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">return</span><span class="nv"> </span><span class="s">0;&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -419,10 +418,10 @@ the delay is happening.</p>
 <div class="section" id="lambda-action">
 <span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">lambda</span></code> Action<a class="headerlink" href="#lambda-action" title="Permalink to this headline">¶</a></h2>
 <p>This action executes an arbitrary piece of C++ code (see <a class="reference internal" href="#config-lambda"><span class="std std-ref">Lambda</span></a>).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-        <span class="nb">id</span><span class="p">(</span><span class="n">some_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">publish_state</span><span class="p">(</span><span class="n">false</span><span class="p">);</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+        <span class="no">id(some_binary_sensor).publish_state(false);</span>
 </pre></div>
 </div>
 </div>
@@ -433,18 +432,18 @@ executes the <code class="docutils literal notranslate"><span class="pre">then:<
 <p>After the chosen branch (<code class="docutils literal notranslate"><span class="pre">then</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span></code>) is done with execution, the next action is performed.</p>
 <p>For example below you can see an automation that checks if a sensor value is below 30 and if so
 turns on a light for 5 seconds. Otherwise, the light is turned off immediately.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="k">if</span><span class="p">:</span>
-        <span class="n">condition</span><span class="p">:</span>
-          <span class="k">lambda</span><span class="p">:</span> <span class="s1">&#39;return id(some_sensor).state &lt; 30;&#39;</span>
-        <span class="n">then</span><span class="p">:</span>
-          <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="s1">&#39;ESP_LOGD(&quot;main&quot;, &quot;The sensor value is below 30!&quot;);</span>
-          <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">my_light</span>
-          <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
-        <span class="k">else</span><span class="p">:</span>
-          <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="s1">&#39;ESP_LOGD(&quot;main&quot;, &quot;The sensor value is above 30!&quot;);</span>
-    <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">my_light</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">if</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">condition</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="s">&#39;return</span><span class="nv"> </span><span class="s">id(some_sensor).state</span><span class="nv"> </span><span class="s">&lt;</span><span class="nv"> </span><span class="s">30;&#39;</span>
+        <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="s">&#39;ESP_LOGD(&quot;main&quot;,</span><span class="nv"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">sensor</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">below</span><span class="nv"> </span><span class="s">30!&quot;);</span>
+          <span class="s">-</span><span class="nv"> </span><span class="s">light.turn_on:</span><span class="nv"> </span><span class="s">my_light</span>
+          <span class="s">-</span><span class="nv"> </span><span class="s">delay:</span><span class="nv"> </span><span class="s">5s</span>
+        <span class="s">else:</span>
+          <span class="s">-</span><span class="nv"> </span><span class="s">lambda:</span><span class="nv"> </span><span class="s">&#39;</span><span class="l l-Scalar l-Scalar-Plain">ESP_LOGD(&quot;main&quot;, &quot;The sensor value is above 30!&quot;);</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_light</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -461,12 +460,12 @@ Defaults to doing nothing.</li>
 <p>Using this action you can manually call the <code class="docutils literal notranslate"><span class="pre">update()</span></code> method of a component.</p>
 <p>Please note that this only works with some component types and others will result in a
 compile error.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">component</span><span class="o">.</span><span class="n">update</span><span class="p">:</span> <span class="n">my_component</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">component.update</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_component</span>
 
     <span class="c1"># The same as:</span>
-    <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="s1">&#39;id(my_component).update();&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="s">&#39;id(my_component).update();&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -477,18 +476,18 @@ that perform the same exact action, you would normally have to copy the YAML lin
 triggers.</p>
 <p>With the <code class="docutils literal notranslate"><span class="pre">script</span></code> component you can define these steps in a central place, and then
 execute the script with a single call.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">script</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">my_script</span>
-    <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">my_switch</span>
-      <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">my_switch</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">script</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_script</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_switch</span>
 
 <span class="c1"># in a trigger:</span>
-<span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">script</span><span class="o">.</span><span class="n">execute</span><span class="p">:</span> <span class="n">my_script</span>
+<span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">script.execute</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_script</span>
 </pre></div>
 </div>
 </div>
@@ -510,11 +509,11 @@ execute the script with a single call.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

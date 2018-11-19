@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up sensor components in esphomelib.">
 <meta itemprop="name" content="Sensor Component">
 <meta itemprop="description" content="Instructions for setting up sensor components in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:title" content="Sensor Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up sensor components in esphomelib.">
 <meta property="og:title" content="Sensor Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up sensor components in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -104,18 +103,18 @@ configuration options.</p>
 optional configuration options. By default, the sensor platform will
 chose appropriate values for all of these by default, but you can always
 override them if you want to.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example sensor configuration</span>
-<span class="n">name</span><span class="p">:</span> <span class="n">Livingroom</span> <span class="n">Temperature</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example sensor configuration</span>
+<span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Livingroom Temperature</span>
 
 <span class="c1"># Optional variables:</span>
-<span class="n">unit_of_measurement</span><span class="p">:</span> <span class="s2">&quot;°C&quot;</span>
-<span class="n">icon</span><span class="p">:</span> <span class="s2">&quot;mdi:water-percent&quot;</span>
-<span class="n">accuracy_decimals</span><span class="p">:</span> <span class="mi">1</span>
-<span class="n">expire_after</span><span class="p">:</span> <span class="mi">30</span><span class="n">s</span>
-<span class="n">filters</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">sliding_window_moving_average</span><span class="p">:</span>
-      <span class="n">window_size</span><span class="p">:</span> <span class="mi">15</span>
-      <span class="n">send_every</span><span class="p">:</span> <span class="mi">15</span>
+<span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="s">&quot;°C&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="s">&quot;mdi:water-percent&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">accuracy_decimals</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="l l-Scalar l-Scalar-Plain">expire_after</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30s</span>
+<span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sliding_window_moving_average</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">window_size</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
+      <span class="l l-Scalar l-Scalar-Plain">send_every</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -146,14 +145,14 @@ when a raw value is received that hasn’t passed through any filters. See <a cl
 <p class="first admonition-title">Note</p>
 <p>If you’re trying to setup filters for a sensor that has multiple outputs - for example a DHT22 which
 reports temperature <em>and</em> humidity - put the <code class="docutils literal notranslate"><span class="pre">filters</span></code> option into each sensor output like this:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dht</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dht</span>
     <span class="c1"># ...</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">filters</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
         <span class="c1"># ...</span>
-    <span class="n">humidity</span><span class="p">:</span>
-      <span class="n">filters</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
         <span class="c1"># ...</span>
 </pre></div>
 </div>
@@ -168,27 +167,27 @@ relief Home Assistant’s state machine and keep the history graphs in the
 front-end a bit more clean. More sophisticated filters should be done
 with Home Assistant’s <a class="reference external" href="https://www.home-assistant.io/components/sensor.filter/">filter
 sensor</a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example filters:</span>
-<span class="n">filters</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">offset</span><span class="p">:</span> <span class="mf">2.0</span>
-  <span class="o">-</span> <span class="n">multiply</span><span class="p">:</span> <span class="mf">1.2</span>
-  <span class="o">-</span> <span class="n">filter_out</span><span class="p">:</span> <span class="mf">42.0</span>
-  <span class="o">-</span> <span class="n">filter_nan</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">sliding_window_moving_average</span><span class="p">:</span>
-      <span class="n">window_size</span><span class="p">:</span> <span class="mi">15</span>
-      <span class="n">send_every</span><span class="p">:</span> <span class="mi">15</span>
-  <span class="o">-</span> <span class="n">exponential_moving_average</span><span class="p">:</span>
-      <span class="n">alpha</span><span class="p">:</span> <span class="mf">0.1</span>
-      <span class="n">send_every</span><span class="p">:</span> <span class="mi">15</span>
-  <span class="o">-</span> <span class="n">throttle</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
-  <span class="o">-</span> <span class="n">heartbeat</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
-  <span class="o">-</span> <span class="n">debounce</span><span class="p">:</span> <span class="mf">0.1</span><span class="n">s</span>
-  <span class="o">-</span> <span class="n">delta</span><span class="p">:</span> <span class="mf">5.0</span>
-  <span class="o">-</span> <span class="n">unique</span><span class="p">:</span>
-  <span class="o">-</span> <span class="ow">or</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">throttle</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">delta</span><span class="p">:</span> <span class="mf">5.0</span>
-  <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example filters:</span>
+<span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">offset</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">multiply</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.2</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">filter_out</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">42.0</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">filter_nan</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sliding_window_moving_average</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">window_size</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
+      <span class="l l-Scalar l-Scalar-Plain">send_every</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">exponential_moving_average</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">alpha</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
+      <span class="l l-Scalar l-Scalar-Plain">send_every</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">throttle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">heartbeat</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5s</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debounce</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1s</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delta</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5.0</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">unique</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">or</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">throttle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delta</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5.0</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">return x * (9.0/5.0) + 32.0;</span>
 </pre></div>
 </div>
 <p>Above example configuration entry is probably a bit useless, but shows
@@ -254,9 +253,9 @@ is quite useful to some users. esphomelib uses the celsius temperature
 unit internally, and I’m not planning on making converting between the
 two simple (😉), but you can use this filter to convert celsius values to
 fahrenheit.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">filters</span><span class="p">:</span>
-  <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span> <span class="o">+</span> <span class="mf">32.0</span><span class="p">;</span>
-<span class="n">unit_of_measurement</span><span class="p">:</span> <span class="s2">&quot;°F&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">return x * (9.0/5.0) + 32.0;</span>
+<span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="s">&quot;°F&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -267,11 +266,11 @@ This was done in order to automatically decrease sensor noise.
 Therefore if you have an <code class="docutils literal notranslate"><span class="pre">update_interval</span></code> of 15 seconds, you will only see the values
 every 3 and a half minutes or so. To disable the default filter and publish all raw values
 directly, put an empty <code class="docutils literal notranslate"><span class="pre">filters:</span></code> block in your configuration:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">adc</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">adc</span>
     <span class="c1"># ...</span>
-    <span class="n">filters</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
 </pre></div>
 </div>
 </div>
@@ -284,14 +283,14 @@ directly, put an empty <code class="docutils literal notranslate"><span class="p
 <p>This automation will be triggered when a new value that has passed through all filters
 is published. In <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">Lambdas</span></a> you can get the value from the trigger
 with <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>sensor:
-  - platform: dallas
-    # ...
-    on_value:
-      then:
-        - light.turn_on:
-            id: light_1
-            red: !lambda &quot;return x/255;&quot;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_value</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
+            <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="s">&quot;return</span><span class="nv"> </span><span class="s">x/255;&quot;</span>
 </pre></div>
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
@@ -305,14 +304,14 @@ This trigger will only trigger when the new value is inside the range and the pr
 was outside the range. It will also trigger on startup if the first value received is inside the range.</p>
 <p>Define the range with <code class="docutils literal notranslate"><span class="pre">above</span></code> and <code class="docutils literal notranslate"><span class="pre">below</span></code>. If only one of them is defined, the interval is half-open.
 So for example <code class="docutils literal notranslate"><span class="pre">above:</span> <span class="pre">5</span></code> with no below would mean the range from 5 to positive infinity.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dallas</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
     <span class="c1"># ...</span>
-    <span class="n">on_value_range</span><span class="p">:</span>
-      <span class="n">above</span><span class="p">:</span> <span class="mi">5</span>
-      <span class="n">below</span><span class="p">:</span> <span class="mi">10</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">relay_1</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_value_range</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">above</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+      <span class="l l-Scalar l-Scalar-Plain">below</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -327,14 +326,14 @@ So for example <code class="docutils literal notranslate"><span class="pre">abov
 <p>This automation will be triggered when a new value that has passed through all filters
 is published. In <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">Lambdas</span></a> you can get the value from the trigger
 with <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>sensor:
-  - platform: dallas
-    # ...
-    on_value:
-      then:
-        - light.turn_on:
-            id: light_1
-            red: !lambda &quot;return x/255;&quot;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_value</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
+            <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="s">&quot;return</span><span class="nv"> </span><span class="s">x/255;&quot;</span>
 </pre></div>
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
@@ -346,22 +345,22 @@ advanced stuff (see the full <a class="reference internal" href="../../../api/se
 <ul>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">publish_state()</span></code>: Manually cause the sensor to push out a value. It will then
 be processed by the sensor filters, and once done be published to MQTT.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">Within</span> <span class="k">lambda</span><span class="p">,</span> <span class="n">push</span> <span class="n">a</span> <span class="n">value</span> <span class="n">of</span> <span class="mf">42.0</span>
-<span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">publish_state</span><span class="p">(</span><span class="mf">42.0</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Within lambda, push a value of 42.0</span>
+<span class="n">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">).</span><span class="n">publish_state</span><span class="p">(</span><span class="mf">42.0</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">.state</span></code>: Retrieve the current value of the sensor that has passed through all sensor filters.
 Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code> if no value has gotten through all filters yet.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">create</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">log</span> <span class="n">message</span> <span class="n">when</span> <span class="n">a</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">received</span><span class="p">:</span>
-<span class="n">ESP_LOGI</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;Value of my sensor: </span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// For example, create a custom log message when a value is received:</span>
+<span class="n">ESP_LOGI</span><span class="p">(</span><span class="s">&quot;main&quot;</span><span class="p">,</span> <span class="s">&quot;Value of my sensor: %f&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">).</span><span class="n">state</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">raw_state</span></code>: Retrieve the current value of the sensor that has not passed through any filters
 Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code> if no value if no value has been pushed by the sensor itself yet.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">create</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">log</span> <span class="n">message</span> <span class="n">when</span> <span class="n">a</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">received</span><span class="p">:</span>
-<span class="n">ESP_LOGI</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="s2">&quot;Raw Value of my sensor: </span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">raw_state</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// For example, create a custom log message when a value is received:</span>
+<span class="n">ESP_LOGI</span><span class="p">(</span><span class="s">&quot;main&quot;</span><span class="p">,</span> <span class="s">&quot;Raw Value of my sensor: %f&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">).</span><span class="n">raw_state</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
@@ -429,11 +428,11 @@ Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

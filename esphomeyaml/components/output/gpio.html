@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up binary outputs for GPIO pins.">
 <meta itemprop="name" content="GPIO Output">
 <meta itemprop="description" content="Instructions for setting up binary outputs for GPIO pins.">
-<meta itemprop="image" content="https://esphomelib.com/_images/pin.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/pin.png">
 <meta name="twitter:title" content="GPIO Output">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/pin.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pin.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up binary outputs for GPIO pins.">
 <meta property="og:title" content="GPIO Output"/>
-<meta property="og:image" content="https://esphomelib.com/_images/pin.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pin.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up binary outputs for GPIO pins."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/gpio.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -88,11 +87,11 @@
 <p>The GPIO output component is quite simple: It exposes a single GPIO pin
 as an output component. Note that output components are <strong>not</strong> switches and
 will not show up in Home Assistant. See <a class="reference internal" href="#"><span class="doc">GPIO Switch</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">gpio_d1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio_d1</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -133,11 +132,11 @@ see the <a class="reference internal" href="../switch/gpio.html"><span class="do
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

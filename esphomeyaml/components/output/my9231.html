@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up MY931 and MY9231 outputs.">
 <meta itemprop="name" content="MY9231/MY9291 Output">
 <meta itemprop="description" content="Instructions for setting up MY931 and MY9231 outputs.">
-<meta itemprop="image" content="https://esphomelib.com/_images/my9231.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/my9231.png">
 <meta name="twitter:title" content="MY9231/MY9291 Output">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/my9231.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/my9231.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up MY931 and MY9231 outputs.">
 <meta property="og:title" content="MY9231/MY9291 Output"/>
-<meta property="og:image" content="https://esphomelib.com/_images/my9231.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/my9231.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up MY931 and MY9231 outputs."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/my9231.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -87,16 +86,16 @@
 <h1>MY9231/MY9291 Output<a class="headerlink" href="#my9231-my9291-output" title="Permalink to this headline">¶</a></h1>
 <p>The MY931/MY9291 output component exposes a MY931/MY9291 channel of a global
 <a class="reference internal" href="../my9231.html"><span class="doc">MY9231/MY9291 LED driver Component</span></a> as a float output.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">my9231</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">data_pin</span><span class="p">:</span> <span class="n">GPIO12</span>
-    <span class="n">clock_pin</span><span class="p">:</span> <span class="n">GPIO14</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">my9231</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">data_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO12</span>
+    <span class="l l-Scalar l-Scalar-Plain">clock_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO14</span>
 
 <span class="c1"># Individual outputs</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="s1">&#39;my9231_output1&#39;</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">0</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="s">&#39;my9231_output1&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -136,11 +135,11 @@ Use this if you have multiple MY9231/MY9291 chains you want to use at the same t
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

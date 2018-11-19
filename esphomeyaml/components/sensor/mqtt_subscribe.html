@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/mqtt_subscribe.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,12 +91,12 @@ a floating point number.</p>
 <p>Please note this integration only works with MQTT topics that have numeric data! Each time
 a message that is not a number is published a warning will be shown. Please use the MQTT subscribe
 text sensor for importing arbitrary text into the esphomelib ecosystem.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">mqtt_subscribe</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Data from topic&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">mysensor</span>
-    <span class="n">topic</span><span class="p">:</span> <span class="n">the</span><span class="o">/</span><span class="n">topic</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt_subscribe</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Data</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">topic&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mysensor</span>
+    <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">the/topic</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -128,11 +127,11 @@ text sensor for importing arbitrary text into the esphomelib ecosystem.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

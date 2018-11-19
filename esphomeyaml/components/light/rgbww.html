@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/light/rgbww.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -88,17 +87,17 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">rgbww</span></code> light platform creates an RGBWW (cold white + warm white)
 light from 5 <a class="reference internal" href="../output/index.html#output"><span class="std std-ref">float output components</span></a> (one for each channel). The cold white
 and warm white channels will be mixed using the color temperature configuration options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">rgbww</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Livingroom Lights&quot;</span>
-    <span class="n">red</span><span class="p">:</span> <span class="n">output_component1</span>
-    <span class="n">green</span><span class="p">:</span> <span class="n">output_component2</span>
-    <span class="n">blue</span><span class="p">:</span> <span class="n">output_component3</span>
-    <span class="n">cold_white</span><span class="p">:</span> <span class="n">output_component4</span>
-    <span class="n">warm_white</span><span class="p">:</span> <span class="n">output_component5</span>
-    <span class="n">cold_white_color_temperature</span><span class="p">:</span> <span class="mi">153</span> <span class="n">mireds</span>
-    <span class="n">warm_white_color_temperature</span><span class="p">:</span> <span class="mi">500</span> <span class="n">mireds</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rgbww</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Livingroom</span><span class="nv"> </span><span class="s">Lights&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_component1</span>
+    <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_component2</span>
+    <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_component3</span>
+    <span class="l l-Scalar l-Scalar-Plain">cold_white</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_component4</span>
+    <span class="l l-Scalar l-Scalar-Plain">warm_white</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_component5</span>
+    <span class="l l-Scalar l-Scalar-Plain">cold_white_color_temperature</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">153 mireds</span>
+    <span class="l l-Scalar l-Scalar-Plain">warm_white_color_temperature</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500 mireds</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -156,11 +155,11 @@ platforms like the <a class="reference internal" href="../output/gpio.html"><spa
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

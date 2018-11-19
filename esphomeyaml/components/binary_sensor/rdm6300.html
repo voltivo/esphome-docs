@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/rdm6300.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,17 +91,17 @@ unique id (<code class="docutils literal notranslate"><span class="pre">uid</spa
 <a class="reference internal image-reference" href="../../../_images/rdm6300-full.jpg"><img alt="../../../_images/rdm6300-full.jpg" src="../../../_images/rdm6300-full.jpg" style="width: 60.0%;" /></a>
 </div>
 <p>See <a class="reference internal" href="../rdm6300.html"><span class="doc">RDM6300 NFC/RFID Hub</span></a> for instructions for setting up the connection to the RDM6300.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">uart</span><span class="p">:</span>
-  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">9600</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">uart</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">rx_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">baud_rate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">9600</span>
 
-<span class="n">rdm6300</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">rdm6300</span><span class="p p-Indicator">:</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">rdm6300</span>
-    <span class="n">uid</span><span class="p">:</span> <span class="mi">7616525</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;RDM6300 NFC Tag&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rdm6300</span>
+    <span class="l l-Scalar l-Scalar-Plain">uid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">7616525</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;RDM6300</span><span class="nv"> </span><span class="s">NFC</span><span class="nv"> </span><span class="s">Tag&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -119,7 +118,7 @@ unique id (<code class="docutils literal notranslate"><span class="pre">uid</spa
 <p>To set up binary sensors for specific NFC tags you first have to know their unique IDs. To obtain this
 id, first set up a simple RDM6300 configuration without any binary sensors like above.</p>
 <p>When your code is running and you approach the RDM6300 with an NFC Tag, you should see a message like this:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">Found</span> <span class="n">new</span> <span class="n">tag</span> <span class="k">with</span> <span class="n">ID</span> <span class="s1">&#39;7616525&#39;</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">Found new tag with ID &#39;7616525&#39;</span>
 </pre></div>
 </div>
 <p>Then copy this id and create a <code class="docutils literal notranslate"><span class="pre">binary_sensor</span></code> entry as in the configuration example. Repeat this process for
@@ -147,11 +146,11 @@ each tag.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

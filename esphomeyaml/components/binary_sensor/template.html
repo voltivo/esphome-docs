@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up template binary sensors.">
 <meta itemprop="name" content="Template Binary Sensor">
 <meta itemprop="description" content="Instructions for setting up template binary sensors.">
-<meta itemprop="image" content="https://esphomelib.com/_images/description.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/description.png">
 <meta name="twitter:title" content="Template Binary Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/description.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/description.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up template binary sensors.">
 <meta property="og:title" content="Template Binary Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/description.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/description.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up template binary sensors."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/template.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -89,23 +88,23 @@
 and construct a binary sensor out if it.</p>
 <p>For example, below configuration would turn the state of an ultrasonic sensor into
 a binary sensor.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Garage Door Open&quot;</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ultrasonic_sensor1</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">))</span> <span class="p">{</span>
-        <span class="o">//</span> <span class="n">isnan</span> <span class="n">checks</span> <span class="k">if</span> <span class="n">the</span> <span class="n">ultrasonic</span> <span class="n">sensor</span> <span class="n">echo</span>
-        <span class="o">//</span> <span class="n">has</span> <span class="n">timed</span> <span class="n">out</span><span class="p">,</span> <span class="n">resulting</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">NaN</span> <span class="p">(</span><span class="ow">not</span> <span class="n">a</span> <span class="n">number</span><span class="p">)</span> <span class="n">state</span>
-        <span class="o">//</span> <span class="ow">in</span> <span class="n">that</span> <span class="n">case</span><span class="p">,</span> <span class="k">return</span> <span class="p">{}</span> <span class="n">to</span> <span class="n">indicate</span> <span class="n">that</span> <span class="n">we</span> <span class="n">don</span><span class="s1">&#39;t know.</span>
-        <span class="k">return</span> <span class="p">{};</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ultrasonic_sensor1</span><span class="p">)</span><span class="o">.</span><span class="n">state</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
-        <span class="o">//</span> <span class="n">Garage</span> <span class="n">Door</span> <span class="ow">is</span> <span class="nb">open</span><span class="o">.</span>
-        <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="o">//</span> <span class="n">Garage</span> <span class="n">Door</span> <span class="ow">is</span> <span class="n">closed</span><span class="o">.</span>
-        <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
-      <span class="p">}</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Garage</span><span class="nv"> </span><span class="s">Door</span><span class="nv"> </span><span class="s">Open&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">if (isnan(id(ultrasonic_sensor1).state)) {</span>
+        <span class="no">// isnan checks if the ultrasonic sensor echo</span>
+        <span class="no">// has timed out, resulting in a NaN (not a number) state</span>
+        <span class="no">// in that case, return {} to indicate that we don&#39;t know.</span>
+        <span class="no">return {};</span>
+      <span class="no">} else if (id(ultrasonic_sensor1).state &gt; 30) {</span>
+        <span class="no">// Garage Door is open.</span>
+        <span class="no">return true;</span>
+      <span class="no">} else {</span>
+        <span class="no">// Garage Door is closed.</span>
+        <span class="no">return false;</span>
+      <span class="no">}</span>
 </pre></div>
 </div>
 <p>Possible return values of the lambda:</p>
@@ -150,11 +149,11 @@ and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><spa
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

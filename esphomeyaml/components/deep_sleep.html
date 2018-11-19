@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs.">
 <meta itemprop="name" content="Deep Sleep Component">
 <meta itemprop="description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs.">
-<meta itemprop="image" content="https://esphomelib.com/_images/hotel.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/hotel.png">
 <meta name="twitter:title" content="Deep Sleep Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/hotel.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/hotel.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs.">
 <meta property="og:title" content="Deep Sleep Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/hotel.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/hotel.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the deep sleep support for minimizing power consumption on ESPs."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/deep_sleep.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -102,10 +101,10 @@ to wake up on any RTC pin (<code class="docutils literal notranslate"><span clas
 <code class="docutils literal notranslate"><span class="pre">GPIO15</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO25</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO26</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO27</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO32</span></code>, <code class="docutils literal notranslate"><span class="pre">GPIO39</span></code>).</p>
 <p>While in deep sleep mode, the node will not do any work and not respond to any network traffic,
 even Over The Air updates.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">deep_sleep</span><span class="p">:</span>
-  <span class="n">run_duration</span><span class="p">:</span> <span class="mi">10</span><span class="n">s</span>
-  <span class="n">sleep_duration</span><span class="p">:</span> <span class="mi">10</span><span class="nb">min</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">deep_sleep</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">run_duration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10s</span>
+  <span class="l l-Scalar l-Scalar-Plain">sleep_duration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10min</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -138,10 +137,10 @@ all pins go LOW) or <code class="docutils literal notranslate"><span class="pre"
 <p>The <a class="reference internal" href="mqtt.html#mqtt-last-will-birth"><span class="std std-ref">availability feature</span></a> of the MQTT client will cause all values
 from the node to be displayed as “unavailable” while the node is in deep sleep mode. To disable availability
 reporting and not have any “unavailable” values, set <code class="docutils literal notranslate"><span class="pre">birth_message</span></code> and <code class="docutils literal notranslate"><span class="pre">will_message</span></code> to empty values:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">birth_message</span><span class="p">:</span>
-  <span class="n">will_message</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">birth_message</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">will_message</span><span class="p p-Indicator">:</span>
 </pre></div>
 </div>
 </div>
@@ -164,9 +163,9 @@ use observe the state changes of a pin using deep sleep and the ON/OFF values la
 <div class="section" id="deep-sleep-enter-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">deep_sleep.enter</span></code> Action<a class="headerlink" href="#deep-sleep-enter-action" title="Permalink to this headline">¶</a></h2>
 <p>This action makes the given deep sleep component enter deep sleep immediately.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">enter</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep.enter</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep_1</span>
 </pre></div>
 </div>
 </div>
@@ -174,9 +173,9 @@ use observe the state changes of a pin using deep sleep and the ON/OFF values la
 <span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">deep_sleep.prevent</span></code> Action<a class="headerlink" href="#deep-sleep-prevent-action" title="Permalink to this headline">¶</a></h2>
 <p>This action prevents the given deep sleep component from entering deep sleep.
 Useful for</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">prevent</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep.prevent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep_1</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -189,15 +188,15 @@ use a MQTT client to publish a retained MQTT message described above. When the n
 it will no longer enter deep sleep mode and you can upload your OTA update.</p>
 <p>Remember to turn “OTA mode” off again after the OTA update by sending a MQTT message with the payload
 <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">deep_sleep</span><span class="p">:</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">deep_sleep</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="nb">id</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
-<span class="n">mqtt</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep_1</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">on_message</span><span class="p">:</span>
-    <span class="n">topic</span><span class="p">:</span> <span class="n">livingroom</span><span class="o">/</span><span class="n">ota_mode</span>
-    <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">deep_sleep</span><span class="o">.</span><span class="n">prevent</span><span class="p">:</span> <span class="n">deep_sleep_1</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_message</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom/ota_mode</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep.prevent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">deep_sleep_1</span>
 </pre></div>
 </div>
 </div>
@@ -221,11 +220,11 @@ it will no longer enter deep sleep mode and you can upload your OTA update.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -9,14 +9,14 @@
 <meta name="keywords" content="MY9231, MY9291, Sonoff B1, Ai-thinker AiLight WiFi light bulb, Arilux E27 Smart Bulb">
 <meta itemprop="name" content="MY9231/MY9291 LED driver Component">
 <meta itemprop="description" content="Instructions for setting up MY9231 and MY9291 LED drives in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/my9231.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/my9231.png">
 <meta name="twitter:title" content="MY9231/MY9291 LED driver Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/my9231.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/my9231.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up MY9231 and MY9291 LED drives in esphomelib.">
 <meta property="og:title" content="MY9231/MY9291 LED driver Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/my9231.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/my9231.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up MY9231 and MY9291 LED drives in esphomelib."/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/my9231.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -120,16 +119,16 @@ internal data will not reflect this state. Thus, the first fade
 is wrong, as well as the MQTT state.</dd>
 </dl>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">my9231</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">data_pin</span><span class="p">:</span> <span class="n">GPIO12</span>
-    <span class="n">clock_pin</span><span class="p">:</span> <span class="n">GPIO14</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">my9231</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">data_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO12</span>
+    <span class="l l-Scalar l-Scalar-Plain">clock_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO14</span>
 
 <span class="c1"># Individual outputs</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="s1">&#39;my9231_output1&#39;</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">0</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="s">&#39;my9231_output1&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -161,59 +160,59 @@ about flashing Sonoff devices, see:
 <a class="reference internal" href="../devices/sonoff_s20.html"><span class="doc">Using With Sonoff S20</span></a>. All LEDs are connected to a
 chain of two MY9321 chips that are connected to GPIO12 and GPIO14. A
 complete configuration for a Sonoff B1 looks like:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">NAME_OF_NODE</span><span class="o">&gt;</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;NAME_OF_NODE&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_SSID</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_WIFI_PASSPHRASE</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_SSID&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_WIFI_PASSPHRASE&gt;</span>
 
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_MQTT_BROKER</span><span class="o">&gt;</span>
-  <span class="n">username</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_MQTT_USERNAME</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_MQTT_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_MQTT_BROKER&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_MQTT_USERNAME&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_MQTT_PASSWORD&gt;</span>
 
-<span class="n">logger</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
 
-<span class="n">ota</span><span class="p">:</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_OTA_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_OTA_PASSWORD&gt;</span>
 
-<span class="n">my9231</span><span class="p">:</span>
- <span class="n">data_pin</span><span class="p">:</span> <span class="n">GPIO12</span>  <span class="c1"># GPIO13 for AiLight</span>
- <span class="n">clock_pin</span><span class="p">:</span> <span class="n">GPIO14</span>  <span class="c1"># GPIO15 for AiLight</span>
- <span class="n">num_channels</span><span class="p">:</span> <span class="mi">6</span>
- <span class="n">num_chips</span><span class="p">:</span> <span class="mi">2</span>
+<span class="l l-Scalar l-Scalar-Plain">my9231</span><span class="p p-Indicator">:</span>
+ <span class="l l-Scalar l-Scalar-Plain">data_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO12</span>  <span class="c1"># GPIO13 for AiLight</span>
+ <span class="l l-Scalar l-Scalar-Plain">clock_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO14</span>  <span class="c1"># GPIO15 for AiLight</span>
+ <span class="l l-Scalar l-Scalar-Plain">num_channels</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+ <span class="l l-Scalar l-Scalar-Plain">num_chips</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">output_blue</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">0</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">output_red</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">1</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">output_green</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">2</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">output_warm_white</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">4</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">my9231</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">output_cold_white</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">5</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_blue</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_red</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_green</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_warm_white</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my9231</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_cold_white</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
 
-<span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">rgbww</span>
-    <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">LIGHT_NAME</span><span class="o">&gt;</span>
-    <span class="n">red</span><span class="p">:</span> <span class="n">output_red</span>
-    <span class="n">green</span><span class="p">:</span> <span class="n">output_green</span>
-    <span class="n">blue</span><span class="p">:</span> <span class="n">output_blue</span>
-    <span class="n">cold_white</span><span class="p">:</span> <span class="n">output_cold_white</span>
-    <span class="n">warm_white</span><span class="p">:</span> <span class="n">output_warm_white</span>
-    <span class="n">cold_white_color_temperature</span><span class="p">:</span> <span class="mi">6500</span> <span class="n">K</span>
-    <span class="n">warm_white_color_temperature</span><span class="p">:</span> <span class="mi">2800</span> <span class="n">K</span>
+<span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rgbww</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;LIGHT_NAME&gt;</span>
+    <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_red</span>
+    <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_green</span>
+    <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_blue</span>
+    <span class="l l-Scalar l-Scalar-Plain">cold_white</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_cold_white</span>
+    <span class="l l-Scalar l-Scalar-Plain">warm_white</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output_warm_white</span>
+    <span class="l l-Scalar l-Scalar-Plain">cold_white_color_temperature</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">6500 K</span>
+    <span class="l l-Scalar l-Scalar-Plain">warm_white_color_temperature</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2800 K</span>
 </pre></div>
 </div>
 </div>
@@ -235,11 +234,11 @@ complete configuration for a Sonoff B1 looks like:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

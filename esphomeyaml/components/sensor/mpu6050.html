@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/mpu6050.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -101,24 +100,24 @@ new feature. Supporting all possible use-cases would be quite hard.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/mpu6050-ui.png"><img alt="../../../_images/mpu6050-ui.png" src="../../../_images/mpu6050-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">mpu6050</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x68</span>
-    <span class="n">accel_x</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Accel X&quot;</span>
-    <span class="n">accel_y</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Accel Y&quot;</span>
-    <span class="n">accel_z</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Accel z&quot;</span>
-    <span class="n">gyro_x</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Gyro X&quot;</span>
-    <span class="n">gyro_y</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Gyro Y&quot;</span>
-    <span class="n">gyro_z</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Gyro z&quot;</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MPU6050 Temperature&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mpu6050</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x68</span>
+    <span class="l l-Scalar l-Scalar-Plain">accel_x</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Accel</span><span class="nv"> </span><span class="s">X&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">accel_y</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Accel</span><span class="nv"> </span><span class="s">Y&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">accel_z</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Accel</span><span class="nv"> </span><span class="s">z&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">gyro_x</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Gyro</span><span class="nv"> </span><span class="s">X&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">gyro_y</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Gyro</span><span class="nv"> </span><span class="s">Y&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">gyro_z</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Gyro</span><span class="nv"> </span><span class="s">z&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MPU6050</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -165,11 +164,11 @@ See <a class="reference internal" href="index.html#sensor-default-filter"><span 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

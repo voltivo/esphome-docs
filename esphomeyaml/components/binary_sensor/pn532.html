@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/pn532.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,20 +91,20 @@ unique id (<code class="docutils literal notranslate"><span class="pre">uid</spa
 <a class="reference internal image-reference" href="../../../_images/pn532-full.jpg"><img alt="../../../_images/pn532-full.jpg" src="../../../_images/pn532-full.jpg" style="width: 60.0%;" /></a>
 </div>
 <p>See <a class="reference internal" href="../pn532.html"><span class="doc">PN532 NFC/RFID Controller Hub</span></a> for instructions for setting up the connection to the PN532.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">spi</span><span class="p">:</span>
-  <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">miso_pin</span><span class="p">:</span> <span class="n">D1</span>
-  <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">spi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">clk_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">miso_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+  <span class="l l-Scalar l-Scalar-Plain">mosi_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
 
-<span class="n">pn532</span><span class="p">:</span>
-  <span class="n">cs_pin</span><span class="p">:</span> <span class="n">D3</span>
-  <span class="n">update_interval</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
+<span class="l l-Scalar l-Scalar-Plain">pn532</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">cs_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+  <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pn532</span>
-    <span class="n">uid</span><span class="p">:</span> <span class="mi">74</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">94</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;PN532 NFC Tag&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pn532</span>
+    <span class="l l-Scalar l-Scalar-Plain">uid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">74-10-37-94</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;PN532</span><span class="nv"> </span><span class="s">NFC</span><span class="nv"> </span><span class="s">Tag&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -123,7 +122,7 @@ of hexadecimal values. For example <code class="docutils literal notranslate"><s
 <p>To set up binary sensors for specific NFC tags you first have to know their unique IDs. To obtain this
 id, first set up a simple pn532 configuration without any binary sensors like above.</p>
 <p>When your code is running and you approach the PN532 with an NFC Tag, you should see a message like this:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">Found</span> <span class="n">new</span> <span class="n">tag</span> <span class="s1">&#39;74-10-37-94&#39;</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">Found new tag &#39;74-10-37-94&#39;</span>
 </pre></div>
 </div>
 <p>Then copy this id and create a <code class="docutils literal notranslate"><span class="pre">binary_sensor</span></code> entry as in the configuration example. Repeat this process for
@@ -148,11 +147,11 @@ each tag.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

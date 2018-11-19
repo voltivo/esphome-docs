@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/display/lcd_gpio.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -98,19 +97,19 @@ commonly sold with a PCF8574 chip which only need two lines to the ESP, for that
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/lcd-hello_world.jpg"><img alt="../../../_images/lcd-hello_world.jpg" src="../../../_images/lcd-hello_world.jpg" style="width: 60.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">lcd_gpio</span>
-    <span class="n">dimensions</span><span class="p">:</span> <span class="mi">18</span><span class="n">x4</span>
-    <span class="n">data_pins</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">D0</span>
-      <span class="o">-</span> <span class="n">D1</span>
-      <span class="o">-</span> <span class="n">D2</span>
-      <span class="o">-</span> <span class="n">D3</span>
-    <span class="n">enable_pin</span><span class="p">:</span> <span class="n">D4</span>
-    <span class="n">rs_pin</span><span class="p">:</span> <span class="n">D5</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">lcd_gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">dimensions</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">18x4</span>
+    <span class="l l-Scalar l-Scalar-Plain">data_pins</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+    <span class="l l-Scalar l-Scalar-Plain">enable_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D4</span>
+    <span class="l l-Scalar l-Scalar-Plain">rs_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D5</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">it.print(&quot;Hello World!&quot;);</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -142,27 +141,27 @@ at the top of this page.</p>
 <p>Each of the three methods (<code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">printf</span></code> and <code class="docutils literal notranslate"><span class="pre">strftime</span></code>) all optionally take a column and row arguments at the
 beginning which can be used to print the text at a specific position. These arguments are set to <code class="docutils literal notranslate"><span class="pre">0</span></code> (column) and <code class="docutils literal notranslate"><span class="pre">0</span></code> (row)
 by default which means the character at the top left.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">lcd_gpio</span> <span class="c1"># or lcd_pcf8574</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">lcd_gpio</span> <span class="c1"># or lcd_pcf8574</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Print</span> <span class="mi">0</span> <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">left</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Print 0 at the top left</span>
+      <span class="no">it.print(&quot;0&quot;);</span>
 
-      <span class="o">//</span> <span class="n">Print</span> <span class="mi">1</span> <span class="n">at</span> <span class="n">the</span> <span class="n">second</span> <span class="n">row</span> <span class="ow">and</span> <span class="n">second</span> <span class="n">column</span><span class="o">.</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
+      <span class="no">// Print 1 at the second row and second column.</span>
+      <span class="no">it.print(1, 1, &quot;1&quot;);</span>
 
-      <span class="o">//</span> <span class="n">Let</span><span class="s1">&#39;s write a sensor value (let&#39;</span><span class="n">s</span> <span class="n">assume</span> <span class="n">it</span><span class="s1">&#39;s 42.1)</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;42.1&quot;</span> <span class="p">(</span><span class="n">the</span> <span class="n">dot</span> <span class="n">will</span> <span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="s2">&quot;2&quot;</span> <span class="n">segment</span><span class="p">)</span>
+      <span class="no">// Let&#39;s write a sensor value (let&#39;s assume it&#39;s 42.1)</span>
+      <span class="no">it.printf(&quot;%.1f&quot;, id(my_sensor).state);</span>
+      <span class="no">// Result: &quot;42.1&quot; (the dot will appear on the &quot;2&quot; segment)</span>
 
-      <span class="o">//</span> <span class="n">Print</span> <span class="n">a</span> <span class="n">right</span><span class="o">-</span><span class="n">padded</span> <span class="n">sensor</span> <span class="n">value</span> <span class="k">with</span> <span class="mi">0</span> <span class="n">digits</span> <span class="n">after</span> <span class="n">the</span> <span class="n">decimal</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Sensor value: </span><span class="si">%8.0f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;Sensor value:       42&quot;</span>
+      <span class="no">// Print a right-padded sensor value with 0 digits after the decimal</span>
+      <span class="no">it.printf(&quot;Sensor value: %8.0f&quot;, id(my_sensor).state);</span>
+      <span class="no">// Result: &quot;Sensor value:       42&quot;</span>
 
-      <span class="o">//</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">current</span> <span class="n">time</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;It is %H:%M on </span><span class="si">%d</span><span class="s2">.%m.%Y&quot;</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span> <span class="k">for</span> <span class="mi">10</span><span class="p">:</span><span class="mi">06</span> <span class="n">on</span> <span class="n">august</span> <span class="mi">21</span><span class="n">st</span> <span class="mi">2018</span> <span class="o">-&gt;</span> <span class="s2">&quot;It is 10:06 on 21.08.2018&quot;</span>
+      <span class="no">// Print the current time</span>
+      <span class="no">it.strftime(&quot;It is %H:%M on %d.%m.%Y&quot;);</span>
+      <span class="no">// Result for 10:06 on august 21st 2018 -&gt; &quot;It is 10:06 on 21.08.2018&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -192,11 +191,11 @@ by default which means the character at the top left.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

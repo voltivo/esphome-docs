@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/relay.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -106,10 +105,10 @@ and so on. Please also note that relays are physical components - as such, they 
 number of switches that can happen before they break.</p>
 </div>
 <p>To use a relay with esphomelib, use a <a class="reference internal" href="../components/switch/gpio.html"><span class="doc">GPIO Switch</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Relay&quot;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PIN_RELAY_IS_CONNECTED_TO</span><span class="o">&gt;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Relay&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;PIN_RELAY_IS_CONNECTED_TO&gt;</span>
 </pre></div>
 </div>
 <div class="section" id="see-also">
@@ -131,11 +130,11 @@ number of switches that can happen before they break.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

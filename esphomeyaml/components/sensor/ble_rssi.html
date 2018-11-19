@@ -9,14 +9,14 @@
 <meta name="keywords" content="ESP32">
 <meta itemprop="name" content="ESP32 Bluetooth Low Energy RSSI Sensor">
 <meta itemprop="description" content="Instructions for setting up RSSI sensors for the ESP32 BLE.">
-<meta itemprop="image" content="https://esphomelib.com/_images/bluetooth.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/bluetooth.png">
 <meta name="twitter:title" content="ESP32 Bluetooth Low Energy RSSI Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/bluetooth.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/bluetooth.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up RSSI sensors for the ESP32 BLE.">
 <meta property="og:title" content="ESP32 Bluetooth Low Energy RSSI Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/bluetooth.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/bluetooth.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up RSSI sensors for the ESP32 BLE."/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/ble_rssi.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -89,14 +88,14 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">ble_rssi</span></code> sensor platform lets you track the RSSI value or signal strength of a
 BLE device. See <a class="reference internal" href="../binary_sensor/esp32_ble_tracker.html#esp32-ble-tracker-setting-up-devices"><span class="std std-ref">the binary sensor setup</span></a> for
 instructions for setting up this platform.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esp32_ble_tracker</span><span class="p">:</span>
-  <span class="n">scan_interval</span><span class="p">:</span> <span class="mi">300</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">scan_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">300s</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">ble_rssi</span>
-    <span class="n">mac_address</span><span class="p">:</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;BLE Google Home Mini RSSI value&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ble_rssi</span>
+    <span class="l l-Scalar l-Scalar-Plain">mac_address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">AC:37:43:77:5F:4C</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BLE</span><span class="nv"> </span><span class="s">Google</span><span class="nv"> </span><span class="s">Home</span><span class="nv"> </span><span class="s">Mini</span><span class="nv"> </span><span class="s">RSSI</span><span class="nv"> </span><span class="s">value&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -128,11 +127,11 @@ sensor.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/tsl2561.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -98,12 +97,12 @@ your configuration for this sensor to work.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/tsl2561-ui.png"><img alt="../../../_images/tsl2561-ui.png" src="../../../_images/tsl2561-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">tsl2561</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TSL2561 Ambient Light&quot;</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x39</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tsl2561</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TSL2561</span><span class="nv"> </span><span class="s">Ambient</span><span class="nv"> </span><span class="s">Light&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x39</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -131,7 +130,7 @@ sensor. Defaults to <code class="docutils literal notranslate"><span class="pre"
 <li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
 <li><a class="reference internal" href="bh1750.html"><span class="doc">BH1750 Ambient Light Sensor</span></a></li>
 <li><a class="reference internal" href="adc.html"><span class="doc">Analog To Digital Sensor</span></a></li>
-<li><a class="reference external" href="https://github.com/sparkfun/SparkFun_TSL2561_Arduino_Library">SparkFun TSL2561 Arduino Library</a> by <a class="reference external" href="http://sparkfun.com/">Sparkfun</a></li>
+<li><a class="reference external" href="https://github.com/sparkfun/SparkFun_TSL2561_Arduino_Library">SparkFun TSL2561 Arduino Library</a> by <a class="reference external" href="https://sparkfun.com/">Sparkfun</a></li>
 <li><a class="reference internal" href="../../../api/sensor/tsl2561.html"><span class="doc">API Reference</span></a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/tsl2561.rst">Edit this page on GitHub</a></li>
 </ul>
@@ -146,11 +145,11 @@ sensor. Defaults to <code class="docutils literal notranslate"><span class="pre"
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

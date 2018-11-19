@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/dallas.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -100,15 +99,15 @@ sensors to a single pin and use them all at once.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/temperature.png"><img alt="../../../_images/temperature.png" src="../../../_images/temperature.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">dallas</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">dallas</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
 
 <span class="c1"># Individual sensors</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dallas</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x1C0000031EDD2A28</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Temperature&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x1C0000031EDD2A28</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -137,9 +136,9 @@ device with a configured dallas hub and observe the log output (the <a class="re
 level</span></a> must be set to at least
 <code class="docutils literal notranslate"><span class="pre">debug</span></code>!). Note that you don’t need to define the individual sensors just yet, as
 the scanning will happen even with no sensors connected. For example with this configuration:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">dallas</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">dallas</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
 
 <span class="c1"># Note you don&#39;t have to add any sensors at this point</span>
 </pre></div>
@@ -149,18 +148,18 @@ the scanning will happen even with no sensors connected. For example with this c
 <img alt="../../../_images/dallas-log.png" src="../../../_images/dallas-log.png" />
 </div>
 <p>Now we can add the individual sensors to our configuration:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">dallas</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">dallas</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dallas</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0xA40000031F055028</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Temperature #1&quot;</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dallas</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0xDD0000031EFB0428</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Temperature #2&quot;</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dallas</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0xA40000031F055028</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Temperature</span><span class="nv"> </span><span class="s">#1&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0xDD0000031EFB0428</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Temperature</span><span class="nv"> </span><span class="s">#2&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
     <span class="c1"># ...</span>
 </pre></div>
 </div>
@@ -190,11 +189,11 @@ to your assigned names and you should be ready.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

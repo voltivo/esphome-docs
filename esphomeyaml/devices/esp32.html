@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Information about how to use generic ESP32 boards in esphomelib.">
 <meta itemprop="name" content="Generic ESP32">
 <meta itemprop="description" content="Information about how to use generic ESP32 boards in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/esp32.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/esp32.png">
 <meta name="twitter:title" content="Generic ESP32">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/esp32.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/esp32.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Information about how to use generic ESP32 boards in esphomelib.">
 <meta property="og:title" content="Generic ESP32"/>
-<meta property="og:image" content="https://esphomelib.com/_images/esp32.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/esp32.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Information about how to use generic ESP32 boards in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/devices/esp32.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -88,11 +87,11 @@
 the esphomeyaml wizard asks you for your platform and choose a board type
 from <a class="reference external" href="http://docs.platformio.org/en/latest/platforms/espressif32.html">this link</a> when the wizard
 asks you for the board type.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">livingroom</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP32</span>
-  <span class="n">board</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">BOARD_TYPE</span><span class="o">&gt;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;BOARD_TYPE&gt;</span>
 </pre></div>
 </div>
 <p>The ESP32 boards often use the internal GPIO pin numbering on the board, this means that
@@ -109,16 +108,16 @@ voltages.</li>
 the <a class="reference internal" href="../components/binary_sensor/esp32_touch.html"><span class="doc">touch pad binary sensor</span></a> like some other
 pins.</li>
 </ul>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">livingroom</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP32</span>
-  <span class="n">board</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">BOARD_TYPE</span><span class="o">&gt;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;BOARD_TYPE&gt;</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Pin GPIO23&quot;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Pin</span><span class="nv"> </span><span class="s">GPIO23&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
 </pre></div>
 </div>
 <div class="section" id="see-also">
@@ -138,11 +137,11 @@ pins.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

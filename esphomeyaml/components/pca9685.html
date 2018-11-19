@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/pca9685.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -87,21 +86,21 @@
   <div class="section" id="pca9685-pwm-component">
 <h1>PCA9685 PWM Component<a class="headerlink" href="#pca9685-pwm-component" title="Permalink to this headline">¶</a></h1>
 <p>The PCA9685 component represents a PCA9685 12-bit PWM driver
-(<a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/ledc.html#configure-channel">datasheet</a>,
+(<a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/ledc.html#configure-channel">datasheet</a>,
 <a class="reference external" href="https://www.adafruit.com/product/815">adafruit</a>) in esphomelib. It
 uses <a class="reference internal" href="i2c.html#i2c"><span class="std std-ref">I²C Bus</span></a> for communication.</p>
 <p>To use the channels of this components, you first need to setup the
 global <code class="docutils literal notranslate"><span class="pre">pca9685</span></code> hub and give it an id, and then define the
 <a class="reference internal" href="output/pca9685.html"><span class="doc">individual output channels</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">pca9685</span><span class="p">:</span>
-  <span class="n">frequency</span><span class="p">:</span> <span class="mi">500</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">pca9685</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">frequency</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
 
 <span class="c1"># Individual outputs</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pca9685</span>
-    <span class="n">pca9685_id</span><span class="p">:</span> <span class="s1">&#39;pca9685_hub1&#39;</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">0</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pca9685</span>
+    <span class="l l-Scalar l-Scalar-Plain">pca9685_id</span><span class="p p-Indicator">:</span> <span class="s">&#39;pca9685_hub1&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -134,11 +133,11 @@ this pca9685 component. Use this if you have multiple PCA9685s connected at the 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

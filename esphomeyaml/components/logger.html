@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the central logging component in esphomelib.">
 <meta itemprop="name" content="Logger Component">
 <meta itemprop="description" content="Instructions for setting up the central logging component in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/file-document-box.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/file-document-box.png">
 <meta name="twitter:title" content="Logger Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/file-document-box.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/file-document-box.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the central logging component in esphomelib.">
 <meta property="og:title" content="Logger Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/file-document-box.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/file-document-box.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the central logging component in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/logger.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -92,9 +91,9 @@
 serial port and through MQTT topics. By default, all logs with a
 severity higher than <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> will be shown. Decreasing the log level
 can help with the performance of the application and memory size.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">logger</span><span class="p">:</span>
-  <span class="n">level</span><span class="p">:</span> <span class="n">DEBUG</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">level</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -139,11 +138,11 @@ the tag for MQTT components is <code class="docutils literal notranslate"><span 
 <img alt="../../_images/logger-manual_log_level.png" src="../../_images/logger-manual_log_level.png" />
 </div>
 <p>Next, we can manually set the log levels in the configuration like this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">logger</span><span class="p">:</span>
-  <span class="n">level</span><span class="p">:</span> <span class="n">VERBOSE</span>
-  <span class="n">logs</span><span class="p">:</span>
-    <span class="n">mqtt</span><span class="o">.</span><span class="n">component</span><span class="p">:</span> <span class="n">DEBUG</span>
-    <span class="n">mqtt</span><span class="o">.</span><span class="n">client</span><span class="p">:</span> <span class="n">ERROR</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">level</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VERBOSE</span>
+  <span class="l l-Scalar l-Scalar-Plain">logs</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">mqtt.component</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
+    <span class="l l-Scalar l-Scalar-Plain">mqtt.client</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ERROR</span>
 </pre></div>
 </div>
 <p>Please note that the global log level determines what log messages are
@@ -156,14 +155,14 @@ that have a lower severity than the global log level.</p>
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">logger.log</span></code> Action<a class="headerlink" href="#logger-log-action" title="Permalink to this headline">¶</a></h2>
 <p>Print a formatted message to the logs.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">format</span></code> option, you can use <code class="docutils literal notranslate"><span class="pre">printf</span></code>-style formatting (see <a class="reference internal" href="display/index.html#display-printf"><span class="std std-ref">Formatted Text</span></a>).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">:</span> <span class="s2">&quot;Hello World&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span>
 
     <span class="c1"># Formatted:</span>
-    <span class="o">-</span> <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">:</span>
-        <span class="nb">format</span><span class="p">:</span> <span class="s2">&quot;The temperature sensor reports value </span><span class="si">%.1f</span><span class="s2"> and humidity </span><span class="si">%.1f</span><span class="s2">&quot;</span>
-        <span class="n">args</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;id(temperature_sensor).value&#39;</span><span class="p">,</span> <span class="s1">&#39;id(humidity_sensor).value&#39;</span> <span class="p">]</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">format</span><span class="p p-Indicator">:</span> <span class="s">&quot;The</span><span class="nv"> </span><span class="s">temperature</span><span class="nv"> </span><span class="s">sensor</span><span class="nv"> </span><span class="s">reports</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">%.1f</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">humidity</span><span class="nv"> </span><span class="s">%.1f&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">args</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;id(temperature_sensor).value&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;id(humidity_sensor).value&#39;</span> <span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -194,11 +193,11 @@ with. Defaults to <code class="docutils literal notranslate"><span class="pre">m
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

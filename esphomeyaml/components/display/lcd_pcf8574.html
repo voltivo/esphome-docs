@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/display/lcd_pcf8574.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -98,17 +97,17 @@ As the communication with the <a class="reference internal" href="../i2c.html#i2
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/lcd-hello_world.jpg"><img alt="../../../_images/lcd-hello_world.jpg" src="../../../_images/lcd-hello_world.jpg" style="width: 60.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">i2c</span><span class="p">:</span>
-  <span class="n">sda</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">scl</span><span class="p">:</span> <span class="n">D1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">i2c</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">sda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">scl</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
 
-<span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">lcd_pcf8574</span>
-    <span class="n">dimensions</span><span class="p">:</span> <span class="mi">18</span><span class="n">x4</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x3F</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">lcd_pcf8574</span>
+    <span class="l l-Scalar l-Scalar-Plain">dimensions</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">18x4</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x3F</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">it.print(&quot;Hello World!&quot;);</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -144,11 +143,11 @@ See <a class="reference internal" href="lcd_gpio.html#display-lcd-lambda"><span 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

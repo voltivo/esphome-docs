@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up template sensors with esphomelib.">
 <meta itemprop="name" content="Template Sensor">
 <meta itemprop="description" content="Instructions for setting up template sensors with esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/description.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/description.png">
 <meta name="twitter:title" content="Template Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/description.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/description.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up template sensors with esphomelib.">
 <meta property="og:title" content="Template Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/description.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/description.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up template sensors with esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/template.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -87,17 +86,17 @@
 <h1>Template Sensor<a class="headerlink" href="#template-sensor" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">template</span></code> sensor platform allows you to create a sensor with templated values
 using <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Template Sensor&quot;</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">some_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mf">42.0</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mf">0.0</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Template</span><span class="nv"> </span><span class="s">Sensor&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">if (id(some_binary_sensor).state) {</span>
+        <span class="no">return 42.0;</span>
+      <span class="no">} else {</span>
+        <span class="no">return 0.0;</span>
+      <span class="no">}</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <p>Possible return values for the lambda:</p>
@@ -123,7 +122,7 @@ sensor. Defaults to <code class="docutils literal notranslate"><span class="pre"
 <p class="first admonition-title">Note</p>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">publish_state()</span></code> method to set the value of a template
 sensor from other automations:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">publish_state</span><span class="p">(</span><span class="mf">42.0</span><span class="p">);</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">).</span><span class="n">publish_state</span><span class="p">(</span><span class="mf">42.0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -147,11 +146,11 @@ sensor from other automations:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

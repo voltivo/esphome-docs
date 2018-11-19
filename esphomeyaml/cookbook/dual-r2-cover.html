@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/dual-r2-cover.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -104,83 +103,83 @@ might cause unexpected behaviour (eg: cover stopping halfway). This is because t
 feature is implemented using asynchronous automations. So every time a open/close command is sent a
 delayed relay off command is added and old ones are not removed.</p>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">cover</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cover</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="s1">&#39;***&#39;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="s1">&#39;***&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="s">&#39;***&#39;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&#39;***&#39;</span>
 
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="s1">&#39;mqtt&#39;</span>
-  <span class="n">username</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="s">&#39;mqtt&#39;</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="s">&#39;&#39;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&#39;&#39;</span>
 
-<span class="n">logger</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
 
-<span class="n">ota</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="mi">10</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="n">true</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">button</span>
-    <span class="n">on_press</span><span class="p">:</span>
-      <span class="n">then</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">button</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
         <span class="c1"># logic for cycling through movements: open-&gt;stop-&gt;close-&gt;stop-&gt;...</span>
-        <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">|</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">cover</span><span class="p">)</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">cover</span><span class="p">::</span><span class="n">COVER_OPEN</span><span class="p">)</span> <span class="p">{</span>
-              <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">){</span>
-                <span class="o">//</span> <span class="n">cover</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">opening</span> <span class="n">movement</span><span class="p">,</span> <span class="n">stop</span> <span class="n">it</span>
-                <span class="nb">id</span><span class="p">(</span><span class="n">cover</span><span class="p">)</span><span class="o">.</span><span class="n">stop</span><span class="p">();</span>
-              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="o">//</span> <span class="n">cover</span> <span class="n">has</span> <span class="n">finished</span> <span class="n">opening</span><span class="p">,</span> <span class="n">close</span> <span class="n">it</span>
-                <span class="nb">id</span><span class="p">(</span><span class="n">cover</span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">();</span>
-              <span class="p">}</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-              <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">close</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">){</span>
-                <span class="o">//</span> <span class="n">cover</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">closing</span> <span class="n">movement</span><span class="p">,</span> <span class="n">stop</span> <span class="n">it</span>
-                <span class="nb">id</span><span class="p">(</span><span class="n">cover</span><span class="p">)</span><span class="o">.</span><span class="n">stop</span><span class="p">();</span>
-              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="o">//</span> <span class="n">cover</span> <span class="n">has</span> <span class="n">finished</span> <span class="n">closing</span><span class="p">,</span> <span class="nb">open</span> <span class="n">it</span>
-                <span class="nb">id</span><span class="p">(</span><span class="n">cover</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">();</span>
-              <span class="p">}</span>
-            <span class="p">}</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|</span>
+            <span class="no">if (id(cover).state == cover::COVER_OPEN) {</span>
+              <span class="no">if (id(open).state){</span>
+                <span class="no">// cover is in opening movement, stop it</span>
+                <span class="no">id(cover).stop();</span>
+              <span class="no">} else {</span>
+                <span class="no">// cover has finished opening, close it</span>
+                <span class="no">id(cover).close();</span>
+              <span class="no">}</span>
+            <span class="no">} else {</span>
+              <span class="no">if (id(close).state){</span>
+                <span class="no">// cover is in closing movement, stop it</span>
+                <span class="no">id(cover).stop();</span>
+              <span class="no">} else {</span>
+                <span class="no">// cover has finished closing, open it</span>
+                <span class="no">id(cover).open();</span>
+              <span class="no">}</span>
+            <span class="no">}</span>
 
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">12</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="nb">open</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">5</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">close</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close</span>
 
-<span class="n">cover</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Cover&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">cover</span>
-    <span class="n">open_action</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">cover</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Cover&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cover</span>
+    <span class="l l-Scalar l-Scalar-Plain">open_action</span><span class="p p-Indicator">:</span>
       <span class="c1"># cancel potential previous movement</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">close</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close</span>
       <span class="c1"># perform movement</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="nb">open</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open</span>
       <span class="c1"># wait until cover is open</span>
-      <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mi">60</span><span class="n">s</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
       <span class="c1"># turn of relay to prevent keeping the motor powered</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="nb">open</span>
-    <span class="n">close_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="nb">open</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">close</span>
-      <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mi">60</span><span class="n">s</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">close</span>
-    <span class="n">stop_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="nb">open</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">close</span>
-    <span class="n">optimistic</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open</span>
+    <span class="l l-Scalar l-Scalar-Plain">close_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close</span>
+    <span class="l l-Scalar l-Scalar-Plain">stop_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close</span>
+    <span class="l l-Scalar l-Scalar-Plain">optimistic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 <div class="section" id="see-also">
@@ -202,11 +201,11 @@ delayed relay off command is added and old ones are not removed.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

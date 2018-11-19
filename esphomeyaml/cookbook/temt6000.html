@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/temt6000.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -98,14 +97,14 @@ available <a class="reference internal" href="../components/sensor/adc.html"><sp
 <p>To get the brightness the sensor measures, we then simply have to measure the voltage
 on the <code class="docutils literal notranslate"><span class="pre">SIG</span></code> (also called <code class="docutils literal notranslate"><span class="pre">OUT</span></code>) pin using the <a class="reference internal" href="../components/sensor/adc.html"><span class="doc">Analog To Digital Sensor</span></a>
 and convert those voltage measurements to illuminance values in lux using a formula:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">adc</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">A0</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TEMT6000 Illuminance&quot;</span>
-    <span class="n">unit_of_measurement</span><span class="p">:</span> <span class="n">lx</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-          <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mf">10000.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2000000.0</span><span class="p">;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">adc</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">A0</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TEMT6000</span><span class="nv"> </span><span class="s">Illuminance&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">lx</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">return (x / 10000.0) * 2000000.0;</span>
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
@@ -153,11 +152,11 @@ to divide the analog voltage by a constant value.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

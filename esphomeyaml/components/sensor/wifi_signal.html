@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up WiFi signal sensors that track the RSSI connection strength value to the network.">
 <meta itemprop="name" content="WiFi Signal Sensor">
 <meta itemprop="description" content="Instructions for setting up WiFi signal sensors that track the RSSI connection strength value to the network.">
-<meta itemprop="image" content="https://esphomelib.com/_images/network-wifi.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/network-wifi.png">
 <meta name="twitter:title" content="WiFi Signal Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/network-wifi.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/network-wifi.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up WiFi signal sensors that track the RSSI connection strength value to the network.">
 <meta property="og:title" content="WiFi Signal Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/network-wifi.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/network-wifi.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up WiFi signal sensors that track the RSSI connection strength value to the network."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/wifi_signal.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,11 +91,11 @@ measured in decibels. These values are always negative and the closer they are t
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/wifi_signal-ui.png"><img alt="../../../_images/wifi_signal-ui.png" src="../../../_images/wifi_signal-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">wifi_signal</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;WiFi Signal Sensor&quot;</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">wifi_signal</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;WiFi</span><span class="nv"> </span><span class="s">Signal</span><span class="nv"> </span><span class="s">Sensor&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -133,11 +132,11 @@ if the device is acting as an access point without any station mode connection.<
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/mhz19.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -96,19 +95,19 @@
 to have an <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART bus</span></a> in your configuration with the <code class="docutils literal notranslate"><span class="pre">rx_pin</span></code> connected to the TX pin of the
 MH-Z19 and the <code class="docutils literal notranslate"><span class="pre">tx_pin</span></code> connected to the RX Pin of the MH-Z19 (it’s switched because the
 TX/RX labels are from the perspective of the MH-Z19). Additionally, you need to set the baud rate to 9600.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">uart</span><span class="p">:</span>
-  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">tx_pin</span><span class="p">:</span> <span class="n">D1</span>
-  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">9600</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">uart</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">rx_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">tx_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+  <span class="l l-Scalar l-Scalar-Plain">baud_rate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">9600</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">mhz19</span>
-    <span class="n">co2</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MH-Z19 CO2 Value&quot;</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;MH-Z19 Temperature&quot;</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mhz19</span>
+    <span class="l l-Scalar l-Scalar-Plain">co2</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MH-Z19</span><span class="nv"> </span><span class="s">CO2</span><span class="nv"> </span><span class="s">Value&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MH-Z19</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -156,11 +155,11 @@ to use multiple UART buses.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

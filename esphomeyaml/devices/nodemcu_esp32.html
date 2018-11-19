@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/devices/nodemcu_esp32.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -87,11 +86,11 @@
 <p>The NodeMCU ESP32 board (in some cases also known as ESP32-DevkitC)
 is fully supported by esphomeyaml. Simply select <code class="docutils literal notranslate"><span class="pre">ESP32</span></code> when
 the esphomeyaml wizard asks you for your platform and <a class="reference external" href="http://docs.platformio.org/en/latest/platforms/espressif32.html#nodemcu"><code class="docutils literal notranslate"><span class="pre">nodemcu-32s</span></code></a> as the board type.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
-    <span class="n">name</span><span class="p">:</span> <span class="n">livingroom</span>
-    <span class="n">platform</span><span class="p">:</span> <span class="n">ESP32</span>
-    <span class="n">board</span><span class="p">:</span> <span class="n">nodemcu</span><span class="o">-</span><span class="mi">32</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+    <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+    <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nodemcu-32s</span>
 </pre></div>
 </div>
 <p>The ESP32 boards often use the internal GPIO pin numbering on the board, this means that
@@ -115,16 +114,16 @@ pins.</li>
 the UART chip is directly connected to this rail and you therefore <strong>cannot</strong> supply other voltages
 into this pin.</li>
 </ul>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">livingroom</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP32</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">nodemcu</span><span class="o">-</span><span class="mi">32</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nodemcu-32s</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Pin GPIO23&quot;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Pin</span><span class="nv"> </span><span class="s">GPIO23&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
 </pre></div>
 </div>
 <div class="section" id="see-also">
@@ -145,11 +144,11 @@ into this pin.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

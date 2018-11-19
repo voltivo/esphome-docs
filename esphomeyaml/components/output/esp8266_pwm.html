@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/esp8266_pwm.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -95,12 +94,12 @@ limitations.</p>
 </ul>
 <p>If you need a stable PWM signal, it’s definitely recommended to use the
 successor of the ESP8266, the ESP32, and its <a class="reference internal" href="ledc.html"><span class="doc">ESP32 LEDC PWM</span></a> instead.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="n">frequency</span><span class="p">:</span> <span class="mi">1000</span> <span class="n">Hz</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">pwm</span><span class="o">-</span><span class="n">output</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">frequency</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1000 Hz</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pwm-output</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -135,11 +134,11 @@ have more visual artifacts, but can represent much more colors. Defaults to <cod
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

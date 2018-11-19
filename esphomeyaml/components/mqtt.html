@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/mqtt.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -101,11 +100,11 @@ is currently required for esphomelib to work. In most cases, you will
 just be able to copy over the <a class="reference external" href="https://www.home-assistant.io/components/mqtt/">MQTT
 section</a> of your Home
 Assistant configuration.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.2</span>
-  <span class="n">username</span><span class="p">:</span> <span class="n">livingroom</span>
-  <span class="n">password</span><span class="p">:</span> <span class="n">MyMQTTPassword</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MyMQTTPassword</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -157,18 +156,18 @@ performed when a JSON message on a specific MQTT topic is received. See <a class
 <span id="mqtt-message"></span><h2>MQTTMessage<a class="headerlink" href="#mqttmessage" title="Permalink to this headline">¶</a></h2>
 <p>With the MQTT Message schema you can tell esphomeyaml how a specific MQTT message should be sent.
 It is used in several places like last will and birth messages or MQTT log options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Simple:</span>
-<span class="n">some_option</span><span class="p">:</span> <span class="n">topic</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">send</span><span class="o">/</span><span class="n">to</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Simple:</span>
+<span class="l l-Scalar l-Scalar-Plain">some_option</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">topic/to/send/to</span>
 
 <span class="c1"># Disable:</span>
-<span class="n">some_option</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">some_option</span><span class="p p-Indicator">:</span>
 
 <span class="c1"># Advanced:</span>
-<span class="n">some_option</span><span class="p">:</span>
-  <span class="n">topic</span><span class="p">:</span> <span class="n">topic</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">send</span><span class="o">/</span><span class="n">to</span>
-  <span class="n">payload</span><span class="p">:</span> <span class="n">online</span>
-  <span class="n">qos</span><span class="p">:</span> <span class="mi">0</span>
-  <span class="n">retain</span><span class="p">:</span> <span class="kc">True</span>
+<span class="l l-Scalar l-Scalar-Plain">some_option</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">topic/to/send/to</span>
+  <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">online</span>
+  <span class="l l-Scalar l-Scalar-Plain">qos</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">retain</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -194,10 +193,10 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
 broker (like <a class="reference external" href="https://mosquitto.org/">mosquitto</a>) and point both your
 Home Assistant installation and esphomelib to that broker. Next, enable
 discovery in your Home Assistant configuration with the following:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example Home Assistant configuration.yaml entry</span>
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="o">...</span>
-  <span class="n">discovery</span><span class="p">:</span> <span class="kc">True</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example Home Assistant configuration.yaml entry</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+  <span class="l l-Scalar l-Scalar-Plain">discovery</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 <p>And that should already be it 🎉 All devices defined through
@@ -211,7 +210,7 @@ re-appear on every Home Assistant restart even though they’re in
 esphomeyaml anymore.</p>
 <p>To fix this, esphomeyaml has a simple helper script that purges stale
 retained messages for you:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">configuration</span><span class="o">.</span><span class="n">yaml</span> <span class="n">clean</span><span class="o">-</span><span class="n">mqtt</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml configuration.yaml clean-mqtt
 </pre></div>
 </div>
 <p>This will remove all retained messages with the topic
@@ -247,14 +246,14 @@ broker to send a message <code class="docutils literal notranslate"><span class=
 <code class="docutils literal notranslate"><span class="pre">offline</span></code> if the connection drops.</p>
 <p>You can change these messages by overriding the <code class="docutils literal notranslate"><span class="pre">birth_message</span></code> and
 <code class="docutils literal notranslate"><span class="pre">will_message</span></code> with the following options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">birth_message</span><span class="p">:</span>
-    <span class="n">topic</span><span class="p">:</span> <span class="n">myavailability</span><span class="o">/</span><span class="n">topic</span>
-    <span class="n">payload</span><span class="p">:</span> <span class="n">online</span>
-  <span class="n">will_message</span><span class="p">:</span>
-    <span class="n">topic</span><span class="p">:</span> <span class="n">myavailability</span><span class="o">/</span><span class="n">topic</span>
-    <span class="n">payload</span><span class="p">:</span> <span class="n">offline</span>
+  <span class="l l-Scalar l-Scalar-Plain">birth_message</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myavailability/topic</span>
+    <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">online</span>
+  <span class="l l-Scalar l-Scalar-Plain">will_message</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myavailability/topic</span>
+    <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">offline</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -275,15 +274,15 @@ update the fingerprints variable. Additionally, SHA1 is known to be partially in
 and with some computing power the fingerprint can be faked.</p>
 <p>To get this fingerprint, first put the broker and port options in the configuration and
 then run the <code class="docutils literal notranslate"><span class="pre">mqtt-fingerprint</span></code> script of esphomeyaml to get the certificate:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">mqtt</span><span class="o">-</span><span class="n">fingerprint</span>
-<span class="o">&gt;</span> <span class="n">SHA1</span> <span class="n">Fingerprint</span><span class="p">:</span> <span class="n">a502ff13999f8b398ef1834f1123650b3236fc07</span>
-<span class="o">&gt;</span> <span class="n">Copy</span> <span class="n">above</span> <span class="n">string</span> <span class="n">into</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">ssl_fingerprints</span> <span class="n">section</span> <span class="n">of</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml livingroom.yaml mqtt-fingerprint
+&gt; SHA1 Fingerprint: a502ff13999f8b398ef1834f1123650b3236fc07
+&gt; Copy above string into mqtt.ssl_fingerprints section of livingroom.yaml
 </pre></div>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">ssl_fingerprints</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">a502ff13999f8b398ef1834f1123650b3236fc07</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssl_fingerprints</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">a502ff13999f8b398ef1834f1123650b3236fc07</span>
 </pre></div>
 </div>
 </div>
@@ -291,16 +290,16 @@ then run the <code class="docutils literal notranslate"><span class="pre">mqtt-f
 <span id="config-mqtt-component"></span><h2>MQTT Component Base Configuration<a class="headerlink" href="#mqtt-component-base-configuration" title="Permalink to this headline">¶</a></h2>
 <p>All components in esphomelib that do some sort of communication through
 MQTT can have some overrides for specific options.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Component Name&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Component</span><span class="nv"> </span><span class="s">Name&quot;</span>
 <span class="c1"># Optional variables:</span>
-<span class="n">retain</span><span class="p">:</span> <span class="kc">True</span>
-<span class="n">discovery</span><span class="p">:</span> <span class="kc">True</span>
-<span class="n">availability</span><span class="p">:</span>
-  <span class="n">topic</span><span class="p">:</span> <span class="n">livingroom</span><span class="o">/</span><span class="n">status</span>
-  <span class="n">payload_available</span><span class="p">:</span> <span class="n">online</span>
-  <span class="n">payload_not_available</span><span class="p">:</span> <span class="n">offline</span>
-<span class="n">state_topic</span><span class="p">:</span> <span class="n">livingroom</span><span class="o">/</span><span class="n">custom_state_topic</span>
-<span class="n">command_topic</span><span class="p">:</span> <span class="n">livingroom</span><span class="o">/</span><span class="n">custom_command_topic</span>
+<span class="l l-Scalar l-Scalar-Plain">retain</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="l l-Scalar l-Scalar-Plain">discovery</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="l l-Scalar l-Scalar-Plain">availability</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom/status</span>
+  <span class="l l-Scalar l-Scalar-Plain">payload_available</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">online</span>
+  <span class="l l-Scalar l-Scalar-Plain">payload_not_available</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">offline</span>
+<span class="l l-Scalar l-Scalar-Plain">state_topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom/custom_state_topic</span>
+<span class="l l-Scalar l-Scalar-Plain">command_topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom/custom_command_topic</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -335,13 +334,13 @@ This is because Home Assistant only discovers a device once in every Home Assist
 <p>With this configuration option you can write complex automations whenever an MQTT
 message on a specific topic is received. To use the message content, use a <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>
 template, the message payload is available under the name <code class="docutils literal notranslate"><span class="pre">x</span></code> inside that lambda.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">on_message</span><span class="p">:</span>
-    <span class="n">topic</span><span class="p">:</span> <span class="n">my</span><span class="o">/</span><span class="n">custom</span><span class="o">/</span><span class="n">topic</span>
-    <span class="n">qos</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">some_switch</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_message</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my/custom/topic</span>
+    <span class="l l-Scalar l-Scalar-Plain">qos</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some_switch</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -350,26 +349,28 @@ template, the message payload is available under the name <code class="docutils 
 messages on. Every time a message with <strong>this exact topic</strong> is received, the automation will trigger.</li>
 <li><strong>qos</strong> (<em>Optional</em>, integer): The MQTT Quality of Service to subscribe to the topic with. Defaults
 to 0.</li>
+<li><strong>payload</strong> (<em>Optional</em>, string): Optionally set a payload to match. Only if exactly the payload
+you specify with this option is received, the automation will be executed.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>You can even specify multiple <code class="docutils literal notranslate"><span class="pre">on_message</span></code> triggers by using a YAML list:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">on_message</span><span class="p">:</span>
-     <span class="o">-</span> <span class="n">topic</span><span class="p">:</span> <span class="n">some</span><span class="o">/</span><span class="n">topic</span>
-       <span class="n">then</span><span class="p">:</span>
-         <span class="o">-</span> <span class="c1"># ...</span>
-     <span class="o">-</span> <span class="n">topic</span><span class="p">:</span> <span class="n">some</span><span class="o">/</span><span class="n">other</span><span class="o">/</span><span class="n">topic</span>
-       <span class="n">then</span><span class="p">:</span>
-         <span class="o">-</span> <span class="c1"># ...</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_message</span><span class="p p-Indicator">:</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some/topic</span>
+       <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+         <span class="p p-Indicator">-</span> <span class="c1"># ...</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some/other/topic</span>
+       <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+         <span class="p p-Indicator">-</span> <span class="c1"># ...</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be used in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="n">App</span><span class="o">.</span><span class="n">get_mqtt_client</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">&quot;the/topic&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">do</span> <span class="n">something</span> <span class="k">with</span> <span class="n">payload</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">App</span><span class="p">.</span><span class="n">get_mqtt_client</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;the/topic&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something with payload</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -385,27 +386,27 @@ library, and you can use all of the methods of that library to access data.</p>
 <p>Basically, you can access elements by typing <code class="docutils literal notranslate"><span class="pre">x[&quot;THE_KEY&quot;]</span></code> and save them into local variables.
 Please note that it’s a good idea to check if the key exists in the Json Object by calling
 <code class="docutils literal notranslate"><span class="pre">containsKey</span></code> first as the ESP will crash if an element that does not exist is accessed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>mqtt:
-  # ...
-  on_json_message:
-    topic: the/topic
-      then:
-      - light.turn_on:
-          id: living_room_lights
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="c1"># ...</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_json_message</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">the/topic</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">living_room_lights</span>
 
-          transition_length: !lambda |-
-            int length = 1000;
-            if (x.containsKey(&quot;length&quot;))
-              length = x[&quot;length&quot;];
-            return length;
+          <span class="l l-Scalar l-Scalar-Plain">transition_length</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
+            <span class="no">int length = 1000;</span>
+            <span class="no">if (x.containsKey(&quot;length&quot;))</span>
+              <span class="no">length = x[&quot;length&quot;];</span>
+            <span class="no">return length;</span>
 
-          brightness: !lambda &quot;return x[&quot;bright&quot;];&quot;
+          <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="s">&quot;return</span><span class="nv"> </span><span class="s">x[&quot;</span><span class="l l-Scalar l-Scalar-Plain">bright&quot;];&quot;</span>
 
-          effect: !lambda |-
-            const char *effect = &quot;None&quot;;
-            if (x.containsKey(&quot;effect&quot;))
-              effect = x[&quot;effect&quot;];
-            return effect;
+          <span class="l l-Scalar l-Scalar-Plain">effect</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
+            <span class="no">const char *effect = &quot;None&quot;;</span>
+            <span class="no">if (x.containsKey(&quot;effect&quot;))</span>
+              <span class="no">effect = x[&quot;effect&quot;];</span>
+            <span class="no">return effect;</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -423,8 +424,8 @@ trigger a compile failure. For example with the <code class="docutils literal no
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be used in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="n">App</span><span class="o">.</span><span class="n">get_mqtt_client</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">subscribe_json</span><span class="p">(</span><span class="s2">&quot;the/topic&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="n">JsonObject</span> <span class="o">&amp;</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">do</span> <span class="n">something</span> <span class="k">with</span> <span class="n">JSON</span><span class="o">-</span><span class="n">decoded</span> <span class="n">value</span> <span class="n">root</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">App</span><span class="p">.</span><span class="n">get_mqtt_client</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">subscribe_json</span><span class="p">(</span><span class="s">&quot;the/topic&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="n">JsonObject</span> <span class="o">&amp;</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something with JSON-decoded value root</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -433,19 +434,19 @@ trigger a compile failure. For example with the <code class="docutils literal no
 <div class="section" id="mqtt-publish-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">mqtt.publish</span></code> Action<a class="headerlink" href="#mqtt-publish-action" title="Permalink to this headline">¶</a></h2>
 <p>Publish an MQTT message on a topic using this action in automations.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
-  then:
-    - mqtt.publish:
-        topic: some/topic
-        payload: &quot;Something happened!&quot;
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some/topic</span>
+        <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="s">&quot;Something</span><span class="nv"> </span><span class="s">happened!&quot;</span>
 
-    # Templated:
-    - mqtt.publish:
-        topic: !lambda &gt;-
-          if (id(reed_switch).state) return &quot;topic1&quot;;
-          else return &quot;topic2&quot;;
-        payload: !lambda &gt;-
-          return id(reed_switch).state ? &quot;YES&quot; : &quot;NO&quot;;
+    <span class="c1"># Templated:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">if (id(reed_switch).state) return &quot;topic1&quot;;</span>
+          <span class="no">else return &quot;topic2&quot;;</span>
+        <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">return id(reed_switch).state ? &quot;YES&quot; : &quot;NO&quot;;</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -462,12 +463,12 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be written in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># Give the mqtt component an ID</span>
-  <span class="nb">id</span><span class="p">:</span> <span class="n">mqtt_client</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt_client</span>
 </pre></div>
 </div>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">mqtt_client</span><span class="p">)</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;the/topic&quot;</span><span class="p">,</span> <span class="s2">&quot;The Payload&quot;</span><span class="p">);</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">mqtt_client</span><span class="p">).</span><span class="n">publish</span><span class="p">(</span><span class="s">&quot;the/topic&quot;</span><span class="p">,</span> <span class="s">&quot;The Payload&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -479,13 +480,13 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
 In the <code class="docutils literal notranslate"><span class="pre">payload</span></code> option you have access to a <code class="docutils literal notranslate"><span class="pre">root</span></code> object which will represents the base object
 of the JSON message. You can assign values to keys by using the <code class="docutils literal notranslate"><span class="pre">root[&quot;KEY_NAME&quot;]</span> <span class="pre">=</span> <span class="pre">VALUE;</span></code> syntax
 as seen below.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">publish_json</span><span class="p">:</span>
-        <span class="n">topic</span><span class="p">:</span> <span class="n">the</span><span class="o">/</span><span class="n">topic</span>
-        <span class="n">payload</span><span class="p">:</span> <span class="o">|-</span>
-          <span class="n">root</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
-          <span class="n">root</span><span class="p">[</span><span class="s2">&quot;greeting&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish_json</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">topic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">the/topic</span>
+        <span class="l l-Scalar l-Scalar-Plain">payload</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+          <span class="no">root[&quot;key&quot;] = id(my_sensor).value;</span>
+          <span class="no">root[&quot;greeting&quot;] = &quot;Hello World&quot;;</span>
 
         <span class="c1"># Will produce:</span>
         <span class="c1"># {&quot;key&quot;: 42.0, &quot;greeting&quot;: &quot;Hello World&quot;}</span>
@@ -505,13 +506,13 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be written in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">mqtt</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
   <span class="c1"># Give the mqtt component an ID</span>
-  <span class="nb">id</span><span class="p">:</span> <span class="n">mqtt_client</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt_client</span>
 </pre></div>
 </div>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">mqtt_client</span><span class="p">)</span><span class="o">.</span><span class="n">publish_json</span><span class="p">(</span><span class="s2">&quot;the/topic&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="n">JsonObject</span> <span class="o">&amp;</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">root</span><span class="p">[</span><span class="s2">&quot;something&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">mqtt_client</span><span class="p">).</span><span class="n">publish_json</span><span class="p">(</span><span class="s">&quot;the/topic&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="n">JsonObject</span> <span class="o">&amp;</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">root</span><span class="p">[</span><span class="s">&quot;something&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">).</span><span class="n">value</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -534,11 +535,11 @@ have a retain flag on or not. Defaults to <code class="docutils literal notransl
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

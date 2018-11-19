@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up BLE binary sensors for the ESP32.">
 <meta itemprop="name" content="ESP32 Bluetooth Low Energy Device">
 <meta itemprop="description" content="Instructions for setting up BLE binary sensors for the ESP32.">
-<meta itemprop="image" content="https://esphomelib.com/_images/bluetooth.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/bluetooth.png">
 <meta name="twitter:title" content="ESP32 Bluetooth Low Energy Device">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/bluetooth.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/bluetooth.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up BLE binary sensors for the ESP32.">
 <meta property="og:title" content="ESP32 Bluetooth Low Energy Device"/>
-<meta property="og:image" content="https://esphomelib.com/_images/bluetooth.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/bluetooth.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up BLE binary sensors for the ESP32."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/esp32_ble_tracker.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -91,14 +90,14 @@ bluetooth low energy device.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/esp32_ble-ui.png"><img alt="../../../_images/esp32_ble-ui.png" src="../../../_images/esp32_ble-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esp32_ble_tracker</span><span class="p">:</span>
-  <span class="n">scan_interval</span><span class="p">:</span> <span class="mi">300</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">scan_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">300s</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp32_ble_tracker</span>
-    <span class="n">mac_address</span><span class="p">:</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;ESP32 BLE Tracker Google Home Mini&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span>
+    <span class="l l-Scalar l-Scalar-Plain">mac_address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">AC:37:43:77:5F:4C</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;ESP32</span><span class="nv"> </span><span class="s">BLE</span><span class="nv"> </span><span class="s">Tracker</span><span class="nv"> </span><span class="s">Google</span><span class="nv"> </span><span class="s">Home</span><span class="nv"> </span><span class="s">Mini&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -119,8 +118,8 @@ and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><spa
 to track. Most devices show this screen in some setting menu. If you don’t know the MAC address,
 however, you can use the <code class="docutils literal notranslate"><span class="pre">esp32_ble_tracker</span></code> hub without any binary sensors attached and read through
 the logs to see discovered Bluetooth Low Energy devices.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry for finding MAC addresses</span>
-<span class="n">esp32_ble_tracker</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry for finding MAC addresses</span>
+<span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span><span class="p p-Indicator">:</span>
 </pre></div>
 </div>
 <p>Using above configuration, first you should see a <code class="docutils literal notranslate"><span class="pre">Starting</span> <span class="pre">scan...</span></code> debug message at
@@ -151,11 +150,11 @@ tracking, since their MAC-address periodically changes.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

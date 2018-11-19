@@ -9,14 +9,14 @@
 <meta name="keywords" content="NTP, SNTP, RTC">
 <meta itemprop="name" content="Time">
 <meta itemprop="description" content="Instructions for setting up real time clock sources in esphomelib like network based time.">
-<meta itemprop="image" content="https://esphomelib.com/_images/clock-outline.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/clock-outline.png">
 <meta name="twitter:title" content="Time">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/clock-outline.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/clock-outline.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up real time clock sources in esphomelib like network based time.">
 <meta property="og:title" content="Time"/>
-<meta property="og:image" content="https://esphomelib.com/_images/clock-outline.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/clock-outline.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up real time clock sources in esphomelib like network based time."/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/time.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -94,25 +93,21 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> component allows you to set up real time clock time sources for esphomelib.
 You can then get the current time in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>.
 Currently only sntp (internet-based) time is supported.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">time</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">sntp</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">sntp_time</span>
-    <span class="n">servers</span><span class="p">:</span>
-      <span class="o">-</span> <span class="mf">0.</span><span class="n">pool</span><span class="o">.</span><span class="n">ntp</span><span class="o">.</span><span class="n">org</span>
-      <span class="o">-</span> <span class="mf">1.</span><span class="n">pool</span><span class="o">.</span><span class="n">ntp</span><span class="o">.</span><span class="n">org</span>
-      <span class="o">-</span> <span class="mf">2.</span><span class="n">pool</span><span class="o">.</span><span class="n">ntp</span><span class="o">.</span><span class="n">org</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp_time</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
 <h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Specify the ID of the time for use in lambdas.</li>
-<li><strong>servers</strong> (<em>Optional</em>, list of strings): Choose up to 3 NTP servers that are used for the clock source.
-Defaults to <code class="docutils literal notranslate"><span class="pre">0.pool.ntp.org</span></code>, <code class="docutils literal notranslate"><span class="pre">1.pool.ntp.org</span></code> and <code class="docutils literal notranslate"><span class="pre">2.pool.ntp.org</span></code></li>
 <li><strong>timezone</strong> (<em>Optional</em>, string): Manually tell esphomelib what timezone to use with <a class="reference external" href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html">this format</a> (warning: the format is quite complicated).
 esphomeyaml tries to automatically infer the timezone string based on the timezone of the computer that is running
 esphomeyaml, but this might not always be accurate.</li>
+<li><strong>servers</strong> (<em>Optional</em>, list of strings): Choose up to 3 NTP servers that are used for the clock source.
+Defaults to <code class="docutils literal notranslate"><span class="pre">0.pool.ntp.org</span></code>, <code class="docutils literal notranslate"><span class="pre">1.pool.ntp.org</span></code> and <code class="docutils literal notranslate"><span class="pre">2.pool.ntp.org</span></code></li>
 <li><strong>on_time</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): Automation to run at specific intervals using
 a cron-like syntax. See <a class="reference internal" href="#time-on-time"><span class="std std-ref">on_time</span></a>.</li>
 </ul>
@@ -127,7 +122,7 @@ be installed. Otherwise you need to install it using <code class="docutils liter
 <h2>Use In Lambdas<a class="headerlink" href="#use-in-lambdas" title="Permalink to this headline">¶</a></h2>
 <p>To get the current local time with the timezone applied
 in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>, just call the <code class="docutils literal notranslate"><span class="pre">.now()</span></code> method like so:</p>
-<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="n">auto</span> <span class="n">time</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">sntp_time</span><span class="p">)</span><span class="o">.</span><span class="n">now</span><span class="p">();</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="k">auto</span> <span class="n">time</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">sntp_time</span><span class="p">).</span><span class="n">now</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">.utcnow()</span></code> to get the current UTC time.</p>
@@ -218,8 +213,8 @@ make sure to check if <code class="docutils literal notranslate"><span class="pr
 <p>The second way to use the time object is to directly transform it into a string like <code class="docutils literal notranslate"><span class="pre">2018-08-16</span> <span class="pre">16:31</span></code>.
 This is directly done using C’s <a class="reference external" href="http://www.cplusplus.com/reference/ctime/strftime/">strftime</a> function which
 allows for a lot of flexibility.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># For example, in a display object</span>
-<span class="n">it</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">font</span><span class="p">),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">now</span><span class="p">());</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="cp"># For example, in a display object</span>
+<span class="n">it</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">id</span><span class="p">(</span><span class="n">font</span><span class="p">),</span> <span class="s">&quot;%Y-%m-%d %H:%M&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">(</span><span class="n">time</span><span class="p">).</span><span class="n">now</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>The strftime will parse the format string (here <code class="docutils literal notranslate"><span class="pre">&quot;%Y-%m-%d</span> <span class="pre">%H:%M&quot;</span></code>) and match anything beginning with
@@ -337,28 +332,28 @@ specific times of day. The syntax is a subset of the <a class="reference externa
 keys as seen below or using a cron expression like <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">/5</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span></code>.</p>
 <p>Basically, the automation engine looks at your configured time schedule every second and
 evaluates if the automation should run.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">time</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">sntp</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp</span>
     <span class="c1"># ...</span>
-    <span class="n">on_time</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_time</span><span class="p p-Indicator">:</span>
       <span class="c1"># Every 5 minutes</span>
-      <span class="o">-</span> <span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span>
-        <span class="n">minutes</span><span class="p">:</span> <span class="o">/</span><span class="mi">5</span>
-        <span class="n">then</span><span class="p">:</span>
-          <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">my_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+        <span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/5</span>
+        <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_switch</span>
 
       <span class="c1"># Every morning on weekdays</span>
-      <span class="o">-</span> <span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span>
-        <span class="n">minutes</span><span class="p">:</span> <span class="mi">30</span>
-        <span class="n">hours</span><span class="p">:</span> <span class="mi">7</span>
-        <span class="n">days_of_week</span><span class="p">:</span> <span class="n">MON</span><span class="o">-</span><span class="n">FRI</span>
-        <span class="n">then</span><span class="p">:</span>
-          <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">my_light</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+        <span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+        <span class="l l-Scalar l-Scalar-Plain">hours</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">7</span>
+        <span class="l l-Scalar l-Scalar-Plain">days_of_week</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MON-FRI</span>
+        <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_light</span>
 
       <span class="c1"># Cron syntax, trigger every 5 minutes</span>
-      <span class="o">-</span> <span class="n">cron</span><span class="p">:</span> <span class="s1">&#39;* /5 * * * *&#39;</span>
-        <span class="n">then</span><span class="p">:</span>
-          <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">my_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cron</span><span class="p p-Indicator">:</span> <span class="s">&#39;*</span><span class="nv"> </span><span class="s">/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&#39;</span>
+        <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_switch</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -383,47 +378,47 @@ Range is from 1 (Sunday) to 7 (Saturday).</li>
 </ul>
 <p>In the <code class="docutils literal notranslate"><span class="pre">seconds:</span></code>, <code class="docutils literal notranslate"><span class="pre">minutes:</span></code>, … fields you can use the following operators:</p>
 <ul>
-<li><div class="code yaml first highlight-default notranslate"><div class="highlight"><pre><span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span>
+<li><div class="first highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
 <p>An integer like <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">30</span></code> will make the automation only trigger if the current
 second is <strong>exactly</strong> 0 or 30, respectively.</p>
 </li>
-<li><div class="code yaml first highlight-default notranslate"><div class="highlight"><pre><span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">45</span>
+<li><div class="first highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0,30,45</span>
 </pre></div>
 </div>
 <p>You can combine multiple expressions with the <code class="docutils literal notranslate"><span class="pre">,</span></code> operator. This operator makes it so that
 if either one of the expressions separated by a comma holds true, the automation will trigger.
 For example <code class="docutils literal notranslate"><span class="pre">0,30,45</span></code> will trigger if the current second is either <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">30</span></code> or <code class="docutils literal notranslate"><span class="pre">45</span></code>.</p>
 </li>
-<li><div class="code yaml first highlight-default notranslate"><div class="highlight"><pre><span class="n">days_of_week</span><span class="p">:</span> <span class="mi">2</span><span class="o">-</span><span class="mi">6</span>
+<li><div class="first highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">days_of_week</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2-6</span>
 <span class="c1"># same as</span>
-<span class="n">days_of_week</span><span class="p">:</span> <span class="n">MON</span><span class="o">-</span><span class="n">FRI</span>
+<span class="l l-Scalar l-Scalar-Plain">days_of_week</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MON-FRI</span>
 <span class="c1"># same as</span>
-<span class="n">days_of_week</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+<span class="l l-Scalar l-Scalar-Plain">days_of_week</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2,3,4,5,6</span>
 <span class="c1"># same as</span>
-<span class="n">days_of_week</span><span class="p">:</span> <span class="n">MON</span><span class="p">,</span><span class="n">TUE</span><span class="p">,</span><span class="n">WED</span><span class="p">,</span><span class="n">THU</span><span class="p">,</span><span class="n">FRI</span>
+<span class="l l-Scalar l-Scalar-Plain">days_of_week</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MON,TUE,WED,THU,FRI</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">-</span></code> (hyphen) operator can be used to create a range of values and is shorthand for listing all
 values with the <code class="docutils literal notranslate"><span class="pre">,</span></code> operator.</p>
 </li>
-<li><div class="code yaml first highlight-default notranslate"><div class="highlight"><pre><span class="c1"># every 5 minutes</span>
-<span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span>
-<span class="n">minutes</span><span class="p">:</span> <span class="o">/</span><span class="mi">5</span>
+<li><div class="first highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># every 5 minutes</span>
+<span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/5</span>
 
 <span class="c1"># every timestamp where the minute is 5,15,25,...</span>
-<span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span>
-<span class="n">minutes</span><span class="p">:</span> <span class="mi">5</span><span class="o">/</span><span class="mi">10</span>
+<span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5/10</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator can be used to create a step value. For example <code class="docutils literal notranslate"><span class="pre">/5</span></code> for <code class="docutils literal notranslate"><span class="pre">minutes:</span></code> makes an
 automation trigger only when the minute of the hour is 0, or 5, 10, 15, … The value in front of the
 <code class="docutils literal notranslate"><span class="pre">/</span></code> specifies the offset with which the step is applied.</p>
 </li>
-<li><div class="code yaml first highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Every minute</span>
-<span class="n">seconds</span><span class="p">:</span> <span class="mi">0</span>
-<span class="n">minutes</span><span class="p">:</span> <span class="o">*</span>
+<li><div class="first highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Every minute</span>
+<span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="s">&#39;*&#39;</span>
 </pre></div>
 </div>
 <p>Lastly, the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator matches every number. In the example above, <code class="docutils literal notranslate"><span class="pre">*</span></code> could for example be substituted
@@ -434,13 +429,13 @@ with  <code class="docutils literal notranslate"><span class="pre">0-59</span></
 <p class="first admonition-title">Warning</p>
 <p>Please note the following automation would trigger for each second in the minutes 0,5,10,15 and not
 once per 5 minutes as the seconds variable is not set:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">time</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">sntp</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp</span>
     <span class="c1"># ...</span>
-    <span class="n">on_time</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">minutes</span><span class="p">:</span> <span class="o">/</span><span class="mi">5</span>
-        <span class="n">then</span><span class="p">:</span>
-          <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">my_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_time</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/5</span>
+        <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_switch</span>
 </pre></div>
 </div>
 </div>
@@ -462,11 +457,11 @@ once per 5 minutes as the seconds variable is not set:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

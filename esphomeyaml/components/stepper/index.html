@@ -9,14 +9,14 @@
 <meta name="keywords" content="stepper motor, stepper driver, a4988">
 <meta itemprop="name" content="Stepper Component">
 <meta itemprop="description" content="Instructions for setting up stepper motor drivers in esphomelib">
-<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:title" content="Stepper Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up stepper motor drivers in esphomelib">
 <meta property="og:title" content="Stepper Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up stepper motor drivers in esphomelib"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/stepper/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,18 +91,18 @@
 Currently only the A4988 stepper driver
 (<a class="reference external" href="https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf">datasheet</a>)
 is supported.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">stepper</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">a4988</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">my_stepper</span>
-    <span class="n">step_pin</span><span class="p">:</span> <span class="n">D0</span>
-    <span class="n">dir_pin</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="n">max_speed</span><span class="p">:</span> <span class="mi">250</span> <span class="n">steps</span><span class="o">/</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">stepper</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">a4988</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+    <span class="l l-Scalar l-Scalar-Plain">step_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+    <span class="l l-Scalar l-Scalar-Plain">dir_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">max_speed</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">250 steps/s</span>
 
     <span class="c1"># Optional:</span>
-    <span class="n">sleep_pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">acceleration</span><span class="p">:</span> <span class="n">inf</span>
-    <span class="n">deceleration</span><span class="p">:</span> <span class="n">inf</span>
+    <span class="l l-Scalar l-Scalar-Plain">sleep_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">acceleration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">inf</span>
+    <span class="l l-Scalar l-Scalar-Plain">deceleration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">inf</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -134,12 +133,12 @@ scroll down to the <code class="docutils literal notranslate"><span class="pre">
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>If the stepper is driving in the wrong direction, you can invert the <code class="docutils literal notranslate"><span class="pre">dir_pin</span></code>:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">stepper</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">a4988</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">stepper</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">a4988</span>
     <span class="c1"># ...</span>
-    <span class="n">dir_pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">D1</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">dir_pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
@@ -148,21 +147,21 @@ scroll down to the <code class="docutils literal notranslate"><span class="pre">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">stepper.set_target</span></code> Action<a class="headerlink" href="#stepper-set-target-action" title="Permalink to this headline">¶</a></h2>
 <p>To use your stepper motor in <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">automations</span></a> or templates, you can use this action to set the target
 position (in steps). The stepper will always run towards the target position and stop once it has reached the target.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
-  then:
-  - stepper.set_target:
-      id: my_stepper
-      target: 250
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.set_target</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+      <span class="l l-Scalar l-Scalar-Plain">target</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">250</span>
 
-  # Templated
-  - stepper.set_target:
-      id: my_stepper
-      target: !lambda |-
-        if (id(my_binary_sensor).value) {
-          return 1000;
-        } else {
-          return -1000;
-        }
+  <span class="c1"># Templated</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.set_target</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+      <span class="l l-Scalar l-Scalar-Plain">target</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
+        <span class="no">if (id(my_binary_sensor).value) {</span>
+          <span class="no">return 1000;</span>
+        <span class="no">} else {</span>
+          <span class="no">return -1000;</span>
+        <span class="no">}</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -173,10 +172,10 @@ position (in steps). The stepper will always run towards the target position and
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed as a <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">)</span><span class="o">.</span><span class="n">set_target</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">).</span><span class="n">set_target</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">Get</span> <span class="n">the</span> <span class="n">currently</span> <span class="nb">set</span> <span class="n">target</span> <span class="n">position</span><span class="p">:</span>
-<span class="nb">int</span> <span class="n">target</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">)</span><span class="o">.</span><span class="n">target_position</span><span class="p">;</span>
+<span class="c1">// Get the currently set target position:</span>
+<span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">).</span><span class="n">target_position</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -189,25 +188,25 @@ a stepper motor, it can be useful to <strong>report</strong> the stepper where i
 that reporting the position can create unexpected moves of the stepper. For example, if the stepper’s target and
 current position is at 1000 steps and you “report” a position of 0, the stepper will move 1000 steps forward to match
 the target again.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
-  then:
-  - stepper.report_position:
-      id: my_stepper
-      position: 250
-  # It&#39;s best to call set_target directly after report_position, so that the stepper doesn&#39;t move
-  - stepper.set_target:
-      id: my_stepper
-      target: 250
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.report_position</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+      <span class="l l-Scalar l-Scalar-Plain">position</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">250</span>
+  <span class="c1"># It&#39;s best to call set_target directly after report_position, so that the stepper doesn&#39;t move</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.set_target</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+      <span class="l l-Scalar l-Scalar-Plain">target</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">250</span>
 
-  # Templated
-  - stepper.report_position:
-      id: my_stepper
-      position: !lambda |-
-        if (id(my_binary_sensor).value) {
-          return 0;
-        } else {
-          return -1000;
-        }
+  <span class="c1"># Templated</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.report_position</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+      <span class="l l-Scalar l-Scalar-Plain">position</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
+        <span class="no">if (id(my_binary_sensor).value) {</span>
+          <span class="no">return 0;</span>
+        <span class="no">} else {</span>
+          <span class="no">return -1000;</span>
+        <span class="no">}</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -218,10 +217,10 @@ the target again.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed as a <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="nb">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">)</span><span class="o">.</span><span class="n">report_position</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="n">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">).</span><span class="n">report_position</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">Get</span> <span class="n">the</span> <span class="n">current</span> <span class="n">position</span><span class="p">:</span>
-<span class="nb">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">)</span><span class="o">.</span><span class="n">current_position</span><span class="p">;</span>
+<span class="c1">// Get the current position:</span>
+<span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">my_stepper</span><span class="p">).</span><span class="n">current_position</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -243,11 +242,11 @@ the target again.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

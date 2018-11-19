@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up PMSX003 Particulate matter sensors">
 <meta itemprop="name" content="PMSX003 Particulate Matter Sensor">
 <meta itemprop="description" content="Instructions for setting up PMSX003 Particulate matter sensors">
-<meta itemprop="image" content="https://esphomelib.com/_images/pmsx003.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/pmsx003.png">
 <meta name="twitter:title" content="PMSX003 Particulate Matter Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/pmsx003.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pmsx003.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up PMSX003 Particulate matter sensors">
 <meta property="og:title" content="PMSX003 Particulate Matter Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/pmsx003.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pmsx003.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up PMSX003 Particulate matter sensors"/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/pmsx003.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -103,19 +102,19 @@ value:</p>
 <li><code class="docutils literal notranslate"><span class="pre">PMS5003T</span></code> for PMS5003T. These support <code class="docutils literal notranslate"><span class="pre">pm_2_5</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code> and <code class="docutils literal notranslate"><span class="pre">humidity</span></code>.</li>
 <li><code class="docutils literal notranslate"><span class="pre">PMS5003ST</span></code> for PMS5003ST. These support <code class="docutils literal notranslate"><span class="pre">pm_2_5</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code>, <code class="docutils literal notranslate"><span class="pre">humidity</span></code> and <code class="docutils literal notranslate"><span class="pre">formaldehyde</span></code>.</li>
 </ul>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">uart</span><span class="p">:</span>
-  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">uart</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">rx_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pmsx003</span>
-    <span class="nb">type</span><span class="p">:</span> <span class="n">PMX003</span>
-    <span class="n">pm_1_0</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Particulate Matter &lt;1.0µm Concentration&quot;</span>
-    <span class="n">pm_2_5</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Particulate Matter &lt;2.5µm Concentration&quot;</span>
-    <span class="n">pm_10_0</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Particulate Matter &lt;10.0µm Concentration&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pmsx003</span>
+    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">PMX003</span>
+    <span class="l l-Scalar l-Scalar-Plain">pm_1_0</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Particulate</span><span class="nv"> </span><span class="s">Matter</span><span class="nv"> </span><span class="s">&lt;1.0µm</span><span class="nv"> </span><span class="s">Concentration&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pm_2_5</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Particulate</span><span class="nv"> </span><span class="s">Matter</span><span class="nv"> </span><span class="s">&lt;2.5µm</span><span class="nv"> </span><span class="s">Concentration&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pm_10_0</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Particulate</span><span class="nv"> </span><span class="s">Matter</span><span class="nv"> </span><span class="s">&lt;10.0µm</span><span class="nv"> </span><span class="s">Concentration&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -155,11 +154,11 @@ to use multiple UART buses.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

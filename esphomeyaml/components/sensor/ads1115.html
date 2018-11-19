@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/ads1115.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -99,13 +98,13 @@ voltage to Home Assistant.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/ads1115-ui.png"><img alt="../../../_images/ads1115-ui.png" src="../../../_images/ads1115-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">ads1115</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">address</span><span class="p">:</span> <span class="mh">0x48</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">ads1115</span>
-    <span class="n">multiplexer</span><span class="p">:</span> <span class="s1">&#39;A0_GND&#39;</span>
-    <span class="n">gain</span><span class="p">:</span> <span class="mf">6.144</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;ADS1115 Channel A0-GND&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">ads1115</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x48</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ads1115</span>
+    <span class="l l-Scalar l-Scalar-Plain">multiplexer</span><span class="p p-Indicator">:</span> <span class="s">&#39;A0_GND&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">gain</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">6.144</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;ADS1115</span><span class="nv"> </span><span class="s">Channel</span><span class="nv"> </span><span class="s">A0-GND&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -170,11 +169,11 @@ to check the sensor. Defaults to <code class="docutils literal notranslate"><spa
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

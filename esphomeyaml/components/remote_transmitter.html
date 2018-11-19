@@ -9,14 +9,14 @@
 <meta name="keywords" content="RF, infrared">
 <meta itemprop="name" content="Remote Transmitter Component">
 <meta itemprop="description" content="Instructions for setting up remote transmitters in esphomelib">
-<meta itemprop="image" content="https://esphomelib.com/_images/remote.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/remote.png">
 <meta name="twitter:title" content="Remote Transmitter Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up remote transmitters in esphomelib">
 <meta property="og:title" content="Remote Transmitter Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/remote.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/remote.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up remote transmitters in esphomelib"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/remote_transmitter.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -96,18 +95,18 @@ switches</span></a> that each send a pre-defined remote signal to a device.</p>
 <p class="last">This component is <em>much</em> more accurate on the ESP32, since that chipset has a dedicated
 peripheral for sending exact signal sequences.</p>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">remote_transmitter</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO32</span>
-  <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO32</span>
+  <span class="l l-Scalar l-Scalar-Plain">carrier_duty_percent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50%</span>
 
 <span class="c1"># Individual switches</span>
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Panasonic TV Off&quot;</span>
-    <span class="n">panasonic</span><span class="p">:</span>
-      <span class="n">address</span><span class="p">:</span> <span class="mh">0x4004</span>
-      <span class="n">command</span><span class="p">:</span> <span class="mh">0x100BCBD</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Panasonic</span><span class="nv"> </span><span class="s">TV</span><span class="nv"> </span><span class="s">Off&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">panasonic</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x4004</span>
+      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x100BCBD</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -144,11 +143,11 @@ the ID used for code generation. Use this if you have multiple remote transmitte
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

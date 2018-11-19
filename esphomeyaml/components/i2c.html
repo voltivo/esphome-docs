@@ -9,14 +9,14 @@
 <meta name="keywords" content="i2c, iic, bus">
 <meta itemprop="name" content="I²C Bus">
 <meta itemprop="description" content="Instructions for setting up the i2c bus to communicate with 2-wire devices in esphomelib">
-<meta itemprop="image" content="https://esphomelib.com/_images/i2c.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/i2c.png">
 <meta name="twitter:title" content="I²C Bus">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/i2c.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/i2c.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the i2c bus to communicate with 2-wire devices in esphomelib">
 <meta property="og:title" content="I²C Bus"/>
-<meta property="og:image" content="https://esphomelib.com/_images/i2c.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/i2c.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the i2c bus to communicate with 2-wire devices in esphomelib"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/i2c.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -88,11 +87,11 @@
 <span id="i2c"></span><h1>I²C Bus<a class="headerlink" href="#i2c-bus" title="Permalink to this headline">¶</a></h1>
 <p>This component sets up the i²c bus for your ESP32 or ESP8266. In order for those components
 to work correctly, you need to define the i²c bus in your configuration.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">i2c</span><span class="p">:</span>
-  <span class="n">sda</span><span class="p">:</span> <span class="mi">21</span>
-  <span class="n">scl</span><span class="p">:</span> <span class="mi">22</span>
-  <span class="n">scan</span><span class="p">:</span> <span class="kc">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">i2c</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">sda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">21</span>
+  <span class="l l-Scalar l-Scalar-Plain">scl</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">22</span>
+  <span class="l l-Scalar l-Scalar-Plain">scan</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -131,11 +130,11 @@ version of the Arduino framework. See <a class="reference internal" href="esphom
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

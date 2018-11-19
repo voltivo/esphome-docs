@@ -9,14 +9,14 @@
 <meta name="keywords" content="Xiaomi, Mi Flora, BLE, Bluetooth">
 <meta itemprop="name" content="OTA Update Component">
 <meta itemprop="description" content="Instructions for setting up Over-The-Air (OTA) updates for ESPs to upload firmwares remotely.">
-<meta itemprop="image" content="https://esphomelib.com/_images/system-update.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/system-update.png">
 <meta name="twitter:title" content="OTA Update Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/system-update.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/system-update.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up Over-The-Air (OTA) updates for ESPs to upload firmwares remotely.">
 <meta property="og:title" content="OTA Update Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/system-update.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/system-update.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up Over-The-Air (OTA) updates for ESPs to upload firmwares remotely."/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/ota.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -109,10 +108,10 @@ node gets into a boot loop, esphomelib will automatically try to detect
 this and will go over into a safe mode after 10 unsuccessful boot
 attempts. In that mode, all components are disabled and only Serial
 Logging+WiFi+OTA are initialized, so that you can upload a new binary.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">ota</span><span class="p">:</span>
-  <span class="n">safe_mode</span><span class="p">:</span> <span class="kc">True</span>
-  <span class="n">password</span><span class="p">:</span> <span class="n">VERYSECURE</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">safe_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VERYSECURE</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -128,8 +127,8 @@ to <code class="docutils literal notranslate"><span class="pre">3232</span></cod
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>If you get errors like</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Failed</span>
-<span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Host</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">local</span> <span class="n">Not</span> <span class="n">Found</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">ERROR [esphomeyaml.espota] Failed</span>
+<span class="l l-Scalar l-Scalar-Plain">ERROR [esphomeyaml.espota] Host livingroom.local Not Found</span>
 </pre></div>
 </div>
 <p class="last">when attempting to upload via OTA, please try setting a <a class="reference internal" href="wifi.html#wifi-manual-ip"><span class="std std-ref">manual IP for WiFi</span></a>.</p>
@@ -152,11 +151,11 @@ to <code class="docutils literal notranslate"><span class="pre">3232</span></cod
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

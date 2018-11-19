@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up Bluetooth Low Energy iBeacons using the BLE feature on ESP32s.">
 <meta itemprop="name" content="ESP32 Bluetooth Low Energy Beacon">
 <meta itemprop="description" content="Instructions for setting up Bluetooth Low Energy iBeacons using the BLE feature on ESP32s.">
-<meta itemprop="image" content="https://esphomelib.com/_images/bluetooth.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/bluetooth.png">
 <meta name="twitter:title" content="ESP32 Bluetooth Low Energy Beacon">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/bluetooth.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/bluetooth.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up Bluetooth Low Energy iBeacons using the BLE feature on ESP32s.">
 <meta property="og:title" content="ESP32 Bluetooth Low Energy Beacon"/>
-<meta property="og:image" content="https://esphomelib.com/_images/bluetooth.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/bluetooth.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up Bluetooth Low Energy iBeacons using the BLE feature on ESP32s."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/esp32_ble_beacon.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -89,10 +88,10 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">esp32_ble_beacon</span></code> component creates a Bluetooth Low Energy Beacon with your ESP32 device.
 Beacons are BLE devices that repeatedly just send out a pre-defined packet of data. This packet
 can then be received by devices like smartphones and can then be used to track a phone’s location.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esp32_ble_beacon</span><span class="p">:</span>
-  <span class="nb">type</span><span class="p">:</span> <span class="n">iBeacon</span>
-  <span class="n">uuid</span><span class="p">:</span> <span class="s1">&#39;c29ce823-e67a-4e71-bff2-abaa32e77a98&#39;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esp32_ble_beacon</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">iBeacon</span>
+  <span class="l l-Scalar l-Scalar-Plain">uuid</span><span class="p p-Indicator">:</span> <span class="s">&#39;c29ce823-e67a-4e71-bff2-abaa32e77a98&#39;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -160,11 +159,11 @@ know when I’m home or away.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

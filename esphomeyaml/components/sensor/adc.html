@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up built-in analog voltage sensors.">
 <meta itemprop="name" content="Analog To Digital Sensor">
 <meta itemprop="description" content="Instructions for setting up built-in analog voltage sensors.">
-<meta itemprop="image" content="https://esphomelib.com/_images/flash.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/flash.png">
 <meta name="twitter:title" content="Analog To Digital Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/flash.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/flash.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up built-in analog voltage sensors.">
 <meta property="og:title" content="Analog To Digital Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/flash.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/flash.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up built-in analog voltage sensors."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/adc.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -94,12 +93,12 @@ GPIO39 can be used.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/adc-ui.png"><img alt="../../../_images/adc-ui.png" src="../../../_images/adc-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">adc</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">A0</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Brightness&quot;</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">adc</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">A0</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Brightness&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -125,7 +124,7 @@ down using, for example, a voltage divider circuit.</p>
 <span id="adc-esp32-attenuation"></span><h2>ESP32 Attenuation<a class="headerlink" href="#esp32-attenuation" title="Permalink to this headline">¶</a></h2>
 <p>On the ESP32, the voltage measured with the ADC caps out at 1.1V by default as the sensing range
 or the attenuation of the ADC is set to <code class="docutils literal notranslate"><span class="pre">0db</span></code> by default.</p>
-<p>To measure voltages higher than 1.1V, set <code class="docutils literal notranslate"><span class="pre">attenuation</span></code> to one of the <a class="reference external" href="http://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/adc.html#_CPPv225adc1_config_channel_atten14adc1_channel_t11adc_atten_t">following values</a>:</p>
+<p>To measure voltages higher than 1.1V, set <code class="docutils literal notranslate"><span class="pre">attenuation</span></code> to one of the <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/adc.html#_CPPv225adc1_config_channel_atten14adc1_channel_t11adc_atten_t">following values</a>:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">0db</span></code> for a full-scale voltage of 1.1V (default)</li>
 <li><code class="docutils literal notranslate"><span class="pre">2.5db</span></code> for a full-scale voltage of 1.5V</li>
@@ -138,22 +137,22 @@ or the attenuation of the ADC is set to <code class="docutils literal notranslat
 <p>On the ESP8266 you can even measure the voltage the chip is getting. This can be useful in situations
 where you want to shut down the chip if the voltage is low when using a battery.</p>
 <p>To measure the VCC voltage, set <code class="docutils literal notranslate"><span class="pre">pin:</span></code> to <code class="docutils literal notranslate"><span class="pre">VCC</span></code> and make sure nothing is connected to the <code class="docutils literal notranslate"><span class="pre">A0</span></code> pin.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">adc</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">VCC</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;VCC Voltage&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">adc</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VCC</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;VCC</span><span class="nv"> </span><span class="s">Voltage&quot;</span>
 </pre></div>
 </div>
 <p>Next, you need to add a line at the top of your C++ project source code. Unfortunately, esphomelib can’t do this
 automatically for you because of how the compiler is linking the esphomelib library. Open up the
 <code class="docutils literal notranslate"><span class="pre">&lt;NODE_NAME&gt;/src/main.cpp</span></code> file and insert the <code class="docutils literal notranslate"><span class="pre">ADC_MODE</span></code> line like this:</p>
-<div class="code cpp highlight-default notranslate"><div class="highlight"><pre><span class="n">using</span> <span class="n">namespace</span> <span class="n">esphomelib</span><span class="p">;</span>
+<div class="code cpp highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">using namespace esphomelib;</span>
 
-<span class="o">//</span> <span class="n">Enable</span> <span class="n">measuring</span> <span class="n">VCC</span>
-<span class="n">ADC_MODE</span><span class="p">(</span><span class="n">ADC_VCC</span><span class="p">);</span>
+<span class="l l-Scalar l-Scalar-Plain">// Enable measuring VCC</span>
+<span class="l l-Scalar l-Scalar-Plain">ADC_MODE(ADC_VCC);</span>
 
-<span class="n">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="o">//</span> <span class="o">...</span>
+<span class="l l-Scalar l-Scalar-Plain">void setup() {</span>
+  <span class="l l-Scalar l-Scalar-Plain">// ...</span>
 </pre></div>
 </div>
 </div>
@@ -177,11 +176,11 @@ automatically for you because of how the compiler is linking the esphomelib libr
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

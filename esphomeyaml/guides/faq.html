@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Frequently asked questions in esphomelib.">
 <meta itemprop="name" content="Frequently Asked Questions">
 <meta itemprop="description" content="Frequently asked questions in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/question_answer.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/question_answer.png">
 <meta name="twitter:title" content="Frequently Asked Questions">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/question_answer.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/question_answer.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Frequently asked questions in esphomelib.">
 <meta property="og:title" content="Frequently Asked Questions"/>
-<meta property="og:image" content="https://esphomelib.com/_images/question_answer.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/question_answer.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Frequently asked questions in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/faq.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -106,18 +105,18 @@
 in a file called <code class="docutils literal notranslate"><span class="pre">secrets.yaml</span></code> within the directory where the configuration file is.</p>
 </li>
 <li><p class="first">If you want to see how esphomeyaml interprets your configuration, run</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">config</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml livingroom.yaml config
 </pre></div>
 </div>
 </li>
 <li><p class="first">To view the logs from your node without uploading, run</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">logs</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml livingroom.yaml logs
 </pre></div>
 </div>
 </li>
 <li><p class="first">If you have changed the name of the node and want to update over-the-air, just specify
 <code class="docutils literal notranslate"><span class="pre">--upload-port</span></code> when running esphomeyaml. For example:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span> <span class="o">--</span><span class="n">upload</span><span class="o">-</span><span class="n">port</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.52</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml livingroom.yaml run --upload-port 192.168.178.52
 </pre></div>
 </div>
 </li>
@@ -196,21 +195,24 @@ system. When doing some changes in the core, it can quickly happen that somethin
 great way for me to track and (hopefully) fix issues, so thank you!</p>
 <p>For me to fix the issue the quickest, there are some things that would be really helpful:</p>
 <ol class="arabic simple">
-<li>How do you use esphomelib? Through esphomeyaml or directly through C++ code?</li>
-<li>If it’s a build/upload issue: What system are you compiling/uploading things from? Windows, POSIX, from docker?</li>
-<li>A snippet of the code/configuration file used is always great for a better understanding of the issue.</li>
+<li><strong>Just writing “X doesn’t work” or “X gives bug” is not helpful!!!</strong> Seriously, how do you expect
+me to help given just that information?</li>
+<li>A snippet of the code/configuration file used is always great for me to reproduce this issue.
+Please read <a class="reference external" href="https://stackoverflow.com/help/mcve">How to create a Minimal, Complete, and Verifiable example</a>.</li>
 <li>If it’s an i2c or hardware communication issue please also try setting the
 <a class="reference internal" href="../components/logger.html#logger-log-levels"><span class="std std-ref">log level</span></a> to <code class="docutils literal notranslate"><span class="pre">VERY_VERBOSE</span></code> as it provides helpful information
 about what is going on.</li>
+<li>Please also include what you’ve already tried and didn’t work so that these things can
+be</li>
 </ol>
 <p>You can find the issue tracker here <a class="reference external" href="https://github.com/OttoWinter/esphomelib/issues">https://github.com/OttoWinter/esphomelib/issues</a></p>
 </div>
 <div class="section" id="how-do-i-update-to-the-latest-version">
 <h2>How do I update to the latest version?<a class="headerlink" href="#how-do-i-update-to-the-latest-version" title="Permalink to this headline">¶</a></h2>
 <p>It’s simple. Run:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">pip2</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">esphomeyaml</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>pip2 install -U esphomeyaml
 <span class="c1"># From docker:</span>
-<span class="n">docker</span> <span class="n">pull</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span><span class="p">:</span><span class="n">latest</span>
+docker pull ottowinter/esphomeyaml:latest
 </pre></div>
 </div>
 <p>And in HassIO, there’s a simple UPDATE button when there’s an update available as with all add-ons</p>
@@ -220,13 +222,13 @@ about what is going on.</li>
 <p>esphomelib has a beta release cycle so that new releases can easily be tested before
 the changes are deployed to the stable channel. You can help test esphomeyaml (and use new features)
 by installing the esphomeyaml beta:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="c1"># For pip-based installs</span>
-<span class="n">pip2</span> <span class="n">install</span> <span class="o">--</span><span class="n">pre</span> <span class="o">-</span><span class="n">U</span> <span class="n">esphomeyaml</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="c1"># For pip-based installs</span>
+pip2 install --pre -U esphomeyaml
 
 <span class="c1"># From docker-based installs</span>
-<span class="n">docker</span> <span class="n">pull</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span><span class="p">:</span><span class="n">rc</span>
+docker pull ottowinter/esphomeyaml:rc
 <span class="c1"># In each command:</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">-</span><span class="n">it</span> <span class="n">ottowinter</span><span class="o">/</span><span class="n">esphomeyaml</span><span class="p">:</span><span class="n">rc</span> <span class="n">livingroom</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
+docker run <span class="o">[</span>...<span class="o">]</span> -it ottowinter/esphomeyaml:rc livingroom.yaml run
 </pre></div>
 </div>
 <p>And for HassIO, you will see a “esphomeyaml Beta” Add-On for the beta channel.</p>
@@ -247,10 +249,10 @@ Install that and stop the stable version (both can’t run at the same time with
 commands.</li>
 </ul>
 <p>Next, if you want to use the latest version of the esphomelib C++ framework too:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Sample configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">...</span>
-  <span class="n">esphomelib_version</span><span class="p">:</span> <span class="n">dev</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Sample configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
   <span class="c1"># ...</span>
 </pre></div>
 </div>
@@ -268,7 +270,7 @@ request in the <a class="reference external" href="https://github.com/OttoWinter
 <p>Sure! I’d be happy to help :) You can contact me here:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://discord.gg/KhAMKrd">Discord</a></li>
-<li><a class="reference external" href="https://community.home-assistant.io/t/esphomelib-library-to-greatly-simplify-home-assistant-integration-with-esp32">Home Assistant Community Forums</a></li>
+<li><a class="reference external" href="https://community.home-assistant.io/t/esphomelib-library-to-greatly-simplify-home-assistant-integration-with-esp32/402452">Home Assistant Community Forums</a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomelib/issues">esphomelib</a> and
 <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/issues">esphomeyaml</a> issue trackers. Preferably only for issues and
 feature requests.</li>
@@ -315,7 +317,7 @@ boards from eBay sometimes have quite bad antennas.</li>
 <div class="section" id="i-can-t-update-using-ota-because-of-to-little-space-now-what">
 <h2>I can’t update using OTA because of to little space, now what?<a class="headerlink" href="#i-can-t-update-using-ota-because-of-to-little-space-now-what" title="Permalink to this headline">¶</a></h2>
 <p>If you are using ESP8266/Sonoff devices and you have many components enabled you will probably encounter this error during OTA update:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">ERROR</span> <span class="p">[</span><span class="n">esphomeyaml</span><span class="o">.</span><span class="n">espota</span><span class="p">]</span> <span class="n">Bad</span> <span class="n">Answer</span><span class="p">:</span> <span class="n">ERR</span><span class="p">:</span> <span class="n">ERROR</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">Not</span> <span class="n">Enough</span> <span class="n">Space</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">ERROR [esphomeyaml.espota] Bad Answer</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ERR</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ERROR[4]</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Not Enough Space</span>
 </pre></div>
 </div>
 <p>This is because of the limited amount of flash memory available on these devices (often just 1M). The size of the firmware data that is created by esphomeyaml depends on the number of components enabled (eg: webserver, sensors, etc). Especially the webserver component is very large.</p>
@@ -323,17 +325,17 @@ boards from eBay sometimes have quite bad antennas.</li>
 <p>A possible solution is to disable (large) components like webserver so the size of the firmware data stays below a certain size.</p>
 <p>If even this doesn’t work or you like to have a lot of components enabled there is a workaround that might help you out so you can have your cake and eat it too. Using a two stage OTA update.</p>
 <p>First we temporary ‘remove’ (comment out) all components from the <code class="docutils literal notranslate"><span class="pre">yaml</span></code> file, leaving only: <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span></code>, <code class="docutils literal notranslate"><span class="pre">ota</span></code> and <code class="docutils literal notranslate"><span class="pre">wifi</span></code>, example:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">sonoff_basic</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">espressif8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sonoff_basic</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">espressif8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="s1">&#39;***&#39;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="s1">&#39;***&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="s">&#39;***&#39;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&#39;***&#39;</span>
 
-<span class="n">ota</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
 
 <span class="c1"># mqtt:</span>
 <span class="c1">#   broker: &#39;mqtt&#39;</span>
@@ -376,11 +378,11 @@ _guarantee_ that I can get a specific feature to work reliably.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

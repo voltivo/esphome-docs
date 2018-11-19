@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up a simple garage door in esphomelib.">
 <meta itemprop="name" content="Simple Garage Door">
 <meta itemprop="description" content="Instructions for setting up a simple garage door in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/window-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/window-open.png">
 <meta name="twitter:title" content="Simple Garage Door">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/window-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/window-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up a simple garage door in esphomelib.">
 <meta property="og:title" content="Simple Garage Door"/>
-<meta property="og:image" content="https://esphomelib.com/_images/window-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/window-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up a simple garage door in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/garage-door.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -87,34 +86,34 @@
 <p>The following is a possible configuration file for garage doors that are controlled by two relays:
 One for opening and another one for closing the garage door. When either one of them is turned on
 for a short period of time, the close/open action begins.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D3</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Garage Door Open Switch&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">open_switch</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D4</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Garage Door Close Switch&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">close_switch</span>
-<span class="n">cover</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Garage Door&quot;</span>
-    <span class="n">open_action</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Garage</span><span class="nv"> </span><span class="s">Door</span><span class="nv"> </span><span class="s">Open</span><span class="nv"> </span><span class="s">Switch&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open_switch</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D4</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Garage</span><span class="nv"> </span><span class="s">Door</span><span class="nv"> </span><span class="s">Close</span><span class="nv"> </span><span class="s">Switch&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close_switch</span>
+<span class="l l-Scalar l-Scalar-Plain">cover</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Garage</span><span class="nv"> </span><span class="s">Door&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">open_action</span><span class="p p-Indicator">:</span>
       <span class="c1"># Cancel any previous action</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">close_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close_switch</span>
       <span class="c1"># Turn the OPEN switch on briefly</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">open_switch</span>
-      <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mf">0.1</span><span class="n">s</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">open_switch</span>
-    <span class="n">close_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">open_switch</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">close_switch</span>
-      <span class="o">-</span> <span class="n">delay</span><span class="p">:</span> <span class="mf">0.1</span><span class="n">s</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">close_switch</span>
-    <span class="n">stop_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">close_switch</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">open_switch</span>
-    <span class="n">optimistic</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1s</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">close_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1s</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">stop_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close_switch</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">optimistic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 <div class="section" id="see-also">
@@ -135,11 +134,11 @@ for a short period of time, the close/open action begins.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

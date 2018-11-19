@@ -9,14 +9,14 @@
 <meta name="keywords" content="HX711">
 <meta itemprop="name" content="HX711 Load Cell Amplifier">
 <meta itemprop="description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib">
-<meta itemprop="image" content="https://esphomelib.com/_images/hx711.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/hx711.png">
 <meta name="twitter:title" content="HX711 Load Cell Amplifier">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/hx711.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/hx711.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib">
 <meta property="og:title" content="HX711 Load Cell Amplifier"/>
-<meta property="og:image" content="https://esphomelib.com/_images/hx711.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/hx711.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up HX711 load cell amplifiers with esphomelib"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/hx711.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -96,14 +95,14 @@ load cell amplifier
 </div>
 <p>Connect <code class="docutils literal notranslate"><span class="pre">GND</span></code> to <code class="docutils literal notranslate"><span class="pre">GND</span></code>, <code class="docutils literal notranslate"><span class="pre">VCC</span></code> to <code class="docutils literal notranslate"><span class="pre">3.3V</span></code> and the other three <code class="docutils literal notranslate"><span class="pre">MISO</span></code> (or <code class="docutils literal notranslate"><span class="pre">SO</span></code> for short),
 <code class="docutils literal notranslate"><span class="pre">CS</span></code> and <code class="docutils literal notranslate"><span class="pre">CLOCK</span></code> (or <code class="docutils literal notranslate"><span class="pre">SCK</span></code>) to free GPIO pins.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">hx711</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;HX711 Value&quot;</span>
-    <span class="n">dout_pin</span><span class="p">:</span> <span class="n">D0</span>
-    <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="n">gain</span><span class="p">:</span> <span class="mi">128</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hx711</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;HX711</span><span class="nv"> </span><span class="s">Value&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">dout_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+    <span class="l l-Scalar l-Scalar-Plain">clk_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">gain</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">128</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -129,19 +128,19 @@ To calibrate the sensor:</p>
 <li>Again wait for the data to arrive and note the value, for example <code class="docutils literal notranslate"><span class="pre">810</span></code>.</li>
 </ol>
 <p>Once you’ve done those steps, you can use the <code class="docutils literal notranslate"><span class="pre">map</span></code> function to map the incoming value to the calibrated one:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">hx711</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hx711</span>
     <span class="c1"># ... Other HX711 options</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-          <span class="n">auto</span> <span class="n">first_mass</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">first</span> <span class="n">known</span> <span class="n">mass</span> <span class="n">was</span> <span class="mi">0</span><span class="n">kg</span>
-          <span class="n">auto</span> <span class="n">first_value</span> <span class="o">=</span> <span class="mf">120.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">value</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">known</span> <span class="n">mass</span> <span class="n">was</span> <span class="mi">120</span>
-          <span class="n">auto</span> <span class="n">second_mass</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">second</span> <span class="n">mass</span> <span class="n">was</span> <span class="mi">1</span><span class="n">kg</span>
-          <span class="n">auto</span> <span class="n">second_value</span> <span class="o">=</span> <span class="mf">810.0</span><span class="p">;</span> <span class="o">//</span> <span class="n">second</span> <span class="n">value</span> <span class="n">was</span> <span class="mi">810</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+          <span class="no">auto first_mass = 0.0; // first known mass was 0kg</span>
+          <span class="no">auto first_value = 120.0; // value for the first known mass was 120</span>
+          <span class="no">auto second_mass = 1.0; // second mass was 1kg</span>
+          <span class="no">auto second_value = 810.0; // second value was 810</span>
 
-          <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">first_value</span><span class="p">,</span> <span class="n">second_value</span><span class="p">,</span> <span class="n">first_mass</span><span class="p">,</span> <span class="n">second_mass</span><span class="p">);</span>
-    <span class="n">unit_of_measurement</span><span class="p">:</span> <span class="n">kg</span>
+          <span class="no">return map(x, first_value, second_value, first_mass, second_mass);</span>
+    <span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">kg</span>
 </pre></div>
 </div>
 <p>Replace the masses and values <code class="docutils literal notranslate"><span class="pre">120.0</span></code>, <code class="docutils literal notranslate"><span class="pre">810.0</span></code>, etc with your values.</p>
@@ -166,11 +165,11 @@ To calibrate the sensor:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

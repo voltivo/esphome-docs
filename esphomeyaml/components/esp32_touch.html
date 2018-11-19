@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the touch pad feature on the ESP32.">
 <meta itemprop="name" content="ESP32 Touch Pad Hub">
 <meta itemprop="description" content="Instructions for setting up the touch pad feature on the ESP32.">
-<meta itemprop="image" content="https://esphomelib.com/_images/touch.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/touch.png">
 <meta name="twitter:title" content="ESP32 Touch Pad Hub">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/touch.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/touch.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the touch pad feature on the ESP32.">
 <meta property="og:title" content="ESP32 Touch Pad Hub"/>
-<meta property="og:image" content="https://esphomelib.com/_images/touch.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/touch.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the touch pad feature on the ESP32."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/esp32_touch.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -87,15 +86,15 @@
 <h1>ESP32 Touch Pad Hub<a class="headerlink" href="#esp32-touch-pad-hub" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">esp32_touch</span></code> component creates a global hub for detecting touches on
 the eight touch pads of the ESP32 as <a class="reference internal" href="binary_sensor/esp32_touch.html"><span class="doc">binary senors</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esp32_touch</span><span class="p">:</span>
-  <span class="n">setup_mode</span><span class="p">:</span> <span class="kc">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esp32_touch</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">setup_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp32_touch</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;ESP32 Touch Pad GPIO27&quot;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO27</span>
-    <span class="n">threshold</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp32_touch</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;ESP32</span><span class="nv"> </span><span class="s">Touch</span><span class="nv"> </span><span class="s">Pad</span><span class="nv"> </span><span class="s">GPIO27&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO27</span>
+    <span class="l l-Scalar l-Scalar-Plain">threshold</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -120,13 +119,13 @@ power usage but make the sensor slower. Default is about 27 milliseconds.</li>
 time for all touch pads. A longer conversion time means that more charge/discharge cycles of the touch pad
 can be performed, therefore increasing accuracy. Default is about 8ms, the maximum amount.</li>
 <li><strong>low_voltage_reference</strong> (<em>Optional</em>): The low voltage reference to use for the charge cycles. See
-the <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/touch_pad.html#optimization-of-measurements">esp-idf docs</a>
+the <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/touch_pad.html#optimization-of-measurements">esp-idf docs</a>
 for a nice explanation of this. One of <code class="docutils literal notranslate"><span class="pre">0.5V</span></code>, <code class="docutils literal notranslate"><span class="pre">0.6V</span></code>, <code class="docutils literal notranslate"><span class="pre">0.7V</span></code>, <code class="docutils literal notranslate"><span class="pre">0.8V</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">0.5V</span></code>.</li>
 <li><strong>high_voltage_reference</strong> (<em>Optional</em>): The high voltage reference to use for the charge cycles. See
-the <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/touch_pad.html#optimization-of-measurements">esp-idf docs</a>
+the <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/touch_pad.html#optimization-of-measurements">esp-idf docs</a>
 for a nice explanation of this. One of <code class="docutils literal notranslate"><span class="pre">2.4V</span></code>, <code class="docutils literal notranslate"><span class="pre">2.5V</span></code>, <code class="docutils literal notranslate"><span class="pre">2.6V</span></code>, <code class="docutils literal notranslate"><span class="pre">2.7V</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">2.7V</span></code>.</li>
 <li><strong>voltage_attenuation</strong> (<em>Optional</em>): The voltage attenuation to use for the charge cycles. See
-the <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/touch_pad.html#optimization-of-measurements">esp-idf docs</a>
+the <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/touch_pad.html#optimization-of-measurements">esp-idf docs</a>
 for a nice explanation of this. One of <code class="docutils literal notranslate"><span class="pre">1.5V</span></code>, <code class="docutils literal notranslate"><span class="pre">1V</span></code>, <code class="docutils literal notranslate"><span class="pre">0.5V</span></code>, <code class="docutils literal notranslate"><span class="pre">0V</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">0V</span></code>.</li>
 </ul>
 </div>
@@ -148,11 +147,11 @@ for a nice explanation of this. One of <code class="docutils literal notranslate
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

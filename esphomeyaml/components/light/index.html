@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up lights and light effects in esphomelib.">
 <meta itemprop="name" content="Light Component">
 <meta itemprop="description" content="Instructions for setting up lights and light effects in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:title" content="Light Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up lights and light effects in esphomelib.">
 <meta property="og:title" content="Light Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up lights and light effects in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/light/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -107,12 +106,12 @@ features such as RGB colors, transitions, flashing and effects.</p>
 <div class="section" id="light-toggle-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">light.toggle</span></code> Action<a class="headerlink" href="#light-toggle-action" title="Permalink to this headline">¶</a></h2>
 <p>This action toggles a light with the given ID when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span>
-        <span class="nb">id</span><span class="p">:</span> <span class="n">light_1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.toggle</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
     <span class="c1"># Shorthand:</span>
-    <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">toggle</span><span class="p">:</span> <span class="n">light_1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.toggle</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -124,9 +123,9 @@ if the light supports it.</li>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="n">auto</span> <span class="n">call</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">light_1</span><span class="p">)</span><span class="o">.</span><span class="n">toggle</span><span class="p">();</span>
-<span class="o">//</span> <span class="n">perform</span> <span class="n">action</span><span class="p">:</span>
-<span class="n">call</span><span class="o">.</span><span class="n">perform</span><span class="p">();</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="k">auto</span> <span class="n">call</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">light_1</span><span class="p">).</span><span class="n">toggle</span><span class="p">();</span>
+<span class="c1">// perform action:</span>
+<span class="n">call</span><span class="p">.</span><span class="n">perform</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -134,24 +133,24 @@ if the light supports it.</li>
 <div class="section" id="light-turn-on-action">
 <span id="id2"></span><h2><code class="docutils literal notranslate"><span class="pre">light.turn_on</span></code> Action<a class="headerlink" href="#light-turn-on-action" title="Permalink to this headline">¶</a></h2>
 <p>This action turns a light with the given ID on when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>on_...:
-  then:
-    - light.turn_on:
-        id: light_1
-        brightness: 100%
-        red: 100%
-        green: 100%
-        blue: 1.0
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
+        <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+        <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+        <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+        <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
 
-    # Templated
-    - light.turn_on:
-        id: light_1
-        brightness: !lambda &gt;-
-          // output value must be in range 0 - 1.0
-          return id(some_sensor).state / 100.0;
+    <span class="c1"># Templated</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
+        <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">// output value must be in range 0 - 1.0</span>
+          <span class="no">return id(some_sensor).state / 100.0;</span>
 
-    # Shorthand
-    - light.turn_on: light_1
+    <span class="c1"># Shorthand</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -177,14 +176,14 @@ start an effect with the given name.</li>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="n">auto</span> <span class="n">call</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">light_1</span><span class="p">)</span><span class="o">.</span><span class="n">turn_on</span><span class="p">();</span>
-<span class="o">//</span> <span class="nb">set</span> <span class="n">parameters</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
-<span class="n">call</span><span class="o">.</span><span class="n">set_transition_length</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">ms</span>
-<span class="n">call</span><span class="o">.</span><span class="n">set_brightness</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span> <span class="o">//</span> <span class="mf">1.0</span> <span class="ow">is</span> <span class="n">full</span> <span class="n">brightness</span>
-<span class="n">call</span><span class="o">.</span><span class="n">set_rgb</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">color</span><span class="p">,</span> <span class="mf">1.0</span> <span class="ow">is</span> <span class="n">fully</span> <span class="n">lit</span>
-<span class="n">call</span><span class="o">.</span><span class="n">set_effect</span><span class="p">(</span><span class="s2">&quot;The Effect&quot;</span><span class="p">);</span>
-<span class="o">//</span> <span class="n">perform</span> <span class="n">action</span><span class="p">:</span>
-<span class="n">call</span><span class="o">.</span><span class="n">perform</span><span class="p">();</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="k">auto</span> <span class="n">call</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">light_1</span><span class="p">).</span><span class="n">turn_on</span><span class="p">();</span>
+<span class="c1">// set parameters (optional)</span>
+<span class="n">call</span><span class="p">.</span><span class="n">set_transition_length</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// in ms</span>
+<span class="n">call</span><span class="p">.</span><span class="n">set_brightness</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span> <span class="c1">// 1.0 is full brightness</span>
+<span class="n">call</span><span class="p">.</span><span class="n">set_rgb</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span> <span class="c1">// color, 1.0 is fully lit</span>
+<span class="n">call</span><span class="p">.</span><span class="n">set_effect</span><span class="p">(</span><span class="s">&quot;The Effect&quot;</span><span class="p">);</span>
+<span class="c1">// perform action:</span>
+<span class="n">call</span><span class="p">.</span><span class="n">perform</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -192,13 +191,13 @@ start an effect with the given name.</li>
 <div class="section" id="light-turn-off-action">
 <span id="id3"></span><h2><code class="docutils literal notranslate"><span class="pre">light.turn_off</span></code> Action<a class="headerlink" href="#light-turn-off-action" title="Permalink to this headline">¶</a></h2>
 <p>This action turns a light with the given ID off when executed.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_</span><span class="o">...</span><span class="p">:</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span>
-        <span class="nb">id</span><span class="p">:</span> <span class="n">light_1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_off</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
 
     <span class="c1"># Shorthand</span>
-    <span class="o">-</span> <span class="n">light</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">light_1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -210,11 +209,11 @@ if the light supports it.</li>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This action can also be expressed in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>:</p>
-<div class="code cpp last highlight-default notranslate"><div class="highlight"><pre><span class="n">auto</span> <span class="n">call</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">light_1</span><span class="p">)</span><span class="o">.</span><span class="n">turn_off</span><span class="p">();</span>
-<span class="o">//</span> <span class="nb">set</span> <span class="n">parameters</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
-<span class="n">call</span><span class="o">.</span><span class="n">set_transition_length</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">ms</span>
-<span class="o">//</span> <span class="n">perform</span> <span class="n">action</span><span class="p">:</span>
-<span class="n">call</span><span class="o">.</span><span class="n">perform</span><span class="p">();</span>
+<div class="last highlight-cpp notranslate"><div class="highlight"><pre><span class="k">auto</span> <span class="n">call</span> <span class="o">=</span> <span class="n">id</span><span class="p">(</span><span class="n">light_1</span><span class="p">).</span><span class="n">turn_off</span><span class="p">();</span>
+<span class="c1">// set parameters (optional)</span>
+<span class="n">call</span><span class="p">.</span><span class="n">set_transition_length</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// in ms</span>
+<span class="c1">// perform action:</span>
+<span class="n">call</span><span class="p">.</span><span class="n">perform</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -227,32 +226,32 @@ these parameters.</p>
 <p>With esphomelib’s light effects system you’re basically creating a bunch of entries for the effects dropdown in
 Home Assistant. If you wish to have several variants of the same effect you can of course also create multiple
 entries with each having a unique name like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">random</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;My Slow Random Effect&quot;</span>
-          <span class="n">transition_length</span><span class="p">:</span> <span class="mi">30</span><span class="n">s</span>
-          <span class="n">update_interval</span><span class="p">:</span> <span class="mi">30</span><span class="n">s</span>
-      <span class="o">-</span> <span class="n">random</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;My Fast Random Effect&quot;</span>
-          <span class="n">transition_length</span><span class="p">:</span> <span class="mi">4</span><span class="n">s</span>
-          <span class="n">update_interval</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">random</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">Slow</span><span class="nv"> </span><span class="s">Random</span><span class="nv"> </span><span class="s">Effect&quot;</span>
+          <span class="l l-Scalar l-Scalar-Plain">transition_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30s</span>
+          <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30s</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">random</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">Fast</span><span class="nv"> </span><span class="s">Random</span><span class="nv"> </span><span class="s">Effect&quot;</span>
+          <span class="l l-Scalar l-Scalar-Plain">transition_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4s</span>
+          <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5s</span>
 </pre></div>
 </div>
 <div class="section" id="random-effect">
 <h3>Random Effect<a class="headerlink" href="#random-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect makes a transition (of length <code class="docutils literal notranslate"><span class="pre">transition_length</span></code>) to a randomly-chosen color every <code class="docutils literal notranslate"><span class="pre">update_interval</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">random</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">random</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Random</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">transition_length</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
-          <span class="n">update_interval</span><span class="p">:</span> <span class="mi">7</span><span class="n">s</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">random</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">random</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Random Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">transition_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5s</span>
+          <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">7s</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -266,28 +265,28 @@ to.</li>
 <div class="section" id="strobe-effect">
 <h3>Strobe Effect<a class="headerlink" href="#strobe-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect cycles through a list of colors with specific durations.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">strobe</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">strobe</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Strobe</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">colors</span><span class="p">:</span>
-            <span class="o">-</span> <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-              <span class="n">brightness</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">red</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">green</span><span class="p">:</span> <span class="mi">90</span><span class="o">%</span>
-              <span class="n">blue</span><span class="p">:</span> <span class="mi">0</span><span class="o">%</span>
-              <span class="n">duration</span><span class="p">:</span> <span class="mi">500</span><span class="n">ms</span>
-            <span class="o">-</span> <span class="n">state</span><span class="p">:</span> <span class="kc">False</span>
-              <span class="n">duration</span><span class="p">:</span> <span class="mi">250</span><span class="n">ms</span>
-            <span class="o">-</span> <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-              <span class="n">brightness</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">red</span><span class="p">:</span> <span class="mi">0</span><span class="o">%</span>
-              <span class="n">green</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">blue</span><span class="p">:</span> <span class="mi">0</span><span class="o">%</span>
-              <span class="n">duration</span><span class="p">:</span> <span class="mi">500</span><span class="n">ms</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">strobe</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">strobe</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Strobe Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">colors</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+              <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">90%</span>
+              <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0%</span>
+              <span class="l l-Scalar l-Scalar-Plain">duration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500ms</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+              <span class="l l-Scalar l-Scalar-Plain">duration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">250ms</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+              <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0%</span>
+              <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0%</span>
+              <span class="l l-Scalar l-Scalar-Plain">duration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500ms</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -308,15 +307,15 @@ to.</li>
 <div class="section" id="flicker-effect">
 <h3>Flicker Effect<a class="headerlink" href="#flicker-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect “hovers” around the active color of the light and flickers each color channel a bit.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">flicker</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">flicker</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Flicker</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">alpha</span><span class="p">:</span> <span class="mi">95</span><span class="o">%</span>
-          <span class="n">intensity</span><span class="p">:</span> <span class="mf">1.5</span><span class="o">%</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">flicker</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">flicker</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Flicker Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">alpha</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">95%</span>
+          <span class="l l-Scalar l-Scalar-Plain">intensity</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.5%</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -331,27 +330,27 @@ random offsets. Defaults to <code class="docutils literal notranslate"><span cla
 <div class="section" id="lambda-effect">
 <h3>Lambda Effect<a class="headerlink" href="#lambda-effect" title="Permalink to this headline">¶</a></h3>
 <p>This effect allows you to write completely custom light effects yourself using <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">My</span> <span class="n">Custom</span> <span class="n">Effect</span>
-          <span class="n">update_interval</span><span class="p">:</span> <span class="mi">1</span><span class="n">s</span>
-          <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-            <span class="n">static</span> <span class="nb">int</span> <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nb">id</span><span class="p">(</span><span class="n">my_light</span><span class="p">)</span><span class="o">.</span><span class="n">start_transition</span><span class="p">(</span><span class="n">light</span><span class="p">::</span><span class="n">LightColorValues</span><span class="p">::</span><span class="n">from_rgb</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)));</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nb">id</span><span class="p">(</span><span class="n">my_light</span><span class="p">)</span><span class="o">.</span><span class="n">start_transition</span><span class="p">(</span><span class="n">light</span><span class="p">::</span><span class="n">LightColorValues</span><span class="p">::</span><span class="n">from_rgb</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)));</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nb">id</span><span class="p">(</span><span class="n">my_light</span><span class="p">)</span><span class="o">.</span><span class="n">start_transition</span><span class="p">(</span><span class="n">light</span><span class="p">::</span><span class="n">LightColorValues</span><span class="p">::</span><span class="n">from_rgb</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)));</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-              <span class="nb">id</span><span class="p">(</span><span class="n">my_light</span><span class="p">)</span><span class="o">.</span><span class="n">start_transition</span><span class="p">(</span><span class="n">light</span><span class="p">::</span><span class="n">LightColorValues</span><span class="p">::</span><span class="n">from_rgb</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)));</span>
-            <span class="p">}</span>
-            <span class="n">state</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
-              <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">My Custom Effect</span>
+          <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
+          <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+            <span class="no">static int state = 0;</span>
+            <span class="no">if (state == 0) {</span>
+              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(1.0, 1.0, 1.0)));</span>
+            <span class="no">} else if (state == 1) {</span>
+              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(1.0, 0.0, 1.0)));</span>
+            <span class="no">} else if (state == 2) {</span>
+              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(0.0, 0.0, 1.0)));</span>
+            <span class="no">} else {</span>
+              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(0.0, 0.0, 0.0)));</span>
+            <span class="no">}</span>
+            <span class="no">state += 1;</span>
+            <span class="no">if (state == 4)</span>
+              <span class="no">state = 0;</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -367,15 +366,15 @@ especially useful.</li>
 <h3>FastLED Rainbow Effect<a class="headerlink" href="#fastled-rainbow-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LEDs that creates a moving rainbow over the whole LED strip using
 the HSV color wheel.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_rainbow</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_rainbow</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Rainbow</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">speed</span><span class="p">:</span> <span class="mi">10</span>
-          <span class="n">width</span><span class="p">:</span> <span class="mi">50</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_rainbow</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_rainbow</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Rainbow Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">speed</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+          <span class="l l-Scalar l-Scalar-Plain">width</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -389,24 +388,24 @@ the HSV color wheel.</p>
 <h3>FastLED Color Wipe Effect<a class="headerlink" href="#fastled-color-wipe-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LEDs that continuously introduces new colors at the beginning of
 the strip and shifts them forward every <code class="docutils literal notranslate"><span class="pre">add_led_interval</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_color_wipe</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_color_wipe</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Color</span> <span class="n">Wipe</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">colors</span><span class="p">:</span>
-            <span class="o">-</span> <span class="n">red</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">green</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">blue</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
-              <span class="n">num_leds</span><span class="p">:</span> <span class="mi">1</span>
-            <span class="o">-</span> <span class="n">red</span><span class="p">:</span> <span class="mi">0</span><span class="o">%</span>
-              <span class="n">green</span><span class="p">:</span> <span class="mi">0</span><span class="o">%</span>
-              <span class="n">blue</span><span class="p">:</span> <span class="mi">0</span><span class="o">%</span>
-              <span class="n">num_leds</span><span class="p">:</span> <span class="mi">1</span>
-          <span class="n">add_led_interval</span><span class="p">:</span> <span class="mi">100</span><span class="n">ms</span>
-          <span class="n">reverse</span><span class="p">:</span> <span class="kc">False</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_color_wipe</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_color_wipe</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Color Wipe Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">colors</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
+              <span class="l l-Scalar l-Scalar-Plain">num_leds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0%</span>
+              <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0%</span>
+              <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0%</span>
+              <span class="l l-Scalar l-Scalar-Plain">num_leds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+          <span class="l l-Scalar l-Scalar-Plain">add_led_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
+          <span class="l l-Scalar l-Scalar-Plain">reverse</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -431,14 +430,14 @@ beginning of the strip. Defaults to <code class="docutils literal notranslate"><
 <h3>FastLED Scan Effect<a class="headerlink" href="#fastled-scan-effect" title="Permalink to this headline">¶</a></h3>
 <p>Create a single, fast-moving dot moving back and forth an individually-addressable LED strip. The color is chosen by the
 currently active light color.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_scan</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_scan</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Scan</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">move_interval</span><span class="p">:</span> <span class="mi">100</span><span class="n">ms</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_scan</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_scan</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Scan Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">move_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -453,15 +452,15 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">100ms</
 <p>A light effect for individually-addressable LED strips that randomly chooses some LEDs and let’s them bright
 up for a moment, like a stars twinkling in the night’s sky. The color of the pixels will be chosen by the
 currently active light color.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_twinkle</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_twinkle</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Twinkle</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">twinkle_probability</span><span class="p">:</span> <span class="mi">5</span><span class="o">%</span>
-          <span class="n">progress_interval</span><span class="p">:</span> <span class="mi">4</span><span class="n">ms</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_twinkle</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_twinkle</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Twinkle Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">twinkle_probability</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5%</span>
+          <span class="l l-Scalar l-Scalar-Plain">progress_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4ms</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -476,15 +475,15 @@ affects the duration of a twinkle animation. Defaults to <code class="docutils l
 <div class="section" id="fastled-random-twinkle-effect">
 <h3>FastLED Random Twinkle Effect<a class="headerlink" href="#fastled-random-twinkle-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect similar to <code class="docutils literal notranslate"><span class="pre">fastled_twinkle</span></code>, but using random colors for each twinkle animation.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_random_twinkle</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_random_twinkle</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Random</span> <span class="n">Twinkle</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">twinkle_probability</span><span class="p">:</span> <span class="mi">5</span><span class="o">%</span>
-          <span class="n">progress_interval</span><span class="p">:</span> <span class="mi">32</span><span class="n">ms</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_random_twinkle</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_random_twinkle</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Random Twinkle Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">twinkle_probability</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5%</span>
+          <span class="l l-Scalar l-Scalar-Plain">progress_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">32ms</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -500,17 +499,17 @@ affects the duration of a twinkle animation. Defaults to <code class="docutils l
 <h3>FastLED Fireworks Effect<a class="headerlink" href="#fastled-fireworks-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LED strips that randomly sparks some fireworks at random positions
 and lets the sparkles cascade over the LED strip.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_fireworks</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_fireworks</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Fireworks</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">update_interval</span><span class="p">:</span> <span class="mi">32</span><span class="n">ms</span>
-          <span class="n">spark_probability</span><span class="p">:</span> <span class="mi">10</span><span class="o">%</span>
-          <span class="n">use_random_color</span><span class="p">:</span> <span class="n">false</span>
-          <span class="n">fade_out_rate</span><span class="p">:</span> <span class="mi">120</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_fireworks</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_fireworks</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Fireworks Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">32ms</span>
+          <span class="l l-Scalar l-Scalar-Plain">spark_probability</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10%</span>
+          <span class="l l-Scalar l-Scalar-Plain">use_random_color</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+          <span class="l l-Scalar l-Scalar-Plain">fade_out_rate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">120</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -531,15 +530,15 @@ sparks do not propagate for a long time. Defaults to <code class="docutils liter
 <h3>FastLED Flicker Effect<a class="headerlink" href="#fastled-flicker-effect" title="Permalink to this headline">¶</a></h3>
 <p>An effect similar to the <code class="docutils literal notranslate"><span class="pre">flicker</span></code> effect, but for individually-addressable LED strips. This effect flickers
 each LED by its own random amount around the currently active light color.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">fastled_</span><span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
     <span class="c1"># ...</span>
-    <span class="n">effects</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_flicker</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">fastled_flicker</span><span class="p">:</span>
-          <span class="n">name</span><span class="p">:</span> <span class="n">Flicker</span> <span class="n">Effect</span> <span class="n">With</span> <span class="n">Custom</span> <span class="n">Values</span>
-          <span class="n">update_interval</span><span class="p">:</span> <span class="mi">16</span><span class="n">ms</span>
-          <span class="n">intensity</span><span class="p">:</span> <span class="mi">5</span><span class="o">%</span>
+    <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_flicker</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_flicker</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Flicker Effect With Custom Values</span>
+          <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">16ms</span>
+          <span class="l l-Scalar l-Scalar-Plain">intensity</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5%</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -582,11 +581,11 @@ the currently active light color. Defaults to <code class="docutils literal notr
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up status LEDs in esphomelib to monitor the status of an ESP.">
 <meta itemprop="name" content="Status LED">
 <meta itemprop="description" content="Instructions for setting up status LEDs in esphomelib to monitor the status of an ESP.">
-<meta itemprop="image" content="https://esphomelib.com/_images/led-on.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/led-on.png">
 <meta name="twitter:title" content="Status LED">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/led-on.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/led-on.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up status LEDs in esphomelib to monitor the status of an ESP.">
 <meta property="og:title" content="Status LED"/>
-<meta property="og:image" content="https://esphomelib.com/_images/led-on.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/led-on.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up status LEDs in esphomelib to monitor the status of an ESP."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/status_led.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -95,9 +94,9 @@ esphomelib has found an error while setting up. In most cases, esphomelib will s
 recover from the error and continue with all other operations.</li>
 <li>Stay off otherwise.</li>
 </ul>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">status_led</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">status_led</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO2</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -111,10 +110,10 @@ GPIO pin to operate the status LED on.</li>
 <p class="first admonition-title">Note</p>
 <p>If your LED is in an active-LOW mode (when it’s on if the output is enabled), use the
 <code class="docutils literal notranslate"><span class="pre">inverted</span></code> option of the <a class="reference internal" href="../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">status_led</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span>
-    <span class="n">number</span><span class="p">:</span> <span class="n">D0</span>
-    <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">status_led</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+    <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
@@ -136,11 +135,11 @@ GPIO pin to operate the status LED on.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

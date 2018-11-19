@@ -28,7 +28,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.7.0.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -181,18 +180,18 @@ esphomeyaml stores the platformio project files. See <a class="reference interna
 parameter. The accuracy now defaults to <code class="docutils literal notranslate"><span class="pre">HIGH</span></code>.</p>
 </li>
 <li><p class="first">The <code class="docutils literal notranslate"><span class="pre">inverted</span></code> option of binary sensors has been moved into the <code class="docutils literal notranslate"><span class="pre">filters:</span></code> section. So instead of</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 <p>you would now write:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">invert</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">invert</span><span class="p p-Indicator">:</span>
 </pre></div>
 </div>
 </li>
@@ -248,11 +247,11 @@ for using esphomeyaml to create a simple wireless doorbell:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up UART switches in esphomelib that can output arbitrary UART sequences when activated.">
 <meta itemprop="name" content="UART Switch">
 <meta itemprop="description" content="Instructions for setting up UART switches in esphomelib that can output arbitrary UART sequences when activated.">
-<meta itemprop="image" content="https://esphomelib.com/_images/uart.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/uart.png">
 <meta name="twitter:title" content="UART Switch">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/uart.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/uart.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up UART switches in esphomelib that can output arbitrary UART sequences when activated.">
 <meta property="og:title" content="UART Switch"/>
-<meta property="og:image" content="https://esphomelib.com/_images/uart.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/uart.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up UART switches in esphomelib that can output arbitrary UART sequences when activated."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/switch/uart.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -87,18 +86,18 @@
 <h1>UART Switch<a class="headerlink" href="#uart-switch" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">uart</span></code> switch platform allows you to send a pre-defined sequence of bytes on a
 <a class="reference internal" href="../uart.html"><span class="doc">UART bus</span></a> when triggered.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">uart</span><span class="p">:</span>
-  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">9600</span>
-  <span class="n">tx_pin</span><span class="p">:</span> <span class="n">D0</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">uart</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">baud_rate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">9600</span>
+  <span class="l l-Scalar l-Scalar-Plain">tx_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
 
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">uart</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;UART String Output&quot;</span>
-    <span class="n">data</span><span class="p">:</span> <span class="s1">&#39;DataToSend&#39;</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">uart</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;UART Bytes Output&quot;</span>
-    <span class="n">data</span><span class="p">:</span> <span class="p">[</span><span class="mh">0xDE</span><span class="p">,</span> <span class="mh">0xAD</span><span class="p">,</span> <span class="mh">0xBE</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">]</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uart</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;UART</span><span class="nv"> </span><span class="s">String</span><span class="nv"> </span><span class="s">Output&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span> <span class="s">&#39;DataToSend&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uart</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;UART</span><span class="nv"> </span><span class="s">Bytes</span><span class="nv"> </span><span class="s">Output&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">0xDE</span><span class="p p-Indicator">,</span> <span class="nv">0xAD</span><span class="p p-Indicator">,</span> <span class="nv">0xBE</span><span class="p p-Indicator">,</span> <span class="nv">0xEF</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -130,11 +129,11 @@ or a list of bytes.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

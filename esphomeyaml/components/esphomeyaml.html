@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the core esphomeyaml configuration.">
 <meta itemprop="name" content="esphomeyaml Core Configuration">
 <meta itemprop="description" content="Instructions for setting up the core esphomeyaml configuration.">
-<meta itemprop="image" content="https://esphomelib.com/_images/cloud-circle.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/cloud-circle.png">
 <meta name="twitter:title" content="esphomeyaml Core Configuration">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/cloud-circle.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/cloud-circle.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the core esphomeyaml configuration.">
 <meta property="og:title" content="esphomeyaml Core Configuration"/>
-<meta property="og:image" content="https://esphomelib.com/_images/cloud-circle.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/cloud-circle.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the core esphomeyaml configuration."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/esphomeyaml.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -94,11 +93,11 @@
 firmwares. Most importantly, this is the section of the configuration
 where you specify the <strong>name</strong> of the node, the <strong>platform</strong> and
 <strong>board</strong> you’re using.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
-    <span class="n">name</span><span class="p">:</span> <span class="n">livingroom</span>
-    <span class="n">platform</span><span class="p">:</span> <span class="n">ESP32</span>
-    <span class="n">board</span><span class="p">:</span> <span class="n">nodemcu</span><span class="o">-</span><span class="mi">32</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+    <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP32</span>
+    <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nodemcu-32s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -146,47 +145,47 @@ version of esphomelib straight from github. Or you can configure the use of a lo
 using this configuration option.</p>
 <p>First, you can configure the use of either the latest esphomelib stable release (<code class="docutils literal notranslate"><span class="pre">latest</span></code>),
 the latest development code from GitHub (<code class="docutils literal notranslate"><span class="pre">dev</span></code>), or a specific version number (<code class="docutils literal notranslate"><span class="pre">1.8.0</span></code>).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Use the latest esphomelib stable release</span>
-  <span class="n">esphomelib_version</span><span class="p">:</span> <span class="n">latest</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 
   <span class="c1"># Or use the latest code from github</span>
-  <span class="n">esphomelib_version</span><span class="p">:</span> <span class="n">dev</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
 
   <span class="c1"># Use a specific version number</span>
-  <span class="n">esphomelib_version</span><span class="p">:</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.8.0</span>
 </pre></div>
 </div>
 <p>Alternatively, if you want to develop for esphomelib, you can download the
 <cite>latest code from GitHub &lt;https://github.com/OttoWinter/esphomelib/archive/master.zip&gt;</cite>, extract the contents,
 and point esphomeyaml to your local copy. Then you can modify the esphomelib to your needs or to fix bugs.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Use a local copy of esphomelib</span>
-  <span class="n">esphomelib_version</span><span class="p">:</span>
-    <span class="n">local</span><span class="p">:</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">esphomelib</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">path/to/esphomelib</span>
 </pre></div>
 </div>
 <p>And last, you can make esphomeyaml use a specific branch/commit/tag from a remote git repository:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Use a specific commit/branch/tag from a remote repository</span>
-  <span class="n">esphomelib_version</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span>
     <span class="c1"># Repository defaults to https://github.com/OttoWinter/esphomelib.git</span>
-    <span class="n">repository</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OttoWinter</span><span class="o">/</span><span class="n">esphomelib</span><span class="o">.</span><span class="n">git</span>
-    <span class="n">branch</span><span class="p">:</span> <span class="n">master</span>
+    <span class="l l-Scalar l-Scalar-Plain">repository</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/OttoWinter/esphomelib.git</span>
+    <span class="l l-Scalar l-Scalar-Plain">branch</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
 
-  <span class="n">esphomelib_version</span><span class="p">:</span>
-    <span class="n">repository</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">somebody</span><span class="o">/</span><span class="n">esphomelib</span><span class="o">.</span><span class="n">git</span>
-    <span class="n">commit</span><span class="p">:</span> <span class="n">d27bac9263e8a0a5a00672245b38db3078f8992c</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">repository</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/somebody/esphomelib.git</span>
+    <span class="l l-Scalar l-Scalar-Plain">commit</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">d27bac9263e8a0a5a00672245b38db3078f8992c</span>
 
-  <span class="n">esphomelib_version</span><span class="p">:</span>
-    <span class="n">repository</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">OttoWinter</span><span class="o">/</span><span class="n">esphomelib</span><span class="o">.</span><span class="n">git</span>
-    <span class="n">tag</span><span class="p">:</span> <span class="n">v1</span><span class="o">.</span><span class="mf">8.0</span>
+  <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">repository</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/OttoWinter/esphomelib.git</span>
+    <span class="l l-Scalar l-Scalar-Plain">tag</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">v1.8.0</span>
 </pre></div>
 </div>
 </div>
@@ -196,21 +195,21 @@ and point esphomeyaml to your local copy. Then you can modify the esphomelib to 
 initializing the WiFi driver and so on. Unfortunately, every arduino framework version often
 has its own quirks and bugs, especially concerning WiFi performance. With the <code class="docutils literal notranslate"><span class="pre">arduino_version</span></code>
 option you can tell esphomeyaml which arduino framework to use for compiling.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
   <span class="c1"># Default: use the recommended version, usually this equals</span>
   <span class="c1"># the latest version.</span>
-  <span class="n">arduino_version</span><span class="p">:</span> <span class="n">recommended</span>
+  <span class="l l-Scalar l-Scalar-Plain">arduino_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">recommended</span>
 
   <span class="c1"># Use the latest stable version</span>
-  <span class="n">arduino_version</span><span class="p">:</span> <span class="n">latest</span>
+  <span class="l l-Scalar l-Scalar-Plain">arduino_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 
   <span class="c1"># Use the latest staged version from GitHub, try this if you have WiFi problems</span>
-  <span class="n">arduino_version</span><span class="p">:</span> <span class="n">dev</span>
+  <span class="l l-Scalar l-Scalar-Plain">arduino_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
 
   <span class="c1"># Use a specific version</span>
-  <span class="n">arduino_version</span><span class="p">:</span> <span class="mf">2.3</span><span class="o">.</span><span class="mi">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">arduino_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2.3.0</span>
 </pre></div>
 </div>
 <p>For the ESP8266, you currently can manually pin the arduino version to these values (see the full
@@ -233,13 +232,13 @@ version 2.3.0</p>
 <span id="esphomeyaml-on-boot"></span><h2><code class="docutils literal notranslate"><span class="pre">on_boot</span></code><a class="headerlink" href="#on-boot" title="Permalink to this headline">¶</a></h2>
 <p>This automation will be triggered when the ESP boots up. By default, it is executed after everything else
 is already set up. You can however change this using the <code class="docutils literal notranslate"><span class="pre">priority</span></code> parameter.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">on_boot</span><span class="p">:</span>
-    <span class="n">priority</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_boot</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">priority</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">-10</span>
     <span class="c1"># ...</span>
-    <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">switch_1</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">switch_1</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -268,11 +267,11 @@ too many WiFi/MQTT connection attempts, Over-The-Air updates being applied or th
 <p class="last">It’s not guaranteed that all components are in a connected state when this automation is triggered. For
 example, the MQTT client may have already disconnected.</p>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">on_shutdown</span><span class="p">:</span>
-    <span class="n">then</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">switch_1</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_shutdown</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">switch_1</span>
 </pre></div>
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
@@ -280,10 +279,10 @@ example, the MQTT client may have already disconnected.</p>
 <div class="section" id="on-loop">
 <span id="esphomeyaml-on-loop"></span><h2><code class="docutils literal notranslate"><span class="pre">on_loop</span></code><a class="headerlink" href="#on-loop" title="Permalink to this headline">¶</a></h2>
 <p>This automation will be triggered on every <code class="docutils literal notranslate"><span class="pre">loop()</span></code> iteration (usually around every 16 milliseconds).</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">on_loop</span><span class="p">:</span>
-    <span class="n">then</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_loop</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
       <span class="c1"># do something</span>
 </pre></div>
 </div>
@@ -304,11 +303,11 @@ example, the MQTT client may have already disconnected.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

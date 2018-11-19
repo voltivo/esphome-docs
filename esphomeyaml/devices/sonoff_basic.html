@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/devices/sonoff_basic.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -144,51 +143,51 @@ exposes all of the basic functions.</p>
 </tr>
 </tbody>
 </table>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">NAME_OF_NODE</span><span class="o">&gt;</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;NAME_OF_NODE&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_SSID</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_SSID&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_PASSWORD&gt;</span>
 
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_MQTT_BROKER</span><span class="o">&gt;</span>
-  <span class="n">username</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_USERNAME</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_MQTT_BROKER&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_USERNAME&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR_PASSWORD&gt;</span>
 
-<span class="n">logger</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
 
-<span class="n">ota</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">GPIO0</span>
-      <span class="n">mode</span><span class="p">:</span> <span class="n">INPUT_PULLUP</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Basic Button&quot;</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">status</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Basic Status&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO0</span>
+      <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">INPUT_PULLUP</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Basic</span><span class="nv"> </span><span class="s">Button&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">status</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Basic</span><span class="nv"> </span><span class="s">Status&quot;</span>
 
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Basic Relay&quot;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO12</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Basic</span><span class="nv"> </span><span class="s">Relay&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO12</span>
 
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">basic_green_led</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">GPIO13</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">basic_green_led</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO13</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 
-<span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">monochromatic</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Basic Green LED&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">basic_green_led</span>
+<span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">monochromatic</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Basic</span><span class="nv"> </span><span class="s">Green</span><span class="nv"> </span><span class="s">LED&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">basic_green_led</span>
 </pre></div>
 </div>
 <p>Now run <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">sonoff_basic.yaml</span> <span class="pre">compile</span></code> to validate the configuration and
@@ -200,7 +199,7 @@ pre-compile the firmware.</p>
 uploading, you can also try uploading this file directly with other tools.</p>
 </div>
 <p>Or run the upload command if your device is connected to the serial interface:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span> <span class="n">sonoff_basic</span><span class="o">.</span><span class="n">yaml</span> <span class="n">run</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml sonoff_basic.yaml run
 </pre></div>
 </div>
 </div>
@@ -223,11 +222,11 @@ uploading, you can also try uploading this file directly with other tools.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

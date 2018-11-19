@@ -9,14 +9,14 @@
 <meta name="keywords" content="cse7766, Sonoff Pow R2">
 <meta itemprop="name" content="CSE7766 Power Sensor">
 <meta itemprop="description" content="Instructions for setting up CSE7766 power sensors for the Sonoff Pow R2">
-<meta itemprop="image" content="https://esphomelib.com/_images/cse7766.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/cse7766.png">
 <meta name="twitter:title" content="CSE7766 Power Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/cse7766.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/cse7766.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up CSE7766 power sensors for the Sonoff Pow R2">
 <meta property="og:title" content="CSE7766 Power Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/cse7766.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/cse7766.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up CSE7766 power sensors for the Sonoff Pow R2"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/cse7766.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -97,23 +96,23 @@ esphomelib. This sensor is commonly found in Sonoff POW R2.</p>
 <p>As the communication with the CSE7766 done using UART, you need
 to have an <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART bus</span></a> in your configuration with the <code class="docutils literal notranslate"><span class="pre">rx_pin</span></code> connected to the CSE7766.
 Additionally, you need to set the baud rate to 4800.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="c1"># Disable logging over USB</span>
-<span class="n">logger</span><span class="p">:</span>
-  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">0</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">baud_rate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 
-<span class="n">uart</span><span class="p">:</span>
-  <span class="n">rx_pin</span><span class="p">:</span> <span class="n">RX</span>
-  <span class="n">baud_rate</span><span class="p">:</span> <span class="mi">4800</span>
+<span class="l l-Scalar l-Scalar-Plain">uart</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">rx_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">RX</span>
+  <span class="l l-Scalar l-Scalar-Plain">baud_rate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4800</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">cse7766</span>
-    <span class="n">current</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Pow R2 Current&quot;</span>
-    <span class="n">voltage</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Pow R2 Voltage&quot;</span>
-    <span class="n">power</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Sonoff Pow R2 Power&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cse7766</span>
+    <span class="l l-Scalar l-Scalar-Plain">current</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Pow</span><span class="nv"> </span><span class="s">R2</span><span class="nv"> </span><span class="s">Current&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">voltage</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Pow</span><span class="nv"> </span><span class="s">R2</span><span class="nv"> </span><span class="s">Voltage&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">power</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Sonoff</span><span class="nv"> </span><span class="s">Pow</span><span class="nv"> </span><span class="s">R2</span><span class="nv"> </span><span class="s">Power&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -151,11 +150,11 @@ to use multiple UART buses.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

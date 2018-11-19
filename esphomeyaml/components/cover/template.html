@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up template covers in esphomelib.">
 <meta itemprop="name" content="Template Cover">
 <meta itemprop="description" content="Instructions for setting up template covers in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/description.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/description.png">
 <meta name="twitter:title" content="Template Cover">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/description.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/description.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up template covers in esphomelib.">
 <meta property="og:title" content="Template Cover"/>
-<meta property="og:image" content="https://esphomelib.com/_images/description.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/description.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up template covers in esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/cover/template.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -91,23 +90,23 @@ as a cover and can be controlled through the frontend.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/cover-ui.png"><img alt="../../../_images/cover-ui.png" src="../../../_images/cover-ui.png" style="width: 75.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">cover</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Template Cover&quot;</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">top_end_stop</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">cover</span><span class="p">::</span><span class="n">COVER_OPEN</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">cover</span><span class="p">::</span><span class="n">COVER_CLOSED</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="n">open_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">open_cover_switch</span>
-    <span class="n">close_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">close_cover_switch</span>
-    <span class="n">stop_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">stop_cover_switch</span>
-    <span class="n">optimistic</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">cover</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Template</span><span class="nv"> </span><span class="s">Cover&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="no">if (id(top_end_stop).state) {</span>
+        <span class="no">return cover::COVER_OPEN;</span>
+      <span class="no">} else {</span>
+        <span class="no">return cover::COVER_CLOSED;</span>
+      <span class="no">}</span>
+    <span class="l l-Scalar l-Scalar-Plain">open_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">open_cover_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">close_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">close_cover_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">stop_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">stop_cover_switch</span>
+    <span class="l l-Scalar l-Scalar-Plain">optimistic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 <p>Possible return values for the optional lambda:</p>
@@ -161,11 +160,11 @@ and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><spa
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

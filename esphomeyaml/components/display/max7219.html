@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/display/max7219.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -101,17 +100,17 @@ CS to your set <code class="docutils literal notranslate"><span class="pre">cs_p
 <p>You can even daisy-chain multiple MAX7219s by connecting the DOUT of the previous chip in the chain to the
 next DIN. With more than ~3 chips the 3.3V will probably not be enough, so then you will have to potentially
 use a logic level converted.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">spi</span><span class="p">:</span>
-  <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">spi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">clk_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">mosi_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
 
-<span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">max7219</span>
-    <span class="n">cs_pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">num_chips</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;01234567&quot;</span><span class="p">);</span>
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">max7219</span>
+    <span class="l l-Scalar l-Scalar-Plain">cs_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">num_chips</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">it.print(&quot;01234567&quot;);</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -145,32 +144,32 @@ means the first character of the first MAX7219. For example to start the first c
 the end of the first MAX7219, you would write <code class="docutils literal notranslate"><span class="pre">it.print(7,</span> <span class="pre">&quot;0&quot;);</span></code>.</p>
 <p>Also note that the <code class="docutils literal notranslate"><span class="pre">.</span></code> (dot) character is special because when esphomelib encounters it in the string the dot
 segment of the previous position will be enabled.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">max7219</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">max7219</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Print</span> <span class="mi">0</span> <span class="n">at</span> <span class="n">position</span> <span class="mi">0</span> <span class="p">(</span><span class="n">left</span><span class="p">)</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;0       &quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Print 0 at position 0 (left)</span>
+      <span class="no">it.print(&quot;0&quot;);</span>
+      <span class="no">// Result: &quot;0       &quot;</span>
 
-      <span class="o">//</span> <span class="n">Print</span> <span class="mi">1</span> <span class="n">at</span> <span class="n">position</span> <span class="mi">1</span> <span class="p">(</span><span class="n">second</span> <span class="n">character</span><span class="p">)</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;01      &quot;</span>
+      <span class="no">// Print 1 at position 1 (second character)</span>
+      <span class="no">it.print(1, &quot;1&quot;);</span>
+      <span class="no">// Result: &quot;01      &quot;</span>
 
-      <span class="o">//</span> <span class="n">Let</span><span class="s1">&#39;s write a sensor value (let&#39;</span><span class="n">s</span> <span class="n">assume</span> <span class="n">it</span><span class="s1">&#39;s 42.1)</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;01 42.1  &quot;</span> <span class="p">(</span><span class="n">the</span> <span class="n">dot</span> <span class="n">will</span> <span class="n">appear</span> <span class="n">on</span> <span class="n">the</span> <span class="s2">&quot;2&quot;</span> <span class="n">segment</span><span class="p">)</span>
+      <span class="no">// Let&#39;s write a sensor value (let&#39;s assume it&#39;s 42.1)</span>
+      <span class="no">it.printf(3, &quot;%.1f&quot;, id(my_sensor).state);</span>
+      <span class="no">// Result: &quot;01 42.1  &quot; (the dot will appear on the &quot;2&quot; segment)</span>
 
-      <span class="o">//</span> <span class="n">Overwrite</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">content</span> <span class="k">with</span> <span class="n">blank</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;        &quot;</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Print</span> <span class="n">a</span> <span class="n">right</span><span class="o">-</span><span class="n">padded</span> <span class="n">sensor</span> <span class="n">value</span> <span class="k">with</span> <span class="mi">0</span> <span class="n">digits</span> <span class="n">after</span> <span class="n">the</span> <span class="n">decimal</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;SENS</span><span class="si">%4.0f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span><span class="p">:</span> <span class="s2">&quot;SENS  42&quot;</span>
+      <span class="no">// Overwrite the previous content with blank</span>
+      <span class="no">it.print(&quot;        &quot;);</span>
+      <span class="no">// Print a right-padded sensor value with 0 digits after the decimal</span>
+      <span class="no">it.printf(&quot;SENS%4.0f&quot;, id(my_sensor).state);</span>
+      <span class="no">// Result: &quot;SENS  42&quot;</span>
 
-      <span class="o">//</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">current</span> <span class="n">time</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;        &quot;</span><span class="p">);</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H.%M.%S&quot;</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Result</span> <span class="k">for</span> <span class="mi">10</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mi">42</span> <span class="o">-&gt;</span> <span class="s2">&quot;10.06.42  &quot;</span>
+      <span class="no">// Print the current time</span>
+      <span class="no">it.print(&quot;        &quot;);</span>
+      <span class="no">it.strftime(&quot;%H.%M.%S&quot;);</span>
+      <span class="no">// Result for 10:06:42 -&gt; &quot;10.06.42  &quot;</span>
 </pre></div>
 </div>
 <p>Please see <a class="reference internal" href="index.html#display-printf"><span class="std std-ref">Formatted Text</span></a> for a quick introduction into the <code class="docutils literal notranslate"><span class="pre">printf</span></code> formatting rules and
@@ -366,11 +365,11 @@ for this documentation.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

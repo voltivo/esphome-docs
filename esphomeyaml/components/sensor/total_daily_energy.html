@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up sensors that track the total daily energy usage per day and accumulate the power usage.">
 <meta itemprop="name" content="Total Daily Energy Sensor">
 <meta itemprop="description" content="Instructions for setting up sensors that track the total daily energy usage per day and accumulate the power usage.">
-<meta itemprop="image" content="https://esphomelib.com/_images/sigma.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/sigma.png">
 <meta name="twitter:title" content="Total Daily Energy Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/sigma.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/sigma.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up sensors that track the total daily energy usage per day and accumulate the power usage.">
 <meta property="og:title" content="Total Daily Energy Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/sigma.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/sigma.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up sensors that track the total daily energy usage per day and accumulate the power usage."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/total_daily_energy.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -91,23 +90,23 @@ other sensors like the <a class="reference internal" href="hlw8012.html"><span c
 it over time.</p>
 <p>So this component allows you to convert readings in <code class="docutils literal notranslate"><span class="pre">W</span></code> or <code class="docutils literal notranslate"><span class="pre">kW</span></code> to readings of the total
 daily energy usage in <code class="docutils literal notranslate"><span class="pre">Wh</span></code> or <code class="docutils literal notranslate"><span class="pre">kWh</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">total_daily_energy</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">12</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Total Daily Energy&quot;</span>
-    <span class="n">power_id</span><span class="p">:</span> <span class="n">my_power</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">total_daily_energy</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Total</span><span class="nv"> </span><span class="s">Daily</span><span class="nv"> </span><span class="s">Energy&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">power_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_power</span>
 
   <span class="c1"># The power sensor to convert, can be any power sensor</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">hlw8012</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hlw8012</span>
     <span class="c1"># ...</span>
-    <span class="n">power</span><span class="p">:</span>
-      <span class="nb">id</span><span class="p">:</span> <span class="n">my_power</span>
+    <span class="l l-Scalar l-Scalar-Plain">power</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_power</span>
 
 <span class="c1"># Enable time component to reset energy at midnight</span>
-<span class="n">time</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">sntp</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">my_time</span>
+<span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_time</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -124,16 +123,16 @@ to integrate over time.</li>
 <h2>Converting from W to kW<a class="headerlink" href="#converting-from-w-to-kw" title="Permalink to this headline">¶</a></h2>
 <p>Some sensors such as the <a class="reference internal" href="hlw8012.html"><span class="doc">HLW8012</span></a> expose their power sensor with a unit of measurement of
 <code class="docutils literal notranslate"><span class="pre">W</span></code>. To have your readings in <code class="docutils literal notranslate"><span class="pre">kW</span></code>, use a filter:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
   <span class="c1"># The power sensor to convert, can be any power sensor</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">hlw8012</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hlw8012</span>
     <span class="c1"># ...</span>
-    <span class="n">power</span><span class="p">:</span>
-      <span class="nb">id</span><span class="p">:</span> <span class="n">my_power</span>
-      <span class="n">filters</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">power</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_power</span>
+      <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
         <span class="c1"># Multiplication factor from W to kW is 0.001</span>
-        <span class="o">-</span> <span class="n">multiply</span><span class="p">:</span> <span class="mf">0.001</span>
-      <span class="n">unit_of_measurement</span><span class="p">:</span> <span class="n">kW</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">multiply</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.001</span>
+      <span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">kW</span>
 </pre></div>
 </div>
 </div>
@@ -158,11 +157,11 @@ to integrate over time.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

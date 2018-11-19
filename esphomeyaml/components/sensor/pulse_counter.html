@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up pulse counter sensors.">
 <meta itemprop="name" content="Pulse Counter Sensor">
 <meta itemprop="description" content="Instructions for setting up pulse counter sensors.">
-<meta itemprop="image" content="https://esphomelib.com/_images/pulse.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/pulse.png">
 <meta name="twitter:title" content="Pulse Counter Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/pulse.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pulse.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up pulse counter sensors.">
 <meta property="og:title" content="Pulse Counter Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/pulse.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pulse.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up pulse counter sensors."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/pulse_counter.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -88,17 +87,17 @@
 <h1>Pulse Counter Sensor<a class="headerlink" href="#pulse-counter-sensor" title="Permalink to this headline">¶</a></h1>
 <p>The pulse counter sensor allows you to count the number of pulses and the frequency of a signal
 on any pin.</p>
-<p>On the ESP32, this sensor is even highly accurate because it’s using the hardware <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html">pulse counter
+<p>On the ESP32, this sensor is even highly accurate because it’s using the hardware <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/pcnt.html">pulse counter
 peripheral</a>
 on the ESP32.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/pulse-counter.png"><img alt="../../../_images/pulse-counter.png" src="../../../_images/pulse-counter.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pulse_counter</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">12</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Pulse Counter&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pulse_counter</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Pulse</span><span class="nv"> </span><span class="s">Counter&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -131,14 +130,14 @@ See <a class="reference internal" href="index.html#sensor-default-filter"><span 
 of “pulses/min”. You can change this by using <a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a>.
 For example, if you’re using the pulse counter with a photodiode to
 count the light pulses on a power meter, you can do the following:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">pulse_counter</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">12</span>
-    <span class="n">unit_of_measurement</span><span class="p">:</span> <span class="s1">&#39;kW&#39;</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;Power Meter House&#39;</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">multiply</span><span class="p">:</span> <span class="mf">0.06</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pulse_counter</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+    <span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="s">&#39;kW&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&#39;Power</span><span class="nv"> </span><span class="s">Meter</span><span class="nv"> </span><span class="s">House&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">multiply</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.06</span>
 </pre></div>
 </div>
 </div>
@@ -147,7 +146,7 @@ count the light pulses on a power meter, you can do the following:</p>
 <ul class="simple">
 <li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
 <li><a class="reference internal" href="rotary_encoder.html"><span class="doc">Rotary Encoder Sensor</span></a></li>
-<li><a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html">esp-idf Pulse Counter API</a>.</li>
+<li><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/pcnt.html">esp-idf Pulse Counter API</a>.</li>
 <li><a class="reference internal" href="../../../api/sensor/pulse_counter.html"><span class="doc">API Reference</span></a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/pulse_counter.rst">Edit this page on GitHub</a></li>
 </ul>
@@ -162,11 +161,11 @@ count the light pulses on a power meter, you can do the following:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

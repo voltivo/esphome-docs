@@ -13,7 +13,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="canonical" href="https://esphomelib.com/api/sensor/ads1115.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -191,7 +190,7 @@ the gain for that sensor and register that sensor.</p>
 <dd><p>This class allows you to use your ADS1115 devices with esphomelib through i2c. </p>
 <p>It is built of like the <a class="reference internal" href="dallas.html#classsensor_1_1_dallas_component"><span class="std std-ref">DallasComponent</span></a>: A central hub (can be multiple ones) and multiple <a class="reference internal" href="index.html#classsensor_1_1_sensor"><span class="std std-ref">Sensor</span></a> instances that all access this central hub.</p>
 <p>Note that for this component to work correctly you need to have i2c setup. Do so with</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">App</span><span class="o">.</span><span class="n">init_i2c</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">,</span> <span class="n">SCL_PIN</span><span class="p">);</span>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">App.init_i2c(SDA_PIN, SCL_PIN);</span>
 </pre></div>
 </div>
 </p>
@@ -337,11 +336,11 @@ the gain for that sensor and register that sensor.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

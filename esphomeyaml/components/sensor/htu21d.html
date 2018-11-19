@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/htu21d.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -87,7 +86,7 @@
   <div class="section" id="htu21d-temperature-humidity-sensor">
 <h1>HTU21D Temperature+Humidity Sensor<a class="headerlink" href="#htu21d-temperature-humidity-sensor" title="Permalink to this headline">¶</a></h1>
 <p>The HTU21D Temperature+Humidity sensor allows you to use your HTU21D
-(<a class="reference external" href="http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&amp;DocId=Data+Sheet%7FHPC199_6%7FA6%7Fpdf%7FEnglish%7FENG_DS_HPC199_6_A6.pdf%7FCAT-HSC0004">datasheet</a>,
+(<a class="reference external" href="https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&amp;DocId=Data+Sheet%7FHPC199_6%7FA6%7Fpdf%7FEnglish%7FENG_DS_HPC199_6_A6.pdf%7FCAT-HSC0004">datasheet</a>,
 <a class="reference external" href="https://www.adafruit.com/product/1899">adafruit</a>) sensors with
 esphomelib. The <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C Bus</span></a> is
 required to be set up in your configuration for this sensor to work.</p>
@@ -102,14 +101,14 @@ required to be set up in your configuration for this sensor to work.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The <strong>SI7021</strong> sensor also works with this integration.</p>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">htu21d</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Temperature&quot;</span>
-    <span class="n">humidity</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Humidity&quot;</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">htu21d</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -154,11 +153,11 @@ See <a class="reference internal" href="index.html#sensor-default-filter"><span 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

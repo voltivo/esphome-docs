@@ -9,14 +9,14 @@
 <meta name="keywords" content="Infrared, IR, RF, Remote, TX">
 <meta itemprop="name" content="Remote Transmitter Switch">
 <meta itemprop="description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals">
-<meta itemprop="image" content="https://esphomelib.com/_images/remote.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/remote.png">
 <meta name="twitter:title" content="Remote Transmitter Switch">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals">
 <meta property="og:title" content="Remote Transmitter Switch"/>
-<meta property="og:image" content="https://esphomelib.com/_images/remote.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/remote.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up switches that send out pre-defined sequences of IR or RF signals"/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/switch/remote_transmitter.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -102,18 +101,18 @@ the switch is turned on, the configured remote signal is sent.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/remote_transmitter-ui.png"><img alt="../../../_images/remote_transmitter-ui.png" src="../../../_images/remote_transmitter-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">remote_transmitter</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="mi">32</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
 
 <span class="c1"># Individual switches</span>
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Panasonic TV Off&quot;</span>
-    <span class="n">panasonic</span><span class="p">:</span>
-      <span class="n">address</span><span class="p">:</span> <span class="mh">0x4004</span>
-      <span class="n">command</span><span class="p">:</span> <span class="mh">0x100BCBD</span>
-    <span class="n">repeat</span><span class="p">:</span> <span class="mi">25</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Panasonic</span><span class="nv"> </span><span class="s">TV</span><span class="nv"> </span><span class="s">Off&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">panasonic</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x4004</span>
+      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x100BCBD</span>
+    <span class="l l-Scalar l-Scalar-Plain">repeat</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -136,13 +135,13 @@ Defaults to the first hub specified.</li>
 <p class="first admonition-title">Note</p>
 <p>For the Sonoff RF Bridge you can use <a class="reference external" href="https://github.com/xoseperez/espurna/wiki/Hardware-Itead-Sonoff-RF-Bridge---Direct-Hack">this hack</a>
 created by the Github user wildwiz. Then use this configuration for the remote receiver/transmitter hubs:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">remote_receiver</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="mi">4</span>
-  <span class="n">dump</span><span class="p">:</span> <span class="nb">all</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">remote_receiver</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="l l-Scalar l-Scalar-Plain">dump</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
 
-<span class="n">remote_transmitter</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="mi">5</span>
-  <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
+<span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+  <span class="l l-Scalar l-Scalar-Plain">carrier_duty_percent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
 </pre></div>
 </div>
 <p class="last">Supporting the RF Bridge chip directly is currently only a long-term goal for esphomelib.</p>
@@ -151,48 +150,48 @@ created by the Github user wildwiz. Then use this configuration for the remote r
 <div class="section" id="remote-codes">
 <span id="remote-transmitter-codes"></span><h2>Remote Codes<a class="headerlink" href="#remote-codes" title="Permalink to this headline">¶</a></h2>
 <p>Supported remote codes:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
   <span class="c1"># ... - Only one of these is allowed for one remote transmitter at a time</span>
-  <span class="n">nec</span><span class="p">:</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x4242</span>
-    <span class="n">command</span><span class="p">:</span> <span class="mh">0x8484</span>
-  <span class="n">lg</span><span class="p">:</span>
-    <span class="n">data</span><span class="p">:</span> <span class="mh">0x01234567890ABC</span>
-    <span class="n">nbits</span><span class="p">:</span> <span class="mi">28</span>
-  <span class="n">samsung</span><span class="p">:</span>
-    <span class="n">data</span><span class="p">:</span> <span class="mh">0xE0E01234</span>
-  <span class="n">sony</span><span class="p">:</span>
-    <span class="n">data</span><span class="p">:</span> <span class="mh">0xABCDEF</span>
-    <span class="n">nbits</span><span class="p">:</span> <span class="mi">12</span>
-  <span class="n">panasonic</span><span class="p">:</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x4004</span>
-    <span class="n">command</span><span class="p">:</span> <span class="mh">0x1000BCD</span>
-  <span class="n">rc_switch_raw</span><span class="p">:</span>
-    <span class="n">code</span><span class="p">:</span> <span class="s1">&#39;001010011001111101011011&#39;</span>
-    <span class="n">protocol</span><span class="p">:</span> <span class="mi">1</span>
-  <span class="n">rc_switch_type_a</span><span class="p">:</span>
-    <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;11001&#39;</span>
-    <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;01000&#39;</span>
-    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-  <span class="n">rc_switch_type_b</span><span class="p">:</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mi">4</span>
-    <span class="n">channel</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-  <span class="n">rc_switch_type_c</span><span class="p">:</span>
-    <span class="n">family</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span>
-    <span class="n">group</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="n">device</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-  <span class="n">rc_switch_type_d</span><span class="p">:</span>
-    <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span>
-    <span class="n">device</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-  <span class="n">raw</span><span class="p">:</span>
-    <span class="n">carrier_frequency</span><span class="p">:</span> <span class="mi">35</span><span class="n">kHz</span>
-    <span class="n">data</span><span class="p">:</span>
-      <span class="o">-</span> <span class="mi">1000</span>
-      <span class="o">-</span> <span class="o">-</span><span class="mi">1000</span>
+  <span class="l l-Scalar l-Scalar-Plain">nec</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x4242</span>
+    <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x8484</span>
+  <span class="l l-Scalar l-Scalar-Plain">lg</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x01234567890ABC</span>
+    <span class="l l-Scalar l-Scalar-Plain">nbits</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">28</span>
+  <span class="l l-Scalar l-Scalar-Plain">samsung</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0xE0E01234</span>
+  <span class="l l-Scalar l-Scalar-Plain">sony</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0xABCDEF</span>
+    <span class="l l-Scalar l-Scalar-Plain">nbits</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+  <span class="l l-Scalar l-Scalar-Plain">panasonic</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x4004</span>
+    <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x1000BCD</span>
+  <span class="l l-Scalar l-Scalar-Plain">rc_switch_raw</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">code</span><span class="p p-Indicator">:</span> <span class="s">&#39;001010011001111101011011&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_a</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="s">&#39;11001&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">device</span><span class="p p-Indicator">:</span> <span class="s">&#39;01000&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_b</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="l l-Scalar l-Scalar-Plain">channel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+    <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_c</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">family</span><span class="p p-Indicator">:</span> <span class="s">&#39;a&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="l l-Scalar l-Scalar-Plain">device</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+    <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_d</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="s">&#39;a&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">device</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+    <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="l l-Scalar l-Scalar-Plain">raw</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">carrier_frequency</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">35kHz</span>
+    <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-1000</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -274,10 +273,10 @@ mean OFF.</li>
 <p>Each remote transmitter uses a different protocol to send its information. So to replicate an infrared or 433MHz
 remote you will first need to “learn” these codes. You will first need to hook up a receiver and sniff the codes
 using the <a class="reference internal" href="../remote_receiver.html"><span class="doc">remote receiver component</span></a> like this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">remote_receiver</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO34</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">remote_receiver</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO34</span>
   <span class="c1"># dump all signals we find</span>
-  <span class="n">dump</span><span class="p">:</span> <span class="nb">all</span>
+  <span class="l l-Scalar l-Scalar-Plain">dump</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
 </pre></div>
 </div>
 <p>And then activate the remote control you want to have in esphomelib. you will see a log output like this:</p>
@@ -293,23 +292,23 @@ do a “replay attack” by repeating the signal we just saw for our own purpose
 is encoded in microseconds: A negative value represents the output being LOW for x microseconds and a positive
 value denotes the output being HIGH for the specified number of microseconds.</p>
 <p>Now you only need to set up the remote transmitter (which well <em>send</em> the code) like this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">remote_transmitter</span><span class="p">:</span>
-   <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO23</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span><span class="p p-Indicator">:</span>
+   <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO23</span>
    <span class="c1"># Set to 100% when working with RF signals, and 50% if working with IR leds</span>
-   <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
+   <span class="l l-Scalar l-Scalar-Plain">carrier_duty_percent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
 </pre></div>
 </div>
 <p>And lastly, we need to set up the switch that, when turned on, will send our pre-defined remote code:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;My awesome RF switch&quot;</span>
-    <span class="n">raw</span><span class="p">:</span> <span class="p">[</span><span class="mi">4088</span><span class="p">,</span> <span class="o">-</span><span class="mi">1542</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">513</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span>
-          <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1022</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span>
-          <span class="mi">1020</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">511</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="mi">508</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1022</span><span class="p">,</span>
-          <span class="o">-</span><span class="mi">1021</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">1022</span><span class="p">,</span> <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span>
-          <span class="o">-</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">511</span><span class="p">,</span> <span class="o">-</span><span class="mi">511</span><span class="p">,</span> <span class="mi">1018</span><span class="p">,</span> <span class="o">-</span><span class="mi">1022</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1021</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1020</span><span class="p">,</span>
-          <span class="o">-</span><span class="mi">511</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">1019</span><span class="p">,</span> <span class="o">-</span><span class="mi">510</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="mi">508</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">511</span><span class="p">,</span>
-          <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="o">-</span><span class="mi">509</span><span class="p">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">awesome</span><span class="nv"> </span><span class="s">RF</span><span class="nv"> </span><span class="s">switch&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">raw</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">4088</span><span class="p p-Indicator">,</span> <span class="nv">-1542</span><span class="p p-Indicator">,</span> <span class="nv">1019</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">513</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-509</span><span class="p p-Indicator">,</span> <span class="nv">511</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">1020</span><span class="p p-Indicator">,</span>
+          <span class="nv">-1020</span><span class="p p-Indicator">,</span> <span class="nv">1022</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-509</span><span class="p p-Indicator">,</span> <span class="nv">511</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">511</span><span class="p p-Indicator">,</span> <span class="nv">-509</span><span class="p p-Indicator">,</span> <span class="nv">511</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span>
+          <span class="nv">1020</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-511</span><span class="p p-Indicator">,</span> <span class="nv">1020</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">512</span><span class="p p-Indicator">,</span> <span class="nv">-508</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-1020</span><span class="p p-Indicator">,</span> <span class="nv">1022</span><span class="p p-Indicator">,</span>
+          <span class="nv">-1021</span><span class="p p-Indicator">,</span> <span class="nv">1019</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">511</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">1022</span><span class="p p-Indicator">,</span> <span class="nv">-1020</span><span class="p p-Indicator">,</span> <span class="nv">1019</span><span class="p p-Indicator">,</span>
+          <span class="nv">-1020</span><span class="p p-Indicator">,</span> <span class="nv">511</span><span class="p p-Indicator">,</span> <span class="nv">-511</span><span class="p p-Indicator">,</span> <span class="nv">1018</span><span class="p p-Indicator">,</span> <span class="nv">-1022</span><span class="p p-Indicator">,</span> <span class="nv">1020</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">1021</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">1020</span><span class="p p-Indicator">,</span>
+          <span class="nv">-511</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">1023</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">1019</span><span class="p p-Indicator">,</span> <span class="nv">-510</span><span class="p p-Indicator">,</span> <span class="nv">512</span><span class="p p-Indicator">,</span> <span class="nv">-508</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-511</span><span class="p p-Indicator">,</span>
+          <span class="nv">512</span><span class="p p-Indicator">,</span> <span class="nv">-1019</span><span class="p p-Indicator">,</span> <span class="nv">510</span><span class="p p-Indicator">,</span> <span class="nv">-509</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>Note that you don’t need to include the leading <code class="docutils literal notranslate"><span class="pre">32519</span></code> here, as it denotes a final space at the end of
@@ -319,28 +318,28 @@ a transmission.</p>
 <h3>RCSwitch Remote Codes<a class="headerlink" href="#rcswitch-remote-codes" title="Permalink to this headline">¶</a></h3>
 <p>Starting with version 1.8.0 esphomelib can also recognize a bunch of 433MHz RF codes directly using <a class="reference external" href="https://github.com/sui77/rc-switch">RCSwitch’s</a>
 remote protocol. If you have RF code dumping enabled for the receiver, you will then see log outputs like this one:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span class="n">Received</span> <span class="n">RCSwitch</span><span class="p">:</span> <span class="n">protocol</span><span class="o">=</span><span class="mi">1</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;0100010101&#39;</span>
+<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">Received RCSwitch</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">protocol=1 data=&#39;0100010101&#39;</span>
 </pre></div>
 </div>
 <p>Like before with raw codes, you can then use this code to create switches:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Lights On&quot;</span>
-    <span class="n">rc_switch_raw</span><span class="p">:</span>
-      <span class="n">code</span><span class="p">:</span> <span class="s1">&#39;0100010101&#39;</span>
-      <span class="n">protocol</span><span class="p">:</span> <span class="mi">1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Lights</span><span class="nv"> </span><span class="s">On&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">rc_switch_raw</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">code</span><span class="p p-Indicator">:</span> <span class="s">&#39;0100010101&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
 <p>Alternatively, you can use the information on <a class="reference external" href="https://github.com/sui77/rc-switch/wiki/HowTo_OperateLowCostOutlets">this page</a>
 to manually find the RCSwitch codes without having to first find them using the remote receiver. For example, this would
 be the esphomelib equivalent of the first Type-A switch on that site:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Lights On&quot;</span>
-    <span class="n">rc_switch_type_a</span><span class="p">:</span>
-      <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;1101&#39;</span>
-      <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;0100&#39;</span>
-      <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Lights</span><span class="nv"> </span><span class="s">On&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_a</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="s">&#39;1101&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">device</span><span class="p p-Indicator">:</span> <span class="s">&#39;0100&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
@@ -351,26 +350,26 @@ be the esphomelib equivalent of the first Type-A switch on that site:</p>
 For example the RCSwitch example above always <strong>sends the turn on</strong> RF code to the wall plug. In some cases
 you might want to have switches that can do both things, i.e. turn a light on when switched on and turn a light off
 when switched off. To do this, use the <a class="reference internal" href="template.html"><span class="doc">Template Switch</span></a> like this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">living_room_lights_on</span>
-    <span class="n">rc_switch_type_a</span><span class="p">:</span>
-      <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;1101&#39;</span>
-      <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;0100&#39;</span>
-      <span class="n">state</span><span class="p">:</span> <span class="kc">True</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_transmitter</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">living_room_lights_off</span>
-    <span class="n">rc_switch_type_a</span><span class="p">:</span>
-      <span class="n">group</span><span class="p">:</span> <span class="s1">&#39;1101&#39;</span>
-      <span class="n">device</span><span class="p">:</span> <span class="s1">&#39;0100&#39;</span>
-      <span class="n">state</span><span class="p">:</span> <span class="kc">False</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">template</span>
-    <span class="n">name</span><span class="p">:</span> <span class="n">Living</span> <span class="n">Room</span> <span class="n">Lights</span>
-    <span class="n">optimistic</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="n">turn_on_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">living_room_lights_on</span>
-    <span class="n">turn_off_action</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">living_room_lights_off</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">living_room_lights_on</span>
+    <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_a</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="s">&#39;1101&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">device</span><span class="p p-Indicator">:</span> <span class="s">&#39;0100&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">living_room_lights_off</span>
+    <span class="l l-Scalar l-Scalar-Plain">rc_switch_type_a</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="s">&#39;1101&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">device</span><span class="p p-Indicator">:</span> <span class="s">&#39;0100&#39;</span>
+      <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Living Room Lights</span>
+    <span class="l l-Scalar l-Scalar-Plain">optimistic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">turn_on_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">living_room_lights_on</span>
+    <span class="l l-Scalar l-Scalar-Plain">turn_off_action</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">living_room_lights_off</span>
 </pre></div>
 </div>
 </div>
@@ -380,16 +379,16 @@ when switched off. To do this, use the <a class="reference internal" href="templ
 for the transmission. This is necessary as many remotes use different timings to encode a logic zero or one.</p>
 <p>RCSwitch has 7 built-in protocols that cover most use cases. You can however also choose to use custom parameters
 for the protocol like so</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Use one of RCSwitch&#39;s pre-defined protocols (1-7)</span>
-<span class="n">protocol</span><span class="p">:</span> <span class="mi">1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Use one of RCSwitch&#39;s pre-defined protocols (1-7)</span>
+<span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 
 <span class="c1"># Use a custom protocol:</span>
-<span class="n">protocol</span><span class="p">:</span>
-  <span class="n">pulse_length</span><span class="p">:</span> <span class="mi">175</span>
-  <span class="n">sync</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-  <span class="n">zero</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-  <span class="n">one</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-  <span class="n">inverted</span><span class="p">:</span> <span class="kc">False</span>
+<span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pulse_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">175</span>
+  <span class="l l-Scalar l-Scalar-Plain">sync</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="nv">31</span><span class="p p-Indicator">]</span>
+  <span class="l l-Scalar l-Scalar-Plain">zero</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="nv">3</span><span class="p p-Indicator">]</span>
+  <span class="l l-Scalar l-Scalar-Plain">one</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">]</span>
+  <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>Configuration options for the custom variant:</p>
@@ -424,11 +423,11 @@ and vice versa.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

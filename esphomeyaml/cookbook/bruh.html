@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/bruh.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -89,63 +88,63 @@ amazing setup tutorial. And fortunately esphomelib has complete support for all 
 stuff used by the Multisensor 🎉</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jpjfVc-9IrQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>Thank you very much to <a class="reference external" href="https://github.com/jackjohnsonuk">&#64;jackjohnsonuk</a> for providing this
 configuration file 😀</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">NODE_NAME</span><span class="o">&gt;</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">nodemcuv2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;NODE_NAME&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nodemcuv2</span>
 
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">SSID</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;SSID&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;PASSWORD&gt;</span>
 
-<span class="n">mqtt</span><span class="p">:</span>
-  <span class="n">broker</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">MQTT_BROKER</span><span class="o">&gt;</span>
-  <span class="n">username</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">USER</span><span class="o">&gt;</span>
-  <span class="n">password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PASSWORD</span><span class="o">&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">broker</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;MQTT_BROKER&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;USER&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;PASSWORD&gt;</span>
 
 <span class="c1"># Enable logging</span>
-<span class="n">logger</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">logger</span><span class="p p-Indicator">:</span>
 
-<span class="n">ota</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
 
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dht</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D7</span>
-    <span class="n">temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Multisensor Temperature&quot;</span>
-    <span class="n">humidity</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Multisensor Humidity&quot;</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">adc</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">A0</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Multisensor Brightness&quot;</span>
-    <span class="n">unit_of_measurement</span><span class="p">:</span> <span class="n">lux</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-          <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mf">10000.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2000000.0</span><span class="p">;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dht</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D7</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Multisensor</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Multisensor</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">adc</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">A0</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Multisensor</span><span class="nv"> </span><span class="s">Brightness&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">unit_of_measurement</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">lux</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">return (x / 10000.0) * 2000000.0;</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D5</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Multisensor Motion&quot;</span>
-    <span class="n">device_class</span><span class="p">:</span> <span class="n">motion</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D5</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Multisensor</span><span class="nv"> </span><span class="s">Motion&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">device_class</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">motion</span>
 
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">redgpio</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">greengpio</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">esp8266_pwm</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D3</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">bluegpio</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">redgpio</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">greengpio</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp8266_pwm</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bluegpio</span>
 
-<span class="n">light</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">rgb</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Multisensor Light&quot;</span>
-    <span class="n">red</span><span class="p">:</span> <span class="n">redgpio</span>
-    <span class="n">green</span><span class="p">:</span> <span class="n">greengpio</span>
-    <span class="n">blue</span><span class="p">:</span> <span class="n">bluegpio</span>
+<span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rgb</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Multisensor</span><span class="nv"> </span><span class="s">Light&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">redgpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">green</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">greengpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">blue</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bluegpio</span>
 </pre></div>
 </div>
 <div class="section" id="see-also">
@@ -172,11 +171,11 @@ configuration file 😀</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

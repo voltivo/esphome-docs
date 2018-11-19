@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/display/waveshare_epaper.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -144,21 +143,21 @@ configuration.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/waveshare_epaper-pins.jpg"><img alt="../../../_images/waveshare_epaper-pins.jpg" src="../../../_images/waveshare_epaper-pins.jpg" style="width: 60.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">spi</span><span class="p">:</span>
-  <span class="n">clk_pin</span><span class="p">:</span> <span class="n">D0</span>
-  <span class="n">mosi_pin</span><span class="p">:</span> <span class="n">D1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">spi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">clk_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">mosi_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
 
-<span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">waveshare_epaper</span>
-    <span class="n">cs_pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">dc_pin</span><span class="p">:</span> <span class="n">D3</span>
-    <span class="n">busy_pin</span><span class="p">:</span> <span class="n">D4</span>
-    <span class="n">reset_pin</span><span class="p">:</span> <span class="n">D5</span>
-    <span class="n">model</span><span class="p">:</span> <span class="mf">2.90</span><span class="ow">in</span>
-    <span class="n">full_update_every</span><span class="p">:</span> <span class="mi">30</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">font</span><span class="p">),</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">waveshare_epaper</span>
+    <span class="l l-Scalar l-Scalar-Plain">cs_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">dc_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+    <span class="l l-Scalar l-Scalar-Plain">busy_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D4</span>
+    <span class="l l-Scalar l-Scalar-Plain">reset_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D5</span>
+    <span class="l l-Scalar l-Scalar-Plain">model</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2.90in</span>
+    <span class="l l-Scalar l-Scalar-Plain">full_update_every</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">it.print(0, 0, id(font), &quot;Hello World!&quot;);</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -213,11 +212,11 @@ to use multiple SPI buses.</li>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -9,14 +9,14 @@
 <meta name="keywords" content="WiFi, WLAN, ESP8266, ESP32">
 <meta itemprop="name" content="WiFi Component">
 <meta itemprop="description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/network-wifi.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/network-wifi.png">
 <meta name="twitter:title" content="WiFi Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/network-wifi.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/network-wifi.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib.">
 <meta property="og:title" content="WiFi Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/network-wifi.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/network-wifi.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the WiFi configuration for your ESP node in esphomelib."/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/wifi.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -94,16 +93,16 @@ for you. It needs to be in your configuration or otherwise esphomeyaml
 will fail in the config validation stage.</p>
 <p>It’s recommended to provide a static IP for your node, as it can
 dramatically improve connection times.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">wifi</span><span class="p">:</span>
-  <span class="n">ssid</span><span class="p">:</span> <span class="n">MyHomeNetwork</span>
-  <span class="n">password</span><span class="p">:</span> <span class="n">VerySafePassword</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MyHomeNetwork</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VerySafePassword</span>
 
   <span class="c1"># Optional manual IP</span>
-  <span class="n">manual_ip</span><span class="p">:</span>
-    <span class="n">static_ip</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.42</span>
-    <span class="n">gateway</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.1</span>
-    <span class="n">subnet</span><span class="p">:</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+  <span class="l l-Scalar l-Scalar-Plain">manual_ip</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">static_ip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.42</span>
+    <span class="l l-Scalar l-Scalar-Plain">gateway</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.1</span>
+    <span class="l l-Scalar l-Scalar-Plain">subnet</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">255.255.255.0</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -160,15 +159,15 @@ to the wifi router can be made.</p>
 process taking a long time, it can be a good idea to assign a static IP address
 to the ESP. This way, the ESP doesn’t need to go through the slow DHCP process.</p>
 <p>You can do so with the <code class="docutils literal notranslate"><span class="pre">manual_ip:</span></code> option in the WiFi configuration.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">wifi</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">manual_ip</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">manual_ip</span><span class="p p-Indicator">:</span>
     <span class="c1"># Set this to the IP of the ESP</span>
-    <span class="n">static_ip</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.42</span>
+    <span class="l l-Scalar l-Scalar-Plain">static_ip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.42</span>
     <span class="c1"># Set this to the IP address of the router. Often ends with .1</span>
-    <span class="n">gateway</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.1</span>
+    <span class="l l-Scalar l-Scalar-Plain">gateway</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.1</span>
     <span class="c1"># The subnet of the network. 255.255.255.0 works for most home networks.</span>
-    <span class="n">subnet</span><span class="p">:</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+    <span class="l l-Scalar l-Scalar-Plain">subnet</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">255.255.255.0</span>
 </pre></div>
 </div>
 <p>After putting a manual IP in your configuration, the ESP will no longer need to negotiate
@@ -190,9 +189,9 @@ please also try <code class="docutils literal notranslate"><span class="pre">lig
 <li><code class="docutils literal notranslate"><span class="pre">LIGHT</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">HIGH</span></code> (most power saving)</li>
 </ul>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">wifi</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
-  <span class="n">power_save_mode</span><span class="p">:</span> <span class="n">none</span>
+  <span class="l l-Scalar l-Scalar-Plain">power_save_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">none</span>
 </pre></div>
 </div>
 </div>
@@ -213,11 +212,11 @@ please also try <code class="docutils literal notranslate"><span class="pre">lig
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

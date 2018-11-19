@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/rotary_encoder.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -103,12 +102,12 @@ a better understanding of these sensors.</p>
 <p>To use rotary encoders in esphomeyaml, first identify the two pins encoding th step value.
 These are often called <code class="docutils literal notranslate"><span class="pre">CLK</span></code> and <code class="docutils literal notranslate"><span class="pre">DT</span></code> as in above image. Note if the values this sensor
 outputs go in the wrong direction, you can just swap these two pins.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">rotary_encoder</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Rotary Encoder&quot;</span>
-    <span class="n">pin_a</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="n">pin_b</span><span class="p">:</span> <span class="n">D2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rotary_encoder</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Rotary</span><span class="nv"> </span><span class="s">Encoder&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_a</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_b</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -132,16 +131,16 @@ third pin. Defaults to no reset pin.</li>
 In order to not put too much stress on your network connection, you can leverage esphomelib’s
 sensor filters. The following will only send out values if the last input value is at least
 0.1s seconds old <em>or</em> if the new rotary encoder value has changed by 10 from the previous value.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">rotary_encoder</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Rotary Encoder&quot;</span>
-    <span class="n">pin_a</span><span class="p">:</span> <span class="n">D1</span>
-    <span class="n">pin_b</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="ow">or</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">debounce</span><span class="p">:</span> <span class="mf">0.1</span><span class="n">s</span>
-        <span class="o">-</span> <span class="n">delta</span><span class="p">:</span> <span class="mi">10</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rotary_encoder</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Rotary</span><span class="nv"> </span><span class="s">Encoder&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_a</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_b</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">or</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debounce</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1s</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delta</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
 </pre></div>
 </div>
 </div>
@@ -166,11 +165,11 @@ sensor filters. The following will only send out values if the last input value 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

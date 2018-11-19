@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for using generic Sonoff devices with esphomelib.">
 <meta itemprop="name" content="Generic Sonoff">
 <meta itemprop="description" content="Instructions for using generic Sonoff devices with esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/sonoff.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/sonoff.png">
 <meta name="twitter:title" content="Generic Sonoff">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/sonoff.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/sonoff.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for using generic Sonoff devices with esphomelib.">
 <meta property="og:title" content="Generic Sonoff"/>
-<meta property="og:image" content="https://esphomelib.com/_images/sonoff.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/sonoff.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for using generic Sonoff devices with esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/devices/sonoff.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -111,11 +110,11 @@ and shipping from China takes a long time, I’ve only set up dedicated guides f
 <p>To use sonoff devices with esphomeyaml, set the <code class="docutils literal notranslate"><span class="pre">board</span></code> in the
 <a class="reference internal" href="../components/esphomeyaml.html"><span class="doc">esphomeyaml section</span></a> to <code class="docutils literal notranslate"><span class="pre">esp01_1m</span></code> and set
 <code class="docutils literal notranslate"><span class="pre">board_flash_mode</span></code> to <code class="docutils literal notranslate"><span class="pre">dout</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">esphomeyaml</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">NAME_OF_NODE</span><span class="o">&gt;</span>
-  <span class="n">platform</span><span class="p">:</span> <span class="n">ESP8266</span>
-  <span class="n">board</span><span class="p">:</span> <span class="n">esp01_1m</span>
-  <span class="n">board_flash_mode</span><span class="p">:</span> <span class="n">dout</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;NAME_OF_NODE&gt;</span>
+  <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ESP8266</span>
+  <span class="l l-Scalar l-Scalar-Plain">board</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">esp01_1m</span>
+  <span class="l l-Scalar l-Scalar-Plain">board_flash_mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dout</span>
 </pre></div>
 </div>
 <p>After that use the following list of pin to function mappings to set up your Sonoff device.
@@ -771,11 +770,11 @@ for controlling the light pin.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

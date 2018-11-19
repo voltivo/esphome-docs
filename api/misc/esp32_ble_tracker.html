@@ -13,7 +13,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="canonical" href="https://esphomelib.com/api/misc/esp32_ble_tracker.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -93,17 +92,17 @@
 <dd><p>Create a simple binary sensor for a MAC address. </p>
 <p>Each time a BLE scan yields the MAC address in the address parameter, the binary sensor will immediately go to true. When a whole scan interval does not discover a device with this MAC address, the binary sensor will be set to false.</p>
 <p>The address parameter accepts a MAC address as an array of length 6 with each MAC address part in an unsigned int. To set it up, do something like this:</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">MAC</span> <span class="n">address</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span>
-<span class="n">App</span><span class="o">.</span><span class="n">register_binary_sensor</span><span class="p">(</span><span class="n">tracker</span><span class="o">-&gt;</span><span class="n">make_device</span><span class="p">(</span><span class="s2">&quot;ESP32 BLE Device&quot;</span><span class="p">,</span> <span class="p">{</span>
-   <span class="mh">0xAC</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x4C</span>
-<span class="p">}));</span>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">// MAC address AC:37:43:77:5F:4C</span>
+<span class="l l-Scalar l-Scalar-Plain">App.register_binary_sensor(tracker-&gt;make_device(&quot;ESP32 BLE Device&quot;, {</span>
+   <span class="l l-Scalar l-Scalar-Plain">0xAC, 0x37, 0x43, 0x77, 0x5F, 0x4C</span>
+<span class="l l-Scalar l-Scalar-Plain">}));</span>
 </pre></div>
 </div>
 </p>
 <p>You can get this MAC address by navigating to the bluetooth screen of your device and looking for an advanced settings screen, you can usually find the MAC address there. Alternatively, you can set the global debug level to DEBUG and observe the logs. Then you will find messages like this:</p>
-<p><div class="highlight-default notranslate"><div class="highlight"><pre><span class="n">Found</span> <span class="n">device</span> <span class="n">AC</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="mi">5</span><span class="n">F</span><span class="p">:</span><span class="mi">4</span><span class="n">C</span> <span class="n">RSSI</span><span class="o">=-</span><span class="mi">80</span>
-    <span class="n">Address</span> <span class="n">Type</span><span class="p">:</span> <span class="n">PUBLIC</span>
-    <span class="n">Name</span><span class="p">:</span> <span class="s1">&#39;Google Home Mini&#39;</span>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">Found device AC:37:43:77:5F:4C RSSI=-80</span>
+    <span class="l l-Scalar l-Scalar-Plain">Address Type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">PUBLIC</span>
+    <span class="l l-Scalar l-Scalar-Plain">Name</span><span class="p p-Indicator">:</span> <span class="s">&#39;Google</span><span class="nv"> </span><span class="s">Home</span><span class="nv"> </span><span class="s">Mini&#39;</span>
 </pre></div>
 </div>
 </p>
@@ -843,11 +842,11 @@
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

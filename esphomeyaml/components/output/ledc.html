@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/ledc.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -85,14 +84,14 @@
             
   <div class="section" id="esp32-ledc-output">
 <h1>ESP32 LEDC Output<a class="headerlink" href="#esp32-ledc-output" title="Permalink to this headline">¶</a></h1>
-<p>The LEDC output component exposes a <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/ledc.html">LEDC PWM
+<p>The LEDC output component exposes a <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/ledc.html">LEDC PWM
 channel</a>
 of the ESP32 as an output component.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">ledc</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">19</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">gpio_19</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ledc</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">19</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio_19</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -104,7 +103,7 @@ of the ESP32 as an output component.</p>
 channel’s timer. Two LEDC channels always share the same timer and
 therefore also the same frequency. Defaults to 1000Hz.</li>
 <li><strong>bit_depth</strong> (<em>Optional</em>, int): The bit depth to use for the LEDC channel. Defaults to 12.</li>
-<li><strong>channel</strong> (<em>Optional</em>, int): Manually set the <a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/ledc.html#configure-channel">LEDC
+<li><strong>channel</strong> (<em>Optional</em>, int): Manually set the <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/ledc.html#configure-channel">LEDC
 channel</a>
 to use. Two adjacent channels share the same timer. Defaults to an automatic selection.</li>
 <li>All other options from <a class="reference internal" href="index.html#config-output"><span class="std std-ref">Output</span></a>.</li>
@@ -119,7 +118,7 @@ to use. Two adjacent channels share the same timer. Defaults to an automatic sel
 <li><a class="reference internal" href="../fan/speed.html"><span class="doc">Speed Fan</span></a></li>
 <li><a class="reference internal" href="../power_supply.html"><span class="doc">Power Supply Component</span></a></li>
 <li><a class="reference internal" href="../../../api/output/ledc.html"><span class="doc">API Reference</span></a></li>
-<li><a class="reference external" href="https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/ledc.html">esp-idf LEDC API docs</a></li>
+<li><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/ledc.html">esp-idf LEDC API docs</a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/output/ledc.rst">Edit this page on GitHub</a></li>
 </ul>
 <div data-disqus-identifier="esphomeyaml-components-output-ledc" id="disqus_thread"></div></div>
@@ -133,11 +132,11 @@ to use. Two adjacent channels share the same timer. Defaults to an automatic sel
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

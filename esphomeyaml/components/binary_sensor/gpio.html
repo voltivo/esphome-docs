@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up GPIO binary sensors with esphomelib.">
 <meta itemprop="name" content="GPIO Binary Sensor">
 <meta itemprop="description" content="Instructions for setting up GPIO binary sensors with esphomelib.">
-<meta itemprop="image" content="https://esphomelib.com/_images/pin.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/pin.png">
 <meta name="twitter:title" content="GPIO Binary Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/pin.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/pin.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up GPIO binary sensors with esphomelib.">
 <meta property="og:title" content="GPIO Binary Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/pin.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/pin.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up GPIO binary sensors with esphomelib."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/gpio.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -92,12 +91,12 @@ device as a binary sensor.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/gpio-ui.png"><img alt="../../../_images/gpio-ui.png" src="../../../_images/gpio-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Living Room Window&quot;</span>
-    <span class="n">device_class</span><span class="p">:</span> <span class="n">window</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Window&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">device_class</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">window</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -113,12 +112,12 @@ and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><spa
 <p class="first admonition-title">Note</p>
 <p>For some applications such as reed switches you need to set the pin mode to <code class="docutils literal notranslate"><span class="pre">INPUT_PULLUP</span></code>
 like this:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">D2</span>
-      <span class="n">mode</span><span class="p">:</span> <span class="n">INPUT_PULLUP</span>
-    <span class="n">name</span><span class="p">:</span> <span class="o">...</span>
+<div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+      <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">INPUT_PULLUP</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </div>
@@ -127,13 +126,13 @@ like this:</p>
 <h2>Inverting Values<a class="headerlink" href="#inverting-values" title="Permalink to this headline">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">inverted</span></code> property of the <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a> to invert the binary
 sensor:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="n">D2</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="n">name</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </div>
@@ -141,25 +140,25 @@ sensor:</p>
 <h2>Debouncing Values<a class="headerlink" href="#debouncing-values" title="Permalink to this headline">¶</a></h2>
 <p>Some binary sensors are a bit unstable and quickly transition between the ON and OFF state while
 they’re pressed. To fix this and debounce the signal, use the <a class="reference internal" href="index.html#binary-sensor-filters"><span class="std std-ref">binary sensor filters</span></a>:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">name</span><span class="p">:</span> <span class="o">...</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">delayed_on</span><span class="p">:</span> <span class="mi">10</span><span class="n">ms</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delayed_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10ms</span>
 </pre></div>
 </div>
 <p>Above example will only make the signal go high if the button has stayed high for more than 10ms.
 Alternatively, below configuration will make the binary sensor publish an ON value immediately, but
 will wait 10ms before publishing an OFF value:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="n">D2</span>
-    <span class="n">name</span><span class="p">:</span> <span class="o">...</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">delayed_off</span><span class="p">:</span> <span class="mi">10</span><span class="n">ms</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delayed_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10ms</span>
 </pre></div>
 </div>
 </div>
@@ -182,11 +181,11 @@ will wait 10ms before publishing an OFF value:</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Information about the base representation of all binary sensors.">
 <meta itemprop="name" content="Binary Sensor Component">
 <meta itemprop="description" content="Information about the base representation of all binary sensors.">
-<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:title" content="Binary Sensor Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Information about the base representation of all binary sensors.">
 <meta property="og:title" content="Binary Sensor Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Information about the base representation of all binary sensors."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -103,9 +102,9 @@ configuration options.</p>
 <p>All binary sensors have a platform and an optional device class. By
 default, the binary will chose the appropriate device class itself, but
 you can always override it.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
-    <span class="n">device_class</span><span class="p">:</span> <span class="n">motion</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="l l-Scalar l-Scalar-Plain">device_class</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">motion</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -138,20 +137,20 @@ See <a class="reference internal" href="#binary-sensor-on-multi-click"><span cla
 <span id="id1"></span><h2>Binary Sensor Filters<a class="headerlink" href="#binary-sensor-filters" title="Permalink to this headline">¶</a></h2>
 <p>With binary sensor filters you can customize how esphomelib handles your binary sensor values even more.
 They are similar to <a class="reference internal" href="../sensor/index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="n">filters</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">invert</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">delayed_on</span><span class="p">:</span> <span class="mi">100</span><span class="n">ms</span>
-      <span class="o">-</span> <span class="n">delayed_off</span><span class="p">:</span> <span class="mi">100</span><span class="n">ms</span>
-      <span class="o">-</span> <span class="k">lambda</span><span class="p">:</span> <span class="o">&gt;-</span>
-          <span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">other_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="p">{};</span>
-          <span class="p">}</span>
-      <span class="o">-</span> <span class="n">heartbeat</span><span class="p">:</span> <span class="mi">5</span><span class="n">s</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">invert</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delayed_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delayed_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+          <span class="no">if (id(other_binary_sensor).state) {</span>
+            <span class="no">return x;</span>
+          <span class="no">} else {</span>
+            <span class="no">return {};</span>
+          <span class="no">}</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">heartbeat</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5s</span>
 </pre></div>
 </div>
 <p>Supported filters:</p>
@@ -183,12 +182,12 @@ in the first moment when the button on your mouse is pushed down.</p>
 <span id="binary-sensor-on-press"></span><h3><code class="docutils literal notranslate"><span class="pre">on_press</span></code><a class="headerlink" href="#on-press" title="Permalink to this headline">¶</a></h3>
 <p>This automation will be triggered when the button is first pressed down, or in other words on the leading
 edge of the signal.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
-    <span class="n">on_press</span><span class="p">:</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_on</span><span class="p">:</span> <span class="n">relay_1</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_press</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
@@ -197,12 +196,12 @@ edge of the signal.</p>
 <span id="binary-sensor-on-release"></span><h3><code class="docutils literal notranslate"><span class="pre">on_release</span></code><a class="headerlink" href="#on-release" title="Permalink to this headline">¶</a></h3>
 <p>This automation will be triggered when a button press ends, or in other words on the falling
 edge of the signal.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
-    <span class="n">on_release</span><span class="p">:</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">relay_1</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_release</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
@@ -212,14 +211,14 @@ edge of the signal.</p>
 <p>This automation will be triggered when a button is pressed down for a time period of length
 <code class="docutils literal notranslate"><span class="pre">min_length</span></code> to <code class="docutils literal notranslate"><span class="pre">max_length</span></code>. Any click longer or shorter than this will not trigger the automation.
 The automation is therefore also triggered on the falling edge of the signal.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
-    <span class="n">on_click</span><span class="p">:</span>
-      <span class="n">min_length</span><span class="p">:</span> <span class="mi">50</span><span class="n">ms</span>
-      <span class="n">max_length</span><span class="p">:</span> <span class="mi">350</span><span class="n">ms</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">relay_1</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_click</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">min_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50ms</span>
+      <span class="l l-Scalar l-Scalar-Plain">max_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">350ms</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -234,14 +233,14 @@ The automation is therefore also triggered on the falling edge of the signal.</p
 <p>This automation will be triggered when a button is pressed down twice, with the first click lasting between
 <code class="docutils literal notranslate"><span class="pre">min_length</span></code> and <code class="docutils literal notranslate"><span class="pre">max_length</span></code>. When a second leading edge then happens within <code class="docutils literal notranslate"><span class="pre">min_length</span></code> and
 <code class="docutils literal notranslate"><span class="pre">max_length</span></code>, the automation is triggered.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
-    <span class="n">on_double_click</span><span class="p">:</span>
-      <span class="n">min_length</span><span class="p">:</span> <span class="mi">50</span><span class="n">ms</span>
-      <span class="n">max_length</span><span class="p">:</span> <span class="mi">350</span><span class="n">ms</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">switch</span><span class="o">.</span><span class="n">turn_off</span><span class="p">:</span> <span class="n">relay_1</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_double_click</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">min_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50ms</span>
+      <span class="l l-Scalar l-Scalar-Plain">max_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">350ms</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -254,17 +253,17 @@ The automation is therefore also triggered on the falling edge of the signal.</p
 <div class="section" id="on-multi-click">
 <span id="binary-sensor-on-multi-click"></span><h3><code class="docutils literal notranslate"><span class="pre">on_multi_click</span></code><a class="headerlink" href="#on-multi-click" title="Permalink to this headline">¶</a></h3>
 <p>This automation will be triggered when a button is pressed in a user-specified sequence.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
-    <span class="n">on_multi_click</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">timing</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">ON</span> <span class="k">for</span> <span class="n">at</span> <span class="n">most</span> <span class="mi">1</span><span class="n">s</span>
-        <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="n">at</span> <span class="n">most</span> <span class="mi">1</span><span class="n">s</span>
-        <span class="o">-</span> <span class="n">ON</span> <span class="k">for</span> <span class="mf">0.5</span><span class="n">s</span> <span class="n">to</span> <span class="mi">1</span><span class="n">s</span>
-        <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="n">at</span> <span class="n">least</span> <span class="mf">0.2</span><span class="n">s</span>
-      <span class="n">then</span><span class="p">:</span>
-        <span class="o">-</span> <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">:</span> <span class="s2">&quot;Double-Clicked&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_multi_click</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">timing</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for at most 1s</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at most 1s</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for 0.5s to 1s</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at least 0.2s</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Double-Clicked&quot;</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -290,25 +289,25 @@ about what stopped the trigger from happening.</p>
 <p>You can use an <code class="docutils literal notranslate"><span class="pre">OFF</span></code> timing at the end of the timing sequence to differentiate between different
 kinds of presses. For example the configuration below will differentiate between double, long and short
 presses.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">on_multi_click</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">timing</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">ON</span> <span class="k">for</span> <span class="n">at</span> <span class="n">most</span> <span class="mi">1</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="n">at</span> <span class="n">most</span> <span class="mi">1</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">ON</span> <span class="k">for</span> <span class="n">at</span> <span class="n">most</span> <span class="mi">1</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="n">at</span> <span class="n">least</span> <span class="mf">0.2</span><span class="n">s</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">:</span> <span class="s2">&quot;Double Clicked&quot;</span>
-<span class="o">-</span> <span class="n">timing</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="mi">1</span><span class="n">s</span> <span class="n">to</span> <span class="mi">2</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">ON</span> <span class="k">for</span> <span class="mi">1</span><span class="n">s</span> <span class="n">to</span> <span class="mi">2</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="n">at</span> <span class="n">least</span> <span class="mf">0.5</span><span class="n">s</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">:</span> <span class="s2">&quot;Single Long Clicked&quot;</span>
-<span class="o">-</span> <span class="n">timing</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">ON</span> <span class="k">for</span> <span class="n">at</span> <span class="n">most</span> <span class="mi">1</span><span class="n">s</span>
-    <span class="o">-</span> <span class="n">OFF</span> <span class="k">for</span> <span class="n">at</span> <span class="n">least</span> <span class="mf">0.5</span><span class="n">s</span>
-  <span class="n">then</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">:</span> <span class="s2">&quot;Single Short Clicked&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">on_multi_click</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">timing</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for at most 1s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at most 1s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for at most 1s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at least 0.2s</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Double</span><span class="nv"> </span><span class="s">Clicked&quot;</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">timing</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for 1s to 2s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for 1s to 2s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at least 0.5s</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Single</span><span class="nv"> </span><span class="s">Long</span><span class="nv"> </span><span class="s">Clicked&quot;</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">timing</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for at most 1s</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at least 0.5s</span>
+  <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Single</span><span class="nv"> </span><span class="s">Short</span><span class="nv"> </span><span class="s">Clicked&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -319,21 +318,21 @@ advanced stuff (see the full <a class="reference internal" href="../../../api/bi
 <ul>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">publish_state()</span></code>: Manually cause the binary sensor to publish and store a state from anywhere
 in the program.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">Within</span> <span class="k">lambda</span><span class="p">,</span> <span class="n">publish</span> <span class="n">an</span> <span class="n">OFF</span> <span class="n">state</span><span class="o">.</span>
-<span class="nb">id</span><span class="p">(</span><span class="n">my_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">publish_state</span><span class="p">(</span><span class="n">false</span><span class="p">);</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">// Within lambda, publish an OFF state.</span>
+<span class="l l-Scalar l-Scalar-Plain">id(my_binary_sensor).publish_state(false);</span>
 
-<span class="o">//</span> <span class="n">Within</span> <span class="k">lambda</span><span class="p">,</span> <span class="n">publish</span> <span class="n">an</span> <span class="n">ON</span> <span class="n">state</span><span class="o">.</span>
-<span class="nb">id</span><span class="p">(</span><span class="n">my_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">publish_state</span><span class="p">(</span><span class="n">true</span><span class="p">);</span>
+<span class="l l-Scalar l-Scalar-Plain">// Within lambda, publish an ON state.</span>
+<span class="l l-Scalar l-Scalar-Plain">id(my_binary_sensor).publish_state(true);</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">.state</span></code>: Retrieve the current state of the binary sensor.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="o">//</span> <span class="n">Within</span> <span class="k">lambda</span><span class="p">,</span> <span class="n">get</span> <span class="n">the</span> <span class="n">binary</span> <span class="n">sensor</span> <span class="n">state</span> <span class="ow">and</span> <span class="n">conditionally</span> <span class="n">do</span> <span class="n">something</span>
-<span class="k">if</span> <span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">my_binary_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="o">//</span> <span class="n">Binary</span> <span class="n">sensor</span> <span class="ow">is</span> <span class="n">ON</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="n">here</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="o">//</span> <span class="n">Binary</span> <span class="n">sensor</span> <span class="ow">is</span> <span class="n">OFF</span><span class="p">,</span> <span class="n">do</span> <span class="n">something</span> <span class="k">else</span> <span class="n">here</span>
-<span class="p">}</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">// Within lambda, get the binary sensor state and conditionally do something</span>
+<span class="l l-Scalar l-Scalar-Plain">if (id(my_binary_sensor).state) {</span>
+  <span class="l l-Scalar l-Scalar-Plain">// Binary sensor is ON, do something here</span>
+<span class="l l-Scalar l-Scalar-Plain">} else {</span>
+  <span class="l l-Scalar l-Scalar-Plain">// Binary sensor is OFF, do something else here</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
 </pre></div>
 </div>
 </li>
@@ -370,11 +369,11 @@ in the program.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

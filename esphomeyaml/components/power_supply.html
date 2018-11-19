@@ -9,14 +9,14 @@
 <meta name="keywords" content="power, ATX">
 <meta itemprop="name" content="Power Supply Component">
 <meta itemprop="description" content="Instructions for setting up power supplies which will automatically turn on together with outputs.">
-<meta itemprop="image" content="https://esphomelib.com/_images/power.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/power.png">
 <meta name="twitter:title" content="Power Supply Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/power.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/power.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up power supplies which will automatically turn on together with outputs.">
 <meta property="og:title" content="Power Supply Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/power.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/power.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up power supplies which will automatically turn on together with outputs."/>
@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/power_supply.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -96,10 +95,10 @@ the output is not on. The power supply component can be attached to any
 will automatically switch on if any of the outputs are on. Furthermore,
 it also has a cooldown time that keeps the power supply on for a while
 after the last output has been disabled.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">power_supply</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="s1">&#39;power_supply1&#39;</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">13</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">power_supply</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="s">&#39;power_supply1&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">13</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -129,11 +128,11 @@ for information on how to apply the power supply for a specific output.</p>
 pin up when high power mode is needed. Most ATX power supplies however
 operate with an active-low configuration. Therefore their output needs
 to be inverted.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">power_supply</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="s1">&#39;atx_power_supply&#39;</span>
-    <span class="n">pin</span><span class="p">:</span>
-      <span class="n">number</span><span class="p">:</span> <span class="mi">13</span>
-      <span class="n">inverted</span><span class="p">:</span> <span class="n">true</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">power_supply</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="s">&#39;atx_power_supply&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">13</span>
+      <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 <p>Then simply connect the green control wire from the ATX power supply to
@@ -158,11 +157,11 @@ in between to protect the ESP board.</p>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

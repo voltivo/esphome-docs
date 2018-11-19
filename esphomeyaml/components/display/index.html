@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the display integration.">
 <meta itemprop="name" content="Display Component">
 <meta itemprop="description" content="Instructions for setting up the display integration.">
-<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:title" content="Display Component">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/folder-open.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up the display integration.">
 <meta property="og:title" content="Display Component"/>
-<meta property="og:image" content="https://esphomelib.com/_images/folder-open.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/folder-open.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up the display integration."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/display/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -121,14 +120,14 @@ individually.</p>
 option called <code class="docutils literal notranslate"><span class="pre">lambda:</span></code> which will be called every time esphomelib wants to re-render the display.
 In there, you can write code like in any <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a> in esphomeyaml. Display
 lambdas are additionally passed a variable called <code class="docutils literal notranslate"><span class="pre">it</span></code> which represents the rendering engine object.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Write</span> <span class="n">your</span> <span class="n">display</span> <span class="n">rendering</span> <span class="n">code</span> <span class="n">here</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Write your display rendering code here</span>
 
-      <span class="o">//</span> <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">draw</span> <span class="n">a</span> <span class="n">line</span> <span class="kn">from</span> <span class="p">[</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">]</span> <span class="n">to</span> <span class="p">[</span><span class="n">x</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">]</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+      <span class="no">// For example, draw a line from [x=0,y=0] to [x=50,y=50]</span>
+      <span class="no">it.line(0, 0, 50, 50);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -148,49 +147,49 @@ the rendering engine is always first specify the <code class="docutils literal n
 <h3>Basic Shapes<a class="headerlink" href="#basic-shapes" title="Permalink to this headline">¶</a></h3>
 <p>Now that you know a bit more about esphomelib’s coordinate system, let’s draw some basic shapes like lines, rectangles
 and circles:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>display:
-  - platform: ...
-    # ...
-    lambda: |-
-      // Draw a line from [0,0] to [100,50]
-      it.line(0, 0, 100, 50);
-      // Draw the outline of a rectangle with the top left at [50,60], a width of 30 and a height of 42
-      it.rectangle(50, 60, 30, 42);
-      // Draw the same rectangle, but this time filled.
-      it.filled_rectangle(50, 60, 30, 42);
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Draw a line from [0,0] to [100,50]</span>
+      <span class="no">it.line(0, 0, 100, 50);</span>
+      <span class="no">// Draw the outline of a rectangle with the top left at [50,60], a width of 30 and a height of 42</span>
+      <span class="no">it.rectangle(50, 60, 30, 42);</span>
+      <span class="no">// Draw the same rectangle, but this time filled.</span>
+      <span class="no">it.filled_rectangle(50, 60, 30, 42);</span>
 
-      // Circles! Let&#39;s draw one with the center at [25,25] and a radius of 10
-      it.circle(25, 25, 10);
-      // ... and the same thing filled again
-      it.filled_circle(25, 25, 10);
+      <span class="no">// Circles! Let&#39;s draw one with the center at [25,25] and a radius of 10</span>
+      <span class="no">it.circle(25, 25, 10);</span>
+      <span class="no">// ... and the same thing filled again</span>
+      <span class="no">it.filled_circle(25, 25, 10);</span>
 </pre></div>
 </div>
 <p>All the above methods can optionally also be called with an argument at the end which specifies in which
 color to draw. Currently, only <code class="docutils literal notranslate"><span class="pre">COLOR_ON</span></code> (the default if color is not given) and <code class="docutils literal notranslate"><span class="pre">COLOR_OFF</span></code> are supported because
 esphomelib only has implemented binary displays.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Turn</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">display</span> <span class="n">on</span><span class="o">.</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">COLOR_ON</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">Turn</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">display</span> <span class="n">off</span><span class="o">.</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">COLOR_OFF</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Turn the whole display on.</span>
+      <span class="no">it.fill(COLOR_ON);</span>
+      <span class="no">// Turn the whole display off.</span>
+      <span class="no">it.fill(COLOR_OFF);</span>
 
-      <span class="o">//</span> <span class="n">Turn</span> <span class="n">a</span> <span class="n">single</span> <span class="n">pixel</span> <span class="n">off</span> <span class="n">at</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">]</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">draw_pixel_at</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">COLOR_OFF</span><span class="p">);</span>
+      <span class="no">// Turn a single pixel off at [50,60]</span>
+      <span class="no">it.draw_pixel_at(50, 60, COLOR_OFF);</span>
 
-      <span class="o">//</span> <span class="n">Turn</span> <span class="n">off</span> <span class="n">a</span> <span class="n">whole</span> <span class="n">display</span> <span class="n">portion</span><span class="o">.</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">COLOR_OFF</span><span class="p">);</span>
+      <span class="no">// Turn off a whole display portion.</span>
+      <span class="no">it.rectangle(50, 50, 30, 42, COLOR_OFF);</span>
 </pre></div>
 </div>
 <p>Additionally, you have access to two helper methods which will fetch the width and height of the display:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Draw</span> <span class="n">a</span> <span class="n">circle</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">the</span> <span class="n">display</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">filled_circle</span><span class="p">(</span><span class="n">it</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">it</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Draw a circle in the middle of the display</span>
+      <span class="no">it.filled_circle(it.get_width() / 2, it.get_height() / 2);</span>
 </pre></div>
 </div>
 <p>You can view the full API documentation for the rendering engine over at <a class="reference internal" href="../../../api/display/index.html#display-buffer"><span class="std std-ref">DisplayBuffer</span></a>.</p>
@@ -203,12 +202,12 @@ specific sizes, with esphomeyaml you have the option to use <strong>any</strong>
 at <strong>any</strong> size! Granted the reason for it is actually not having to worry about the licensing of font files :)</p>
 <p>To use fonts you first have to define a font object in your esphomeyaml configuration file. Just grab
 a <code class="docutils literal notranslate"><span class="pre">.ttf</span></code> file from somewhere on the Internet and create a <code class="docutils literal notranslate"><span class="pre">font:</span></code> section in your configuration:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">font</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;Comic Sans MS.ttf&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">my_font</span>
-    <span class="n">size</span><span class="p">:</span> <span class="mi">20</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">font</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="s">&quot;Comic</span><span class="nv"> </span><span class="s">Sans</span><span class="nv"> </span><span class="s">MS.ttf&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_font</span>
+    <span class="l l-Scalar l-Scalar-Plain">size</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">20</span>
 
-<span class="n">display</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
   <span class="c1"># ...</span>
 </pre></div>
 </div>
@@ -234,12 +233,12 @@ the official esphomeyaml docker image, it should already be installed. Otherwise
 <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>Then, in your display code just reference the font like so:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Print</span> <span class="n">the</span> <span class="n">string</span> <span class="s2">&quot;Hello World!&quot;</span> <span class="n">at</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Print the string &quot;Hello World!&quot; at [0,10]</span>
+      <span class="no">it.print(0, 10, id(my_font), &quot;Hello World!&quot;);</span>
 </pre></div>
 </div>
 <p>By default, esphomelib will <em>align</em> the text at the top left. That means if you enter the coordinates
@@ -248,24 +247,24 @@ text at the right side of the display, it is however sometimes useful to choose 
 When you enter <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code> you’re really telling esphomelib that it should position the <strong>anchor point</strong> of the text
 at <code class="docutils literal notranslate"><span class="pre">[0,10]</span></code>. When using a different alignment, like <code class="docutils literal notranslate"><span class="pre">TOP_RIGHT</span></code>, the text will be positioned left of the anchor
 pointed, so that, as the name implies, the anchor point is a the <em>top right</em> corner of the text.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Aligned</span> <span class="n">on</span> <span class="n">left</span> <span class="n">by</span> <span class="n">default</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Left aligned&quot;</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Aligned on left by default</span>
+      <span class="no">it.print(0, 0, id(my_font), &quot;Left aligned&quot;);</span>
 
-      <span class="o">//</span> <span class="n">Aligned</span> <span class="n">on</span> <span class="n">right</span> <span class="n">edge</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">it</span><span class="o">.</span><span class="n">get_width</span><span class="p">(),</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="n">TextAlign</span><span class="p">::</span><span class="n">TOP_RIGHT</span><span class="p">,</span> <span class="s2">&quot;Right aligned&quot;</span><span class="p">);</span>
+      <span class="no">// Aligned on right edge</span>
+      <span class="no">it.print(0, it.get_width(), id(my_font), TextAlign::TOP_RIGHT, &quot;Right aligned&quot;);</span>
 </pre></div>
 </div>
 <p>As with basic shapes, you can also specify a color for the text:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Syntax</span> <span class="ow">is</span> <span class="n">always</span><span class="p">:</span> <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="o">&lt;</span><span class="n">x</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">y</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">font</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">COLOR_ON</span><span class="p">],</span> <span class="p">[</span><span class="n">align</span><span class="o">=</span><span class="n">TextAlign</span><span class="p">::</span><span class="n">TOP_LEFT</span><span class="p">],</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">);</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="n">COLOR_ON</span><span class="p">,</span> <span class="s2">&quot;Left aligned&quot;</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Syntax is always: it.print(&lt;x&gt;, &lt;y&gt;, &lt;font&gt;, [color=COLOR_ON], [align=TextAlign::TOP_LEFT], &lt;text&gt;);</span>
+      <span class="no">it.print(0, 0, id(my_font), COLOR_ON, &quot;Left aligned&quot;);</span>
 </pre></div>
 </div>
 </div>
@@ -277,17 +276,17 @@ chose to use because … well, I’m too lazy to create a fully-fledged format e
 is way better documented :)</p>
 <p><code class="docutils literal notranslate"><span class="pre">printf</span></code> can do way more stuff than you will probably ever need, but it’s also quite simple for the basic stuff.
 For example, a printf call can look like this:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">my_sensor</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_sensor</span>
 
-<span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;The sensor value is: </span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_sensor</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">If</span> <span class="n">the</span> <span class="n">sensor</span> <span class="n">has</span> <span class="n">the</span> <span class="n">value</span> <span class="mf">30.02</span><span class="p">,</span> <span class="n">the</span> <span class="n">result</span> <span class="n">will</span> <span class="n">be</span><span class="p">:</span> <span class="s2">&quot;The sensor value is: 30.0&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">it.printf(0, 0, id(my_font), &quot;The sensor value is: %.1f&quot;, id(my_sensor).state);</span>
+      <span class="no">// If the sensor has the value 30.02, the result will be: &quot;The sensor value is: 30.0&quot;</span>
 </pre></div>
 </div>
 <p>As you can see, when you call <code class="docutils literal notranslate"><span class="pre">printf</span></code> most of the string is printed as-is, but when this weird percent sign with some
@@ -314,34 +313,34 @@ the result would be shorter than 7 characters long.</li>
 </ul>
 <p>You can even have as many format strings as you want in a single printf call. Just make sure the put the
 arguments after the format string in the right order.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="o">%%</span> <span class="o">-</span> <span class="n">literal</span> <span class="o">%</span> <span class="n">sign</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_font</span><span class="p">),</span> <span class="s2">&quot;Temperature: </span><span class="si">%.1f</span><span class="s2">°C, Humidity: </span><span class="si">%.1f%%</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">humidity</span><span class="p">)</span><span class="o">.</span><span class="n">state</span><span class="p">);</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// %% - literal % sign</span>
+      <span class="no">it.printf(0, 0, id(my_font), &quot;Temperature: %.1f°C, Humidity: %.1f%%&quot;, id(temperature).state, id(humidity).state);</span>
 </pre></div>
 </div>
 <p>The last printf tip for use in displays I will discuss here is how to display binary sensor values. You
 <em>could</em> of course just check the state with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement as the first few lines in the example below, but if
 you want to be efficient you can use an <em>inline if</em> too. With the <code class="docutils literal notranslate"><span class="pre">%s</span></code> print specifier you can tell it to
 use any string you pass it, like <code class="docutils literal notranslate"><span class="pre">&quot;ON&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;OFF&quot;</span></code>.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre>binary_sensor:
-  - platform: ...
-    # ...
-    id: my_binary_sensor
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_binary_sensor</span>
 
-display:
-  - platform: ...
-    # ...
-    lambda: |-
-      if (id(my_binary_sensor).state) {
-        it.print(0, 0, id(my_font), &quot;state: ON&quot;);
-      } else {
-        it.print(0, 0, id(my_font), &quot;state: OFF&quot;);
-      }
-      // Shorthand:
-      it.printf(0, 0, id(my_font), &quot;State: %s&quot;, id(my_binary_sensor).state ? &quot;ON&quot; : &quot;OFF&quot;);
+<span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">if (id(my_binary_sensor).state) {</span>
+        <span class="no">it.print(0, 0, id(my_font), &quot;state: ON&quot;);</span>
+      <span class="no">} else {</span>
+        <span class="no">it.print(0, 0, id(my_font), &quot;state: OFF&quot;);</span>
+      <span class="no">}</span>
+      <span class="no">// Shorthand:</span>
+      <span class="no">it.printf(0, 0, id(my_font), &quot;State: %s&quot;, id(my_binary_sensor).state ? &quot;ON&quot; : &quot;OFF&quot;);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -355,10 +354,10 @@ you can use the <a class="reference internal" href="../text_sensor/mqtt_subscrib
 <p>With esphomelib you can also display the current time using the NTP protocol. Please see the example <a class="reference internal" href="../time.html#strftime"><span class="std std-ref">here</span></a>.</p>
 <div class="section" id="images">
 <h4>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h4>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">image</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;image.png&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">my_image</span>
-    <span class="n">resize</span><span class="p">:</span> <span class="mi">100</span><span class="n">x100</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="s">&quot;image.png&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_image</span>
+    <span class="l l-Scalar l-Scalar-Plain">resize</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100x100</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -376,12 +375,12 @@ If you’re running this as a HassIO add-on or with the official esphomeyaml doc
 installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>And then later in code:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">display</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="o">...</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">display</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
-    <span class="k">lambda</span><span class="p">:</span> <span class="o">|-</span>
-      <span class="o">//</span> <span class="n">Draw</span> <span class="n">the</span> <span class="n">image</span> <span class="n">my_image</span> <span class="n">at</span> <span class="n">position</span> <span class="p">[</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">]</span>
-      <span class="n">it</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">my_image</span><span class="p">));</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">// Draw the image my_image at position [x=0,y=0]</span>
+      <span class="no">it.image(0, 0, id(my_image));</span>
 </pre></div>
 </div>
 </div>
@@ -415,11 +414,11 @@ installed. Otherwise you need to install it using <code class="docutils literal 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

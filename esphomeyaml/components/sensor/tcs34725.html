@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/tcs34725.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -97,25 +96,25 @@ required to be set up in your configuration for this sensor to work.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/tcs34725-ui.png"><img alt="../../../_images/tcs34725-ui.png" src="../../../_images/tcs34725-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">tcs34725</span>
-    <span class="n">red_channel</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TCS34725 Red Channel&quot;</span>
-    <span class="n">green_channel</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TCS34725 Green Channel&quot;</span>
-    <span class="n">blue_channel</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TCS34725 Blue Channel&quot;</span>
-    <span class="n">clear_channel</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TCS34725 Clear Channel&quot;</span>
-    <span class="n">illuminance</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TCS34725 Illuminance&quot;</span>
-    <span class="n">color_temperature</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;TCS34725 Color Temperature&quot;</span>
-    <span class="n">gain</span><span class="p">:</span> <span class="mi">1</span><span class="n">x</span>
-    <span class="n">integration_time</span><span class="p">:</span> <span class="mf">2.4</span><span class="n">ms</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x29</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tcs34725</span>
+    <span class="l l-Scalar l-Scalar-Plain">red_channel</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TCS34725</span><span class="nv"> </span><span class="s">Red</span><span class="nv"> </span><span class="s">Channel&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">green_channel</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TCS34725</span><span class="nv"> </span><span class="s">Green</span><span class="nv"> </span><span class="s">Channel&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">blue_channel</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TCS34725</span><span class="nv"> </span><span class="s">Blue</span><span class="nv"> </span><span class="s">Channel&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">clear_channel</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TCS34725</span><span class="nv"> </span><span class="s">Clear</span><span class="nv"> </span><span class="s">Channel&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">illuminance</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TCS34725</span><span class="nv"> </span><span class="s">Illuminance&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">color_temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;TCS34725</span><span class="nv"> </span><span class="s">Color</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">gain</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1x</span>
+    <span class="l l-Scalar l-Scalar-Plain">integration_time</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2.4ms</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x29</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -161,11 +160,11 @@ sensor. Defaults to <code class="docutils literal notranslate"><span class="pre"
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

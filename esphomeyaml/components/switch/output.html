@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up generic output switches in esphomelib that control an output component.">
 <meta itemprop="name" content="Generic Output Switch">
 <meta itemprop="description" content="Instructions for setting up generic output switches in esphomelib that control an output component.">
-<meta itemprop="image" content="https://esphomelib.com/_images/upload.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/upload.png">
 <meta name="twitter:title" content="Generic Output Switch">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/upload.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/upload.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up generic output switches in esphomelib that control an output component.">
 <meta property="og:title" content="Generic Output Switch"/>
-<meta property="og:image" content="https://esphomelib.com/_images/upload.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/upload.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up generic output switches in esphomelib that control an output component."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/switch/output.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -89,15 +88,15 @@
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/output-ui.png"><img alt="../../../_images/output-ui.png" src="../../../_images/output-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">output</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">gpio</span>
-    <span class="n">pin</span><span class="p">:</span> <span class="mi">25</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="s1">&#39;generic_out&#39;</span>
-<span class="n">switch</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">output</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Generic Output&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;generic_out&#39;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="s">&#39;generic_out&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Generic</span><span class="nv"> </span><span class="s">Output&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="s">&#39;generic_out&#39;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -127,11 +126,11 @@
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

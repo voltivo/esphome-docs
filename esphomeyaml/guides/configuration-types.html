@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Documentation of different configuration types in esphomelib">
 <meta itemprop="name" content="Configuration Types">
 <meta itemprop="description" content="Documentation of different configuration types in esphomelib">
-<meta itemprop="image" content="https://esphomelib.com/_images/settings.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/settings.png">
 <meta name="twitter:title" content="Configuration Types">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/settings.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/settings.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Documentation of different configuration types in esphomelib">
 <meta property="og:title" content="Configuration Types"/>
-<meta property="og:image" content="https://esphomelib.com/_images/settings.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/settings.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Documentation of different configuration types in esphomelib"/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/configuration-types.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -100,7 +99,7 @@ configuration and esphomeyaml will warn you if you try to use the same
 ID twice.</p>
 <p>Because esphomeyaml converts your configuration into C++ code and the
 ids are in reality just C++ variable names, they must also adhere to
-C++’s naming conventions. <a class="reference external" href="http://venus.cs.qc.cuny.edu/~krishna/cs111/lectures/D3_C++_Variables.pdf">C++ Variable
+C++’s naming conventions. <a class="reference external" href="https://venus.cs.qc.cuny.edu/~krishna/cs111/lectures/D3_C++_Variables.pdf">C++ Variable
 names</a>
 …</p>
 <ul class="simple">
@@ -123,27 +122,27 @@ has their own aliases and so not all of them are supported yet. For example,
 for the <code class="docutils literal notranslate"><span class="pre">D0</span></code> (as printed on the PCB silkscreen) pin on the NodeMCU ESP8266
 has the internal GPIO name <code class="docutils literal notranslate"><span class="pre">GPIO16</span></code>, but also has an alias <code class="docutils literal notranslate"><span class="pre">D0</span></code>. So using
 either one of these names in your configuration will lead to the same result.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">some_config_option</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO16</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">some_config_option</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO16</span>
 
-<span class="n">some_config_option</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">some_config_option</span><span class="p p-Indicator">:</span>
   <span class="c1"># alias on the NodeMCU ESP8266:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="pin-schema">
 <span id="config-pin-schema"></span><h2>Pin Schema<a class="headerlink" href="#pin-schema" title="Permalink to this headline">¶</a></h2>
 <p>In some places, esphomeyaml also supports a more advanced “pin schema”.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">some_config_option</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">some_config_option</span><span class="p p-Indicator">:</span>
   <span class="c1"># Basic:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
 
   <span class="c1"># Advanced:</span>
-  <span class="n">pin</span><span class="p">:</span>
-    <span class="n">number</span><span class="p">:</span> <span class="n">D0</span>
-    <span class="n">inverted</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="n">mode</span><span class="p">:</span> <span class="n">INPUT_PULLUP</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+    <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+    <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">INPUT_PULLUP</span>
 </pre></div>
 </div>
 <p>Configuration variables:</p>
@@ -182,28 +181,28 @@ startup, corresponds to Arduino’s <code class="docutils literal notranslate"><
 <span id="config-time"></span><h2>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h2>
 <p>In lots of places in esphomeyaml you need to define time periods.
 There are several ways of doing this. See below examples to see how you can specify time periods:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">some_config_option</span><span class="p">:</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="mi">1000</span><span class="n">us</span>  <span class="c1"># 1000 microseconds = 1ms</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="mi">1000</span><span class="n">ms</span>  <span class="c1"># 1000 milliseconds</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="mf">1.5</span><span class="n">s</span>  <span class="c1"># 1.5 seconds</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="mf">0.5</span><span class="nb">min</span>  <span class="c1"># half a minute</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="mi">2</span><span class="n">h</span>  <span class="c1"># 2 hours</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">some_config_option</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1000us</span>  <span class="c1"># 1000 microseconds = 1ms</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1000ms</span>  <span class="c1"># 1000 milliseconds</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.5s</span>  <span class="c1"># 1.5 seconds</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5min</span>  <span class="c1"># half a minute</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2h</span>  <span class="c1"># 2 hours</span>
 
   <span class="c1"># Make sure you wrap these in quotes</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="s1">&#39;2:01&#39;</span>  <span class="c1"># 2 hours 1 minute</span>
-  <span class="n">some_time_option</span><span class="p">:</span> <span class="s1">&#39;2:01:30&#39;</span>  <span class="c1"># 2 hours 1 minute 30 seconds</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="s">&#39;2:01&#39;</span>  <span class="c1"># 2 hours 1 minute</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span> <span class="s">&#39;2:01:30&#39;</span>  <span class="c1"># 2 hours 1 minute 30 seconds</span>
 
   <span class="c1"># 10ms + 30s + 25min + 3h</span>
-  <span class="n">some_time_option</span><span class="p">:</span>
-    <span class="n">milliseconds</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="n">seconds</span><span class="p">:</span> <span class="mi">30</span>
-    <span class="n">minutes</span><span class="p">:</span> <span class="mi">25</span>
-    <span class="n">hours</span><span class="p">:</span> <span class="mi">3</span>
-    <span class="n">days</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="l l-Scalar l-Scalar-Plain">some_time_option</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">milliseconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+    <span class="l l-Scalar l-Scalar-Plain">seconds</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+    <span class="l l-Scalar l-Scalar-Plain">minutes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
+    <span class="l l-Scalar l-Scalar-Plain">hours</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+    <span class="l l-Scalar l-Scalar-Plain">days</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
 
   <span class="c1"># for all &#39;update_interval&#39; options, also</span>
-  <span class="n">update_interval</span><span class="p">:</span> <span class="n">never</span>  <span class="c1"># never update</span>
-  <span class="n">update_interval</span><span class="p">:</span> <span class="mi">0</span><span class="n">ms</span>  <span class="c1"># update in every loop() iteration</span>
+  <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">never</span>  <span class="c1"># never update</span>
+  <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0ms</span>  <span class="c1"># update in every loop() iteration</span>
 </pre></div>
 </div>
 </div>
@@ -226,11 +225,11 @@ There are several ways of doing this. See below examples to see how you can spec
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

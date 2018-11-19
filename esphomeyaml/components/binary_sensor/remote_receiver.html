@@ -8,14 +8,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up remote receiver binary sensors for infrared and RF codes.">
 <meta itemprop="name" content="Remote Receiver Binary Sensor">
 <meta itemprop="description" content="Instructions for setting up remote receiver binary sensors for infrared and RF codes.">
-<meta itemprop="image" content="https://esphomelib.com/_images/remote.svg">
+<meta itemprop="image" content="https://esphomelib.com/_images/remote.png">
 <meta name="twitter:title" content="Remote Receiver Binary Sensor">
-<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.svg">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/remote.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up remote receiver binary sensors for infrared and RF codes.">
 <meta property="og:title" content="Remote Receiver Binary Sensor"/>
-<meta property="og:image" content="https://esphomelib.com/_images/remote.svg"/>
+<meta property="og:image" content="https://esphomelib.com/_images/remote.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
 <meta property="og:description" content="Instructions for setting up remote receiver binary sensors for infrared and RF codes."/>
@@ -30,7 +30,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/remote_receiver.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -88,17 +87,17 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">remote_receiver</span></code> binary sensor lets you track when a button on a remote control is pressed.</p>
 <p>Each time the pre-defined signal is received, the binary sensor will briefly go ON and
 then immediately OFF.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">remote_receiver</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="n">GPIO32</span>
-  <span class="n">dump</span><span class="p">:</span> <span class="nb">all</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">remote_receiver</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO32</span>
+  <span class="l l-Scalar l-Scalar-Plain">dump</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
 
-<span class="n">binary_sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">remote_receiver</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Panasonic Remote Input&quot;</span>
-    <span class="n">panasonic</span><span class="p">:</span>
-      <span class="n">address</span><span class="p">:</span> <span class="mh">0x4004</span>
-      <span class="n">command</span><span class="p">:</span> <span class="mh">0x100BCBD</span>
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">remote_receiver</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Panasonic</span><span class="nv"> </span><span class="s">Remote</span><span class="nv"> </span><span class="s">Input&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">panasonic</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x4004</span>
+      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x100BCBD</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -121,13 +120,13 @@ and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><spa
 <p class="first admonition-title">Note</p>
 <p>For the Sonoff RF Bridge you can use <a class="reference external" href="https://github.com/xoseperez/espurna/wiki/Hardware-Itead-Sonoff-RF-Bridge---Direct-Hack">this hack</a>
 created by the Github user wildwiz. Then use this configuration for the remote receiver/transmitter hubs:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="n">remote_receiver</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="mi">4</span>
-  <span class="n">dump</span><span class="p">:</span> <span class="nb">all</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">remote_receiver</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="l l-Scalar l-Scalar-Plain">dump</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
 
-<span class="n">remote_transmitter</span><span class="p">:</span>
-  <span class="n">pin</span><span class="p">:</span> <span class="mi">5</span>
-  <span class="n">carrier_duty_percent</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span>
+<span class="l l-Scalar l-Scalar-Plain">remote_transmitter</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+  <span class="l l-Scalar l-Scalar-Plain">carrier_duty_percent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
 </pre></div>
 </div>
 <p class="last">Supporting the RF Bridge chip directly is currently only a long-term goal for esphomelib.</p>
@@ -155,11 +154,11 @@ created by the Github user wildwiz. Then use this configuration for the remote r
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

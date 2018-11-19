@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/ina219.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -98,22 +97,22 @@ required to be set up in your configuration for this sensor to work.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../_images/ina219-ui.png"><img alt="../../../_images/ina219-ui.png" src="../../../_images/ina219-ui.png" style="width: 80.0%;" /></a>
 </div>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">ina219</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x40</span>
-    <span class="n">shunt_resistance</span><span class="p">:</span> <span class="mf">0.1</span> <span class="n">ohm</span>
-    <span class="n">current</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;INA219 Current&quot;</span>
-    <span class="n">power</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;INA219 Power&quot;</span>
-    <span class="n">bus_voltage</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;INA219 Bus Voltage&quot;</span>
-    <span class="n">shunt_voltage</span><span class="p">:</span>
-      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;INA219 Shunt Voltage&quot;</span>
-    <span class="n">max_voltage</span><span class="p">:</span> <span class="mf">32.0</span><span class="n">V</span>
-    <span class="n">max_current</span><span class="p">:</span> <span class="mf">3.2</span><span class="n">A</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="mi">15</span><span class="n">s</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ina219</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x40</span>
+    <span class="l l-Scalar l-Scalar-Plain">shunt_resistance</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1 ohm</span>
+    <span class="l l-Scalar l-Scalar-Plain">current</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;INA219</span><span class="nv"> </span><span class="s">Current&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">power</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;INA219</span><span class="nv"> </span><span class="s">Power&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">bus_voltage</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;INA219</span><span class="nv"> </span><span class="s">Bus</span><span class="nv"> </span><span class="s">Voltage&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">shunt_voltage</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;INA219</span><span class="nv"> </span><span class="s">Shunt</span><span class="nv"> </span><span class="s">Voltage&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">max_voltage</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">32.0V</span>
+    <span class="l l-Scalar l-Scalar-Plain">max_current</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3.2A</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -158,11 +157,11 @@ See <a class="reference internal" href="index.html#sensor-default-filter"><span 
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 

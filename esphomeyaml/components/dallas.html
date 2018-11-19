@@ -31,7 +31,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/dallas.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -95,15 +94,15 @@ id, which you will later use to create the sensors. The 1-Wire bus the
 sensors are connected to should have an external pullup resistor of
 about 4.7KΩ. For this, connect a resistor of <em>about</em> 4.7KΩ (values around that like 1Ω will, if you don’t have
 massively long wires, work fine in most cases) between <code class="docutils literal notranslate"><span class="pre">3.3V</span></code> and the data pin.</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="n">dallas</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">pin</span><span class="p">:</span> <span class="mi">23</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">dallas</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">23</span>
 
 <span class="c1"># Individual sensors</span>
-<span class="n">sensor</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">platform</span><span class="p">:</span> <span class="n">dallas</span>
-    <span class="n">address</span><span class="p">:</span> <span class="mh">0x1c0000031edd2a28</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;Livingroom Temperature&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dallas</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x1c0000031edd2a28</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Livingroom</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -134,11 +133,11 @@ Defaults to 15 seconds. See <a class="reference internal" href="sensor/index.htm
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2018, Otto Winter.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
 
