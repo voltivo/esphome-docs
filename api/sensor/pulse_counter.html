@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Pulse Counter Sensor &#8212; esphomelib 1.9.0 documentation</title>
+    <title>Pulse Counter Sensor &#8212; esphomelib 1.9.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -85,7 +85,7 @@
 <dt id="_CPPv3N6sensor27PulseCounterSensorComponentE">
 <span id="_CPPv2N6sensor27PulseCounterSensorComponentE"></span><span id="sensor::PulseCounterSensorComponent"></span><span class="target" id="classsensor_1_1_pulse_counter_sensor_component"></span><em class="property">class </em><code class="descname">PulseCounterSensorComponent</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor22PollingSensorComponentE" title="sensor::PollingSensorComponent">PollingSensorComponent</a>, <em class="property">public</em> sensor::PulseCounterBase<a class="headerlink" href="#_CPPv3N6sensor27PulseCounterSensorComponentE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Pulse Counter - This is the sensor component for the ESP32 integrated pulse counter peripheral. </p>
-<p>It offers 8 pulse counter units that can be setup in several ways to count pulses on a pin. Also allows for some simple filtering of short pulses using set_filter(), any pulse shorter than the value provided to that function will be discarded. The time is given in APB clock cycles, which usually amount to 12.5 ns per clock. Defaults to the max possible (about 13 ms). See <a class="reference external" href="http://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html">http://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/pcnt.html</a> for more information.</p>
+<p>It offers 8 pulse counter units that can be setup in several ways to count pulses on a pin. Also allows for some simple filtering of short pulses using set_filter(), any pulse shorter than the value provided to that function will be discarded. The time is given in APB clock cycles, which usually amount to 12.5 ns per clock. Defaults to the max possible (about 13 ms). See <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/pcnt.html">https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/pcnt.html</a> for more information.</p>
 <p>The pulse counter defaults to reporting a value of the measurement unit “pulses/min”. To modify this behavior, use filters in MQTTSensor. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
