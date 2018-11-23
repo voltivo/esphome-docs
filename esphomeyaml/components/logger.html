@@ -117,13 +117,64 @@ information</span></a>.</li>
 <p>Possible log levels are (sorted by severity):</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">NONE</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>No messages are logged.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">ERROR</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>With this log level, only errors are logged. Errors are issues that prevent the ESP from working
+correctly. Color: red</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">WARN</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>With this log level, warnings and errors are logged. Warnings are issues like invalid readings from
+sensors that esphomelib can recover from. Color: yellow</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">INFO</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>With this log level, everything up to info messages are logged; so errors, warnings and info. Color: green</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> (<strong>Default</strong>)</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Everything up to this log level is logged. Debug messages include the current readings from a sensor
+and status messages. Color: cyan</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">VERBOSE</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Like debug, but a few more messages that are usually deemed to be spam are also included. Color: grey</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">VERY_VERBOSE</span></code></li>
 </ul>
+<blockquote>
+<div><ul class="simple">
+<li>All internal messages are logged. Including all the data flowing through data buses like
+i2c, spi or uart. Color: white</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="manual-tag-specific-log-levels">
 <span id="logger-manual-tag-specific-levels"></span><h2>Manual Tag-Specific Log Levels<a class="headerlink" href="#manual-tag-specific-log-levels" title="Permalink to this headline">¶</a></h2>
