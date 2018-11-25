@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ESP32 Bluetooth Low Energy Tracker &#8212; esphomelib 1.9.1 documentation</title>
+    <title>ESP32 Bluetooth Low Energy Tracker &#8212; esphomelib 1.9.2 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -254,14 +254,39 @@
 <dd><p>The interval in seconds to perform scans. </p>
 </dd></dl>
 
+<dl class="member">
+<dt id="_CPPv3N15ESP32BLETracker17scan_result_lock_E">
+<span id="_CPPv2N15ESP32BLETracker17scan_result_lock_E"></span><span id="ESP32BLETracker::scan_result_lock___SemaphoreHandle_t"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1ad078ea81f121f20a7f19bd74a8dcb282"></span>SemaphoreHandle_t <code class="descname">scan_result_lock_</code><a class="headerlink" href="#_CPPv3N15ESP32BLETracker17scan_result_lock_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N15ESP32BLETracker14scan_end_lock_E">
+<span id="_CPPv2N15ESP32BLETracker14scan_end_lock_E"></span><span id="ESP32BLETracker::scan_end_lock___SemaphoreHandle_t"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1a8a73f0e51477fb3ab0bbffd45f6a6f5b"></span>SemaphoreHandle_t <code class="descname">scan_end_lock_</code><a class="headerlink" href="#_CPPv3N15ESP32BLETracker14scan_end_lock_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N15ESP32BLETracker18scan_result_index_E">
+<span id="_CPPv2N15ESP32BLETracker18scan_result_index_E"></span><span id="ESP32BLETracker::scan_result_index___s"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1a291468cc597ddce8a100b08176bbaa25"></span>size_t <code class="descname">scan_result_index_</code> = {0}<a class="headerlink" href="#_CPPv3N15ESP32BLETracker18scan_result_index_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N15ESP32BLETracker19scan_result_buffer_E">
+<span id="_CPPv2N15ESP32BLETracker19scan_result_buffer_E"></span><span id="ESP32BLETracker::scan_result_buffer___esp_ble_gap_cb_param_t::ble_scan_result_evt_paramA"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1a5bd15307359aa9efbd2bde26c208f046"></span>esp_ble_gap_cb_param_t::ble_scan_result_evt_param <code class="descname">scan_result_buffer_</code>[16]<a class="headerlink" href="#_CPPv3N15ESP32BLETracker19scan_result_buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N15ESP32BLETracker18scan_start_failed_E">
+<span id="_CPPv2N15ESP32BLETracker18scan_start_failed_E"></span><span id="ESP32BLETracker::scan_start_failed___esp_bt_status_t"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1a84d283ca7192a4ebbf3769acf7155e71"></span>esp_bt_status_t <code class="descname">scan_start_failed_</code> = {ESP_BT_STATUS_SUCCESS}<a class="headerlink" href="#_CPPv3N15ESP32BLETracker18scan_start_failed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N15ESP32BLETracker22scan_set_param_failed_E">
+<span id="_CPPv2N15ESP32BLETracker22scan_set_param_failed_E"></span><span id="ESP32BLETracker::scan_set_param_failed___esp_bt_status_t"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1afb79d99ddb28af4ff98e8b4a7f0a38dc"></span>esp_bt_status_t <code class="descname">scan_set_param_failed_</code> = {ESP_BT_STATUS_SUCCESS}<a class="headerlink" href="#_CPPv3N15ESP32BLETracker22scan_set_param_failed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Static Functions</p>
-<dl class="function">
-<dt id="_CPPv3N15ESP32BLETracker13ble_core_taskEPv">
-<span id="_CPPv2N15ESP32BLETracker13ble_core_taskEPv"></span><span id="ESP32BLETracker::ble_core_task__voidP"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1aa500b6ec138ceec82b18289c140efadb"></span>void <code class="descname">ble_core_task</code><span class="sig-paren">(</span>void *<em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N15ESP32BLETracker13ble_core_taskEPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
 <dl class="function">
 <dt id="_CPPv3N15ESP32BLETracker9ble_setupEv">
 <span id="_CPPv2N15ESP32BLETracker9ble_setupEv"></span><span id="ESP32BLETracker::ble_setup"></span><span class="target" id="class_e_s_p32_b_l_e_tracker_1a9cd088aaee2ef0d3bc7a6f01e74673b2"></span>bool <code class="descname">ble_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N15ESP32BLETracker9ble_setupEv" title="Permalink to this definition">¶</a><br /></dt>
@@ -777,11 +802,10 @@
 <span id="_CPPv224global_esp32_ble_tracker"></span><span id="global_esp32_ble_tracker__ESP32BLETrackerP"></span><span class="target" id="esp32__ble__tracker_8h_1a3e3b9e7a22a0bb2b8213440fcaa530a5"></span><a class="reference internal" href="#_CPPv315ESP32BLETracker" title="ESP32BLETracker">ESP32BLETracker</a> *<code class="descname">global_esp32_ble_tracker</code><a class="headerlink" href="#_CPPv324global_esp32_ble_tracker" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="member">
-<dt id="_CPPv318semaphore_scan_end">
-<span id="_CPPv218semaphore_scan_end"></span><span id="semaphore_scan_end__SemaphoreHandle_t"></span><span class="target" id="esp32__ble__tracker_8h_1ae354c0062b548a0bdd768683b3eabafb"></span>SemaphoreHandle_t <code class="descname">semaphore_scan_end</code><a class="headerlink" href="#_CPPv318semaphore_scan_end" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenvariable: Cannot find variable “semaphore_scan_end” in doxygen xml output for project “esphomelib” from directory: ./_doxyxml/</p>
+</div>
 <dl class="class">
 <dt id="_CPPv39ESPBTUUID">
 <span id="_CPPv29ESPBTUUID"></span><span id="ESPBTUUID"></span><span class="target" id="class_e_s_p_b_t_u_u_i_d"></span><em class="property">class </em><code class="descname">ESPBTUUID</code><a class="headerlink" href="#_CPPv39ESPBTUUID" title="Permalink to this definition">¶</a><br /></dt>

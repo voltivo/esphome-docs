@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index &#8212; esphomelib 1.9.1 documentation</title>
+    <title>Index &#8212; esphomelib 1.9.2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -1336,10 +1336,10 @@
 </li>
       <li><a href="api/core/controller.html#_CPPv3N10Controller14register_coverEPN5cover5CoverE">Controller::register_cover (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core/controller.html#_CPPv3N10Controller12register_fanEPN3fan8FanStateE">Controller::register_fan (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core/controller.html#_CPPv3N10Controller14register_lightEPN5light10LightStateE">Controller::register_light (C++ function)</a>
 </li>
       <li><a href="api/core/controller.html#_CPPv3N10Controller15register_sensorEPN6sensor6SensorE">Controller::register_sensor (C++ function)</a>
@@ -1443,6 +1443,8 @@
       <li><a href="api/cover/template.html#_CPPv3NK5cover13TemplateCover18get_setup_priorityEv">cover::TemplateCover::get_setup_priority (C++ function)</a>
 </li>
       <li><a href="api/cover/template.html#_CPPv3NK5cover13TemplateCover16get_stop_triggerEv">cover::TemplateCover::get_stop_trigger (C++ function)</a>
+</li>
+      <li><a href="api/cover/template.html#_CPPv3N5cover13TemplateCover11last_state_E">cover::TemplateCover::last_state_ (C++ member)</a>
 </li>
       <li><a href="api/cover/template.html#_CPPv3N5cover13TemplateCover4loopEv">cover::TemplateCover::loop (C++ function)</a>
 </li>
@@ -2144,8 +2146,6 @@
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker19already_discovered_E">ESP32BLETracker::already_discovered_ (C++ member)</a>
 </li>
-      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker13ble_core_taskEPv">ESP32BLETracker::ble_core_task (C++ function)</a>
-</li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker9ble_setupEv">ESP32BLETracker::ble_setup (C++ function)</a>
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker17gap_event_handlerE22esp_gap_ble_cb_event_tP22esp_ble_gap_cb_param_t">ESP32BLETracker::gap_event_handler (C++ function)</a>
@@ -2180,9 +2180,21 @@
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker13rssi_sensors_E">ESP32BLETracker::rssi_sensors_ (C++ member)</a>
 </li>
+      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker14scan_end_lock_E">ESP32BLETracker::scan_end_lock_ (C++ member)</a>
+</li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker14scan_interval_E">ESP32BLETracker::scan_interval_ (C++ member)</a>
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker12scan_params_E">ESP32BLETracker::scan_params_ (C++ member)</a>
+</li>
+      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker19scan_result_buffer_E">ESP32BLETracker::scan_result_buffer_ (C++ member)</a>
+</li>
+      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker18scan_result_index_E">ESP32BLETracker::scan_result_index_ (C++ member)</a>
+</li>
+      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker17scan_result_lock_E">ESP32BLETracker::scan_result_lock_ (C++ member)</a>
+</li>
+      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker22scan_set_param_failed_E">ESP32BLETracker::scan_set_param_failed_ (C++ member)</a>
+</li>
+      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker18scan_start_failed_E">ESP32BLETracker::scan_start_failed_ (C++ member)</a>
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N15ESP32BLETracker17set_scan_intervalE8uint32_t">ESP32BLETracker::set_scan_interval (C++ function)</a>
 </li>
@@ -2258,14 +2270,14 @@
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3NK11ESPBTDevice21get_service_data_uuidEv">ESPBTDevice::get_service_data_uuid (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3NK11ESPBTDevice17get_service_uuidsEv">ESPBTDevice::get_service_uuids (C++ function)</a>
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3NK11ESPBTDevice12get_tx_powerEv">ESPBTDevice::get_tx_power (C++ function)</a>
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N11ESPBTDevice18manufacturer_data_E">ESPBTDevice::manufacturer_data_ (C++ member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N11ESPBTDevice5name_E">ESPBTDevice::name_ (C++ member)</a>
 </li>
       <li><a href="api/misc/esp32_ble_tracker.html#_CPPv3N11ESPBTDevice9parse_advERKN22esp_ble_gap_cb_param_t25ble_scan_result_evt_paramE">ESPBTDevice::parse_adv (C++ function)</a>
@@ -3802,8 +3814,6 @@
 </li>
       <li><a href="api/core/log.html#_CPPv3N12LogComponent11log_levels_E">LogComponent::log_levels_ (C++ member)</a>
 </li>
-      <li><a href="api/core/log.html#_CPPv3N12LogComponent12log_vprintf_EiPKcPKc7va_list">LogComponent::log_vprintf_ (C++ function)</a>
-</li>
       <li><a href="api/core/log.html#_CPPv3N12LogComponent12LogComponentE8uint32_t6size_t">LogComponent::LogComponent (C++ function)</a>
 </li>
       <li><a href="api/core/log.html#_CPPv3N12LogComponent16LogLevelOverrideE">LogComponent::LogLevelOverride (C++ class)</a>
@@ -5152,8 +5162,6 @@
 </li>
       <li><a href="api/core/helpers.html#_CPPv323select_next_rmt_channelv">select_next_rmt_channel (C++ function)</a>
 </li>
-      <li><a href="api/misc/esp32_ble_tracker.html#_CPPv318semaphore_scan_end">semaphore_scan_end (C++ member)</a>
-</li>
       <li><a href="api/sensor/adc.html#_CPPv3N6sensor18ADCSensorComponentE">sensor::ADCSensorComponent (C++ class)</a>
 </li>
       <li><a href="api/sensor/adc.html#_CPPv3N6sensor18ADCSensorComponent17accuracy_decimalsEv">sensor::ADCSensorComponent::accuracy_decimals (C++ function)</a>
@@ -5966,7 +5974,7 @@
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor30ExponentialMovingAverageFilterE">sensor::ExponentialMovingAverageFilter (C++ class)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor30ExponentialMovingAverageFilter17accuracy_average_E">sensor::ExponentialMovingAverageFilter::accuracy_average_ (C++ member)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor30ExponentialMovingAverageFilter8average_E">sensor::ExponentialMovingAverageFilter::average_ (C++ member)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor30ExponentialMovingAverageFilter17expected_intervalE8uint32_t">sensor::ExponentialMovingAverageFilter::expected_interval (C++ function)</a>
 </li>
@@ -5986,13 +5994,13 @@
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor30ExponentialMovingAverageFilter14set_send_everyE6size_t">sensor::ExponentialMovingAverageFilter::set_send_every (C++ function)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor30ExponentialMovingAverageFilter14value_average_E">sensor::ExponentialMovingAverageFilter::value_average_ (C++ member)</a>
-</li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor6FilterE">sensor::Filter (C++ class)</a>
+</li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter28calculate_remaining_intervalE8uint32_t">sensor::Filter::calculate_remaining_interval (C++ function)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter17expected_intervalE8uint32_t">sensor::Filter::expected_interval (C++ function)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter10initializeERRNSt8functionIFvfEEE">sensor::Filter::initialize (C++ function)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter10initializeEP6SensorP6Filter">sensor::Filter::initialize (C++ function)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter5inputEf">sensor::Filter::input (C++ function)</a>
 </li>
@@ -6000,9 +6008,9 @@
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter5next_E">sensor::Filter::next_ (C++ member)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter7output_E">sensor::Filter::output_ (C++ member)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter6outputEf">sensor::Filter::output (C++ function)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor6FilterD0Ev">sensor::Filter::~Filter (C++ function)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor6Filter7parent_E">sensor::Filter::parent_ (C++ member)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor18FilterOutNANFilterE">sensor::FilterOutNANFilter (C++ class)</a>
 </li>
@@ -6041,6 +6049,8 @@
       <li><a href="api/sensor/index.html#_CPPv3N6sensor15HeartbeatFilter17expected_intervalE8uint32_t">sensor::HeartbeatFilter::expected_interval (C++ function)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3NK6sensor15HeartbeatFilter18get_setup_priorityEv">sensor::HeartbeatFilter::get_setup_priority (C++ function)</a>
+</li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor15HeartbeatFilter10has_value_E">sensor::HeartbeatFilter::has_value_ (C++ member)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor15HeartbeatFilter15HeartbeatFilterE8uint32_t">sensor::HeartbeatFilter::HeartbeatFilter (C++ function)</a>
 </li>
@@ -6288,12 +6298,12 @@
 </li>
       <li><a href="api/sensor/ina3221.html#_CPPv3N6sensor16INA3221Component14INA3221Channel6existsEv">sensor::INA3221Component::INA3221Channel::exists (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sensor/ina3221.html#_CPPv3N6sensor16INA3221Component14INA3221Channel13power_sensor_E">sensor::INA3221Component::INA3221Channel::power_sensor_ (C++ member)</a>
 </li>
       <li><a href="api/sensor/ina3221.html#_CPPv3N6sensor16INA3221Component14INA3221Channel26should_measure_bus_voltageEv">sensor::INA3221Component::INA3221Channel::should_measure_bus_voltage (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sensor/ina3221.html#_CPPv3N6sensor16INA3221Component14INA3221Channel28should_measure_shunt_voltageEv">sensor::INA3221Component::INA3221Channel::should_measure_shunt_voltage (C++ function)</a>
 </li>
       <li><a href="api/sensor/ina3221.html#_CPPv3N6sensor16INA3221Component14INA3221Channel17shunt_resistance_E">sensor::INA3221Component::INA3221Channel::shunt_resistance_ (C++ member)</a>
@@ -6504,13 +6514,21 @@
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter8filters_E">sensor::OrFilter::filters_ (C++ member)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter10initializeERRNSt8functionIFvfEEE">sensor::OrFilter::initialize (C++ function)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter10initializeEP6SensorP6Filter">sensor::OrFilter::initialize (C++ function)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter9new_valueEf">sensor::OrFilter::new_value (C++ function)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter8OrFilterENSt4listIP6FilterEE">sensor::OrFilter::OrFilter (C++ function)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter8OrFilterENSt6vectorIP6FilterEE">sensor::OrFilter::OrFilter (C++ function)</a>
 </li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilterD0Ev">sensor::OrFilter::~OrFilter (C++ function)</a>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter4phi_E">sensor::OrFilter::phi_ (C++ member)</a>
+</li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter7PhiNodeE">sensor::OrFilter::PhiNode (C++ class)</a>
+</li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter7PhiNode9new_valueEf">sensor::OrFilter::PhiNode::new_value (C++ function)</a>
+</li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter7PhiNode7parent_E">sensor::OrFilter::PhiNode::parent_ (C++ member)</a>
+</li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor8OrFilter7PhiNode7PhiNodeEP8OrFilter">sensor::OrFilter::PhiNode::PhiNode (C++ function)</a>
 </li>
       <li><a href="api/sensor/pmsx003.html#_CPPv3N6sensor32PMSX003_SENSOR_TYPE_FORMALDEHYDEE">sensor::PMSX003_SENSOR_TYPE_FORMALDEHYDE (C++ enumerator)</a>
 </li>
@@ -6780,6 +6798,8 @@
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor32SlidingWindowMovingAverageFilterE">sensor::SlidingWindowMovingAverageFilter (C++ class)</a>
 </li>
+      <li><a href="api/sensor/index.html#_CPPv3N6sensor32SlidingWindowMovingAverageFilter8average_E">sensor::SlidingWindowMovingAverageFilter::average_ (C++ member)</a>
+</li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor32SlidingWindowMovingAverageFilter17expected_intervalE8uint32_t">sensor::SlidingWindowMovingAverageFilter::expected_interval (C++ function)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3NK6sensor32SlidingWindowMovingAverageFilter14get_send_everyEv">sensor::SlidingWindowMovingAverageFilter::get_send_every (C++ function)</a>
@@ -6797,8 +6817,6 @@
       <li><a href="api/sensor/index.html#_CPPv3N6sensor32SlidingWindowMovingAverageFilter15set_window_sizeE6size_t">sensor::SlidingWindowMovingAverageFilter::set_window_size (C++ function)</a>
 </li>
       <li><a href="api/sensor/index.html#_CPPv3N6sensor32SlidingWindowMovingAverageFilter32SlidingWindowMovingAverageFilterE6size_t6size_t8uint32_t">sensor::SlidingWindowMovingAverageFilter::SlidingWindowMovingAverageFilter (C++ function)</a>
-</li>
-      <li><a href="api/sensor/index.html#_CPPv3N6sensor32SlidingWindowMovingAverageFilter14value_average_E">sensor::SlidingWindowMovingAverageFilter::value_average_ (C++ member)</a>
 </li>
       <li><a href="api/sensor/tcs34725.html#_CPPv3N6sensor17TCS34725_GAIN_16XE">sensor::TCS34725_GAIN_16X (C++ enumerator)</a>
 </li>
