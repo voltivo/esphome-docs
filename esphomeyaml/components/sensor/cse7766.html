@@ -24,7 +24,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>CSE7766 Power Sensor &#8212; esphomelib 1.9.2 documentation</title>
+    <title>CSE7766 Power Sensor &#8212; esphomelib 1.9.3 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -85,11 +85,6 @@
             
   <div class="section" id="cse7766-power-sensor">
 <h1>CSE7766 Power Sensor<a class="headerlink" href="#cse7766-power-sensor" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This integration is experimental as I don’t have the hardware to test it (yet).
-If you can verify it works (or if it doesn’t), notify me on <a class="reference external" href="https://discord.gg/KhAMKrd">discord</a>.</p>
-</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">cse7766</span></code> sensor platform allows you to use your CSE7766 voltage/current and power sensors
 (<a class="reference external" href="http://dl.itead.cc/S31/CSE7766.pdf">datasheet</a>) sensors with
 esphomelib. This sensor is commonly found in Sonoff POW R2.</p>
@@ -128,6 +123,8 @@ Additionally, you need to set the baud rate to 4800.</p>
 <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
 <li><strong>voltage</strong> (<em>Optional</em>): Use the voltage value of the sensor in V (RMS).
 All options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the
+sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>. See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">update_interval gotchas</span></a>.</li>
 <li><strong>uart_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART Component</span></a> if you want
 to use multiple UART buses.</li>
 </ul>
