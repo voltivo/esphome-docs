@@ -160,8 +160,13 @@ by default which means the character at the top left.</p>
       <span class="no">// Result: &quot;Sensor value:       42&quot;</span>
 
       <span class="no">// Print the current time</span>
-      <span class="no">it.strftime(&quot;It is %H:%M on %d.%m.%Y&quot;);</span>
+      <span class="no">it.strftime(&quot;It is %H:%M on %d.%m.%Y&quot;, id(my_time).now());</span>
       <span class="no">// Result for 10:06 on august 21st 2018 -&gt; &quot;It is 10:06 on 21.08.2018&quot;</span>
+
+<span class="c1"># (Optional) For displaying time:</span>
+<span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_time</span>
 </pre></div>
 </div>
 <div class="admonition note">
