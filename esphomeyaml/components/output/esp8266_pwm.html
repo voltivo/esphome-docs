@@ -11,7 +11,7 @@
 <meta itemprop="image" content="https://esphomelib.com/_images/pwm.png">
 <meta name="twitter:title" content="ESP8266 Software PWM Output">
 <meta name="twitter:image:src" content="https://esphomelib.com/_images/pwm.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:description" content="Instructions for setting up ESP8266 software-based PWMs.">
 <meta property="og:title" content="ESP8266 Software PWM Output"/>
@@ -86,12 +86,9 @@
 <h1>ESP8266 Software PWM Output<a class="headerlink" href="#esp8266-software-pwm-output" title="Permalink to this headline">¶</a></h1>
 <p>The ESP8266 Software PWM platform allows you to use a software PWM on
 the pins GPIO0-GPIO16 on your ESP8266. As this is only a software PWM
-and not a hardware PWM (like the <a class="reference internal" href="ledc.html"><span class="doc">ESP32 LEDC PWM</span></a>) and has a few
-limitations.</p>
-<ul class="simple">
-<li>There can be a noticeable amount of flickering with increased WiFi activity.</li>
-<li>The output range only goes up to about 80%.</li>
-</ul>
+and not a hardware PWM (like the <a class="reference internal" href="ledc.html"><span class="doc">ESP32 LEDC PWM</span></a>) and has a key
+disadvantage: There can be a noticeable amount of flickering with increased WiFi
+activity.</p>
 <p>If you need a stable PWM signal, it’s definitely recommended to use the
 successor of the ESP8266, the ESP32, and its <a class="reference internal" href="ledc.html"><span class="doc">ESP32 LEDC PWM</span></a> instead.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
