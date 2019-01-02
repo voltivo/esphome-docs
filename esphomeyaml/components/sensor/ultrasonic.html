@@ -24,7 +24,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Ultrasonic Distance Sensor &#8212; esphomelib 1.9.3 documentation</title>
+    <title>Ultrasonic Distance Sensor &#8212; ESPHome 1.9.3 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -175,6 +175,10 @@ option kicks in.</p>
   <div class="footer">
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.9.3 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
   <script>
@@ -183,6 +187,18 @@ option kicks in.</p>
     gtag('js', new Date());
 
     gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.9.3");
+    } else if (old !== "1.9.3") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.9.3");
+      });
+    }
   </script>
 
   </body>
