@@ -6,18 +6,19 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>INA3221 3-Channel DC Current Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>INA3221 3-Channel DC Current Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/sensor/ina3221.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="MAX6675 K-Type Thermocouple Temperature Sensor" href="max6675.html" />
+    <link rel="next" title="MAX31855 K-Type Thermocouple Temperature Sensor" href="max31855.html" />
     <link rel="prev" title="INA219 DC Current Sensor" href="ina219.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -77,15 +78,13 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6sensor16INA3221Component16INA3221ComponentEP12I2CComponent7uint8_t8uint32_t">
-<span id="_CPPv2N6sensor16INA3221Component16INA3221ComponentEP12I2CComponent7uint8_t8uint32_t"></span><span id="sensor::INA3221Component::INA3221Component__I2CComponentP.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_i_n_a3221_component_1aeab9618dc76eff1a3da6f6e0afdcaa46"></span><code class="descname">INA3221Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16INA3221Component16INA3221ComponentEP12I2CComponent7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor16INA3221Component16INA3221ComponentEP12I2CComponent7uint8_t8uint32_t"></span><span id="sensor::INA3221Component::INA3221Component__I2CComponentP.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_i_n_a3221_component_1adc95f6ce8086e43f8c7ac521de260935"></span><code class="descname">INA3221Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16INA3221Component16INA3221ComponentEP12I2CComponent7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor16INA3221Component5setupEv">
 <span id="_CPPv2N6sensor16INA3221Component5setupEv"></span><span id="sensor::INA3221Component::setup"></span><span class="target" id="classsensor_1_1_i_n_a3221_component_1a2e25ce7f00ee5c81f7f1014192cfaf65"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16INA3221Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_i_n_a3221_component_1a2e25ce7f00ee5c81f7f1014192cfaf65"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor16INA3221Component11dump_configEv">
@@ -100,15 +99,7 @@
 <dl class="function">
 <dt id="_CPPv3NK6sensor16INA3221Component18get_setup_priorityEv">
 <span id="_CPPv2NK6sensor16INA3221Component18get_setup_priorityEv"></span><span id="sensor::INA3221Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_i_n_a3221_component_1a183343f950faf25b1cdc5dc4846cd290"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16INA3221Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_i_n_a3221_component_1a2e25ce7f00ee5c81f7f1014192cfaf65"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor16INA3221Component23make_bus_voltage_sensorEiRKNSt6stringE">
@@ -226,7 +217,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -242,11 +233,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

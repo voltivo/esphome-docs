@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Web Server &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Web Server &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/web-server.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -71,10 +72,9 @@
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="_CPPv39WebServer">
-<span id="_CPPv29WebServer"></span><span id="WebServer"></span><span class="target" id="class_web_server"></span><em class="property">class </em><code class="descname">WebServer</code> : <em class="property">public</em> <a class="reference internal" href="controller.html#_CPPv317StoringController" title="StoringController">StoringController</a>, <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> AsyncWebHandler<a class="headerlink" href="#_CPPv39WebServer" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv29WebServer"></span><span id="WebServer"></span><span class="target" id="class_web_server"></span><em class="property">class </em><code class="descname">WebServer</code> : <em class="property">public</em> StoringUpdateListenerController, <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> AsyncWebHandler<a class="headerlink" href="#_CPPv39WebServer" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This class allows users to create a web server with their ESP nodes. </p>
-<p>Behind the scenes it’s using AsyncWebServer to set up the server. It exposes 3 things: an index page under ‘/’ that’s used to show a simple web interface (the css/js is hosted by esphomelib.com by default), an event source under ‘/events’ that automatically sends all state updates in real time + the debug log. Lastly, there’s an REST API available under the ‘/light/…’, ‘/sensor/…’, … URLs. A full documentation for this API can be found under <a class="reference external" href="https://esphomelib.com/web-api/index.html">https://esphomelib.com/web-api/index.html</a>.</p>
-<p>Additionally, the web server is advertised via mDNS. </p>
+<p>Behind the scenes it’s using AsyncWebServer to set up the server. It exposes 3 things: an index page under ‘/’ that’s used to show a simple web interface (the css/js is hosted by esphomelib.com by default), an event source under ‘/events’ that automatically sends all state updates in real time + the debug log. Lastly, there’s an REST API available under the ‘/light/…’, ‘/sensor/…’, … URLs. A full documentation for this API can be found under <a class="reference external" href="https://esphomelib.com/web-api/index.html">https://esphomelib.com/web-api/index.html</a>. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -148,10 +148,9 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9WebServer15register_sensorEPN6sensor6SensorE">
-<span id="_CPPv2N9WebServer15register_sensorEPN6sensor6SensorE"></span><span id="WebServer::register_sensor__sensor::SensorP"></span><span class="target" id="class_web_server_1aac71ff053d2cc22b1d929fa80a865a79"></span>void <code class="descname">register_sensor</code><span class="sig-paren">(</span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer15register_sensorEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Internally register a sensor and set a callback on state changes. </p>
-</dd></dl>
+<dt id="_CPPv3N9WebServer16on_sensor_updateEPN6sensor6SensorEf">
+<span id="_CPPv2N9WebServer16on_sensor_updateEPN6sensor6SensorEf"></span><span id="WebServer::on_sensor_update__sensor::SensorP.float"></span><span class="target" id="class_web_server_1a32d057bd760f8a8dc7e8be10e640acd7"></span>void <code class="descname">on_sensor_update</code><span class="sig-paren">(</span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a> *<em>obj</em>, float <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer16on_sensor_updateEPN6sensor6SensorEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer21handle_sensor_requestEP21AsyncWebServerRequest8UrlMatch">
@@ -166,10 +165,9 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9WebServer15register_switchEPN7switch_6SwitchE">
-<span id="_CPPv2N9WebServer15register_switchEPN7switch_6SwitchE"></span><span id="WebServer::register_switch__switch_::SwitchP"></span><span class="target" id="class_web_server_1a62276a9c51223610de3863d95e9b9dc0"></span>void <code class="descname">register_switch</code><span class="sig-paren">(</span>switch_::<a class="reference internal" href="../switch/index.html#_CPPv3N7switch_6SwitchE" title="switch_::Switch">Switch</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer15register_switchEPN7switch_6SwitchE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Internally register a switch and set a callback on state changes. </p>
-</dd></dl>
+<dt id="_CPPv3N9WebServer16on_switch_updateEPN7switch_6SwitchEb">
+<span id="_CPPv2N9WebServer16on_switch_updateEPN7switch_6SwitchEb"></span><span id="WebServer::on_switch_update__switch_::SwitchP.b"></span><span class="target" id="class_web_server_1aaddb384b42fff44eee01082e19269311"></span>void <code class="descname">on_switch_update</code><span class="sig-paren">(</span>switch_::<a class="reference internal" href="../switch/index.html#_CPPv3N7switch_6SwitchE" title="switch_::Switch">Switch</a> *<em>obj</em>, bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer16on_switch_updateEPN7switch_6SwitchEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer21handle_switch_requestEP21AsyncWebServerRequest8UrlMatch">
@@ -184,10 +182,9 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9WebServer22register_binary_sensorEPN13binary_sensor12BinarySensorE">
-<span id="_CPPv2N9WebServer22register_binary_sensorEPN13binary_sensor12BinarySensorE"></span><span id="WebServer::register_binary_sensor__binary_sensor::BinarySensorP"></span><span class="target" id="class_web_server_1a50f4459de75178ac1112b98a3c0dfbee"></span>void <code class="descname">register_binary_sensor</code><span class="sig-paren">(</span>binary_sensor::<a class="reference internal" href="../binary_sensor/index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer22register_binary_sensorEPN13binary_sensor12BinarySensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Internally register a binary sensor and set a callback on state changes. </p>
-</dd></dl>
+<dt id="_CPPv3N9WebServer23on_binary_sensor_updateEPN13binary_sensor12BinarySensorEb">
+<span id="_CPPv2N9WebServer23on_binary_sensor_updateEPN13binary_sensor12BinarySensorEb"></span><span id="WebServer::on_binary_sensor_update__binary_sensor::BinarySensorP.b"></span><span class="target" id="class_web_server_1a695c614ecc2386e0dd2307763926b8fc"></span>void <code class="descname">on_binary_sensor_update</code><span class="sig-paren">(</span>binary_sensor::<a class="reference internal" href="../binary_sensor/index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *<em>obj</em>, bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer23on_binary_sensor_updateEPN13binary_sensor12BinarySensorEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer28handle_binary_sensor_requestEP21AsyncWebServerRequest8UrlMatch">
@@ -202,10 +199,9 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9WebServer12register_fanEPN3fan8FanStateE">
-<span id="_CPPv2N9WebServer12register_fanEPN3fan8FanStateE"></span><span id="WebServer::register_fan__fan::FanStateP"></span><span class="target" id="class_web_server_1a28e54466eb97f5f519bb498894740bae"></span>void <code class="descname">register_fan</code><span class="sig-paren">(</span>fan::<a class="reference internal" href="../fan/index.html#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer12register_fanEPN3fan8FanStateE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Internally register a fan and set a callback on state changes. </p>
-</dd></dl>
+<dt id="_CPPv3N9WebServer13on_fan_updateEPN3fan8FanStateE">
+<span id="_CPPv2N9WebServer13on_fan_updateEPN3fan8FanStateE"></span><span id="WebServer::on_fan_update__fan::FanStateP"></span><span class="target" id="class_web_server_1a3184e2c4365dd865b8668958e8b68e33"></span>void <code class="descname">on_fan_update</code><span class="sig-paren">(</span>fan::<a class="reference internal" href="../fan/index.html#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer13on_fan_updateEPN3fan8FanStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer18handle_fan_requestEP21AsyncWebServerRequest8UrlMatch">
@@ -220,10 +216,9 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9WebServer14register_lightEPN5light10LightStateE">
-<span id="_CPPv2N9WebServer14register_lightEPN5light10LightStateE"></span><span id="WebServer::register_light__light::LightStateP"></span><span class="target" id="class_web_server_1a52b424fb85c6d97db2fefcd15cc08e1f"></span>void <code class="descname">register_light</code><span class="sig-paren">(</span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer14register_lightEPN5light10LightStateE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Internally register a light and set a callback on state changes. </p>
-</dd></dl>
+<dt id="_CPPv3N9WebServer15on_light_updateEPN5light10LightStateE">
+<span id="_CPPv2N9WebServer15on_light_updateEPN5light10LightStateE"></span><span id="WebServer::on_light_update__light::LightStateP"></span><span class="target" id="class_web_server_1aced9a4de031fcfdcf1a7facea968ec19"></span>void <code class="descname">on_light_update</code><span class="sig-paren">(</span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer15on_light_updateEPN5light10LightStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer20handle_light_requestEP21AsyncWebServerRequest8UrlMatch">
@@ -233,15 +228,14 @@
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer10light_jsonEPN5light10LightStateE">
-<span id="_CPPv2N9WebServer10light_jsonEPN5light10LightStateE"></span><span id="WebServer::light_json__light::LightStateP"></span><span class="target" id="class_web_server_1af1d4320a29cea6b2352f573f5fe646af"></span>std::string <code class="descname">light_json</code><span class="sig-paren">(</span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer10light_jsonEPN5light10LightStateE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N9WebServer10light_jsonEPN5light10LightStateE"></span><span id="WebServer::light_json__light::LightStateP"></span><span class="target" id="class_web_server_1af1d4320a29cea6b2352f573f5fe646af"></span>std::string <code class="descname">light_json</code><span class="sig-paren">(</span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer10light_jsonEPN5light10LightStateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Dump the light state as a JSON string. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N9WebServer20register_text_sensorEPN11text_sensor10TextSensorE">
-<span id="_CPPv2N9WebServer20register_text_sensorEPN11text_sensor10TextSensorE"></span><span id="WebServer::register_text_sensor__text_sensor::TextSensorP"></span><span class="target" id="class_web_server_1adf222e4d68343321af836f30e106db8d"></span>void <code class="descname">register_text_sensor</code><span class="sig-paren">(</span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor10TextSensorE" title="text_sensor::TextSensor">TextSensor</a> *<em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer20register_text_sensorEPN11text_sensor10TextSensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Internally register a text sensor and set a callback on state changes. </p>
-</dd></dl>
+<dt id="_CPPv3N9WebServer21on_text_sensor_updateEPN11text_sensor10TextSensorENSt6stringE">
+<span id="_CPPv2N9WebServer21on_text_sensor_updateEPN11text_sensor10TextSensorENSt6stringE"></span><span id="WebServer::on_text_sensor_update__text_sensor::TextSensorP.ss"></span><span class="target" id="class_web_server_1aabe1486473719ddc3e34013045b0a978"></span>void <code class="descname">on_text_sensor_update</code><span class="sig-paren">(</span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor10TextSensorE" title="text_sensor::TextSensor">TextSensor</a> *<em>obj</em>, std::string <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N9WebServer21on_text_sensor_updateEPN11text_sensor10TextSensorENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N9WebServer26handle_text_sensor_requestEP21AsyncWebServerRequest8UrlMatch">
@@ -366,7 +360,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -382,11 +376,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

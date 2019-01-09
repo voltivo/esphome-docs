@@ -1,0 +1,482 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Changelog for esphomelib version 1.9.0.">
+<meta itemprop="name" content="Changelog - Version 1.9.0">
+<meta itemprop="description" content="Changelog for esphomelib version 1.9.0.">
+<meta itemprop="image" content="https://esphomelib.com/_static/changelog-1.9.0.png">
+<meta name="twitter:title" content="Changelog - Version 1.9.0">
+<meta name="twitter:image:src" content="https://esphomelib.com/_static/changelog-1.9.0.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:creator" content="@OttoWinter_">
+<meta name="twitter:description" content="Changelog for esphomelib version 1.9.0.">
+<meta property="og:title" content="Changelog - Version 1.9.0"/>
+<meta property="og:image" content="https://esphomelib.com/_static/changelog-1.9.0.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Changelog for esphomelib version 1.9.0."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Changelog - Version 1.9.0 &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.9.0.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Version 1.8.0" href="v1.8.0.html" />
+    <link rel="prev" title="Changelog - Version 1.10.0" href="v1.10.0.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.9.0.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Changelog - Version 1.9.0</a><ul>
+<li><a class="reference internal" href="#new-components">New Components</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
+<li><a class="reference internal" href="#release-1-9-1-november-19">Release 1.9.1 - November 19</a></li>
+<li><a class="reference internal" href="#release-1-9-2-november-25">Release 1.9.2 - November 25</a></li>
+<li><a class="reference internal" href="#release-1-9-3-december-1">Release 1.9.3 - December 1</a></li>
+<li><a class="reference internal" href="#all-changes">All changes</a></li>
+<li><a class="reference internal" href="#past-changelogs">Past Changelogs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="changelog-version-1-9-0">
+<h1>Changelog - Version 1.9.0<a class="headerlink" href="#changelog-version-1-9-0" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/guides/faq.html#how-do-i-update-to-the-latest-beta-release"><img alt="Beta Releases" class="component-image" src="../../_images/new-box.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/text_sensor/index.html"><img alt="Text Sensors" class="component-image" src="../../_images/folder-open.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/mqtt_subscribe.html"><img alt="MQTT Subscribe" class="component-image" src="../../_images/mqtt.png" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/guides/faq.html#how-do-i-update-to-the-latest-beta-release">Beta Releases</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/text_sensor/index.html">Text Sensors</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/mqtt_subscribe.html">MQTT Subscribe</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/stepper/index.html"><img alt="Stepper" class="component-image" src="../../_images/stepper.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/cse7766.html"><img alt="CSE7766" class="component-image" src="../../_images/cse7766.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/pmsx003.html"><img alt="PMSX003" class="component-image" src="../../_images/pmsx003.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/stepper/index.html">Stepper</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/cse7766.html">CSE7766</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/pmsx003.html">PMSX003</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/guides/faq.html#i-can-t-get-flashing-over-usb-to-work"><img alt="esphomeflasher" class="component-image" src="../../_images/logo.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/total_daily_energy.html"><img alt="Total Daily Energy" class="component-image" src="../../_images/sigma.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/my9231.html"><img alt="MY9231/MY9291 LED driver" class="component-image" src="../../_images/my9231.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/guides/faq.html#i-can-t-get-flashing-over-usb-to-work">esphomeflasher</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/total_daily_energy.html">Total Daily Energy</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/my9231.html">MY9231/MY9291 LED driver</a></td>
+</tr>
+</tbody>
+</table>
+<p>It’s time for another release of esphomelib: 1.9.0. This release is quite different from the last one,
+it doesn’t focus that much on new integrations with a “modest” amount of 7 new integrations. No, most of the
+development has been focused on improving the core architecture and making the esphomelib ecosystem easier to use.
+Because that’s my main goal of this project: Providing a great user-experience so that you can focus on building
+awesome things with DIY hardware!</p>
+<p>The features I’m particularly excited about are:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../guides/faq.html#esphomeflasher"><span class="std std-ref">esphomeflasher</span></a> - Experiencing problems flashing esphomelib firmwares using esphomeyaml?
+No problem, esphomeflasher is a tool designed to make that super easy. Just let esphomeyaml generate the binary and flash
+from your PC.</li>
+<li><a class="reference internal" href="../components/ota.html"><span class="doc">Over-the-Air Updates</span></a> have been completely re-written to make them a lot more
+stable.</li>
+<li>A lot of work has been put in to provide more context in YAML validation errors. Sometimes, esphomeyaml will even
+try to give you suggestions for how to fix a validation error!</li>
+<li>A new release cycle: esphomeyaml now also has a <a class="reference internal" href="../guides/faq.html#faq-beta"><span class="std std-ref">beta release channel</span></a> kind of like Home Assistant. This helps to
+iron out the most important bugs before each stable release</li>
+<li>And of course, lots of stability improvements and bug fixes :)</li>
+</ul>
+<p>Thank you very much to everybody who contributed to this release with new code or by
+<a class="reference internal" href="../guides/faq.html#faq-bug-report"><span class="std std-ref">reporting bugs</span></a>!</p>
+<div class="section" id="new-components">
+<h2>New Components<a class="headerlink" href="#new-components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>There’s a new base component called <a class="reference internal" href="../components/text_sensor/index.html"><span class="doc">text sensors</span></a> for using
+text-based inputs, not just numbers like the generic <a class="reference internal" href="../components/sensor/index.html"><span class="doc">sensors</span></a> did
+(<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/166">yaml#166</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/52">docs#52</a>)</li>
+<li>The new MQTT Subscribe Sensors allow you to get external data into esphomelib’s ecosystem via MQTT
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/193">lib#193</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/175">yaml#175</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/50">docs#50</a>)</li>
+<li>Added <a class="reference internal" href="../components/sensor/cse7766.html"><span class="doc">CSE7766 Power Sensor</span></a> to support power measurements
+on the Sonoff Pow R2 (<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/277">lib#277</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/190">yaml#190</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/59">docs#59</a>)</li>
+<li>Thanks to <a class="reference external" href="https://github.com/puuu">&#64;puuu</a>, the LED driver in the Sonoff B1 (MY9231) is now supported!
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/266">lib#266</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/227">yaml#227</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/80">docs#80</a>)</li>
+<li>Added the <a class="reference internal" href="../components/sensor/pmsx003.html"><span class="doc">PMSX003 Particulate Matter Sensor</span></a>
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/229">lib#229</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/192">yaml#192</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/58">docs#58</a>)</li>
+<li>Added support for <a class="reference internal" href="../components/stepper/index.html"><span class="doc">A4988 Stepper Motors</span></a> (<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/239">lib#239</a>,
+<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/206">yaml#206</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/68">docs#68</a>)</li>
+<li>Added <a class="reference internal" href="../components/sensor/total_daily_energy.html"><span class="doc">total daily energy sensor</span></a> to accumulate the total
+power usage over one day (<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/256">lib#256</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/220">yaml#220</a>)</li>
+</ul>
+</div>
+<div class="section" id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Compiling for ESP32s is now possible on RPis 🎉</p>
+</li>
+<li><p class="first">esphomelib now has a new tool: <a class="reference external" href="https://github.com/OttoWinter/esphomeflasher">esphomeflasher</a> to simplify
+flashing on Windows/MacOS machines <strong>without having to install esphomeyaml</strong>. So if esphomeyaml for some reason
+can’t find your USB port, you now can use the esphomeflasher app. See <a class="reference internal" href="../guides/faq.html#esphomeflasher"><span class="std std-ref">I can’t get flashing over USB to work.</span></a>.</p>
+</li>
+<li><p class="first">ESP8266s now save the states of lights/switches/… internally and restores them on boot.
+Additionally, esphomelib can now operate in fully offline mode if your WiFi network goes down
+or the MQTT broker is unreachable, see <a class="reference internal" href="../guides/automations.html#automation-networkless"><span class="std std-ref">Do Automations Work Without a Network Connection</span></a>
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/258">lib#258</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/267">lib#267</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/229">yaml#229</a>)</p>
+</li>
+<li><p class="first">The <a class="reference internal" href="../components/ota.html"><span class="doc">Over-the-Air Update</span></a> process was quite buggy sometimes and the Arduino-library
+esphomelib used was doing some weird stuff. The OTA-process has now been completely re-written to be more stable
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/204">lib#204</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/177">yaml#177</a>).</p>
+</li>
+<li><p class="first">Add support for the Home Assistant device registry. If you’re using <a class="reference external" href="https://www.home-assistant.io/blog/2018/10/26/release-81/">Home Assistant 0.81.0</a>
+or higher you will see a list of all components for each esphomelib node in the integrations screen
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/233">lib#233</a>).</p>
+</li>
+<li><p class="first">The current esphomelib version and compilation time are now printed on each boot
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/189">lib#189</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/159">yaml#159</a>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre>[13:57:33][I][application:092]: You&#39;re running esphomelib v1.9.0 compiled on Nov  3 2018, 13:55:11
+</pre></div>
+</div>
+</li>
+<li><p class="first">Stack traces in the USB logs are now automatically decoded to make debugging easier
+(<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/214">yaml#214</a>)</p>
+</li>
+<li><p class="first">Added <a class="reference internal" href="../components/mqtt.html#mqtt-on-json-message"><span class="std std-ref">on_json_message Trigger</span></a> and <a class="reference internal" href="../components/mqtt.html#mqtt-publish-json-action"><span class="std std-ref">mqtt.publish_json Action</span></a> to make using JSON for MQTT payloads easier
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/230">lib#230</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/193">yaml#193</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/60">docs#60</a>)</p>
+</li>
+<li><p class="first">The remote (IR) components have received support for Samsung’s IR protocol
+(<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/176">yaml#176</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/48">docs#48</a>)</p>
+</li>
+<li><p class="first">Added <a class="reference internal" href="../guides/automations.html#component-update-action"><span class="std std-ref">component.update Action</span></a>, <a class="reference internal" href="../components/logger.html#logger-log-action"><span class="std std-ref">logger.log Action</span></a> and <a class="reference internal" href="../guides/automations.html#script-execute-action"><span class="std std-ref">script.execute Action</span></a> for simplifying
+automations
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/232">lib#232</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/196">yaml#196</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/198">yaml#198</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/61">docs#61</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/63">docs#63</a>)</p>
+</li>
+<li><p class="first">Added <a class="reference internal" href="../components/binary_sensor/index.html#binary-sensor-on-multi-click"><span class="std std-ref">on_multi_click</span></a> trigger to distinguish between double, long, and single clicks.
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/262">lib#262</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/77">docs#77</a>,  <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/226">yaml#226</a>)</p>
+</li>
+<li><p class="first">Added an <a class="reference internal" href="../components/pn532.html#pn532-on-tag"><span class="std std-ref">on_tag</span></a> to <a class="reference internal" href="../components/pn532.html"><span class="doc">PN532 NFC Readers</span></a> so that automations
+can directly use the NFC tag ID
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/194">lib#194</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/189">yaml#189</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/57">docs#57</a>)</p>
+</li>
+<li><p class="first">Added a <code class="docutils literal notranslate"><span class="pre">hass-config</span></code> command which generates a Home Assistant configuration for your esphomeyaml nodes.
+Useful if you’re not using MQTT discovery (<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/208">yaml#208</a>)</p>
+</li>
+<li><p class="first">All documentation pages now have comment systems powered by <a class="reference external" href="https://disqus.com/">disqus</a>
+(<a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/47">docs#47</a>)</p>
+</li>
+<li><p class="first">You now have to option to have a different log level for log messages sent over MQTT (<a class="reference internal" href="../components/mqtt.html#mqtt-message"><span class="std std-ref">docs</span></a>,
+<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/167">yaml#167</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/51">docs#51</a>)</p>
+</li>
+<li><p class="first">Added a color correction option to <a class="reference internal" href="../components/light/fastled_clockless.html"><span class="doc">FastLED addressable lights</span></a>
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/234">lib#234</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/200">yaml#200</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/64">docs#64</a>)</p>
+</li>
+<li><p class="first">Added a <code class="docutils literal notranslate"><span class="pre">clean</span></code> command to esphomeyaml to fix some occasional build errors
+(<a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/181">yaml#181</a>)</p>
+</li>
+<li><p class="first">Added a <code class="docutils literal notranslate"><span class="pre">send_first_at</span></code> option to sliding window moving average sensor filters
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/240">lib#240</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/207">yaml#207</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/69">docs#69</a>)</p>
+</li>
+<li><p class="first">You can now upload OTA firmware files with the <a class="reference internal" href="../components/web_server.html"><span class="doc">web server component</span></a></p>
+</li>
+<li><p class="first">Added the ability to define global variables in esphomeyaml: <a class="reference internal" href="../guides/automations.html#config-globals"><span class="std std-ref">Bonus 2: Global Variables</span></a>.</p>
+</li>
+<li><p class="first">Added a <code class="docutils literal notranslate"><span class="pre">frequency</span></code> option to the <a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="breaking-changes">
+<h2>Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">As part of the rewrite of Over-The-Air updates, the old OTA protocol is incompatible with the new one -
+But fear not, esphomeyaml still supports the legacy OTA update process. On your first OTA upload with 1.9.0, you will
+see esphomeyaml try with the new OTA method and fail. After that, esphomeyaml will fall back to the old OTA
+process and upload correctly (<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/204">lib#204</a>).</p>
+</li>
+<li><p class="first">esphomelib’s naming convention has been made more consistent. If you’re not using any <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>,
+everything will still work. However, if you’re using the C++ API, there are a couple of breaking changes:</p>
+<p>For sensors and binary sensors, <code class="docutils literal notranslate"><span class="pre">id(my_sensor).value</span></code> has been deprecated and <code class="docutils literal notranslate"><span class="pre">id(my_sensor).state</span></code> should be used
+instead. Additionally, the syntax for toggling lights and switches through C++ has been changed. Please see
+the <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/62">docs#62</a> changeset for more information
+(<a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/231">lib#231</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/62">docs#62</a>, <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/197">yaml#197</a>)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="release-1-9-1-november-19">
+<h2>Release 1.9.1 - November 19<a class="headerlink" href="#release-1-9-1-november-19" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>lib: Fix RDM6300 not reporting cards <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/278">lib#278</a></li>
+<li>lib: Fix SNTP with less than 3 servers <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/279">lib#279</a></li>
+<li>lib: Fix update interval log missing time unit <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/280">lib#280</a></li>
+<li>lib: Fix CSE7766 spamming logs <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/281">lib#281</a></li>
+<li>lib: Fix outdated links <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/282">lib#282</a></li>
+<li>yaml: Fix SNTP servers option <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/237">yaml#237</a></li>
+</ul>
+</div>
+<div class="section" id="release-1-9-2-november-25">
+<h2>Release 1.9.2 - November 25<a class="headerlink" href="#release-1-9-2-november-25" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>lib: Fix crashing when logger not being used <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/285">lib#285</a></li>
+<li>lib: Fix template cover spamming logs <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/287">lib#287</a></li>
+<li>lib: Improve ESP32 BLE tracker stability <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/289">lib#289</a></li>
+<li>lib: Fix sensor filters using C++ undefined behavior <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/293">lib#293</a></li>
+</ul>
+</div>
+<div class="section" id="release-1-9-3-december-1">
+<h2>Release 1.9.3 - December 1<a class="headerlink" href="#release-1-9-3-december-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>docs: Fix Sonoff Basic pinouts <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/88">docs#88</a> by <a class="reference external" href="https://github.com/sherbang">&#64;sherbang</a></li>
+<li>docs: Update cwww.rst <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/85">docs#85</a> by <a class="reference external" href="https://github.com/Melkor82">&#64;Melkor82</a></li>
+<li>lib: Fix PMSX003 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/300">lib#300</a></li>
+<li>lib: Fix issue with filters introduced in 1.9.2 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/296">lib#296</a></li>
+<li>lib: Fix BMP085 pressure value <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/292">lib#292</a></li>
+<li>yaml: CSE7766 update interval <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/250">yaml#250</a></li>
+<li>docs: CSE7766 Update Interval <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/91">docs#91</a></li>
+</ul>
+</div>
+<div class="section" id="all-changes">
+<h2>All changes<a class="headerlink" href="#all-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>docs: Clarify ESP32 BLE Tracker comment <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/42">docs#42</a></li>
+<li>yaml: Add a link to Home Assistant in README <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/152">yaml#152</a> by <a class="reference external" href="https://github.com/jonnyair">&#64;jonnyair</a></li>
+<li>lib: Add a link to Home Assistant in README.md <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/184">lib#184</a> by <a class="reference external" href="https://github.com/jonnyair">&#64;jonnyair</a></li>
+<li>docs: Fix time docs 12-hour clock strftime format <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/43">docs#43</a></li>
+<li>lib: Fix ESP32 BLE Presence detection always on <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/185">lib#185</a></li>
+<li>lib: Fix LCD display include <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/186">lib#186</a></li>
+<li>lib: Fix template switch spamming output <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/187">lib#187</a></li>
+<li>lib: Fix using HTU21D for SI7021 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/188">lib#188</a></li>
+<li>lib: Fix components sending invalid state on startup if integration not ready yet <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/195">lib#195</a></li>
+<li>lib: Log esphomelib version and compilation time on boot <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/189">lib#189</a> (new-feature)</li>
+<li>yaml: Log esphomelib version and compilation time on boot <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/159">yaml#159</a> (new-feature)</li>
+<li>yaml: Fix raw remote receiver <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/158">yaml#158</a></li>
+<li>lib: Add Code of Conduct (Contributor Covenant) <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/196">lib#196</a></li>
+<li>lib: Create CONTRIBUTING.md <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/197">lib#197</a></li>
+<li>lib: Create issue templates <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/198">lib#198</a></li>
+<li>lib: Create pull request template <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/199">lib#199</a></li>
+<li>yaml: Create Pull Request Template <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/172">yaml#172</a></li>
+<li>yaml: Create CONTRIBUTING.md <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/169">yaml#169</a></li>
+<li>yaml: Add Code of Conduct (Contributor Covenant) <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/168">yaml#168</a></li>
+<li>yaml: Create issue templates <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/171">yaml#171</a></li>
+<li>docs: Add Code of Conduct (Contributor Covenant) <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/44">docs#44</a></li>
+<li>docs: Create Pull Request Template <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/45">docs#45</a></li>
+<li>yaml: Fix readme broken link <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/174">yaml#174</a></li>
+<li>lib: Fix pulse counter counting inverted on ESP8266 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/200">lib#200</a></li>
+<li>yaml: Add use_build_flags removal notice <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/173">yaml#173</a></li>
+<li>docs: Highlight update_interval gotchas <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/46">docs#46</a></li>
+<li>docs: Add Disqus and cleanup <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/47">docs#47</a> (new-feature)</li>
+<li>lib: Fix PN532 not logging discovered tags <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/202">lib#202</a></li>
+<li>yaml: Add Samsung IR protocol <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/176">yaml#176</a> by <a class="reference external" href="https://github.com/escoand">&#64;escoand</a> (new-feature)</li>
+<li>docs: add samsung ir protocol <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/48">docs#48</a> by <a class="reference external" href="https://github.com/escoand">&#64;escoand</a> (new-feature)</li>
+<li>lib: Bump FastLED to 3.2.0 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/203">lib#203</a></li>
+<li>yaml: Fix Wifi power_save_mode option <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/178">yaml#178</a></li>
+<li>lib: Fix application sort order <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/211">lib#211</a></li>
+<li>docs: Improve pulse counter docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/49">docs#49</a></li>
+<li>lib: Fix ESP32 BLE Controller Init <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/213">lib#213</a></li>
+<li>lib: Fix Web Server Creating Infinite Print Loop <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/214">lib#214</a></li>
+<li>lib: Add TOGGLE payload to more components <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/212">lib#212</a> (new-feature)</li>
+<li>lib: ESP8266 Pulse Counter Improve Timing <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/205">lib#205</a></li>
+<li>lib: Add MQTT Subscribe Sensor <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/193">lib#193</a> (new-feature)</li>
+<li>docs: Add MQTT Subscribe sensor <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/50">docs#50</a> (new-feature)</li>
+<li>yaml: Add MQTT Subscribe sensor <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/175">yaml#175</a> (new-feature)</li>
+<li>yaml: MQTT different log level <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/167">yaml#167</a> (new-feature)</li>
+<li>docs: Add option to have different log level over MQTT <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/51">docs#51</a> (new-feature)</li>
+<li>yaml: Add clean build files command and auto-clean on version change <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/181">yaml#181</a> (new-feature)</li>
+<li>lib: Add power on value to switch <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/207">lib#207</a> (new-feature)</li>
+<li>lib: Rework OTA to be more stable <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/204">lib#204</a> (breaking-change) (new-feature)</li>
+<li>yaml: Rework OTA to be more stable <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/177">yaml#177</a> (new-feature)</li>
+<li>lib: Fix WiFi not working when GPIO 0 connected <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/215">lib#215</a></li>
+<li>lib: Fix MiFlora illuminance reading <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/220">lib#220</a></li>
+<li>lib: Remove invalid file headers <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/219">lib#219</a></li>
+<li>yaml: Fix config dump time output <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/184">yaml#184</a></li>
+<li>lib: GPIO Switch Rewrite <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/217">lib#217</a></li>
+<li>docs: Add power on value to GPIO Switch <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/55">docs#55</a> (new-feature)</li>
+<li>yaml: Decentralize Automation Generator Code <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/182">yaml#182</a></li>
+<li>lib: Add PN532 On Tag Trigger <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/226">lib#226</a> (new-feature)</li>
+<li>lib: Add text sensors <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/194">lib#194</a> (new-feature)</li>
+<li>docs: Add Text sensors <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/52">docs#52</a> (new-feature)</li>
+<li>lib: Fix PCF8574 assert. <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/223">lib#223</a> by <a class="reference external" href="https://github.com/lobradov">&#64;lobradov</a></li>
+<li>lib: Unify Xiaomi MiJia&amp;MiFlora Implementations <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/225">lib#225</a></li>
+<li>docs: Unify xiaomi implementations <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/56">docs#56</a></li>
+<li>yaml: Unify Xiaomi implementations <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/188">yaml#188</a></li>
+<li>lib: Add CSE7766 for Sonoff Pow R2 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/227">lib#227</a> (new-feature)</li>
+<li>docs: Add CSE7766 for Sonoff Pow R2 <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/59">docs#59</a> (new-feature)</li>
+<li>docs: Add PN532 On Tag Trigger <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/57">docs#57</a> (new-feature)</li>
+<li>yaml: Add CSE776 for Sonoff Pow R2 <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/190">yaml#190</a> (new-feature)</li>
+<li>yaml: Add Text Sensors <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/166">yaml#166</a> (new-feature)</li>
+<li>yaml: Add PN532 On Tag Trigger <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/189">yaml#189</a> (new-feature)</li>
+<li>lib: Add MQTT publish JSON action and subscribe JSON trigger <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/230">lib#230</a> (new-feature)</li>
+<li>yaml: Add MQTT publish JSON action and subscribe JSON trigger <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/193">yaml#193</a> (new-feature)</li>
+<li>docs: Add MQTT publish JSON action and subscribe JSON trigger <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/60">docs#60</a> (new-feature)</li>
+<li>lib: Add PMSX003 Particulate Matter Sensor <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/229">lib#229</a> (new-feature)</li>
+<li>docs: Add PMSX003 Particulate Matter Sensor <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/58">docs#58</a> (new-feature)</li>
+<li>lib: Add update component action and scripts <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/232">lib#232</a> (new-feature)</li>
+<li>docs: Add update component action and scripts <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/61">docs#61</a> (new-feature)</li>
+<li>lib: Implement HASS device registry for MQTT components <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/233">lib#233</a> (new-feature)</li>
+<li>lib: Add FastLED color correction option <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/234">lib#234</a> (new-feature)</li>
+<li>docs: Add FastLED color correction option <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/64">docs#64</a> (new-feature)</li>
+<li>yaml: Add update component action and scripts <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/196">yaml#196</a> (new-feature)</li>
+<li>yaml: Add PMSX003 Particulate Matter Sensor <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/192">yaml#192</a> (new-feature)</li>
+<li>yaml: Add FastLED color correction option <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/200">yaml#200</a> (new-feature)</li>
+<li>yaml: Fix triggers being interpreted as a sequence of automations <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/199">yaml#199</a></li>
+<li>yaml: Fix value range trigger :expressionless: <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/201">yaml#201</a></li>
+<li>lib: Make naming convention consistent <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/231">lib#231</a> (breaking-change)</li>
+<li>docs: Make naming convention consistent <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/62">docs#62</a> (breaking-change)</li>
+<li>docs: Fix some typos <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/65">docs#65</a></li>
+<li>yaml: Improve API naming convention consistency <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/197">yaml#197</a> (breaking-change)</li>
+<li>yaml: Fix some typos <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/202">yaml#202</a></li>
+<li>docs: Add logger.log action <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/63">docs#63</a> (new-feature)</li>
+<li>yaml: Add logger.log action <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/198">yaml#198</a> (new-feature)</li>
+<li>docs: Fix template sensor docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/66">docs#66</a></li>
+<li>docs: Fix text sensor outdated API docs <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/70">docs#70</a></li>
+<li>docs: Add Stepper Support <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/68">docs#68</a> (new-feature)</li>
+<li>lib: Add stepper motor support <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/239">lib#239</a> (new-feature)</li>
+<li>lib: Add send_first_at option to sliding window sensor filter <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/240">lib#240</a> (new-feature)</li>
+<li>docs: Add send_first_at option to sliding window sensor filter <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/69">docs#69</a> (new-feature)</li>
+<li>lib: Fix display line drawing algorithm <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/241">lib#241</a></li>
+<li>lib: Fix availability calculation <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/242">lib#242</a></li>
+<li>yaml: Add Stepper Motor Support <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/206">yaml#206</a> (new-feature)</li>
+<li>yaml: Add send_first_at option to sliding window sensor filter <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/207">yaml#207</a> (new-feature)</li>
+<li>docs: Switch example to Dehumidifier, minor grammar/puncuation <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/67">docs#67</a> by <a class="reference external" href="https://github.com/rorpage">&#64;rorpage</a></li>
+<li>docs: Tiny typo fix. <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/73">docs#73</a> by <a class="reference external" href="https://github.com/corbanmailloux">&#64;corbanmailloux</a></li>
+<li>yaml: Auto-Decode stacktraces <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/214">yaml#214</a> (new-feature)</li>
+<li>docs: Fix a broken link to setting up a BLE tracker. <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/72">docs#72</a> by <a class="reference external" href="https://github.com/corbanmailloux">&#64;corbanmailloux</a></li>
+<li>yaml: Add generate home assistant config command <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/208">yaml#208</a> (new-feature)</li>
+<li>yaml: Update Gitlab Build Script <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/215">yaml#215</a></li>
+<li>lib: Fix status binary sensor always reporting false internally <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/257">lib#257</a></li>
+<li>yaml: Fix HLW8012 Voltage Divider option not being added to source <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/224">yaml#224</a></li>
+<li>lib: Fix HLW8012 Initial Value Reporting <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/254">lib#254</a></li>
+<li>lib: Clean up Time API <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/253">lib#253</a></li>
+<li>yaml: Better typing to components <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/225">yaml#225</a></li>
+<li>lib: Support uploading OTA updates over web server <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/255">lib#255</a> (new-feature)</li>
+<li>lib: Save and Restore states from RTC memory <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/258">lib#258</a> (new-feature)</li>
+<li>docs: Revert add power_on_value to gpio switch <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/78">docs#78</a></li>
+<li>lib: Improve default log levels and log sources <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/264">lib#264</a></li>
+<li>lib: OTA Read back server acknowledgement <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/263">lib#263</a></li>
+<li>lib: Add Multi Click Trigger to binary sensor <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/262">lib#262</a> (new-feature)</li>
+<li>docs: Add binary sensor on multi click trigger <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/77">docs#77</a> (new-feature)</li>
+<li>lib: ESP32 BLE Release Bluetooth Classic Memory <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/261">lib#261</a></li>
+<li>yaml: Add restore state option to template switch <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/222">yaml#222</a></li>
+<li>docs: Advertise esphomeflasher <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/76">docs#76</a> (new-feature)</li>
+<li>docs: Replace table generator with custom RST directive <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/75">docs#75</a></li>
+<li>yaml: Clean up time API <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/221">yaml#221</a></li>
+<li>yaml: Revert Add power on value to GPIO switch <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/223">yaml#223</a></li>
+<li>yaml: Add binary sensor multi click trigger <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/226">yaml#226</a> (new-feature)</li>
+<li>lib: Add Total Daily Energy Sensor <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/256">lib#256</a> (new-feature)</li>
+<li>yaml: Add total daily energy sensor <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/220">yaml#220</a> (new-feature)</li>
+<li>docs: Add total daily energy sensor <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/79">docs#79</a></li>
+<li>lib: Introduce new setup phase: “dump config” to allow fully-offline operation <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/267">lib#267</a></li>
+<li>yaml: Let esphomeyaml know about class inheritance <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/229">yaml#229</a></li>
+<li>docs: ESP32 deep sleep wake up multiple pins <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/81">docs#81</a></li>
+<li>yaml: Deep Sleep Wake Up From Multiple Pins <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/230">yaml#230</a></li>
+<li>lib: Deep Sleep Multi Wakeup <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/268">lib#268</a></li>
+<li>lib: MY9231/MY9291 LED driver support <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/266">lib#266</a> by <a class="reference external" href="https://github.com/puuu">&#64;puuu</a> (new-feature)</li>
+<li>yaml: Add MY9231 support <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/227">yaml#227</a> by <a class="reference external" href="https://github.com/puuu">&#64;puuu</a> (new-feature)</li>
+<li>docs: MY9231/MY9291 LED driver documentation <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/80">docs#80</a> by <a class="reference external" href="https://github.com/puuu">&#64;puuu</a> (new-feature)</li>
+<li>docs: SEO Optimization <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/82">docs#82</a></li>
+</ul>
+</div>
+<div class="section" id="past-changelogs">
+<h2>Past Changelogs<a class="headerlink" href="#past-changelogs" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="v1.8.0.html">Version 1.8.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="v1.7.0.html">Version 1.7.0</a></li>
+</ul>
+</div>
+<div data-disqus-identifier="esphomeyaml-changelog-v1.9.0" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

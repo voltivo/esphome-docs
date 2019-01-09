@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Configuration Types &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Configuration Types &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/configuration-types.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -74,6 +75,7 @@
 <li><a class="reference internal" href="#pin">Pin</a></li>
 <li><a class="reference internal" href="#pin-schema">Pin Schema</a></li>
 <li><a class="reference internal" href="#time">Time</a></li>
+<li><a class="reference internal" href="#substitutions">Substitutions</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -208,6 +210,33 @@ There are several ways of doing this. See below examples to see how you can spec
 </pre></div>
 </div>
 </div>
+<div class="section" id="substitutions">
+<span id="config-substitutions"></span><h2>Substitutions<a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h2>
+<p>Starting with version 1.10.0, esphomeyaml has a powerful new way to reduce repetition in configuration files:
+Substitutions. With substitutions, you can have a single generic source file for all nodes of one kind and
+substitute expressions in.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">substitutions</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">devicename</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">livingroom</span>
+  <span class="l l-Scalar l-Scalar-Plain">upper_devicename</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Livingroom</span>
+
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">$livingroom</span>
+  <span class="c1"># ...</span>
+
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dht</span>
+  <span class="c1"># ...</span>
+  <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${upper_devicename} Temperature</span>
+  <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${upper_devicename} Humidity</span>
+</pre></div>
+</div>
+<p>In the top-level <code class="docutils literal notranslate"><span class="pre">substitutions</span></code> section, you can put as many key-value pairs as you want. Before
+validating your configuration, esphomeyaml will automatically replace all occurrences of substitutions
+by their value. The syntax for a substitution is based on bash and is case-sensitive: <code class="docutils literal notranslate"><span class="pre">$substitution_key</span></code> or
+<code class="docutils literal notranslate"><span class="pre">${substitution_key}</span></code> (same)</p>
+</div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -230,7 +259,7 @@ There are several ways of doing this. See below examples to see how you can spec
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -246,11 +275,11 @@ There are several ways of doing this. See below examples to see how you can spec
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

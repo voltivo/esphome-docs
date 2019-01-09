@@ -23,19 +23,20 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Migrating from Sonoff Tasmota &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Migrating from Sonoff Tasmota &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/migrate_sonoff_tasmota.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Changelog - Version 1.9.0" href="../changelog/index.html" />
+    <link rel="next" title="Changelog" href="../changelog/index.html" />
     <link rel="prev" title="Migrating from ESPurna" href="migrate_espurna.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -94,7 +95,7 @@ esphomeyaml create a binary for you and then upload that in the Tasmota web inte
 <p>First follow the guides for the <a class="reference internal" href="../index.html#devices"><span class="std std-ref">different supported devices</span></a> and create a configuration
 file. Then, generate and download the binary:</p>
 <ul>
-<li><p class="first"><strong>Using the HassIO add-on/dashboard</strong>: Just click the <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> button, wait for
+<li><p class="first"><strong>Using the Hass.io add-on/dashboard</strong>: Just click the <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> button, wait for
 the compilation to end and press the <code class="docutils literal notranslate"><span class="pre">DOWNLOAD</span> <span class="pre">BINARY</span></code> button.</p>
 <div class="figure">
 <img alt="../../_images/download_binary.png" src="../../_images/download_binary.png" />
@@ -153,7 +154,7 @@ will connect to the configured WiFi network 🎉</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -169,11 +170,11 @@ will connect to the configured WiFi network 🎉</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

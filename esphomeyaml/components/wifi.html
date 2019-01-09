@@ -24,13 +24,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>WiFi Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>WiFi Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/wifi.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -75,6 +76,7 @@
 <li><a class="reference internal" href="#access-point-mode">Access Point Mode</a></li>
 <li><a class="reference internal" href="#manual-ips">Manual IPs</a></li>
 <li><a class="reference internal" href="#power-save-mode">Power Save Mode</a></li>
+<li><a class="reference internal" href="#connecting-to-multiple-networks">Connecting to Multiple Networks</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -115,6 +117,8 @@ identifier</a>)
 of the WiFi access point your device should connect to.</li>
 <li><strong>password</strong> (<em>Optional</em>, string): The password (or PSK) for your
 WiFi network. Leave empty for no password.</li>
+<li><strong>networks</strong> (<em>Optional</em>): Configure multiple WiFi networks to connect to, the best one
+that is reachable will be connected to. See <a class="reference internal" href="#wifi-networks"><span class="std std-ref">Connecting to Multiple Networks</span></a>.</li>
 <li><strong>manual_ip</strong> (<em>Optional</em>): Manually configure the static IP of the node.<ul>
 <li><strong>static_ip</strong> (<em>Required</em>, IPv4 address): The static IP of your node.</li>
 <li><strong>gateway</strong> (<em>Required</em>, IPv4 address): The gateway of the local network.</li>
@@ -197,6 +201,33 @@ please also try <code class="docutils literal notranslate"><span class="pre">lig
 </pre></div>
 </div>
 </div>
+<div class="section" id="connecting-to-multiple-networks">
+<span id="wifi-networks"></span><h2>Connecting to Multiple Networks<a class="headerlink" href="#connecting-to-multiple-networks" title="Permalink to this headline">¶</a></h2>
+<p>Starting with version 1.10.0, you can give esphomelib a number of WiFi networks to connect to.
+Esphomelib will then attempt to connect to the one with the highest signal strength.</p>
+<p>To enable this mode, remove the <code class="docutils literal notranslate"><span class="pre">ssid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> options from your wifi configuration
+and move everything under the <code class="docutils literal notranslate"><span class="pre">networks</span></code> key:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">wifi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">networks</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">FirstNetworkToConnectTo</span>
+    <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VerySafePassword</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ssid</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">SecondNetworkToConnectTo</span>
+    <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">VerySafePassword</span>
+  <span class="c1"># Other options</span>
+  <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul class="simple">
+<li><strong>ssid</strong> (string): The SSID or WiFi network name.</li>
+<li><strong>password</strong> (string): The password to use for authentication. Leave empty for no password.</li>
+<li><strong>channel</strong> (int): The channel of the network (1-14). If given, only connects to networks
+that are on this channel.</li>
+<li><strong>bssid</strong> (string): Optionally define a BSSID (MAC-Address) of the network to connect to.
+This can be used to further restrict which networks to connect to.</li>
+</ul>
+</div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -217,7 +248,7 @@ please also try <code class="docutils literal notranslate"><span class="pre">lig
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -233,11 +264,11 @@ please also try <code class="docutils literal notranslate"><span class="pre">lig
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

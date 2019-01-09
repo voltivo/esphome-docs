@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Automation &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Automation &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/automation.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -80,7 +81,7 @@
 <dl class="class">
 <dt id="_CPPv39Condition">
 <span id="_CPPv29Condition"></span><span id="Condition"></span><span class="target" id="class_condition"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Condition</code><a class="headerlink" href="#_CPPv39Condition" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Subclassed by <a class="reference internal" href="#class_and_condition"><span class="std std-ref">AndCondition&lt; T &gt;</span></a>, <a class="reference internal" href="#class_lambda_condition"><span class="std std-ref">LambdaCondition&lt; T &gt;</span></a>, <a class="reference internal" href="#class_or_condition"><span class="std std-ref">OrCondition&lt; T &gt;</span></a></p>
+<dd><p>Subclassed by <a class="reference internal" href="#class_and_condition"><span class="std std-ref">AndCondition&lt; T &gt;</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_binary_sensor_condition"><span class="std std-ref">binary_sensor::BinarySensorCondition&lt; T &gt;</span></a>, <a class="reference internal" href="#class_lambda_condition"><span class="std std-ref">LambdaCondition&lt; T &gt;</span></a>, <a class="reference internal" href="#class_or_condition"><span class="std std-ref">OrCondition&lt; T &gt;</span></a>, sensor::SensorInRangeCondition&lt; T &gt;, <a class="reference internal" href="../switch/index.html#classswitch___1_1_switch_condition"><span class="std std-ref">switch_::SwitchCondition&lt; T &gt;</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -221,26 +222,92 @@
 </dd></dl>
 
 <dl class="class">
-<dt id="_CPPv37Trigger">
-<span id="_CPPv27Trigger"></span><span id="Trigger"></span><span class="target" id="class_trigger"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Trigger</code><a class="headerlink" href="#_CPPv37Trigger" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv310Automation">
+<span id="_CPPv210Automation"></span><span id="Automation"></span><span class="target" id="class_automation"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Automation</code><a class="headerlink" href="#_CPPv310Automation" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3N7Trigger23add_on_trigger_callbackERRNSt8functionIFv1TEEE">
-<span id="_CPPv2N7Trigger23add_on_trigger_callbackERRNSt8functionIFv1TEEE"></span><span class="target" id="class_trigger_1a78ce54acaf6aff85258268b9e9247070"></span>void <code class="descname">add_on_trigger_callback</code><span class="sig-paren">(</span>std::function&lt;void<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger23add_on_trigger_callbackERRNSt8functionIFv1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N10Automation10AutomationEP7TriggerI1TE">
+<span id="_CPPv2N10Automation10AutomationEP7TriggerI1TE"></span><span id="Automation::Automation__Trigger:T:P"></span><span class="target" id="class_automation_1ae19b63630919592e448f7c3c141a5baa"></span><code class="descname">Automation</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<em>trigger</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation10AutomationEP7TriggerI1TE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N7Trigger7triggerE1T">
-<span id="_CPPv2N7Trigger7triggerE1T"></span><span id="Trigger::trigger__T"></span><span class="target" id="class_trigger_1aa70b054e71175f31f972330c6fdda661"></span>void <code class="descname">trigger</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger7triggerE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N10Automation13add_conditionEP9ConditionI1TE">
+<span id="_CPPv2N10Automation13add_conditionEP9ConditionI1TE"></span><span id="Automation::add_condition__Condition:T:P"></span><span class="target" id="class_automation_1a310afabe04897246b6b8e535dc3eccdf"></span><a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *<code class="descname">add_condition</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *<em>condition</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation13add_conditionEP9ConditionI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE">
+<span id="_CPPv2N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE"></span><span id="Automation::add_conditions__std::vector:Condition:T:P:CR"></span><span class="target" id="class_automation_1a36c97f0f896176396776ec64cc0ba1e0"></span>void <code class="descname">add_conditions</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; &amp;<em>conditions</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10Automation10add_actionEP6ActionI1TE">
+<span id="_CPPv2N10Automation10add_actionEP6ActionI1TE"></span><span id="Automation::add_action__Action:T:P"></span><span class="target" id="class_automation_1a214f1a8abc18c5f658b26b922fe50003"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation10add_actionEP6ActionI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE">
+<span id="_CPPv2N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE"></span><span id="Automation::add_actions__std::vector:Action:T:P:CR"></span><span class="target" id="class_automation_1a203648ef7cc1efe91dab0980bbcf26df"></span>void <code class="descname">add_actions</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *&gt; &amp;<em>actions</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10Automation16process_trigger_E1T">
+<span id="_CPPv2N10Automation16process_trigger_E1T"></span><span id="Automation::process_trigger___T"></span><span class="target" id="class_automation_1aa0e2728f3c4d36b66d47b30dd0159705"></span>void <code class="descname">process_trigger_</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation16process_trigger_E1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10Automation4stopEv">
+<span id="_CPPv2N10Automation4stopEv"></span><span id="Automation::stop"></span><span class="target" id="class_automation_1a8541efe8191a8acd9eb4df23194aec87"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation4stopEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
-<dt id="_CPPv3N7Trigger11on_trigger_E">
-<span id="_CPPv2N7Trigger11on_trigger_E"></span><span class="target" id="class_trigger_1ac604a8653d221ecc018decee90590e18"></span>CallbackManager&lt;void<span class="sig-paren">(</span>T<span class="sig-paren">)</span>&gt; <code class="descname">on_trigger_</code><a class="headerlink" href="#_CPPv3N7Trigger11on_trigger_E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N10Automation8trigger_E">
+<span id="_CPPv2N10Automation8trigger_E"></span><span id="Automation::trigger___Trigger:T:P"></span><span class="target" id="class_automation_1acd3d36e862941f3f6f6f4ccc334b72f7"></span><a class="reference internal" href="#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<code class="descname">trigger_</code><a class="headerlink" href="#_CPPv3N10Automation8trigger_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N10Automation11conditions_E">
+<span id="_CPPv2N10Automation11conditions_E"></span><span id="Automation::conditions___std::vector:Condition:T:P:"></span><span class="target" id="class_automation_1ae7f97becc87e883931641286009bf622"></span>std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; <code class="descname">conditions_</code><a class="headerlink" href="#_CPPv3N10Automation11conditions_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N10Automation8actions_E">
+<span id="_CPPv2N10Automation8actions_E"></span><span id="Automation::actions___ActionList:T:"></span><span class="target" id="class_automation_1aeda5a302d33a54915083b5cc88e0bbd4"></span><a class="reference internal" href="#_CPPv310ActionList" title="ActionList">ActionList</a>&lt;T&gt; <code class="descname">actions_</code><a class="headerlink" href="#_CPPv3N10Automation8actions_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv37Trigger">
+<span id="_CPPv27Trigger"></span><span id="Trigger"></span><span class="target" id="class_trigger"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Trigger</code><a class="headerlink" href="#_CPPv37Trigger" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N7Trigger7triggerE1T">
+<span id="_CPPv2N7Trigger7triggerE1T"></span><span id="Trigger::trigger__T"></span><span class="target" id="class_trigger_1aa70b054e71175f31f972330c6fdda661"></span>void <code class="descname">trigger</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger7triggerE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7Trigger10set_parentEP10AutomationI1TE">
+<span id="_CPPv2N7Trigger10set_parentEP10AutomationI1TE"></span><span id="Trigger::set_parent__Automation:T:P"></span><span class="target" id="class_trigger_1acad71df15feb68ba0a01eea8039da3cb"></span>void <code class="descname">set_parent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv310Automation" title="Automation">Automation</a>&lt;T&gt; *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger10set_parentEP10AutomationI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7Trigger4stopEv">
+<span id="_CPPv2N7Trigger4stopEv"></span><span id="Trigger::stop"></span><span class="target" id="class_trigger_1a9fcbfea8b9b519e72080dd485ba7c6b3"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N7Trigger7parent_E">
+<span id="_CPPv2N7Trigger7parent_E"></span><span id="Trigger::parent___Automation:T:P"></span><span class="target" id="class_trigger_1a9d51113b7e98e8d9a72e8c6a803f06c0"></span><a class="reference internal" href="#_CPPv310Automation" title="Automation">Automation</a>&lt;T&gt; *<code class="descname">parent_</code><a class="headerlink" href="#_CPPv3N7Trigger7parent_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -249,25 +316,35 @@
 <dl class="class">
 <dt id="_CPPv3IE7TriggerI5NoArgE">
 <span id="_CPPv2IE7TriggerI5NoArgE"></span><span class="target" id="class_trigger_3_01_no_arg_01_4"></span><em class="property">template </em>&lt;&gt;<br />template&lt;&gt;<br /><em class="property">class </em><code class="descname">Trigger</code>&lt;<a class="reference internal" href="#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;<a class="headerlink" href="#_CPPv3IE7TriggerI5NoArgE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Subclassed by <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_click_trigger"><span class="std std-ref">binary_sensor::ClickTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_double_click_trigger"><span class="std std-ref">binary_sensor::DoubleClickTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_multi_click_trigger"><span class="std std-ref">binary_sensor::MultiClickTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_press_trigger"><span class="std std-ref">binary_sensor::PressTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_release_trigger"><span class="std std-ref">binary_sensor::ReleaseTrigger</span></a>, <a class="reference internal" href="#class_loop_trigger"><span class="std std-ref">LoopTrigger</span></a>, <a class="reference internal" href="#class_script"><span class="std std-ref">Script</span></a>, <a class="reference internal" href="#class_startup_trigger"><span class="std std-ref">StartupTrigger</span></a>, <a class="reference internal" href="time.html#classtime_1_1_cron_trigger"><span class="std std-ref">time::CronTrigger</span></a></p>
+<dd><p>Subclassed by <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_click_trigger"><span class="std std-ref">binary_sensor::ClickTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_double_click_trigger"><span class="std std-ref">binary_sensor::DoubleClickTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_multi_click_trigger"><span class="std std-ref">binary_sensor::MultiClickTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_press_trigger"><span class="std std-ref">binary_sensor::PressTrigger</span></a>, <a class="reference internal" href="../binary_sensor/index.html#classbinary__sensor_1_1_release_trigger"><span class="std std-ref">binary_sensor::ReleaseTrigger</span></a>, <a class="reference internal" href="#class_interval_trigger"><span class="std std-ref">IntervalTrigger</span></a>, <a class="reference internal" href="#class_loop_trigger"><span class="std std-ref">LoopTrigger</span></a>, <a class="reference internal" href="#class_script"><span class="std std-ref">Script</span></a>, <a class="reference internal" href="#class_startup_trigger"><span class="std std-ref">StartupTrigger</span></a>, <a class="reference internal" href="time.html#classtime_1_1_cron_trigger"><span class="std std-ref">time::CronTrigger</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt>
-<span class="target" id="class_trigger_3_01_no_arg_01_4_1a9d264d3cfd85b253fc1a74ee1a776d34"></span><code class="descname">ESPHOMELIB_NAMESPACE_BEGIN void Trigger::add_on_trigger_callback(std::function&lt; void(NoArg)&gt; &amp;&amp; f)</code></dt>
+<span class="target" id="class_trigger_3_01_no_arg_01_4_1a6f1a0ff3caa2f09ffbde09d9bc10fbe8"></span><code class="descname">ESPHOMELIB_NAMESPACE_BEGIN void Trigger::trigger()</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N7Trigger7triggerEv">
-<span id="_CPPv2N7Trigger7triggerEv"></span><span id="Trigger::trigger"></span><span class="target" id="class_trigger_3_01_no_arg_01_4_1aefc74e1f3ffb85aaa3e4761ed82a66b4"></span>void <code class="descname">trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger7triggerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N7Trigger7triggerEb">
+<span id="_CPPv2N7Trigger7triggerEb"></span><span id="Trigger::trigger__b"></span><span class="target" id="class_trigger_3_01_no_arg_01_4_1a632902c1625f0dc33ea0e1a2080c69e6"></span>void <code class="descname">trigger</code><span class="sig-paren">(</span>bool <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger7triggerEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7Trigger10set_parentEP10AutomationI5NoArgE">
+<span id="_CPPv2N7Trigger10set_parentEP10AutomationI5NoArgE"></span><span id="Trigger::set_parent__Automation:NoArg:P"></span><span class="target" id="class_trigger_3_01_no_arg_01_4_1a2d72808f5317c72aced93b044f21d322"></span>void <code class="descname">set_parent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv310Automation" title="Automation">Automation</a>&lt;<a class="reference internal" href="#_CPPv35NoArg" title="NoArg">NoArg</a>&gt; *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7Trigger10set_parentEP10AutomationI5NoArgE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7Trigger4stopEv">
+<span id="_CPPv2N7Trigger4stopEv"></span><span class="target" id="class_trigger_3_01_no_arg_01_4_1a61313a7b4dd2b0f0cd1d4c7703be49eb"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
-<dt id="_CPPv3N7Trigger11on_trigger_E">
-<span class="target" id="class_trigger_3_01_no_arg_01_4_1a4050559e89b8cfe7e368b879e3af4758"></span>CallbackManager&lt;void<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv35NoArg" title="NoArg">NoArg</a><span class="sig-paren">)</span>&gt; <code class="descname">on_trigger_</code><br /></dt>
+<dt id="_CPPv3N7Trigger7parent_E">
+<span id="_CPPv2N7Trigger7parent_E"></span><span id="Trigger::parent___Automation:NoArg:P"></span><span class="target" id="class_trigger_3_01_no_arg_01_4_1a0f128460678435f469806445852f75f2"></span><a class="reference internal" href="#_CPPv310Automation" title="Automation">Automation</a>&lt;<a class="reference internal" href="#_CPPv35NoArg" title="NoArg">NoArg</a>&gt; *<code class="descname">parent_</code><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -286,22 +363,12 @@
 <dl class="function">
 <dt id="_CPPv3N14StartupTrigger5setupEv">
 <span id="_CPPv2N14StartupTrigger5setupEv"></span><span id="StartupTrigger::setup"></span><span class="target" id="class_startup_trigger_1a95d53b0c53bb122edd8165d5980680d8"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14StartupTrigger5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_startup_trigger_1a95d53b0c53bb122edd8165d5980680d8"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK14StartupTrigger18get_setup_priorityEv">
 <span id="_CPPv2NK14StartupTrigger18get_setup_priorityEv"></span><span id="StartupTrigger::get_setup_priorityC"></span><span class="target" id="class_startup_trigger_1a91e2e68ac1b07b913e8e3f5c3dcc8ef7"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14StartupTrigger18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#class_startup_trigger_1a95d53b0c53bb122edd8165d5980680d8"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -335,22 +402,35 @@
 <dl class="function">
 <dt id="_CPPv3N11LoopTrigger4loopEv">
 <span id="_CPPv2N11LoopTrigger4loopEv"></span><span id="LoopTrigger::loop"></span><span class="target" id="class_loop_trigger_1ab601d5223ac10920fa6b234bd854745b"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11LoopTrigger4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_loop_trigger_1ab601d5223ac10920fa6b234bd854745b"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11LoopTrigger18get_setup_priorityEv">
 <span id="_CPPv2NK11LoopTrigger18get_setup_priorityEv"></span><span id="LoopTrigger::get_setup_priorityC"></span><span class="target" id="class_loop_trigger_1a5c2aabe5ebea61d11b63fead8ac4f009"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11LoopTrigger18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
+<dd></dd></dl>
+
+</div>
 </dd></dl>
+
+<dl class="class">
+<dt id="_CPPv315IntervalTrigger">
+<span id="_CPPv215IntervalTrigger"></span><span id="IntervalTrigger"></span><span class="target" id="class_interval_trigger"></span><em class="property">class </em><code class="descname">IntervalTrigger</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;, <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a><a class="headerlink" href="#_CPPv315IntervalTrigger" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N15IntervalTrigger15IntervalTriggerE8uint32_t">
+<span id="_CPPv2N15IntervalTrigger15IntervalTriggerE8uint32_t"></span><span id="IntervalTrigger::IntervalTrigger__uint32_t"></span><span class="target" id="class_interval_trigger_1a21224cdba97a31558321a7b5dd724bb1"></span><code class="descname">IntervalTrigger</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N15IntervalTrigger15IntervalTriggerE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N15IntervalTrigger6updateEv">
+<span id="_CPPv2N15IntervalTrigger6updateEv"></span><span id="IntervalTrigger::update"></span><span class="target" id="class_interval_trigger_1abdd37c0a7bb8b768283be24d5075de9f"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N15IntervalTrigger6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK15IntervalTrigger18get_setup_priorityEv">
+<span id="_CPPv2NK15IntervalTrigger18get_setup_priorityEv"></span><span id="IntervalTrigger::get_setup_priorityC"></span><span class="target" id="class_interval_trigger_1a78a6721a63488d8dfae2eb9ccbe8f830"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK15IntervalTrigger18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>
@@ -382,6 +462,58 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="_CPPv316ScriptStopAction">
+<span id="_CPPv216ScriptStopAction"></span><span id="ScriptStopAction"></span><span class="target" id="class_script_stop_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ScriptStopAction</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv316ScriptStopAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16ScriptStopAction16ScriptStopActionEP6Script">
+<span id="_CPPv2N16ScriptStopAction16ScriptStopActionEP6Script"></span><span id="ScriptStopAction::ScriptStopAction__ScriptP"></span><span class="target" id="class_script_stop_action_1a7684490375a7f93789fc98e865151b3f"></span><code class="descname">ScriptStopAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Script" title="Script">Script</a> *<em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16ScriptStopAction16ScriptStopActionEP6Script" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16ScriptStopAction4playE1T">
+<span id="_CPPv2N16ScriptStopAction4playE1T"></span><span id="ScriptStopAction::play__T"></span><span class="target" id="class_script_stop_action_1a20fafc48a40afb6e0dab4a7e4b53fbf9"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N16ScriptStopAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N16ScriptStopAction7script_E">
+<span id="_CPPv2N16ScriptStopAction7script_E"></span><span id="ScriptStopAction::script___ScriptP"></span><span class="target" id="class_script_stop_action_1ad65f479b91c04ec5306b51005c86fcc1"></span><a class="reference internal" href="#_CPPv36Script" title="Script">Script</a> *<code class="descname">script_</code><a class="headerlink" href="#_CPPv3N16ScriptStopAction7script_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv316ScriptStopAction">
+<span id="_CPPv216ScriptStopAction"></span><span class="target" id="class_script_stop_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ScriptStopAction</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16ScriptStopAction16ScriptStopActionEP6Script">
+<span id="_CPPv2N16ScriptStopAction16ScriptStopActionEP6Script"></span><span class="target" id="class_script_stop_action_1a7684490375a7f93789fc98e865151b3f"></span><code class="descname">ScriptStopAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Script" title="Script">Script</a> *<em>script</em><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16ScriptStopAction4playE1T">
+<span id="_CPPv2N16ScriptStopAction4playE1T"></span><span class="target" id="class_script_stop_action_1a20fafc48a40afb6e0dab4a7e4b53fbf9"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N16ScriptStopAction7script_E">
+<span id="_CPPv2N16ScriptStopAction7script_E"></span><span class="target" id="class_script_stop_action_1ad65f479b91c04ec5306b51005c86fcc1"></span><a class="reference internal" href="#_CPPv36Script" title="Script">Script</a> *<code class="descname">script_</code><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
 <dt id="_CPPv36Script">
 <span id="_CPPv26Script"></span><span id="Script"></span><span class="target" id="class_script"></span><em class="property">class </em><code class="descname">Script</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv3IE7TriggerI5NoArgE" title="Trigger&lt;NoArg&gt;">Trigger</a>&lt;<a class="reference internal" href="#_CPPv35NoArg" title="NoArg">NoArg</a>&gt;<a class="headerlink" href="#_CPPv36Script" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -392,8 +524,18 @@
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N6Script4stopEv">
+<span id="_CPPv2N6Script4stopEv"></span><span id="Script::stop"></span><span class="target" id="class_script_1a2d67373d205f88dace302f54a340027a"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Script4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N6Script19make_execute_actionEv">
-<span id="_CPPv2N6Script19make_execute_actionEv"></span><span id="Script::make_execute_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_script_1a796dfe7057ea8e454ba7f1969b8cad48"></span><a class="reference internal" href="#_CPPv319ScriptExecuteAction" title="ScriptExecuteAction">ScriptExecuteAction</a>&lt;T&gt; *<code class="descname">make_execute_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Script19make_execute_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6Script19make_execute_actionEv"></span><span id="Script::make_execute_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_script_1a556da7164394bafeca218f1085aca438"></span><a class="reference internal" href="#_CPPv319ScriptExecuteAction" title="ScriptExecuteAction">ScriptExecuteAction</a>&lt;T&gt; *<code class="descname">make_execute_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Script19make_execute_actionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6Script16make_stop_actionEv">
+<span id="_CPPv2N6Script16make_stop_actionEv"></span><span id="Script::make_stop_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_script_1aca1420d2f808871505315827741e0d91"></span><a class="reference internal" href="#_CPPv316ScriptStopAction" title="ScriptStopAction">ScriptStopAction</a>&lt;T&gt; *<code class="descname">make_stop_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Script16make_stop_actionEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -406,7 +548,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N10ActionList10add_actionEP6ActionI1TE">
-<span id="_CPPv2N10ActionList10add_actionEP6ActionI1TE"></span><span id="ActionList::add_action__Action:T:P"></span><span class="target" id="class_action_list_1af159fb8342c161195190fb49ba49080d"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10ActionList10add_actionEP6ActionI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10ActionList10add_actionEP6ActionI1TE"></span><span id="ActionList::add_action__Action:T:P"></span><span class="target" id="class_action_list_1a26cefce2457f23982018596445d1aa64"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10ActionList10add_actionEP6ActionI1TE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -417,6 +559,11 @@
 <dl class="function">
 <dt id="_CPPv3N10ActionList4playE1T">
 <span id="_CPPv2N10ActionList4playE1T"></span><span id="ActionList::play__T"></span><span class="target" id="class_action_list_1a971933f94a0d962641f48a1e43814124"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10ActionList4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10ActionList4stopEv">
+<span id="_CPPv2N10ActionList4stopEv"></span><span id="ActionList::stop"></span><span class="target" id="class_action_list_1a2a0259e352ba863f416145eab8d19089"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10ActionList4stopEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -443,7 +590,7 @@
 <dl class="class">
 <dt id="_CPPv36Action">
 <span id="_CPPv26Action"></span><span id="Action"></span><span class="target" id="class_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Action</code><a class="headerlink" href="#_CPPv36Action" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Subclassed by <a class="reference internal" href="../cover/index.html#classcover_1_1_close_action"><span class="std std-ref">cover::CloseAction&lt; T &gt;</span></a>, <a class="reference internal" href="../cover/index.html#classcover_1_1_open_action"><span class="std std-ref">cover::OpenAction&lt; T &gt;</span></a>, <a class="reference internal" href="../cover/index.html#classcover_1_1_stop_action"><span class="std std-ref">cover::StopAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_delay_action"><span class="std std-ref">DelayAction&lt; T &gt;</span></a>, <a class="reference internal" href="deep-sleep.html#class_enter_deep_sleep_action"><span class="std std-ref">EnterDeepSleepAction&lt; T &gt;</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_toggle_action"><span class="std std-ref">fan::ToggleAction&lt; T &gt;</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_turn_off_action"><span class="std std-ref">fan::TurnOffAction&lt; T &gt;</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_turn_on_action"><span class="std std-ref">fan::TurnOnAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_if_action"><span class="std std-ref">IfAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_lambda_action"><span class="std std-ref">LambdaAction&lt; T &gt;</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_toggle_action"><span class="std std-ref">light::ToggleAction&lt; T &gt;</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_turn_off_action"><span class="std std-ref">light::TurnOffAction&lt; T &gt;</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_turn_on_action"><span class="std std-ref">light::TurnOnAction&lt; T &gt;</span></a>, <a class="reference internal" href="mqtt.html#classmqtt_1_1_m_q_t_t_publish_action"><span class="std std-ref">mqtt::MQTTPublishAction&lt; T &gt;</span></a>, <a class="reference internal" href="mqtt.html#classmqtt_1_1_m_q_t_t_publish_json_action"><span class="std std-ref">mqtt::MQTTPublishJsonAction&lt; T &gt;</span></a>, <a class="reference internal" href="../output/index.html#classoutput_1_1_set_level_action"><span class="std std-ref">output::SetLevelAction&lt; T &gt;</span></a>, <a class="reference internal" href="../output/index.html#classoutput_1_1_turn_off_action"><span class="std std-ref">output::TurnOffAction&lt; T &gt;</span></a>, <a class="reference internal" href="../output/index.html#classoutput_1_1_turn_on_action"><span class="std std-ref">output::TurnOnAction&lt; T &gt;</span></a>, <a class="reference internal" href="deep-sleep.html#class_prevent_deep_sleep_action"><span class="std std-ref">PreventDeepSleepAction&lt; T &gt;</span></a>, ScriptExecuteAction&lt; T &gt;, <a class="reference internal" href="../misc/stepper.html#classstepper_1_1_report_position_action"><span class="std std-ref">stepper::ReportPositionAction&lt; T &gt;</span></a>, <a class="reference internal" href="../misc/stepper.html#classstepper_1_1_set_target_action"><span class="std std-ref">stepper::SetTargetAction&lt; T &gt;</span></a>, switch_::ToggleAction&lt; T &gt;, switch_::TurnOffAction&lt; T &gt;, switch_::TurnOnAction&lt; T &gt;, <a class="reference internal" href="#class_update_component_action"><span class="std std-ref">UpdateComponentAction&lt; T &gt;</span></a></p>
+<dd><p>Subclassed by <a class="reference internal" href="native-api.html#classapi_1_1_home_assistant_service_call_action"><span class="std std-ref">api::HomeAssistantServiceCallAction&lt; T &gt;</span></a>, <a class="reference internal" href="../cover/index.html#classcover_1_1_close_action"><span class="std std-ref">cover::CloseAction&lt; T &gt;</span></a>, <a class="reference internal" href="../cover/index.html#classcover_1_1_open_action"><span class="std std-ref">cover::OpenAction&lt; T &gt;</span></a>, <a class="reference internal" href="../cover/index.html#classcover_1_1_stop_action"><span class="std std-ref">cover::StopAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_delay_action"><span class="std std-ref">DelayAction&lt; T &gt;</span></a>, <a class="reference internal" href="deep-sleep.html#class_enter_deep_sleep_action"><span class="std std-ref">EnterDeepSleepAction&lt; T &gt;</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_toggle_action"><span class="std std-ref">fan::ToggleAction&lt; T &gt;</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_turn_off_action"><span class="std std-ref">fan::TurnOffAction&lt; T &gt;</span></a>, <a class="reference internal" href="../fan/index.html#classfan_1_1_turn_on_action"><span class="std std-ref">fan::TurnOnAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_if_action"><span class="std std-ref">IfAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_lambda_action"><span class="std std-ref">LambdaAction&lt; T &gt;</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_toggle_action"><span class="std std-ref">light::ToggleAction&lt; T &gt;</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_turn_off_action"><span class="std std-ref">light::TurnOffAction&lt; T &gt;</span></a>, <a class="reference internal" href="../light/index.html#classlight_1_1_turn_on_action"><span class="std std-ref">light::TurnOnAction&lt; T &gt;</span></a>, <a class="reference internal" href="mqtt.html#classmqtt_1_1_m_q_t_t_publish_action"><span class="std std-ref">mqtt::MQTTPublishAction&lt; T &gt;</span></a>, <a class="reference internal" href="mqtt.html#classmqtt_1_1_m_q_t_t_publish_json_action"><span class="std std-ref">mqtt::MQTTPublishJsonAction&lt; T &gt;</span></a>, <a class="reference internal" href="../output/index.html#classoutput_1_1_set_level_action"><span class="std std-ref">output::SetLevelAction&lt; T &gt;</span></a>, <a class="reference internal" href="../output/index.html#classoutput_1_1_turn_off_action"><span class="std std-ref">output::TurnOffAction&lt; T &gt;</span></a>, <a class="reference internal" href="../output/index.html#classoutput_1_1_turn_on_action"><span class="std std-ref">output::TurnOnAction&lt; T &gt;</span></a>, <a class="reference internal" href="deep-sleep.html#class_prevent_deep_sleep_action"><span class="std std-ref">PreventDeepSleepAction&lt; T &gt;</span></a>, ScriptExecuteAction&lt; T &gt;, ScriptStopAction&lt; T &gt;, <a class="reference internal" href="../misc/stepper.html#classstepper_1_1_report_position_action"><span class="std std-ref">stepper::ReportPositionAction&lt; T &gt;</span></a>, <a class="reference internal" href="../misc/stepper.html#classstepper_1_1_set_target_action"><span class="std std-ref">stepper::SetTargetAction&lt; T &gt;</span></a>, switch_::ToggleAction&lt; T &gt;, switch_::TurnOffAction&lt; T &gt;, switch_::TurnOnAction&lt; T &gt;, <a class="reference internal" href="#class_update_component_action"><span class="std std-ref">UpdateComponentAction&lt; T &gt;</span></a>, <a class="reference internal" href="#class_while_action"><span class="std std-ref">WhileAction&lt; T &gt;</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -454,6 +601,16 @@
 <dl class="function">
 <dt id="_CPPv3N6Action9play_nextE1T">
 <span id="_CPPv2N6Action9play_nextE1T"></span><span id="Action::play_next__T"></span><span class="target" id="class_action_1afdb6f4100e3556f31b0bf193d59f9b57"></span>void <code class="descname">play_next</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Action9play_nextE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6Action4stopEv">
+<span id="_CPPv2N6Action4stopEv"></span><span id="Action::stop"></span><span class="target" id="class_action_1a0012da6695bca33fc67f933137e3516b"></span><em class="property">virtual</em> void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Action4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6Action9stop_nextEv">
+<span id="_CPPv2N6Action9stop_nextEv"></span><span id="Action::stop_next"></span><span class="target" id="class_action_1a4dea1f527beb1ea23e5697ad423d4230"></span>void <code class="descname">stop_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6Action9stop_nextEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -493,6 +650,11 @@
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11DelayAction4stopEv">
+<span id="_CPPv2N11DelayAction4stopEv"></span><span id="DelayAction::stop"></span><span class="target" id="class_delay_action_1a1742d3693960835b5040a05e435812ae"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11DelayAction4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11DelayAction4playE1T">
 <span id="_CPPv2N11DelayAction4playE1T"></span><span id="DelayAction::play__T"></span><span class="target" id="class_delay_action_1a3411df5b1e1e7bb450046b7e52ecc4a5"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11DelayAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -500,15 +662,7 @@
 <dl class="function">
 <dt id="_CPPv3NK11DelayAction18get_setup_priorityEv">
 <span id="_CPPv2NK11DelayAction18get_setup_priorityEv"></span><span id="DelayAction::get_setup_priorityC"></span><span class="target" id="class_delay_action_1adabd554d9d119745fb4e56a8f3734d7e"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11DelayAction18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -572,6 +726,11 @@
 <span id="_CPPv2N8IfAction4playE1T"></span><span id="IfAction::play__T"></span><span class="target" id="class_if_action_1a4743b5602187792b73afe46cd0d1543c"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8IfAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N8IfAction4stopEv">
+<span id="_CPPv2N8IfAction4stopEv"></span><span id="IfAction::stop"></span><span class="target" id="class_if_action_1a04aedf666c0bd568ba16d29e78161530"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N8IfAction4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
@@ -588,6 +747,52 @@
 <dl class="member">
 <dt id="_CPPv3N8IfAction5else_E">
 <span id="_CPPv2N8IfAction5else_E"></span><span id="IfAction::else___ActionList:T:"></span><span class="target" id="class_if_action_1a2d66c62a42ae168f1a6f31a17a21e9fd"></span><a class="reference internal" href="#_CPPv310ActionList" title="ActionList">ActionList</a>&lt;T&gt; <code class="descname">else_</code><a class="headerlink" href="#_CPPv3N8IfAction5else_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv311WhileAction">
+<span id="_CPPv211WhileAction"></span><span id="WhileAction"></span><span class="target" id="class_while_action"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><em class="property">class </em><code class="descname">WhileAction</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<a class="headerlink" href="#_CPPv311WhileAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N11WhileAction11WhileActionERKNSt6vectorIP9ConditionI1TEEE">
+<span id="_CPPv2N11WhileAction11WhileActionERKNSt6vectorIP9ConditionI1TEEE"></span><span id="WhileAction::WhileAction__std::vector:Condition:T:P:CR"></span><span class="target" id="class_while_action_1a716fd4a5dbd468990cbc7d335d835281"></span><code class="descname">WhileAction</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; &amp;<em>conditions</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11WhileAction11WhileActionERKNSt6vectorIP9ConditionI1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11WhileAction8add_thenERKNSt6vectorIP6ActionI1TEEE">
+<span id="_CPPv2N11WhileAction8add_thenERKNSt6vectorIP6ActionI1TEEE"></span><span id="WhileAction::add_then__std::vector:Action:T:P:CR"></span><span class="target" id="class_while_action_1a15ff417fa0d8ab302e2ee0a1112515ef"></span>void <code class="descname">add_then</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *&gt; &amp;<em>actions</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11WhileAction8add_thenERKNSt6vectorIP6ActionI1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11WhileAction4playE1T">
+<span id="_CPPv2N11WhileAction4playE1T"></span><span id="WhileAction::play__T"></span><span class="target" id="class_while_action_1a4e9d8cce1f8edfa4d37da87fcbf33332"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11WhileAction4playE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11WhileAction4stopEv">
+<span id="_CPPv2N11WhileAction4stopEv"></span><span id="WhileAction::stop"></span><span class="target" id="class_while_action_1a5453da6556f95bc3f80c91157f48629d"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11WhileAction4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N11WhileAction11conditions_E">
+<span id="_CPPv2N11WhileAction11conditions_E"></span><span id="WhileAction::conditions___std::vector:Condition:T:P:"></span><span class="target" id="class_while_action_1ac270082b5a2adbda452dc8a682f53027"></span>std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; <code class="descname">conditions_</code><a class="headerlink" href="#_CPPv3N11WhileAction11conditions_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11WhileAction5then_E">
+<span id="_CPPv2N11WhileAction5then_E"></span><span id="WhileAction::then___ActionList:T:"></span><span class="target" id="class_while_action_1af164578e592c8979059c494410a691a7"></span><a class="reference internal" href="#_CPPv310ActionList" title="ActionList">ActionList</a>&lt;T&gt; <code class="descname">then_</code><a class="headerlink" href="#_CPPv3N11WhileAction5then_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11WhileAction11is_running_E">
+<span id="_CPPv2N11WhileAction11is_running_E"></span><span id="WhileAction::is_running___b"></span><span class="target" id="class_while_action_1ad1c7d69812974e8d956ea7ad0cce47e0"></span>bool <code class="descname">is_running_</code> = {false}<a class="headerlink" href="#_CPPv3N11WhileAction11is_running_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -646,13 +851,39 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="_CPPv316ScriptStopAction">
+<span class="target" id="class_script_stop_action"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ScriptStopAction</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt;<br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N16ScriptStopAction16ScriptStopActionEP6Script">
+<span class="target" id="class_script_stop_action_1a7684490375a7f93789fc98e865151b3f"></span><code class="descname">ScriptStopAction</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Script" title="Script">Script</a> *<em>script</em><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N16ScriptStopAction4playE1T">
+<span class="target" id="class_script_stop_action_1a20fafc48a40afb6e0dab4a7e4b53fbf9"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N16ScriptStopAction7script_E">
+<span class="target" id="class_script_stop_action_1ad65f479b91c04ec5306b51005c86fcc1"></span><a class="reference internal" href="#_CPPv36Script" title="Script">Script</a> *<code class="descname">script_</code><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
 <dt id="_CPPv310ActionList">
 <span id="_CPPv210ActionList"></span><span class="target" id="class_action_list"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">ActionList</code><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N10ActionList10add_actionEP6ActionI1TE">
-<span id="_CPPv2N10ActionList10add_actionEP6ActionI1TE"></span><span class="target" id="class_action_list_1af159fb8342c161195190fb49ba49080d"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><br /></dt>
+<span id="_CPPv2N10ActionList10add_actionEP6ActionI1TE"></span><span class="target" id="class_action_list_1a26cefce2457f23982018596445d1aa64"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -663,6 +894,11 @@
 <dl class="function">
 <dt id="_CPPv3N10ActionList4playE1T">
 <span id="_CPPv2N10ActionList4playE1T"></span><span class="target" id="class_action_list_1a971933f94a0d962641f48a1e43814124"></span>void <code class="descname">play</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10ActionList4stopEv">
+<span id="_CPPv2N10ActionList4stopEv"></span><span class="target" id="class_action_list_1a2a0259e352ba863f416145eab8d19089"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -688,40 +924,42 @@
 
 <dl class="class">
 <dt id="_CPPv310Automation">
-<span id="_CPPv210Automation"></span><span id="Automation"></span><span class="target" id="class_automation"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Automation</code><a class="headerlink" href="#_CPPv310Automation" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv210Automation"></span><span class="target" id="class_automation"></span><em class="property">template </em>&lt;typename <em>T</em>&gt;<br /><em class="property">class </em><code class="descname">Automation</code><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N10Automation10AutomationEP7TriggerI1TE">
-<span id="_CPPv2N10Automation10AutomationEP7TriggerI1TE"></span><span id="Automation::Automation__Trigger:T:P"></span><span class="target" id="class_automation_1ae19b63630919592e448f7c3c141a5baa"></span><code class="descname">Automation</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<em>trigger</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation10AutomationEP7TriggerI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation10AutomationEP7TriggerI1TE"></span><span class="target" id="class_automation_1ae19b63630919592e448f7c3c141a5baa"></span><code class="descname">Automation</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<em>trigger</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N10Automation13add_conditionEP9ConditionI1TE">
-<span id="_CPPv2N10Automation13add_conditionEP9ConditionI1TE"></span><span id="Automation::add_condition__Condition:T:P"></span><span class="target" id="class_automation_1ac0e44bc7a06a746b2c10207c922c387b"></span><a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *<code class="descname">add_condition</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *<em>condition</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation13add_conditionEP9ConditionI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation13add_conditionEP9ConditionI1TE"></span><span class="target" id="class_automation_1a310afabe04897246b6b8e535dc3eccdf"></span><a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *<code class="descname">add_condition</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *<em>condition</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE">
-<span id="_CPPv2N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE"></span><span id="Automation::add_conditions__std::vector:Condition:T:P:CR"></span><span class="target" id="class_automation_1a36c97f0f896176396776ec64cc0ba1e0"></span>void <code class="descname">add_conditions</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; &amp;<em>conditions</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation14add_conditionsERKNSt6vectorIP9ConditionI1TEEE"></span><span class="target" id="class_automation_1a36c97f0f896176396776ec64cc0ba1e0"></span>void <code class="descname">add_conditions</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; &amp;<em>conditions</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N10Automation10add_actionEP6ActionI1TE">
-<span id="_CPPv2N10Automation10add_actionEP6ActionI1TE"></span><span id="Automation::add_action__Action:T:P"></span><span class="target" id="class_automation_1a2f365d232a8d999b37d390ddc5e8f32f"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation10add_actionEP6ActionI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation10add_actionEP6ActionI1TE"></span><span class="target" id="class_automation_1a214f1a8abc18c5f658b26b922fe50003"></span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<code class="descname">add_action</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *<em>action</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE">
-<span id="_CPPv2N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE"></span><span id="Automation::add_actions__std::vector:Action:T:P:CR"></span><span class="target" id="class_automation_1a203648ef7cc1efe91dab0980bbcf26df"></span>void <code class="descname">add_actions</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *&gt; &amp;<em>actions</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation11add_actionsERKNSt6vectorIP6ActionI1TEEE"></span><span class="target" id="class_automation_1a203648ef7cc1efe91dab0980bbcf26df"></span>void <code class="descname">add_actions</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv36Action" title="Action">Action</a>&lt;T&gt; *&gt; &amp;<em>actions</em><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Protected Functions</p>
 <dl class="function">
 <dt id="_CPPv3N10Automation16process_trigger_E1T">
-<span id="_CPPv2N10Automation16process_trigger_E1T"></span><span id="Automation::process_trigger___T"></span><span class="target" id="class_automation_1aa0e2728f3c4d36b66d47b30dd0159705"></span>void <code class="descname">process_trigger_</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10Automation16process_trigger_E1T" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation16process_trigger_E1T"></span><span class="target" id="class_automation_1aa0e2728f3c4d36b66d47b30dd0159705"></span>void <code class="descname">process_trigger_</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10Automation4stopEv">
+<span id="_CPPv2N10Automation4stopEv"></span><span class="target" id="class_automation_1a8541efe8191a8acd9eb4df23194aec87"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -729,17 +967,17 @@
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
 <dt id="_CPPv3N10Automation8trigger_E">
-<span id="_CPPv2N10Automation8trigger_E"></span><span id="Automation::trigger___Trigger:T:P"></span><span class="target" id="class_automation_1acd3d36e862941f3f6f6f4ccc334b72f7"></span><a class="reference internal" href="#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<code class="descname">trigger_</code><a class="headerlink" href="#_CPPv3N10Automation8trigger_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation8trigger_E"></span><span class="target" id="class_automation_1acd3d36e862941f3f6f6f4ccc334b72f7"></span><a class="reference internal" href="#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;T&gt; *<code class="descname">trigger_</code><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N10Automation11conditions_E">
-<span id="_CPPv2N10Automation11conditions_E"></span><span id="Automation::conditions___std::vector:Condition:T:P:"></span><span class="target" id="class_automation_1ae7f97becc87e883931641286009bf622"></span>std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; <code class="descname">conditions_</code><a class="headerlink" href="#_CPPv3N10Automation11conditions_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation11conditions_E"></span><span class="target" id="class_automation_1ae7f97becc87e883931641286009bf622"></span>std::vector&lt;<a class="reference internal" href="#_CPPv39Condition" title="Condition">Condition</a>&lt;T&gt; *&gt; <code class="descname">conditions_</code><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N10Automation8actions_E">
-<span id="_CPPv2N10Automation8actions_E"></span><span id="Automation::actions___ActionList:T:"></span><span class="target" id="class_automation_1aeda5a302d33a54915083b5cc88e0bbd4"></span><a class="reference internal" href="#_CPPv310ActionList" title="ActionList">ActionList</a>&lt;T&gt; <code class="descname">actions_</code><a class="headerlink" href="#_CPPv3N10Automation8actions_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10Automation8actions_E"></span><span class="target" id="class_automation_1aeda5a302d33a54915083b5cc88e0bbd4"></span><a class="reference internal" href="#_CPPv310ActionList" title="ActionList">ActionList</a>&lt;T&gt; <code class="descname">actions_</code><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -762,35 +1000,23 @@
 
 <dl class="function">
 <dt id="_CPPv3N23GlobalVariableComponent5valueEv">
-<span id="_CPPv2N23GlobalVariableComponent5valueEv"></span><span id="GlobalVariableComponent::value"></span><span class="target" id="class_global_variable_component_1abd79ffc4ad356d7510fe0fb4b1142c05"></span>T &amp;<code class="descname">value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N23GlobalVariableComponent5valueEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N23GlobalVariableComponent5valueEv"></span><span id="GlobalVariableComponent::value"></span><span class="target" id="class_global_variable_component_1a5b697cedf421609a7ae0fa4ac55e0469"></span>T &amp;<code class="descname">value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N23GlobalVariableComponent5valueEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N23GlobalVariableComponent5setupEv">
 <span id="_CPPv2N23GlobalVariableComponent5setupEv"></span><span id="GlobalVariableComponent::setup"></span><span class="target" id="class_global_variable_component_1a102fb262b56665497acc6ce3fbf45c4a"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N23GlobalVariableComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_global_variable_component_1a102fb262b56665497acc6ce3fbf45c4a"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK23GlobalVariableComponent18get_setup_priorityEv">
 <span id="_CPPv2NK23GlobalVariableComponent18get_setup_priorityEv"></span><span id="GlobalVariableComponent::get_setup_priorityC"></span><span class="target" id="class_global_variable_component_1a71859651938b3dfdbe7d3bbfa877fbb4"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK23GlobalVariableComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#class_global_variable_component_1a102fb262b56665497acc6ce3fbf45c4a"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N23GlobalVariableComponent4loopEv">
 <span id="_CPPv2N23GlobalVariableComponent4loopEv"></span><span id="GlobalVariableComponent::loop"></span><span class="target" id="class_global_variable_component_1a14055fd21158450f0143977f3571bb2b"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N23GlobalVariableComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_global_variable_component_1a14055fd21158450f0143977f3571bb2b"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#class_global_variable_component_1a102fb262b56665497acc6ce3fbf45c4a"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N23GlobalVariableComponent17set_restore_valueE8uint32_t">
@@ -842,7 +1068,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -858,11 +1084,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

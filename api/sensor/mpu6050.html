@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>MPU6050 Accelerometer/Gyroscope Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>MPU6050 Accelerometer/Gyroscope Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/sensor/mpu6050.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -102,15 +103,13 @@ variety of options.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt>
-<span class="target" id="classsensor_1_1_m_p_u6050_component_1a8004fb6d3a7af2e9457863eac9d55215"></span><code class="descname">sensor::MPU6050Component::MPU6050Component(I2CComponent  * parent, uint8_t address = 0x68, uint32_t update_interval = 15000)</code></dt>
+<span class="target" id="classsensor_1_1_m_p_u6050_component_1ab61dca8914847357c123441720fb3b32"></span><code class="descname">sensor::MPU6050Component::MPU6050Component(I2CComponent  * parent, uint8_t address = 0x68, uint32_t update_interval = 60000)</code></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor16MPU6050Component5setupEv">
 <span id="_CPPv2N6sensor16MPU6050Component5setupEv"></span><span id="sensor::MPU6050Component::setup"></span><span class="target" id="classsensor_1_1_m_p_u6050_component_1a44b80d04b5b8b9e43f25df9737b682b8"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16MPU6050Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_m_p_u6050_component_1a44b80d04b5b8b9e43f25df9737b682b8"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor16MPU6050Component11dump_configEv">
@@ -125,15 +124,7 @@ variety of options.</p>
 <dl class="function">
 <dt id="_CPPv3NK6sensor16MPU6050Component18get_setup_priorityEv">
 <span id="_CPPv2NK6sensor16MPU6050Component18get_setup_priorityEv"></span><span id="sensor::MPU6050Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_m_p_u6050_component_1afa56ae998c237015a04fe4c578cfec4e"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16MPU6050Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_m_p_u6050_component_1a44b80d04b5b8b9e43f25df9737b682b8"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor16MPU6050Component19make_accel_x_sensorERKNSt6stringE">
@@ -225,7 +216,7 @@ variety of options.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -241,11 +232,11 @@ variety of options.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

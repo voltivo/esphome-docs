@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Neopixelbus Lights &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/light/neopixelbus.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Switch" href="../switch/index.html" />
+    <link rel="prev" title="FastLED Light Output" href="fastled.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/api/light/neopixelbus.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Neopixelbus Lights</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="neopixelbus-lights">
+<h1>Neopixelbus Lights<a class="headerlink" href="#neopixelbus-lights" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv3N5light16ESPNeoPixelOrderE">
+<span id="_CPPv2N5light16ESPNeoPixelOrderE"></span><span id="light::ESPNeoPixelOrder"></span><span class="target" id="neo__pixel__bus__light__output_8h_1abad43c6e4f30634ef1d2d2a0fac12436"></span><em class="property">enum </em><code class="descclassname"><a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a><code class="descclassname">::</code></code><code class="descname">ESPNeoPixelOrder</code><a class="headerlink" href="#_CPPv3N5light16ESPNeoPixelOrderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv3N5light4GBWRE">
+<span id="_CPPv2N5light4GBWRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a9dd11b9df074d772dea156d152aaf41b"></span><code class="descname">GBWR</code> = 0b11000110<a class="headerlink" href="#_CPPv3N5light4GBWRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4GBRWE">
+<span id="_CPPv2N5light4GBRWE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a9760907846395f1699fb4ff65153193d"></span><code class="descname">GBRW</code> = 0b10000111<a class="headerlink" href="#_CPPv3N5light4GBRWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light3GBRE">
+<span id="_CPPv2N5light3GBRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436aa697acf848b7c983af62cca5f77dd1f2"></span><code class="descname">GBR</code> = 0b10000111<a class="headerlink" href="#_CPPv3N5light3GBRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4GWBRE">
+<span id="_CPPv2N5light4GWBRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a1c6a62194f8162d558b1dad23712262e"></span><code class="descname">GWBR</code> = 0b11001001<a class="headerlink" href="#_CPPv3N5light4GWBRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4GRBWE">
+<span id="_CPPv2N5light4GRBWE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436aad0989576661243491540080b5213add"></span><code class="descname">GRBW</code> = 0b01001011<a class="headerlink" href="#_CPPv3N5light4GRBWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light3GRBE">
+<span id="_CPPv2N5light3GRBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a50725d49d336ca5507cfcd2a6d2c2f8d"></span><code class="descname">GRB</code> = 0b01001011<a class="headerlink" href="#_CPPv3N5light3GRBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4GWRBE">
+<span id="_CPPv2N5light4GWRBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a657e63a31c2efb9f184979e1b5ffb5f5"></span><code class="descname">GWRB</code> = 0b10001101<a class="headerlink" href="#_CPPv3N5light4GWRBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4GRWBE">
+<span id="_CPPv2N5light4GRWBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a03abd31865b4651e53cafa8f52a861f3"></span><code class="descname">GRWB</code> = 0b01001110<a class="headerlink" href="#_CPPv3N5light4GRWBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4BGWRE">
+<span id="_CPPv2N5light4BGWRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436ae61db91c2de6361b0b91579ca1748d78"></span><code class="descname">BGWR</code> = 0b11010010<a class="headerlink" href="#_CPPv3N5light4BGWRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4BGRWE">
+<span id="_CPPv2N5light4BGRWE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a8ffc7e30e3f1acc7b0f75de853c20130"></span><code class="descname">BGRW</code> = 0b10010011<a class="headerlink" href="#_CPPv3N5light4BGRWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light3BGRE">
+<span id="_CPPv2N5light3BGRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a2ad5640ebdec72fc79531d1778c6c2dc"></span><code class="descname">BGR</code> = 0b10010011<a class="headerlink" href="#_CPPv3N5light3BGRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4WGBRE">
+<span id="_CPPv2N5light4WGBRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a2ef7f1356de87395f1de0be0f96a37a9"></span><code class="descname">WGBR</code> = 0b11011000<a class="headerlink" href="#_CPPv3N5light4WGBRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4RGBWE">
+<span id="_CPPv2N5light4RGBWE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a01ed2c7620426786f55ef860b1794bb0"></span><code class="descname">RGBW</code> = 0b00011011<a class="headerlink" href="#_CPPv3N5light4RGBWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light3RGBE">
+<span id="_CPPv2N5light3RGBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a889574aebacda6bfd3e534e2b49b8028"></span><code class="descname">RGB</code> = 0b00011011<a class="headerlink" href="#_CPPv3N5light3RGBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4WGRBE">
+<span id="_CPPv2N5light4WGRBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436adccfc6f4c3716885a80ad2afeeecba39"></span><code class="descname">WGRB</code> = 0b10011100<a class="headerlink" href="#_CPPv3N5light4WGRBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4RGWBE">
+<span id="_CPPv2N5light4RGWBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a0fab69c78616a3eb27a0220f5e20a200"></span><code class="descname">RGWB</code> = 0b00011110<a class="headerlink" href="#_CPPv3N5light4RGWBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4BWGRE">
+<span id="_CPPv2N5light4BWGRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436aed5f7c3ec81e3ff17efa62e7f3b560fd"></span><code class="descname">BWGR</code> = 0b11100001<a class="headerlink" href="#_CPPv3N5light4BWGRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4BRGWE">
+<span id="_CPPv2N5light4BRGWE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a3a88a05489a5e4c1d3296a984f717f9e"></span><code class="descname">BRGW</code> = 0b01100011<a class="headerlink" href="#_CPPv3N5light4BRGWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light3BRGE">
+<span id="_CPPv2N5light3BRGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a4875dadcf9dd9ee93bbd02c8228fade2"></span><code class="descname">BRG</code> = 0b01100011<a class="headerlink" href="#_CPPv3N5light3BRGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4WBGRE">
+<span id="_CPPv2N5light4WBGRE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a16c1f7bd28bac99fd4d42ea65dc8e7ff"></span><code class="descname">WBGR</code> = 0b11100100<a class="headerlink" href="#_CPPv3N5light4WBGRE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4RBGWE">
+<span id="_CPPv2N5light4RBGWE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436ae659bea7dd94a37250c4a2a9b6ff283a"></span><code class="descname">RBGW</code> = 0b00100111<a class="headerlink" href="#_CPPv3N5light4RBGWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light3RBGE">
+<span id="_CPPv2N5light3RBGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a1fca165936b3a279373072a033368940"></span><code class="descname">RBG</code> = 0b00100111<a class="headerlink" href="#_CPPv3N5light3RBGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4WRGBE">
+<span id="_CPPv2N5light4WRGBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a4e7abe19b3e4031cef8bfe3118195c85"></span><code class="descname">WRGB</code> = 0b01101100<a class="headerlink" href="#_CPPv3N5light4WRGBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4RWGBE">
+<span id="_CPPv2N5light4RWGBE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a7766e037173f212bc772a2eaef126475"></span><code class="descname">RWGB</code> = 0b00101101<a class="headerlink" href="#_CPPv3N5light4RWGBE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4BWRGE">
+<span id="_CPPv2N5light4BWRGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a4f20cec173ef07e3e778e809ce0384b6"></span><code class="descname">BWRG</code> = 0b10110001<a class="headerlink" href="#_CPPv3N5light4BWRGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4BRWGE">
+<span id="_CPPv2N5light4BRWGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436aed0e55c0a8445239ff7bbad1b5c0bfe8"></span><code class="descname">BRWG</code> = 0b01110010<a class="headerlink" href="#_CPPv3N5light4BRWGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4WBRGE">
+<span id="_CPPv2N5light4WBRGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a12445dba802426678bc484809f9c1862"></span><code class="descname">WBRG</code> = 0b10110100<a class="headerlink" href="#_CPPv3N5light4WBRGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4RBWGE">
+<span id="_CPPv2N5light4RBWGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a790aab335891fd0da34ed7c222cf13ef"></span><code class="descname">RBWG</code> = 0b00110110<a class="headerlink" href="#_CPPv3N5light4RBWGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4WRBGE">
+<span id="_CPPv2N5light4WRBGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436ae370ac906ea6cd21d65d8f34f30ac9f8"></span><code class="descname">WRBG</code> = 0b01111000<a class="headerlink" href="#_CPPv3N5light4WRBGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv3N5light4RWBGE">
+<span id="_CPPv2N5light4RWBGE"></span><span class="target" id="dummy_1abad43c6e4f30634ef1d2d2a0fac12436a2edec2606037dce9250fd4781437319a"></span><code class="descname">RWBG</code> = 0b00111001<a class="headerlink" href="#_CPPv3N5light4RWBGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBaseE">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBaseE"></span><span id="light::NeoPixelBusLightOutputBase"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base"></span><em class="property">template </em>&lt;typename <em>T_METHOD</em>, typename <em>T_COLOR_FEATURE</em>&gt;<br /><em class="property">class </em><code class="descname">NeoPixelBusLightOutputBase</code> : <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="index.html#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="addressable.html#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBaseE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This component implements support for many types of addressable LED lights. </p>
+<p>To do this, it uses the NeoPixelBus library. The API for setting up the different types of lights NeoPixelBus supports is intentionally kept as close to NeoPixelBus defaults as possible. To use NeoPixelBus lights with esphomelib, first set up the component using the helper in <a class="reference internal" href="../core/application.html#class_application"><span class="std std-ref">Application</span></a>, then add the LEDs using the <code class="docutils literal notranslate"><span class="pre">add_leds</span></code> helper functions.</p>
+<p>These add_leds helpers can, however, only be called once on a NeoPixelBusLightOutputComponent. </p>
+<p>Subclassed by <a class="reference internal" href="#classlight_1_1_neo_pixel_r_g_b_light_output"><span class="std std-ref">light::NeoPixelRGBLightOutput&lt; T_METHOD, T_COLOR_FEATURE &gt;</span></a>, <a class="reference internal" href="#classlight_1_1_neo_pixel_r_g_b_w_light_output"><span class="std std-ref">light::NeoPixelRGBWLightOutput&lt; T_METHOD, T_COLOR_FEATURE &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase13schedule_showEv">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase13schedule_showEv"></span><span id="light::NeoPixelBusLightOutputBase::schedule_show"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1aff2ef862eae2ccdc65aae4bbc7a8350b"></span>void <code class="descname">schedule_show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase13schedule_showEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase16set_power_supplyEP20PowerSupplyComponent">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase16set_power_supplyEP20PowerSupplyComponent"></span><span id="light::NeoPixelBusLightOutputBase::set_power_supply__PowerSupplyComponentP"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1ad02993114ff09f05e13b324ebf52bb77"></span>void <code class="descname">set_power_supply</code><span class="sig-paren">(</span><a class="reference internal" href="../core/power-supply.html#_CPPv320PowerSupplyComponent" title="PowerSupplyComponent">PowerSupplyComponent</a> *<em>power_supply</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase16set_power_supplyEP20PowerSupplyComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light26NeoPixelBusLightOutputBase15get_controller_Ev">
+<span id="_CPPv2NK5light26NeoPixelBusLightOutputBase15get_controller_Ev"></span><span id="light::NeoPixelBusLightOutputBase::get_controller_C"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1acb0d2a66ebd4fa0de73f9f0564270eaa"></span>NeoPixelBus&lt;T_COLOR_FEATURE, T_METHOD&gt; *<code class="descname">get_controller_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light26NeoPixelBusLightOutputBase15get_controller_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase14set_correctionEffff">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase14set_correctionEffff"></span><span id="light::NeoPixelBusLightOutputBase::set_correction__float.float.float.float"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a97edb8ddbf83562e3bed644670bb4577"></span>void <code class="descname">set_correction</code><span class="sig-paren">(</span>float <em>red</em>, float <em>green</em>, float <em>blue</em>, float <em>white</em> = 0.0f<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase14set_correctionEffff" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase17clear_effect_dataEv">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase17clear_effect_dataEv"></span><span id="light::NeoPixelBusLightOutputBase::clear_effect_data"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a04262a7e06c0e7af5a3ad9f1544ff52c"></span>void <code class="descname">clear_effect_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase17clear_effect_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase11setup_stateEP10LightState">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase11setup_stateEP10LightState"></span><span id="light::NeoPixelBusLightOutputBase::setup_state__LightStateP"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a39e3331a0469c594eb890b45819c3adc"></span>void <code class="descname">setup_state</code><span class="sig-paren">(</span><a class="reference internal" href="index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase11setup_stateEP10LightState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t7uint8_t">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t7uint8_t"></span><span id="light::NeoPixelBusLightOutputBase::add_leds__uint16_t.uint8_t"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a79e4296a264839ca16da922b890584fb"></span>void <code class="descname">add_leds</code><span class="sig-paren">(</span>uint16_t <em>count_pixels</em>, uint8_t <em>pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add some LEDS, can only be called once. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t7uint8_t7uint8_t">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t7uint8_t7uint8_t"></span><span id="light::NeoPixelBusLightOutputBase::add_leds__uint16_t.uint8_t.uint8_t"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a5ed863f227d167d3b703221b3673120a"></span>void <code class="descname">add_leds</code><span class="sig-paren">(</span>uint16_t <em>count_pixels</em>, uint8_t <em>pin_clock</em>, uint8_t <em>pin_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t"></span><span id="light::NeoPixelBusLightOutputBase::add_leds__uint16_t"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a5083dd491548ac0aa060212d69b9c694"></span>void <code class="descname">add_leds</code><span class="sig-paren">(</span>uint16_t <em>count_pixels</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsE8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsEP11NeoPixelBusI15T_COLOR_FEATURE8T_METHODE">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase8add_ledsEP11NeoPixelBusI15T_COLOR_FEATURE8T_METHODE"></span><span id="light::NeoPixelBusLightOutputBase::add_leds__NeoPixelBus:T_COLOR_FEATURE.T_METHOD:P"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a6c352ff68b512ee49c7598fbcdab4fa1"></span>void <code class="descname">add_leds</code><span class="sig-paren">(</span>NeoPixelBus&lt;T_COLOR_FEATURE, T_METHOD&gt; *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase8add_ledsEP11NeoPixelBusI15T_COLOR_FEATURE8T_METHODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase11write_stateEP10LightState">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase11write_stateEP10LightState"></span><span id="light::NeoPixelBusLightOutputBase::write_state__LightStateP"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1aeac246c35336d8fec2c1ef729b484c3a"></span>void <code class="descname">write_state</code><span class="sig-paren">(</span><a class="reference internal" href="index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase11write_stateEP10LightState" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase5setupEv">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase5setupEv"></span><span id="light::NeoPixelBusLightOutputBase::setup"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a154a77709aae0bdcbea3f18c1eb3819c"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase4loopEv">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase4loopEv"></span><span id="light::NeoPixelBusLightOutputBase::loop"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1afabe113bcebc29fa4a141ba9a4bbd758"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light26NeoPixelBusLightOutputBase18get_setup_priorityEv">
+<span id="_CPPv2NK5light26NeoPixelBusLightOutputBase18get_setup_priorityEv"></span><span id="light::NeoPixelBusLightOutputBase::get_setup_priorityC"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a5db7dabfb461334b86bbb86d3c4a3725"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light26NeoPixelBusLightOutputBase18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light26NeoPixelBusLightOutputBase4sizeEv">
+<span id="_CPPv2NK5light26NeoPixelBusLightOutputBase4sizeEv"></span><span id="light::NeoPixelBusLightOutputBase::sizeC"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a1c1ebd5b05761e7324ade54fd6503674"></span>int32_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light26NeoPixelBusLightOutputBase4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase15set_pixel_orderE16ESPNeoPixelOrder">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase15set_pixel_orderE16ESPNeoPixelOrder"></span><span id="light::NeoPixelBusLightOutputBase::set_pixel_order__ESPNeoPixelOrder"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1adab02b8ee6f94503a51ea43c257d55ad"></span>void <code class="descname">set_pixel_order</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16ESPNeoPixelOrderE" title="light::ESPNeoPixelOrder">ESPNeoPixelOrder</a> <em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase15set_pixel_orderE16ESPNeoPixelOrder" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase11controller_E">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase11controller_E"></span><span id="light::NeoPixelBusLightOutputBase::controller___NeoPixelBus:T_COLOR_FEATURE.T_METHOD:P"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1ae3b1c5160075e54a0a24d7c8777c3332"></span>NeoPixelBus&lt;T_COLOR_FEATURE, T_METHOD&gt; *<code class="descname">controller_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase11controller_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase10next_show_E">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase10next_show_E"></span><span id="light::NeoPixelBusLightOutputBase::next_show___b"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a87a5c47e65faa92135168853001ab041"></span>bool <code class="descname">next_show_</code> = {true}<a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase10next_show_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase11correction_E">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase11correction_E"></span><span id="light::NeoPixelBusLightOutputBase::correction___ESPColorCorrection"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a1aa4b1c87c4e1b96d62bed3568a93cad"></span><a class="reference internal" href="addressable.html#_CPPv3N5light18ESPColorCorrectionE" title="light::ESPColorCorrection">ESPColorCorrection</a> <code class="descname">correction_</code> = {}<a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase11correction_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase12effect_data_E">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase12effect_data_E"></span><span id="light::NeoPixelBusLightOutputBase::effect_data___uint8_tP"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1ab13357745ab548616ad21aadffa01068"></span>uint8_t *<code class="descname">effect_data_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase12effect_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3IEN5light26NeoPixelBusLightOutputBaseI8T_METHOD15T_COLOR_FEATUREE12rgb_offsets_E">
+<span id="_CPPv2IEN5light26NeoPixelBusLightOutputBaseI8T_METHOD15T_COLOR_FEATUREE12rgb_offsets_E"></span>template&lt;&gt;<br /><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a04f4986623ed400e83b87c0eae107a1e"></span>uint8_t <code class="descname">rgb_offsets_</code>[4]<a class="headerlink" href="#_CPPv3IEN5light26NeoPixelBusLightOutputBaseI8T_METHOD15T_COLOR_FEATUREE12rgb_offsets_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase13power_supply_E">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase13power_supply_E"></span><span id="light::NeoPixelBusLightOutputBase::power_supply___PowerSupplyComponentP"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1a26a12f7a8a23f42e71d78ff5d659f81b"></span><a class="reference internal" href="../core/power-supply.html#_CPPv320PowerSupplyComponent" title="PowerSupplyComponent">PowerSupplyComponent</a> *<code class="descname">power_supply_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase13power_supply_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26NeoPixelBusLightOutputBase25has_requested_high_power_E">
+<span id="_CPPv2N5light26NeoPixelBusLightOutputBase25has_requested_high_power_E"></span><span id="light::NeoPixelBusLightOutputBase::has_requested_high_power___b"></span><span class="target" id="classlight_1_1_neo_pixel_bus_light_output_base_1afd67ca207cb202a7e15e8a190ad58bc9"></span>bool <code class="descname">has_requested_high_power_</code> = {false}<a class="headerlink" href="#_CPPv3N5light26NeoPixelBusLightOutputBase25has_requested_high_power_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light22NeoPixelRGBLightOutputE">
+<span id="_CPPv2N5light22NeoPixelRGBLightOutputE"></span><span id="light::NeoPixelRGBLightOutput"></span><span class="target" id="classlight_1_1_neo_pixel_r_g_b_light_output"></span><em class="property">template </em>&lt;<em class="property">typename</em> T_METHOD, <em class="property">typename</em> T_COLOR_FEATURE = NeoRgbFeature&gt;<br /><em class="property">class </em><code class="descname">NeoPixelRGBLightOutput</code> : <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::NeoPixelBusLightOutputBase&lt;T_METHOD, T_COLOR_FEATURE&gt;<a class="headerlink" href="#_CPPv3N5light22NeoPixelRGBLightOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK5light22NeoPixelRGBLightOutputixE7int32_t">
+<span id="_CPPv2NK5light22NeoPixelRGBLightOutputixE7int32_t"></span><span id="light::NeoPixelRGBLightOutput::subscript-operator__int32_tC"></span><span class="target" id="classlight_1_1_neo_pixel_r_g_b_light_output_1acef3d38e7f698271eeb41ce0519ed90e"></span><a class="reference internal" href="addressable.html#_CPPv3N5light12ESPColorViewE" title="light::ESPColorView">ESPColorView</a> <code class="descname">operator[]</code><span class="sig-paren">(</span>int32_t <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light22NeoPixelRGBLightOutputixE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light22NeoPixelRGBLightOutput10get_traitsEv">
+<span id="_CPPv2N5light22NeoPixelRGBLightOutput10get_traitsEv"></span><span id="light::NeoPixelRGBLightOutput::get_traits"></span><span class="target" id="classlight_1_1_neo_pixel_r_g_b_light_output_1a5bce712bf92839d789071279357b1466"></span><a class="reference internal" href="index.html#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> <code class="descname">get_traits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22NeoPixelRGBLightOutput10get_traitsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light23NeoPixelRGBWLightOutputE">
+<span id="_CPPv2N5light23NeoPixelRGBWLightOutputE"></span><span id="light::NeoPixelRGBWLightOutput"></span><span class="target" id="classlight_1_1_neo_pixel_r_g_b_w_light_output"></span><em class="property">template </em>&lt;<em class="property">typename</em> T_METHOD, <em class="property">typename</em> T_COLOR_FEATURE = NeoRgbwFeature&gt;<br /><em class="property">class </em><code class="descname">NeoPixelRGBWLightOutput</code> : <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::NeoPixelBusLightOutputBase&lt;T_METHOD, T_COLOR_FEATURE&gt;<a class="headerlink" href="#_CPPv3N5light23NeoPixelRGBWLightOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK5light23NeoPixelRGBWLightOutputixE7int32_t">
+<span id="_CPPv2NK5light23NeoPixelRGBWLightOutputixE7int32_t"></span><span id="light::NeoPixelRGBWLightOutput::subscript-operator__int32_tC"></span><span class="target" id="classlight_1_1_neo_pixel_r_g_b_w_light_output_1a613616435d0d024804cdafd94aeeb47c"></span><a class="reference internal" href="addressable.html#_CPPv3N5light12ESPColorViewE" title="light::ESPColorView">ESPColorView</a> <code class="descname">operator[]</code><span class="sig-paren">(</span>int32_t <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light23NeoPixelRGBWLightOutputixE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light23NeoPixelRGBWLightOutput10get_traitsEv">
+<span id="_CPPv2N5light23NeoPixelRGBWLightOutput10get_traitsEv"></span><span id="light::NeoPixelRGBWLightOutput::get_traits"></span><span class="target" id="classlight_1_1_neo_pixel_r_g_b_w_light_output_1a7f15a26cf75f7ded1c21a1f2ae4e6e2f"></span><a class="reference internal" href="index.html#_CPPv3N5light11LightTraitsE" title="light::LightTraits">LightTraits</a> <code class="descname">get_traits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light23NeoPixelRGBWLightOutput10get_traitsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

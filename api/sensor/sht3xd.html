@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>SHT3XD Temperature/Humidity Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>SHT3XD Temperature/Humidity Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/sensor/sht3xd.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -89,7 +90,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="sensor::SHT3XDComponent::SHT3XDComponent__I2CComponentP.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a2c036d52519fbed5e226b9740f4b2fce"></span><code class="descname">SHT3XDComponent</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x44, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="sensor::SHT3XDComponent::SHT3XDComponent__I2CComponentP.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a1a154a606d5e3494bfa3e806962ed069"></span><code class="descname">SHT3XDComponent</code><span class="sig-paren">(</span><a class="reference internal" href="../core/i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x44, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent15SHT3XDComponentEP12I2CComponentRKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -105,9 +106,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <dl class="function">
 <dt id="_CPPv3N6sensor15SHT3XDComponent5setupEv">
 <span id="_CPPv2N6sensor15SHT3XDComponent5setupEv"></span><span id="sensor::SHT3XDComponent::setup"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1acb204536523d8289b7988129f4c1a2ad"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor15SHT3XDComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_s_h_t3_x_d_component_1acb204536523d8289b7988129f4c1a2ad"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor15SHT3XDComponent11dump_configEv">
@@ -117,15 +116,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <dl class="function">
 <dt id="_CPPv3NK6sensor15SHT3XDComponent18get_setup_priorityEv">
 <span id="_CPPv2NK6sensor15SHT3XDComponent18get_setup_priorityEv"></span><span id="sensor::SHT3XDComponent::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_component_1a1db6c5b52ed9012b999b44047db931c7"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor15SHT3XDComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classsensor_1_1_s_h_t3_x_d_component_1acb204536523d8289b7988129f4c1a2ad"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6sensor15SHT3XDComponent6updateEv">
@@ -175,14 +166,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <dl class="function">
 <dt id="_CPPv3N6sensor23SHT3XDTemperatureSensor9unique_idEv">
 <span id="_CPPv2N6sensor23SHT3XDTemperatureSensor9unique_idEv"></span><span id="sensor::SHT3XDTemperatureSensor::unique_id"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_temperature_sensor_1a04a0fff561c5cb31d1237ef9708e7ab4"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor23SHT3XDTemperatureSensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A unique ID for this sensor, empty for no unique id. </p>
-<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The unique id as a string. </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -214,14 +198,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
 <dl class="function">
 <dt id="_CPPv3N6sensor20SHT3XDHumiditySensor9unique_idEv">
 <span id="_CPPv2N6sensor20SHT3XDHumiditySensor9unique_idEv"></span><span id="sensor::SHT3XDHumiditySensor::unique_id"></span><span class="target" id="classsensor_1_1_s_h_t3_x_d_humidity_sensor_1a34dc49f1f10f26a9a4e1c195898d5a4f"></span>std::string <code class="descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor20SHT3XDHumiditySensor9unique_idEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A unique ID for this sensor, empty for no unique id. </p>
-<p>See unique ID requirements: <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements">https://developers.home-assistant.io/docs/en/entity_registry_index.html#unique-id-requirements</a></p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The unique id as a string. </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -253,7 +230,7 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -269,11 +246,11 @@ sensor with esphomelib (<a class="reference external" href="https://cdn-shop.ada
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

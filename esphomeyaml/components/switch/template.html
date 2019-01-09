@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Template Switch &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Template Switch &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/switch/template.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -127,7 +128,7 @@ needs to be used. Defaults to <code class="docutils literal notranslate"><span c
 <li><strong>turn_on_action</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#config-action"><span class="std std-ref">Action</span></a>): The action that should
 be performed when the remote (like Home Assistant’s frontend) requests the switch to be turned on.</li>
 <li><strong>turn_off_action</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#config-action"><span class="std std-ref">Action</span></a>): The action that should
-be performed when the remote (like Home Assistant’s frontend) requests the switch to be turned on.</li>
+be performed when the remote (like Home Assistant’s frontend) requests the switch to be turned off.</li>
 <li><strong>restore_state</strong> (<em>Optional</em>, boolean): Sets whether esphomelib should attempt to restore the
 state on boot-up and call the turn on/off actions with the recovered values. Defaults to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
@@ -157,7 +158,7 @@ state on boot-up and call the turn on/off actions with the recovered values. Def
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -173,11 +174,11 @@ state on boot-up and call the turn on/off actions with the recovered values. Def
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

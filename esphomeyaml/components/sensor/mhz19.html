@@ -24,13 +24,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>MH-Z19 CO_2 and Temperature Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>MH-Z19 CO_2 and Temperature Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/mhz19.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -109,7 +110,7 @@ TX/RX labels are from the perspective of the MH-Z19). Additionally, you need to 
       <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MH-Z19</span><span class="nv"> </span><span class="s">CO2</span><span class="nv"> </span><span class="s">Value&quot;</span>
     <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
       <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;MH-Z19</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -129,7 +130,7 @@ not officially documented in the datasheet and seems to be quite inaccurate.<ul>
 </ul>
 </li>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the
-sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>. See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">update_interval gotchas</span></a>.</li>
+sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">60s</span></code>.</li>
 <li><strong>uart_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="../uart.html#uart"><span class="std std-ref">UART Component</span></a> if you want
 to use multiple UART buses.</li>
 </ul>
@@ -160,7 +161,7 @@ to use multiple UART buses.</li>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -176,11 +177,11 @@ to use multiple UART buses.</li>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

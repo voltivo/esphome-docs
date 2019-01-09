@@ -1,0 +1,363 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Changelog for esphomelib version 1.10.0.">
+<meta itemprop="name" content="Changelog - Version 1.10.0">
+<meta itemprop="description" content="Changelog for esphomelib version 1.10.0.">
+<meta itemprop="image" content="https://esphomelib.com/_static/changelog-1.10.0.png">
+<meta name="twitter:title" content="Changelog - Version 1.10.0">
+<meta name="twitter:image:src" content="https://esphomelib.com/_static/changelog-1.10.0.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:creator" content="@OttoWinter_">
+<meta name="twitter:description" content="Changelog for esphomelib version 1.10.0.">
+<meta property="og:title" content="Changelog - Version 1.10.0"/>
+<meta property="og:image" content="https://esphomelib.com/_static/changelog-1.10.0.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Changelog for esphomelib version 1.10.0."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Changelog - Version 1.10.0 &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.10.0.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Changelog - Version 1.9.0" href="v1.9.0.html" />
+    <link rel="prev" title="Changelog" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.10.0.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Changelog - Version 1.10.0</a><ul>
+<li><a class="reference internal" href="#native-api">Native API</a></li>
+<li><a class="reference internal" href="#python-3-compatability">Python 3 Compatability</a></li>
+<li><a class="reference internal" href="#dashboard-hass-io-addon-updates">Dashboard &amp; Hass.io Addon Updates</a></li>
+<li><a class="reference internal" href="#rename-esphome-lib-yaml-esphome">Rename: esphome{lib, yaml} -&gt; ESPHome</a></li>
+<li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
+<li><a class="reference internal" href="#other-notable-changes">Other notable changes:</a></li>
+<li><a class="reference internal" href="#all-changes">All changes</a></li>
+<li><a class="reference internal" href="#past-changelogs">Past Changelogs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="changelog-version-1-10-0">
+<h1>Changelog - Version 1.10.0<a class="headerlink" href="#changelog-version-1-10-0" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/api.html"><img alt="Native API" class="component-image" src="../../_images/server-network.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/guides/getting_started_hassio.html"><img alt="Dashboard+Hass.io Add-On Updates" class="component-image" src="../../_images/home-assistant.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/custom.html"><img alt="Better Custom Components" class="component-image" src="../../_images/language-cpp.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/api.html">Native API</a></td>
+<td><a class="reference external" href="/esphomeyaml/guides/getting_started_hassio.html">Dashboard+Hass.io Add-On Updates</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/custom.html">Better Custom Components</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/sensor/apds9960.html"><img alt="APDS9960" class="component-image" src="../../_images/apds9960.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/max31855.html"><img alt="MAX31855" class="component-image" src="../../_images/max31855.jpg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/stepper/index.html"><img alt="ULN2003" class="component-image" src="../../_images/stepper.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/sensor/apds9960.html">APDS9960</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/max31855.html">MAX31855</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/stepper/index.html">ULN2003</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/esphomeyaml/components/light/neopixelbus.html"><img alt="NeoPixelBus Light" class="component-image" src="../../_images/color_lens.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/ethernet.html"><img alt="ESP32 Ethernet" class="component-image" src="../../_images/ethernet.svg" /></a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/homeassistant.html"><img alt="Home Assistant Sensor" class="component-image" src="../../_images/home-assistant.svg" /></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/esphomeyaml/components/light/neopixelbus.html">NeoPixelBus Light</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/ethernet.html">ESP32 Ethernet</a></td>
+<td><a class="reference external" href="/esphomeyaml/components/sensor/homeassistant.html">Home Assistant Sensor</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="native-api">
+<h2>Native API<a class="headerlink" href="#native-api" title="Permalink to this headline">¶</a></h2>
+<p>This release brings with it lots of goodies, but most important is the <a class="reference internal" href="../components/api.html"><span class="doc">native API</span></a>.
+MQTT has been the only way this project communicated with Home Assistant for a while now. And MQTT is a great protocol
+to get started, but it always had problems:</p>
+<ul class="simple">
+<li>Another service to install - Users would need to install an MQTT broker in order to get started.</li>
+<li>MQTT Discovery - Home Assistant’s MQTT discovery has been great, but always had problems like retained messages etc.</li>
+<li>Inefficient - A typical MQTT message for sending a binary sensor state is about 70 bytes long, and the MQTT library
+we used was quite inefficient with runtime memory allocation too.</li>
+</ul>
+<p>So I decided to do something against that: ESPHome now features a native protocol (based on TCP+protocol buffers)
+that addresses these issues and has a
+<a class="reference external" href="https://rc--home-assistant-docs.netlify.com/components/esphome/">component on the Home Assistant</a>
+side too.</p>
+<p><strong>Does this mean MQTT will be removed?</strong></p>
+<p>No! MQTT is an awesome protocol with easy integration for many tools like Node-RED and custom MQTT clients.
+This native API is only for replacing communications with Home Assistant, so <em>if</em> anything gets removed it’s
+MQTT auto discovery for Home Assistant. Of course both can be used together at the same time too.</p>
+<p><strong>Should I switch to the native API immediately?</strong></p>
+<p>You definitely can, but a word of warning first: The MQTT implementation has seen tons of fixes for small quirks
+in how the ESP SDK works. From my own testing, the native API seems to be quite stable - but I’m sure it’ll take a bit
+of time to find+fix some final bugs.</p>
+<p><strong>How do I migrate from MQTT?</strong></p>
+<p>First, make sure you run at least Home Assistant 0.85.0 (currently a <a class="reference external" href="https://www.home-assistant.io/docs/installation/updating/#run-the-beta-version">beta release</a>). Then, go through the
+<a class="reference internal" href="../components/api.html#api-mqtt-to-native"><span class="std std-ref">migration guide here</span></a>.</p>
+</div>
+<div class="section" id="python-3-compatability">
+<h2>Python 3 Compatability<a class="headerlink" href="#python-3-compatability" title="Permalink to this headline">¶</a></h2>
+<p>PlatformIO has finally implemented <a class="reference external" href="https://github.com/platformio/platformio-core/issues/895">python 3 support</a>
+after some quick changes, ESPHome is now also compatible with python 3.5+. So with this new release
+you can try ESPHome with Python 3 already. Just make sure to install the development version of platformio first:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre>pip3 install -U https://github.com/platformio/platformio-core/archive/develop.zip
+</pre></div>
+</div>
+<p>I don’t particularly like python 2, and in a year’s time support for it will officially be ended. So the plan for
+ESPHome is to drop python 2 as soon as possible. Once platformio releases version 4.0 (with python 3 support), I
+will go through and check everything still works. Maybe ESPHome will support python 2 for 1 or 2 releases after that
+but really I want to drop support for python 2 as soon as possible.</p>
+</div>
+<div class="section" id="dashboard-hass-io-addon-updates">
+<h2>Dashboard &amp; Hass.io Addon Updates<a class="headerlink" href="#dashboard-hass-io-addon-updates" title="Permalink to this headline">¶</a></h2>
+<p>The dashboard and Hass.io addon have seen a lot of ❤️ in this release: The dashboard has seen tons of small
+changes to make the user experience better and the Hass.io addon has been completely re-written with the
+<a class="reference external" href="https://github.com/hassio-addons">Hass.io Community Addon Images</a> as the base.</p>
+<ul class="simple">
+<li>The dashboard now features a built-in YAML editor.</li>
+<li>Configuration wizard now shows a list of boards directly, so you just have to choose them from a dropdown.</li>
+<li>Hass.io Addon: You can log in using your Home Assistant credentials now.</li>
+<li>And many more changes (colored logs, auto-scroll, node status, update notifications, …)</li>
+</ul>
+</div>
+<div class="section" id="rename-esphome-lib-yaml-esphome">
+<h2>Rename: esphome{lib, yaml} -&gt; ESPHome<a class="headerlink" href="#rename-esphome-lib-yaml-esphome" title="Permalink to this headline">¶</a></h2>
+<p>The name esphomelib and esphomeyaml were too technical, and this project has changed a lot since the first
+published release (the yaml part didn’t even exist back then). So … the project is being re-branded slightly:</p>
+<ul class="simple">
+<li>esphomeyaml -&gt; ESPHome</li>
+<li>esphomelib -&gt; ESPHome Core</li>
+<li>esphomedocs -&gt; ESPHome Docs</li>
+</ul>
+<p>As you see, the yaml project is now getting the “fancy” name, because that’s by far the best way to use this framework.
+As part of this change, using the _core_ framework directly from code (without YAML) is being deprecated, the API docs
+have long been inaccurate now and users should really switch over to ESPHome through YAML</p>
+<p>Of course that doesn’t mean you won’t be able to write custom code. In fact, this release also contains lots of
+new guides and changes to make creating custom components much easier. The goal is to have a project where users
+can use YAML for the boring boilerplate code but can completely customize everything with custom components.</p>
+<p>This migration is of course huge - almost every single file in the code+docs base has esphome{lib, yaml} somewhere
+in it, so it will take time until the next release for this to be finished.</p>
+</div>
+<div class="section" id="breaking-changes">
+<h2>Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Previously, esphomelib would by default only publish every 15th sensor value in order to provide averaged values.
+However, that often confused users and I now decided to remove it <strong>and</strong> set the default update interval of
+all components to <code class="docutils literal notranslate"><span class="pre">60s</span></code> instead of the previous <code class="docutils literal notranslate"><span class="pre">15s</span></code>. You can get back the old behavior by setting</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>  <span class="c1"># enter platform here</span>
+    <span class="c1"># other settings</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sliding_window_moving_average</span><span class="p p-Indicator">:</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The fastled effects have been renamed to <code class="docutils literal notranslate"><span class="pre">addressable_</span></code> for the new
+<a class="reference internal" href="../components/light/neopixelbus.html"><span class="doc">Neopixelbus</span></a> integration. See the validation error message
+for more info.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="other-notable-changes">
+<h2>Other notable changes:<a class="headerlink" href="#other-notable-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You can now configured multiple WiFi networks to connect to. The best one will be chosen automatically.
+This is along with a <em>complete</em> rewrite of the WiFi component which now interacts directly with the ESP SDK.
+(<a class="reference internal" href="../components/wifi.html#wifi-networks"><span class="std std-ref">Connecting to Multiple Networks</span></a>)</li>
+<li>GPIO Switches have a new option <code class="docutils literal notranslate"><span class="pre">restore_mode</span></code> to configure how their values should be restored on boot.
+(<a class="reference internal" href="../components/switch/gpio.html"><span class="doc">GPIO Switch</span></a>)</li>
+<li>Added <a class="reference internal" href="../guides/configuration-types.html#config-substitutions"><span class="std std-ref">substitutions</span></a> to reduce repeating across configs.</li>
+<li>Validation error messages are now displayed even better. Now all errors are shown with the exact context
+where the error appeared. Try it, it’s so much better. Next step will be to upgrade to a better YAML reader
+to provide better error messages when the YAML syntax is invalid.</li>
+<li>Added a bunch of guides (and helpers) for creating custom components. Also new: <code class="docutils literal notranslate"><span class="pre">esphomeyaml.libraries</span></code>,
+<code class="docutils literal notranslate"><span class="pre">esphomeyaml.includes</span></code> and <code class="docutils literal notranslate"><span class="pre">esphomeyaml.platformio_options</span></code> (<a class="reference internal" href="../components/esphomeyaml.html"><span class="doc">esphomeyaml Core Configuration</span></a>)</li>
+<li>Saved a lot of flash space on ESP8266 boards. Previously, platformio would allocate about 1/4 of flash for SPIFFS,
+but esphomelib doesn’t use that so now you have that as extra storage. Thanks <cite>&#64;brandond &lt;http://github.com/brandond&gt;</cite></li>
+<li>You can now use Home Assistant to get time in ESPHome, so no more need for SNTP. See <a class="reference internal" href="../components/time.html#time"><span class="std std-ref">Time</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="all-changes">
+<h2>All changes<a class="headerlink" href="#all-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>docs: CSE7766 Update Interval <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/91">docs#91</a></li>
+<li>docs: add baud_rate; typo on sensor type <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/90">docs#90</a> by <a class="reference external" href="https://github.com/drewp">&#64;drewp</a></li>
+<li>docs: Fix docs for LCD display strftime <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/95">docs#95</a></li>
+<li>lib: Make CSE7766 a polling sensor <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/305">lib#305</a></li>
+<li>lib: Supply clang-format file for contributors <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/290">lib#290</a></li>
+<li>yaml: Time SNTP validate server format <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/254">yaml#254</a></li>
+<li>yaml: Fix GPIO input schema validator <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/253">yaml#253</a></li>
+<li>lib: Implement custom sensor platform <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/274">lib#274</a></li>
+<li>lib: Only compile code stuff if necessary <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/309">lib#309</a></li>
+<li>yaml: [Huge] Util Refactor, Dashboard Improvements, Hass.io Auth API, Better Validation Errors, Conditions, Custom Platforms, Substitutions <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/234">yaml#234</a></li>
+<li>docs: Fix copy paste error <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/100">docs#100</a> by <a class="reference external" href="https://github.com/oscar-b">&#64;oscar-b</a></li>
+<li>lib: Fix large JSON payloads being cut off <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/323">lib#323</a> by <a class="reference external" href="https://github.com/quazzie">&#64;quazzie</a></li>
+<li>docs: Add Wikipedia link to tz database zones list <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/105">docs#105</a> by <a class="reference external" href="https://github.com/apeeters">&#64;apeeters</a></li>
+<li>docs: Add pins for Shelly 2 <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/103">docs#103</a> by <a class="reference external" href="https://github.com/oscar-b">&#64;oscar-b</a></li>
+<li>lib: Native Esphomelib API <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/322">lib#322</a></li>
+<li>yaml: Add native ESPHome API <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/265">yaml#265</a></li>
+<li>lib: Add support for MAX31855 sensor <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/310">lib#310</a> by <a class="reference external" href="https://github.com/sherbang">&#64;sherbang</a></li>
+<li>docs: Documentation for MAX31855 sensor <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/97">docs#97</a> by <a class="reference external" href="https://github.com/sherbang">&#64;sherbang</a></li>
+<li>lib: Fix typo in Output Switch <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/307">lib#307</a></li>
+<li>lib: Fix PCA9685 with many channels <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/304">lib#304</a></li>
+<li>docs: Fixed typo in Sonoff R2 Cover example <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/112">docs#112</a> by <a class="reference external" href="https://github.com/voicevon">&#64;voicevon</a></li>
+<li>lib: Dump native API Server config on boot <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/338">lib#338</a> by <a class="reference external" href="https://github.com/voicevon">&#64;voicevon</a></li>
+<li>lib: Split Automation headers from implementation <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/349">lib#349</a></li>
+<li>lib: Travis update <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/350">lib#350</a></li>
+<li>lib: Fix API Server logs <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/347">lib#347</a></li>
+<li>lib: WiFi Better logging for ESP8266 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/346">lib#346</a></li>
+<li>lib: API Server Watchdog <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/345">lib#345</a></li>
+<li>lib: GPIO Switch Restore Mode <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/344">lib#344</a></li>
+<li>lib: Fix Remote Receiver Overflow for ESP8266 <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/348">lib#348</a></li>
+<li>yaml: Api fixes <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/289">yaml#289</a></li>
+<li>yaml: Fix host network <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/280">yaml#280</a></li>
+<li>yaml: Fix ESP8266 verbose logging <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/291">yaml#291</a></li>
+<li>yaml: API Server Watchdog <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/290">yaml#290</a></li>
+<li>lib: Implement Addressable Lights Base <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/243">lib#243</a></li>
+<li>yaml: Disable SPIFFS to save flash space <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/288">yaml#288</a></li>
+<li>yaml: Fix MQTT message trigger <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/282">yaml#282</a></li>
+<li>yaml: GPIO Switch Restore Mode <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/287">yaml#287</a></li>
+<li>yaml: Addressable Lights <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/294">yaml#294</a></li>
+<li>yaml: Toggle Auto-Update Check With Environment Variable <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/292">yaml#292</a></li>
+<li>yaml: Make compatible with python 3 <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/281">yaml#281</a></li>
+<li>docs: Fix copy/paste error in turn_off_action <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/113">docs#113</a> by <a class="reference external" href="https://github.com/wutr">&#64;wutr</a></li>
+<li>yaml: GPIO Switch Fix restore_mode validator <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/296">yaml#296</a> by <a class="reference external" href="https://github.com/yottatsa">&#64;yottatsa</a></li>
+<li>yaml: Fixes for Python 3 Compatability <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/297">yaml#297</a></li>
+<li>lib: Stop old template action when new one is started <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/354">lib#354</a></li>
+<li>lib: Add APDS-9960 support <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/286">lib#286</a></li>
+<li>lib: Change default update interval to 60 seconds <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/356">lib#356</a></li>
+<li>lib: ESP32 Ethernet support <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/288">lib#288</a></li>
+<li>lib: Add ULN2003 support <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/301">lib#301</a></li>
+<li>lib: Add clean discovery option to simplify transition to native API <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/357">lib#357</a></li>
+<li>yaml: Add clean MQTT discovery option for native API <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/302">yaml#302</a></li>
+<li>yaml: Add APDS9960 Support <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/300">yaml#300</a></li>
+<li>lib: Add neopixelbus component <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/352">lib#352</a></li>
+<li>yaml: Add neopixelbus component <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/303">yaml#303</a></li>
+<li>yaml: Add support for MAX31855 sensor <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/258">yaml#258</a> by <a class="reference external" href="https://github.com/sherbang">&#64;sherbang</a></li>
+<li>yaml: ULN2003 Support <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/304">yaml#304</a></li>
+<li>yaml: Add ESP32 Ethernet Support <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/301">yaml#301</a></li>
+<li>docs: total_daily_energy doesn’t have pin option <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/114">docs#114</a> by <a class="reference external" href="https://github.com/oscar-b">&#64;oscar-b</a></li>
+<li>docs: Getting started HassIO - USD device discovery <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/110">docs#110</a> by <a class="reference external" href="https://github.com/DavidDeSloovere">&#64;DavidDeSloovere</a></li>
+<li>docs: Mismatch in example and text <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/109">docs#109</a> by <a class="reference external" href="https://github.com/wellsi">&#64;wellsi</a></li>
+<li>docs: BME280 environment cookbook entry <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/107">docs#107</a> by <a class="reference external" href="https://github.com/Mynasru">&#64;Mynasru</a></li>
+<li>docs: Update getting_started_command_line.rst <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/102">docs#102</a> by <a class="reference external" href="https://github.com/doskoi">&#64;doskoi</a></li>
+<li>docs: Updated the multi click example code block <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/92">docs#92</a> by <a class="reference external" href="https://github.com/cooljimy84">&#64;cooljimy84</a></li>
+<li>docs: Add step to setting up devices <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/101">docs#101</a> by <a class="reference external" href="https://github.com/magnusoverli">&#64;magnusoverli</a></li>
+<li>yaml: Update beta config <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/305">yaml#305</a></li>
+<li>yaml: Fix component.update action <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/308">yaml#308</a></li>
+<li>yaml: OTA don’t error when upgrading from no password to password mode <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/309">yaml#309</a></li>
+<li>yaml: use full space on small devices <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/310">yaml#310</a> by <a class="reference external" href="https://github.com/escoand">&#64;escoand</a></li>
+<li>lib: Fix interval compilation error <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/364">lib#364</a></li>
+<li>yaml: Fix interval trigger <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/313">yaml#313</a></li>
+</ul>
+</div>
+<div class="section" id="past-changelogs">
+<h2>Past Changelogs<a class="headerlink" href="#past-changelogs" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="v1.9.0.html">Changelog - Version 1.9.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="v1.8.0.html">Version 1.8.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="v1.7.0.html">Version 1.7.0</a></li>
+</ul>
+</div>
+<div data-disqus-identifier="esphomeyaml-changelog-v1.10.0" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

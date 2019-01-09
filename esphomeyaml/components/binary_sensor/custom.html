@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Custom Binary Sensor &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/custom.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ESP32 Bluetooth Low Energy Device" href="esp32_ble_tracker.html" />
+    <link rel="prev" title="Binary Sensor Component" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/custom.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Custom Binary Sensor</a><ul>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="custom-binary-sensor">
+<h1>Custom Binary Sensor<a class="headerlink" href="#custom-binary-sensor" title="Permalink to this headline">¶</a></h1>
+<p>This integration can be used to create custom binary sensors in esphomelib
+using the C++ (Arduino) API.</p>
+<p>Please first read <a class="reference internal" href="../sensor/custom.html"><span class="doc">Custom Sensor Component</span></a> guide,
+the same principles apply here and binary sensors are very similar
+to sensors internally.</p>
+<p>The example below is an example of a custom binary sensor; this custom sensor is essentially the
+same as the gpio binary sensor.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&quot;esphomelib.h&quot;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">esphomelib</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyCustomBinarySensor</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PollingComponent</span><span class="p">,</span> <span class="k">public</span> <span class="n">binary_sensor</span><span class="o">::</span><span class="n">BinarySensor</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="c1">// constructor</span>
+  <span class="n">MyCustomBinarySensor</span><span class="p">()</span> <span class="o">:</span> <span class="n">PollingComponent</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="kt">void</span> <span class="n">setup</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="c1">// This will be called by App.setup()</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="c1">// This will be called every &quot;update_interval&quot; milliseconds.</span>
+
+    <span class="c1">// Publish an OFF state</span>
+    <span class="kt">bool</span> <span class="n">state</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">publish_state</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>(Store this file in your configuration directory, for example <code class="docutils literal notranslate"><span class="pre">my_binary_sensor.h</span></code>)</p>
+<p>And in YAML:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">includes</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my_binary_sensor.h</span>
+
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">custom</span>
+  <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+    <span class="no">auto my_custom_sensor = new MyCustomBinarySensor();</span>
+    <span class="no">App.register_component(my_custom_sensor);</span>
+    <span class="no">return {my_custom_sensor};</span>
+
+  <span class="l l-Scalar l-Scalar-Plain">binary_sensors</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Binary</span><span class="nv"> </span><span class="s">Sensor&quot;</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul>
+<li><p class="first"><strong>lambda</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>): The lambda to run for instantiating the
+binary sensor(s).</p>
+</li>
+<li><p class="first"><strong>binary_sensors</strong> (<strong>Required</strong>, list): A list of binary sensors to initialize. The length here
+must equal the number of items in the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement of the <code class="docutils literal notranslate"><span class="pre">lambda</span></code>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>All options from <a class="reference internal" href="index.html#config-binary-sensor"><span class="std std-ref">Binary Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>See <a class="reference internal" href="../../../api/binary_sensor/index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">binary_sensor::BinarySensor</span></code></a></p>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/binary_sensor/custom.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-components-binary_sensor-custom" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

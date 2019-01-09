@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Total Daily Energy Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Total Daily Energy Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/total_daily_energy.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -95,7 +96,6 @@ daily energy usage in <code class="docutils literal notranslate"><span class="pr
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">total_daily_energy</span>
-    <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
     <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Total</span><span class="nv"> </span><span class="s">Daily</span><span class="nv"> </span><span class="s">Energy&quot;</span>
     <span class="l l-Scalar l-Scalar-Plain">power_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_power</span>
 
@@ -125,7 +125,7 @@ to integrate over time.</li>
 <h2>Converting from W to kW<a class="headerlink" href="#converting-from-w-to-kw" title="Permalink to this headline">¶</a></h2>
 <p>Some sensors such as the <a class="reference internal" href="hlw8012.html"><span class="doc">HLW8012</span></a> expose their power sensor with a unit of measurement of
 <code class="docutils literal notranslate"><span class="pre">W</span></code>. To have your readings in <code class="docutils literal notranslate"><span class="pre">kW</span></code>, use a filter:</p>
-<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
   <span class="c1"># The power sensor to convert, can be any power sensor</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hlw8012</span>
     <span class="c1"># ...</span>
@@ -162,7 +162,7 @@ to integrate over time.</li>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -178,11 +178,11 @@ to integrate over time.</li>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

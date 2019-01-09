@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Over-The-Air Updates &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Over-The-Air Updates &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/ota.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -116,7 +117,7 @@
 <dt id="_CPPv3N12OTAComponent17set_auth_passwordERKNSt6stringE">
 <span id="_CPPv2N12OTAComponent17set_auth_passwordERKNSt6stringE"></span><span id="OTAComponent::set_auth_password__ssCR"></span><span class="target" id="class_o_t_a_component_1a02aedebaf74c36c4eb10443002bc8a80"></span>void <code class="descname">set_auth_password</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent17set_auth_passwordERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set a plaintext password that OTA will use for authentication. </p>
-<p>Warning: This password will be stored in plaintext in the ROM and can be read by intruders. It is however secured somewhat secure again MITM attacks (attackers could still modify the binary while you’re sending it, but they can’t start OTA processes themselves.)</p>
+<p>Warning: This password will be stored in plaintext in the ROM and can be read by intruders.</p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
@@ -182,9 +183,7 @@
 <dl class="function">
 <dt id="_CPPv3N12OTAComponent5setupEv">
 <span id="_CPPv2N12OTAComponent5setupEv"></span><span id="OTAComponent::setup"></span><span class="target" id="class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N12OTAComponent11dump_configEv">
@@ -194,22 +193,12 @@
 <dl class="function">
 <dt id="_CPPv3NK12OTAComponent18get_setup_priorityEv">
 <span id="_CPPv2NK12OTAComponent18get_setup_priorityEv"></span><span id="OTAComponent::get_setup_priorityC"></span><span class="target" id="class_o_t_a_component_1a02a38aa436ad580008c81a3253943475"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK12OTAComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N12OTAComponent4loopEv">
 <span id="_CPPv2N12OTAComponent4loopEv"></span><span id="OTAComponent::loop"></span><span class="target" id="class_o_t_a_component_1ac22dbd5042d87f8111db366de826e0ae"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N12OTAComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_o_t_a_component_1ac22dbd5042d87f8111db366de826e0ae"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#class_o_t_a_component_1abb3c1eedad005183399d69d9df99277e"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK12OTAComponent8get_portEv">
@@ -225,22 +214,22 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Types</p>
 <dl class="type">
-<dt id="_CPPv3N12OTAComponent12__anonymous3E">
-<span id="_CPPv2N12OTAComponent12__anonymous3E"></span><span id="OTAComponent::__anonymous3"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327a"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv3N12OTAComponent12__anonymous3E" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N12OTAComponent13__anonymous25E">
+<span id="_CPPv2N12OTAComponent13__anonymous25E"></span><span id="OTAComponent::__anonymous25"></span><span class="target" id="class_o_t_a_component_1a21b8403994b06a912410fa8fbb2d9e9b"></span><em class="property">enum </em><code class="descname"><strong>[anonymous]</strong></code><a class="headerlink" href="#_CPPv3N12OTAComponent13__anonymous25E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><em>Values:</em></p>
 <dl class="enumerator">
 <dt id="_CPPv3N12OTAComponent4OPENE">
-<span id="_CPPv2N12OTAComponent4OPENE"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327aa60a01762a7dcc6b4db051fe8944205b5"></span><code class="descname">OPEN</code><a class="headerlink" href="#_CPPv3N12OTAComponent4OPENE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N12OTAComponent4OPENE"></span><span class="target" id="class_o_t_a_component_1a21b8403994b06a912410fa8fbb2d9e9ba60a01762a7dcc6b4db051fe8944205b5"></span><code class="descname">OPEN</code><a class="headerlink" href="#_CPPv3N12OTAComponent4OPENE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv3N12OTAComponent9PLAINTEXTE">
-<span id="_CPPv2N12OTAComponent9PLAINTEXTE"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327aa75806a28007fd56686023a1f7b5bcb87"></span><code class="descname">PLAINTEXT</code><a class="headerlink" href="#_CPPv3N12OTAComponent9PLAINTEXTE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N12OTAComponent9PLAINTEXTE"></span><span class="target" id="class_o_t_a_component_1a21b8403994b06a912410fa8fbb2d9e9ba75806a28007fd56686023a1f7b5bcb87"></span><code class="descname">PLAINTEXT</code><a class="headerlink" href="#_CPPv3N12OTAComponent9PLAINTEXTE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="enumerator">
 <dt id="_CPPv3N12OTAComponent4HASHE">
-<span id="_CPPv2N12OTAComponent4HASHE"></span><span class="target" id="class_o_t_a_component_1aaa5d231762650e645d9902ee6c67327aacf6a87bc538c1dddee89c82b568683af"></span><code class="descname">HASH</code><a class="headerlink" href="#_CPPv3N12OTAComponent4HASHE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N12OTAComponent4HASHE"></span><span class="target" id="class_o_t_a_component_1a21b8403994b06a912410fa8fbb2d9e9bacf6a87bc538c1dddee89c82b568683af"></span><code class="descname">HASH</code><a class="headerlink" href="#_CPPv3N12OTAComponent4HASHE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -273,7 +262,7 @@
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
 <dt id="_CPPv3N12OTAComponent4OPENE">
-<span class="target" id="class_o_t_a_component_1a1bfd7f924b501b7fc27ee51c3561c599"></span><a class="reference internal" href="#_CPPv312OTAComponent" title="OTAComponent">OTAComponent</a>::<strong>[anonymous]</strong> <code class="descname">OPEN</code><br /></dt>
+<span class="target" id="class_o_t_a_component_1aa4789b8edba854684bec7545f9f88e5a"></span><a class="reference internal" href="#_CPPv312OTAComponent" title="OTAComponent">OTAComponent</a>::<strong>[anonymous]</strong> <code class="descname">OPEN</code><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -358,7 +347,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -374,11 +363,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

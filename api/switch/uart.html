@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>UART Switch &#8212; ESPHome 1.9.3 documentation</title>
+    <title>UART Switch &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/switch/uart.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -72,12 +73,17 @@
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="_CPPv3N7switch_10UARTSwitchE">
-<span id="_CPPv2N7switch_10UARTSwitchE"></span><span id="switch_::UARTSwitch"></span><span class="target" id="classswitch___1_1_u_a_r_t_switch"></span><em class="property">class </em><code class="descname">UARTSwitch</code> : <em class="property">public</em> switch_::<a class="reference internal" href="index.html#_CPPv3N7switch_6SwitchE" title="switch_::Switch">Switch</a>, <em class="property">public</em> <a class="reference internal" href="../core/uart.html#_CPPv310UARTDevice" title="UARTDevice">UARTDevice</a><a class="headerlink" href="#_CPPv3N7switch_10UARTSwitchE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N7switch_10UARTSwitchE"></span><span id="switch_::UARTSwitch"></span><span class="target" id="classswitch___1_1_u_a_r_t_switch"></span><em class="property">class </em><code class="descname">UARTSwitch</code> : <em class="property">public</em> switch_::<a class="reference internal" href="index.html#_CPPv3N7switch_6SwitchE" title="switch_::Switch">Switch</a>, <em class="property">public</em> <a class="reference internal" href="../core/uart.html#_CPPv310UARTDevice" title="UARTDevice">UARTDevice</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N7switch_10UARTSwitchE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N7switch_10UARTSwitch10UARTSwitchEP13UARTComponentRKNSt6stringERKNSt6vectorI7uint8_tEE">
 <span id="_CPPv2N7switch_10UARTSwitch10UARTSwitchEP13UARTComponentRKNSt6stringERKNSt6vectorI7uint8_tEE"></span><span id="switch_::UARTSwitch::UARTSwitch__UARTComponentP.ssCR.std::vector:uint8_t:CR"></span><span class="target" id="classswitch___1_1_u_a_r_t_switch_1a61169bd7b92bae9d51b156d8a7076f64"></span><code class="descname">UARTSwitch</code><span class="sig-paren">(</span><a class="reference internal" href="../core/uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> std::vector&lt;uint8_t&gt; &amp;<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_10UARTSwitch10UARTSwitchEP13UARTComponentRKNSt6stringERKNSt6vectorI7uint8_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N7switch_10UARTSwitch11dump_configEv">
+<span id="_CPPv2N7switch_10UARTSwitch11dump_configEv"></span><span id="switch_::UARTSwitch::dump_config"></span><span class="target" id="classswitch___1_1_u_a_r_t_switch_1acb3ff08382972b7549064e58d4af33af"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_10UARTSwitch11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -86,18 +92,7 @@
 <dl class="function">
 <dt id="_CPPv3N7switch_10UARTSwitch11write_stateEb">
 <span id="_CPPv2N7switch_10UARTSwitch11write_stateEb"></span><span id="switch_::UARTSwitch::write_state__b"></span><span class="target" id="classswitch___1_1_u_a_r_t_switch_1a02d648bfd5da886c2c357442335818af"></span>void <code class="descname">write_state</code><span class="sig-paren">(</span>bool <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N7switch_10UARTSwitch11write_stateEb" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Write the given state to hardware. </p>
-<p>You should implement this abstract method if you want to create your own switch.</p>
-<p>In the implementation of this method, you should also call publish_state to acknowledge that the state was written to the hardware.</p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">state</span></code>: The state to write. Inversion is already applied if user specified it. </li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -124,7 +119,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -140,11 +135,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up BME280 sensors in esphomelib and calculate altitude, absolute humidity, and sea level pressure.">
+<meta name="keywords" content="BME280">
+<meta itemprop="name" content="BME280 Environment">
+<meta itemprop="description" content="Instructions for setting up BME280 sensors in esphomelib and calculate altitude, absolute humidity, and sea level pressure.">
+<meta itemprop="image" content="https://esphomelib.com/_images/bme280.jpg">
+<meta name="twitter:title" content="BME280 Environment">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/bme280.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up BME280 sensors in esphomelib and calculate altitude, absolute humidity, and sea level pressure.">
+<meta property="og:title" content="BME280 Environment"/>
+<meta property="og:image" content="https://esphomelib.com/_images/bme280.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up BME280 sensors in esphomelib and calculate altitude, absolute humidity, and sea level pressure."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>BME280 Environment &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/bme280_environment.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="BRUH Multisensor" href="bruh.html" />
+    <link rel="prev" title="Cookbook" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/cookbook/bme280_environment.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">BME280 Environment</a><ul>
+<li><a class="reference internal" href="#altitude-and-absolute-humidity">Altitude and absolute humidity:</a></li>
+<li><a class="reference internal" href="#equivalent-sea-level-pressure">Equivalent sea level pressure:</a></li>
+<li><a class="reference internal" href="#formula-explanation">Formula explanation</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="bme280-environment">
+<h1>BME280 Environment<a class="headerlink" href="#bme280-environment" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="../components/sensor/bme280.html"><span class="doc">BME280 Temperature+Pressure+Humidity Sensor</span></a> is a simple temperature, humidity, and pressure sensor with communication over I2C.
+With some simple math it is possible to either determine the height of the sensor, or the current pressure at sea level.
+This guide can be applied to any sensor measuring temperature and pressure at the same time, like the <a class="reference internal" href="../components/sensor/bmp280.html"><span class="doc">BMP280 Temperature+Pressure Sensor</span></a>, or <a class="reference internal" href="../components/sensor/bme680.html"><span class="doc">BME680 Temperature+Pressure+Humidity+Gas Sensor</span></a>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/bme280-header.jpg"><img alt="../../_images/bme280-header.jpg" src="../../_images/bme280-header.jpg" style="width: 75.0%;" /></a>
+</div>
+<p>The first step is to connect the sensor as described <a class="reference internal" href="../components/sensor/bme280.html"><span class="doc">here</span></a>.
+After validating the sensor is working, we can proceed and add some formulas.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280_temperature</span>
+    <span class="l l-Scalar l-Scalar-Plain">pressure</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Pressure&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280_pressure</span>
+    <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Realtive</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280_humidity</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x77</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Altitude&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">const float STANDARD_SEA_LEVEL_PRESSURE = 1013.25; //in hPa, see note</span>
+      <span class="no">return ((id(bme280_temperature).state + 273.15) / 0.0065) * (powf((STANDARD_SEA_LEVEL_PRESSURE / id(bme280_pressure).state), 0.190234) - 1); // in meter</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Absolute</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">const float mw = 18.01534;    // molar mass of water g/mol</span>
+      <span class="no">const float r = 8.31447215;   // Universal gas constant J/mol/K</span>
+      <span class="no">return (6.112 * powf(2.718281828, (17.67 * id(bme280_temperature).state) / (id(bme280_temperature).state + 243.5)) * id(bme280_humidity).state * mw) / ((273.15 + id(bme280_temperature).state) * r); // in grams/m^3</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+</pre></div>
+</div>
+<div class="section" id="altitude-and-absolute-humidity">
+<h2>Altitude and absolute humidity:<a class="headerlink" href="#altitude-and-absolute-humidity" title="Permalink to this headline">¶</a></h2>
+<p>The first block <code class="docutils literal notranslate"><span class="pre">sensor</span></code> starts with the normal bme280 sensor components <code class="docutils literal notranslate"><span class="pre">temperature</span></code>, <code class="docutils literal notranslate"><span class="pre">pressure</span></code>, and <code class="docutils literal notranslate"><span class="pre">humidity</span></code> with each their own id.
+After the bme280 sensor, a <a class="reference internal" href="../components/sensor/template.html"><span class="doc">Template Sensor</span></a> is defined to calculate the altitude in a lambda.
+The variable <code class="docutils literal notranslate"><span class="pre">STANDARD_SEA_LEVEL_PRESSURE</span></code> (in hPa), should be filled in for your location.
+The formula derived from <cite>here &lt;https://github.com/finitespace/BME280/blob/master/src/EnvironmentCalculations.cpp&gt;</cite>, converts the currently measured pressure to the altitudes in meters including temperature compensation.</p>
+<p>The lambda in the second <a class="reference internal" href="../components/sensor/template.html"><span class="doc">Template Sensor</span></a> defines two physical constants and converts the currently measured pressure to absolute humidity (grams/m^3).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Calculating the altitude with the BME280 sensor accurately requires this value to be known at sea level for your location and day.
+This can be achieved by replacing the global constant <code class="docutils literal notranslate"><span class="pre">STANDARD_SEA_LEVEL_PRESSURE</span></code> by for example pulling this value live from the internet or a stationary sensor via MQTT.</p>
+</div>
+</div>
+<div class="section" id="equivalent-sea-level-pressure">
+<h2>Equivalent sea level pressure:<a class="headerlink" href="#equivalent-sea-level-pressure" title="Permalink to this headline">¶</a></h2>
+<p>Calculating the sea level pressure with a statically mounted sensor can be be used as reference for moving sensors as mentioned in the note above.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280</span>
+    <span class="l l-Scalar l-Scalar-Plain">temperature</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280_temperature</span>
+    <span class="l l-Scalar l-Scalar-Plain">pressure</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Pressure&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280_pressure</span>
+    <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Relative</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bme280_humidity</span>
+    <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x77</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Equivalent</span><span class="nv"> </span><span class="s">sea</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">pressure&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+      <span class="no">const float STANDARD_ALTITUDE = 0.6; // in meters, see note</span>
+      <span class="no">return id(bme280_pressure).state / powf(1 - ((0.0065 * STANDARD_ALTITUDE) / (id(bme280_temperature).state + (0.0065 * STANDARD_ALTITUDE) + 273.15)), 5.257); // in hPa</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For calculating the equivalent sea level pressure, the sensor needs to be mounted at a fixed altitude.
+Therefore it is not possible to calculate altitude at the same time, and vice versa!</p>
+</div>
+</div>
+<div class="section" id="formula-explanation">
+<h2>Formula explanation<a class="headerlink" href="#formula-explanation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://carnotcycle.wordpress.com/2012/08/04/how-to-convert-relative-humidity-to-absolute-humidity/">Relative humidity calculations</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Atmospheric_pressure#Altitude_variation">Altitude calculation</a></li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../components/sensor/template.html"><span class="doc">Template Sensor</span></a></li>
+<li><a class="reference internal" href="../components/sensor/bme280.html"><span class="doc">BME280 Temperature+Pressure+Humidity Sensor</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/cookbook/bme280_environment.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-cookbook-bme280_environment" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

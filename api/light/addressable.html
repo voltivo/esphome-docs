@@ -1,0 +1,1142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Addressable Lights &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/light/addressable.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="FastLED Light Output" href="fastled.html" />
+    <link rel="prev" title="Light" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/api/light/addressable.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Addressable Lights</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
+<li><a class="reference internal" href="#addressable-light-effects">Addressable Light Effects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="addressable-lights">
+<h1>Addressable Lights<a class="headerlink" href="#addressable-lights" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv35light">
+<span id="_CPPv25light"></span><span id="light"></span><span class="target" id="namespacelight"></span><em class="property">namespace </em><code class="descname">light</code><a class="headerlink" href="#_CPPv35light" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light10esp_scale8E7uint8_t7uint8_t">
+<span id="_CPPv2N5light10esp_scale8E7uint8_t7uint8_t"></span><span id="light::esp_scale8__uint8_t.uint8_t"></span><span class="target" id="addressable__light_8h_1a71eafc2ea8df8d31e4af12c845d05db0"></span><em class="property">static</em> uint8_t <code class="descname">esp_scale8</code><span class="sig-paren">(</span>uint8_t <em>i</em>, uint8_t <em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light10esp_scale8E7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv3N5light16AddressableLightE">
+<span id="_CPPv2N5light16AddressableLightE"></span><span id="light::AddressableLight"></span><span class="target" id="classlight_1_1_addressable_light"></span><em class="property">class </em><code class="descname">AddressableLight</code><a class="headerlink" href="#_CPPv3N5light16AddressableLightE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="fastled.html#classlight_1_1_fast_l_e_d_light_output_component"><span class="std std-ref">light::FastLEDLightOutputComponent</span></a>, <a class="reference internal" href="neopixelbus.html#classlight_1_1_neo_pixel_bus_light_output_base"><span class="std std-ref">light::NeoPixelBusLightOutputBase&lt; T_METHOD, T_COLOR_FEATURE &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light16AddressableLight16AddressableLightEv">
+<span id="_CPPv2N5light16AddressableLight16AddressableLightEv"></span><span id="light::AddressableLight::AddressableLight"></span><span class="target" id="classlight_1_1_addressable_light_1a270756917016b3d288dfaf432ccee589"></span><code class="descname">AddressableLight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light16AddressableLight16AddressableLightEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light16AddressableLight4sizeEv">
+<span id="_CPPv2NK5light16AddressableLight4sizeEv"></span><span id="light::AddressableLight::sizeC"></span><span class="target" id="classlight_1_1_addressable_light_1a727db02bce323498727fb84d7cfed675"></span><em class="property">virtual</em> int32_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv3NK5light16AddressableLight4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light16AddressableLightixE7int32_t">
+<span id="_CPPv2NK5light16AddressableLightixE7int32_t"></span><span id="light::AddressableLight::subscript-operator__int32_tC"></span><span class="target" id="classlight_1_1_addressable_light_1abddcb2641ba830b55f967138e166d012"></span><em class="property">virtual</em> <a class="reference internal" href="#_CPPv3N5light12ESPColorViewE" title="light::ESPColorView">ESPColorView</a> <code class="descname">operator[]</code><span class="sig-paren">(</span>int32_t <em>index</em><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv3NK5light16AddressableLightixE7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light16AddressableLight17clear_effect_dataEv">
+<span id="_CPPv2N5light16AddressableLight17clear_effect_dataEv"></span><span id="light::AddressableLight::clear_effect_data"></span><span class="target" id="classlight_1_1_addressable_light_1af9652282f849796f792d51d125566ec2"></span><em class="property">virtual</em> void <code class="descname">clear_effect_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5light16AddressableLight17clear_effect_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light16AddressableLight16is_effect_activeEv">
+<span id="_CPPv2NK5light16AddressableLight16is_effect_activeEv"></span><span id="light::AddressableLight::is_effect_activeC"></span><span class="target" id="classlight_1_1_addressable_light_1aac4a9fdadf10b1575e8179cae6a2b03f"></span>bool <code class="descname">is_effect_active</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light16AddressableLight16is_effect_activeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light16AddressableLight17set_effect_activeEb">
+<span id="_CPPv2N5light16AddressableLight17set_effect_activeEb"></span><span id="light::AddressableLight::set_effect_active__b"></span><span class="target" id="classlight_1_1_addressable_light_1a833dfc8a388a1d8200ee8c602e68a0bc"></span>void <code class="descname">set_effect_active</code><span class="sig-paren">(</span>bool <em>effect_active</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light16AddressableLight17set_effect_activeEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light16AddressableLight14effect_active_E">
+<span id="_CPPv2N5light16AddressableLight14effect_active_E"></span><span id="light::AddressableLight::effect_active___b"></span><span class="target" id="classlight_1_1_addressable_light_1a6d05f08d5c376b377adecb11eda76186"></span>bool <code class="descname">effect_active_</code> = {false}<a class="headerlink" href="#_CPPv3N5light16AddressableLight14effect_active_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light8ESPColorE">
+<span id="_CPPv2N5light8ESPColorE"></span><span id="light::ESPColor"></span><span class="target" id="structlight_1_1_e_s_p_color"></span><em class="property">struct </em><code class="descname">ESPColor</code><a class="headerlink" href="#_CPPv3N5light8ESPColorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColor8ESPColorEv">
+<span id="_CPPv2N5light8ESPColor8ESPColorEv"></span><span id="light::ESPColor::ESPColor"></span><span class="target" id="structlight_1_1_e_s_p_color_1ae6abd756997b08aa03012341c6e76ecd"></span><code class="descname">ESPColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColor8ESPColorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColor8ESPColorE7uint8_t7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv2N5light8ESPColor8ESPColorE7uint8_t7uint8_t7uint8_t7uint8_t"></span><span id="light::ESPColor::ESPColor__uint8_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a91ec757f803d574bc44abb8dc86bb908"></span><code class="descname">ESPColor</code><span class="sig-paren">(</span>uint8_t <em>red</em>, uint8_t <em>green</em>, uint8_t <em>blue</em>, uint8_t <em>white</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColor8ESPColorE7uint8_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColor8ESPColorE7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv2N5light8ESPColor8ESPColorE7uint8_t7uint8_t7uint8_t"></span><span id="light::ESPColor::ESPColor__uint8_t.uint8_t.uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a18fe1b86857371331181c1cd73cb19a5"></span><code class="descname">ESPColor</code><span class="sig-paren">(</span>uint8_t <em>red</em>, uint8_t <em>green</em>, uint8_t <em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColor8ESPColorE7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColor8ESPColorE8uint32_t">
+<span id="_CPPv2N5light8ESPColor8ESPColorE8uint32_t"></span><span id="light::ESPColor::ESPColor__uint32_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a2f83fdd68201bed0c3c36e9bfce77dae"></span><code class="descname">ESPColor</code><span class="sig-paren">(</span>uint32_t <em>colorcode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColor8ESPColorE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColor8ESPColorERK8ESPColor">
+<span id="_CPPv2N5light8ESPColor8ESPColorERK8ESPColor"></span><span id="light::ESPColor::ESPColor__ESPColorCR"></span><span class="target" id="structlight_1_1_e_s_p_color_1af6ff8af8834fd335104522841df6b440"></span><code class="descname">ESPColor</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColor8ESPColorEv" title="light::ESPColor::ESPColor">ESPColor</a> &amp;<em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColor8ESPColorERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColor5is_onEv">
+<span id="_CPPv2N5light8ESPColor5is_onEv"></span><span id="light::ESPColor::is_on"></span><span class="target" id="structlight_1_1_e_s_p_color_1ae9b3856680de2baa539631a686eb19c3"></span>bool <code class="descname">is_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColor5is_onEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColoraSERK8ESPColor">
+<span id="_CPPv2N5light8ESPColoraSERK8ESPColor"></span><span id="light::ESPColor::assign-operator__ESPColorCR"></span><span class="target" id="structlight_1_1_e_s_p_color_1ae5a60a6db45ec82aa9320d21f65aec38"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColoraSERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColoraSEK8uint32_t">
+<span id="_CPPv2N5light8ESPColoraSEK8uint32_t"></span><span id="light::ESPColor::assign-operator__uint32_tC"></span><span class="target" id="structlight_1_1_e_s_p_color_1a8e300c6dd1b5cf1004cc67500160aa81"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> uint32_t <em>colorcode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColoraSEK8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColorixE7uint8_t">
+<span id="_CPPv2N5light8ESPColorixE7uint8_t"></span><span id="light::ESPColor::subscript-operator__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a7b702f09d284402deabf38eca56b8cf0"></span>uint8_t &amp;<code class="descname">operator[]</code><span class="sig-paren">(</span>uint8_t <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColorixE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light8ESPColormlE7uint8_t">
+<span id="_CPPv2NK5light8ESPColormlE7uint8_t"></span><span id="light::ESPColor::mul-operator__uint8_tC"></span><span class="target" id="structlight_1_1_e_s_p_color_1a4d5df2ecab5441cbb2101f9bf5855f42"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">operator*</code><span class="sig-paren">(</span>uint8_t <em>scale</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light8ESPColormlE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColormLE7uint8_t">
+<span id="_CPPv2N5light8ESPColormLE7uint8_t"></span><span id="light::ESPColor::mul-assign-operator__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1aaec65228078b261073aa76da05c77148"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator*=</code><span class="sig-paren">(</span>uint8_t <em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColormLE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light8ESPColormlERK8ESPColor">
+<span id="_CPPv2NK5light8ESPColormlERK8ESPColor"></span><span id="light::ESPColor::mul-operator__ESPColorCRC"></span><span class="target" id="structlight_1_1_e_s_p_color_1a70f8f76b2458464dbf451e414989afc9"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">operator*</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>scale</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light8ESPColormlERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColormLERK8ESPColor">
+<span id="_CPPv2N5light8ESPColormLERK8ESPColor"></span><span id="light::ESPColor::mul-assign-operator__ESPColorCR"></span><span class="target" id="structlight_1_1_e_s_p_color_1a5e8666df23fe305ab620eba816f541c1"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator*=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>scale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColormLERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light8ESPColorplERK8ESPColor">
+<span id="_CPPv2NK5light8ESPColorplERK8ESPColor"></span><span id="light::ESPColor::add-operator__ESPColorCRC"></span><span class="target" id="structlight_1_1_e_s_p_color_1a2449a79b3dff02e3a12b89c4729beadc"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">operator+</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>add</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light8ESPColorplERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColorpLERK8ESPColor">
+<span id="_CPPv2N5light8ESPColorpLERK8ESPColor"></span><span id="light::ESPColor::add-assign-operator__ESPColorCR"></span><span class="target" id="structlight_1_1_e_s_p_color_1acf61dc5a97b7d8d79a78772c3b00f0f9"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator+=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>add</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColorpLERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light8ESPColorplE7uint8_t">
+<span id="_CPPv2NK5light8ESPColorplE7uint8_t"></span><span id="light::ESPColor::add-operator__uint8_tC"></span><span class="target" id="structlight_1_1_e_s_p_color_1a55328d562b3b6da0b07e0033d2aa6c50"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">operator+</code><span class="sig-paren">(</span>uint8_t <em>add</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light8ESPColorplE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColorpLE7uint8_t">
+<span id="_CPPv2N5light8ESPColorpLE7uint8_t"></span><span id="light::ESPColor::add-assign-operator__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a8419c5f99439e5b5aaf7b63db4159618"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator+=</code><span class="sig-paren">(</span>uint8_t <em>add</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColorpLE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light8ESPColormiERK8ESPColor">
+<span id="_CPPv2NK5light8ESPColormiERK8ESPColor"></span><span id="light::ESPColor::sub-operator__ESPColorCRC"></span><span class="target" id="structlight_1_1_e_s_p_color_1aea646f8a7b3c7ce397be0f4bd3da64b9"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">operator-</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>subtract</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light8ESPColormiERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColormIERK8ESPColor">
+<span id="_CPPv2N5light8ESPColormIERK8ESPColor"></span><span id="light::ESPColor::sub-assign-operator__ESPColorCR"></span><span class="target" id="structlight_1_1_e_s_p_color_1a74e800fb89583fc0e9b3dfdce09b2922"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator-=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>subtract</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColormIERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light8ESPColormiE7uint8_t">
+<span id="_CPPv2NK5light8ESPColormiE7uint8_t"></span><span id="light::ESPColor::sub-operator__uint8_tC"></span><span class="target" id="structlight_1_1_e_s_p_color_1a0a1291dacd73f3cbc49ca9cf6be60bd6"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">operator-</code><span class="sig-paren">(</span>uint8_t <em>subtract</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light8ESPColormiE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light8ESPColormIE7uint8_t">
+<span id="_CPPv2N5light8ESPColormIE7uint8_t"></span><span id="light::ESPColor::sub-assign-operator__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1aaddfb828d3242a2941a7232d210725ff"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<code class="descname">operator-=</code><span class="sig-paren">(</span>uint8_t <em>subtract</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light8ESPColormIE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor1rE">
+<span id="_CPPv2N5light8ESPColor1rE"></span><span id="light::ESPColor::r__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1afbe4a2031810b9059dca55620f0e7f37"></span>uint8_t <code class="descname">r</code><a class="headerlink" href="#_CPPv3N5light8ESPColor1rE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor3redE">
+<span id="_CPPv2N5light8ESPColor3redE"></span><span id="light::ESPColor::red__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1acd7d2d9312e9a2095ad9768678da6697"></span>uint8_t <code class="descname">red</code><a class="headerlink" href="#_CPPv3N5light8ESPColor3redE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor1gE">
+<span id="_CPPv2N5light8ESPColor1gE"></span><span id="light::ESPColor::g__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1ac07adf65f6ab6cd1c22800a5b3302f13"></span>uint8_t <code class="descname">g</code><a class="headerlink" href="#_CPPv3N5light8ESPColor1gE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor5greenE">
+<span id="_CPPv2N5light8ESPColor5greenE"></span><span id="light::ESPColor::green__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a566899adfe0770b2a3e736044ed71a82"></span>uint8_t <code class="descname">green</code><a class="headerlink" href="#_CPPv3N5light8ESPColor5greenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor1bE">
+<span id="_CPPv2N5light8ESPColor1bE"></span><span id="light::ESPColor::b__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a8b257a554cc5f4f13507a97473cd50f5"></span>uint8_t <code class="descname">b</code><a class="headerlink" href="#_CPPv3N5light8ESPColor1bE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor4blueE">
+<span id="_CPPv2N5light8ESPColor4blueE"></span><span id="light::ESPColor::blue__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a3336ad7edce9ebef50f4902993889480"></span>uint8_t <code class="descname">blue</code><a class="headerlink" href="#_CPPv3N5light8ESPColor4blueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor1wE">
+<span id="_CPPv2N5light8ESPColor1wE"></span><span id="light::ESPColor::w__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1a75cf99be914740ff64bd50607318859b"></span>uint8_t <code class="descname">w</code><a class="headerlink" href="#_CPPv3N5light8ESPColor1wE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor5whiteE">
+<span id="_CPPv2N5light8ESPColor5whiteE"></span><span id="light::ESPColor::white__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_color_1adaf01a4ed95c9322a2707299a4b1d53c"></span>uint8_t <code class="descname">white</code><a class="headerlink" href="#_CPPv3N5light8ESPColor5whiteE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColor3rawE">
+<span id="_CPPv2N5light8ESPColor3rawE"></span><span id="light::ESPColor::raw__uint8_tA"></span><span class="target" id="structlight_1_1_e_s_p_color_1a3e78ad9afba43c5bded76643523c83d2"></span>uint8_t <code class="descname">raw</code>[4]<a class="headerlink" href="#_CPPv3N5light8ESPColor3rawE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light8ESPColorUt1_4E">
+<span class="target" id="structlight_1_1_e_s_p_color_1afbbd3be7c22647045953eac6bd515aa4"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv3N5light8ESPColorUt1_4E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="structlight_1_1_e_s_p_color_1a2b3d1b20d0908ec0bb884077f1ff5cfa"></span><code class="descname">ESPColor HOT light::ESPColor::random_color()</code></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light18ESPColorCorrectionE">
+<span id="_CPPv2N5light18ESPColorCorrectionE"></span><span id="light::ESPColorCorrection"></span><span class="target" id="classlight_1_1_e_s_p_color_correction"></span><em class="property">class </em><code class="descname">ESPColorCorrection</code><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrectionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light18ESPColorCorrection18ESPColorCorrectionEv">
+<span id="_CPPv2N5light18ESPColorCorrection18ESPColorCorrectionEv"></span><span id="light::ESPColorCorrection::ESPColorCorrection"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a92e7dd9412d1de6521fa6adeb711634e"></span><code class="descname">ESPColorCorrection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection18ESPColorCorrectionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light18ESPColorCorrection18set_max_brightnessERK8ESPColor">
+<span id="_CPPv2N5light18ESPColorCorrection18set_max_brightnessERK8ESPColor"></span><span id="light::ESPColorCorrection::set_max_brightness__ESPColorCR"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1af2a65361c009a5a30d2824beb5413374"></span>void <code class="descname">set_max_brightness</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>max_brightness</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection18set_max_brightnessERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light18ESPColorCorrection20set_local_brightnessE7uint8_t">
+<span id="_CPPv2N5light18ESPColorCorrection20set_local_brightnessE7uint8_t"></span><span id="light::ESPColorCorrection::set_local_brightness__uint8_t"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a7ac06f2e9c7f5c11174e1fc59bfcb5ea"></span>void <code class="descname">set_local_brightness</code><span class="sig-paren">(</span>uint8_t <em>local_brightness</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection20set_local_brightnessE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light18ESPColorCorrection21calculate_gamma_tableEf">
+<span id="_CPPv2N5light18ESPColorCorrection21calculate_gamma_tableEf"></span><span id="light::ESPColorCorrection::calculate_gamma_table__float"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a8e04bb5b72b7c5d5a17fa307d820f986"></span>void <code class="descname">calculate_gamma_table</code><span class="sig-paren">(</span>float <em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection21calculate_gamma_tableEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection13color_correctE8ESPColor">
+<span id="_CPPv2NK5light18ESPColorCorrection13color_correctE8ESPColor"></span><span id="light::ESPColorCorrection::color_correct__ESPColorC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1abd3e0e4707202563c1780ee64716cebb"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">color_correct</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <em>color</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection13color_correctE8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection17color_correct_redE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection17color_correct_redE7uint8_t"></span><span id="light::ESPColorCorrection::color_correct_red__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1acfc06821b5fcfe05149d3dfb61b9f573"></span>uint8_t <code class="descname">color_correct_red</code><span class="sig-paren">(</span>uint8_t <em>red</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection17color_correct_redE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection19color_correct_greenE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection19color_correct_greenE7uint8_t"></span><span id="light::ESPColorCorrection::color_correct_green__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a4693207126a8384183fc11b04ea190ab"></span>uint8_t <code class="descname">color_correct_green</code><span class="sig-paren">(</span>uint8_t <em>green</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection19color_correct_greenE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection18color_correct_blueE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection18color_correct_blueE7uint8_t"></span><span id="light::ESPColorCorrection::color_correct_blue__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a38bf2aed991bcabf10b13f9b8dd3d24d"></span>uint8_t <code class="descname">color_correct_blue</code><span class="sig-paren">(</span>uint8_t <em>blue</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection18color_correct_blueE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection19color_correct_whiteE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection19color_correct_whiteE7uint8_t"></span><span id="light::ESPColorCorrection::color_correct_white__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1afb752ce740f9322dbef691d3063b96c2"></span>uint8_t <code class="descname">color_correct_white</code><span class="sig-paren">(</span>uint8_t <em>white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection19color_correct_whiteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection15color_uncorrectE8ESPColor">
+<span id="_CPPv2NK5light18ESPColorCorrection15color_uncorrectE8ESPColor"></span><span id="light::ESPColorCorrection::color_uncorrect__ESPColorC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1aac8166bb5fb589c5a6b77ddc8d0903ee"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">color_uncorrect</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <em>color</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection15color_uncorrectE8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection19color_uncorrect_redE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection19color_uncorrect_redE7uint8_t"></span><span id="light::ESPColorCorrection::color_uncorrect_red__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a33c650d4ccf3c69f853e07a2b27c30d0"></span>uint8_t <code class="descname">color_uncorrect_red</code><span class="sig-paren">(</span>uint8_t <em>red</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection19color_uncorrect_redE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection21color_uncorrect_greenE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection21color_uncorrect_greenE7uint8_t"></span><span id="light::ESPColorCorrection::color_uncorrect_green__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1abdec29c0815fc063d4b67ff055a15796"></span>uint8_t <code class="descname">color_uncorrect_green</code><span class="sig-paren">(</span>uint8_t <em>green</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection21color_uncorrect_greenE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection20color_uncorrect_blueE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection20color_uncorrect_blueE7uint8_t"></span><span id="light::ESPColorCorrection::color_uncorrect_blue__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1ad16511a5e16cc19a9dbf2c5a2405fcaa"></span>uint8_t <code class="descname">color_uncorrect_blue</code><span class="sig-paren">(</span>uint8_t <em>blue</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection20color_uncorrect_blueE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light18ESPColorCorrection21color_uncorrect_whiteE7uint8_t">
+<span id="_CPPv2NK5light18ESPColorCorrection21color_uncorrect_whiteE7uint8_t"></span><span id="light::ESPColorCorrection::color_uncorrect_white__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a65d99abc55fe7ca8fafce02df27984d2"></span>uint8_t <code class="descname">color_uncorrect_white</code><span class="sig-paren">(</span>uint8_t <em>white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light18ESPColorCorrection21color_uncorrect_whiteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light18ESPColorCorrection12gamma_table_E">
+<span id="_CPPv2N5light18ESPColorCorrection12gamma_table_E"></span><span id="light::ESPColorCorrection::gamma_table___uint8_tA"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a835f51bd1bd741df4619e8488ef65300"></span>uint8_t <code class="descname">gamma_table_</code>[256]<a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection12gamma_table_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light18ESPColorCorrection20gamma_reverse_table_E">
+<span id="_CPPv2N5light18ESPColorCorrection20gamma_reverse_table_E"></span><span id="light::ESPColorCorrection::gamma_reverse_table___uint8_tA"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a11cb271f0776527121f36d74a82ed820"></span>uint8_t <code class="descname">gamma_reverse_table_</code>[256]<a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection20gamma_reverse_table_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light18ESPColorCorrection15max_brightness_E">
+<span id="_CPPv2N5light18ESPColorCorrection15max_brightness_E"></span><span id="light::ESPColorCorrection::max_brightness___ESPColor"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1a6780df759274ca61ed59e4ed925ff5d5"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">max_brightness_</code><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection15max_brightness_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light18ESPColorCorrection17local_brightness_E">
+<span id="_CPPv2N5light18ESPColorCorrection17local_brightness_E"></span><span id="light::ESPColorCorrection::local_brightness___uint8_t"></span><span class="target" id="classlight_1_1_e_s_p_color_correction_1af8b863edf935f7827c10042296e3a3af"></span>uint8_t <code class="descname">local_brightness_</code><a class="headerlink" href="#_CPPv3N5light18ESPColorCorrection17local_brightness_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light12ESPColorViewE">
+<span id="_CPPv2N5light12ESPColorViewE"></span><span id="light::ESPColorView"></span><span class="target" id="classlight_1_1_e_s_p_color_view"></span><em class="property">class </em><code class="descname">ESPColorView</code><a class="headerlink" href="#_CPPv3N5light12ESPColorViewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light12ESPColorView12ESPColorViewEP7uint8_tP7uint8_tP7uint8_tP7uint8_tP7uint8_tPK18ESPColorCorrection">
+<span id="_CPPv2N5light12ESPColorView12ESPColorViewEP7uint8_tP7uint8_tP7uint8_tP7uint8_tP7uint8_tPK18ESPColorCorrection"></span><span id="light::ESPColorView::ESPColorView__uint8_tP.uint8_tP.uint8_tP.uint8_tP.uint8_tP.ESPColorCorrectionCP"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a0c2aa60784c544a2535937cb9b5ba473"></span><code class="descname">ESPColorView</code><span class="sig-paren">(</span>uint8_t *<em>red</em>, uint8_t *<em>green</em>, uint8_t *<em>blue</em>, uint8_t *<em>white</em>, uint8_t *<em>effect_data</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light18ESPColorCorrectionE" title="light::ESPColorCorrection">ESPColorCorrection</a> *<em>color_correction</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light12ESPColorView12ESPColorViewEP7uint8_tP7uint8_tP7uint8_tP7uint8_tP7uint8_tPK18ESPColorCorrection" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorViewaSERK8ESPColor">
+<span id="_CPPv2NK5light12ESPColorViewaSERK8ESPColor"></span><span id="light::ESPColorView::assign-operator__ESPColorCRC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a08a0a41881f5e0a8d850c017bd0d04fa"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light12ESPColorViewE" title="light::ESPColorView">ESPColorView</a> &amp;<code class="descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorViewaSERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorViewaSERK11ESPHSVColor">
+<span id="_CPPv2NK5light12ESPColorViewaSERK11ESPHSVColor"></span><span id="light::ESPColorView::assign-operator__ESPHSVColorCRC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a35181a09329066746c7005fdbd82bd5c"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light12ESPColorViewE" title="light::ESPColorView">ESPColorView</a> &amp;<code class="descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11ESPHSVColorE" title="light::ESPHSVColor">ESPHSVColor</a> &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorViewaSERK11ESPHSVColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView3setERK8ESPColor">
+<span id="_CPPv2NK5light12ESPColorView3setERK8ESPColor"></span><span id="light::ESPColorView::set__ESPColorCRC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a7bf474fe8aae23e28c3b160e94144924"></span>void <code class="descname">set</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>color</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView3setERK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView3setERK11ESPHSVColor">
+<span id="_CPPv2NK5light12ESPColorView3setERK11ESPHSVColor"></span><span id="light::ESPColorView::set__ESPHSVColorCRC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1aeefa44bb3233946c63ad892d7014eaa9"></span>void <code class="descname">set</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light11ESPHSVColorE" title="light::ESPHSVColor">ESPHSVColor</a> &amp;<em>color</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView3setERK11ESPHSVColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView7set_redE7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView7set_redE7uint8_t"></span><span id="light::ESPColorView::set_red__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a8d7dea6490af459ea049e24a8067764b"></span>void <code class="descname">set_red</code><span class="sig-paren">(</span>uint8_t <em>red</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView7set_redE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView9set_greenE7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView9set_greenE7uint8_t"></span><span id="light::ESPColorView::set_green__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1aa4460914eeacc214ea37c9233912301b"></span>void <code class="descname">set_green</code><span class="sig-paren">(</span>uint8_t <em>green</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView9set_greenE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView8set_blueE7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView8set_blueE7uint8_t"></span><span id="light::ESPColorView::set_blue__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1acb564b1a8bfa80b64b0f9468ad5338c9"></span>void <code class="descname">set_blue</code><span class="sig-paren">(</span>uint8_t <em>blue</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView8set_blueE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView9set_whiteE7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView9set_whiteE7uint8_t"></span><span id="light::ESPColorView::set_white__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a0fd9072eca19d9bc17ed4d068df63608"></span>void <code class="descname">set_white</code><span class="sig-paren">(</span>uint8_t <em>white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView9set_whiteE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView7set_rgbE7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView7set_rgbE7uint8_t7uint8_t7uint8_t"></span><span id="light::ESPColorView::set_rgb__uint8_t.uint8_t.uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1ab06ecb34c4b94b7f87aa77c4be60dea1"></span>void <code class="descname">set_rgb</code><span class="sig-paren">(</span>uint8_t <em>red</em>, uint8_t <em>green</em>, uint8_t <em>blue</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView7set_rgbE7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView8set_rgbwE7uint8_t7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView8set_rgbwE7uint8_t7uint8_t7uint8_t7uint8_t"></span><span id="light::ESPColorView::set_rgbw__uint8_t.uint8_t.uint8_t.uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a56136004464afe4a4b0a9897e65c5b66"></span>void <code class="descname">set_rgbw</code><span class="sig-paren">(</span>uint8_t <em>red</em>, uint8_t <em>green</em>, uint8_t <em>blue</em>, uint8_t <em>white</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView8set_rgbwE7uint8_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView15set_effect_dataE7uint8_t">
+<span id="_CPPv2NK5light12ESPColorView15set_effect_dataE7uint8_t"></span><span id="light::ESPColorView::set_effect_data__uint8_tC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a25e08352fae32bb71cd51c3fc16cb758"></span>void <code class="descname">set_effect_data</code><span class="sig-paren">(</span>uint8_t <em>effect_data</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView15set_effect_dataE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView3getEv">
+<span id="_CPPv2NK5light12ESPColorView3getEv"></span><span id="light::ESPColorView::getC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a18979a7cf5eacfd5bd0df9d3a12140e4"></span><a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> <code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView3getEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView7get_redEv">
+<span id="_CPPv2NK5light12ESPColorView7get_redEv"></span><span id="light::ESPColorView::get_redC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a97d8aee1fcaa7eae625e438edab827f1"></span>uint8_t <code class="descname">get_red</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView7get_redEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView9get_greenEv">
+<span id="_CPPv2NK5light12ESPColorView9get_greenEv"></span><span id="light::ESPColorView::get_greenC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a4e8ec3a17b7f9e6b6d9ad3b1ecad4e92"></span>uint8_t <code class="descname">get_green</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView9get_greenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView8get_blueEv">
+<span id="_CPPv2NK5light12ESPColorView8get_blueEv"></span><span id="light::ESPColorView::get_blueC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1aae3aaf9e2cea21c13629488be0c4f90f"></span>uint8_t <code class="descname">get_blue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView8get_blueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView9get_whiteEv">
+<span id="_CPPv2NK5light12ESPColorView9get_whiteEv"></span><span id="light::ESPColorView::get_whiteC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1abd6e8667ec7d139e6e81e209e056aa34"></span>uint8_t <code class="descname">get_white</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView9get_whiteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK5light12ESPColorView15get_effect_dataEv">
+<span id="_CPPv2NK5light12ESPColorView15get_effect_dataEv"></span><span id="light::ESPColorView::get_effect_dataC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1aa01f1d1649084746c165f04c3d9b4914"></span>uint8_t <code class="descname">get_effect_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light12ESPColorView15get_effect_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light12ESPColorView4red_E">
+<span id="_CPPv2N5light12ESPColorView4red_E"></span><span id="light::ESPColorView::red___uint8_tPC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a321884bd438fe5dac9de928d84e2349d"></span>uint8_t *<em class="property">const</em> <code class="descname">red_</code><a class="headerlink" href="#_CPPv3N5light12ESPColorView4red_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12ESPColorView6green_E">
+<span id="_CPPv2N5light12ESPColorView6green_E"></span><span id="light::ESPColorView::green___uint8_tPC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1aad59a58edf4c62c3addcf62f525395e9"></span>uint8_t *<em class="property">const</em> <code class="descname">green_</code><a class="headerlink" href="#_CPPv3N5light12ESPColorView6green_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12ESPColorView5blue_E">
+<span id="_CPPv2N5light12ESPColorView5blue_E"></span><span id="light::ESPColorView::blue___uint8_tPC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a172b490bbca4540eb4c7d1417d36082b"></span>uint8_t *<em class="property">const</em> <code class="descname">blue_</code><a class="headerlink" href="#_CPPv3N5light12ESPColorView5blue_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12ESPColorView6white_E">
+<span id="_CPPv2N5light12ESPColorView6white_E"></span><span id="light::ESPColorView::white___uint8_tPC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a4e8bca1cef04edbf82fe0ff1a5970360"></span>uint8_t *<em class="property">const</em> <code class="descname">white_</code><a class="headerlink" href="#_CPPv3N5light12ESPColorView6white_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12ESPColorView12effect_data_E">
+<span id="_CPPv2N5light12ESPColorView12effect_data_E"></span><span id="light::ESPColorView::effect_data___uint8_tPC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1aff7bcb10c85c6bb806a08946b414646f"></span>uint8_t *<em class="property">const</em> <code class="descname">effect_data_</code><a class="headerlink" href="#_CPPv3N5light12ESPColorView12effect_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light12ESPColorView17color_correction_E">
+<span id="_CPPv2N5light12ESPColorView17color_correction_E"></span><span id="light::ESPColorView::color_correction___ESPColorCorrectionCPC"></span><span class="target" id="classlight_1_1_e_s_p_color_view_1a565fe47adc3c50f9eb23a99a48c78469"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light18ESPColorCorrectionE" title="light::ESPColorCorrection">ESPColorCorrection</a> *<em class="property">const</em> <code class="descname">color_correction_</code><a class="headerlink" href="#_CPPv3N5light12ESPColorView17color_correction_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light11ESPHSVColorE">
+<span id="_CPPv2N5light11ESPHSVColorE"></span><span id="light::ESPHSVColor"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color"></span><em class="property">struct </em><code class="descname">ESPHSVColor</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light11ESPHSVColor11ESPHSVColorEv">
+<span id="_CPPv2N5light11ESPHSVColor11ESPHSVColorEv"></span><span id="light::ESPHSVColor::ESPHSVColor"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1acb163bed3501c430582a2d9cea8923ff"></span><code class="descname">ESPHSVColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor11ESPHSVColorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light11ESPHSVColor11ESPHSVColorE7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv2N5light11ESPHSVColor11ESPHSVColorE7uint8_t7uint8_t7uint8_t"></span><span id="light::ESPHSVColor::ESPHSVColor__uint8_t.uint8_t.uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1af3e18284ca1d742ba72ca30fa7756b3e"></span><code class="descname">ESPHSVColor</code><span class="sig-paren">(</span>uint8_t <em>hue</em>, uint8_t <em>saturation</em>, uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor11ESPHSVColorE7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1aded22ca4fd3907abf265490e78046515"></span><code class="descname">ESPColor HOT light::ESPHSVColor::to_rgb() const</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor3hueE">
+<span id="_CPPv2N5light11ESPHSVColor3hueE"></span><span id="light::ESPHSVColor::hue__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1a3be84e40eb4be1551cf94b2b3c0ed6b0"></span>uint8_t <code class="descname">hue</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor3hueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor1hE">
+<span id="_CPPv2N5light11ESPHSVColor1hE"></span><span id="light::ESPHSVColor::h__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1a0b58ae016fad6ce7b0ac3dd0f304479b"></span>uint8_t <code class="descname">h</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor1hE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor10saturationE">
+<span id="_CPPv2N5light11ESPHSVColor10saturationE"></span><span id="light::ESPHSVColor::saturation__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1acb548ede7e05e4e2cc45de065390f6f7"></span>uint8_t <code class="descname">saturation</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor10saturationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor1sE">
+<span id="_CPPv2N5light11ESPHSVColor1sE"></span><span id="light::ESPHSVColor::s__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1af9d691f629b50f5a8a018ba17c8c1d68"></span>uint8_t <code class="descname">s</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor1sE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor5valueE">
+<span id="_CPPv2N5light11ESPHSVColor5valueE"></span><span id="light::ESPHSVColor::value__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1a501d637ed7aa37dcfae36152219f77e2"></span>uint8_t <code class="descname">value</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor5valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor1vE">
+<span id="_CPPv2N5light11ESPHSVColor1vE"></span><span id="light::ESPHSVColor::v__uint8_t"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1a8a8b515ba47ed4aaeccfdb8ef6b3ccb5"></span>uint8_t <code class="descname">v</code><a class="headerlink" href="#_CPPv3N5light11ESPHSVColor1vE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColor3rawE">
+<span id="_CPPv2N5light11ESPHSVColor3rawE"></span><span id="light::ESPHSVColor::raw__uint8_tA"></span><span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1a41ed8e7aee3ce0c79cd57579b991866f"></span>uint8_t <code class="descname">raw</code>[3]<a class="headerlink" href="#_CPPv3N5light11ESPHSVColor3rawE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light11ESPHSVColorUt2_16E">
+<span class="target" id="structlight_1_1_e_s_p_h_s_v_color_1af1da1fe2bdc95caec4ed5b15a2f14938"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light11ESPHSVColorE" title="light::ESPHSVColor">ESPHSVColor</a>::<strong>[anonymous]</strong> <strong>[anonymous]</strong><a class="headerlink" href="#_CPPv3N5light11ESPHSVColorUt2_16E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="addressable-light-effects">
+<h3>Addressable Light Effects<a class="headerlink" href="#addressable-light-effects" title="Permalink to this headline">¶</a></h3>
+<dl class="type">
+<dt id="_CPPv35light">
+<span id="_CPPv25light"></span><span class="target" id="namespacelight"></span><em class="property">namespace </em><code class="descname">light</code><br /></dt>
+<dd><dl class="class">
+<dt id="_CPPv3N5light26AddressableColorWipeEffectE">
+<span id="_CPPv2N5light26AddressableColorWipeEffectE"></span><span id="light::AddressableColorWipeEffect"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect"></span><em class="property">class </em><code class="descname">AddressableColorWipeEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect26AddressableColorWipeEffectERKNSt6stringE">
+<span id="_CPPv2N5light26AddressableColorWipeEffect26AddressableColorWipeEffectERKNSt6stringE"></span><span id="light::AddressableColorWipeEffect::AddressableColorWipeEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1ab1e0534b99e38e55aeaa379f4b974e92"></span><code class="descname">AddressableColorWipeEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect26AddressableColorWipeEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect10set_colorsERKNSt6vectorI31AddressableColorWipeEffectColorEE">
+<span id="_CPPv2N5light26AddressableColorWipeEffect10set_colorsERKNSt6vectorI31AddressableColorWipeEffectColorEE"></span><span id="light::AddressableColorWipeEffect::set_colors__std::vector:AddressableColorWipeEffectColor:CR"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1a05b874d6732523c30db9365224f68004"></span>void <code class="descname">set_colors</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv3N5light31AddressableColorWipeEffectColorE" title="light::AddressableColorWipeEffectColor">AddressableColorWipeEffectColor</a>&gt; &amp;<em>colors</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect10set_colorsERKNSt6vectorI31AddressableColorWipeEffectColorEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect20set_add_led_intervalE8uint32_t">
+<span id="_CPPv2N5light26AddressableColorWipeEffect20set_add_led_intervalE8uint32_t"></span><span id="light::AddressableColorWipeEffect::set_add_led_interval__uint32_t"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1a161061fda62d39a74c423751337a085b"></span>void <code class="descname">set_add_led_interval</code><span class="sig-paren">(</span>uint32_t <em>add_led_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect20set_add_led_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect11set_reverseEb">
+<span id="_CPPv2N5light26AddressableColorWipeEffect11set_reverseEb"></span><span id="light::AddressableColorWipeEffect::set_reverse__b"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1aed47f6a6b5528fbc549b76bf01fb9c23"></span>void <code class="descname">set_reverse</code><span class="sig-paren">(</span>bool <em>reverse</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect11set_reverseEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light26AddressableColorWipeEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableColorWipeEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1ae5f16d0300bd77e33e8a71da24a6b611"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect7colors_E">
+<span id="_CPPv2N5light26AddressableColorWipeEffect7colors_E"></span><span id="light::AddressableColorWipeEffect::colors___std::vector:AddressableColorWipeEffectColor:"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1a6ccdc39613531946ff380d7a20d2dac0"></span>std::vector&lt;<a class="reference internal" href="#_CPPv3N5light31AddressableColorWipeEffectColorE" title="light::AddressableColorWipeEffectColor">AddressableColorWipeEffectColor</a>&gt; <code class="descname">colors_</code><a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect7colors_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect9at_color_E">
+<span id="_CPPv2N5light26AddressableColorWipeEffect9at_color_E"></span><span id="light::AddressableColorWipeEffect::at_color___s"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1ac6fe917203bc465b39a5cdc9135fca94"></span>size_t <code class="descname">at_color_</code> = {0}<a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect9at_color_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect9last_add_E">
+<span id="_CPPv2N5light26AddressableColorWipeEffect9last_add_E"></span><span id="light::AddressableColorWipeEffect::last_add___uint32_t"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1a96b8dcb79f23e9f0b5b1eb2fcda5e233"></span>uint32_t <code class="descname">last_add_</code> = {0}<a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect9last_add_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect17add_led_interval_E">
+<span id="_CPPv2N5light26AddressableColorWipeEffect17add_led_interval_E"></span><span id="light::AddressableColorWipeEffect::add_led_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1ab7f21f854c4389e0a9b0d97606679fe2"></span>uint32_t <code class="descname">add_led_interval_</code> = {100}<a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect17add_led_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect11leds_added_E">
+<span id="_CPPv2N5light26AddressableColorWipeEffect11leds_added_E"></span><span id="light::AddressableColorWipeEffect::leds_added___s"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1ae2ebbef850b0c5317572027b98a83a99"></span>size_t <code class="descname">leds_added_</code> = {0}<a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect11leds_added_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableColorWipeEffect8reverse_E">
+<span id="_CPPv2N5light26AddressableColorWipeEffect8reverse_E"></span><span id="light::AddressableColorWipeEffect::reverse___b"></span><span class="target" id="classlight_1_1_addressable_color_wipe_effect_1a8d7f95d3f2bea19821a54d3a61303736"></span>bool <code class="descname">reverse_</code> = {false}<a class="headerlink" href="#_CPPv3N5light26AddressableColorWipeEffect8reverse_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColorE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColorE"></span><span id="light::AddressableColorWipeEffectColor"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color"></span><em class="property">struct </em><code class="descname">AddressableColorWipeEffectColor</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColor1rE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColor1rE"></span><span id="light::AddressableColorWipeEffectColor::r__uint8_t"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color_1a0fdfd2023c27118cb7e79ee4e285b265"></span>uint8_t <code class="descname">r</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColor1rE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColor1gE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColor1gE"></span><span id="light::AddressableColorWipeEffectColor::g__uint8_t"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color_1ae7d0be2aaeb0914406bc9665b3adcc6d"></span>uint8_t <code class="descname">g</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColor1gE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColor1bE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColor1bE"></span><span id="light::AddressableColorWipeEffectColor::b__uint8_t"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color_1a3463bf8e9d74ab7b764d63b890b0b6ff"></span>uint8_t <code class="descname">b</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColor1bE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColor1wE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColor1wE"></span><span id="light::AddressableColorWipeEffectColor::w__uint8_t"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color_1aa47da3fe593dcfca516626f141a77175"></span>uint8_t <code class="descname">w</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColor1wE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColor6randomE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColor6randomE"></span><span id="light::AddressableColorWipeEffectColor::random__b"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color_1a5bed3221ee929002f95ccd911ac9dbde"></span>bool <code class="descname">random</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColor6randomE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light31AddressableColorWipeEffectColor8num_ledsE">
+<span id="_CPPv2N5light31AddressableColorWipeEffectColor8num_ledsE"></span><span id="light::AddressableColorWipeEffectColor::num_leds__s"></span><span class="target" id="structlight_1_1_addressable_color_wipe_effect_color_1a1d70312bf5acaa918ef3eb35ee5fdfdf"></span>size_t <code class="descname">num_leds</code><a class="headerlink" href="#_CPPv3N5light31AddressableColorWipeEffectColor8num_ledsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light26AddressableFireworksEffectE">
+<span id="_CPPv2N5light26AddressableFireworksEffectE"></span><span id="light::AddressableFireworksEffect"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect"></span><em class="property">class </em><code class="descname">AddressableFireworksEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect26AddressableFireworksEffectERKNSt6stringE">
+<span id="_CPPv2N5light26AddressableFireworksEffect26AddressableFireworksEffectERKNSt6stringE"></span><span id="light::AddressableFireworksEffect::AddressableFireworksEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a9efaba687d90f512cca24d70fd78dd57"></span><code class="descname">AddressableFireworksEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect26AddressableFireworksEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect4initEv">
+<span id="_CPPv2N5light26AddressableFireworksEffect4initEv"></span><span id="light::AddressableFireworksEffect::init"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1af7d42355c37b2454314aa356ecf395ae"></span>void <code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect4initEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light26AddressableFireworksEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableFireworksEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a0b22da9c7fd35f3eca53a799e2915c1a"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect19set_update_intervalE8uint32_t">
+<span id="_CPPv2N5light26AddressableFireworksEffect19set_update_intervalE8uint32_t"></span><span id="light::AddressableFireworksEffect::set_update_interval__uint32_t"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a16d52b2b0a260622152de209f2d6e96d"></span>void <code class="descname">set_update_interval</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect19set_update_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect21set_spark_probabilityEf">
+<span id="_CPPv2N5light26AddressableFireworksEffect21set_spark_probabilityEf"></span><span id="light::AddressableFireworksEffect::set_spark_probability__float"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1adf1c0d00bc64a39dc4ceffb5cebdb40a"></span>void <code class="descname">set_spark_probability</code><span class="sig-paren">(</span>float <em>spark_probability</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect21set_spark_probabilityEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect20set_use_random_colorEb">
+<span id="_CPPv2N5light26AddressableFireworksEffect20set_use_random_colorEb"></span><span id="light::AddressableFireworksEffect::set_use_random_color__b"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a0068edd5a44ece81f2a888f3ab243f4b"></span>void <code class="descname">set_use_random_color</code><span class="sig-paren">(</span>bool <em>random_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect20set_use_random_colorEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light26AddressableFireworksEffect17set_fade_out_rateE7uint8_t">
+<span id="_CPPv2N5light26AddressableFireworksEffect17set_fade_out_rateE7uint8_t"></span><span id="light::AddressableFireworksEffect::set_fade_out_rate__uint8_t"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1abde60b9feeaa404ce249bdbb1e77f078"></span>void <code class="descname">set_fade_out_rate</code><span class="sig-paren">(</span>uint8_t <em>fade_out_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect17set_fade_out_rateE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableFireworksEffect14fade_out_rate_E">
+<span id="_CPPv2N5light26AddressableFireworksEffect14fade_out_rate_E"></span><span id="light::AddressableFireworksEffect::fade_out_rate___uint8_t"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a8fa9de71fb3b52e9c612a6e26fe06eb2"></span>uint8_t <code class="descname">fade_out_rate_</code> = {120}<a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect14fade_out_rate_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableFireworksEffect16update_interval_E">
+<span id="_CPPv2N5light26AddressableFireworksEffect16update_interval_E"></span><span id="light::AddressableFireworksEffect::update_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a54ba894cb2bf4d9059e48ccb9a678a76"></span>uint32_t <code class="descname">update_interval_</code> = {32}<a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect16update_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableFireworksEffect12last_update_E">
+<span id="_CPPv2N5light26AddressableFireworksEffect12last_update_E"></span><span id="light::AddressableFireworksEffect::last_update___uint32_t"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a71cdbbdc1d888aa1a1cb3496a703478e"></span>uint32_t <code class="descname">last_update_</code> = {0}<a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect12last_update_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableFireworksEffect18spark_probability_E">
+<span id="_CPPv2N5light26AddressableFireworksEffect18spark_probability_E"></span><span id="light::AddressableFireworksEffect::spark_probability___float"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1ae3beac6391f1ce5e26407bee969e53e1"></span>float <code class="descname">spark_probability_</code> = {0.10f}<a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect18spark_probability_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light26AddressableFireworksEffect17use_random_color_E">
+<span id="_CPPv2N5light26AddressableFireworksEffect17use_random_color_E"></span><span id="light::AddressableFireworksEffect::use_random_color___b"></span><span class="target" id="classlight_1_1_addressable_fireworks_effect_1a7cc10892cc01c423c2ee7a398756606b"></span>bool <code class="descname">use_random_color_</code> = {false}<a class="headerlink" href="#_CPPv3N5light26AddressableFireworksEffect17use_random_color_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light24AddressableFlickerEffectE">
+<span id="_CPPv2N5light24AddressableFlickerEffectE"></span><span id="light::AddressableFlickerEffect"></span><span class="target" id="classlight_1_1_addressable_flicker_effect"></span><em class="property">class </em><code class="descname">AddressableFlickerEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableFlickerEffect24AddressableFlickerEffectERKNSt6stringE">
+<span id="_CPPv2N5light24AddressableFlickerEffect24AddressableFlickerEffectERKNSt6stringE"></span><span id="light::AddressableFlickerEffect::AddressableFlickerEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1a0ec09e3b57f5aef6a1cdb353226cba72"></span><code class="descname">AddressableFlickerEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect24AddressableFlickerEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableFlickerEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light24AddressableFlickerEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableFlickerEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1a6faa00e4862f876b55002027fdc973df"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableFlickerEffect19set_update_intervalE8uint32_t">
+<span id="_CPPv2N5light24AddressableFlickerEffect19set_update_intervalE8uint32_t"></span><span id="light::AddressableFlickerEffect::set_update_interval__uint32_t"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1a1f562e00123795f5b56261c37bbbbf56"></span>void <code class="descname">set_update_interval</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect19set_update_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableFlickerEffect13set_intensityEf">
+<span id="_CPPv2N5light24AddressableFlickerEffect13set_intensityEf"></span><span id="light::AddressableFlickerEffect::set_intensity__float"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1a20ed75b2511a1c79c61a77261813b696"></span>void <code class="descname">set_intensity</code><span class="sig-paren">(</span>float <em>intensity</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect13set_intensityEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light24AddressableFlickerEffect16update_interval_E">
+<span id="_CPPv2N5light24AddressableFlickerEffect16update_interval_E"></span><span id="light::AddressableFlickerEffect::update_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1a4f167a0b218aba8e1d632f0fd5b4aec0"></span>uint32_t <code class="descname">update_interval_</code> = {16}<a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect16update_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light24AddressableFlickerEffect12last_update_E">
+<span id="_CPPv2N5light24AddressableFlickerEffect12last_update_E"></span><span id="light::AddressableFlickerEffect::last_update___uint32_t"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1ae40b29549d15c497fa32b825116447a9"></span>uint32_t <code class="descname">last_update_</code> = {0}<a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect12last_update_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light24AddressableFlickerEffect10intensity_E">
+<span id="_CPPv2N5light24AddressableFlickerEffect10intensity_E"></span><span id="light::AddressableFlickerEffect::intensity___uint8_t"></span><span class="target" id="classlight_1_1_addressable_flicker_effect_1a78ed2d7f20f8fc2c3be02b8266f2acd6"></span>uint8_t <code class="descname">intensity_</code> = {13}<a class="headerlink" href="#_CPPv3N5light24AddressableFlickerEffect10intensity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light28AddressableLambdaLightEffectE">
+<span id="_CPPv2N5light28AddressableLambdaLightEffectE"></span><span id="light::AddressableLambdaLightEffect"></span><span class="target" id="classlight_1_1_addressable_lambda_light_effect"></span><em class="property">class </em><code class="descname">AddressableLambdaLightEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light28AddressableLambdaLightEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light28AddressableLambdaLightEffect28AddressableLambdaLightEffectERKNSt6stringERKNSt8functionIFvR16AddressableLightEEE8uint32_t">
+<span id="_CPPv2N5light28AddressableLambdaLightEffect28AddressableLambdaLightEffectERKNSt6stringERKNSt8functionIFvR16AddressableLightEEE8uint32_t"></span><span class="target" id="classlight_1_1_addressable_lambda_light_effect_1ab5b8d33505a476d9c12986df4ff28d1f"></span><code class="descname">AddressableLambdaLightEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> std::function&lt;void<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a>&amp;<span class="sig-paren">)</span>&gt; &amp;<em>f</em>, uint32_t <em>update_interval</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light28AddressableLambdaLightEffect28AddressableLambdaLightEffectERKNSt6stringERKNSt8functionIFvR16AddressableLightEEE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light28AddressableLambdaLightEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light28AddressableLambdaLightEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableLambdaLightEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_lambda_light_effect_1a195aa94fc3e0e53f36b1ba2be6b4864b"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light28AddressableLambdaLightEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light28AddressableLambdaLightEffect2f_E">
+<span id="_CPPv2N5light28AddressableLambdaLightEffect2f_E"></span><span class="target" id="classlight_1_1_addressable_lambda_light_effect_1a9d0badd51b35f9c8fc29811b39b8a084"></span>std::function&lt;void<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a>&amp;<span class="sig-paren">)</span>&gt; <code class="descname">f_</code><a class="headerlink" href="#_CPPv3N5light28AddressableLambdaLightEffect2f_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light28AddressableLambdaLightEffect16update_interval_E">
+<span id="_CPPv2N5light28AddressableLambdaLightEffect16update_interval_E"></span><span id="light::AddressableLambdaLightEffect::update_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_lambda_light_effect_1abec5cd91f31e60355530bead469dc940"></span>uint32_t <code class="descname">update_interval_</code><a class="headerlink" href="#_CPPv3N5light28AddressableLambdaLightEffect16update_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light28AddressableLambdaLightEffect9last_run_E">
+<span id="_CPPv2N5light28AddressableLambdaLightEffect9last_run_E"></span><span id="light::AddressableLambdaLightEffect::last_run___uint32_t"></span><span class="target" id="classlight_1_1_addressable_lambda_light_effect_1af633ef52de2e029307cc9ffacf59eb02"></span>uint32_t <code class="descname">last_run_</code> = {0}<a class="headerlink" href="#_CPPv3N5light28AddressableLambdaLightEffect9last_run_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light22AddressableLightEffectE">
+<span id="_CPPv2N5light22AddressableLightEffectE"></span><span id="light::AddressableLightEffect"></span><span class="target" id="classlight_1_1_addressable_light_effect"></span><em class="property">class </em><code class="descname">AddressableLightEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="index.html#_CPPv3N5light11LightEffectE" title="light::LightEffect">LightEffect</a><a class="headerlink" href="#_CPPv3N5light22AddressableLightEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classlight_1_1_addressable_color_wipe_effect"><span class="std std-ref">light::AddressableColorWipeEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_fireworks_effect"><span class="std std-ref">light::AddressableFireworksEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_flicker_effect"><span class="std std-ref">light::AddressableFlickerEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_lambda_light_effect"><span class="std std-ref">light::AddressableLambdaLightEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_rainbow_light_effect"><span class="std std-ref">light::AddressableRainbowLightEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_random_twinkle_effect"><span class="std std-ref">light::AddressableRandomTwinkleEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_scan_effect"><span class="std std-ref">light::AddressableScanEffect</span></a>, <a class="reference internal" href="#classlight_1_1_addressable_twinkle_effect"><span class="std std-ref">light::AddressableTwinkleEffect</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light22AddressableLightEffect22AddressableLightEffectERKNSt6stringE">
+<span id="_CPPv2N5light22AddressableLightEffect22AddressableLightEffectERKNSt6stringE"></span><span id="light::AddressableLightEffect::AddressableLightEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_light_effect_1a3af1795f35add021b39d5e4b4988ee93"></span><code class="descname">AddressableLightEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22AddressableLightEffect22AddressableLightEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light22AddressableLightEffect6start_Ev">
+<span id="_CPPv2N5light22AddressableLightEffect6start_Ev"></span><span id="light::AddressableLightEffect::start_"></span><span class="target" id="classlight_1_1_addressable_light_effect_1a124902a97b895613c8bddebdd1ed2dbb"></span>void <code class="descname">start_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22AddressableLightEffect6start_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light22AddressableLightEffect4stopEv">
+<span id="_CPPv2N5light22AddressableLightEffect4stopEv"></span><span id="light::AddressableLightEffect::stop"></span><span class="target" id="classlight_1_1_addressable_light_effect_1a75876c912fd266cb0cceeba193331108"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22AddressableLightEffect4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light22AddressableLightEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light22AddressableLightEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableLightEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_light_effect_1ab150866d3fdf9e148246222299bb5ea8"></span><em class="property">virtual</em> void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5light22AddressableLightEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light22AddressableLightEffect5applyEv">
+<span id="_CPPv2N5light22AddressableLightEffect5applyEv"></span><span id="light::AddressableLightEffect::apply"></span><span class="target" id="classlight_1_1_addressable_light_effect_1a8bf78e1ef83b5ce8554e4acb237b712b"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light22AddressableLightEffect5applyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3NK5light22AddressableLightEffect16get_addressable_Ev">
+<span id="_CPPv2NK5light22AddressableLightEffect16get_addressable_Ev"></span><span id="light::AddressableLightEffect::get_addressable_C"></span><span class="target" id="classlight_1_1_addressable_light_effect_1a550d8416247ffae9f803447ed446ee7d"></span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> *<code class="descname">get_addressable_</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5light22AddressableLightEffect16get_addressable_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light22AddressableLightEffect10high_freq_E">
+<span id="_CPPv2N5light22AddressableLightEffect10high_freq_E"></span><span id="light::AddressableLightEffect::high_freq___HighFrequencyLoopRequester"></span><span class="target" id="classlight_1_1_addressable_light_effect_1add1b9fb6230a82817ef71fbef8f657ec"></span><a class="reference internal" href="../core/helpers.html#_CPPv326HighFrequencyLoopRequester" title="HighFrequencyLoopRequester">HighFrequencyLoopRequester</a> <code class="descname">high_freq_</code><a class="headerlink" href="#_CPPv3N5light22AddressableLightEffect10high_freq_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffectE">
+<span id="_CPPv2N5light29AddressableRainbowLightEffectE"></span><span id="light::AddressableRainbowLightEffect"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect"></span><em class="property">class </em><code class="descname">AddressableRainbowLightEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffect29AddressableRainbowLightEffectERKNSt6stringE">
+<span id="_CPPv2N5light29AddressableRainbowLightEffect29AddressableRainbowLightEffectERKNSt6stringE"></span><span id="light::AddressableRainbowLightEffect::AddressableRainbowLightEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect_1a7197f430ebfbbe1c04a2fa3672de7006"></span><code class="descname">AddressableRainbowLightEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffect29AddressableRainbowLightEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light29AddressableRainbowLightEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableRainbowLightEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect_1a01e899f0681e92f52c6f27b410885a1d"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffect9set_speedE8uint32_t">
+<span id="_CPPv2N5light29AddressableRainbowLightEffect9set_speedE8uint32_t"></span><span id="light::AddressableRainbowLightEffect::set_speed__uint32_t"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect_1aa0003fbd998b904b12041e1ba41ff521"></span>void <code class="descname">set_speed</code><span class="sig-paren">(</span>uint32_t <em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffect9set_speedE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffect9set_widthE8uint32_t">
+<span id="_CPPv2N5light29AddressableRainbowLightEffect9set_widthE8uint32_t"></span><span id="light::AddressableRainbowLightEffect::set_width__uint32_t"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect_1a1e65460a7eb64538bb2bbdec665ba0be"></span>void <code class="descname">set_width</code><span class="sig-paren">(</span>uint32_t <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffect9set_widthE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffect6speed_E">
+<span id="_CPPv2N5light29AddressableRainbowLightEffect6speed_E"></span><span id="light::AddressableRainbowLightEffect::speed___uint32_t"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect_1a79f5290c10f58fc5dfeddc5b84f9f82f"></span>uint32_t <code class="descname">speed_</code> = {10}<a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffect6speed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light29AddressableRainbowLightEffect6width_E">
+<span id="_CPPv2N5light29AddressableRainbowLightEffect6width_E"></span><span id="light::AddressableRainbowLightEffect::width___uint16_t"></span><span class="target" id="classlight_1_1_addressable_rainbow_light_effect_1ab3ebc90dfc80ce20ee3c6e0bc8e70dd7"></span>uint16_t <code class="descname">width_</code> = {50}<a class="headerlink" href="#_CPPv3N5light29AddressableRainbowLightEffect6width_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffectE">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffectE"></span><span id="light::AddressableRandomTwinkleEffect"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect"></span><em class="property">class </em><code class="descname">AddressableRandomTwinkleEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect30AddressableRandomTwinkleEffectERKNSt6stringE">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect30AddressableRandomTwinkleEffectERKNSt6stringE"></span><span id="light::AddressableRandomTwinkleEffect::AddressableRandomTwinkleEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1a147f0b68f3f561a3b04d72d2c495ba85"></span><code class="descname">AddressableRandomTwinkleEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect30AddressableRandomTwinkleEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableRandomTwinkleEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1a4cf28f918a8164e9f4688e4d8549d80c"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>it</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect23set_twinkle_probabilityEf">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect23set_twinkle_probabilityEf"></span><span id="light::AddressableRandomTwinkleEffect::set_twinkle_probability__float"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1aaccedff93a4a919313a543118042901d"></span>void <code class="descname">set_twinkle_probability</code><span class="sig-paren">(</span>float <em>twinkle_probability</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect23set_twinkle_probabilityEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect21set_progress_intervalE8uint32_t">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect21set_progress_intervalE8uint32_t"></span><span id="light::AddressableRandomTwinkleEffect::set_progress_interval__uint32_t"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1a2cbd5d089da13da2715e8c4c3978ead6"></span>void <code class="descname">set_progress_interval</code><span class="sig-paren">(</span>uint32_t <em>progress_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect21set_progress_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect20twinkle_probability_E">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect20twinkle_probability_E"></span><span id="light::AddressableRandomTwinkleEffect::twinkle_probability___float"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1af0b7b2a1942555e04e28d562050f4d41"></span>float <code class="descname">twinkle_probability_</code> = {0.05f}<a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect20twinkle_probability_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect18progress_interval_E">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect18progress_interval_E"></span><span id="light::AddressableRandomTwinkleEffect::progress_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1a2943acc9c8e04cd6e82601e9991b857c"></span>uint32_t <code class="descname">progress_interval_</code> = {32}<a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect18progress_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light30AddressableRandomTwinkleEffect14last_progress_E">
+<span id="_CPPv2N5light30AddressableRandomTwinkleEffect14last_progress_E"></span><span id="light::AddressableRandomTwinkleEffect::last_progress___uint32_t"></span><span class="target" id="classlight_1_1_addressable_random_twinkle_effect_1a05437a63c4edf0ff7530f8a2aba9d55c"></span>uint32_t <code class="descname">last_progress_</code> = {0}<a class="headerlink" href="#_CPPv3N5light30AddressableRandomTwinkleEffect14last_progress_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light21AddressableScanEffectE">
+<span id="_CPPv2N5light21AddressableScanEffectE"></span><span id="light::AddressableScanEffect"></span><span class="target" id="classlight_1_1_addressable_scan_effect"></span><em class="property">class </em><code class="descname">AddressableScanEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light21AddressableScanEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light21AddressableScanEffect21AddressableScanEffectERKNSt6stringE">
+<span id="_CPPv2N5light21AddressableScanEffect21AddressableScanEffectERKNSt6stringE"></span><span id="light::AddressableScanEffect::AddressableScanEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1a875f7f9bc1628c79467b0b8f0849282c"></span><code class="descname">AddressableScanEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect21AddressableScanEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light21AddressableScanEffect17set_move_intervalE8uint32_t">
+<span id="_CPPv2N5light21AddressableScanEffect17set_move_intervalE8uint32_t"></span><span id="light::AddressableScanEffect::set_move_interval__uint32_t"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1a5d9287ba400ffbc81c0c1378fcb1a067"></span>void <code class="descname">set_move_interval</code><span class="sig-paren">(</span>uint32_t <em>move_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect17set_move_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light21AddressableScanEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light21AddressableScanEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableScanEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1af02c65a1051a1b211cf571efe95caf33"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>addressable</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light21AddressableScanEffect14move_interval_E">
+<span id="_CPPv2N5light21AddressableScanEffect14move_interval_E"></span><span id="light::AddressableScanEffect::move_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1a44810e48ffb464180b382f20d30920b8"></span>uint32_t <code class="descname">move_interval_</code> = {100}<a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect14move_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light21AddressableScanEffect10last_move_E">
+<span id="_CPPv2N5light21AddressableScanEffect10last_move_E"></span><span id="light::AddressableScanEffect::last_move___uint32_t"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1a5873b023de250df96a3834601b9d38f9"></span>uint32_t <code class="descname">last_move_</code> = {0}<a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect10last_move_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light21AddressableScanEffect7at_led_E">
+<span id="_CPPv2N5light21AddressableScanEffect7at_led_E"></span><span id="light::AddressableScanEffect::at_led___i"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1a11dd64250b836749666056af721e3c78"></span>int <code class="descname">at_led_</code> = {0}<a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect7at_led_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light21AddressableScanEffect10direction_E">
+<span id="_CPPv2N5light21AddressableScanEffect10direction_E"></span><span id="light::AddressableScanEffect::direction___b"></span><span class="target" id="classlight_1_1_addressable_scan_effect_1a52aec234a243f1d79bc50ec9253da7ff"></span>bool <code class="descname">direction_</code> = {true}<a class="headerlink" href="#_CPPv3N5light21AddressableScanEffect10direction_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N5light24AddressableTwinkleEffectE">
+<span id="_CPPv2N5light24AddressableTwinkleEffectE"></span><span id="light::AddressableTwinkleEffect"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect"></span><em class="property">class </em><code class="descname">AddressableTwinkleEffect</code> : <em class="property">public</em> <a class="reference internal" href="#_CPPv35light" title="light">light</a>::<a class="reference internal" href="#_CPPv3N5light22AddressableLightEffectE" title="light::AddressableLightEffect">AddressableLightEffect</a><a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffectE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect24AddressableTwinkleEffectERKNSt6stringE">
+<span id="_CPPv2N5light24AddressableTwinkleEffect24AddressableTwinkleEffectERKNSt6stringE"></span><span id="light::AddressableTwinkleEffect::AddressableTwinkleEffect__ssCR"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1a8d83dd5bc6bc55a850531bec78ee229f"></span><code class="descname">AddressableTwinkleEffect</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect24AddressableTwinkleEffectERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect5applyER16AddressableLightRK8ESPColor">
+<span id="_CPPv2N5light24AddressableTwinkleEffect5applyER16AddressableLightRK8ESPColor"></span><span id="light::AddressableTwinkleEffect::apply__AddressableLightR.ESPColorCR"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1af9d739bdb007231f94ac4ccf9c5a00a1"></span>void <code class="descname">apply</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a> &amp;<em>addressable</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3N5light8ESPColorE" title="light::ESPColor">ESPColor</a> &amp;<em>current_color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect5applyER16AddressableLightRK8ESPColor" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect23set_twinkle_probabilityEf">
+<span id="_CPPv2N5light24AddressableTwinkleEffect23set_twinkle_probabilityEf"></span><span id="light::AddressableTwinkleEffect::set_twinkle_probability__float"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1acb757bab14dacf12fb5e193707ca361b"></span>void <code class="descname">set_twinkle_probability</code><span class="sig-paren">(</span>float <em>twinkle_probability</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect23set_twinkle_probabilityEf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect21set_progress_intervalE8uint32_t">
+<span id="_CPPv2N5light24AddressableTwinkleEffect21set_progress_intervalE8uint32_t"></span><span id="light::AddressableTwinkleEffect::set_progress_interval__uint32_t"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1a242c27ca118dff92228206b49c70508b"></span>void <code class="descname">set_progress_interval</code><span class="sig-paren">(</span>uint32_t <em>progress_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect21set_progress_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect20twinkle_probability_E">
+<span id="_CPPv2N5light24AddressableTwinkleEffect20twinkle_probability_E"></span><span id="light::AddressableTwinkleEffect::twinkle_probability___float"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1ad23aab8f91ee4ed9e741f19501dc321d"></span>float <code class="descname">twinkle_probability_</code> = {0.05f}<a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect20twinkle_probability_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect18progress_interval_E">
+<span id="_CPPv2N5light24AddressableTwinkleEffect18progress_interval_E"></span><span id="light::AddressableTwinkleEffect::progress_interval___uint32_t"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1a80533a0644664281d754d7750600abeb"></span>uint32_t <code class="descname">progress_interval_</code> = {4}<a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect18progress_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5light24AddressableTwinkleEffect14last_progress_E">
+<span id="_CPPv2N5light24AddressableTwinkleEffect14last_progress_E"></span><span id="light::AddressableTwinkleEffect::last_progress___uint32_t"></span><span class="target" id="classlight_1_1_addressable_twinkle_effect_1a85717cd86baac8b01022b5728673e08e"></span>uint32_t <code class="descname">last_progress_</code> = {0}<a class="headerlink" href="#_CPPv3N5light24AddressableTwinkleEffect14last_progress_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

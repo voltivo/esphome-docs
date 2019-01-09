@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>WiFi &#8212; ESPHome 1.9.3 documentation</title>
+    <title>WiFi &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/wifi.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -73,17 +74,7 @@
 <h1>WiFi<a class="headerlink" href="#wifi" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="c1">// Basic</span>
-<span class="n">App</span><span class="p">.</span><span class="n">init_wifi</span><span class="p">(</span><span class="s">&quot;YOUR_SSID&quot;</span><span class="p">,</span> <span class="s">&quot;YOUR_PASSWORD&quot;</span><span class="p">);</span>
-<span class="c1">// Manual IP</span>
-<span class="k">auto</span> <span class="o">*</span><span class="n">wifi</span> <span class="o">=</span> <span class="n">App</span><span class="p">.</span><span class="n">init_wifi</span><span class="p">(</span><span class="s">&quot;YOUR_SSID&quot;</span><span class="p">,</span> <span class="s">&quot;YOUR_PASSWORD&quot;</span><span class="p">);</span>
-<span class="n">wifi</span><span class="o">-&gt;</span><span class="n">set_sta_manual_ip</span><span class="p">(</span><span class="n">ManualIP</span><span class="p">{</span>
-    <span class="p">.</span><span class="n">static_ip</span> <span class="o">=</span> <span class="n">IPAddress</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">178</span><span class="p">,</span> <span class="mi">42</span><span class="p">),</span>
-    <span class="p">.</span><span class="n">gateway</span> <span class="o">=</span> <span class="n">IPAddress</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">178</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="p">.</span><span class="n">subnet</span> <span class="o">=</span> <span class="n">IPAddress</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">});</span>
-<span class="c1">// AP</span>
-<span class="n">wifi</span><span class="o">-&gt;</span><span class="n">set_ap</span><span class="p">(</span><span class="s">&quot;AP SSID&quot;</span><span class="p">,</span> <span class="s">&quot;Optional AP Password&quot;</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="n">App</span><span class="p">.</span><span class="n">init_wifi</span><span class="p">(</span><span class="s">&quot;YOUR_SSID&quot;</span><span class="p">,</span> <span class="s">&quot;YOUR_PASSWORD&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -91,10 +82,323 @@
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="wificomponent">
 <h3>WiFiComponent<a class="headerlink" href="#wificomponent" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="type">
+<dt id="_CPPv37bssid_t">
+<span id="_CPPv27bssid_t"></span><span class="target" id="wifi__component_8h_1a43174e61d9e2f88427c248617f8e58c5"></span><em class="property">using </em><code class="descname">bssid_t</code> = std::array&lt;uint8_t, 6&gt;<a class="headerlink" href="#_CPPv37bssid_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="type">
+<dt id="_CPPv318WiFiComponentState">
+<span id="_CPPv218WiFiComponentState"></span><span id="WiFiComponentState"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243"></span><em class="property">enum </em><code class="descname">WiFiComponentState</code><a class="headerlink" href="#_CPPv318WiFiComponentState" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv324WIFI_COMPONENT_STATE_OFF">
+<span id="_CPPv224WIFI_COMPONENT_STATE_OFF"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a935c7f80800300403dbbb3a4c19ba2a6"></span><code class="descname">WIFI_COMPONENT_STATE_OFF</code> = 0<a class="headerlink" href="#_CPPv324WIFI_COMPONENT_STATE_OFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Nothing has been initialized yet. </p>
+<p>Internal AP, if configured, is disabled at this point. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv329WIFI_COMPONENT_STATE_COOLDOWN">
+<span id="_CPPv229WIFI_COMPONENT_STATE_COOLDOWN"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a138da290404a6d557dbb679b1a1c480d"></span><code class="descname">WIFI_COMPONENT_STATE_COOLDOWN</code><a class="headerlink" href="#_CPPv329WIFI_COMPONENT_STATE_COOLDOWN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>WiFi is in cooldown mode because something went wrong, scanning will begin after a short period of time. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv333WIFI_COMPONENT_STATE_STA_SCANNING">
+<span id="_CPPv233WIFI_COMPONENT_STATE_STA_SCANNING"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a0ace647e91ffe8fc1446f57c13d3f918"></span><code class="descname">WIFI_COMPONENT_STATE_STA_SCANNING</code><a class="headerlink" href="#_CPPv333WIFI_COMPONENT_STATE_STA_SCANNING" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>WiFi is in STA-only mode and currently scanning for APs. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv335WIFI_COMPONENT_STATE_STA_CONNECTING">
+<span id="_CPPv235WIFI_COMPONENT_STATE_STA_CONNECTING"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a02cbd5fb496ac7ce5fb739840bfb7500"></span><code class="descname">WIFI_COMPONENT_STATE_STA_CONNECTING</code><a class="headerlink" href="#_CPPv335WIFI_COMPONENT_STATE_STA_CONNECTING" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>WiFi is in STA(+AP) mode and currently connecting to an AP. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv337WIFI_COMPONENT_STATE_STA_CONNECTING_2">
+<span id="_CPPv237WIFI_COMPONENT_STATE_STA_CONNECTING_2"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a6813d82ca1bbd4eb33466e48fd5af554"></span><code class="descname">WIFI_COMPONENT_STATE_STA_CONNECTING_2</code><a class="headerlink" href="#_CPPv337WIFI_COMPONENT_STATE_STA_CONNECTING_2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>WiFi is in STA(+AP) mode and currently connecting to an AP a second time. </p>
+<p>This is required because for some reason ESPs don’t like to connect to WiFi APs directly after a scan. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv334WIFI_COMPONENT_STATE_STA_CONNECTED">
+<span id="_CPPv234WIFI_COMPONENT_STATE_STA_CONNECTED"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a20cf2c0f4dbbb567870dd5088d68aad0"></span><code class="descname">WIFI_COMPONENT_STATE_STA_CONNECTED</code><a class="headerlink" href="#_CPPv334WIFI_COMPONENT_STATE_STA_CONNECTED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>WiFi is in STA(+AP) mode and successfully connected. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv323WIFI_COMPONENT_STATE_AP">
+<span id="_CPPv223WIFI_COMPONENT_STATE_AP"></span><span class="target" id="wifi__component_8h_1a941951552f709fb5c5ee11ad853ea243a62eb28f7ae48c4b99d69c8a1168f39ea"></span><code class="descname">WIFI_COMPONENT_STATE_AP</code><a class="headerlink" href="#_CPPv323WIFI_COMPONENT_STATE_AP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>WiFi is in AP-only mode and internal AP is already enabled. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv317WiFiPowerSaveMode">
+<span id="_CPPv217WiFiPowerSaveMode"></span><span id="WiFiPowerSaveMode"></span><span class="target" id="wifi__component_8h_1a671aae7bccef47a0e6431f89add3b193"></span><em class="property">enum </em><code class="descname">WiFiPowerSaveMode</code><a class="headerlink" href="#_CPPv317WiFiPowerSaveMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv320WIFI_POWER_SAVE_NONE">
+<span id="_CPPv220WIFI_POWER_SAVE_NONE"></span><span class="target" id="wifi__component_8h_1a671aae7bccef47a0e6431f89add3b193a4009c823e4cd99223ec0da484a8d31a8"></span><code class="descname">WIFI_POWER_SAVE_NONE</code> = 0<a class="headerlink" href="#_CPPv320WIFI_POWER_SAVE_NONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv321WIFI_POWER_SAVE_LIGHT">
+<span id="_CPPv221WIFI_POWER_SAVE_LIGHT"></span><span class="target" id="wifi__component_8h_1a671aae7bccef47a0e6431f89add3b193a07f5f26b1c3e64341c924848d1fa3d4f"></span><code class="descname">WIFI_POWER_SAVE_LIGHT</code><a class="headerlink" href="#_CPPv321WIFI_POWER_SAVE_LIGHT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv320WIFI_POWER_SAVE_HIGH">
+<span id="_CPPv220WIFI_POWER_SAVE_HIGH"></span><span class="target" id="wifi__component_8h_1a671aae7bccef47a0e6431f89add3b193a433da3d363d437f2e68683b8653be4a5"></span><code class="descname">WIFI_POWER_SAVE_HIGH</code><a class="headerlink" href="#_CPPv320WIFI_POWER_SAVE_HIGH" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv321global_wifi_component">
+<span id="_CPPv221global_wifi_component"></span><span id="global_wifi_component__WiFiComponentP"></span><span class="target" id="wifi__component_8h_1a0e7d01fae1e938b8b4e41127e9828781"></span><a class="reference internal" href="#_CPPv313WiFiComponent" title="WiFiComponent">WiFiComponent</a> *<code class="descname">global_wifi_component</code><a class="headerlink" href="#_CPPv321global_wifi_component" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv38ManualIP">
+<span id="_CPPv28ManualIP"></span><span id="ManualIP"></span><span class="target" id="struct_manual_i_p"></span><em class="property">struct </em><code class="descname">ManualIP</code><a class="headerlink" href="#_CPPv38ManualIP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;wifi_component.h&gt;</em><p>Struct for setting static IPs in <a class="reference internal" href="#class_wi_fi_component"><span class="std std-ref">WiFiComponent</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N8ManualIP9static_ipE">
+<span id="_CPPv2N8ManualIP9static_ipE"></span><span id="ManualIP::static_ip__IPAddress"></span><span class="target" id="struct_manual_i_p_1aa194dda20b45e79575044d882809944c"></span>IPAddress <code class="descname">static_ip</code><a class="headerlink" href="#_CPPv3N8ManualIP9static_ipE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8ManualIP7gatewayE">
+<span id="_CPPv2N8ManualIP7gatewayE"></span><span id="ManualIP::gateway__IPAddress"></span><span class="target" id="struct_manual_i_p_1a2d1da72776736baed8f7d43c1755dbe7"></span>IPAddress <code class="descname">gateway</code><a class="headerlink" href="#_CPPv3N8ManualIP7gatewayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8ManualIP6subnetE">
+<span id="_CPPv2N8ManualIP6subnetE"></span><span id="ManualIP::subnet__IPAddress"></span><span class="target" id="struct_manual_i_p_1a39bc0a06ef0a79be615e6fa410b6bc4b"></span>IPAddress <code class="descname">subnet</code><a class="headerlink" href="#_CPPv3N8ManualIP6subnetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8ManualIP4dns1E">
+<span id="_CPPv2N8ManualIP4dns1E"></span><span id="ManualIP::dns1__IPAddress"></span><span class="target" id="struct_manual_i_p_1aa6ab4dbead74a3397c6624cfefffb47e"></span>IPAddress <code class="descname">dns1</code><a class="headerlink" href="#_CPPv3N8ManualIP4dns1E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The first DNS server. 0.0.0.0 for default. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N8ManualIP4dns2E">
+<span id="_CPPv2N8ManualIP4dns2E"></span><span id="ManualIP::dns2__IPAddress"></span><span class="target" id="struct_manual_i_p_1a5ff0bd3f4f68a58c50bebe9cb244f2cf"></span>IPAddress <code class="descname">dns2</code><a class="headerlink" href="#_CPPv3N8ManualIP4dns2E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The second DNS server. 0.0.0.0 for default. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv36WiFiAP">
+<span id="_CPPv26WiFiAP"></span><span id="WiFiAP"></span><span class="target" id="class_wi_fi_a_p"></span><em class="property">class </em><code class="descname">WiFiAP</code><a class="headerlink" href="#_CPPv36WiFiAP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6WiFiAP8set_ssidERKNSt6stringE">
+<span id="_CPPv2N6WiFiAP8set_ssidERKNSt6stringE"></span><span id="WiFiAP::set_ssid__ssCR"></span><span class="target" id="class_wi_fi_a_p_1a18b6da4c937fe0ccad613b1fc1013044"></span>void <code class="descname">set_ssid</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>ssid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6WiFiAP8set_ssidERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6WiFiAP9set_bssidE7bssid_t">
+<span id="_CPPv2N6WiFiAP9set_bssidE7bssid_t"></span><span id="WiFiAP::set_bssid__bssid_t"></span><span class="target" id="class_wi_fi_a_p_1a5b1b88ec85e8b8c03e74414572f83be3"></span>void <code class="descname">set_bssid</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a> <em>bssid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6WiFiAP9set_bssidE7bssid_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6WiFiAP9set_bssidE8optionalI7bssid_tE">
+<span id="_CPPv2N6WiFiAP9set_bssidE8optionalI7bssid_tE"></span><span id="WiFiAP::set_bssid__optional:bssid_t:"></span><span class="target" id="class_wi_fi_a_p_1a785c253fe9be7a460ac18edc0c1bb601"></span>void <code class="descname">set_bssid</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a>&gt; <em>bssid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6WiFiAP9set_bssidE8optionalI7bssid_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6WiFiAP12set_passwordERKNSt6stringE">
+<span id="_CPPv2N6WiFiAP12set_passwordERKNSt6stringE"></span><span id="WiFiAP::set_password__ssCR"></span><span class="target" id="class_wi_fi_a_p_1a1ffad89c991a5805d01d122853b51bc3"></span>void <code class="descname">set_password</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6WiFiAP12set_passwordERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6WiFiAP11set_channelE8optionalI7uint8_tE">
+<span id="_CPPv2N6WiFiAP11set_channelE8optionalI7uint8_tE"></span><span id="WiFiAP::set_channel__optional:uint8_t:"></span><span class="target" id="class_wi_fi_a_p_1a9ed835edbf84118bad868d11ba2a49ac"></span>void <code class="descname">set_channel</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6WiFiAP11set_channelE8optionalI7uint8_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6WiFiAP13set_manual_ipE8optionalI8ManualIPE">
+<span id="_CPPv2N6WiFiAP13set_manual_ipE8optionalI8ManualIPE"></span><span id="WiFiAP::set_manual_ip__optional:ManualIP:"></span><span class="target" id="class_wi_fi_a_p_1ac3e6793754a465afb4467a03fc83e5b3"></span>void <code class="descname">set_manual_ip</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a>&gt; <em>manual_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6WiFiAP13set_manual_ipE8optionalI8ManualIPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6WiFiAP8get_ssidEv">
+<span id="_CPPv2NK6WiFiAP8get_ssidEv"></span><span id="WiFiAP::get_ssidC"></span><span class="target" id="class_wi_fi_a_p_1abf6cb625df56f97947635ad4d33d335a"></span><em class="property">const</em> std::string &amp;<code class="descname">get_ssid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6WiFiAP8get_ssidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6WiFiAP9get_bssidEv">
+<span id="_CPPv2NK6WiFiAP9get_bssidEv"></span><span id="WiFiAP::get_bssidC"></span><span class="target" id="class_wi_fi_a_p_1a6dfe7eed8c1d647c93b5b8e694025e5f"></span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a>&gt; &amp;<code class="descname">get_bssid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6WiFiAP9get_bssidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6WiFiAP12get_passwordEv">
+<span id="_CPPv2NK6WiFiAP12get_passwordEv"></span><span id="WiFiAP::get_passwordC"></span><span class="target" id="class_wi_fi_a_p_1a036edac1a640368dd7b609eb8b3c46b9"></span><em class="property">const</em> std::string &amp;<code class="descname">get_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6WiFiAP12get_passwordEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6WiFiAP11get_channelEv">
+<span id="_CPPv2NK6WiFiAP11get_channelEv"></span><span id="WiFiAP::get_channelC"></span><span class="target" id="class_wi_fi_a_p_1a366dec829ed70f565674bbce704ac076"></span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<code class="descname">get_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6WiFiAP11get_channelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6WiFiAP13get_manual_ipEv">
+<span id="_CPPv2NK6WiFiAP13get_manual_ipEv"></span><span id="WiFiAP::get_manual_ipC"></span><span class="target" id="class_wi_fi_a_p_1a142e1def41795e0148d9d7be5642487d"></span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a>&gt; &amp;<code class="descname">get_manual_ip</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6WiFiAP13get_manual_ipEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N6WiFiAP5ssid_E">
+<span id="_CPPv2N6WiFiAP5ssid_E"></span><span id="WiFiAP::ssid___ss"></span><span class="target" id="class_wi_fi_a_p_1a3cadad4a120033865d8152158a81f359"></span>std::string <code class="descname">ssid_</code><a class="headerlink" href="#_CPPv3N6WiFiAP5ssid_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6WiFiAP6bssid_E">
+<span id="_CPPv2N6WiFiAP6bssid_E"></span><span id="WiFiAP::bssid___optional:bssid_t:"></span><span class="target" id="class_wi_fi_a_p_1ae26d6220e1ff09b429a13f31de225114"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a>&gt; <code class="descname">bssid_</code><a class="headerlink" href="#_CPPv3N6WiFiAP6bssid_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6WiFiAP9password_E">
+<span id="_CPPv2N6WiFiAP9password_E"></span><span id="WiFiAP::password___ss"></span><span class="target" id="class_wi_fi_a_p_1aa77811d56cd42515d134b5950ddf42fd"></span>std::string <code class="descname">password_</code><a class="headerlink" href="#_CPPv3N6WiFiAP9password_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6WiFiAP8channel_E">
+<span id="_CPPv2N6WiFiAP8channel_E"></span><span id="WiFiAP::channel___optional:uint8_t:"></span><span class="target" id="class_wi_fi_a_p_1ae232d797e7e6f41b8beb1e40a078e079"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; <code class="descname">channel_</code><a class="headerlink" href="#_CPPv3N6WiFiAP8channel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6WiFiAP10manual_ip_E">
+<span id="_CPPv2N6WiFiAP10manual_ip_E"></span><span id="WiFiAP::manual_ip___optional:ManualIP:"></span><span class="target" id="class_wi_fi_a_p_1a8faaff4ee9157016fdc22deec3313c0c"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a>&gt; <code class="descname">manual_ip_</code><a class="headerlink" href="#_CPPv3N6WiFiAP10manual_ip_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv314WiFiScanResult">
+<span id="_CPPv214WiFiScanResult"></span><span id="WiFiScanResult"></span><span class="target" id="class_wi_fi_scan_result"></span><em class="property">class </em><code class="descname">WiFiScanResult</code><a class="headerlink" href="#_CPPv314WiFiScanResult" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N14WiFiScanResult14WiFiScanResultERK7bssid_tRKNSt6stringE7uint8_t6int8_tbb">
+<span id="_CPPv2N14WiFiScanResult14WiFiScanResultERK7bssid_tRKNSt6stringE7uint8_t6int8_tbb"></span><span id="WiFiScanResult::WiFiScanResult__bssid_tCR.ssCR.uint8_t.int8_t.b.b"></span><span class="target" id="class_wi_fi_scan_result_1a9e22fa95b31176d5baaa891b079f238d"></span><code class="descname">WiFiScanResult</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a> &amp;<em>bssid</em>, <em class="property">const</em> std::string &amp;<em>ssid</em>, uint8_t <em>channel</em>, int8_t <em>rssi</em>, bool <em>with_auth</em>, bool <em>is_hidden</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14WiFiScanResult14WiFiScanResultERK7bssid_tRKNSt6stringE7uint8_t6int8_tbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14WiFiScanResult7matchesERK6WiFiAP">
+<span id="_CPPv2N14WiFiScanResult7matchesERK6WiFiAP"></span><span id="WiFiScanResult::matches__WiFiAPCR"></span><span class="target" id="class_wi_fi_scan_result_1aa76997e5e980fd9d18178f937f3444f1"></span>bool <code class="descname">matches</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> &amp;<em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14WiFiScanResult7matchesERK6WiFiAP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult11get_matchesEv">
+<span id="_CPPv2NK14WiFiScanResult11get_matchesEv"></span><span id="WiFiScanResult::get_matchesC"></span><span class="target" id="class_wi_fi_scan_result_1afea350cf88af333f72690c333c5da597"></span>bool <code class="descname">get_matches</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult11get_matchesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N14WiFiScanResult11set_matchesEb">
+<span id="_CPPv2N14WiFiScanResult11set_matchesEb"></span><span id="WiFiScanResult::set_matches__b"></span><span class="target" id="class_wi_fi_scan_result_1aed8a66473bc59969ee08014e5a2ac82d"></span>void <code class="descname">set_matches</code><span class="sig-paren">(</span>bool <em>matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14WiFiScanResult11set_matchesEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult9get_bssidEv">
+<span id="_CPPv2NK14WiFiScanResult9get_bssidEv"></span><span id="WiFiScanResult::get_bssidC"></span><span class="target" id="class_wi_fi_scan_result_1a565d0f23d611e4fcad173a37700236c0"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a> &amp;<code class="descname">get_bssid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult9get_bssidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult8get_ssidEv">
+<span id="_CPPv2NK14WiFiScanResult8get_ssidEv"></span><span id="WiFiScanResult::get_ssidC"></span><span class="target" id="class_wi_fi_scan_result_1af021789401353c84437b80825a65c73f"></span><em class="property">const</em> std::string &amp;<code class="descname">get_ssid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult8get_ssidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult11get_channelEv">
+<span id="_CPPv2NK14WiFiScanResult11get_channelEv"></span><span id="WiFiScanResult::get_channelC"></span><span class="target" id="class_wi_fi_scan_result_1a0263f0ab2515191c7a848ea720d8e79a"></span>uint8_t <code class="descname">get_channel</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult11get_channelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult8get_rssiEv">
+<span id="_CPPv2NK14WiFiScanResult8get_rssiEv"></span><span id="WiFiScanResult::get_rssiC"></span><span class="target" id="class_wi_fi_scan_result_1af6ffa87a972915aadfa9622bc7dcb4d4"></span>int8_t <code class="descname">get_rssi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult8get_rssiEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult13get_with_authEv">
+<span id="_CPPv2NK14WiFiScanResult13get_with_authEv"></span><span id="WiFiScanResult::get_with_authC"></span><span class="target" id="class_wi_fi_scan_result_1a2b9ab41d90ac74f8f57e95a257766ec1"></span>bool <code class="descname">get_with_auth</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult13get_with_authEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK14WiFiScanResult13get_is_hiddenEv">
+<span id="_CPPv2NK14WiFiScanResult13get_is_hiddenEv"></span><span id="WiFiScanResult::get_is_hiddenC"></span><span class="target" id="class_wi_fi_scan_result_1a4c46179790441e94b95d3e9d85a893d4"></span>bool <code class="descname">get_is_hidden</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK14WiFiScanResult13get_is_hiddenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult8matches_E">
+<span id="_CPPv2N14WiFiScanResult8matches_E"></span><span id="WiFiScanResult::matches___b"></span><span class="target" id="class_wi_fi_scan_result_1ae3fc6809d8d0746885fc2fcbc10ca729"></span>bool <code class="descname">matches_</code> = {false}<a class="headerlink" href="#_CPPv3N14WiFiScanResult8matches_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult6bssid_E">
+<span id="_CPPv2N14WiFiScanResult6bssid_E"></span><span id="WiFiScanResult::bssid___bssid_t"></span><span class="target" id="class_wi_fi_scan_result_1a97ee82ab5464dd241c116c6609cca49c"></span><a class="reference internal" href="#_CPPv37bssid_t" title="bssid_t">bssid_t</a> <code class="descname">bssid_</code><a class="headerlink" href="#_CPPv3N14WiFiScanResult6bssid_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult5ssid_E">
+<span id="_CPPv2N14WiFiScanResult5ssid_E"></span><span id="WiFiScanResult::ssid___ss"></span><span class="target" id="class_wi_fi_scan_result_1a31706f2d1149a201298ea0ae8cffa05e"></span>std::string <code class="descname">ssid_</code><a class="headerlink" href="#_CPPv3N14WiFiScanResult5ssid_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult8channel_E">
+<span id="_CPPv2N14WiFiScanResult8channel_E"></span><span id="WiFiScanResult::channel___uint8_t"></span><span class="target" id="class_wi_fi_scan_result_1adabcd47fe3556aa732608857318194d1"></span>uint8_t <code class="descname">channel_</code><a class="headerlink" href="#_CPPv3N14WiFiScanResult8channel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult5rssi_E">
+<span id="_CPPv2N14WiFiScanResult5rssi_E"></span><span id="WiFiScanResult::rssi___int8_t"></span><span class="target" id="class_wi_fi_scan_result_1a4f70573c02b0d6679d36cc235060e2fe"></span>int8_t <code class="descname">rssi_</code><a class="headerlink" href="#_CPPv3N14WiFiScanResult5rssi_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult10with_auth_E">
+<span id="_CPPv2N14WiFiScanResult10with_auth_E"></span><span id="WiFiScanResult::with_auth___b"></span><span class="target" id="class_wi_fi_scan_result_1af313287bf3e21331d0e23d9b60b282d5"></span>bool <code class="descname">with_auth_</code><a class="headerlink" href="#_CPPv3N14WiFiScanResult10with_auth_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N14WiFiScanResult10is_hidden_E">
+<span id="_CPPv2N14WiFiScanResult10is_hidden_E"></span><span id="WiFiScanResult::is_hidden___b"></span><span class="target" id="class_wi_fi_scan_result_1aa5ad59011808c89bd323363c94206cc0"></span>bool <code class="descname">is_hidden_</code><a class="headerlink" href="#_CPPv3N14WiFiScanResult10is_hidden_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 <dl class="class">
 <dt id="_CPPv313WiFiComponent">
 <span id="_CPPv213WiFiComponent"></span><span id="WiFiComponent"></span><span class="target" id="class_wi_fi_component"></span><em class="property">class </em><code class="descname">WiFiComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv313WiFiComponent" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This component is responsible for managing the ESP WiFi interface. </p>
+<dd><em>#include &lt;wifi_component.h&gt;</em><p>This component is responsible for managing the ESP WiFi interface. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -104,16 +408,15 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13WiFiComponent7set_staERK6WiFiAp">
-<span id="_CPPv2N13WiFiComponent7set_staERK6WiFiAp"></span><span id="WiFiComponent::set_sta__WiFiApCR"></span><span class="target" id="class_wi_fi_component_1ac6931c237005f44764ea2849525dacc4"></span>void <code class="descname">set_sta</code><span class="sig-paren">(</span><em class="property">const</em> WiFiAp &amp;<em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent7set_staERK6WiFiAp" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Setup the STA (client) mode. The parameters define which station to connect to. </p>
-</dd></dl>
+<dt id="_CPPv3N13WiFiComponent7add_staERK6WiFiAP">
+<span id="_CPPv2N13WiFiComponent7add_staERK6WiFiAP"></span><span id="WiFiComponent::add_sta__WiFiAPCR"></span><span class="target" id="class_wi_fi_component_1a2267403d08325f6fd5a2977f8bbc2276"></span>void <code class="descname">add_sta</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> &amp;<em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent7add_staERK6WiFiAP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13WiFiComponent6set_apERK6WiFiAp">
-<span id="_CPPv2N13WiFiComponent6set_apERK6WiFiAp"></span><span id="WiFiComponent::set_ap__WiFiApCR"></span><span class="target" id="class_wi_fi_component_1ae17690d3c49754e347526751caf1f0e7"></span>void <code class="descname">set_ap</code><span class="sig-paren">(</span><em class="property">const</em> WiFiAp &amp;<em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent6set_apERK6WiFiAp" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13WiFiComponent6set_apERK6WiFiAP">
+<span id="_CPPv2N13WiFiComponent6set_apERK6WiFiAP"></span><span id="WiFiComponent::set_ap__WiFiAPCR"></span><span class="target" id="class_wi_fi_component_1a7ba16fd181e97d207a45c065e8ac926c"></span>void <code class="descname">set_ap</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> &amp;<em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent6set_apERK6WiFiAP" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Setup an Access Point that should be created if no connection to a station can be made. </p>
-<p>This can also be used without <a class="reference internal" href="#class_wi_fi_component_1ac6931c237005f44764ea2849525dacc4"><span class="std std-ref">set_sta()</span></a>. Then the AP will always be active.</p>
+<p>This can also be used without set_sta(). Then the AP will always be active.</p>
 <p>If both STA and AP are defined, then both will be enabled at startup, but if a connection to a station can be made, the AP will be turned off again. </p>
 </dd></dl>
 
@@ -129,8 +432,18 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13WiFiComponent16start_connectingEv">
-<span id="_CPPv2N13WiFiComponent16start_connectingEv"></span><span id="WiFiComponent::start_connecting"></span><span class="target" id="class_wi_fi_component_1adc49bb8c49ffe3ec1859919fc86a3c58"></span>void <code class="descname">start_connecting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent16start_connectingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13WiFiComponent14start_scanningEv">
+<span id="_CPPv2N13WiFiComponent14start_scanningEv"></span><span id="WiFiComponent::start_scanning"></span><span class="target" id="class_wi_fi_component_1afffea5a451c8fa48f7b4fb0d60c05ac9"></span>void <code class="descname">start_scanning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent14start_scanningEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent23check_scanning_finishedEv">
+<span id="_CPPv2N13WiFiComponent23check_scanning_finishedEv"></span><span id="WiFiComponent::check_scanning_finished"></span><span class="target" id="class_wi_fi_component_1a9e0cadcfd7230e6aada0b45fba4d720c"></span>void <code class="descname">check_scanning_finished</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent23check_scanning_finishedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent16start_connectingERK6WiFiAPb">
+<span id="_CPPv2N13WiFiComponent16start_connectingERK6WiFiAPb"></span><span id="WiFiComponent::start_connecting__WiFiAPCR.b"></span><span class="target" id="class_wi_fi_component_1aacfadf6fa81525b088246f46856792f5"></span>void <code class="descname">start_connecting</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> &amp;<em>ap</em>, bool <em>two</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent16start_connectingERK6WiFiAPb" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -149,6 +462,11 @@
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N13WiFiComponent13ready_for_otaEv">
+<span id="_CPPv2N13WiFiComponent13ready_for_otaEv"></span><span id="WiFiComponent::ready_for_ota"></span><span class="target" id="class_wi_fi_component_1a634392b783198fb5d08a3ad36e1fb942"></span>bool <code class="descname">ready_for_ota</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent13ready_for_otaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N13WiFiComponent18set_reboot_timeoutE8uint32_t">
 <span id="_CPPv2N13WiFiComponent18set_reboot_timeoutE8uint32_t"></span><span id="WiFiComponent::set_reboot_timeout__uint32_t"></span><span class="target" id="class_wi_fi_component_1a730ae62d977a838ec0796caaae5ba8f8"></span>void <code class="descname">set_reboot_timeout</code><span class="sig-paren">(</span>uint32_t <em>reboot_timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent18set_reboot_timeoutE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -160,7 +478,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N13WiFiComponent19set_power_save_modeE17WiFiPowerSaveMode">
-<span id="_CPPv2N13WiFiComponent19set_power_save_modeE17WiFiPowerSaveMode"></span><span id="WiFiComponent::set_power_save_mode__WiFiPowerSaveMode"></span><span class="target" id="class_wi_fi_component_1a2ca756f183aa4a0d65338f191c654ef2"></span>void <code class="descname">set_power_save_mode</code><span class="sig-paren">(</span>WiFiPowerSaveMode <em>power_save</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent19set_power_save_modeE17WiFiPowerSaveMode" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13WiFiComponent19set_power_save_modeE17WiFiPowerSaveMode"></span><span id="WiFiComponent::set_power_save_mode__WiFiPowerSaveMode"></span><span class="target" id="class_wi_fi_component_1a2ca756f183aa4a0d65338f191c654ef2"></span>void <code class="descname">set_power_save_mode</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv317WiFiPowerSaveMode" title="WiFiPowerSaveMode">WiFiPowerSaveMode</a> <em>power_save</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent19set_power_save_modeE17WiFiPowerSaveMode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the power save option for the WiFi interface. </p>
 <p>Options are:<ul class="simple">
 <li>WIFI_POWER_SAVE_NONE (default, least power saving)</li>
@@ -199,15 +517,7 @@
 <dl class="function">
 <dt id="_CPPv3NK13WiFiComponent17get_loop_priorityEv">
 <span id="_CPPv2NK13WiFiComponent17get_loop_priorityEv"></span><span id="WiFiComponent::get_loop_priorityC"></span><span class="target" id="class_wi_fi_component_1a1d338858697328bfd680d371c49884ed"></span>float <code class="descname">get_loop_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13WiFiComponent17get_loop_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#class_wi_fi_component_1a530ae60884ef7eb376d60285f5b96963"><span class="std std-ref">loop()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The loop priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13WiFiComponent4loopEv">
@@ -225,6 +535,11 @@
 <span id="_CPPv2NK13WiFiComponent6has_apEv"></span><span id="WiFiComponent::has_apC"></span><span class="target" id="class_wi_fi_component_1aafbfde08a749b1fb2156e21adfcc715f"></span>bool <code class="descname">has_ap</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13WiFiComponent6has_apEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent14get_ip_addressEv">
+<span id="_CPPv2N13WiFiComponent14get_ip_addressEv"></span><span id="WiFiComponent::get_ip_address"></span><span class="target" id="class_wi_fi_component_1ae552049efcaac632d3469dd38e0b0ce6"></span>IPAddress <code class="descname">get_ip_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent14get_ip_addressEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Functions</p>
@@ -239,14 +554,83 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13WiFiComponent13on_wifi_eventE17system_event_id_t19system_event_info_t">
-<span id="_CPPv2N13WiFiComponent13on_wifi_eventE17system_event_id_t19system_event_info_t"></span><span id="WiFiComponent::on_wifi_event__system_event_id_t.system_event_info_t"></span><span class="target" id="class_wi_fi_component_1a20f269ca450201ed8c0dfeb69c5c4861"></span>void <code class="descname">on_wifi_event</code><span class="sig-paren">(</span>system_event_id_t <em>event</em>, system_event_info_t <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent13on_wifi_eventE17system_event_id_t19system_event_info_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Used for logging WiFi events. </p>
-</dd></dl>
+<dt id="_CPPv3N13WiFiComponent10wifi_mode_E8optionalIbE8optionalIbE">
+<span id="_CPPv2N13WiFiComponent10wifi_mode_E8optionalIbE8optionalIbE"></span><span id="WiFiComponent::wifi_mode___optional:b:.optional:b:"></span><span class="target" id="class_wi_fi_component_1a1d884d7b6e3007e93a4d982d3521e5e2"></span>bool <code class="descname">wifi_mode_</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <em>sta</em>, <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; <em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent10wifi_mode_E8optionalIbE8optionalIbE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N13WiFiComponent26handle_error_from_callbackEv">
-<span id="_CPPv2N13WiFiComponent26handle_error_from_callbackEv"></span><span id="WiFiComponent::handle_error_from_callback"></span><span class="target" id="class_wi_fi_component_1aba5f68680440e542a7b6b6bf076004c7"></span>void <code class="descname">handle_error_from_callback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent26handle_error_from_callbackEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N13WiFiComponent26wifi_disable_auto_connect_Ev">
+<span id="_CPPv2N13WiFiComponent26wifi_disable_auto_connect_Ev"></span><span id="WiFiComponent::wifi_disable_auto_connect_"></span><span class="target" id="class_wi_fi_component_1aedda42115e79a8a71e65fbe4d78dcdce"></span>bool <code class="descname">wifi_disable_auto_connect_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent26wifi_disable_auto_connect_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent22wifi_apply_power_save_Ev">
+<span id="_CPPv2N13WiFiComponent22wifi_apply_power_save_Ev"></span><span id="WiFiComponent::wifi_apply_power_save_"></span><span class="target" id="class_wi_fi_component_1ab5c1fbc1485892d415f7ebfe806bc633"></span>bool <code class="descname">wifi_apply_power_save_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent22wifi_apply_power_save_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent19wifi_sta_ip_config_E8optionalI8ManualIPE">
+<span id="_CPPv2N13WiFiComponent19wifi_sta_ip_config_E8optionalI8ManualIPE"></span><span id="WiFiComponent::wifi_sta_ip_config___optional:ManualIP:"></span><span class="target" id="class_wi_fi_component_1a99295a413a28fb0452a99bc41007002a"></span>bool <code class="descname">wifi_sta_ip_config_</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a>&gt; <em>manual_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent19wifi_sta_ip_config_E8optionalI8ManualIPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent12wifi_sta_ip_Ev">
+<span id="_CPPv2N13WiFiComponent12wifi_sta_ip_Ev"></span><span id="WiFiComponent::wifi_sta_ip_"></span><span class="target" id="class_wi_fi_component_1ae9c31d0d4c46e1cc646220470ee00e11"></span>IPAddress <code class="descname">wifi_sta_ip_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent12wifi_sta_ip_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent20wifi_apply_hostname_Ev">
+<span id="_CPPv2N13WiFiComponent20wifi_apply_hostname_Ev"></span><span id="WiFiComponent::wifi_apply_hostname_"></span><span class="target" id="class_wi_fi_component_1ad8278f741e57479944eb800bee509d8f"></span>bool <code class="descname">wifi_apply_hostname_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent20wifi_apply_hostname_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent17wifi_sta_connect_E6WiFiAP">
+<span id="_CPPv2N13WiFiComponent17wifi_sta_connect_E6WiFiAP"></span><span id="WiFiComponent::wifi_sta_connect___WiFiAP"></span><span class="target" id="class_wi_fi_component_1a312683034a74787538216ee0a63c99b2"></span>bool <code class="descname">wifi_sta_connect_</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> <em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent17wifi_sta_connect_E6WiFiAP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent24wifi_register_callbacks_Ev">
+<span id="_CPPv2N13WiFiComponent24wifi_register_callbacks_Ev"></span><span id="WiFiComponent::wifi_register_callbacks_"></span><span class="target" id="class_wi_fi_component_1a9c440376d347bf76395398ac27ac0585"></span>void <code class="descname">wifi_register_callbacks_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent24wifi_register_callbacks_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent16wifi_sta_status_Ev">
+<span id="_CPPv2N13WiFiComponent16wifi_sta_status_Ev"></span><span id="WiFiComponent::wifi_sta_status_"></span><span class="target" id="class_wi_fi_component_1aef0b1638a61250784a25631de0793569"></span>wl_status_t <code class="descname">wifi_sta_status_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent16wifi_sta_status_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent16wifi_scan_start_Ev">
+<span id="_CPPv2N13WiFiComponent16wifi_scan_start_Ev"></span><span id="WiFiComponent::wifi_scan_start_"></span><span class="target" id="class_wi_fi_component_1adaced7a23fa48cdd44c368981568ee52"></span>bool <code class="descname">wifi_scan_start_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent16wifi_scan_start_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent18wifi_ap_ip_config_E8optionalI8ManualIPE">
+<span id="_CPPv2N13WiFiComponent18wifi_ap_ip_config_E8optionalI8ManualIPE"></span><span id="WiFiComponent::wifi_ap_ip_config___optional:ManualIP:"></span><span class="target" id="class_wi_fi_component_1a28824c2748162cca75018070ff4c9513"></span>bool <code class="descname">wifi_ap_ip_config_</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a>&gt; <em>manual_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent18wifi_ap_ip_config_E8optionalI8ManualIPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent14wifi_start_ap_ERK6WiFiAP">
+<span id="_CPPv2N13WiFiComponent14wifi_start_ap_ERK6WiFiAP"></span><span id="WiFiComponent::wifi_start_ap___WiFiAPCR"></span><span class="target" id="class_wi_fi_component_1a59defbfc87c2986cb6fd1ecba196bf64"></span>bool <code class="descname">wifi_start_ap_</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> &amp;<em>ap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent14wifi_start_ap_ERK6WiFiAP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent16wifi_soft_ap_ip_Ev">
+<span id="_CPPv2N13WiFiComponent16wifi_soft_ap_ip_Ev"></span><span id="WiFiComponent::wifi_soft_ap_ip_"></span><span class="target" id="class_wi_fi_component_1a333656a5f83c2cc90d90185919e61f33"></span>IPAddress <code class="descname">wifi_soft_ap_ip_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent16wifi_soft_ap_ip_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent24wifi_scan_done_callback_EPv6STATUS">
+<span id="_CPPv2N13WiFiComponent24wifi_scan_done_callback_EPv6STATUS"></span><span id="WiFiComponent::wifi_scan_done_callback___voidP.STATUS"></span><span class="target" id="class_wi_fi_component_1aff8e67cbc2f520de4584f3f5e6613f2f"></span>void <code class="descname">wifi_scan_done_callback_</code><span class="sig-paren">(</span>void *<em>arg</em>, STATUS <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent24wifi_scan_done_callback_EPv6STATUS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent20wifi_event_callback_E17system_event_id_t19system_event_info_t">
+<span id="_CPPv2N13WiFiComponent20wifi_event_callback_E17system_event_id_t19system_event_info_t"></span><span id="WiFiComponent::wifi_event_callback___system_event_id_t.system_event_info_t"></span><span class="target" id="class_wi_fi_component_1ac7bf4789561db4c7d8134cb828629255"></span>void <code class="descname">wifi_event_callback_</code><span class="sig-paren">(</span>system_event_id_t <em>event</em>, system_event_info_t <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent20wifi_event_callback_E17system_event_id_t19system_event_info_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent24wifi_scan_done_callback_Ev">
+<span id="_CPPv2N13WiFiComponent24wifi_scan_done_callback_Ev"></span><span id="WiFiComponent::wifi_scan_done_callback_"></span><span class="target" id="class_wi_fi_component_1a8075faf91e62b821953ea9651b512720"></span>void <code class="descname">wifi_scan_done_callback_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent24wifi_scan_done_callback_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -259,17 +643,22 @@
 
 <dl class="member">
 <dt id="_CPPv3N13WiFiComponent4sta_E">
-<span id="_CPPv2N13WiFiComponent4sta_E"></span><span id="WiFiComponent::sta___WiFiAp"></span><span class="target" id="class_wi_fi_component_1aba3a982d2a83e38c0559ad7d73f5d12e"></span>WiFiAp <code class="descname">sta_</code><a class="headerlink" href="#_CPPv3N13WiFiComponent4sta_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13WiFiComponent4sta_E"></span><span id="WiFiComponent::sta___std::vector:WiFiAP:"></span><span class="target" id="class_wi_fi_component_1a428f7842bc4753cd5ccf2cb17c6349c9"></span>std::vector&lt;<a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a>&gt; <code class="descname">sta_</code><a class="headerlink" href="#_CPPv3N13WiFiComponent4sta_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13WiFiComponent12selected_ap_E">
+<span id="_CPPv2N13WiFiComponent12selected_ap_E"></span><span id="WiFiComponent::selected_ap___WiFiAP"></span><span class="target" id="class_wi_fi_component_1af158e7651fd7749d61b6f6dc66447e4f"></span><a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> <code class="descname">selected_ap_</code><a class="headerlink" href="#_CPPv3N13WiFiComponent12selected_ap_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N13WiFiComponent3ap_E">
-<span id="_CPPv2N13WiFiComponent3ap_E"></span><span id="WiFiComponent::ap___WiFiAp"></span><span class="target" id="class_wi_fi_component_1a278826c03db32a2fef24d83095d1918d"></span>WiFiAp <code class="descname">ap_</code><a class="headerlink" href="#_CPPv3N13WiFiComponent3ap_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13WiFiComponent3ap_E"></span><span id="WiFiComponent::ap___WiFiAP"></span><span class="target" id="class_wi_fi_component_1adbb508a1bcbd7a6ba53c35c9955aa644"></span><a class="reference internal" href="#_CPPv36WiFiAP" title="WiFiAP">WiFiAP</a> <code class="descname">ap_</code><a class="headerlink" href="#_CPPv3N13WiFiComponent3ap_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N13WiFiComponent6state_E">
-<span id="_CPPv2N13WiFiComponent6state_E"></span><span id="WiFiComponent::state___WiFiComponentState"></span><span class="target" id="class_wi_fi_component_1a11992168431b44da02f631897625e295"></span>WiFiComponentState <code class="descname">state_</code> = {WIFI_COMPONENT_STATE_OFF}<a class="headerlink" href="#_CPPv3N13WiFiComponent6state_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13WiFiComponent6state_E"></span><span id="WiFiComponent::state___WiFiComponentState"></span><span class="target" id="class_wi_fi_component_1a11992168431b44da02f631897625e295"></span><a class="reference internal" href="#_CPPv318WiFiComponentState" title="WiFiComponentState">WiFiComponentState</a> <code class="descname">state_</code> = {WIFI_COMPONENT_STATE_OFF}<a class="headerlink" href="#_CPPv3N13WiFiComponent6state_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -294,12 +683,7 @@
 
 <dl class="member">
 <dt id="_CPPv3N13WiFiComponent11power_save_E">
-<span id="_CPPv2N13WiFiComponent11power_save_E"></span><span id="WiFiComponent::power_save___WiFiPowerSaveMode"></span><span class="target" id="class_wi_fi_component_1a5c28a717fde285dba7a007d1f7987793"></span>WiFiPowerSaveMode <code class="descname">power_save_</code> = {WIFI_POWER_SAVE_NONE}<a class="headerlink" href="#_CPPv3N13WiFiComponent11power_save_E" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N13WiFiComponent19cooldown_reconnect_E">
-<span id="_CPPv2N13WiFiComponent19cooldown_reconnect_E"></span><span id="WiFiComponent::cooldown_reconnect___optional:uint32_t:"></span><span class="target" id="class_wi_fi_component_1a19245b1ab3a86b3cf48145d40c86609d"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint32_t&gt; <code class="descname">cooldown_reconnect_</code> = {}<a class="headerlink" href="#_CPPv3N13WiFiComponent19cooldown_reconnect_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13WiFiComponent11power_save_E"></span><span id="WiFiComponent::power_save___WiFiPowerSaveMode"></span><span class="target" id="class_wi_fi_component_1a5c28a717fde285dba7a007d1f7987793"></span><a class="reference internal" href="#_CPPv317WiFiPowerSaveMode" title="WiFiPowerSaveMode">WiFiPowerSaveMode</a> <code class="descname">power_save_</code> = {WIFI_POWER_SAVE_NONE}<a class="headerlink" href="#_CPPv3N13WiFiComponent11power_save_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -307,41 +691,257 @@
 <span id="_CPPv2N13WiFiComponent20error_from_callback_E"></span><span id="WiFiComponent::error_from_callback___b"></span><span class="target" id="class_wi_fi_component_1a53672c15246c76d016c8e13371990884"></span>bool <code class="descname">error_from_callback_</code> = {false}<a class="headerlink" href="#_CPPv3N13WiFiComponent20error_from_callback_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="member">
+<dt id="_CPPv3N13WiFiComponent12scan_result_E">
+<span id="_CPPv2N13WiFiComponent12scan_result_E"></span><span id="WiFiComponent::scan_result___std::vector:WiFiScanResult:"></span><span class="target" id="class_wi_fi_component_1aaa5e7ff30eda126be5055ec2e4b4e2d8"></span>std::vector&lt;<a class="reference internal" href="#_CPPv314WiFiScanResult" title="WiFiScanResult">WiFiScanResult</a>&gt; <code class="descname">scan_result_</code><a class="headerlink" href="#_CPPv3N13WiFiComponent12scan_result_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13WiFiComponent10scan_done_E">
+<span id="_CPPv2N13WiFiComponent10scan_done_E"></span><span id="WiFiComponent::scan_done___b"></span><span class="target" id="class_wi_fi_component_1ab2d543acbed9e180b0d3f322025b0559"></span>bool <code class="descname">scan_done_</code> = {false}<a class="headerlink" href="#_CPPv3N13WiFiComponent10scan_done_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N13WiFiComponent9ap_setup_E">
+<span id="_CPPv2N13WiFiComponent9ap_setup_E"></span><span id="WiFiComponent::ap_setup___b"></span><span class="target" id="class_wi_fi_component_1a519a35e2ec231f692cd98bd2e43e2743"></span>bool <code class="descname">ap_setup_</code> = {false}<a class="headerlink" href="#_CPPv3N13WiFiComponent9ap_setup_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Static Functions</p>
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent20wifi_event_callback_EP14System_Event_t">
+<span id="_CPPv2N13WiFiComponent20wifi_event_callback_EP14System_Event_t"></span><span id="WiFiComponent::wifi_event_callback___System_Event_tP"></span><span class="target" id="class_wi_fi_component_1a385386b632a3e6ac0c1639f612835058"></span>void <code class="descname">wifi_event_callback_</code><span class="sig-paren">(</span>System_Event_t *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent20wifi_event_callback_EP14System_Event_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13WiFiComponent26s_wifi_scan_done_callback_EPv6STATUS">
+<span id="_CPPv2N13WiFiComponent26s_wifi_scan_done_callback_EPv6STATUS"></span><span id="WiFiComponent::s_wifi_scan_done_callback___voidP.STATUS"></span><span class="target" id="class_wi_fi_component_1a3df96339e54a12258f96d480af032f4a"></span>void <code class="descname">s_wifi_scan_done_callback_</code><span class="sig-paren">(</span>void *<em>arg</em>, STATUS <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13WiFiComponent26s_wifi_scan_done_callback_EPv6STATUS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
 
-<dl class="class">
-<dt id="_CPPv38ManualIP">
-<span id="_CPPv28ManualIP"></span><span id="ManualIP"></span><span class="target" id="struct_manual_i_p"></span><em class="property">struct </em><code class="descname">ManualIP</code><a class="headerlink" href="#_CPPv38ManualIP" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Struct for setting static IPs in <a class="reference internal" href="#class_wi_fi_component"><span class="std std-ref">WiFiComponent</span></a>. </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="member">
-<dt id="_CPPv3N8ManualIP9static_ipE">
-<span id="_CPPv2N8ManualIP9static_ipE"></span><span id="ManualIP::static_ip__IPAddress"></span><span class="target" id="struct_manual_i_p_1aa194dda20b45e79575044d882809944c"></span>IPAddress <code class="descname">static_ip</code><a class="headerlink" href="#_CPPv3N8ManualIP9static_ipE" title="Permalink to this definition">¶</a><br /></dt>
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="type">
+<dt id="_CPPv312EthernetType">
+<span id="_CPPv212EthernetType"></span><span id="EthernetType"></span><span class="target" id="ethernet__component_8h_1ad4bd92e9adfde02f2bd2117cad6665aa"></span><em class="property">enum </em><code class="descname">EthernetType</code><a class="headerlink" href="#_CPPv312EthernetType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv321ETHERNET_TYPE_LAN8720">
+<span id="_CPPv221ETHERNET_TYPE_LAN8720"></span><span class="target" id="ethernet__component_8h_1ad4bd92e9adfde02f2bd2117cad6665aaaed33c404074a9384ad9aa3cd3a61bdf1"></span><code class="descname">ETHERNET_TYPE_LAN8720</code> = 0<a class="headerlink" href="#_CPPv321ETHERNET_TYPE_LAN8720" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="member">
-<dt id="_CPPv3N8ManualIP7gatewayE">
-<span id="_CPPv2N8ManualIP7gatewayE"></span><span id="ManualIP::gateway__IPAddress"></span><span class="target" id="struct_manual_i_p_1a2d1da72776736baed8f7d43c1755dbe7"></span>IPAddress <code class="descname">gateway</code><a class="headerlink" href="#_CPPv3N8ManualIP7gatewayE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="enumerator">
+<dt id="_CPPv320ETHERNET_TYPE_TLK110">
+<span id="_CPPv220ETHERNET_TYPE_TLK110"></span><span class="target" id="ethernet__component_8h_1ad4bd92e9adfde02f2bd2117cad6665aaa58b9fe9c3bebaaeb36431ddfbdecb5da"></span><code class="descname">ETHERNET_TYPE_TLK110</code><a class="headerlink" href="#_CPPv320ETHERNET_TYPE_TLK110" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="member">
-<dt id="_CPPv3N8ManualIP6subnetE">
-<span id="_CPPv2N8ManualIP6subnetE"></span><span id="ManualIP::subnet__IPAddress"></span><span class="target" id="struct_manual_i_p_1a39bc0a06ef0a79be615e6fa410b6bc4b"></span>IPAddress <code class="descname">subnet</code><a class="headerlink" href="#_CPPv3N8ManualIP6subnetE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv3N8ManualIP4dns1E">
-<span id="_CPPv2N8ManualIP4dns1E"></span><span id="ManualIP::dns1__IPAddress"></span><span class="target" id="struct_manual_i_p_1aa6ab4dbead74a3397c6624cfefffb47e"></span>IPAddress <code class="descname">dns1</code><a class="headerlink" href="#_CPPv3N8ManualIP4dns1E" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The first DNS server. 0.0.0.0 for default. </p>
 </dd></dl>
 
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
 <dl class="member">
-<dt id="_CPPv3N8ManualIP4dns2E">
-<span id="_CPPv2N8ManualIP4dns2E"></span><span id="ManualIP::dns2__IPAddress"></span><span class="target" id="struct_manual_i_p_1a5ff0bd3f4f68a58c50bebe9cb244f2cf"></span>IPAddress <code class="descname">dns2</code><a class="headerlink" href="#_CPPv3N8ManualIP4dns2E" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The second DNS server. 0.0.0.0 for default. </p>
-</dd></dl>
+<dt id="_CPPv320global_eth_component">
+<span id="_CPPv220global_eth_component"></span><span id="global_eth_component__EthernetComponentP"></span><span class="target" id="ethernet__component_8h_1a168e9c9169dc75d6c4c588ffbd2e1dcd"></span><a class="reference internal" href="#_CPPv317EthernetComponent" title="EthernetComponent">EthernetComponent</a> *<code class="descname">global_eth_component</code><a class="headerlink" href="#_CPPv320global_eth_component" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv317EthernetComponent">
+<span id="_CPPv217EthernetComponent"></span><span id="EthernetComponent"></span><span class="target" id="class_ethernet_component"></span><em class="property">class </em><code class="descname">EthernetComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv317EthernetComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent17EthernetComponentEv">
+<span id="_CPPv2N17EthernetComponent17EthernetComponentEv"></span><span id="EthernetComponent::EthernetComponent"></span><span class="target" id="class_ethernet_component_1a13eb1be1a7f882f7a3232dc6569173c4"></span><code class="descname">EthernetComponent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent17EthernetComponentEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent5setupEv">
+<span id="_CPPv2N17EthernetComponent5setupEv"></span><span id="EthernetComponent::setup"></span><span class="target" id="class_ethernet_component_1a5a86c19916c824df17ba309b3bfc48a4"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent4loopEv">
+<span id="_CPPv2N17EthernetComponent4loopEv"></span><span id="EthernetComponent::loop"></span><span class="target" id="class_ethernet_component_1a1857b7162c27e1323516a78ddaf93ebd"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent11dump_configEv">
+<span id="_CPPv2N17EthernetComponent11dump_configEv"></span><span id="EthernetComponent::dump_config"></span><span class="target" id="class_ethernet_component_1a2abe4a743444193fdcdf919cf99d7324"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK17EthernetComponent18get_setup_priorityEv">
+<span id="_CPPv2NK17EthernetComponent18get_setup_priorityEv"></span><span id="EthernetComponent::get_setup_priorityC"></span><span class="target" id="class_ethernet_component_1a9a6e5b8f015b647f3e378e744e82f7e2"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17EthernetComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent11can_proceedEv">
+<span id="_CPPv2N17EthernetComponent11can_proceedEv"></span><span id="EthernetComponent::can_proceed"></span><span class="target" id="class_ethernet_component_1ad0bd7f97305858e2078b47bd6bfd7f0b"></span>bool <code class="descname">can_proceed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent11can_proceedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent12is_connectedEv">
+<span id="_CPPv2N17EthernetComponent12is_connectedEv"></span><span id="EthernetComponent::is_connected"></span><span class="target" id="class_ethernet_component_1a2873618d187cf5f68fca606e0ca941dc"></span>bool <code class="descname">is_connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent12is_connectedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent12set_phy_addrE7uint8_t">
+<span id="_CPPv2N17EthernetComponent12set_phy_addrE7uint8_t"></span><span id="EthernetComponent::set_phy_addr__uint8_t"></span><span class="target" id="class_ethernet_component_1a1f3f64e02a1f35697fd1439d64da2de4"></span>void <code class="descname">set_phy_addr</code><span class="sig-paren">(</span>uint8_t <em>phy_addr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent12set_phy_addrE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent13set_power_pinERK13GPIOOutputPin">
+<span id="_CPPv2N17EthernetComponent13set_power_pinERK13GPIOOutputPin"></span><span id="EthernetComponent::set_power_pin__GPIOOutputPinCR"></span><span class="target" id="class_ethernet_component_1aa914e71ab073b18ecb49c21047efa28d"></span>void <code class="descname">set_power_pin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>power_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent13set_power_pinERK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent11set_mdc_pinE7uint8_t">
+<span id="_CPPv2N17EthernetComponent11set_mdc_pinE7uint8_t"></span><span id="EthernetComponent::set_mdc_pin__uint8_t"></span><span class="target" id="class_ethernet_component_1a62fed9f6796dd73b6eaa977d81abdddd"></span>void <code class="descname">set_mdc_pin</code><span class="sig-paren">(</span>uint8_t <em>mdc_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent11set_mdc_pinE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent12set_mdio_pinE7uint8_t">
+<span id="_CPPv2N17EthernetComponent12set_mdio_pinE7uint8_t"></span><span id="EthernetComponent::set_mdio_pin__uint8_t"></span><span class="target" id="class_ethernet_component_1ad52a148276eaaeac8d71de79057829b1"></span>void <code class="descname">set_mdio_pin</code><span class="sig-paren">(</span>uint8_t <em>mdio_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent12set_mdio_pinE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent8set_typeE12EthernetType">
+<span id="_CPPv2N17EthernetComponent8set_typeE12EthernetType"></span><span id="EthernetComponent::set_type__EthernetType"></span><span class="target" id="class_ethernet_component_1a848b6bd8aacc01f1e179ebdf9d83d42d"></span>void <code class="descname">set_type</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv312EthernetType" title="EthernetType">EthernetType</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent8set_typeE12EthernetType" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent12set_clk_modeE16eth_clock_mode_t">
+<span id="_CPPv2N17EthernetComponent12set_clk_modeE16eth_clock_mode_t"></span><span id="EthernetComponent::set_clk_mode__eth_clock_mode_t"></span><span class="target" id="class_ethernet_component_1a0c20d14652ad8973fa5036deafc8c9f7"></span>void <code class="descname">set_clk_mode</code><span class="sig-paren">(</span>eth_clock_mode_t <em>clk_mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent12set_clk_modeE16eth_clock_mode_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent13set_manual_ipE8ManualIP">
+<span id="_CPPv2N17EthernetComponent13set_manual_ipE8ManualIP"></span><span id="EthernetComponent::set_manual_ip__ManualIP"></span><span class="target" id="class_ethernet_component_1a75b498fd2da0c6bcbeaebed0dceb718a"></span>void <code class="descname">set_manual_ip</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a> <em>manual_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent13set_manual_ipE8ManualIP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent12set_hostnameERKNSt6stringE">
+<span id="_CPPv2N17EthernetComponent12set_hostnameERKNSt6stringE"></span><span id="EthernetComponent::set_hostname__ssCR"></span><span class="target" id="class_ethernet_component_1a7847cdaf1ed0479f837427ae29ece94b"></span>void <code class="descname">set_hostname</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>hostname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent12set_hostnameERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK17EthernetComponent12get_hostnameEv">
+<span id="_CPPv2NK17EthernetComponent12get_hostnameEv"></span><span id="EthernetComponent::get_hostnameC"></span><span class="target" id="class_ethernet_component_1a58a5c4b3359bc030383d0d3c9be815de"></span><em class="property">const</em> std::string &amp;<code class="descname">get_hostname</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK17EthernetComponent12get_hostnameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent14get_ip_addressEv">
+<span id="_CPPv2N17EthernetComponent14get_ip_addressEv"></span><span id="EthernetComponent::get_ip_address"></span><span class="target" id="class_ethernet_component_1a7ba3d5d55f737964da4327b5597869fb"></span>IPAddress <code class="descname">get_ip_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent14get_ip_addressEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent14on_wifi_event_E17system_event_id_t19system_event_info_t">
+<span id="_CPPv2N17EthernetComponent14on_wifi_event_E17system_event_id_t19system_event_info_t"></span><span id="EthernetComponent::on_wifi_event___system_event_id_t.system_event_info_t"></span><span class="target" id="class_ethernet_component_1a368cfe1ead0d2286d164c326ec76bae2"></span>void <code class="descname">on_wifi_event_</code><span class="sig-paren">(</span>system_event_id_t <em>event</em>, system_event_info_t <em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent14on_wifi_event_E17system_event_id_t19system_event_info_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent14start_connect_Ev">
+<span id="_CPPv2N17EthernetComponent14start_connect_Ev"></span><span id="EthernetComponent::start_connect_"></span><span class="target" id="class_ethernet_component_1abf41035c14f564513cbad3d10d8bb189"></span>void <code class="descname">start_connect_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent14start_connect_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent20dump_connect_params_Ev">
+<span id="_CPPv2N17EthernetComponent20dump_connect_params_Ev"></span><span id="EthernetComponent::dump_connect_params_"></span><span class="target" id="class_ethernet_component_1af0e3fdf541f746f204747958473fe337"></span>void <code class="descname">dump_connect_params_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent20dump_connect_params_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent9phy_addr_E">
+<span id="_CPPv2N17EthernetComponent9phy_addr_E"></span><span id="EthernetComponent::phy_addr___uint8_t"></span><span class="target" id="class_ethernet_component_1a6ddf9da9bf5eb3c6460652ad94f7fdb4"></span>uint8_t <code class="descname">phy_addr_</code> = {0}<a class="headerlink" href="#_CPPv3N17EthernetComponent9phy_addr_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent10power_pin_E">
+<span id="_CPPv2N17EthernetComponent10power_pin_E"></span><span id="EthernetComponent::power_pin___GPIOPinP"></span><span class="target" id="class_ethernet_component_1a6afc9724da708f136f8f95af9347c4b4"></span><a class="reference internal" href="helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<code class="descname">power_pin_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N17EthernetComponent10power_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent8mdc_pin_E">
+<span id="_CPPv2N17EthernetComponent8mdc_pin_E"></span><span id="EthernetComponent::mdc_pin___uint8_t"></span><span class="target" id="class_ethernet_component_1a0ca054be93566c83b7472d2d50704daf"></span>uint8_t <code class="descname">mdc_pin_</code> = {23}<a class="headerlink" href="#_CPPv3N17EthernetComponent8mdc_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent9mdio_pin_E">
+<span id="_CPPv2N17EthernetComponent9mdio_pin_E"></span><span id="EthernetComponent::mdio_pin___uint8_t"></span><span class="target" id="class_ethernet_component_1a6b692e3ebb29f60e70db3c6a13ff3e6b"></span>uint8_t <code class="descname">mdio_pin_</code> = {18}<a class="headerlink" href="#_CPPv3N17EthernetComponent9mdio_pin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent5type_E">
+<span id="_CPPv2N17EthernetComponent5type_E"></span><span id="EthernetComponent::type___EthernetType"></span><span class="target" id="class_ethernet_component_1a9f86db82329f3cbf72e0ab1d23881856"></span><a class="reference internal" href="#_CPPv312EthernetType" title="EthernetType">EthernetType</a> <code class="descname">type_</code> = {ETHERNET_TYPE_LAN8720}<a class="headerlink" href="#_CPPv3N17EthernetComponent5type_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent9clk_mode_E">
+<span id="_CPPv2N17EthernetComponent9clk_mode_E"></span><span id="EthernetComponent::clk_mode___eth_clock_mode_t"></span><span class="target" id="class_ethernet_component_1a92fc33ae928e0cf1385d6a8f614e459f"></span>eth_clock_mode_t <code class="descname">clk_mode_</code> = {ETH_CLOCK_GPIO0_IN}<a class="headerlink" href="#_CPPv3N17EthernetComponent9clk_mode_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent10manual_ip_E">
+<span id="_CPPv2N17EthernetComponent10manual_ip_E"></span><span id="EthernetComponent::manual_ip___optional:ManualIP:"></span><span class="target" id="class_ethernet_component_1a318bd84b0a09c400cafd1df1ace31a71"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;<a class="reference internal" href="#_CPPv38ManualIP" title="ManualIP">ManualIP</a>&gt; <code class="descname">manual_ip_</code> = {}<a class="headerlink" href="#_CPPv3N17EthernetComponent10manual_ip_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent9hostname_E">
+<span id="_CPPv2N17EthernetComponent9hostname_E"></span><span id="EthernetComponent::hostname___ss"></span><span class="target" id="class_ethernet_component_1a8696f5d7402d70762e4085a2952cb93c"></span>std::string <code class="descname">hostname_</code><a class="headerlink" href="#_CPPv3N17EthernetComponent9hostname_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent12initialized_E">
+<span id="_CPPv2N17EthernetComponent12initialized_E"></span><span id="EthernetComponent::initialized___b"></span><span class="target" id="class_ethernet_component_1ab8b111603ec5b2f23c0db14766968cd5"></span>bool <code class="descname">initialized_</code> = {false}<a class="headerlink" href="#_CPPv3N17EthernetComponent12initialized_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent10connected_E">
+<span id="_CPPv2N17EthernetComponent10connected_E"></span><span id="EthernetComponent::connected___b"></span><span class="target" id="class_ethernet_component_1a7cf163076dd043a1d9a5229fdeacfb95"></span>bool <code class="descname">connected_</code> = {false}<a class="headerlink" href="#_CPPv3N17EthernetComponent10connected_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent15last_connected_E">
+<span id="_CPPv2N17EthernetComponent15last_connected_E"></span><span id="EthernetComponent::last_connected___b"></span><span class="target" id="class_ethernet_component_1a55a76e61c612d5b5c1499b5aeed03b92"></span>bool <code class="descname">last_connected_</code> = {false}<a class="headerlink" href="#_CPPv3N17EthernetComponent15last_connected_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent14connect_begin_E">
+<span id="_CPPv2N17EthernetComponent14connect_begin_E"></span><span id="EthernetComponent::connect_begin___uint32_t"></span><span class="target" id="class_ethernet_component_1a7a9013e6a71d2be75484513c5c90f691"></span>uint32_t <code class="descname">connect_begin_</code><a class="headerlink" href="#_CPPv3N17EthernetComponent14connect_begin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent10eth_configE">
+<span id="_CPPv2N17EthernetComponent10eth_configE"></span><span id="EthernetComponent::eth_config__eth_config_t"></span><span class="target" id="class_ethernet_component_1a52c19a016884ba6f6f325325bc2ae569"></span>eth_config_t <code class="descname">eth_config</code><a class="headerlink" href="#_CPPv3N17EthernetComponent10eth_configE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17EthernetComponent22orig_power_enable_fun_E">
+<span id="_CPPv2N17EthernetComponent22orig_power_enable_fun_E"></span><span id="EthernetComponent::orig_power_enable_fun___eth_phy_power_enable_func"></span><span class="target" id="class_ethernet_component_1aeafb420c649448f3539545a367680b83"></span>eth_phy_power_enable_func <code class="descname">orig_power_enable_fun_</code><a class="headerlink" href="#_CPPv3N17EthernetComponent22orig_power_enable_fun_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Static Functions</p>
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent20eth_phy_config_gpio_Ev">
+<span id="_CPPv2N17EthernetComponent20eth_phy_config_gpio_Ev"></span><span id="EthernetComponent::eth_phy_config_gpio_"></span><span class="target" id="class_ethernet_component_1ae1fb2982c429a55fe0440e5aa0b4c7e9"></span>void <code class="descname">eth_phy_config_gpio_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent20eth_phy_config_gpio_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N17EthernetComponent21eth_phy_power_enable_Eb">
+<span id="_CPPv2N17EthernetComponent21eth_phy_power_enable_Eb"></span><span id="EthernetComponent::eth_phy_power_enable___b"></span><span class="target" id="class_ethernet_component_1a5b7b59501f843f4392964e222e7c8402"></span>void <code class="descname">eth_phy_power_enable_</code><span class="sig-paren">(</span>bool <em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N17EthernetComponent21eth_phy_power_enable_Eb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>
@@ -361,7 +961,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -377,11 +977,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

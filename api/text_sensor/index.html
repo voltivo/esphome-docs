@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Text Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Text Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/text_sensor/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -86,7 +87,7 @@
 <dl class="class">
 <dt id="_CPPv3N11text_sensor10TextSensorE">
 <span id="_CPPv2N11text_sensor10TextSensorE"></span><span id="text_sensor::TextSensor"></span><span class="target" id="classtext__sensor_1_1_text_sensor"></span><em class="property">class </em><code class="descname">TextSensor</code> : <em class="property">public</em> Nameable<a class="headerlink" href="#_CPPv3N11text_sensor10TextSensorE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Subclassed by <a class="reference internal" href="mqtt_subscribe.html#classtext__sensor_1_1_m_q_t_t_subscribe_text_sensor"><span class="std std-ref">text_sensor::MQTTSubscribeTextSensor</span></a>, <a class="reference internal" href="template.html#classtext__sensor_1_1_template_text_sensor"><span class="std std-ref">text_sensor::TemplateTextSensor</span></a>, <a class="reference internal" href="version.html#classtext__sensor_1_1_version_text_sensor"><span class="std std-ref">text_sensor::VersionTextSensor</span></a></p>
+<dd><p>Subclassed by text_sensor::HomeassistantTextSensor, <a class="reference internal" href="mqtt_subscribe.html#classtext__sensor_1_1_m_q_t_t_subscribe_text_sensor"><span class="std std-ref">text_sensor::MQTTSubscribeTextSensor</span></a>, <a class="reference internal" href="template.html#classtext__sensor_1_1_template_text_sensor"><span class="std std-ref">text_sensor::TemplateTextSensor</span></a>, <a class="reference internal" href="version.html#classtext__sensor_1_1_version_text_sensor"><span class="std std-ref">text_sensor::VersionTextSensor</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -144,6 +145,14 @@
 
 </div>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N11text_sensor10TextSensor10hash_base_Ev">
+<span id="_CPPv2N11text_sensor10TextSensor10hash_base_Ev"></span><span id="text_sensor::TextSensor::hash_base_"></span><span class="target" id="classtext__sensor_1_1_text_sensor_1a7f475afe35233d4b2179d55cffce4051"></span>uint32_t <code class="descname">hash_base_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor10TextSensor10hash_base_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
 <dl class="member">
 <dt id="_CPPv3N11text_sensor10TextSensor9callback_E">
@@ -192,15 +201,12 @@
 <dl class="function">
 <dt id="_CPPv3N11text_sensor14MQTTTextSensor14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
 <span id="_CPPv2N11text_sensor14MQTTTextSensor14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="text_sensor::MQTTTextSensor::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a38a44035e7dcedf2b4c65b24d41adbda"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Send discovery info the Home Assistant, override this. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11text_sensor14MQTTTextSensor5setupEv">
 <span id="_CPPv2N11text_sensor14MQTTTextSensor5setupEv"></span><span id="text_sensor::MQTTTextSensor::setup"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a0045c602e790e849c5c8190ebd37dcf2"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classtext__sensor_1_1_m_q_t_t_text_sensor_1a0045c602e790e849c5c8190ebd37dcf2"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11text_sensor14MQTTTextSensor11dump_configEv">
@@ -209,12 +215,12 @@
 
 <dl class="function">
 <dt id="_CPPv3N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE">
-<span id="_CPPv2N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE"></span><span id="text_sensor::MQTTTextSensor::publish_state__ssCR"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1a411834f1e0f57aa7aef28cb3cc367edc"></span>void <code class="descname">publish_state</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE"></span><span id="text_sensor::MQTTTextSensor::publish_state__ssCR"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1afbc75dfb97282968659cc11180a43660"></span>bool <code class="descname">publish_state</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor13publish_stateERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11text_sensor14MQTTTextSensor18send_initial_stateEv">
-<span id="_CPPv2N11text_sensor14MQTTTextSensor18send_initial_stateEv"></span><span id="text_sensor::MQTTTextSensor::send_initial_state"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1abaae3568211b25d7fb8333899cd8c1aa"></span>void <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11text_sensor14MQTTTextSensor18send_initial_stateEv"></span><span id="text_sensor::MQTTTextSensor::send_initial_state"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1adaba6c3576f69edf8b9f22eab69c675e"></span>bool <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11text_sensor14MQTTTextSensor18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -228,14 +234,12 @@
 <dl class="function">
 <dt id="_CPPv3NK11text_sensor14MQTTTextSensor14component_typeEv">
 <span id="_CPPv2NK11text_sensor14MQTTTextSensor14component_typeEv"></span><span id="text_sensor::MQTTTextSensor::component_typeC"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1ad48f25de6cede906add7a9409b646760"></span>std::string <code class="descname">component_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11text_sensor14MQTTTextSensor14component_typeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Override this method to return the component type (e.g. “light”, “sensor”, …) </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK11text_sensor14MQTTTextSensor13friendly_nameEv">
 <span id="_CPPv2NK11text_sensor14MQTTTextSensor13friendly_nameEv"></span><span id="text_sensor::MQTTTextSensor::friendly_nameC"></span><span class="target" id="classtext__sensor_1_1_m_q_t_t_text_sensor_1ac20f78baeeb9d71da82a7c012e370af1"></span>std::string <code class="descname">friendly_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11text_sensor14MQTTTextSensor13friendly_nameEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the friendly name of this MQTT component. </p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -263,7 +267,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -279,11 +283,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

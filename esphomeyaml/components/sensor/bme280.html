@@ -24,13 +24,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>BME280 Temperature+Pressure+Humidity Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>BME280 Temperature+Pressure+Humidity Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/bme280.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -107,7 +108,7 @@ required to be set up in your configuration for this sensor to work.</p>
     <span class="l l-Scalar l-Scalar-Plain">humidity</span><span class="p p-Indicator">:</span>
       <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;BME280</span><span class="nv"> </span><span class="s">Humidity&quot;</span>
     <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x77</span>
-    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
 </pre></div>
 </div>
 <div class="section" id="configuration-variables">
@@ -144,7 +145,7 @@ the sensor. Defaults to <code class="docutils literal notranslate"><span class="
 <li><strong>iir_filter</strong> (<em>Optional</em>): Set up an Infinite Impulse Response filter to increase accuracy. One of
 <code class="docutils literal notranslate"><span class="pre">OFF</span></code>, <code class="docutils literal notranslate"><span class="pre">2x</span></code>, <code class="docutils literal notranslate"><span class="pre">4x</span></code>, <code class="docutils literal notranslate"><span class="pre">16x</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</li>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the
-sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">15s</span></code>. See <a class="reference internal" href="index.html#sensor-default-filter"><span class="std std-ref">update_interval gotchas</span></a>.</li>
+sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">60s</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="oversampling-options">
@@ -185,7 +186,7 @@ configure this amount. Possible oversampling values:</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -201,11 +202,11 @@ configure this amount. Possible oversampling values:</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

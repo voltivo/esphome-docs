@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Sensor Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Sensor Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -73,11 +74,11 @@
 <li><a class="reference internal" href="#base-sensor-configuration">Base Sensor Configuration</a></li>
 <li><a class="reference internal" href="#sensor-filters">Sensor Filters</a></li>
 <li><a class="reference internal" href="#example-converting-celsius-to-fahrenheit">Example: Converting Celsius to Fahrenheit</a></li>
-<li><a class="reference internal" href="#update-interval-gotchas"><code class="docutils literal notranslate"><span class="pre">update_interval</span></code> gotchas</a></li>
 <li><a class="reference internal" href="#sensor-automation">Sensor Automation</a><ul>
 <li><a class="reference internal" href="#on-value"><code class="docutils literal notranslate"><span class="pre">on_value</span></code></a></li>
 <li><a class="reference internal" href="#on-value-range"><code class="docutils literal notranslate"><span class="pre">on_value_range</span></code></a></li>
 <li><a class="reference internal" href="#on-raw-value"><code class="docutils literal notranslate"><span class="pre">on_raw_value</span></code></a></li>
+<li><a class="reference internal" href="#sensor-in-range-condition"><code class="docutils literal notranslate"><span class="pre">sensor.in_range</span></code> Condition</a></li>
 <li><a class="reference internal" href="#lambda-calls">lambda calls</a></li>
 </ul>
 </li>
@@ -261,21 +262,6 @@ fahrenheit.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="update-interval-gotchas">
-<span id="sensor-default-filter"></span><h2><code class="docutils literal notranslate"><span class="pre">update_interval</span></code> gotchas<a class="headerlink" href="#update-interval-gotchas" title="Permalink to this headline">¶</a></h2>
-<p>By default, esphomelib takes an average over the last 15 values before publishing updates.
-This was done in order to automatically decrease sensor noise.
-Therefore if you have an <code class="docutils literal notranslate"><span class="pre">update_interval</span></code> of 15 seconds, you will only see the values
-every 3 and a half minutes or so. To disable the default filter and publish all raw values
-directly, put an empty <code class="docutils literal notranslate"><span class="pre">filters:</span></code> block in your configuration:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
-<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">adc</span>
-    <span class="c1"># ...</span>
-    <span class="l l-Scalar l-Scalar-Plain">filters</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="sensor-automation">
 <h2>Sensor Automation<a class="headerlink" href="#sensor-automation" title="Permalink to this headline">¶</a></h2>
 <p>You can access the most recent state of the sensor in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a> using
@@ -340,6 +326,28 @@ with <code class="docutils literal notranslate"><span class="pre">x</span></code
 </div>
 <p>Configuration variables: See <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
 </div>
+<div class="section" id="sensor-in-range-condition">
+<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">sensor.in_range</span></code> Condition<a class="headerlink" href="#sensor-in-range-condition" title="Permalink to this headline">¶</a></h3>
+<p>This condition passes if the state of the given sensor is inside a range.</p>
+<p>Define the range with <code class="docutils literal notranslate"><span class="pre">above</span></code> and <code class="docutils literal notranslate"><span class="pre">below</span></code>. If only one of them is defined, the interval is half-open.
+So for example <code class="docutils literal notranslate"><span class="pre">above:</span> <span class="pre">5</span></code> with no below would mean the range from 5 to positive infinity.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># in a trigger:</span>
+<span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">if</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">condition</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">sensor.in_range</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_sensor</span>
+        <span class="l l-Scalar l-Scalar-Plain">above</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50.0</span>
+    <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">script.execute</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_script</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul class="simple">
+<li><strong>above</strong> (<em>Optional</em>, float): The minimum for the condition.</li>
+<li><strong>below</strong> (<em>Optional</em>, float): The maximum for the condition.</li>
+</ul>
+</div>
 <div class="section" id="lambda-calls">
 <h3>lambda calls<a class="headerlink" href="#lambda-calls" title="Permalink to this headline">¶</a></h3>
 <p>From <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>, you can call several methods on all sensors to do some
@@ -379,6 +387,7 @@ Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog To Digital Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ads1115.html">ADS1115 Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apds9960.html">APDS9960 Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bh1750.html">BH1750 Ambient Light Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ble_rssi.html">ESP32 Bluetooth Low Energy RSSI Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bme280.html">BME280 Temperature+Pressure+Humidity Sensor</a></li>
@@ -395,10 +404,12 @@ Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code
 <li class="toctree-l1"><a class="reference internal" href="hdc1080.html">HDC1080 Temperature+Humidity Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hlw8012.html">HLW8012 Power Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hmc5883l.html">HMC5883L Magnetometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homeassistant.html">Homeassistant Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="htu21d.html">HTU21D Temperature+Humidity Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hx711.html">HX711 Load Cell Amplifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ina219.html">INA219 DC Current Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ina3221.html">INA3221 3-Channel DC Current Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="max31855.html">MAX31855 K-Type Thermocouple Temperature Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="max6675.html">MAX6675 K-Type Thermocouple Temperature Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mhz19.html">MH-Z19 CO_2 and Temperature Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mpu6050.html">MPU6050 Accelerometer/Gyroscope Sensor</a></li>
@@ -433,7 +444,7 @@ Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -449,11 +460,11 @@ Is <code class="docutils literal notranslate"><span class="pre">NAN</span></code
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

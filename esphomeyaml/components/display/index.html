@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Display Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Display Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/display/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -230,7 +231,7 @@ be more than one character long if you for example want to use font ligatures. D
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">To use fonts you will need to have the python <code class="docutils literal notranslate"><span class="pre">pillow</span></code> package installed, as esphomeyaml uses that package
-to translate the truetype files into an internal format. If you’re running this as a HassIO add-on or with
+to translate the truetype files into an internal format. If you’re running this as a Hass.io add-on or with
 the official esphomeyaml docker image, it should already be installed. Otherwise you need to install it using
 <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">pillow</span></code>.</p>
 </div>
@@ -373,7 +374,7 @@ and preserve the aspect ratio.</li>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">To use images you will need to have the python <code class="docutils literal notranslate"><span class="pre">pillow</span></code> package installed.
-If you’re running this as a HassIO add-on or with the official esphomeyaml docker image, it should already be
+If you’re running this as a Hass.io add-on or with the official esphomeyaml docker image, it should already be
 installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">pillow</span></code>.</p>
 </div>
 <p>And then later in code:</p>
@@ -419,7 +420,7 @@ installed. Otherwise you need to install it using <code class="docutils literal 
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -435,11 +436,11 @@ installed. Otherwise you need to install it using <code class="docutils literal 
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

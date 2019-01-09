@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Application &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Application &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/application.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -147,6 +148,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application13init_ethernetEv">
+<span id="_CPPv2N11Application13init_ethernetEv"></span><span id="Application::init_ethernet"></span><span class="target" id="class_application_1ae826ddcd4a22acc64181a2b72958d01d"></span><a class="reference internal" href="wifi.html#_CPPv317EthernetComponent" title="EthernetComponent">EthernetComponent</a> *<code class="descname">init_ethernet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application13init_ethernetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application8init_otaEv">
 <span id="_CPPv2N11Application8init_otaEv"></span><span id="Application::init_ota"></span><span class="target" id="class_application_1a22501f72db99a70fa1d507ca0c82781e"></span><a class="reference internal" href="ota.html#_CPPv312OTAComponent" title="OTAComponent">OTAComponent</a> *<code class="descname">init_ota</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application8init_otaEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize Over-the-Air updates. </p>
@@ -244,6 +250,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application15init_api_serverEv">
+<span id="_CPPv2N11Application15init_api_serverEv"></span><span id="Application::init_api_server"></span><span class="target" id="class_application_1abda107df2b13e53f917051ddbf967c8e"></span><a class="reference internal" href="native-api.html#_CPPv33api" title="api">api</a>::<a class="reference internal" href="native-api.html#_CPPv3N3api9APIServerE" title="api::APIServer">APIServer</a> *<code class="descname">init_api_server</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15init_api_serverEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application22make_esp32_ble_trackerEv">
 <span id="_CPPv2N11Application22make_esp32_ble_trackerEv"></span><span id="Application::make_esp32_ble_tracker"></span><span class="target" id="class_application_1a1a3d8fb8f3304c4007cae902499a5009"></span><a class="reference internal" href="../misc/esp32_ble_tracker.html#_CPPv315ESP32BLETracker" title="ESP32BLETracker">ESP32BLETracker</a> *<code class="descname">make_esp32_ble_tracker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22make_esp32_ble_trackerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Setup an ESP32 BLE Tracker Hub. </p>
@@ -332,11 +343,6 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t">
-<span id="_CPPv2N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t"></span><span id="Application::make_mqtt_message_trigger__ssCR.uint8_t"></span><span class="target" id="class_application_1a960cc0628aa2c17398eb51b6b56c45db"></span>mqtt::<a class="reference internal" href="mqtt.html#_CPPv3N4mqtt18MQTTMessageTriggerE" title="mqtt::MQTTMessageTrigger">MQTTMessageTrigger</a> *<code class="descname">make_mqtt_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_mqtt_message_triggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
 <dt id="_CPPv3N11Application20make_startup_triggerEv">
 <span id="_CPPv2N11Application20make_startup_triggerEv"></span><span id="Application::make_startup_trigger"></span><span class="target" id="class_application_1ac1b8b43d0aad268dfa52cbdda6a22a1c"></span><a class="reference internal" href="automation.html#_CPPv314StartupTrigger" title="StartupTrigger">StartupTrigger</a> *<code class="descname">make_startup_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20make_startup_triggerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -419,6 +425,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application25make_custom_binary_sensorERKNSt8functionIFNSt6vectorIPN13binary_sensor12BinarySensorEEEvEEE">
+<span id="_CPPv2N11Application25make_custom_binary_sensorERKNSt8functionIFNSt6vectorIPN13binary_sensor12BinarySensorEEEvEEE"></span><span class="target" id="class_application_1abfaebd3ea3a2624f1f4ac243ac947316"></span>binary_sensor::<a class="reference internal" href="../binary_sensor/index.html#_CPPv3N13binary_sensor29CustomBinarySensorConstructorE" title="binary_sensor::CustomBinarySensorConstructor">CustomBinarySensorConstructor</a> *<code class="descname">make_custom_binary_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::function&lt;std::vector&lt;binary_sensor::<a class="reference internal" href="../binary_sensor/index.html#_CPPv3N13binary_sensor12BinarySensorE" title="binary_sensor::BinarySensor">BinarySensor</a> *&gt;<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;<em>init</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_custom_binary_sensorERKNSt8functionIFNSt6vectorIPN13binary_sensor12BinarySensorEEEvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application15register_sensorEPN6sensor6SensorE">
 <span id="_CPPv2N11Application15register_sensorEPN6sensor6SensorE"></span><span id="Application::register_sensor__sensor::SensorP"></span><span class="target" id="class_application_1a669795bcabe075edfba67b7b9cbb77f8"></span><a class="reference internal" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor::sensor">sensor</a>::MQTTSensorComponent *<code class="descname">register_sensor</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Application::register_sensor::sensor">sensor</a>::Sensor *<em>sensor</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_sensorEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a sensor and create a MQTT Sensor if the MQTT client is set up. </p>
@@ -432,7 +443,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application15make_dht_sensorERKNSt6stringERKNSt6stringERK13GPIOOutputPin8uint32_t">
-<span id="_CPPv2N11Application15make_dht_sensorERKNSt6stringERKNSt6stringERK13GPIOOutputPin8uint32_t"></span><span id="Application::make_dht_sensor__ssCR.ssCR.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1ad4c2582ab6326782b91f7bc7f6e56ef9"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application13MakeDHTSensorE" title="Application::MakeDHTSensor">MakeDHTSensor</a> <code class="descname">make_dht_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15make_dht_sensorERKNSt6stringERKNSt6stringERK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application15make_dht_sensorERKNSt6stringERKNSt6stringERK13GPIOOutputPin8uint32_t"></span><span id="Application::make_dht_sensor__ssCR.ssCR.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a35a9d4392ea94e5d193b4a865905e768"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application13MakeDHTSensorE" title="Application::MakeDHTSensor">MakeDHTSensor</a> <code class="descname">make_dht_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15make_dht_sensorERKNSt6stringERKNSt6stringERK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a DHT sensor component. </p>
 <p>Note: This method automatically applies a SlidingWindowMovingAverageFilter.</p>
 <p><dl class="docutils">
@@ -452,17 +463,17 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application21make_dallas_componentEP10ESPOneWire8uint32_t">
-<span id="_CPPv2N11Application21make_dallas_componentEP10ESPOneWire8uint32_t"></span><span id="Application::make_dallas_component__ESPOneWireP.uint32_t"></span><span class="target" id="class_application_1aa6e681a0c031fba569188de6b26416ad"></span>DallasComponent *<code class="descname">make_dallas_component</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv310ESPOneWire" title="ESPOneWire">ESPOneWire</a> *<em>one_wire</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application21make_dallas_componentEP10ESPOneWire8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application21make_dallas_componentEP10ESPOneWire8uint32_t"></span><span id="Application::make_dallas_component__ESPOneWireP.uint32_t"></span><span class="target" id="class_application_1a8e93f391516927887cec7f0c54141d52"></span>DallasComponent *<code class="descname">make_dallas_component</code><span class="sig-paren">(</span><a class="reference internal" href="helpers.html#_CPPv310ESPOneWire" title="ESPOneWire">ESPOneWire</a> *<em>one_wire</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application21make_dallas_componentEP10ESPOneWire8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application21make_dallas_componentERK13GPIOOutputPin8uint32_t">
-<span id="_CPPv2N11Application21make_dallas_componentERK13GPIOOutputPin8uint32_t"></span><span id="Application::make_dallas_component__GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a3e3688f3c11cbf82f3c82d7392e60394"></span>DallasComponent *<code class="descname">make_dallas_component</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application21make_dallas_componentERK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application21make_dallas_componentERK13GPIOOutputPin8uint32_t"></span><span id="Application::make_dallas_component__GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a049cadf7134a3df8730976da3e76ca53"></span>DallasComponent *<code class="descname">make_dallas_component</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application21make_dallas_componentERK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t">
-<span id="_CPPv2N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t"></span><span id="Application::make_pulse_counter_sensor__ssCR.GPIOInputPinCR.uint32_t"></span><span class="target" id="class_application_1a4b15f1c03c379a5fdb247fc28d29c2b7"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application22MakePulseCounterSensorE" title="Application::MakePulseCounterSensor">MakePulseCounterSensor</a> <code class="descname">make_pulse_counter_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t"></span><span id="Application::make_pulse_counter_sensor__ssCR.GPIOInputPinCR.uint32_t"></span><span class="target" id="class_application_1aef9f71af9d15d72bf52134eae34b408c"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application22MakePulseCounterSensorE" title="Application::MakePulseCounterSensor">MakePulseCounterSensor</a> <code class="descname">make_pulse_counter_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_pulse_counter_sensorERKNSt6stringERK12GPIOInputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create an ESP32 Pulse Counter component. </p>
 <p>The pulse counter peripheral will automatically all pulses on pin in the background. Every check_interval ms the amount of pulses will be retrieved and the difference to the last value will be reported via MQTT as a sensor.</p>
 <p><dl class="docutils">
@@ -481,7 +492,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application15make_adc_sensorERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application15make_adc_sensorERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_adc_sensor__ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1af6d56047f62cdfb004c6e9bc0d4edcb1"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application13MakeADCSensorE" title="Application::MakeADCSensor">MakeADCSensor</a> <code class="descname">make_adc_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, uint8_t <em>pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15make_adc_sensorERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application15make_adc_sensorERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_adc_sensor__ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1ac63b746bcb49c8f1bd096c1847685985"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application13MakeADCSensorE" title="Application::MakeADCSensor">MakeADCSensor</a> <code class="descname">make_adc_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>friendly_name</em>, uint8_t <em>pin</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15make_adc_sensorERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create an ADC Sensor component. </p>
 <p>Every check_interval ms, the value from the specified pin (only A0 on ESP8266, 32-39 for ESP32), and converts it into the volt unit. On the ESP32 you can additionally specify a channel attenuation using the return value of this function. pinMode can also be set using the return value.</p>
 <p><dl class="docutils">
@@ -518,7 +529,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_bmp085_sensorERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application18make_bmp085_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_bmp085_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1a0fe0f1bc822ead77776b16a3857d7a89"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBMP085SensorE" title="Application::MakeBMP085Sensor">MakeBMP085Sensor</a> <code class="descname">make_bmp085_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_friendly_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bmp085_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_bmp085_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_bmp085_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1acde8e73e719dcc751141f3b92864af76"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBMP085SensorE" title="Application::MakeBMP085Sensor">MakeBMP085Sensor</a> <code class="descname">make_bmp085_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_friendly_name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bmp085_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create an BMP085/BMP180/BMP280 i2c temperature+pressure sensor. </p>
 <p>Be sure to initialize i2c before calling <code class="docutils literal notranslate"><span class="pre">App.setup()</span></code> in order for this to work. Do so with <code class="docutils literal notranslate"><span class="pre">App.init_i2c(SDA_PIN,</span> <span class="pre">SCL_PIN);</span></code>.</p>
 <p><dl class="docutils">
@@ -537,7 +548,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_htu21d_sensorERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application18make_htu21d_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_htu21d_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1a4880fc385f2906017d739d6e7738af99"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeHTU21DSensorE" title="Application::MakeHTU21DSensor">MakeHTU21DSensor</a> <code class="descname">make_htu21d_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_friendly_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_htu21d_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_htu21d_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_htu21d_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1adcb5d720e4d778a5c07710e22d985fd9"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeHTU21DSensorE" title="Application::MakeHTU21DSensor">MakeHTU21DSensor</a> <code class="descname">make_htu21d_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_friendly_name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_htu21d_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a HTU21D i2c-based temperature+humidity highly accurate sensor. </p>
 <p>Be sure to initialize i2c before calling <code class="docutils literal notranslate"><span class="pre">App.setup</span></code> in order for this to work. Do so with <code class="docutils literal notranslate"><span class="pre">App.init_i2c(SDA_PIN,</span> <span class="pre">SCL_PIN);</span></code>.</p>
 <p><dl class="docutils">
@@ -556,7 +567,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application19make_hdc1080_sensorERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application19make_hdc1080_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_hdc1080_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1ac162bdd974a666c2211a6bfb421252e8"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeHDC1080SensorE" title="Application::MakeHDC1080Sensor">MakeHDC1080Sensor</a> <code class="descname">make_hdc1080_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_friendly_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_hdc1080_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application19make_hdc1080_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_hdc1080_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1ae826a7c65808186c6ac0c05d2f8a070f"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeHDC1080SensorE" title="Application::MakeHDC1080Sensor">MakeHDC1080Sensor</a> <code class="descname">make_hdc1080_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_friendly_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_friendly_name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_hdc1080_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a HDC1080 i2c-based temperature+humidity sensor. </p>
 <p>Be sure to initialize i2c before calling <code class="docutils literal notranslate"><span class="pre">App.setup</span></code> in order for this to work. Do so with <code class="docutils literal notranslate"><span class="pre">App.init_i2c(SDA_PIN,</span> <span class="pre">SCL_PIN);</span></code>.</p>
 <p><dl class="docutils">
@@ -595,12 +606,12 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application23make_wifi_signal_sensorERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application23make_wifi_signal_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_wifi_signal_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1ae30b9a641652fe0c3734c6c491e64276"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application20MakeWiFiSignalSensorE" title="Application::MakeWiFiSignalSensor">MakeWiFiSignalSensor</a> <code class="descname">make_wifi_signal_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application23make_wifi_signal_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application23make_wifi_signal_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_wifi_signal_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1abb9ee33bbf000859c5cac1816af11791"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application20MakeWiFiSignalSensorE" title="Application::MakeWiFiSignalSensor">MakeWiFiSignalSensor</a> <code class="descname">make_wifi_signal_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application23make_wifi_signal_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<span class="target" id="class_application_1adbde3613b6690e36c679bd2d3f973ac1"></span><code class="descname">sensor::MPU6050Component * Application::make_mpu6050_sensor(uint8_t address = 0x68, uint32_t update_interval = 15000)</code></dt>
+<span class="target" id="class_application_1ac93b27efeabd43b156c3079dc7cd3572"></span><code class="descname">sensor::MPU6050Component * Application::make_mpu6050_sensor(uint8_t address = 0x68, uint32_t update_interval = 60000)</code></dt>
 <dd><p>Create a MPU6050 Accelerometer+Gyroscope+Temperature sensor hub. </p>
 <p>This integration can be used to get accurate accelerometer readings and uncalibrated gyroscope values (in degrees per second). If you need the latter with calibration applied, your best bet it to just copy the source and do it yourself, as calibration must be performed while the sensor is at rest and this property can not be asserted for all use cases.</p>
 <p><dl class="docutils">
@@ -618,7 +629,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application19make_tsl2561_sensorERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application19make_tsl2561_sensorERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_tsl2561_sensor__ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1afdb2fd2b1b26d54c9e466790734f1f58"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeTSL2561SensorE" title="Application::MakeTSL2561Sensor">MakeTSL2561Sensor</a> <code class="descname">make_tsl2561_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint8_t <em>address</em> = 0x23, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_tsl2561_sensorERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application19make_tsl2561_sensorERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_tsl2561_sensor__ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1a87bdb96866a7b77755222e113cc074b7"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeTSL2561SensorE" title="Application::MakeTSL2561Sensor">MakeTSL2561Sensor</a> <code class="descname">make_tsl2561_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint8_t <em>address</em> = 0x23, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_tsl2561_sensorERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a TSL2561 accurate ambient light sensor. </p>
 <p>This i2c-based device can provide very precise illuminance readings with great accuracy regarding the human eye response to the brightness level. By default, this sensor uses the i2c address 0x39, but you can change it with <code class="docutils literal notranslate"><span class="pre">set_address</span></code> later using the return value of this function (address 0x29 if ‘0’ shorted on board, address 0x49 if ‘1’ shorted on board).</p>
 <p>The sensor values that are pushed out will be the transformed illuminance values in lx taking using the internal IR and Full Spectrum photodiodes.</p>
@@ -639,7 +650,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_bh1750_sensorERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application18make_bh1750_sensorERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bh1750_sensor__ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1aa7360ce16cee5f473f14f77b5290c5ea"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBH1750SensorE" title="Application::MakeBH1750Sensor">MakeBH1750Sensor</a> <code class="descname">make_bh1750_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint8_t <em>address</em> = 0x23, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bh1750_sensorERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_bh1750_sensorERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bh1750_sensor__ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1a2f11c086ec1508d110e4c55cf97d9cfb"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBH1750SensorE" title="Application::MakeBH1750Sensor">MakeBH1750Sensor</a> <code class="descname">make_bh1750_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint8_t <em>address</em> = 0x23, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bh1750_sensorERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a BH1750 ambient light sensor. </p>
 <p>This i2c-based provides ambient light readings in lx with resolutions of 4LX, 1LX and 0.5LX (the default). To change the resolution, call set_resolution on the return value of this function.</p>
 <p>By default, this sensor uses the i2c address 0x23 (the default if ADDR is pulled low). If the ADDR pin is pulled high (above 0.7VCC), then you can manually set the address to 0x5C using set_address.</p>
@@ -659,7 +670,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_bme280_sensorERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application18make_bme280_sensorERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bme280_sensor__ssCR.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1a001a6e935953fa96511c0c410641e83f"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBME280SensorE" title="Application::MakeBME280Sensor">MakeBME280Sensor</a> <code class="descname">make_bme280_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x77, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bme280_sensorERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_bme280_sensorERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bme280_sensor__ssCR.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1aa8c14bd99053ed3e99b4d6444d9a69c5"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBME280SensorE" title="Application::MakeBME280Sensor">MakeBME280Sensor</a> <code class="descname">make_bme280_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x77, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bme280_sensorERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a BME280 Temperature+Pressure+Humidity i2c sensor. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -679,7 +690,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_bmp280_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application18make_bmp280_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bmp280_sensor__ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1a101b3aa2437ed3182471d81aa97dd819"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBMP280SensorE" title="Application::MakeBMP280Sensor">MakeBMP280Sensor</a> <code class="descname">make_bmp280_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, uint8_t <em>address</em> = 0x77, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bmp280_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_bmp280_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bmp280_sensor__ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1afb396acac2a648775965972f4cdca0c5"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBMP280SensorE" title="Application::MakeBMP280Sensor">MakeBMP280Sensor</a> <code class="descname">make_bmp280_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, uint8_t <em>address</em> = 0x77, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bmp280_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a BMP280 Temperature+Pressure i2c sensor. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -698,17 +709,17 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_bme680_sensorERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application18make_bme680_sensorERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bme680_sensor__ssCR.ssCR.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1abf85cd9eadf3401f85884881e341c66b"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBME680SensorE" title="Application::MakeBME680Sensor">MakeBME680Sensor</a> <code class="descname">make_bme680_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, <em class="property">const</em> std::string &amp;<em>gas_resistance_name</em>, uint8_t <em>address</em> = 0x76, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bme680_sensorERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_bme680_sensorERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_bme680_sensor__ssCR.ssCR.ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1ad45efba87100b756c403ab1511f19b3d"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeBME680SensorE" title="Application::MakeBME680Sensor">MakeBME680Sensor</a> <code class="descname">make_bme680_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, <em class="property">const</em> std::string &amp;<em>gas_resistance_name</em>, uint8_t <em>address</em> = 0x76, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_bme680_sensorERKNSt6stringERKNSt6stringERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_sht3xd_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t">
-<span id="_CPPv2N11Application18make_sht3xd_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_sht3xd_sensor__ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1a62885a8bb28fd95c9a8aaa83e67ac245"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeSHT3XDSensorE" title="Application::MakeSHT3XDSensor">MakeSHT3XDSensor</a> <code class="descname">make_sht3xd_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x44, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_sht3xd_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_sht3xd_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t"></span><span id="Application::make_sht3xd_sensor__ssCR.ssCR.uint8_t.uint32_t"></span><span class="target" id="class_application_1a7705991a792eea83a13152f9e4bda90c"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeSHT3XDSensorE" title="Application::MakeSHT3XDSensor">MakeSHT3XDSensor</a> <code class="descname">make_sht3xd_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint8_t <em>address</em> = 0x44, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_sht3xd_sensorERKNSt6stringERKNSt6stringE7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application17make_dht12_sensorERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application17make_dht12_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_dht12_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1a285fa58a87978daeef715cb1a12ade04"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application15MakeDHT12SensorE" title="Application::MakeDHT12Sensor">MakeDHT12Sensor</a> <code class="descname">make_dht12_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17make_dht12_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application17make_dht12_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_dht12_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1a7a59796a57f0756137679d52eb39fa23"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application15MakeDHT12SensorE" title="Application::MakeDHT12Sensor">MakeDHT12Sensor</a> <code class="descname">make_dht12_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>humidity_name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17make_dht12_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -735,62 +746,67 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application20make_template_sensorERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application20make_template_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_template_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a6d43b8e277dfc3f5341bdba36979f26d"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application18MakeTemplateSensorE" title="Application::MakeTemplateSensor">MakeTemplateSensor</a> <code class="descname">make_template_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20make_template_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application20make_template_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_template_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a7ead908067405943f06cdea0ce9a564f"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application18MakeTemplateSensorE" title="Application::MakeTemplateSensor">MakeTemplateSensor</a> <code class="descname">make_template_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20make_template_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application20make_max31855_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t">
+<span id="_CPPv2N11Application20make_max31855_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t"></span><span id="Application::make_max31855_sensor__ssCR.SPIComponentP.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a5ed4959f479dbdc9e1621406d754cb57"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application18MakeMAX31855SensorE" title="Application::MakeMAX31855Sensor">MakeMAX31855Sensor</a> <code class="descname">make_max31855_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="spi.html#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>spi_bus</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>cs</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20make_max31855_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application19make_max6675_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t">
-<span id="_CPPv2N11Application19make_max6675_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t"></span><span id="Application::make_max6675_sensor__ssCR.SPIComponentP.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a0f32c34be3e488142a54f0917dfafe0b"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeMAX6675SensorE" title="Application::MakeMAX6675Sensor">MakeMAX6675Sensor</a> <code class="descname">make_max6675_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="spi.html#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>spi_bus</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>cs</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_max6675_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application19make_max6675_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t"></span><span id="Application::make_max6675_sensor__ssCR.SPIComponentP.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a775b4af959b76e797f8ba9ba2dcad94e"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application17MakeMAX6675SensorE" title="Application::MakeMAX6675Sensor">MakeMAX6675Sensor</a> <code class="descname">make_max6675_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="spi.html#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>spi_bus</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>cs</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19make_max6675_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application22make_esp32_hall_sensorERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application22make_esp32_hall_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_esp32_hall_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a2cc560c8167b6ddbc782b577f9d89eea"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application19MakeESP32HallSensorE" title="Application::MakeESP32HallSensor">MakeESP32HallSensor</a> <code class="descname">make_esp32_hall_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22make_esp32_hall_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application22make_esp32_hall_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_esp32_hall_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a7bdde4d7dbed979b9a18b7f89b95e1e1"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application19MakeESP32HallSensorE" title="Application::MakeESP32HallSensor">MakeESP32HallSensor</a> <code class="descname">make_esp32_hall_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22make_esp32_hall_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application22make_duty_cycle_sensorERKNSt6stringERK12GPIOInputPin8uint32_t">
-<span id="_CPPv2N11Application22make_duty_cycle_sensorERKNSt6stringERK12GPIOInputPin8uint32_t"></span><span id="Application::make_duty_cycle_sensor__ssCR.GPIOInputPinCR.uint32_t"></span><span class="target" id="class_application_1a26d61681680df868a555937210e1f4ef"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application19MakeDutyCycleSensorE" title="Application::MakeDutyCycleSensor">MakeDutyCycleSensor</a> <code class="descname">make_duty_cycle_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22make_duty_cycle_sensorERKNSt6stringERK12GPIOInputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application22make_duty_cycle_sensorERKNSt6stringERK12GPIOInputPin8uint32_t"></span><span id="Application::make_duty_cycle_sensor__ssCR.GPIOInputPinCR.uint32_t"></span><span class="target" id="class_application_1ab6af0ff0eec39ec6bc55de65bb7d25df"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application19MakeDutyCycleSensorE" title="Application::MakeDutyCycleSensor">MakeDutyCycleSensor</a> <code class="descname">make_duty_cycle_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>pin</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application22make_duty_cycle_sensorERKNSt6stringERK12GPIOInputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application17make_mhz19_sensorEP13UARTComponentRKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application17make_mhz19_sensorEP13UARTComponentRKNSt6stringE8uint32_t"></span><span id="Application::make_mhz19_sensor__UARTComponentP.ssCR.uint32_t"></span><span class="target" id="class_application_1a19f3dd8ddbf967c74e5cdce2964736e1"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application15MakeMHZ19SensorE" title="Application::MakeMHZ19Sensor">MakeMHZ19Sensor</a> <code class="descname">make_mhz19_sensor</code><span class="sig-paren">(</span><a class="reference internal" href="uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>co2_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17make_mhz19_sensorEP13UARTComponentRKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application17make_mhz19_sensorEP13UARTComponentRKNSt6stringE8uint32_t"></span><span id="Application::make_mhz19_sensor__UARTComponentP.ssCR.uint32_t"></span><span class="target" id="class_application_1a59d36939bc1af03d4d2b712fca9fc3a5"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application15MakeMHZ19SensorE" title="Application::MakeMHZ19Sensor">MakeMHZ19Sensor</a> <code class="descname">make_mhz19_sensor</code><span class="sig-paren">(</span><a class="reference internal" href="uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, <em class="property">const</em> std::string &amp;<em>co2_name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17make_mhz19_sensorEP13UARTComponentRKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_uptime_sensorERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application18make_uptime_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_uptime_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a909de61f892bdaa41522d1cc81a031fe"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeUptimeSensorE" title="Application::MakeUptimeSensor">MakeUptimeSensor</a> <code class="descname">make_uptime_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_uptime_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_uptime_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_uptime_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a78e836dd8cf60caea45253d2577e3f31"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeUptimeSensorE" title="Application::MakeUptimeSensor">MakeUptimeSensor</a> <code class="descname">make_uptime_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_uptime_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application11make_ina219Efff7uint8_t8uint32_t">
-<span id="_CPPv2N11Application11make_ina219Efff7uint8_t8uint32_t"></span><span id="Application::make_ina219__float.float.float.uint8_t.uint32_t"></span><span class="target" id="class_application_1aceef57c48ece29e2e095197fb1934a1c"></span>sensor::<a class="reference internal" href="../sensor/ina219.html#_CPPv3N6sensor15INA219ComponentE" title="sensor::INA219Component">INA219Component</a> *<code class="descname">make_ina219</code><span class="sig-paren">(</span>float <em>shunt_resistance_ohm</em>, float <em>max_current_a</em>, float <em>max_voltage_v</em>, uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application11make_ina219Efff7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application11make_ina219Efff7uint8_t8uint32_t"></span><span id="Application::make_ina219__float.float.float.uint8_t.uint32_t"></span><span class="target" id="class_application_1a4f6d3a7e0d4cf78a44df5d86e1c1d4da"></span>sensor::<a class="reference internal" href="../sensor/ina219.html#_CPPv3N6sensor15INA219ComponentE" title="sensor::INA219Component">INA219Component</a> *<code class="descname">make_ina219</code><span class="sig-paren">(</span>float <em>shunt_resistance_ohm</em>, float <em>max_current_a</em>, float <em>max_voltage_v</em>, uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application11make_ina219Efff7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application12make_ina3221E7uint8_t8uint32_t">
-<span id="_CPPv2N11Application12make_ina3221E7uint8_t8uint32_t"></span><span id="Application::make_ina3221__uint8_t.uint32_t"></span><span class="target" id="class_application_1abac78c5e8e9b6d5787893179a655f1e8"></span>sensor::<a class="reference internal" href="../sensor/ina3221.html#_CPPv3N6sensor16INA3221ComponentE" title="sensor::INA3221Component">INA3221Component</a> *<code class="descname">make_ina3221</code><span class="sig-paren">(</span>uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_ina3221E7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application12make_ina3221E7uint8_t8uint32_t"></span><span id="Application::make_ina3221__uint8_t.uint32_t"></span><span class="target" id="class_application_1a7eeadaf3f0ae55c4961dcf041b1fa311"></span>sensor::<a class="reference internal" href="../sensor/ina3221.html#_CPPv3N6sensor16INA3221ComponentE" title="sensor::INA3221Component">INA3221Component</a> *<code class="descname">make_ina3221</code><span class="sig-paren">(</span>uint8_t <em>address</em> = 0x40, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_ina3221E7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application13make_hmc5883lE8uint32_t">
-<span id="_CPPv2N11Application13make_hmc5883lE8uint32_t"></span><span id="Application::make_hmc5883l__uint32_t"></span><span class="target" id="class_application_1a72d57bbd110148612a59f0185e979509"></span>sensor::<a class="reference internal" href="../sensor/hmc5883l.html#_CPPv3N6sensor17HMC5883LComponentE" title="sensor::HMC5883LComponent">HMC5883LComponent</a> *<code class="descname">make_hmc5883l</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application13make_hmc5883lE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application13make_hmc5883lE8uint32_t"></span><span id="Application::make_hmc5883l__uint32_t"></span><span class="target" id="class_application_1ac056e53f2c65b3743a4a2deb33d9030d"></span>sensor::<a class="reference internal" href="../sensor/hmc5883l.html#_CPPv3N6sensor17HMC5883LComponentE" title="sensor::HMC5883LComponent">HMC5883LComponent</a> *<code class="descname">make_hmc5883l</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application13make_hmc5883lE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application17make_hx711_sensorERKNSt6stringERK12GPIOInputPinRK13GPIOOutputPin8uint32_t">
-<span id="_CPPv2N11Application17make_hx711_sensorERKNSt6stringERK12GPIOInputPinRK13GPIOOutputPin8uint32_t"></span><span id="Application::make_hx711_sensor__ssCR.GPIOInputPinCR.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1ab6d09c987d1d39ed3dd7f479e9fc5a40"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application15MakeHX711SensorE" title="Application::MakeHX711Sensor">MakeHX711Sensor</a> <code class="descname">make_hx711_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>dout</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>sck</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17make_hx711_sensorERKNSt6stringERK12GPIOInputPinRK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application17make_hx711_sensorERKNSt6stringERK12GPIOInputPinRK13GPIOOutputPin8uint32_t"></span><span id="Application::make_hx711_sensor__ssCR.GPIOInputPinCR.GPIOOutputPinCR.uint32_t"></span><span class="target" id="class_application_1a50e4bd3a8e1cdad703a893f5216c50a9"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application15MakeHX711SensorE" title="Application::MakeHX711Sensor">MakeHX711Sensor</a> <code class="descname">make_hx711_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312GPIOInputPin" title="GPIOInputPin">GPIOInputPin</a> &amp;<em>dout</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>sck</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17make_hx711_sensorERKNSt6stringERK12GPIOInputPinRK13GPIOOutputPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application18make_ms5611_sensorERKNSt6stringERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application18make_ms5611_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_ms5611_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1a9827c060d70f69ea0143dd6d3c3cc78f"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeMS5611SensorE" title="Application::MakeMS5611Sensor">MakeMS5611Sensor</a> <code class="descname">make_ms5611_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_ms5611_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application18make_ms5611_sensorERKNSt6stringERKNSt6stringE8uint32_t"></span><span id="Application::make_ms5611_sensor__ssCR.ssCR.uint32_t"></span><span class="target" id="class_application_1a84de2306fbaee7492937a3d702a1e33b"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application16MakeMS5611SensorE" title="Application::MakeMS5611Sensor">MakeMS5611Sensor</a> <code class="descname">make_ms5611_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>temperature_name</em>, <em class="property">const</em> std::string &amp;<em>pressure_name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_ms5611_sensorERKNSt6stringERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application13make_tcs34725E8uint32_t">
-<span id="_CPPv2N11Application13make_tcs34725E8uint32_t"></span><span id="Application::make_tcs34725__uint32_t"></span><span class="target" id="class_application_1a673fc29bfc34f1d9bdc5a6ee845d57ce"></span>sensor::<a class="reference internal" href="../sensor/tcs34725.html#_CPPv3N6sensor17TCS34725ComponentE" title="sensor::TCS34725Component">TCS34725Component</a> *<code class="descname">make_tcs34725</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application13make_tcs34725E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application13make_tcs34725E8uint32_t"></span><span id="Application::make_tcs34725__uint32_t"></span><span class="target" id="class_application_1ae81f14b2ec4676f0498ade45dae79792"></span>sensor::<a class="reference internal" href="../sensor/tcs34725.html#_CPPv3N6sensor17TCS34725ComponentE" title="sensor::TCS34725Component">TCS34725Component</a> *<code class="descname">make_tcs34725</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application13make_tcs34725E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -799,8 +815,13 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application33make_homeassistant_time_componentEv">
+<span id="_CPPv2N11Application33make_homeassistant_time_componentEv"></span><span id="Application::make_homeassistant_time_component"></span><span class="target" id="class_application_1a9509abad9b4af8cef764ccfbc1eb6f1e"></span>HomeAssistantTime *<code class="descname">make_homeassistant_time_component</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application33make_homeassistant_time_componentEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t">
-<span id="_CPPv2N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t"></span><span id="Application::make_hlw8012__GPIOOutputPinCR.uint8_t.uint8_t.uint32_t"></span><span class="target" id="class_application_1af133e1b15b23355811dbb78ea297e154"></span>sensor::<a class="reference internal" href="../sensor/hlw8012.html#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<code class="descname">make_hlw8012</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>sel_pin</em>, uint8_t <em>cf_pin</em>, uint8_t <em>cf1_pin</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t"></span><span id="Application::make_hlw8012__GPIOOutputPinCR.uint8_t.uint8_t.uint32_t"></span><span class="target" id="class_application_1a2b1443d6a6b68607892a66dd6a5aa5ce"></span>sensor::<a class="reference internal" href="../sensor/hlw8012.html#_CPPv3N6sensor16HLW8012ComponentE" title="sensor::HLW8012Component">HLW8012Component</a> *<code class="descname">make_hlw8012</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>sel_pin</em>, uint8_t <em>cf_pin</em>, uint8_t <em>cf1_pin</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_hlw8012ERK13GPIOOutputPin7uint8_t7uint8_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -809,13 +830,23 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N11Application12make_cse7766EP13UARTComponent">
-<span id="_CPPv2N11Application12make_cse7766EP13UARTComponent"></span><span id="Application::make_cse7766__UARTComponentP"></span><span class="target" id="class_application_1a3a780b3cdefa1e6760c15e18aca0c2c9"></span>sensor::<a class="reference internal" href="../sensor/cse7766.html#_CPPv3N6sensor16CSE7766ComponentE" title="sensor::CSE7766Component">CSE7766Component</a> *<code class="descname">make_cse7766</code><span class="sig-paren">(</span><a class="reference internal" href="uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_cse7766EP13UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N11Application25make_homeassistant_sensorERKNSt6stringENSt6stringE">
+<span id="_CPPv2N11Application25make_homeassistant_sensorERKNSt6stringENSt6stringE"></span><span id="Application::make_homeassistant_sensor__ssCR.ss"></span><span class="target" id="class_application_1a248f8fecf39040f446972d69fc3ffdd6"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application23MakeHomeassistantSensorE" title="Application::MakeHomeassistantSensor">MakeHomeassistantSensor</a> <code class="descname">make_homeassistant_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::string <em>entity_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_homeassistant_sensorERKNSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application12make_cse7766EP13UARTComponent8uint32_t">
+<span id="_CPPv2N11Application12make_cse7766EP13UARTComponent8uint32_t"></span><span id="Application::make_cse7766__UARTComponentP.uint32_t"></span><span class="target" id="class_application_1abbe818b289ab6278db14c78803196f59"></span>sensor::<a class="reference internal" href="../sensor/cse7766.html#_CPPv3N6sensor16CSE7766ComponentE" title="sensor::CSE7766Component">CSE7766Component</a> *<code class="descname">make_cse7766</code><span class="sig-paren">(</span><a class="reference internal" href="uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_cse7766EP13UARTComponent8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application31make_mqtt_subscribe_text_sensorERKNSt6stringENSt6stringE">
 <span id="_CPPv2N11Application31make_mqtt_subscribe_text_sensorERKNSt6stringENSt6stringE"></span><span id="Application::make_mqtt_subscribe_text_sensor__ssCR.ss"></span><span class="target" id="class_application_1a402b4e987a0d4bb78bd0a0f10811fb6f"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application27MakeMQTTSubscribeTextSensorE" title="Application::MakeMQTTSubscribeTextSensor">MakeMQTTSubscribeTextSensor</a> <code class="descname">make_mqtt_subscribe_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::string <em>topic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application31make_mqtt_subscribe_text_sensorERKNSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application30make_homeassistant_text_sensorERKNSt6stringENSt6stringE">
+<span id="_CPPv2N11Application30make_homeassistant_text_sensorERKNSt6stringENSt6stringE"></span><span id="Application::make_homeassistant_text_sensor__ssCR.ss"></span><span class="target" id="class_application_1a2babe26943151e87305b7b4fd79212af"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application27MakeHomeassistantTextSensorE" title="Application::MakeHomeassistantTextSensor">MakeHomeassistantTextSensor</a> <code class="descname">make_homeassistant_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::string <em>entity_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application30make_homeassistant_text_sensorERKNSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -825,7 +856,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application25make_template_text_sensorERKNSt6stringE8uint32_t">
-<span id="_CPPv2N11Application25make_template_text_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_template_text_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a0d59f9a17243d883be2d2d048ed8225b"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application22MakeTemplateTextSensorE" title="Application::MakeTemplateTextSensor">MakeTemplateTextSensor</a> <code class="descname">make_template_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 15000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_template_text_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application25make_template_text_sensorERKNSt6stringE8uint32_t"></span><span id="Application::make_template_text_sensor__ssCR.uint32_t"></span><span class="target" id="class_application_1a0dd958d6293e46a7e1c79be13f9407bd"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application22MakeTemplateTextSensorE" title="Application::MakeTemplateTextSensor">MakeTemplateTextSensor</a> <code class="descname">make_template_text_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application25make_template_text_sensorERKNSt6stringE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -836,6 +867,16 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dl class="function">
 <dt id="_CPPv3N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE">
 <span id="_CPPv2N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE"></span><span id="Application::make_total_daily_energy_sensor__ssCR.time::RealTimeClockComponentP.sensor::SensorP"></span><span class="target" id="class_application_1ac9b530602a0f225dcb6d09a978214cb1"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application26MakeTotalDailyEnergySensorE" title="Application::MakeTotalDailyEnergySensor">MakeTotalDailyEnergySensor</a> <code class="descname">make_total_daily_energy_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="#_CPPv3N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE" title="Application::make_total_daily_energy_sensor::time">time</a>::RealTimeClockComponent *<em>time</em>, sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application30make_total_daily_energy_sensorERKNSt6stringEPN4time22RealTimeClockComponentEPN6sensor6SensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application13make_apds9960E8uint32_t">
+<span id="_CPPv2N11Application13make_apds9960E8uint32_t"></span><span id="Application::make_apds9960__uint32_t"></span><span class="target" id="class_application_1ab8c9b3ed58e04c455133f7e3676f5bb5"></span>sensor::APDS9960 *<code class="descname">make_apds9960</code><span class="sig-paren">(</span>uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application13make_apds9960E8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application18make_custom_sensorERKNSt8functionIFNSt6vectorIPN6sensor6SensorEEEvEEE">
+<span id="_CPPv2N11Application18make_custom_sensorERKNSt8functionIFNSt6vectorIPN6sensor6SensorEEEvEEE"></span><span class="target" id="class_application_1ab0609e296e6f2b5920d5c858d13a487b"></span>sensor::CustomSensorConstructor *<code class="descname">make_custom_sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::function&lt;std::vector&lt;sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor6SensorE" title="sensor::Sensor">Sensor</a> *&gt;<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;<em>init</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_custom_sensorERKNSt8functionIFNSt6vectorIPN6sensor6SensorEEEvEEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -943,13 +984,13 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application14register_lightEPN5light10LightStateE">
-<span id="_CPPv2N11Application14register_lightEPN5light10LightStateE"></span><span id="Application::register_light__light::LightStateP"></span><span class="target" id="class_application_1a39d9732781f4f8121509ff7e668f6eb5"></span>MQTTJSONLightComponent *<code class="descname">register_light</code><span class="sig-paren">(</span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application14register_lightEPN5light10LightStateE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application14register_lightEPN5light10LightStateE"></span><span id="Application::register_light__light::LightStateP"></span><span class="target" id="class_application_1a39d9732781f4f8121509ff7e668f6eb5"></span>MQTTJSONLightComponent *<code class="descname">register_light</code><span class="sig-paren">(</span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application14register_lightEPN5light10LightStateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a light within esphomelib. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N11Application27make_light_for_light_outputERKNSt6stringEPN5light11LightOutputE">
-<span id="_CPPv2N11Application27make_light_for_light_outputERKNSt6stringEPN5light11LightOutputE"></span><span id="Application::make_light_for_light_output__ssCR.light::LightOutputP"></span><span class="target" id="class_application_1a764e0fb32eaecf5b665044e28c065c59"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application9MakeLightE" title="Application::MakeLight">MakeLight</a> <code class="descname">make_light_for_light_output</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, light::<a class="reference internal" href="../light/index.html#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a> *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application27make_light_for_light_outputERKNSt6stringEPN5light11LightOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application27make_light_for_light_outputERKNSt6stringEPN5light11LightOutputE"></span><span id="Application::make_light_for_light_output__ssCR.light::LightOutputP"></span><span class="target" id="class_application_1a764e0fb32eaecf5b665044e28c065c59"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application9MakeLightE" title="Application::MakeLight">MakeLight</a> <code class="descname">make_light_for_light_output</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a> *<em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application27make_light_for_light_outputERKNSt6stringEPN5light11LightOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1042,6 +1083,18 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application28make_neo_pixel_bus_rgb_lightERKNSt6stringE">
+<span id="_CPPv2N11Application28make_neo_pixel_bus_rgb_lightERKNSt6stringE"></span><span id="Application::make_neo_pixel_bus_rgb_light__ssCR"></span><em class="property">template </em>&lt;<em class="property">typename</em> T_METHOD, <em class="property">typename</em> T_COLOR_FEATURE = NeoRgbFeature&gt;<br /><span class="target" id="class_application_1a15905a9bb55305fe31b01ec3bbff31c7"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application20MakeNeoPixelBusLightE" title="Application::MakeNeoPixelBusLight">MakeNeoPixelBusLight</a>&lt;T_METHOD, T_COLOR_FEATURE&gt; <code class="descname">make_neo_pixel_bus_rgb_light</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application28make_neo_pixel_bus_rgb_lightERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create an RGB NeoPixelBus light. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application29make_neo_pixel_bus_rgbw_lightERKNSt6stringE">
+<span id="_CPPv2N11Application29make_neo_pixel_bus_rgbw_lightERKNSt6stringE"></span><span id="Application::make_neo_pixel_bus_rgbw_light__ssCR"></span><em class="property">template </em>&lt;<em class="property">typename</em> T_METHOD, <em class="property">typename</em> T_COLOR_FEATURE = NeoRgbwFeature&gt;<br /><span class="target" id="class_application_1afc30ff62854796c4896b9831d8c0f0fb"></span><a class="reference internal" href="#_CPPv311Application" title="Application">Application</a>::<a class="reference internal" href="#_CPPv3N11Application20MakeNeoPixelBusLightE" title="Application::MakeNeoPixelBusLight">MakeNeoPixelBusLight</a>&lt;T_METHOD, T_COLOR_FEATURE&gt; <code class="descname">make_neo_pixel_bus_rgbw_light</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application29make_neo_pixel_bus_rgbw_lightERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create an RGBW NeoPixelBus light. </p>
+</dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application15register_switchEPN7switch_6SwitchE">
 <span id="_CPPv2N11Application15register_switchEPN7switch_6SwitchE"></span><span id="Application::register_switch__switch_::SwitchP"></span><span class="target" id="class_application_1a61c30aa76e0137a9f3dbb28fac68c578"></span>MQTTSwitchComponent *<code class="descname">register_switch</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N11Application15register_switchEPN7switch_6SwitchE" title="Application::register_switch::switch_">switch_</a>::Switch *<em>switch_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application15register_switchEPN7switch_6SwitchE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a Switch internally, creating a MQTT Switch if the MQTT client is set up. </p>
@@ -1098,6 +1151,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N11Application18make_custom_switchERKNSt8functionIFNSt6vectorIPN7switch_6SwitchEEEvEEE">
+<span id="_CPPv2N11Application18make_custom_switchERKNSt8functionIFNSt6vectorIPN7switch_6SwitchEEEvEEE"></span><span class="target" id="class_application_1a26e30d35c77d6edb719407a1944adccc"></span>switch_::CustomSwitchConstructor *<code class="descname">make_custom_switch</code><span class="sig-paren">(</span><em class="property">const</em> std::function&lt;std::vector&lt;switch_::<a class="reference internal" href="../switch/index.html#_CPPv3N7switch_6SwitchE" title="switch_::Switch">Switch</a> *&gt;<span class="sig-paren">(</span><span class="sig-paren">)</span>&gt; &amp;<em>init</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application18make_custom_switchERKNSt8functionIFNSt6vectorIPN7switch_6SwitchEEEvEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N11Application12register_fanEPN3fan8FanStateE">
 <span id="_CPPv2N11Application12register_fanEPN3fan8FanStateE"></span><span id="Application::register_fan__fan::FanStateP"></span><span class="target" id="class_application_1a69049d3f52bca9c86a4f09d1bf64692e"></span>fan::<a class="reference internal" href="../fan/index.html#_CPPv3N3fan16MQTTFanComponentE" title="fan::MQTTFanComponent">MQTTFanComponent</a> *<code class="descname">register_fan</code><span class="sig-paren">(</span>fan::<a class="reference internal" href="../fan/index.html#_CPPv3N3fan8FanStateE" title="fan::FanState">FanState</a> *<em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12register_fanEPN3fan8FanStateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a fan internally. </p>
@@ -1131,7 +1189,12 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 
 <dl class="function">
 <dt id="_CPPv3N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin">
-<span id="_CPPv2N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="Application::make_a4988__GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="class_application_1a072cee9593ddcbb8fd79e374575d3216"></span>stepper::<a class="reference internal" href="../misc/stepper.html#_CPPv3N7stepper5A4988E" title="stepper::A4988">A4988</a> *<code class="descname">make_a4988</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>step_pin</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>dir_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="Application::make_a4988__GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="class_application_1a072cee9593ddcbb8fd79e374575d3216"></span><a class="reference internal" href="../misc/stepper.html#_CPPv37stepper" title="stepper">stepper</a>::<a class="reference internal" href="../misc/stepper.html#_CPPv3N7stepper5A4988E" title="stepper::A4988">A4988</a> *<code class="descname">make_a4988</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>step_pin</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>dir_pin</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application10make_a4988ERK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application12make_uln2003ERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin">
+<span id="_CPPv2N11Application12make_uln2003ERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin"></span><span id="Application::make_uln2003__GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR.GPIOOutputPinCR"></span><span class="target" id="class_application_1ac3dfccd85de494a7a5d8ca7bf23c3eeb"></span><a class="reference internal" href="../misc/stepper.html#_CPPv37stepper" title="stepper">stepper</a>::<a class="reference internal" href="../misc/stepper.html#_CPPv3N7stepper7ULN2003E" title="stepper::ULN2003">ULN2003</a> *<code class="descname">make_uln2003</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin_a</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin_b</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin_c</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv313GPIOOutputPin" title="GPIOOutputPin">GPIOOutputPin</a> &amp;<em>pin_d</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application12make_uln2003ERK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPinRK13GPIOOutputPin" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1232,6 +1295,41 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <span id="_CPPv2NK11Application20get_compilation_timeEv"></span><span id="Application::get_compilation_timeC"></span><span class="target" id="class_application_1ac4a1a0156175741532a6fe964c5bc7e7"></span><em class="property">const</em> std::string &amp;<code class="descname">get_compilation_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK11Application20get_compilation_timeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N11Application17set_loop_intervalE8uint32_t">
+<span id="_CPPv2N11Application17set_loop_intervalE8uint32_t"></span><span id="Application::set_loop_interval__uint32_t"></span><span class="target" id="class_application_1a56d8b00fa643ce98727bd96887ef9b89"></span>void <code class="descname">set_loop_interval</code><span class="sig-paren">(</span>uint32_t <em>loop_interval</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application17set_loop_intervalE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the target interval with which to run the <a class="reference internal" href="#class_application_1a00f959f45634506fffa6f54f700aafe7"><span class="std std-ref">loop()</span></a> calls. </p>
+<p>If the <a class="reference internal" href="#class_application_1a00f959f45634506fffa6f54f700aafe7"><span class="std std-ref">loop()</span></a> method takes longer than the target interval, esphomelib won’t sleep in <a class="reference internal" href="#class_application_1a00f959f45634506fffa6f54f700aafe7"><span class="std std-ref">loop()</span></a>, but if the time spent in <a class="reference internal" href="#class_application_1a00f959f45634506fffa6f54f700aafe7"><span class="std std-ref">loop()</span></a> is small than the target, esphomelib will delay at the end of the App.loop() method.</p>
+<p>This is done to conserve power: In most use-cases, high-speed <a class="reference internal" href="#class_application_1a00f959f45634506fffa6f54f700aafe7"><span class="std std-ref">loop()</span></a> calls are not required and degrade power consumption.</p>
+<p>Each component can request a high frequency loop execution by using the <a class="reference internal" href="helpers.html#class_high_frequency_loop_requester"><span class="std std-ref">HighFrequencyLoopRequester</span></a> helper in helpers.h</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">loop_interval</span></code>: The interval in milliseconds to run the core loop at. Defaults to 16 milliseconds. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application11dump_configEv">
+<span id="_CPPv2N11Application11dump_configEv"></span><span id="Application::dump_config"></span><span class="target" id="class_application_1acd311d448723130660c70ee453cb098e"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N11Application20schedule_dump_configEv">
+<span id="_CPPv2N11Application20schedule_dump_configEv"></span><span id="Application::schedule_dump_config"></span><span class="target" id="class_application_1a752a2c04f697541c8d5ccbda9b5f4a5f"></span>void <code class="descname">schedule_dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application20schedule_dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N11Application19register_component_EP9Component">
+<span id="_CPPv2N11Application19register_component_EP9Component"></span><span id="Application::register_component___ComponentP"></span><span class="target" id="class_application_1a9141b86b0b2496568bb6955b5021fcad"></span>void <code class="descname">register_component_</code><span class="sig-paren">(</span><a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a> *<em>comp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N11Application19register_component_EP9Component" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
@@ -1271,8 +1369,23 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dd></dd></dl>
 
 <dl class="member">
+<dt id="_CPPv3N11Application10last_loop_E">
+<span id="_CPPv2N11Application10last_loop_E"></span><span id="Application::last_loop___uint32_t"></span><span class="target" id="class_application_1a8af702068162609f9d025caf979f1145"></span>uint32_t <code class="descname">last_loop_</code> = {0}<a class="headerlink" href="#_CPPv3N11Application10last_loop_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application14loop_interval_E">
+<span id="_CPPv2N11Application14loop_interval_E"></span><span id="Application::loop_interval___uint32_t"></span><span class="target" id="class_application_1afa0d505eec045e43e87ebd6163195b57"></span>uint32_t <code class="descname">loop_interval_</code> = {16}<a class="headerlink" href="#_CPPv3N11Application14loop_interval_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
 <dt id="_CPPv3N11Application4i2c_E">
 <span id="_CPPv2N11Application4i2c_E"></span><span id="Application::i2c___I2CComponentP"></span><span class="target" id="class_application_1a8eac81be254609f9e807c492bc0887ce"></span><a class="reference internal" href="i2c.html#_CPPv312I2CComponent" title="I2CComponent">I2CComponent</a> *<code class="descname">i2c_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N11Application4i2c_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application22dump_config_scheduled_E">
+<span id="_CPPv2N11Application22dump_config_scheduled_E"></span><span id="Application::dump_config_scheduled___b"></span><span class="target" id="class_application_1aeb0e21b811bed4e38f052de2583d369e"></span>bool <code class="descname">dump_config_scheduled_</code> = {false}<a class="headerlink" href="#_CPPv3N11Application22dump_config_scheduled_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1531,17 +1644,17 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
 <dt id="_CPPv3N11Application16MakeFastLEDLight8fast_ledE">
-<span id="_CPPv2N11Application16MakeFastLEDLight8fast_ledE"></span><span id="Application::MakeFastLEDLight::fast_led__light::FastLEDLightOutputComponentP"></span><span class="target" id="struct_application_1_1_make_fast_l_e_d_light_1a760ac1922a8ea1f4cf98d31897e58a44"></span>light::<a class="reference internal" href="../light/fastled.html#_CPPv3N5light27FastLEDLightOutputComponentE" title="light::FastLEDLightOutputComponent">FastLEDLightOutputComponent</a> *<code class="descname">fast_led</code><a class="headerlink" href="#_CPPv3N11Application16MakeFastLEDLight8fast_ledE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application16MakeFastLEDLight8fast_ledE"></span><span id="Application::MakeFastLEDLight::fast_led__light::FastLEDLightOutputComponentP"></span><span class="target" id="struct_application_1_1_make_fast_l_e_d_light_1a760ac1922a8ea1f4cf98d31897e58a44"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/fastled.html#_CPPv3N5light27FastLEDLightOutputComponentE" title="light::FastLEDLightOutputComponent">FastLEDLightOutputComponent</a> *<code class="descname">fast_led</code><a class="headerlink" href="#_CPPv3N11Application16MakeFastLEDLight8fast_ledE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N11Application16MakeFastLEDLight5stateE">
-<span id="_CPPv2N11Application16MakeFastLEDLight5stateE"></span><span id="Application::MakeFastLEDLight::state__light::LightStateP"></span><span class="target" id="struct_application_1_1_make_fast_l_e_d_light_1abfa0d3d6995c53855217cba8443d963c"></span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state</code><a class="headerlink" href="#_CPPv3N11Application16MakeFastLEDLight5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application16MakeFastLEDLight5stateE"></span><span id="Application::MakeFastLEDLight::state__light::LightStateP"></span><span class="target" id="struct_application_1_1_make_fast_l_e_d_light_1abfa0d3d6995c53855217cba8443d963c"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state</code><a class="headerlink" href="#_CPPv3N11Application16MakeFastLEDLight5stateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N11Application16MakeFastLEDLight4mqttE">
-<span id="_CPPv2N11Application16MakeFastLEDLight4mqttE"></span><span id="Application::MakeFastLEDLight::mqtt__light::MQTTJSONLightComponentP"></span><span class="target" id="struct_application_1_1_make_fast_l_e_d_light_1a78dd79732a5042d65fbb6ad4d9f95526"></span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light22MQTTJSONLightComponentE" title="light::MQTTJSONLightComponent">MQTTJSONLightComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application16MakeFastLEDLight4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application16MakeFastLEDLight4mqttE"></span><span id="Application::MakeFastLEDLight::mqtt__light::MQTTJSONLightComponentP"></span><span class="target" id="struct_application_1_1_make_fast_l_e_d_light_1a78dd79732a5042d65fbb6ad4d9f95526"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light22MQTTJSONLightComponentE" title="light::MQTTJSONLightComponent">MQTTJSONLightComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application16MakeFastLEDLight4mqttE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1607,6 +1720,42 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 </dd></dl>
 
 <dl class="class">
+<dt id="_CPPv3N11Application23MakeHomeassistantSensorE">
+<span id="_CPPv2N11Application23MakeHomeassistantSensorE"></span><span id="Application::MakeHomeassistantSensor"></span><span class="target" id="struct_application_1_1_make_homeassistant_sensor"></span><em class="property">struct </em><code class="descname">MakeHomeassistantSensor</code><a class="headerlink" href="#_CPPv3N11Application23MakeHomeassistantSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application23MakeHomeassistantSensor6sensorE">
+<span id="_CPPv2N11Application23MakeHomeassistantSensor6sensorE"></span><span id="Application::MakeHomeassistantSensor::sensor__sensor::HomeassistantSensorP"></span><span class="target" id="struct_application_1_1_make_homeassistant_sensor_1aa5e7bdc1b4a2c4cbef1ce887f3c69fed"></span><a class="reference internal" href="#_CPPv3N11Application23MakeHomeassistantSensor6sensorE" title="Application::MakeHomeassistantSensor::sensor">sensor</a>::HomeassistantSensor *<code class="descname">sensor</code><a class="headerlink" href="#_CPPv3N11Application23MakeHomeassistantSensor6sensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application23MakeHomeassistantSensor4mqttE">
+<span id="_CPPv2N11Application23MakeHomeassistantSensor4mqttE"></span><span id="Application::MakeHomeassistantSensor::mqtt__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_homeassistant_sensor_1a36438372ea54cdadbc2e6b72e5531e45"></span><a class="reference internal" href="#_CPPv3N11Application23MakeHomeassistantSensor6sensorE" title="Application::MakeHomeassistantSensor::sensor">sensor</a>::MQTTSensorComponent *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application23MakeHomeassistantSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application27MakeHomeassistantTextSensorE">
+<span id="_CPPv2N11Application27MakeHomeassistantTextSensorE"></span><span id="Application::MakeHomeassistantTextSensor"></span><span class="target" id="struct_application_1_1_make_homeassistant_text_sensor"></span><em class="property">struct </em><code class="descname">MakeHomeassistantTextSensor</code><a class="headerlink" href="#_CPPv3N11Application27MakeHomeassistantTextSensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application27MakeHomeassistantTextSensor6sensorE">
+<span id="_CPPv2N11Application27MakeHomeassistantTextSensor6sensorE"></span><span id="Application::MakeHomeassistantTextSensor::sensor__text_sensor::HomeassistantTextSensorP"></span><span class="target" id="struct_application_1_1_make_homeassistant_text_sensor_1a5e22fdd8d90bcaa22041d70a953a38f5"></span>text_sensor::HomeassistantTextSensor *<code class="descname">sensor</code><a class="headerlink" href="#_CPPv3N11Application27MakeHomeassistantTextSensor6sensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application27MakeHomeassistantTextSensor4mqttE">
+<span id="_CPPv2N11Application27MakeHomeassistantTextSensor4mqttE"></span><span id="Application::MakeHomeassistantTextSensor::mqtt__text_sensor::MQTTTextSensorP"></span><span class="target" id="struct_application_1_1_make_homeassistant_text_sensor_1a81b8aa22afd9a863027e841a1a4ce96f"></span>text_sensor::<a class="reference internal" href="../text_sensor/index.html#_CPPv3N11text_sensor14MQTTTextSensorE" title="text_sensor::MQTTTextSensor">MQTTTextSensor</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application27MakeHomeassistantTextSensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
 <dt id="_CPPv3N11Application16MakeHTU21DSensorE">
 <span id="_CPPv2N11Application16MakeHTU21DSensorE"></span><span id="Application::MakeHTU21DSensor"></span><span class="target" id="struct_application_1_1_make_h_t_u21_d_sensor"></span><em class="property">struct </em><code class="descname">MakeHTU21DSensor</code><a class="headerlink" href="#_CPPv3N11Application16MakeHTU21DSensorE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -1654,17 +1803,35 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
 <dt id="_CPPv3N11Application9MakeLight6outputE">
-<span id="_CPPv2N11Application9MakeLight6outputE"></span><span id="Application::MakeLight::output__light::LightOutputP"></span><span class="target" id="struct_application_1_1_make_light_1a718e49318cbb023bb0b58b720d0b6750"></span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a> *<code class="descname">output</code><a class="headerlink" href="#_CPPv3N11Application9MakeLight6outputE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application9MakeLight6outputE"></span><span id="Application::MakeLight::output__light::LightOutputP"></span><span class="target" id="struct_application_1_1_make_light_1a718e49318cbb023bb0b58b720d0b6750"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a> *<code class="descname">output</code><a class="headerlink" href="#_CPPv3N11Application9MakeLight6outputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N11Application9MakeLight5stateE">
-<span id="_CPPv2N11Application9MakeLight5stateE"></span><span id="Application::MakeLight::state__light::LightStateP"></span><span class="target" id="struct_application_1_1_make_light_1a25d0865c244e50c744c3285bf2ff24b2"></span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state</code><a class="headerlink" href="#_CPPv3N11Application9MakeLight5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application9MakeLight5stateE"></span><span id="Application::MakeLight::state__light::LightStateP"></span><span class="target" id="struct_application_1_1_make_light_1a25d0865c244e50c744c3285bf2ff24b2"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state</code><a class="headerlink" href="#_CPPv3N11Application9MakeLight5stateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N11Application9MakeLight4mqttE">
-<span id="_CPPv2N11Application9MakeLight4mqttE"></span><span id="Application::MakeLight::mqtt__light::MQTTJSONLightComponentP"></span><span class="target" id="struct_application_1_1_make_light_1afa9fa3ace2c49bd5e03c8941172b1cf7"></span>light::<a class="reference internal" href="../light/index.html#_CPPv3N5light22MQTTJSONLightComponentE" title="light::MQTTJSONLightComponent">MQTTJSONLightComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application9MakeLight4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N11Application9MakeLight4mqttE"></span><span id="Application::MakeLight::mqtt__light::MQTTJSONLightComponentP"></span><span class="target" id="struct_application_1_1_make_light_1afa9fa3ace2c49bd5e03c8941172b1cf7"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light22MQTTJSONLightComponentE" title="light::MQTTJSONLightComponent">MQTTJSONLightComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application9MakeLight4mqttE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application18MakeMAX31855SensorE">
+<span id="_CPPv2N11Application18MakeMAX31855SensorE"></span><span id="Application::MakeMAX31855Sensor"></span><span class="target" id="struct_application_1_1_make_m_a_x31855_sensor"></span><em class="property">struct </em><code class="descname">MakeMAX31855Sensor</code><a class="headerlink" href="#_CPPv3N11Application18MakeMAX31855SensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application18MakeMAX31855Sensor8max31855E">
+<span id="_CPPv2N11Application18MakeMAX31855Sensor8max31855E"></span><span id="Application::MakeMAX31855Sensor::max31855__sensor::MAX31855SensorP"></span><span class="target" id="struct_application_1_1_make_m_a_x31855_sensor_1a0bdac689dacbe57a1584615ec2c356bf"></span>sensor::<a class="reference internal" href="../sensor/max31855.html#_CPPv3N6sensor14MAX31855SensorE" title="sensor::MAX31855Sensor">MAX31855Sensor</a> *<code class="descname">max31855</code><a class="headerlink" href="#_CPPv3N11Application18MakeMAX31855Sensor8max31855E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application18MakeMAX31855Sensor4mqttE">
+<span id="_CPPv2N11Application18MakeMAX31855Sensor4mqttE"></span><span id="Application::MakeMAX31855Sensor::mqtt__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_m_a_x31855_sensor_1afb9f00e61c8f842436ed909efac915e8"></span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor19MQTTSensorComponentE" title="sensor::MQTTSensorComponent">MQTTSensorComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application18MakeMAX31855Sensor4mqttE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1760,6 +1927,29 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
 <dl class="member">
 <dt id="_CPPv3N11Application16MakeMS5611Sensor13mqtt_pressureE">
 <span id="_CPPv2N11Application16MakeMS5611Sensor13mqtt_pressureE"></span><span id="Application::MakeMS5611Sensor::mqtt_pressure__sensor::MQTTSensorComponentP"></span><span class="target" id="struct_application_1_1_make_m_s5611_sensor_1a97c17248779258b26596e59f9d191c69"></span>sensor::<a class="reference internal" href="../sensor/index.html#_CPPv3N6sensor19MQTTSensorComponentE" title="sensor::MQTTSensorComponent">MQTTSensorComponent</a> *<code class="descname">mqtt_pressure</code><a class="headerlink" href="#_CPPv3N11Application16MakeMS5611Sensor13mqtt_pressureE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv3N11Application20MakeNeoPixelBusLightE">
+<span id="_CPPv2N11Application20MakeNeoPixelBusLightE"></span><span id="Application::MakeNeoPixelBusLight"></span><span class="target" id="struct_application_1_1_make_neo_pixel_bus_light"></span><em class="property">template </em>&lt;typename <em>T_METHOD</em>, typename <em>T_COLOR_FEATURE</em>&gt;<br /><em class="property">struct </em><code class="descname">MakeNeoPixelBusLight</code><a class="headerlink" href="#_CPPv3N11Application20MakeNeoPixelBusLightE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11Application20MakeNeoPixelBusLight6outputE">
+<span id="_CPPv2N11Application20MakeNeoPixelBusLight6outputE"></span><span id="Application::MakeNeoPixelBusLight::output__light::NeoPixelBusLightOutputBase:T_METHOD.T_COLOR_FEATURE:P"></span><span class="target" id="struct_application_1_1_make_neo_pixel_bus_light_1a60a7aa52c487b95c1c55a6e4f618df63"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::NeoPixelBusLightOutputBase&lt;T_METHOD, T_COLOR_FEATURE&gt; *<code class="descname">output</code><a class="headerlink" href="#_CPPv3N11Application20MakeNeoPixelBusLight6outputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application20MakeNeoPixelBusLight5stateE">
+<span id="_CPPv2N11Application20MakeNeoPixelBusLight5stateE"></span><span id="Application::MakeNeoPixelBusLight::state__light::LightStateP"></span><span class="target" id="struct_application_1_1_make_neo_pixel_bus_light_1aeb57db1f901750e5c1075f0d1744bb3c"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light10LightStateE" title="light::LightState">LightState</a> *<code class="descname">state</code><a class="headerlink" href="#_CPPv3N11Application20MakeNeoPixelBusLight5stateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N11Application20MakeNeoPixelBusLight4mqttE">
+<span id="_CPPv2N11Application20MakeNeoPixelBusLight4mqttE"></span><span id="Application::MakeNeoPixelBusLight::mqtt__light::MQTTJSONLightComponentP"></span><span class="target" id="struct_application_1_1_make_neo_pixel_bus_light_1a858b49fa38b23a6f0a01fb8d12944437"></span><a class="reference internal" href="../light/addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="../light/index.html#_CPPv3N5light22MQTTJSONLightComponentE" title="light::MQTTJSONLightComponent">MQTTJSONLightComponent</a> *<code class="descname">mqtt</code><a class="headerlink" href="#_CPPv3N11Application20MakeNeoPixelBusLight4mqttE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -2134,7 +2324,7 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -2150,11 +2340,11 @@ and <cite>get_setup_priority()</cite> overrides. The Application will then autom
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

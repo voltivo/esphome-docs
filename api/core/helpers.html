@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Helpers &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Helpers &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/helpers.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -54,6 +55,7 @@
 <li><a class="reference internal" href="#">Helpers</a><ul>
 <li><a class="reference internal" href="#api-reference">API Reference</a><ul>
 <li><a class="reference internal" href="#helpers-h">helpers.h</a></li>
+<li><a class="reference internal" href="#util-h">util.h</a></li>
 <li><a class="reference internal" href="#optional-h">optional.h</a></li>
 <li><a class="reference internal" href="#esppreferences">ESPPreferences</a></li>
 <li><a class="reference internal" href="#esphal-h">esphal.h</a></li>
@@ -129,8 +131,13 @@
 <dl class="function">
 <dt id="_CPPv315get_mac_addressv">
 <span id="_CPPv215get_mac_addressv"></span><span id="get_mac_address"></span><span class="target" id="helpers_8h_1ae85954b30d23902990446129c386baf9"></span>std::string <code class="descname">get_mac_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315get_mac_addressv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the MAC address as a string, this can be used as way to identify this ESP32. </p>
+<dd><p>Gets the MAC address as a string, this can be used as way to identify this ESP. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322get_mac_address_prettyv">
+<span id="_CPPv222get_mac_address_prettyv"></span><span id="get_mac_address_pretty"></span><span class="target" id="helpers_8h_1aaba8e30fba7eaad6014adeac0f027542"></span>std::string <code class="descname">get_mac_address_pretty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322get_mac_address_prettyv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv315tick_status_ledv">
@@ -140,6 +147,66 @@
 <dl class="function">
 <dt id="_CPPv38feed_wdtv">
 <span id="_CPPv28feed_wdtv"></span><span id="feed_wdt"></span><span class="target" id="helpers_8h_1a31caff2afb2566a779b9842bc03ac298"></span>void <code class="descname">feed_wdt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38feed_wdtv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringNSt6stringE">
+<span id="_CPPv29to_stringNSt6stringE"></span><span id="to_string__ss"></span><span class="target" id="helpers_8h_1a0244eb160da8a9566d80a6afd4d77471"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>std::string <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_string6String">
+<span id="_CPPv29to_string6String"></span><span id="to_string__String"></span><span class="target" id="helpers_8h_1ac5511ae2ee656a0341568b522a88866f"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>String <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_string6String" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringi">
+<span id="_CPPv29to_stringi"></span><span id="to_string__i"></span><span class="target" id="helpers_8h_1a6f05969b317a3986b88c8756c79a8a5c"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>int <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringl">
+<span id="_CPPv29to_stringl"></span><span id="to_string__l"></span><span class="target" id="helpers_8h_1a633d915b172a785c0ac9212cc2323b75"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>long <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringl" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringx">
+<span id="_CPPv29to_stringx"></span><span id="to_string__l-l"></span><span class="target" id="helpers_8h_1a19121f9ba60d77b3b0ecec3af55f89bc"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>long long <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringx" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringj">
+<span id="_CPPv29to_stringj"></span><span id="to_string__unsigned"></span><span class="target" id="helpers_8h_1aedeb7fae3decd879c31c9c4207f7f8e4"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>unsigned <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringj" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringm">
+<span id="_CPPv29to_stringm"></span><span id="to_string__unsigned-l"></span><span class="target" id="helpers_8h_1ab87a3efdec6b4854096f6be5e4f5598b"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>unsigned long <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringm" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringy">
+<span id="_CPPv29to_stringy"></span><span id="to_string__unsigned-l-l"></span><span class="target" id="helpers_8h_1ab929e10985fb4b17176a86c5f44457ce"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>unsigned long long <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringy" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringf">
+<span id="_CPPv29to_stringf"></span><span id="to_string__float"></span><span class="target" id="helpers_8h_1aed994bb03c79ec6119f5d79f2351a3a7"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>float <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringd">
+<span id="_CPPv29to_stringd"></span><span id="to_string__double"></span><span class="target" id="helpers_8h_1a6f1e8e158d15f02849cfa21df8143630"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>double <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39to_stringe">
+<span id="_CPPv29to_stringe"></span><span id="to_string__l-double"></span><span class="target" id="helpers_8h_1aba29d5eb8863302596c410afd3990e7d"></span>std::string <code class="descname">to_string</code><span class="sig-paren">(</span>long double <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39to_stringe" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311parse_floatRKNSt6stringE">
+<span id="_CPPv211parse_floatRKNSt6stringE"></span><span id="parse_float__ssCR"></span><span class="target" id="helpers_8h_1a687ae0717f8f087066e06545660f0a0f"></span><a class="reference internal" href="#_CPPv38optional" title="optional">optional</a>&lt;float&gt; <code class="descname">parse_float</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311parse_floatRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -297,6 +364,26 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv320fast_random_set_seed8uint32_t">
+<span id="_CPPv220fast_random_set_seed8uint32_t"></span><span id="fast_random_set_seed__uint32_t"></span><span class="target" id="helpers_8h_1abebae954fbccb834c01487eef9c48673"></span>void <code class="descname">fast_random_set_seed</code><span class="sig-paren">(</span>uint32_t <em>seed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320fast_random_set_seed8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314fast_random_32v">
+<span id="_CPPv214fast_random_32v"></span><span id="fast_random_32"></span><span class="target" id="helpers_8h_1a681c327f2280caec984997636c87c91b"></span>uint32_t <code class="descname">fast_random_32</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314fast_random_32v" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314fast_random_16v">
+<span id="_CPPv214fast_random_16v"></span><span id="fast_random_16"></span><span class="target" id="helpers_8h_1ae4c3e18bf57551668fd196b6e75c478f"></span>uint16_t <code class="descname">fast_random_16</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314fast_random_16v" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313fast_random_8v">
+<span id="_CPPv213fast_random_8v"></span><span id="fast_random_8"></span><span class="target" id="helpers_8h_1a83a9275f7f2ed384e9694971fe4d7197"></span>uint8_t <code class="descname">fast_random_8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313fast_random_8v" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv313gamma_correctff">
 <span id="_CPPv213gamma_correctff"></span><span id="gamma_correct__float.float"></span><span class="target" id="helpers_8h_1af980d5587333268940f0594246fd083b"></span>float <code class="descname">gamma_correct</code><span class="sig-paren">(</span>float <em>value</em>, float <em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313gamma_correctff" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Applies gamma correction with the provided gamma to value. </p>
@@ -410,6 +497,40 @@
 <dd></dd></dl>
 
 </div>
+<dl class="class">
+<dt id="_CPPv326HighFrequencyLoopRequester">
+<span id="_CPPv226HighFrequencyLoopRequester"></span><span id="HighFrequencyLoopRequester"></span><span class="target" id="class_high_frequency_loop_requester"></span><em class="property">class </em><code class="descname">HighFrequencyLoopRequester</code><a class="headerlink" href="#_CPPv326HighFrequencyLoopRequester" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N26HighFrequencyLoopRequester5startEv">
+<span id="_CPPv2N26HighFrequencyLoopRequester5startEv"></span><span id="HighFrequencyLoopRequester::start"></span><span class="target" id="class_high_frequency_loop_requester_1ae2e8b8c8affc7181f50f9f0fa0ddabe0"></span>void <code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N26HighFrequencyLoopRequester5startEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N26HighFrequencyLoopRequester4stopEv">
+<span id="_CPPv2N26HighFrequencyLoopRequester4stopEv"></span><span id="HighFrequencyLoopRequester::stop"></span><span class="target" id="class_high_frequency_loop_requester_1a68984130b4fae1e4345da21e8994ed76"></span>void <code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N26HighFrequencyLoopRequester4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv3N26HighFrequencyLoopRequester17is_high_frequencyEv">
+<span id="_CPPv2N26HighFrequencyLoopRequester17is_high_frequencyEv"></span><span id="HighFrequencyLoopRequester::is_high_frequency"></span><span class="target" id="class_high_frequency_loop_requester_1a329e7a74e77438f8df88d630f39cd6fc"></span>bool <code class="descname">is_high_frequency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N26HighFrequencyLoopRequester17is_high_frequencyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N26HighFrequencyLoopRequester8started_E">
+<span id="_CPPv2N26HighFrequencyLoopRequester8started_E"></span><span id="HighFrequencyLoopRequester::started___b"></span><span class="target" id="class_high_frequency_loop_requester_1a0ad30a5a679f71645b2775048b02e63e"></span>bool <code class="descname">started_</code> = {false}<a class="headerlink" href="#_CPPv3N26HighFrequencyLoopRequester8started_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 <dl class="class">
 <dt id="_CPPv326SlidingWindowMovingAverage">
 <span id="_CPPv226SlidingWindowMovingAverage"></span><span id="SlidingWindowMovingAverage"></span><span class="target" id="class_sliding_window_moving_average"></span><em class="property">class </em><code class="descname">SlidingWindowMovingAverage</code><a class="headerlink" href="#_CPPv326SlidingWindowMovingAverage" title="Permalink to this definition">¶</a><br /></dt>
@@ -752,6 +873,13 @@
 
 </dd></dl>
 
+</div>
+<div class="section" id="util-h">
+<h3>util.h<a class="headerlink" href="#util-h" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenfile: Cannot find file “esphomelib/uil.h </p>
+</div>
 </div>
 <div class="section" id="optional-h">
 <h3>optional.h<a class="headerlink" href="#optional-h" title="Permalink to this headline">¶</a></h3>
@@ -1097,11 +1225,6 @@
 <dl class="function">
 <dt id="_CPPv3N14ESPPreferences15make_preferenceE8uint32_t">
 <span id="_CPPv2N14ESPPreferences15make_preferenceE8uint32_t"></span><span id="ESPPreferences::make_preference__uint32_t"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_e_s_p_preferences_1a65acab8fcd06f0e7bc76d00a71c7dad9"></span><a class="reference internal" href="#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">make_preference</code><span class="sig-paren">(</span>uint32_t <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences15make_preferenceE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv3N14ESPPreferences15make_preferenceE8uint32_tRKNSt6stringE">
-<span id="_CPPv2N14ESPPreferences15make_preferenceE8uint32_tRKNSt6stringE"></span><span id="ESPPreferences::make_preference__uint32_t.ssCR"></span><em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="class_e_s_p_preferences_1a6431f49868f31c789b8a28a20d339371"></span><a class="reference internal" href="#_CPPv319ESPPreferenceObject" title="ESPPreferenceObject">ESPPreferenceObject</a> <code class="descname">make_preference</code><span class="sig-paren">(</span>uint32_t <em>type</em>, <em class="property">const</em> std::string &amp;<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N14ESPPreferences15make_preferenceE8uint32_tRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1554,7 +1677,7 @@ seems to have lots of timing issues with the ESP8266/ESP32. That’s why ESPOneW
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -1570,11 +1693,11 @@ seems to have lots of timing issues with the ESP8266/ESP32. That’s why ESPOneW
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

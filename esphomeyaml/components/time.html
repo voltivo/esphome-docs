@@ -24,13 +24,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Time &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Time &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/time.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -71,7 +72,8 @@
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Time</a><ul>
-<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#home-assistant-time-source">Home Assistant Time Source</a></li>
+<li><a class="reference internal" href="#sntp-configuration">SNTP Configuration</a></li>
 <li><a class="reference internal" href="#use-in-lambdas">Use In Lambdas</a><ul>
 <li><a class="reference internal" href="#strftime">strftime</a></li>
 </ul>
@@ -94,17 +96,40 @@
 <span id="id1"></span><h1>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> component allows you to set up real time clock time sources for esphomelib.
 You can then get the current time in <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>.
-Currently only sntp (internet-based) time is supported.</p>
+Currently only sntp (internet-based) and homeassistant time sources are supported.</p>
+<div class="section" id="home-assistant-time-source">
+<h2>Home Assistant Time Source<a class="headerlink" href="#home-assistant-time-source" title="Permalink to this headline">¶</a></h2>
+<p>The preferred way to get time in esphomelib is using Home Assistant.
+With the <code class="docutils literal notranslate"><span class="pre">homeassistant</span></code> time platform, the <a class="reference internal" href="api.html"><span class="doc">native API</span></a> connection
+to Home Assistant will be used to periodically synchronize the current time.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">homeassistant</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">homeassistant_time</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul class="simple">
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Specify the ID of the time for use in lambdas.</li>
+<li><strong>timezone</strong> (<em>Optional</em>, string): Manually tell esphomelib what timezone to use with <a class="reference external" href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html">this format</a> (warning: the format is quite complicated)
+or the simpler <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">TZ database name</a> in the form
+&lt;Region&gt;/&lt;City&gt;. esphomeyaml tries to automatically infer the timezone string based on the timezone of the computer
+that is running esphomeyaml, but this might not always be accurate.</li>
+<li><strong>on_time</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): Automation to run at specific intervals using
+a cron-like syntax. See <a class="reference internal" href="#time-on-time"><span class="std std-ref">on_time</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="sntp-configuration">
+<h2>SNTP Configuration<a class="headerlink" href="#sntp-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp</span>
     <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sntp_time</span>
 </pre></div>
 </div>
-<div class="section" id="configuration-variables">
-<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<p>Configuration variables:</p>
 <ul class="simple">
-<li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Specify the ID of the time for use in lambdas.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Specify the ID of the time for use in lambdas.</li>
 <li><strong>timezone</strong> (<em>Optional</em>, string): Manually tell esphomelib what timezone to use with <a class="reference external" href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html">this format</a> (warning: the format is quite complicated) or the simpler <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">TZ database name</a> in the form &lt;Region&gt;/&lt;City&gt;.
 esphomeyaml tries to automatically infer the timezone string based on the timezone of the computer that is running
 esphomeyaml, but this might not always be accurate.</li>
@@ -113,12 +138,6 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">0.pool.
 <li><strong>on_time</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): Automation to run at specific intervals using
 a cron-like syntax. See <a class="reference internal" href="#time-on-time"><span class="std std-ref">on_time</span></a>.</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">To use the automatic timezone detection you will need to have the python <code class="docutils literal notranslate"><span class="pre">tzlocal</span></code> package installed.
-If you’re running this as a HassIO add-on or with the official esphomeyaml docker image, it should already
-be installed. Otherwise you need to install it using <code class="docutils literal notranslate"><span class="pre">pip2</span> <span class="pre">install</span> <span class="pre">tzlocal</span></code>.</p>
-</div>
 </div>
 <div class="section" id="use-in-lambdas">
 <h2>Use In Lambdas<a class="headerlink" href="#use-in-lambdas" title="Permalink to this headline">¶</a></h2>
@@ -462,7 +481,7 @@ once per 5 minutes as the seconds variable is not set:</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -478,11 +497,11 @@ once per 5 minutes as the seconds variable is not set:</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

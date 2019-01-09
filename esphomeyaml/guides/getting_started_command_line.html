@@ -23,19 +23,20 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Getting Started with esphomeyaml &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Getting Started with esphomeyaml &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/getting_started_command_line.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Getting Started with esphomeyaml through HassIO" href="getting_started_hassio.html" />
+    <link rel="next" title="Getting Started with esphomeyaml through Hass.io" href="getting_started_hassio.html" />
     <link rel="prev" title="Frequently Asked Questions" href="faq.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -107,7 +108,7 @@ basic “node” in a few simple steps.</p>
 </div>
 <p>Alternatively, there’s also a docker image available for easy
 installation (the docker hub image is only available for amd64 right now; if you have
-an RPi, please install esphomelib through <code class="docutils literal notranslate"><span class="pre">pip</span></code> or use <a class="reference internal" href="getting_started_hassio.html"><span class="doc">the HassIO add-on</span></a>:</p>
+an RPi, please install esphomelib through <code class="docutils literal notranslate"><span class="pre">pip</span></code> or use <a class="reference internal" href="getting_started_hassio.html"><span class="doc">the Hass.io add-on</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre>docker pull ottowinter/esphomeyaml
 </pre></div>
 </div>
@@ -120,7 +121,7 @@ configuration file. For example, if you want to create a configuration
 file called <code class="docutils literal notranslate"><span class="pre">livingroom.yaml</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml livingroom.yaml wizard
 <span class="c1"># On Docker:</span>
-docker run --rm -v <span class="s2">&quot;`pwd`&quot;</span>:/config -it ottowinter/esphomeyaml livingroom.yaml wizard
+docker run --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/config -it ottowinter/esphomeyaml livingroom.yaml wizard
 </pre></div>
 </div>
 <div class="admonition note">
@@ -234,7 +235,7 @@ me via the <a class="reference external" href="https://discord.gg/KhAMKrd">Disco
 <h2>Bonus: esphomeyaml dashboard<a class="headerlink" href="#bonus-esphomeyaml-dashboard" title="Permalink to this headline">¶</a></h2>
 <p>Starting with version 1.6.0, esphomeyaml features a dashboard that you can use to
 easily manage your nodes from a nice web interface. It was primarily designed for
-<a class="reference internal" href="getting_started_hassio.html"><span class="doc">the HassIO add-on</span></a>, but also works with a simple command.</p>
+<a class="reference internal" href="getting_started_hassio.html"><span class="doc">the Hass.io add-on</span></a>, but also works with a simple command.</p>
 <p>To start the esphomeyaml dashboard, simply start esphomeyaml with the following command
 (with <code class="docutils literal notranslate"><span class="pre">config/</span></code> pointing to a directory where you want to store your configurations)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span class="c1"># Install dashboard dependencies</span>
@@ -287,7 +288,7 @@ esphomeyaml’s great configuration options.</p>
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="../index.html"><span class="doc">esphomeyaml index</span></a></li>
-<li><a class="reference internal" href="getting_started_hassio.html"><span class="doc">Getting Started with esphomeyaml through HassIO</span></a></li>
+<li><a class="reference internal" href="getting_started_hassio.html"><span class="doc">Getting Started with esphomeyaml through Hass.io</span></a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/guides/getting_started_command_line.rst">Edit this page on GitHub</a></li>
 </ul>
 <div data-disqus-identifier="esphomeyaml-guides-getting_started_command_line" id="disqus_thread"></div></div>
@@ -304,7 +305,7 @@ esphomeyaml’s great configuration options.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -320,11 +321,11 @@ esphomeyaml’s great configuration options.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

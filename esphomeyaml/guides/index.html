@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Guides &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Guides &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -71,11 +72,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#all-triggers">All Triggers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#all-actions">All Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automations.html#all-conditions">All Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#delay-action"><code class="docutils literal notranslate"><span class="pre">delay</span></code> Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#lambda-action"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automations.html#lambda-condition"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automations.html#and-or-condition"><code class="docutils literal notranslate"><span class="pre">and</span></code> / <code class="docutils literal notranslate"><span class="pre">or</span></code> Condition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#if-action"><code class="docutils literal notranslate"><span class="pre">if</span></code> Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automations.html#while-action"><code class="docutils literal notranslate"><span class="pre">while</span></code> Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#component-update-action"><code class="docutils literal notranslate"><span class="pre">component.update</span></code> Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#script-execute-action"><code class="docutils literal notranslate"><span class="pre">script.execute</span></code> Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automations.html#script-stop-action"><code class="docutils literal notranslate"><span class="pre">script.stop</span></code> Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automations.html#interval"><code class="docutils literal notranslate"><span class="pre">interval</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="automations.html#see-also">See Also</a></li>
 </ul>
 </li>
@@ -100,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="configuration-types.html#pin">Pin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration-types.html#pin-schema">Pin Schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration-types.html#time">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration-types.html#substitutions">Substitutions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration-types.html#see-also">See Also</a></li>
 </ul>
 </li>
@@ -140,10 +148,10 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started_command_line.html#see-also">See Also</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started_hassio.html">Getting Started with esphomeyaml through HassIO</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_hassio.html">Getting Started with esphomeyaml through Hass.io</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started_hassio.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started_hassio.html#dashboard-interface">Dashboard Interface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="getting_started_hassio.html#hassio-add-on-options">HassIO add-on options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting_started_hassio.html#hass-io-add-on-options">Hass.io add-on options</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started_hassio.html#adding-some-basic-features">Adding some (basic) features</a></li>
@@ -186,7 +194,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -202,11 +210,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

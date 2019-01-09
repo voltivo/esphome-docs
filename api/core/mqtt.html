@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>MQTT Client &#8212; ESPHome 1.9.3 documentation</title>
+    <title>MQTT Client &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/mqtt.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -57,6 +58,7 @@
 <li><a class="reference internal" href="#mqttcomponent">MQTTComponent</a></li>
 <li><a class="reference internal" href="#triggers">Triggers</a></li>
 <li><a class="reference internal" href="#actions">Actions</a></li>
+<li><a class="reference internal" href="#custommqttdevice">CustomMQTTDevice</a></li>
 </ul>
 </li>
 </ul>
@@ -128,8 +130,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N4mqtt19MQTTClientComponent18set_discovery_infoERRNSt6stringEb">
-<span id="_CPPv2N4mqtt19MQTTClientComponent18set_discovery_infoERRNSt6stringEb"></span><span id="mqtt::MQTTClientComponent::set_discovery_info__ssRR.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a2e6766162399d0381a5e08a42d6bffab"></span>void <code class="descname">set_discovery_info</code><span class="sig-paren">(</span>std::string &amp;&amp;<em>prefix</em>, bool <em>retain</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent18set_discovery_infoERRNSt6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt19MQTTClientComponent18set_discovery_infoERRNSt6stringEbb">
+<span id="_CPPv2N4mqtt19MQTTClientComponent18set_discovery_infoERRNSt6stringEbb"></span><span id="mqtt::MQTTClientComponent::set_discovery_info__ssRR.b.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a915966ba2fbf3c82a5cb0932ab7131b4"></span>void <code class="descname">set_discovery_info</code><span class="sig-paren">(</span>std::string &amp;&amp;<em>prefix</em>, bool <em>retain</em>, bool <em>clean</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent18set_discovery_infoERRNSt6stringEbb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the Home Assistant discovery info. </p>
 <p>See <a class="reference external" href="https://www.home-assistant.io/docs/mqtt/discovery/">MQTT Discovery</a>. <dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -144,7 +146,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK4mqtt19MQTTClientComponent18get_discovery_infoEv">
-<span id="_CPPv2NK4mqtt19MQTTClientComponent18get_discovery_infoEv"></span><span id="mqtt::MQTTClientComponent::get_discovery_infoC"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1aaac1f701f8f88037b608aade04a79e62"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4mqtt17MQTTDiscoveryInfoE" title="mqtt::MQTTDiscoveryInfo">MQTTDiscoveryInfo</a> &amp;<code class="descname">get_discovery_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4mqtt19MQTTClientComponent18get_discovery_infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK4mqtt19MQTTClientComponent18get_discovery_infoEv"></span><span id="mqtt::MQTTClientComponent::get_discovery_infoC"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a597eca76a500a862c03638e771b9cc82"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4mqtt17MQTTDiscoveryInfoE" title="mqtt::MQTTDiscoveryInfo">MQTTDiscoveryInfo</a> &amp;<code class="descname">get_discovery_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4mqtt19MQTTClientComponent18get_discovery_infoEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get Home Assistant discovery info. </p>
 </dd></dl>
 
@@ -184,7 +186,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent16get_availabilityEv">
-<span id="_CPPv2N4mqtt19MQTTClientComponent16get_availabilityEv"></span><span id="mqtt::MQTTClientComponent::get_availability"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a1fae8a359fb53eb46c2a874e76b3e000"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4mqtt12AvailabilityE" title="mqtt::Availability">Availability</a> &amp;<code class="descname">get_availability</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent16get_availabilityEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt19MQTTClientComponent16get_availabilityEv"></span><span id="mqtt::MQTTClientComponent::get_availability"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ac08c2e364a403ede46503dba876eeb93"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4mqtt12AvailabilityE" title="mqtt::Availability">Availability</a> &amp;<code class="descname">get_availability</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent16get_availabilityEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -205,7 +207,7 @@
 
 <dl class="function">
 <dt id="_CPPv3NK4mqtt19MQTTClientComponent16get_topic_prefixEv">
-<span id="_CPPv2NK4mqtt19MQTTClientComponent16get_topic_prefixEv"></span><span id="mqtt::MQTTClientComponent::get_topic_prefixC"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a91c629e70fdefe7999678a24dedeb448"></span><em class="property">const</em> std::string &amp;<code class="descname">get_topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4mqtt19MQTTClientComponent16get_topic_prefixEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2NK4mqtt19MQTTClientComponent16get_topic_prefixEv"></span><span id="mqtt::MQTTClientComponent::get_topic_prefixC"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a7786334506ba27e1a627e3147bbd46c9"></span><em class="property">const</em> std::string &amp;<code class="descname">get_topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4mqtt19MQTTClientComponent16get_topic_prefixEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the topic prefix of this device, using default if necessary. </p>
 </dd></dl>
 
@@ -248,8 +250,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N4mqtt19MQTTClientComponent14subscribe_jsonERKNSt6stringE12json_parse_t7uint8_t">
-<span id="_CPPv2N4mqtt19MQTTClientComponent14subscribe_jsonERKNSt6stringE12json_parse_t7uint8_t"></span><span id="mqtt::MQTTClientComponent::subscribe_json__ssCR.json_parse_t.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a849bd7061cbc0ea8667565cd0f35202d"></span>void <code class="descname">subscribe_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <a class="reference internal" href="helpers.html#_CPPv312json_parse_t" title="json_parse_t">json_parse_t</a> <em>callback</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent14subscribe_jsonERKNSt6stringE12json_parse_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt19MQTTClientComponent14subscribe_jsonERKNSt6stringE20mqtt_json_callback_t7uint8_t">
+<span id="_CPPv2N4mqtt19MQTTClientComponent14subscribe_jsonERKNSt6stringE20mqtt_json_callback_t7uint8_t"></span><span id="mqtt::MQTTClientComponent::subscribe_json__ssCR.mqtt_json_callback_t.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a0e947fe8ac50afffcf9e95afe06a0ee8"></span>void <code class="descname">subscribe_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, mqtt_json_callback_t <em>callback</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent14subscribe_jsonERKNSt6stringE20mqtt_json_callback_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Subscribe to a MQTT topic and automatically parse JSON payload. </p>
 <p>If an invalid JSON payload is received, the callback will not be called.</p>
 <p><dl class="docutils">
@@ -266,7 +268,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent7publishERK11MQTTMessage">
-<span id="_CPPv2N4mqtt19MQTTClientComponent7publishERK11MQTTMessage"></span><span id="mqtt::MQTTClientComponent::publish__MQTTMessageCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ad3999bca2b76f44fb2ae16967c11eb27"></span>void <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4mqtt11MQTTMessageE" title="mqtt::MQTTMessage">MQTTMessage</a> &amp;<em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent7publishERK11MQTTMessage" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt19MQTTClientComponent7publishERK11MQTTMessage"></span><span id="mqtt::MQTTClientComponent::publish__MQTTMessageCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a8b845688228f2fa523fdfdcf71f0c4ff"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3N4mqtt11MQTTMessageE" title="mqtt::MQTTMessage">MQTTMessage</a> &amp;<em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent7publishERK11MQTTMessage" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Publish a <a class="reference internal" href="#structmqtt_1_1_m_q_t_t_message"><span class="std std-ref">MQTTMessage</span></a>. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -280,7 +282,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent7publishERKNSt6stringERKNSt6stringE7uint8_tb">
-<span id="_CPPv2N4mqtt19MQTTClientComponent7publishERKNSt6stringERKNSt6stringE7uint8_tb"></span><span id="mqtt::MQTTClientComponent::publish__ssCR.ssCR.uint8_t.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1af8b4e4416480fc0f0839e0b3de4decda"></span>void <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> std::string &amp;<em>payload</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent7publishERKNSt6stringERKNSt6stringE7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt19MQTTClientComponent7publishERKNSt6stringERKNSt6stringE7uint8_tb"></span><span id="mqtt::MQTTClientComponent::publish__ssCR.ssCR.uint8_t.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ac2866c2b369c34cc41c0e9477639806e"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> std::string &amp;<em>payload</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent7publishERKNSt6stringERKNSt6stringE7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Publish a MQTT message. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -296,12 +298,12 @@
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent7publishERKNSt6stringEPKc6size_t7uint8_tb">
-<span id="_CPPv2N4mqtt19MQTTClientComponent7publishERKNSt6stringEPKc6size_t7uint8_tb"></span><span id="mqtt::MQTTClientComponent::publish__ssCR.cCP.s.uint8_t.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a837edd686d51159cdc73b0457bf57ff4"></span>void <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> char *<em>payload</em>, size_t <em>payload_length</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent7publishERKNSt6stringEPKc6size_t7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt19MQTTClientComponent7publishERKNSt6stringEPKc6size_t7uint8_tb"></span><span id="mqtt::MQTTClientComponent::publish__ssCR.cCP.s.uint8_t.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a7cb5bf787559a4bd79ecaa546fc56f45"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> char *<em>payload</em>, size_t <em>payload_length</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent7publishERKNSt6stringEPKc6size_t7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb">
-<span id="_CPPv2N4mqtt19MQTTClientComponent12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb"></span><span id="mqtt::MQTTClientComponent::publish_json__ssCR.json_build_tCR.uint8_t.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a580376c46a90351e1836fb8427deaf6d"></span>void <code class="descname">publish_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt19MQTTClientComponent12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb"></span><span id="mqtt::MQTTClientComponent::publish_json__ssCR.json_build_tCR.uint8_t.b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ae524f7ba8e973294ab484fe4fd2812a0"></span>bool <code class="descname">publish_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct and send a JSON MQTT message. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -344,13 +346,13 @@
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N4mqtt19MQTTClientComponent20make_message_triggerERKNSt6stringE7uint8_t">
-<span id="_CPPv2N4mqtt19MQTTClientComponent20make_message_triggerERKNSt6stringE7uint8_t"></span><span id="mqtt::MQTTClientComponent::make_message_trigger__ssCR.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ad99c190fd3df3d6a16b2c3303d60b05c"></span><a class="reference internal" href="#_CPPv3N4mqtt18MQTTMessageTriggerE" title="mqtt::MQTTMessageTrigger">MQTTMessageTrigger</a> *<code class="descname">make_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent20make_message_triggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt19MQTTClientComponent20make_message_triggerERKNSt6stringE">
+<span id="_CPPv2N4mqtt19MQTTClientComponent20make_message_triggerERKNSt6stringE"></span><span id="mqtt::MQTTClientComponent::make_message_trigger__ssCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ad9a699160429f34f312496e51907cb1c"></span><a class="reference internal" href="#_CPPv3N4mqtt18MQTTMessageTriggerE" title="mqtt::MQTTMessageTrigger">MQTTMessageTrigger</a> *<code class="descname">make_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent20make_message_triggerERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent25make_json_message_triggerERKNSt6stringE7uint8_t">
-<span id="_CPPv2N4mqtt19MQTTClientComponent25make_json_message_triggerERKNSt6stringE7uint8_t"></span><span id="mqtt::MQTTClientComponent::make_json_message_trigger__ssCR.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1afbabb8392bdf5066835b22872eb957eb"></span><a class="reference internal" href="#_CPPv3N4mqtt22MQTTJsonMessageTriggerE" title="mqtt::MQTTJsonMessageTrigger">MQTTJsonMessageTrigger</a> *<code class="descname">make_json_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent25make_json_message_triggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt19MQTTClientComponent25make_json_message_triggerERKNSt6stringE7uint8_t"></span><span id="mqtt::MQTTClientComponent::make_json_message_trigger__ssCR.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ab7f2a37e8ea6a8919922dd63f6e61bf3"></span><a class="reference internal" href="#_CPPv3N4mqtt22MQTTJsonMessageTriggerE" title="mqtt::MQTTJsonMessageTrigger">MQTTJsonMessageTrigger</a> *<code class="descname">make_json_message_trigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent25make_json_message_triggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -398,10 +400,35 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent15start_dnslookupEv">
+<span id="_CPPv2N4mqtt19MQTTClientComponent15start_dnslookupEv"></span><span id="mqtt::MQTTClientComponent::start_dnslookup"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a559e58c26183ff711485ccf05006a771"></span>void <code class="descname">start_dnslookup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent15start_dnslookupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent15check_dnslookupEv">
+<span id="_CPPv2N4mqtt19MQTTClientComponent15check_dnslookupEv"></span><span id="mqtt::MQTTClientComponent::check_dnslookup"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a51cd35c08619db1bb7d6dbbc8fbb1601"></span>void <code class="descname">check_dnslookup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent15check_dnslookupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent24recalculate_availabilityEv">
 <span id="_CPPv2N4mqtt19MQTTClientComponent24recalculate_availabilityEv"></span><span id="mqtt::MQTTClientComponent::recalculate_availability"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ab010768d6643b6c0f8da28c7ee790714"></span>void <code class="descname">recalculate_availability</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent24recalculate_availabilityEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Re-calculate the availability property. </p>
 </dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent10subscribe_EPKc7uint8_t">
+<span id="_CPPv2N4mqtt19MQTTClientComponent10subscribe_EPKc7uint8_t"></span><span id="mqtt::MQTTClientComponent::subscribe___cCP.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ab2d8bba36cbd50ae56f0f2a6b9805024"></span>bool <code class="descname">subscribe_</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>topic</em>, uint8_t <em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent10subscribe_EPKc7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent25resubscribe_subscription_EP16MQTTSubscription">
+<span id="_CPPv2N4mqtt19MQTTClientComponent25resubscribe_subscription_EP16MQTTSubscription"></span><span id="mqtt::MQTTClientComponent::resubscribe_subscription___MQTTSubscriptionP"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a8545b9b6cdff1c0a92b78bccedf754ab"></span>void <code class="descname">resubscribe_subscription_</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N4mqtt16MQTTSubscriptionE" title="mqtt::MQTTSubscription">MQTTSubscription</a> *<em>sub</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent25resubscribe_subscription_EP16MQTTSubscription" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent26resubscribe_subscriptions_Ev">
+<span id="_CPPv2N4mqtt19MQTTClientComponent26resubscribe_subscriptions_Ev"></span><span id="mqtt::MQTTClientComponent::resubscribe_subscriptions_"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a633f4cf3c25e7d5d6364b543ac9cb793"></span>void <code class="descname">resubscribe_subscriptions_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent26resubscribe_subscriptions_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -440,7 +467,8 @@
 <dt id="_CPPv3N4mqtt19MQTTClientComponent15discovery_info_E">
 <span id="_CPPv2N4mqtt19MQTTClientComponent15discovery_info_E"></span><span id="mqtt::MQTTClientComponent::discovery_info___MQTTDiscoveryInfo"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a150d812daff48b34160facc53b5f79a6"></span><a class="reference internal" href="#_CPPv3N4mqtt17MQTTDiscoveryInfoE" title="mqtt::MQTTDiscoveryInfo">MQTTDiscoveryInfo</a> <code class="descname">discovery_info_</code><p>{</p>
 <p>      .prefix = “homeassistant”,</p>
-<p>      .retain = true</p>
+<p>      .retain = true,</p>
+<p>      .clean = false,</p>
 <p>  }</p>
 <a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent15discovery_info_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The discovery info options for Home Assistant. </p>
@@ -478,6 +506,21 @@
 <dd></dd></dl>
 
 <dl class="member">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent3ip_E">
+<span id="_CPPv2N4mqtt19MQTTClientComponent3ip_E"></span><span id="mqtt::MQTTClientComponent::ip___IPAddress"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a8acc6d766999ef94b4ff1397579a4a68"></span>IPAddress <code class="descname">ip_</code><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent3ip_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent13dns_resolved_E">
+<span id="_CPPv2N4mqtt19MQTTClientComponent13dns_resolved_E"></span><span id="mqtt::MQTTClientComponent::dns_resolved___b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1ac850b77cf98e6846de889378bb6449ea"></span>bool <code class="descname">dns_resolved_</code> = {false}<a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent13dns_resolved_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent18dns_resolve_error_E">
+<span id="_CPPv2N4mqtt19MQTTClientComponent18dns_resolve_error_E"></span><span id="mqtt::MQTTClientComponent::dns_resolve_error___b"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a17e9c12619835db0b55d8135a4bb5da4"></span>bool <code class="descname">dns_resolve_error_</code> = {false}<a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent18dns_resolve_error_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
 <dt id="_CPPv3N4mqtt19MQTTClientComponent9children_E">
 <span id="_CPPv2N4mqtt19MQTTClientComponent9children_E"></span><span id="mqtt::MQTTClientComponent::children___std::vector:MQTTComponentP:"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1aaeffa04ba8f7e095bc33d75e22eb8ca3"></span>std::vector&lt;<a class="reference internal" href="#_CPPv3N4mqtt13MQTTComponentE" title="mqtt::MQTTComponent">MQTTComponent</a> *&gt; <code class="descname">children_</code><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent9children_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -503,14 +546,32 @@
 <dd></dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Static Functions</p>
+<dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent19dns_found_callback_EPKcP9ip_addr_tPv">
+<span id="_CPPv2N4mqtt19MQTTClientComponent19dns_found_callback_EPKcP9ip_addr_tPv"></span><span id="mqtt::MQTTClientComponent::dns_found_callback___cCP.ip_addr_tP.voidP"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1a77ab6756b8d96077ee88554c5415962e"></span><em class="property">static</em> void <code class="descname">dns_found_callback_</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, ip_addr_t *<em>ipaddr</em>, void *<em>callback_arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent19dns_found_callback_EPKcP9ip_addr_tPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt19MQTTClientComponent19dns_found_callback_EPKcPK9ip_addr_tPv">
+<span id="_CPPv2N4mqtt19MQTTClientComponent19dns_found_callback_EPKcPK9ip_addr_tPv"></span><span id="mqtt::MQTTClientComponent::dns_found_callback___cCP.ip_addr_tCP.voidP"></span><span class="target" id="classmqtt_1_1_m_q_t_t_client_component_1af8855198872b5303bba500bbb92ed516"></span><em class="property">static</em> void <code class="descname">dns_found_callback_</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, <em class="property">const</em> ip_addr_t *<em>ipaddr</em>, void *<em>callback_arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt19MQTTClientComponent19dns_found_callback_EPKcPK9ip_addr_tPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="type">
 <dt>
-<span class="target" id="mqtt__client__component_8h_1a209f22eeee2811eec7a644ef77f4d571"></span><em class="property">using </em><code class="descname">mqtt::mqtt_callback_t = typedef std::function&lt;void(const std::string &amp;)&gt;</code></dt>
+<span class="target" id="mqtt__client__component_8h_1a71630ae43a4476d5cb42937c3505d18e"></span><em class="property">using </em><code class="descname">mqtt::mqtt_callback_t = typedef std::function&lt;void(const std::string &amp;, const std::string &amp;)&gt;</code></dt>
 <dd><p>Callback for MQTT subscriptions. </p>
 <p>First parameter is the topic, the second one is the payload. </p>
 </dd></dl>
+
+<dl class="type">
+<dt>
+<span class="target" id="mqtt__client__component_8h_1a9a2d8d040971fb0e28d6fc945bb6a0e6"></span><em class="property">using </em><code class="descname">mqtt::mqtt_json_callback_t = typedef std::function&lt;void(const std::string &amp;, JsonObject &amp;)&gt;</code></dt>
+<dd></dd></dl>
 
 <dl class="class">
 <dt id="_CPPv3N4mqtt11MQTTMessageE">
@@ -561,6 +622,16 @@
 <dl class="member">
 <dt id="_CPPv3N4mqtt16MQTTSubscription8callbackE">
 <span id="_CPPv2N4mqtt16MQTTSubscription8callbackE"></span><span id="mqtt::MQTTSubscription::callback__mqtt_callback_t"></span><span class="target" id="structmqtt_1_1_m_q_t_t_subscription_1acf8b1bb7c0f1d483804611eb3c9d0bdf"></span>mqtt_callback_t <code class="descname">callback</code><a class="headerlink" href="#_CPPv3N4mqtt16MQTTSubscription8callbackE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N4mqtt16MQTTSubscription10subscribedE">
+<span id="_CPPv2N4mqtt16MQTTSubscription10subscribedE"></span><span id="mqtt::MQTTSubscription::subscribed__b"></span><span class="target" id="structmqtt_1_1_m_q_t_t_subscription_1a14cf26c2a4ac8b6aea3a977c692d0c9e"></span>bool <code class="descname">subscribed</code><a class="headerlink" href="#_CPPv3N4mqtt16MQTTSubscription10subscribedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N4mqtt16MQTTSubscription19resubscribe_timeoutE">
+<span id="_CPPv2N4mqtt16MQTTSubscription19resubscribe_timeoutE"></span><span id="mqtt::MQTTSubscription::resubscribe_timeout__uint32_t"></span><span class="target" id="structmqtt_1_1_m_q_t_t_subscription_1affb2163f4927781899dabd5cbb5d48b9"></span>uint32_t <code class="descname">resubscribe_timeout</code><a class="headerlink" href="#_CPPv3N4mqtt16MQTTSubscription19resubscribe_timeoutE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -647,12 +718,17 @@
 <dd><p>Whether to retain discovery messages. </p>
 </dd></dl>
 
+<dl class="member">
+<dt id="_CPPv3N4mqtt17MQTTDiscoveryInfo5cleanE">
+<span id="_CPPv2N4mqtt17MQTTDiscoveryInfo5cleanE"></span><span id="mqtt::MQTTDiscoveryInfo::clean__b"></span><span class="target" id="structmqtt_1_1_m_q_t_t_discovery_info_1a36a57f317486b19b81b9e6f5a4232542"></span>bool <code class="descname">clean</code><a class="headerlink" href="#_CPPv3N4mqtt17MQTTDiscoveryInfo5cleanE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N4mqtt18global_mqtt_clientE">
-<span id="_CPPv2N4mqtt18global_mqtt_clientE"></span><span id="mqtt::global_mqtt_client__MQTTClientComponentP"></span><span class="target" id="mqtt__client__component_8cpp_1a183237dad9d963073559fc91fda61441"></span><a class="reference internal" href="#_CPPv3N4mqtt19MQTTClientComponentE" title="mqtt::MQTTClientComponent">MQTTClientComponent</a> *<code class="descclassname">mqtt<code class="descclassname">::</code></code><code class="descname">global_mqtt_client</code> = nullptr<a class="headerlink" href="#_CPPv3N4mqtt18global_mqtt_clientE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt18global_mqtt_clientE"></span><span id="mqtt::global_mqtt_client__MQTTClientComponentP"></span><span class="target" id="mqtt__client__component_8h_1adb25cefea2d297d9a450f32d07581373"></span><a class="reference internal" href="#_CPPv3N4mqtt19MQTTClientComponentE" title="mqtt::MQTTClientComponent">MQTTClientComponent</a> *<code class="descclassname">mqtt<code class="descclassname">::</code></code><code class="descname">global_mqtt_client</code><a class="headerlink" href="#_CPPv3N4mqtt18global_mqtt_clientE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -667,7 +743,7 @@
 <p><ol class="arabic simple">
 <li>Implement send_discovery that creates a Home Assistant discovery payload.</li>
 <li>Override <a class="reference internal" href="#classmqtt_1_1_m_q_t_t_component_1aa7531fc685601d89f7c0dd8b68625fc3"><span class="std std-ref">component_type()</span></a> to return the appropriate component type such as “light” or “sensor”.</li>
-<li>Subscribe to command topics using <a class="reference internal" href="#classmqtt_1_1_m_q_t_t_component_1af5d2bf20c72f150ff7b45684c6e3986f"><span class="std std-ref">subscribe()</span></a> or <a class="reference internal" href="#classmqtt_1_1_m_q_t_t_component_1ae352d2aa6507cd970eef989c025cd957"><span class="std std-ref">subscribe_json()</span></a> during <a class="reference internal" href="component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>.</li>
+<li>Subscribe to command topics using <a class="reference internal" href="#classmqtt_1_1_m_q_t_t_component_1af5d2bf20c72f150ff7b45684c6e3986f"><span class="std std-ref">subscribe()</span></a> or <a class="reference internal" href="#classmqtt_1_1_m_q_t_t_component_1a2abe9e9a3280917db039bb6cce1753cc"><span class="std std-ref">subscribe_json()</span></a> during <a class="reference internal" href="component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>.</li>
 </ol>
 </p>
 <p>In order to best separate the front- and back-end of esphomelib, all sub-classes should only parse/send MQTT messages and interact with back-end components via callbacks to ensure a clean separation. </p>
@@ -689,11 +765,7 @@
 <dl class="function">
 <dt id="_CPPv3N4mqtt13MQTTComponent5loop_Ev">
 <span id="_CPPv2N4mqtt13MQTTComponent5loop_Ev"></span><span id="mqtt::MQTTComponent::loop_"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1adc53bd20982915f86f1936b488a3fa2b"></span>void <code class="descname">loop_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent5loop_Ev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Public <a class="reference internal" href="component.html#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a> functions. </p>
-<p>These will be called by the <a class="reference internal" href="application.html#class_application"><span class="std std-ref">Application</span></a> instance.</p>
-<p>Note: This should normally not be overriden, unless you know what you’re doing. They’re basically to make creating custom components easier. For example the SensorComponent can override these methods to not have the user call some super methods within their custom sensors. These methods should ALWAYS call the loop_internal() and setup_internal() methods.</p>
-<p>Basically, it handles stuff like interval/timeout functions and eventually calls <a class="reference internal" href="component.html#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a>. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt13MQTTComponent14send_discoveryER10JsonObjectR19SendDiscoveryConfig">
@@ -703,7 +775,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N4mqtt13MQTTComponent18send_initial_stateEv">
-<span id="_CPPv2N4mqtt13MQTTComponent18send_initial_stateEv"></span><span id="mqtt::MQTTComponent::send_initial_state"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1aa4d353acdc7820f577ef1fd88bb81c37"></span><em class="property">virtual</em> void <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt13MQTTComponent18send_initial_stateEv"></span><span id="mqtt::MQTTComponent::send_initial_state"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1aff399d13ede833b2edaa660c98957581"></span><em class="property">virtual</em> bool <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -832,21 +904,25 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv3NK4mqtt13MQTTComponent12is_connectedEv">
+<span id="_CPPv2NK4mqtt13MQTTComponent12is_connectedEv"></span><span id="mqtt::MQTTComponent::is_connectedC"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1a1c053622e17ffea3fb1347ab7a8c5ab6"></span>bool <code class="descname">is_connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4mqtt13MQTTComponent12is_connectedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="_CPPv3N4mqtt13MQTTComponent15send_discovery_Ev">
-<span id="_CPPv2N4mqtt13MQTTComponent15send_discovery_Ev"></span><span id="mqtt::MQTTComponent::send_discovery_"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1a6f1b54b7acb5771a3fdd91fa159613ef"></span>void <code class="descname">send_discovery_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent15send_discovery_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt13MQTTComponent15send_discovery_Ev"></span><span id="mqtt::MQTTComponent::send_discovery_"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1a2ab4ca0a0026387816ee0e92452f5972"></span>bool <code class="descname">send_discovery_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent15send_discovery_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Internal method to start sending discovery info, this will call <a class="reference internal" href="#classmqtt_1_1_m_q_t_t_component_1a4f4593ab0dcb863d613399b64e6d5eab"><span class="std std-ref">send_discovery()</span></a>. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N4mqtt13MQTTComponent12send_messageERKNSt6stringERKNSt6stringERK8optionalI7uint8_tERK8optionalIbE">
-<span id="_CPPv2N4mqtt13MQTTComponent12send_messageERKNSt6stringERKNSt6stringERK8optionalI7uint8_tERK8optionalIbE"></span><span id="mqtt::MQTTComponent::send_message__ssCR.ssCR.optional:uint8_t:CR.optional:b:CR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1aba84d2b783bda5c9338fe06510867dae"></span>void <code class="descname">send_message</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> std::string &amp;<em>payload</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<em>qos</em> = {}, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; &amp;<em>retain</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent12send_messageERKNSt6stringERKNSt6stringERK8optionalI7uint8_tERK8optionalIbE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt13MQTTComponent7publishERKNSt6stringERKNSt6stringE">
+<span id="_CPPv2N4mqtt13MQTTComponent7publishERKNSt6stringERKNSt6stringE"></span><span id="mqtt::MQTTComponent::publish__ssCR.ssCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1ad89b860ba4e0743af0dc7ad3d1c72360"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> std::string &amp;<em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent7publishERKNSt6stringERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Send a MQTT message. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic. </li>
 <li><code class="docutils literal notranslate"><span class="pre">payload</span></code>: The payload. </li>
-<li><code class="docutils literal notranslate"><span class="pre">retain</span></code>: Whether to retain the message. If not set, defaults to get_retain. </li>
 </ul>
 </dd>
 </dl>
@@ -854,15 +930,14 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N4mqtt13MQTTComponent17send_json_messageERKNSt6stringERK12json_build_tRK8optionalI7uint8_tERK8optionalIbE">
-<span id="_CPPv2N4mqtt13MQTTComponent17send_json_messageERKNSt6stringERK12json_build_tRK8optionalI7uint8_tERK8optionalIbE"></span><span id="mqtt::MQTTComponent::send_json_message__ssCR.json_build_tCR.optional:uint8_t:CR.optional:b:CR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1acba5e093a485ecb28ba2b2a579f77c82"></span>void <code class="descname">send_json_message</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;uint8_t&gt; &amp;<em>qos</em> = {}, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;bool&gt; &amp;<em>retain</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent17send_json_messageERKNSt6stringERK12json_build_tRK8optionalI7uint8_tERK8optionalIbE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt13MQTTComponent12publish_jsonERKNSt6stringERK12json_build_t">
+<span id="_CPPv2N4mqtt13MQTTComponent12publish_jsonERKNSt6stringERK12json_build_t"></span><span id="mqtt::MQTTComponent::publish_json__ssCR.json_build_tCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1a5332c9431f771a9a23ea88f85430445b"></span>bool <code class="descname">publish_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent12publish_jsonERKNSt6stringERK12json_build_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct and send a JSON MQTT message. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic. </li>
 <li><code class="docutils literal notranslate"><span class="pre">f</span></code>: The Json Message builder. </li>
-<li><code class="docutils literal notranslate"><span class="pre">retain</span></code>: Whether to retain the message. If not set, defaults to get_retain. </li>
 </ul>
 </dd>
 </dl>
@@ -886,8 +961,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv3N4mqtt13MQTTComponent14subscribe_jsonERKNSt6stringE12json_parse_t7uint8_t">
-<span id="_CPPv2N4mqtt13MQTTComponent14subscribe_jsonERKNSt6stringE12json_parse_t7uint8_t"></span><span id="mqtt::MQTTComponent::subscribe_json__ssCR.json_parse_t.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1ae352d2aa6507cd970eef989c025cd957"></span>void <code class="descname">subscribe_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <a class="reference internal" href="helpers.html#_CPPv312json_parse_t" title="json_parse_t">json_parse_t</a> <em>callback</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent14subscribe_jsonERKNSt6stringE12json_parse_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt13MQTTComponent14subscribe_jsonERKNSt6stringE20mqtt_json_callback_t7uint8_t">
+<span id="_CPPv2N4mqtt13MQTTComponent14subscribe_jsonERKNSt6stringE20mqtt_json_callback_t7uint8_t"></span><span id="mqtt::MQTTComponent::subscribe_json__ssCR.mqtt_json_callback_t.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_component_1a2abe9e9a3280917db039bb6cce1753cc"></span>void <code class="descname">subscribe_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, mqtt_json_callback_t <em>callback</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt13MQTTComponent14subscribe_jsonERKNSt6stringE20mqtt_json_callback_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Subscribe to a MQTT topic and automatically parse JSON payload. </p>
 <p>If an invalid JSON payload is received, the callback will not be called.</p>
 <p><dl class="docutils">
@@ -976,12 +1051,55 @@
 <h3>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="_CPPv3N4mqtt18MQTTMessageTriggerE">
-<span id="_CPPv2N4mqtt18MQTTMessageTriggerE"></span><span id="mqtt::MQTTMessageTrigger"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger"></span><em class="property">class </em><code class="descname">MQTTMessageTrigger</code> : <em class="property">public</em> <a class="reference internal" href="automation.html#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;std::string&gt;<a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTriggerE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N4mqtt18MQTTMessageTriggerE"></span><span id="mqtt::MQTTMessageTrigger"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger"></span><em class="property">class </em><code class="descname">MQTTMessageTrigger</code> : <em class="property">public</em> <a class="reference internal" href="automation.html#_CPPv37Trigger" title="Trigger">Trigger</a>&lt;std::string&gt;, <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTriggerE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3N4mqtt18MQTTMessageTrigger18MQTTMessageTriggerERKNSt6stringE7uint8_t">
-<span id="_CPPv2N4mqtt18MQTTMessageTrigger18MQTTMessageTriggerERKNSt6stringE7uint8_t"></span><span id="mqtt::MQTTMessageTrigger::MQTTMessageTrigger__ssCR.uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1acd77d85720a872800780bd3944a0e8b1"></span><code class="descname">MQTTMessageTrigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, uint8_t <em>qos</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger18MQTTMessageTriggerERKNSt6stringE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger18MQTTMessageTriggerERKNSt6stringE">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger18MQTTMessageTriggerERKNSt6stringE"></span><span id="mqtt::MQTTMessageTrigger::MQTTMessageTrigger__ssCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a488a030c384326d05bc26574bb8725c2"></span><code class="descname">MQTTMessageTrigger</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger18MQTTMessageTriggerERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger7set_qosE7uint8_t">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger7set_qosE7uint8_t"></span><span id="mqtt::MQTTMessageTrigger::set_qos__uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a28b443f270ea8f2a323f16722d36bc21"></span>void <code class="descname">set_qos</code><span class="sig-paren">(</span>uint8_t <em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger7set_qosE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger11set_payloadERKNSt6stringE">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger11set_payloadERKNSt6stringE"></span><span id="mqtt::MQTTMessageTrigger::set_payload__ssCR"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a53f94db7277fbe02475dc70fa3a87b08"></span>void <code class="descname">set_payload</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger11set_payloadERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger5setupEv">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger5setupEv"></span><span id="mqtt::MQTTMessageTrigger::setup"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a2ef22048e8f2ca947b69a89ddffca8cb"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger11dump_configEv">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger11dump_configEv"></span><span id="mqtt::MQTTMessageTrigger::dump_config"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1ade335bb765a811790d5a98dd02277315"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK4mqtt18MQTTMessageTrigger18get_setup_priorityEv">
+<span id="_CPPv2NK4mqtt18MQTTMessageTrigger18get_setup_priorityEv"></span><span id="mqtt::MQTTMessageTrigger::get_setup_priorityC"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a523a9853633b8961889f2edd12f386e6"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK4mqtt18MQTTMessageTrigger18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger6topic_E">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger6topic_E"></span><span id="mqtt::MQTTMessageTrigger::topic___ss"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1af84a51bda639eb33aa3a1ad8baead476"></span>std::string <code class="descname">topic_</code><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger6topic_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger4qos_E">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger4qos_E"></span><span id="mqtt::MQTTMessageTrigger::qos___uint8_t"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a0f01e290655552683428aa387fdbcd41"></span>uint8_t <code class="descname">qos_</code> = {0}<a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger4qos_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N4mqtt18MQTTMessageTrigger8payload_E">
+<span id="_CPPv2N4mqtt18MQTTMessageTrigger8payload_E"></span><span id="mqtt::MQTTMessageTrigger::payload___optional:ss:"></span><span class="target" id="classmqtt_1_1_m_q_t_t_message_trigger_1a976d016326ffc6d663b2ed7804cf2e23"></span><a class="reference internal" href="helpers.html#_CPPv38optional" title="optional">optional</a>&lt;std::string&gt; <code class="descname">payload_</code><a class="headerlink" href="#_CPPv3N4mqtt18MQTTMessageTrigger8payload_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -1151,6 +1269,267 @@
 </dd></dl>
 
 </div>
+<div class="section" id="custommqttdevice">
+<span id="api-custom-mqtt-device"></span><h3>CustomMQTTDevice<a class="headerlink" href="#custommqttdevice" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv3N4mqtt16CustomMQTTDeviceE">
+<span id="_CPPv2N4mqtt16CustomMQTTDeviceE"></span><span id="mqtt::CustomMQTTDevice"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device"></span><em class="property">class </em><code class="descname">CustomMQTTDevice</code><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDeviceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This class is a helper class for custom components that communicate using MQTT. </p>
+<p>It has 5 helper functions that you can use (square brackets indicate optional):</p>
+<p><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">subscribe(topic,</span> <span class="pre">function_pointer,</span> <span class="pre">[qos])</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscribe_json(topic,</span> <span class="pre">function_pointer,</span> <span class="pre">[qos])</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">publish(topic,</span> <span class="pre">payload,</span> <span class="pre">[qos],</span> <span class="pre">[retain])</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">publish_json(topic,</span> <span class="pre">payload_builder,</span> <span class="pre">[qos],</span> <span class="pre">[retain])</span></code></li>
+<li><code class="docutils literal notranslate"><a class="reference internal" href="#classmqtt_1_1_custom_m_q_t_t_device_1a6c436c3da5054a33359fa617f6480dfa"><span class="std std-ref"><span class="pre">is_connected()</span></span></a></code> </li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt>
+<span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1a7e14aa010f9c78baff56e432c196a7b9"></span><code class="descname">void mqtt::CustomMQTTDevice::subscribe(const std::string &amp; topic, void(T::*)(const std::string &amp;, const std::string &amp;) callback, uint8_t qos = 0)</code></dt>
+<dd><p>Subscribe to an MQTT topic with the given Quality of Service. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre>class MyCustomMQTTDevice : public Component, public mqtt:CustomMQTTDevice {
+ public:
+  void setup() override {
+    subscribe(&quot;the/topic&quot;, &amp;MyCustomMQTTDevice::on_message);
+    pinMode(5, OUTPUT);
+  }
+
+  // topic and payload parameters can be removed if not needed
+  // e.g: void on_message() {
+
+  void on_message(const std::string &amp;topic, const std::string &amp;payload) {
+    // do something with topic and payload
+    if (payload == &quot;ON&quot;) {
+      digitalWrite(5, HIGH);
+    } else {
+      digitalWrite(5, LOW);
+    }
+  }
+};
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Template Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">T</span></code>: A C++ template argument for determining the type of the callback. </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to subscribe to. Re-subscription on re-connects is automatically handled. </li>
+<li><code class="docutils literal notranslate"><span class="pre">callback</span></code>: The callback (must be a class member) to subscribe with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">qos</span></code>: The Quality of Service to subscribe with. Defaults to 0. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt>
+<span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1aa886adda9c1bb4d84e2bc6a75284a73e"></span><code class="descname">void mqtt::CustomMQTTDevice::subscribe(const std::string &amp; topic, void(T::*)(const std::string &amp;) callback, uint8_t qos = 0)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt>
+<span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1a8bec4c47ce788d3b17e4a74ac87c5439"></span><code class="descname">void mqtt::CustomMQTTDevice::subscribe(const std::string &amp; topic, void(T::*)() callback, uint8_t qos = 0)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt>
+<span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1ab6f6509dd0f0720188d316cdd50ca0db"></span><code class="descname">void mqtt::CustomMQTTDevice::subscribe_json(const std::string &amp; topic, void(T::*)(const std::string &amp;, JsonObject &amp;) callback, uint8_t qos = 0)</code></dt>
+<dd><p>Subscribe to an MQTT topic and call the callback if the payload can be decoded as JSON with the given Quality of Service. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre>class MyCustomMQTTDevice : public Component, public mqtt:CustomMQTTDevice {
+ public:
+  void setup() override {
+    subscribe_json(&quot;the/topic&quot;, &amp;MyCustomMQTTDevice::on_json_message);
+    pinMode(5, OUTPUT);
+  }
+
+  // topic parameter can be remove if not needed:
+  // e.g.: void on_json_message(JsonObject &amp;payload) {
+
+  void on_json_message(const std::string &amp;topic, JsonObject &amp;payload) {
+    // do something with topic and payload
+    if (payload[&quot;number&quot;] == 1) {
+      digitalWrite(5, HIGH);
+    } else {
+      digitalWrite(5, LOW);
+    }
+  }
+};
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Template Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">T</span></code>: A C++ template argument for determining the type of the callback. </li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to subscribe to. Re-subscription on re-connects is automatically handled. </li>
+<li><code class="docutils literal notranslate"><span class="pre">callback</span></code>: The callback (must be a class member) to subscribe with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">qos</span></code>: The Quality of Service to subscribe with. Defaults to 0. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt>
+<span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1a0b2f5ed47727c2b5999b1bd77a409dbf"></span><code class="descname">void mqtt::CustomMQTTDevice::subscribe_json(const std::string &amp; topic, void(T::*)(JsonObject &amp;) callback, uint8_t qos = 0)</code></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt16CustomMQTTDevice7publishERKNSt6stringERKNSt6stringE7uint8_tb">
+<span id="_CPPv2N4mqtt16CustomMQTTDevice7publishERKNSt6stringERKNSt6stringE7uint8_tb"></span><span id="mqtt::CustomMQTTDevice::publish__ssCR.ssCR.uint8_t.b"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1a3f541fb7c25af59d58ab6533157f807b"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> std::string &amp;<em>payload</em>, uint8_t <em>qos</em> = 0, bool <em>retain</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDevice7publishERKNSt6stringERKNSt6stringE7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publish an MQTT message with the given payload and QoS and retain settings. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">void in_some_method() {</span>
+  <span class="l l-Scalar l-Scalar-Plain">publish(&quot;the/topic&quot;, &quot;The Payload&quot;, 0, true);</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to publish to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">payload</span></code>: The payload to publish. </li>
+<li><code class="docutils literal notranslate"><span class="pre">qos</span></code>: The Quality of Service to publish with. Defaults to 0 </li>
+<li><code class="docutils literal notranslate"><span class="pre">retain</span></code>: Whether to retain the message. Defaults to false. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt16CustomMQTTDevice7publishERKNSt6stringEf6int8_t">
+<span id="_CPPv2N4mqtt16CustomMQTTDevice7publishERKNSt6stringEf6int8_t"></span><span id="mqtt::CustomMQTTDevice::publish__ssCR.float.int8_t"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1ac9baeda22d78593c83e7b94f66b76fe7"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, float <em>value</em>, int8_t <em>number_decimals</em> = 3<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDevice7publishERKNSt6stringEf6int8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publish an MQTT message with the given floating point number and number of decimals. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">void in_some_method() {</span>
+  <span class="l l-Scalar l-Scalar-Plain">publish(&quot;the/topic&quot;, 1.0);</span>
+  <span class="l l-Scalar l-Scalar-Plain">// with two digits after the decimal point</span>
+  <span class="l l-Scalar l-Scalar-Plain">publish(&quot;the/topic&quot;, 1.0, 2);</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to publish to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">payload</span></code>: The payload to publish. </li>
+<li><code class="docutils literal notranslate"><span class="pre">number_decimals</span></code>: The number of digits after the decimal point to round to, defaults to 3 digits. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt16CustomMQTTDevice7publishERKNSt6stringEi">
+<span id="_CPPv2N4mqtt16CustomMQTTDevice7publishERKNSt6stringEi"></span><span id="mqtt::CustomMQTTDevice::publish__ssCR.i"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1aaa1078f2a96d1e25c3477e7e32abb156"></span>bool <code class="descname">publish</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDevice7publishERKNSt6stringEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publish an MQTT message with the given integer as payload. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">void in_some_method() {</span>
+  <span class="l l-Scalar l-Scalar-Plain">publish(&quot;the/topic&quot;, 42);</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to publish to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">payload</span></code>: The payload to publish. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt16CustomMQTTDevice12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb">
+<span id="_CPPv2N4mqtt16CustomMQTTDevice12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb"></span><span id="mqtt::CustomMQTTDevice::publish_json__ssCR.json_build_tCR.uint8_t.b"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1aab224b4e080c29ddcdc7873f3221cf96"></span>bool <code class="descname">publish_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em>, uint8_t <em>qos</em>, bool <em>retain</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDevice12publish_jsonERKNSt6stringERK12json_build_t7uint8_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publish a JSON-encoded MQTT message with the given Quality of Service and retain settings. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">void in_some_method() {</span>
+  <span class="l l-Scalar l-Scalar-Plain">publish(&quot;the/topic&quot;, [=](JsonObject &amp;root) {</span>
+    <span class="l l-Scalar l-Scalar-Plain">root[&quot;the_key&quot;] = &quot;Hello World!&quot;;</span>
+  <span class="l l-Scalar l-Scalar-Plain">}, 0, false);</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to publish to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">payload</span></code>: The payload to publish. </li>
+<li><code class="docutils literal notranslate"><span class="pre">qos</span></code>: The Quality of Service to publish with. </li>
+<li><code class="docutils literal notranslate"><span class="pre">retain</span></code>: Whether to retain the message. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt16CustomMQTTDevice12publish_jsonERKNSt6stringERK12json_build_t">
+<span id="_CPPv2N4mqtt16CustomMQTTDevice12publish_jsonERKNSt6stringERK12json_build_t"></span><span id="mqtt::CustomMQTTDevice::publish_json__ssCR.json_build_tCR"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1aacafc75e31eb71082dabe9556c3c67f2"></span>bool <code class="descname">publish_json</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>topic</em>, <em class="property">const</em> <a class="reference internal" href="helpers.html#_CPPv312json_build_t" title="json_build_t">json_build_t</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDevice12publish_jsonERKNSt6stringERK12json_build_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Publish a JSON-encoded MQTT message. </p>
+<p>Example:</p>
+<p><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">void in_some_method() {</span>
+  <span class="l l-Scalar l-Scalar-Plain">publish(&quot;the/topic&quot;, [=](JsonObject &amp;root) {</span>
+    <span class="l l-Scalar l-Scalar-Plain">root[&quot;the_key&quot;] = &quot;Hello World!&quot;;</span>
+  <span class="l l-Scalar l-Scalar-Plain">});</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The topic to publish to. </li>
+<li><code class="docutils literal notranslate"><span class="pre">payload</span></code>: The payload to publish. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N4mqtt16CustomMQTTDevice12is_connectedEv">
+<span id="_CPPv2N4mqtt16CustomMQTTDevice12is_connectedEv"></span><span id="mqtt::CustomMQTTDevice::is_connected"></span><span class="target" id="classmqtt_1_1_custom_m_q_t_t_device_1a6c436c3da5054a33359fa617f6480dfa"></span>bool <code class="descname">is_connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N4mqtt16CustomMQTTDevice12is_connectedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check whether the MQTT client is currently connected and messages can be published. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
 </div>
 </div>
 
@@ -1165,7 +1544,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -1181,11 +1560,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

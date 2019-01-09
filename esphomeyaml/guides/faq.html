@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Frequently Asked Questions &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Frequently Asked Questions &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/faq.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -105,6 +106,7 @@
 <li><p class="first">esphomeyaml supports (most of) Home Assistant’s YAML configuration directives like
 <code class="docutils literal notranslate"><span class="pre">!include</span></code>, <code class="docutils literal notranslate"><span class="pre">!secret</span></code>. So you can store all your secret WiFi passwords and so on
 in a file called <code class="docutils literal notranslate"><span class="pre">secrets.yaml</span></code> within the directory where the configuration file is.</p>
+<p>For even more configuration templating, take a look at <a class="reference internal" href="configuration-types.html#config-substitutions"><span class="std std-ref">Substitutions</span></a>.</p>
 </li>
 <li><p class="first">If you want to see how esphomeyaml interprets your configuration, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre>esphomeyaml livingroom.yaml config
@@ -128,6 +130,8 @@ possible to edit anything outside of the <code class="docutils literal notransla
 </li>
 <li><p class="first">You can view the full command line interface options here: <a class="reference internal" href="cli.html"><span class="doc">Command Line Interface</span></a></p>
 </li>
+<li><p class="first">Use <a class="reference internal" href="configuration-types.html#config-substitutions"><span class="std std-ref">substitutions</span></a> to reduce repetition in your configuration files.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="i-can-t-get-flashing-over-usb-to-work">
@@ -136,9 +140,10 @@ possible to edit anything outside of the <code class="docutils literal notransla
 the ESP. This can sometimes fail (driver missing, inside docker container, …).
 Starting with esphomelib 1.9.0, the esphomelib suite provides
 <a class="reference external" href="https://github.com/OttoWinter/esphomeflasher">esphomeflasher</a>, a tool to flash ESPs over USB.</p>
-<p>First, you need to get the firmware file to flash. For HassIO add-on based installs you can
-use the <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> button and then press <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Binary</span></code>. For command line based installs you
-can access the file under <code class="docutils literal notranslate"><span class="pre">&lt;CONFIG_DIR&gt;/&lt;NODE_NAME&gt;/.pioenvs/&lt;NODE_NAME&gt;/firmware.bin</span></code>.</p>
+<p>First, you need to get the firmware file to flash. For Hass.io add-on based installs you can
+use the <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> button (click the overflow icon with the three dots) and then press
+<code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Binary</span></code>. For command line based installs you can access the file under
+<code class="docutils literal notranslate"><span class="pre">&lt;CONFIG_DIR&gt;/&lt;NODE_NAME&gt;/.pioenvs/&lt;NODE_NAME&gt;/firmware.bin</span></code>.</p>
 <p>Then, install esphomeflasher by going to the <a class="reference external" href="https://github.com/OttoWinter/esphomeflasher/releases">releases page</a>
 and downloading one of the pre-compiled binaries. Open up the application and select the serial port
 you want to flash to (on windows you can use the “device manager” to check if it’s the right one).</p>
@@ -217,7 +222,7 @@ be</li>
 docker pull ottowinter/esphomeyaml:latest
 </pre></div>
 </div>
-<p>And in HassIO, there’s a simple UPDATE button when there’s an update available as with all add-ons</p>
+<p>And in Hass.io, there’s a simple UPDATE button when there’s an update available as with all add-ons</p>
 </div>
 <div class="section" id="how-do-i-update-to-the-latest-beta-release">
 <span id="faq-beta"></span><h2>How do I update to the latest beta release?<a class="headerlink" href="#how-do-i-update-to-the-latest-beta-release" title="Permalink to this headline">¶</a></h2>
@@ -233,7 +238,7 @@ docker pull ottowinter/esphomeyaml:rc
 docker run <span class="o">[</span>...<span class="o">]</span> -it ottowinter/esphomeyaml:rc livingroom.yaml run
 </pre></div>
 </div>
-<p>And for HassIO, you will see a “esphomeyaml Beta” Add-On for the beta channel.</p>
+<p>And for Hass.io, you will see a “esphomeyaml Beta” Add-On for the beta channel.</p>
 <p>The beta docs can be viewed at <a class="reference external" href="https://beta.esphomelib.com">https://beta.esphomelib.com</a></p>
 </div>
 <div class="section" id="how-do-i-use-the-latest-bleeding-edge-version">
@@ -244,14 +249,14 @@ If you find some, please do however report them if you have time :)</p>
 if there was a bug somewhere and I didn’t feel like building &amp; pushing a whole new release out (this often
 takes up to 2 hours!). To install the dev version of esphomeyaml:</p>
 <ul class="simple">
-<li>In HassIO: In the esphomeyaml add-on repository there’s also a second add-on called <code class="docutils literal notranslate"><span class="pre">esphomeyaml-edge</span></code>.
+<li>In Hass.io: In the esphomeyaml add-on repository there’s also a second add-on called <code class="docutils literal notranslate"><span class="pre">esphomeyaml-edge</span></code>.
 Install that and stop the stable version (both can’t run at the same time without port collisions).</li>
 <li>From <code class="docutils literal notranslate"><span class="pre">pip</span></code>: Run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+git://github.com/OttoWinter/esphomeyaml.git</span></code></li>
 <li>From docker: Run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">ottowinter/esphomeyaml:dev</span></code> and use <code class="docutils literal notranslate"><span class="pre">ottowinter/esphomeyaml:dev</span></code> in all
 commands.</li>
 </ul>
 <p>Next, if you want to use the latest version of the esphomelib C++ framework too:</p>
-<div class="code highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Sample configuration entry</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Sample configuration entry</span>
 <span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
   <span class="l l-Scalar l-Scalar-Plain">esphomelib_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
@@ -383,7 +388,7 @@ _guarantee_ that I can get a specific feature to work reliably.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -399,11 +404,11 @@ _guarantee_ that I can get a specific feature to work reliably.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

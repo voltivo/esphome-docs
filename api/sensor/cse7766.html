@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CSE7766 Power Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>CSE7766 Power Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/sensor/cse7766.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,17 +68,17 @@
             
   <div class="section" id="cse7766-power-sensor">
 <h1>CSE7766 Power Sensor<a class="headerlink" href="#cse7766-power-sensor" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application12make_cse7766EP13UARTComponent" title="Application::make_cse7766"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_cse7766()</span></code></a>.</p>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application12make_cse7766EP13UARTComponent8uint32_t" title="Application::make_cse7766"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_cse7766()</span></code></a>.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="_CPPv3N6sensor16CSE7766ComponentE">
-<span id="_CPPv2N6sensor16CSE7766ComponentE"></span><span id="sensor::CSE7766Component"></span><span class="target" id="classsensor_1_1_c_s_e7766_component"></span><em class="property">class </em><code class="descname">CSE7766Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> <a class="reference internal" href="../core/uart.html#_CPPv310UARTDevice" title="UARTDevice">UARTDevice</a><a class="headerlink" href="#_CPPv3N6sensor16CSE7766ComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6sensor16CSE7766ComponentE"></span><span id="sensor::CSE7766Component"></span><span class="target" id="classsensor_1_1_c_s_e7766_component"></span><em class="property">class </em><code class="descname">CSE7766Component</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv316PollingComponent" title="PollingComponent">PollingComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/uart.html#_CPPv310UARTDevice" title="UARTDevice">UARTDevice</a><a class="headerlink" href="#_CPPv3N6sensor16CSE7766ComponentE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv3N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent">
-<span id="_CPPv2N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent"></span><span id="sensor::CSE7766Component::CSE7766Component__UARTComponentP"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1ad733f1b3b51c2bd4d75221af542b6046"></span><code class="descname">CSE7766Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent8uint32_t">
+<span id="_CPPv2N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent8uint32_t"></span><span id="sensor::CSE7766Component::CSE7766Component__UARTComponentP.uint32_t"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a3945b1a4445c0e91e8f157e37b632748"></span><code class="descname">CSE7766Component</code><span class="sig-paren">(</span><a class="reference internal" href="../core/uart.html#_CPPv313UARTComponent" title="UARTComponent">UARTComponent</a> *<em>parent</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component16CSE7766ComponentEP13UARTComponent8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -98,22 +99,27 @@
 <dl class="function">
 <dt id="_CPPv3N6sensor16CSE7766Component4loopEv">
 <span id="_CPPv2N6sensor16CSE7766Component4loopEv"></span><span id="sensor::CSE7766Component::loop"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1af5c328fb44cdea769303ba6559650d30"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classsensor_1_1_c_s_e7766_component_1af5c328fb44cdea769303ba6559650d30"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6sensor16CSE7766Component18get_setup_priorityEv">
 <span id="_CPPv2NK6sensor16CSE7766Component18get_setup_priorityEv"></span><span id="sensor::CSE7766Component::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a565ab85e7564e1033dc22b59ee93c762"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor16CSE7766Component18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="../core/component.html#class_component_1a9cc04b36ceb2cf5bb0abe5672b096c64"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component6updateEv">
+<span id="_CPPv2N6sensor16CSE7766Component6updateEv"></span><span id="sensor::CSE7766Component::update"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a309a06e15fbbb9e5b0c0677822695c41"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component5setupEv">
+<span id="_CPPv2N6sensor16CSE7766Component5setupEv"></span><span id="sensor::CSE7766Component::setup"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a8d586371393537dfe870146c3d1789c4"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor16CSE7766Component11dump_configEv">
+<span id="_CPPv2N6sensor16CSE7766Component11dump_configEv"></span><span id="sensor::CSE7766Component::dump_config"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1af68bf466fca4081d9bb1dfd623b963da"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -166,6 +172,31 @@
 <span id="_CPPv2N6sensor16CSE7766Component6power_E"></span><span id="sensor::CSE7766Component::power___CSE7766PowerSensorP"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a6f9dfe064691d92dfdce4134557cdb3a"></span>CSE7766PowerSensor *<code class="descname">power_</code> = {nullptr}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component6power_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component12voltage_acc_E">
+<span id="_CPPv2N6sensor16CSE7766Component12voltage_acc_E"></span><span id="sensor::CSE7766Component::voltage_acc___float"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a019c6d7b65e4cfe1e492d58074318157"></span>float <code class="descname">voltage_acc_</code> = {0.0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component12voltage_acc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component12current_acc_E">
+<span id="_CPPv2N6sensor16CSE7766Component12current_acc_E"></span><span id="sensor::CSE7766Component::current_acc___float"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a766c7a5050deb3d0dc529b123001bdc9"></span>float <code class="descname">current_acc_</code> = {0.0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component12current_acc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component10power_acc_E">
+<span id="_CPPv2N6sensor16CSE7766Component10power_acc_E"></span><span id="sensor::CSE7766Component::power_acc___float"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1a46c0764da2df09675b44fdd793af58a5"></span>float <code class="descname">power_acc_</code> = {0.0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component10power_acc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component13last_reading_E">
+<span id="_CPPv2N6sensor16CSE7766Component13last_reading_E"></span><span id="sensor::CSE7766Component::last_reading___uint32_t"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1aa0223207e10f23fba35adf9110ba7bc2"></span>uint32_t <code class="descname">last_reading_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component13last_reading_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6sensor16CSE7766Component12last_update_E">
+<span id="_CPPv2N6sensor16CSE7766Component12last_update_E"></span><span id="sensor::CSE7766Component::last_update___uint32_t"></span><span class="target" id="classsensor_1_1_c_s_e7766_component_1afb48e4c140321bd633b592e26a394615"></span>uint32_t <code class="descname">last_update_</code> = {0}<a class="headerlink" href="#_CPPv3N6sensor16CSE7766Component12last_update_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
 
@@ -198,7 +229,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -214,11 +245,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -23,13 +23,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Light Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Light Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/light/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -78,13 +79,13 @@
 <li><a class="reference internal" href="#strobe-effect">Strobe Effect</a></li>
 <li><a class="reference internal" href="#flicker-effect">Flicker Effect</a></li>
 <li><a class="reference internal" href="#lambda-effect">Lambda Effect</a></li>
-<li><a class="reference internal" href="#fastled-rainbow-effect">FastLED Rainbow Effect</a></li>
-<li><a class="reference internal" href="#fastled-color-wipe-effect">FastLED Color Wipe Effect</a></li>
-<li><a class="reference internal" href="#fastled-scan-effect">FastLED Scan Effect</a></li>
-<li><a class="reference internal" href="#fastled-twinkle-effect">FastLED Twinkle Effect</a></li>
-<li><a class="reference internal" href="#fastled-random-twinkle-effect">FastLED Random Twinkle Effect</a></li>
-<li><a class="reference internal" href="#fastled-fireworks-effect">FastLED Fireworks Effect</a></li>
-<li><a class="reference internal" href="#fastled-flicker-effect">FastLED Flicker Effect</a></li>
+<li><a class="reference internal" href="#addressable-rainbow-effect">Addressable Rainbow Effect</a></li>
+<li><a class="reference internal" href="#addressable-color-wipe-effect">Addressable Color Wipe Effect</a></li>
+<li><a class="reference internal" href="#addressable-scan-effect">Addressable Scan Effect</a></li>
+<li><a class="reference internal" href="#addressable-twinkle-effect">Addressable Twinkle Effect</a></li>
+<li><a class="reference internal" href="#addressable-random-twinkle-effect">Addressable Random Twinkle Effect</a></li>
+<li><a class="reference internal" href="#addressable-fireworks-effect">Addressable Fireworks Effect</a></li>
+<li><a class="reference internal" href="#addressable-flicker-effect">Addressable Flicker Effect</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
@@ -147,7 +148,7 @@ if the light supports it.</li>
     <span class="c1"># Templated</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">light_1</span>
-        <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">&gt;-</span>
+        <span class="l l-Scalar l-Scalar-Plain">brightness</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
           <span class="no">// output value must be in range 0 - 1.0</span>
           <span class="no">return id(some_sensor).state / 100.0;</span>
 
@@ -232,6 +233,9 @@ entries with each having a unique name like so:</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
+      <span class="c1"># Use default parameters:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">random</span><span class="p p-Indicator">:</span>
+      <span class="c1"># Customize parameters</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">random</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">Slow</span><span class="nv"> </span><span class="s">Random</span><span class="nv"> </span><span class="s">Effect&quot;</span>
           <span class="l l-Scalar l-Scalar-Plain">transition_length</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30s</span>
@@ -364,16 +368,16 @@ A value of <code class="docutils literal notranslate"><span class="pre">0ms</spa
 especially useful.</li>
 </ul>
 </div>
-<div class="section" id="fastled-rainbow-effect">
-<h3>FastLED Rainbow Effect<a class="headerlink" href="#fastled-rainbow-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="addressable-rainbow-effect">
+<h3>Addressable Rainbow Effect<a class="headerlink" href="#addressable-rainbow-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LEDs that creates a moving rainbow over the whole LED strip using
 the HSV color wheel.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_rainbow</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_rainbow</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_rainbow</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_rainbow</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Rainbow Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">speed</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
           <span class="l l-Scalar l-Scalar-Plain">width</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">50</span>
@@ -386,16 +390,16 @@ the HSV color wheel.</p>
 <li><strong>width</strong> (<em>Optional</em>, int): The “width” of a full-scale rainbow, unitless. Defaults to <code class="docutils literal notranslate"><span class="pre">50</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="fastled-color-wipe-effect">
-<h3>FastLED Color Wipe Effect<a class="headerlink" href="#fastled-color-wipe-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="addressable-color-wipe-effect">
+<h3>Addressable Color Wipe Effect<a class="headerlink" href="#addressable-color-wipe-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LEDs that continuously introduces new colors at the beginning of
 the strip and shifts them forward every <code class="docutils literal notranslate"><span class="pre">add_led_interval</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_color_wipe</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_color_wipe</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_color_wipe</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_color_wipe</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Color Wipe Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">colors</span><span class="p p-Indicator">:</span>
             <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">red</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100%</span>
@@ -428,16 +432,16 @@ beginning of the strip. Defaults to <code class="docutils literal notranslate"><
 <li><strong>reverse</strong> (<em>Optional</em>, boolean): Whether to reverse the direction of the color wipe. Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="fastled-scan-effect">
-<h3>FastLED Scan Effect<a class="headerlink" href="#fastled-scan-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="addressable-scan-effect">
+<h3>Addressable Scan Effect<a class="headerlink" href="#addressable-scan-effect" title="Permalink to this headline">¶</a></h3>
 <p>Create a single, fast-moving dot moving back and forth an individually-addressable LED strip. The color is chosen by the
 currently active light color.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_scan</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_scan</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_scan</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_scan</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Scan Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">move_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
 </pre></div>
@@ -449,17 +453,17 @@ currently active light color.</p>
 Defaults to <code class="docutils literal notranslate"><span class="pre">100ms</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="fastled-twinkle-effect">
-<h3>FastLED Twinkle Effect<a class="headerlink" href="#fastled-twinkle-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="addressable-twinkle-effect">
+<h3>Addressable Twinkle Effect<a class="headerlink" href="#addressable-twinkle-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LED strips that randomly chooses some LEDs and let’s them bright
 up for a moment, like a stars twinkling in the night’s sky. The color of the pixels will be chosen by the
 currently active light color.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_twinkle</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_twinkle</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_twinkle</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_twinkle</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Twinkle Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">twinkle_probability</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5%</span>
           <span class="l l-Scalar l-Scalar-Plain">progress_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4ms</span>
@@ -474,15 +478,15 @@ LED should start its twinkle animation.</li>
 affects the duration of a twinkle animation. Defaults to <code class="docutils literal notranslate"><span class="pre">4ms</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="fastled-random-twinkle-effect">
-<h3>FastLED Random Twinkle Effect<a class="headerlink" href="#fastled-random-twinkle-effect" title="Permalink to this headline">¶</a></h3>
-<p>A light effect similar to <code class="docutils literal notranslate"><span class="pre">fastled_twinkle</span></code>, but using random colors for each twinkle animation.</p>
+<div class="section" id="addressable-random-twinkle-effect">
+<h3>Addressable Random Twinkle Effect<a class="headerlink" href="#addressable-random-twinkle-effect" title="Permalink to this headline">¶</a></h3>
+<p>A light effect similar to <code class="docutils literal notranslate"><span class="pre">addressable_twinkle</span></code>, but using random colors for each twinkle animation.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_random_twinkle</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_random_twinkle</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_random_twinkle</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_random_twinkle</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Random Twinkle Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">twinkle_probability</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5%</span>
           <span class="l l-Scalar l-Scalar-Plain">progress_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">32ms</span>
@@ -497,16 +501,16 @@ LED should start its twinkle animation.</li>
 affects the duration of a twinkle animation. Defaults to <code class="docutils literal notranslate"><span class="pre">4ms</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="fastled-fireworks-effect">
-<h3>FastLED Fireworks Effect<a class="headerlink" href="#fastled-fireworks-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="addressable-fireworks-effect">
+<h3>Addressable Fireworks Effect<a class="headerlink" href="#addressable-fireworks-effect" title="Permalink to this headline">¶</a></h3>
 <p>A light effect for individually-addressable LED strips that randomly sparks some fireworks at random positions
 and lets the sparkles cascade over the LED strip.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_fireworks</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_fireworks</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_fireworks</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_fireworks</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Fireworks Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">32ms</span>
           <span class="l l-Scalar l-Scalar-Plain">spark_probability</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10%</span>
@@ -528,16 +532,16 @@ chosen so that the whole strip doesn’t light up forever if the fade out rate i
 sparks do not propagate for a long time. Defaults to <code class="docutils literal notranslate"><span class="pre">120</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="fastled-flicker-effect">
-<h3>FastLED Flicker Effect<a class="headerlink" href="#fastled-flicker-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="addressable-flicker-effect">
+<h3>Addressable Flicker Effect<a class="headerlink" href="#addressable-flicker-effect" title="Permalink to this headline">¶</a></h3>
 <p>An effect similar to the <code class="docutils literal notranslate"><span class="pre">flicker</span></code> effect, but for individually-addressable LED strips. This effect flickers
 each LED by its own random amount around the currently active light color.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">light</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fastled_...</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">effects</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_flicker</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fastled_flicker</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_flicker</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">addressable_flicker</span><span class="p p-Indicator">:</span>
           <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Flicker Effect With Custom Values</span>
           <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">16ms</span>
           <span class="l l-Scalar l-Scalar-Plain">intensity</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5%</span>
@@ -545,7 +549,7 @@ each LED by its own random amount around the currently active light color.</p>
 </div>
 <p>Configuration variables:</p>
 <ul class="simple">
-<li><strong>name</strong> (<em>Optional</em>, string): The name of the effect. Defaults to <code class="docutils literal notranslate"><span class="pre">FastLED</span> <span class="pre">Flicker</span></code>.</li>
+<li><strong>name</strong> (<em>Optional</em>, string): The name of the effect. Defaults to <code class="docutils literal notranslate"><span class="pre">Addressable</span> <span class="pre">Flicker</span></code>.</li>
 <li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The time interval for updating the random offsets.
 Defaults to <code class="docutils literal notranslate"><span class="pre">16ms</span></code>.</li>
 <li><strong>intensity</strong> (<em>Optional</em>, percentage): The intensity of the effect, basically how much the random values can offset
@@ -567,6 +571,7 @@ the currently active light color. Defaults to <code class="docutils literal notr
 <li class="toctree-l1"><a class="reference internal" href="fastled_clockless.html">FastLED Clockless Light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fastled_spi.html">FastLED SPI Light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monochromatic.html">Monochromatic Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neopixelbus.html">Neopixelbus Light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rgb.html">RGB Light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rgbw.html">RGBW Light</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rgbww.html">RGBWW Light</a></li>
@@ -586,7 +591,7 @@ the currently active light color. Defaults to <code class="docutils literal notr
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -602,11 +607,11 @@ the currently active light color. Defaults to <code class="docutils literal notr
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -9,7 +9,7 @@
 <meta itemprop="name" content="Version 1.7.0">
 <meta itemprop="description" content="Changelog for esphomelib version 1.7.0.">
 <meta name="twitter:title" content="Version 1.7.0">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@OttoWinter_">
 <meta name="twitter:creator" content="@OttoWinter_">
 <meta name="twitter:description" content="Changelog for esphomelib version 1.7.0.">
@@ -21,20 +21,21 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Version 1.7.0 &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Version 1.7.0 &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/changelog/v1.7.0.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Version 1.8.0" href="v1.8.0.html" />
-    <link rel="prev" title="Changelog - Version 1.9.0" href="index.html" />
+    <link rel="next" title="Custom" href="../custom/index.html" />
+    <link rel="prev" title="Version 1.8.0" href="v1.8.0.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -157,8 +158,8 @@ receivers and senders with esphomelib. Currently, you will need to use the <code
 <li>While all <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">automations</span></a> were previously already performed on the ESP itself, they only
 triggered when an active WiFi and MQTT connection existed. Large parts of the WiFi and MQTT clients has now
 been rewritten to allow for automations to be executed asynchronously, while the device is still connecting to WiFi.</li>
-<li>The HassIO add-on now has a new <code class="docutils literal notranslate"><span class="pre">password</span></code> option with which you can secure your installation. See
-<a class="reference internal" href="../guides/getting_started_hassio.html"><span class="doc">Getting Started with esphomeyaml through HassIO</span></a>. 🔒</li>
+<li>The Hass.io add-on now has a new <code class="docutils literal notranslate"><span class="pre">password</span></code> option with which you can secure your installation. See
+<a class="reference internal" href="../guides/getting_started_hassio.html"><span class="doc">Getting Started with esphomeyaml through Hass.io</span></a>. 🔒</li>
 <li>Binary Sensors now have filters too. They can now be used to debounce any binary sensor and do some more
 complicated actions using lambdas. See <a class="reference internal" href="../components/binary_sensor/index.html#binary-sensor-filters"><span class="std std-ref">Binary Sensor Filters</span></a>. ⛹️‍</li>
 <li>All components can now be flagged <code class="docutils literal notranslate"><span class="pre">internal</span></code>. Doing so will prevent them from being represented in the front-end
@@ -169,7 +170,7 @@ to enter deep sleep. 🛌</li>
 <li>There are two new triggers available now: <a class="reference internal" href="../components/esphomeyaml.html#esphomeyaml-on-boot"><span class="std std-ref">esphomeyaml.on_boot</span></a> and
 <a class="reference internal" href="../components/esphomeyaml.html#esphomeyaml-on-shutdown"><span class="std std-ref">esphomeyaml.on_shutdown</span></a> with which you can do some advanced cleanup/setup
 on boot and shutdown of the node.</li>
-<li>All HassIO add-on builds have now been more or less completely automated using a private Gitlab server. You
+<li>All Hass.io add-on builds have now been more or less completely automated using a private Gitlab server. You
 can find all the new docker files <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/tree/master/docker">here</a>.</li>
 <li>Added a new <code class="docutils literal notranslate"><span class="pre">build_path</span></code> option in the <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span></code> section with which you can customize where
 esphomeyaml stores the platformio project files. See <a class="reference internal" href="../components/esphomeyaml.html"><span class="doc">esphomeyaml Core Configuration</span></a>.</li>
@@ -252,7 +253,7 @@ for using esphomeyaml to create a simple wireless doorbell:</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -268,11 +269,11 @@ for using esphomeyaml to create a simple wireless doorbell:</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

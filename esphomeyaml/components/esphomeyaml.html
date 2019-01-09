@@ -23,19 +23,20 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>esphomeyaml Core Configuration &#8212; ESPHome 1.9.3 documentation</title>
+    <title>esphomeyaml Core Configuration &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/esphomeyaml.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="I²C Bus" href="i2c.html" />
+    <link rel="next" title="Ethernet Component" href="ethernet.html" />
     <link rel="prev" title="ESP32 Touch Pad Hub" href="esp32_touch.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -76,6 +77,7 @@
 <li><a class="reference internal" href="#on-boot"><code class="docutils literal notranslate"><span class="pre">on_boot</span></code></a></li>
 <li><a class="reference internal" href="#on-shutdown"><code class="docutils literal notranslate"><span class="pre">on_shutdown</span></code></a></li>
 <li><a class="reference internal" href="#on-loop"><code class="docutils literal notranslate"><span class="pre">on_loop</span></code></a></li>
+<li><a class="reference internal" href="#platformio-options"><code class="docutils literal notranslate"><span class="pre">platformio_options</span></code></a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -126,8 +128,18 @@ See <a class="reference internal" href="#esphomeyaml-arduino-version"><span clas
 <li><strong>build_path</strong> (<em>Optional</em>, string): Customize where esphomeyaml will store the build files
 for your node. By default, esphomeyaml puts all platformio project files under a folder <code class="docutils literal notranslate"><span class="pre">&lt;NODE_NAME&gt;/</span></code>,
 but you can customize this behavior using this option.</li>
+<li><strong>platformio_options</strong> (<em>Optional</em>, mapping): Additional options to pass over to platformio in the
+platformio.ini file. See <a class="reference internal" href="#esphomeyaml-platformio-options"><span class="std std-ref">platformio_options</span></a>.</li>
+<li><strong>includes</strong> (<em>Optional</em>, list): Additional files to include in the main.cpp for custom components.</li>
+<li><strong>libraries</strong> (<em>Optional</em>, list): Additional <a class="reference external" href="https://platformio.org/lib">platformio libraries</a> to
+include in the build. Mostly for custom code.</li>
 <li><strong>use_custom_code</strong> (<em>Optional</em>, boolean): Whether to configure the project for writing custom components.
 This sets up some flags so that custom code should compile correctly</li>
+<li><strong>includes</strong> (<em>Optional</em>, list of files): A list of files to include in the main (auto-generated) sketch file
+for custom components. The paths in this list are relative to the directory where the YAML configuration file
+is in.</li>
+<li><strong>libraries</strong> (<em>Optional</em>, list of libraries): A list of <a class="reference external" href="https://platformio.org/lib">platformio libraries</a>
+to include in the project. See <a class="reference external" href="https://docs.platformio.org/en/latest/userguide/lib/cmd_install.html">platformio lib install</a>.</li>
 </ul>
 <p>Automations:</p>
 <ul class="simple">
@@ -289,6 +301,21 @@ example, the MQTT client may have already disconnected.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="platformio-options">
+<span id="esphomeyaml-platformio-options"></span><h2><code class="docutils literal notranslate"><span class="pre">platformio_options</span></code><a class="headerlink" href="#platformio-options" title="Permalink to this headline">¶</a></h2>
+<p>Platformio supports a number of options in its <code class="docutils literal notranslate"><span class="pre">platformio.ini</span></code> file. With the <code class="docutils literal notranslate"><span class="pre">platformio_options</span></code>
+parameter you can tell esphomeyaml what options to pass into the <code class="docutils literal notranslate"><span class="pre">env</span></code> section of the platformio file
+(Note you can also do this by editing the <code class="docutils literal notranslate"><span class="pre">platformio.ini</span></code> file manually).</p>
+<p>You can view a full list of platformio options here: <a class="reference external" href="https://docs.platformio.org/en/latest/projectconf/section_env.html">https://docs.platformio.org/en/latest/projectconf/section_env.html</a></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="c1"># ...</span>
+  <span class="l l-Scalar l-Scalar-Plain">platformio_options</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">upload_speed</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">115200</span>
+    <span class="l l-Scalar l-Scalar-Plain">board_build.f_flash</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">80000000L</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -308,7 +335,7 @@ example, the MQTT client may have already disconnected.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -324,11 +351,11 @@ example, the MQTT client may have already disconnected.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -1,0 +1,200 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Custom Output &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/custom.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ESP8266 Software PWM Output" href="esp8266_pwm.html" />
+    <link rel="prev" title="Output Component" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/output/custom.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Custom Output</a><ul>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="custom-output">
+<h1>Custom Output<a class="headerlink" href="#custom-output" title="Permalink to this headline">¶</a></h1>
+<p>This integration can be used to create custom binary and float <a class="reference internal" href="index.html"><span class="doc">outputs</span></a>
+in esphomelib using the C++ (Arduino) API.</p>
+<p>Please first read <a class="reference internal" href="../sensor/custom.html"><span class="doc">Custom Sensor Component</span></a> guide, the same principles apply here.</p>
+<p>The example below is an example of a custom float output; this custom output is essentially the
+same as the <a class="reference internal" href="esp8266_pwm.html"><span class="doc">ESP8266 software PWM output</span></a>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&quot;esphomelib.h&quot;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">esphomelib</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyCustomFloatOutput</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Component</span><span class="p">,</span> <span class="k">public</span> <span class="n">output</span><span class="o">::</span><span class="n">FloatOutput</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">setup</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="c1">// This will be called by App.setup()</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">write_state</span><span class="p">(</span><span class="kt">float</span> <span class="n">state</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="c1">// state is the amount this output should be on, from 0.0 to 1.0</span>
+    <span class="c1">// we need to convert it to an integer first</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">state</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span>
+    <span class="n">analogWrite</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Custom binary output, for exposing binary states</span>
+<span class="k">class</span> <span class="nc">MyCustomBinaryOutput</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Component</span><span class="p">,</span> <span class="k">public</span> <span class="n">output</span><span class="o">::</span><span class="n">BinaryOutput</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">setup</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="c1">// This will be called by App.setup()</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">write_state</span><span class="p">(</span><span class="kt">bool</span> <span class="n">state</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>(Store this file in your configuration directory, for example <code class="docutils literal notranslate"><span class="pre">my_output.h</span></code>)</p>
+<p>And in YAML:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">includes</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my_output.h</span>
+
+<span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">custom</span>
+  <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">float</span>
+  <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+    <span class="no">auto my_custom_float_output = new MyCustomFloatOutput();</span>
+    <span class="no">App.register_component(my_custom_float_output);</span>
+    <span class="no">return {my_custom_float_output};</span>
+
+  <span class="l l-Scalar l-Scalar-Plain">outputs</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">custom_float</span>
+
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">custom</span>
+  <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">binary</span>
+  <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+    <span class="no">auto my_custom_binary_output = new MyCustomBinaryOutput();</span>
+    <span class="no">App.register_component(my_custom_binary_output);</span>
+    <span class="no">return {my_custom_binary_output};</span>
+
+  <span class="l l-Scalar l-Scalar-Plain">outputs</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">custom_binary</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul>
+<li><p class="first"><strong>type</strong> (<strong>Required</strong>, string): The type of output. One of <code class="docutils literal notranslate"><span class="pre">binary</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+</li>
+<li><p class="first"><strong>lambda</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambda</span></a>): The lambda to run for instantiating the
+output(s).</p>
+</li>
+<li><p class="first"><strong>outputs</strong> (<strong>Required</strong>, list): A list of outputs to initialize. The length here
+must equal the number of items in the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement of the <code class="docutils literal notranslate"><span class="pre">lambda</span></code>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>All options from <a class="reference internal" href="index.html#config-output"><span class="std std-ref">Output</span></a>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>See <a class="reference internal" href="../../../api/output/index.html#_CPPv3N6output12BinaryOutputE" title="output::BinaryOutput"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">output::BinaryOutput</span></code></a> and :cpp:class`output::FloatOutput`.</p>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/output/custom.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-components-output-custom" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

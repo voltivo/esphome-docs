@@ -24,20 +24,21 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>I²C Bus &#8212; ESPHome 1.9.3 documentation</title>
+    <title>I²C Bus &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/i2c.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Logger Component" href="logger.html" />
-    <link rel="prev" title="esphomeyaml Core Configuration" href="esphomeyaml.html" />
+    <link rel="prev" title="Ethernet Component" href="ethernet.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -88,7 +89,9 @@
   <div class="section" id="i2c-bus">
 <span id="i2c"></span><h1>I²C Bus<a class="headerlink" href="#i2c-bus" title="Permalink to this headline">¶</a></h1>
 <p>This component sets up the i²c bus for your ESP32 or ESP8266. In order for those components
-to work correctly, you need to define the i²c bus in your configuration.</p>
+to work correctly, you need to define the i²c bus in your configuration. Please note the ESP
+will enable its internal 10kΩ pullup resistors for these pins, so you usually don’t need to
+put on external ones.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="l l-Scalar l-Scalar-Plain">i2c</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">sda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">21</span>
@@ -135,7 +138,7 @@ version of the Arduino framework. See <a class="reference internal" href="esphom
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -151,11 +154,11 @@ version of the Arduino framework. See <a class="reference internal" href="esphom
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

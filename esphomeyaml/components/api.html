@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up the native ESPHome API for communication with Home Assistant.">
+<meta name="keywords" content="Native API, ESPHome, Home Assistant">
+<meta itemprop="name" content="Native API Component">
+<meta itemprop="description" content="Instructions for setting up the native ESPHome API for communication with Home Assistant.">
+<meta itemprop="image" content="https://esphomelib.com/_images/server-network.png">
+<meta name="twitter:title" content="Native API Component">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/server-network.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up the native ESPHome API for communication with Home Assistant.">
+<meta property="og:title" content="Native API Component"/>
+<meta property="og:image" content="https://esphomelib.com/_images/server-network.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up the native ESPHome API for communication with Home Assistant."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>Native API Component &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/api.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dallas Temperature Component" href="dallas.html" />
+    <link rel="prev" title="ADS1115 Hub" href="ads1115.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/api.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Native API Component</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#migrating-from-mqtt-to-native-api-setup-in-home-assistant">Migrating from MQTT to Native API Setup in Home Assistant</a></li>
+<li><a class="reference internal" href="#homeassistant-service-action"><code class="docutils literal notranslate"><span class="pre">homeassistant.service</span></code> Action</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="native-api-component">
+<h1>Native API Component<a class="headerlink" href="#native-api-component" title="Permalink to this headline">¶</a></h1>
+<p>This core esphomelib component sets up WiFi connections to access points
+for you. It needs to be in your configuration or otherwise esphomeyaml
+will fail in the config validation stage.</p>
+<p>It’s recommended to provide a static IP for your node, as it can
+dramatically improve connection times.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">api</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&#39;MyPassword&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>port</strong> (<em>Optional</em>, integer): The port to run the API Server on. Defaults to <code class="docutils literal notranslate"><span class="pre">6053</span></code>.</li>
+<li><strong>password</strong> (<em>Optional</em>, string): The password to protect the API Server with. Defaults to no password.</li>
+<li><strong>reboot_timeout</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-time"><span class="std std-ref">time</span></a>): The amount of time to wait before rebooting when no
+client connects to the API. This is needed because sometimes the low level ESP functions report that
+the ESP is connected to the network, when in fact it is not - only a full reboot fixes it.
+Can be disabled by setting this to <code class="docutils literal notranslate"><span class="pre">0s</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">5min</span></code>.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+</ul>
+</div>
+<div class="section" id="migrating-from-mqtt-to-native-api-setup-in-home-assistant">
+<span id="api-mqtt-to-native"></span><h2>Migrating from MQTT to Native API Setup in Home Assistant<a class="headerlink" href="#migrating-from-mqtt-to-native-api-setup-in-home-assistant" title="Permalink to this headline">¶</a></h2>
+<p>The native API is the best way to use esphomelib together with Home Assistant - it’s fast,
+highly efficient and requires almost zero setup (whereas MQTT requires you to set up an MQTT broker first).</p>
+<p>If you’ve previously used esphomelib with Home Assistant via MQTT and have enabled MQTT discovery,
+the upgrade process is unfortunately not just swapping out the <code class="docutils literal notranslate"><span class="pre">mqtt</span></code> for <code class="docutils literal notranslate"><span class="pre">api</span></code> in your configuration:
+Home Assistant’s <a class="reference external" href="https://developers.home-assistant.io/docs/en/entity_registry_index.html">entity registry</a> complicates
+things a bit. If you don’t follow these steps, all your new native API entities will have a trailing
+<cite>_2</cite> at the end of the entity ID.</p>
+<p>You can repeat these steps for all your nodes, or convert them over to the new native API one by one.</p>
+<ol class="arabic simple">
+<li>Disable MQTT discovery on ESP side. In your ESPHome configuration, set a special “clean” discovery flag:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># In your ESPHome configuration! Not HA config!</span>
+<span class="l l-Scalar l-Scalar-Plain">mqtt</span><span class="p p-Indicator">:</span>
+  <span class="c1"># Other settings ...</span>
+  <span class="l l-Scalar l-Scalar-Plain">discovery</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">clean</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Compile and upload this new firmware. All entities should now be gone from Home Assistant.</p>
+</li>
+<li><p class="first">Go to your Home Assistant configuration folder and go to the <code class="docutils literal notranslate"><span class="pre">.storage</span></code> folder (might be hidden
+depending on your operating system). In there you will find a file called <code class="docutils literal notranslate"><span class="pre">core.entity_registry</span></code> - open
+the file with a text editor and paste the contents below</p>
+<textarea rows="10" cols="50" id="entity-reg-converter"></textarea>
+<button type="button" id="entity-reg-button">Convert Entity Registry</button>
+<script>
+  var elem = document.getElementById("entity-reg-converter");
+  elem.addEventListener("click", function() {
+    elem.focus();
+    elem.select();
+  });
+  document.getElementById("entity-reg-button").addEventListener("click", function() {
+    try {
+      data = JSON.parse(elem.value);
+    } catch(e) {
+      alert(e);
+    }
+    var entities = data.data.entities;
+    var newEntities = [];
+    for (var i = 0; i < entities.length; i++) {
+      var entity = entities[i];
+      if (entity.platform != "mqtt") {
+        newEntities.push(entity);
+      }
+    }
+    data.data.entities = newEntities;
+    elem.value = JSON.stringify(data, null, 4);
+  });
+</script></li>
+<li><p class="first">Stop Home Assistant - this is necessary for the entity registry changes not to become overriden.</p>
+</li>
+<li><p class="first">Convert the Entity Registry file above using the “Convert Entity Registry Button”, and
+override the <code class="docutils literal notranslate"><span class="pre">.storage/core.entity_registry</span></code> file with the new contents.</p>
+</li>
+<li><p class="first">Start Home Assistant.</p>
+</li>
+<li><p class="first">Now you can enable the ESPHome native API (and upload the new firmware)</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">api</span><span class="p p-Indicator">:</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>In Home Assistant, go to “Configuration” -&gt; “Integrations” - if you’ve set up the <code class="docutils literal notranslate"><span class="pre">discovery:</span></code> component,
+you’ll already see the ESP as a suggestion to be configured. But if you’re having issues with that, you can
+always manually set up an ESPHome device using “Set up a new integration” -&gt; “ESPHome”.</li>
+</ol>
+</div>
+<div class="section" id="homeassistant-service-action">
+<span id="api-homeassistant-service-action"></span><h2><code class="docutils literal notranslate"><span class="pre">homeassistant.service</span></code> Action<a class="headerlink" href="#homeassistant-service-action" title="Permalink to this headline">¶</a></h2>
+<p>When using the native API with Home Assistant, you can create Home Assistant service
+calls straight from ESPHome <a class="reference internal" href="../guides/automations.html#automation"><span class="std std-ref">Automations</span></a>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># In some trigger</span>
+<span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="c1"># Simple</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">homeassistant.service</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">service</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">notify.html5</span>
+      <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Button was pressed</span>
+  <span class="c1"># With templates and variables</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">homeassistant.service</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">service</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">notify.html5</span>
+      <span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">New Humidity</span>
+      <span class="l l-Scalar l-Scalar-Plain">data_template</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">message</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">The humidity is {{ my_variable }}%.</span>
+      <span class="l l-Scalar l-Scalar-Plain">variables</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">my_variable</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+          <span class="no">return id(my_sensor).state;</span>
+</pre></div>
+</div>
+<p>Configuration options:</p>
+<ul class="simple">
+<li><strong>service</strong> (<strong>Required</strong>, string): The Home Assistant <a class="reference external" href="https://www.home-assistant.io/docs/scripts/service-calls/">Service</a>
+to call.</li>
+<li><strong>data</strong> (<em>Optional</em>, mapping): Optional <em>static</em> data to pass along with the service call.</li>
+<li><strong>data_template</strong> (<em>Optional</em>, mapping): Optional template data to pass along with the service call.
+This is evaluated on the Home Assistant side with Home Assistant’s templating engine.</li>
+<li><strong>variables</strong> (<em>Optional</em>, mapping): Optional variables that can be used in the <code class="docutils literal notranslate"><span class="pre">data_template</span></code>.
+Values are <a class="reference internal" href="../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a> and will be evaluated before sending the request.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../../api/core/native-api.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/api.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-components-api" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

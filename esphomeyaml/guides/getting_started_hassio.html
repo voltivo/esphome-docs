@@ -5,31 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Getting Started guide for installing esphomeyaml as a HassIO Add-on and creating a basic configuration.">
-<meta itemprop="name" content="Getting Started with esphomeyaml through HassIO">
-<meta itemprop="description" content="Getting Started guide for installing esphomeyaml as a HassIO Add-on and creating a basic configuration.">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Getting Started guide for installing esphomeyaml as a Hass.io Add-on and creating a basic configuration.">
+<meta itemprop="name" content="Getting Started with esphomeyaml through Hass.io">
+<meta itemprop="description" content="Getting Started guide for installing esphomeyaml as a Hass.io Add-on and creating a basic configuration.">
 <meta itemprop="image" content="https://esphomelib.com/_images/home-assistant.png">
-<meta name="twitter:title" content="Getting Started with esphomeyaml through HassIO">
+<meta name="twitter:title" content="Getting Started with esphomeyaml through Hass.io">
 <meta name="twitter:image:src" content="https://esphomelib.com/_images/home-assistant.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@OttoWinter_">
-<meta name="twitter:description" content="Getting Started guide for installing esphomeyaml as a HassIO Add-on and creating a basic configuration.">
-<meta property="og:title" content="Getting Started with esphomeyaml through HassIO"/>
+<meta name="twitter:description" content="Getting Started guide for installing esphomeyaml as a Hass.io Add-on and creating a basic configuration.">
+<meta property="og:title" content="Getting Started with esphomeyaml through Hass.io"/>
 <meta property="og:image" content="https://esphomelib.com/_images/home-assistant.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="esphomelib"/>
-<meta property="og:description" content="Getting Started guide for installing esphomeyaml as a HassIO Add-on and creating a basic configuration."/>
+<meta property="og:description" content="Getting Started guide for installing esphomeyaml as a Hass.io Add-on and creating a basic configuration."/>
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Getting Started with esphomeyaml through HassIO &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Getting Started with esphomeyaml through Hass.io &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/guides/getting_started_hassio.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -69,10 +70,10 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Getting Started with esphomeyaml through HassIO</a><ul>
+<li><a class="reference internal" href="#">Getting Started with esphomeyaml through Hass.io</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#dashboard-interface">Dashboard Interface</a><ul>
-<li><a class="reference internal" href="#hassio-add-on-options">HassIO add-on options</a></li>
+<li><a class="reference internal" href="#hass-io-add-on-options">Hass.io add-on options</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#adding-some-basic-features">Adding some (basic) features</a></li>
@@ -92,11 +93,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="getting-started-with-esphomeyaml-through-hassio">
-<h1>Getting Started with esphomeyaml through HassIO<a class="headerlink" href="#getting-started-with-esphomeyaml-through-hassio" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-started-with-esphomeyaml-through-hass-io">
+<h1>Getting Started with esphomeyaml through Hass.io<a class="headerlink" href="#getting-started-with-esphomeyaml-through-hass-io" title="Permalink to this headline">¶</a></h1>
 <p>esphomeyaml is the perfect solution for creating custom firmwares for
 your ESP8266/ESP32 boards. In this guide we’ll go through how to setup a
-basic “node” by use of the HassIO add-on.</p>
+basic “node” by use of the Hass.io add-on.</p>
 <p>But first, here’s a very quick introduction of how esphomeyaml works:
 esphomeyaml is a <em>tool</em> which reads in YAML configuration files (just like Home Assistant)
 and creates custom firmwares. The tool also has many helpers that simplify flashing devices
@@ -105,7 +106,7 @@ or sensors in esphomeyaml’s configuration, they will even automatically show u
 Assistant’s UI.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>Installing the esphomeyaml HassIO add-on is easy. Just navigate to the HassIO
+<p>Installing the esphomeyaml Hass.io add-on is easy. Just navigate to the Hass.io
 panel in your Home Assistant frontend and add the esphomeyaml add-on repository:
 <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml">https://github.com/OttoWinter/esphomeyaml</a></p>
 <div class="figure">
@@ -136,9 +137,10 @@ there are three basic actions you can perform:</p>
 USB device or, if no USB devices are connected, over-the-air using the <a class="reference internal" href="../components/ota.html"><span class="doc">OTA Update Component</span></a>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">The HassIO Add-On is currently not capable of discovering new USB ports after the add-on
+<p class="last">The Hass.io Add-On is currently not capable of discovering new USB ports after the add-on
 has started due to some docker restrictions. Please go to the add-on details page
-and restart the add-on if a new USB device is not automatically found.</p>
+and restart the add-on if a new USB device is not automatically found. If the USB device
+is still not found, try changing the USB cable and restarting the add-on.</p>
 </div>
 </li>
 <li><p class="first"><strong>COMPILE</strong>: This command compiles the firmware and gives you the option of downloading the generated
@@ -163,10 +165,10 @@ esphomeyaml configuration files.</p>
 <p>Now go ahead and use one of the <a class="reference internal" href="../index.html#devices"><span class="std std-ref">devices guides</span></a> to extend your configuration for the device you
 intend to flash an esphomeyaml firmware onto. Then proceed with uploading the first firmware using the
 upload button.</p>
-<div class="section" id="hassio-add-on-options">
-<h3>HassIO add-on options<a class="headerlink" href="#hassio-add-on-options" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="hass-io-add-on-options">
+<h3>Hass.io add-on options<a class="headerlink" href="#hass-io-add-on-options" title="Permalink to this headline">¶</a></h3>
 <p>Since version 1.8.0, you can optionally specify a password to use for all traffic to esphomeyaml
-using the <code class="docutils literal notranslate"><span class="pre">password</span></code> option in the HassIO add-on page. By default, this is an empty string
+using the <code class="docutils literal notranslate"><span class="pre">password</span></code> option in the Hass.io add-on page. By default, this is an empty string
 (which means no password), but you can enter any string in there to set your password.</p>
 </div>
 </div>
@@ -181,7 +183,7 @@ to the configuration like this:</p>
     <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
 </pre></div>
 </div>
-<p>In above example, we’re simply adding a switch that’s called “Living Room Relay” (could control
+<p>In above example, we’re simply adding a switch that’s called “Living Room Dehumidifier” (could control
 anything really, for example lights) and is connected to the pin <code class="docutils literal notranslate"><span class="pre">GPIO5</span></code>.</p>
 <p>Now if you have <a class="reference external" href="https://www.home-assistant.io/docs/mqtt/discovery/">MQTT
 Discovery</a>
@@ -283,7 +285,7 @@ esphomeyaml’s great configuration options.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -299,11 +301,11 @@ esphomeyaml’s great configuration options.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

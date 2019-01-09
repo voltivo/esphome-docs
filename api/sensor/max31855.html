@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MAX31855 K-Type Thermocouple Temperature Sensor &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/max31855.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MAX6675 K-Type Thermocouple Temperature Sensor" href="max6675.html" />
+    <link rel="prev" title="INA3221 3-Channel DC Current Sensor" href="ina3221.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/api/sensor/max31855.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MAX31855 K-Type Thermocouple Temperature Sensor</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="max31855-k-type-thermocouple-temperature-sensor">
+<h1>MAX31855 K-Type Thermocouple Temperature Sensor<a class="headerlink" href="#max31855-k-type-thermocouple-temperature-sensor" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="../core/application.html#_CPPv3N11Application20make_max31855_sensorERKNSt6stringEP12SPIComponentRK13GPIOOutputPin8uint32_t" title="Application::make_max31855_sensor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Application::make_max31855_sensor()</span></code></a>.</p>
+<div class="section" id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv3N6sensor14MAX31855SensorE">
+<span id="_CPPv2N6sensor14MAX31855SensorE"></span><span id="sensor::MAX31855Sensor"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor"></span><em class="property">class </em><code class="descname">MAX31855Sensor</code> : <em class="property">public</em> sensor::<a class="reference internal" href="index.html#_CPPv3N6sensor22PollingSensorComponentE" title="sensor::PollingSensorComponent">PollingSensorComponent</a>, <em class="property">public</em> <a class="reference internal" href="../core/spi.html#_CPPv39SPIDevice" title="SPIDevice">SPIDevice</a><a class="headerlink" href="#_CPPv3N6sensor14MAX31855SensorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor14MAX31855SensorERKNSt6stringEP12SPIComponentP7GPIOPin8uint32_t">
+<span id="_CPPv2N6sensor14MAX31855Sensor14MAX31855SensorERKNSt6stringEP12SPIComponentP7GPIOPin8uint32_t"></span><span id="sensor::MAX31855Sensor::MAX31855Sensor__ssCR.SPIComponentP.GPIOPinP.uint32_t"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1a6aeb27bc94617e770936738cbb579b36"></span><code class="descname">MAX31855Sensor</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, <a class="reference internal" href="../core/spi.html#_CPPv312SPIComponent" title="SPIComponent">SPIComponent</a> *<em>parent</em>, <a class="reference internal" href="../core/helpers.html#_CPPv37GPIOPin" title="GPIOPin">GPIOPin</a> *<em>cs</em>, uint32_t <em>update_interval</em> = 60000<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor14MAX31855SensorERKNSt6stringEP12SPIComponentP7GPIOPin8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor5setupEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor5setupEv"></span><span id="sensor::MAX31855Sensor::setup"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1aaeafd253f4f70092fcae116ca66ed0f2"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor11dump_configEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor11dump_configEv"></span><span id="sensor::MAX31855Sensor::dump_config"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1ae9bd8d484b8e537daa958454f973c5d3"></span>void <code class="descname">dump_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor11dump_configEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6sensor14MAX31855Sensor18get_setup_priorityEv">
+<span id="_CPPv2NK6sensor14MAX31855Sensor18get_setup_priorityEv"></span><span id="sensor::MAX31855Sensor::get_setup_priorityC"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1af2e72e400478f0682d79e8892bcb49ce"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6sensor14MAX31855Sensor18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor6updateEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor6updateEv"></span><span id="sensor::MAX31855Sensor::update"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1a6d9737ecf58685b6d1f847561e6f6608"></span>void <code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor19unit_of_measurementEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor19unit_of_measurementEv"></span><span id="sensor::MAX31855Sensor::unit_of_measurement"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1a3c65cb4e62affdf5ac987675781b8e67"></span>std::string <code class="descname">unit_of_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor19unit_of_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor4iconEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor4iconEv"></span><span id="sensor::MAX31855Sensor::icon"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1a414c56bda06d0d820d20fffcd23b5e1a"></span>std::string <code class="descname">icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor4iconEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor17accuracy_decimalsEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor17accuracy_decimalsEv"></span><span id="sensor::MAX31855Sensor::accuracy_decimals"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1ac053612371b1464816d0271d105b1703"></span>int8_t <code class="descname">accuracy_decimals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor17accuracy_decimalsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor9msb_firstEv">
+<span id="_CPPv2N6sensor14MAX31855Sensor9msb_firstEv"></span><span id="sensor::MAX31855Sensor::msb_first"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1a2cbcda0d53136f432d8ed5d1d871ab57"></span>bool <code class="descname">msb_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor9msb_firstEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6sensor14MAX31855Sensor10read_data_Ev">
+<span id="_CPPv2N6sensor14MAX31855Sensor10read_data_Ev"></span><span id="sensor::MAX31855Sensor::read_data_"></span><span class="target" id="classsensor_1_1_m_a_x31855_sensor_1ace2955f5030454f909e6293231b51d51"></span>void <code class="descname">read_data_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6sensor14MAX31855Sensor10read_data_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

@@ -6,18 +6,19 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>UART Bus &#8212; ESPHome 1.9.3 documentation</title>
+    <title>UART Bus &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/core/uart.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Sensor" href="../sensor/index.html" />
+    <link rel="next" title="Native API" href="native-api.html" />
     <link rel="prev" title="SPI Bus" href="spi.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -71,7 +72,7 @@
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="_CPPv313UARTComponent">
-<span id="_CPPv213UARTComponent"></span><span id="UARTComponent"></span><span class="target" id="class_u_a_r_t_component"></span><em class="property">class </em><code class="descname">UARTComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a><a class="headerlink" href="#_CPPv313UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv213UARTComponent"></span><span id="UARTComponent"></span><span class="target" id="class_u_a_r_t_component"></span><em class="property">class </em><code class="descname">UARTComponent</code> : <em class="property">public</em> <a class="reference internal" href="component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> Stream<a class="headerlink" href="#_CPPv313UARTComponent" title="Permalink to this definition">¶</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -82,9 +83,7 @@
 <dl class="function">
 <dt id="_CPPv3N13UARTComponent5setupEv">
 <span id="_CPPv2N13UARTComponent5setupEv"></span><span id="UARTComponent::setup"></span><span class="target" id="class_u_a_r_t_component_1ad967834ca2391898dbb4c3d8200f2f21"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#class_u_a_r_t_component_1ad967834ca2391898dbb4c3d8200f2f21"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13UARTComponent11dump_configEv">
@@ -123,26 +122,33 @@
 
 <dl class="function">
 <dt id="_CPPv3N13UARTComponent9availableEv">
-<span id="_CPPv2N13UARTComponent9availableEv"></span><span id="UARTComponent::available"></span><span class="target" id="class_u_a_r_t_component_1a80bb0a03dbae0dc31528a339a3c9608d"></span>size_t <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13UARTComponent9availableEv"></span><span id="UARTComponent::available"></span><span class="target" id="class_u_a_r_t_component_1a94551f95b02f0ada630cefdd9cf716c7"></span>int <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent9availableEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N13UARTComponent5flushEv">
-<span id="_CPPv2N13UARTComponent5flushEv"></span><span id="UARTComponent::flush"></span><span class="target" id="class_u_a_r_t_component_1a62229d8513943979a5a7c3ebc51e9d79"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent5flushEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N13UARTComponent5flushEv"></span><span id="UARTComponent::flush"></span><span class="target" id="class_u_a_r_t_component_1a73482a09f92fd87475f9c1a5ed5f1cd7"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent5flushEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK13UARTComponent18get_setup_priorityEv">
 <span id="_CPPv2NK13UARTComponent18get_setup_priorityEv"></span><span id="UARTComponent::get_setup_priorityC"></span><span class="target" id="class_u_a_r_t_component_1a6104032efab0b1fdd00766e918fc8e26"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK13UARTComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#class_u_a_r_t_component_1ad967834ca2391898dbb4c3d8200f2f21"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent5writeE7uint8_t">
+<span id="_CPPv2N13UARTComponent5writeE7uint8_t"></span><span id="UARTComponent::write__uint8_t"></span><span class="target" id="class_u_a_r_t_component_1a26e09a335b681481d8e072517fd3f1f9"></span>size_t <code class="descname">write</code><span class="sig-paren">(</span>uint8_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent5writeE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent4readEv">
+<span id="_CPPv2N13UARTComponent4readEv"></span><span id="UARTComponent::read"></span><span class="target" id="class_u_a_r_t_component_1aff7cddcf1764a81bd898ff6e8129cdd8"></span>int <code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent4readEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N13UARTComponent4peekEv">
+<span id="_CPPv2N13UARTComponent4peekEv"></span><span id="UARTComponent::peek"></span><span class="target" id="class_u_a_r_t_component_1a69a1f7b3069a732f23b7f0b1d32894d9"></span>int <code class="descname">peek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N13UARTComponent4peekEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -185,7 +191,7 @@
 
 <dl class="class">
 <dt id="_CPPv310UARTDevice">
-<span id="_CPPv210UARTDevice"></span><span id="UARTDevice"></span><span class="target" id="class_u_a_r_t_device"></span><em class="property">class </em><code class="descname">UARTDevice</code><a class="headerlink" href="#_CPPv310UARTDevice" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv210UARTDevice"></span><span id="UARTDevice"></span><span class="target" id="class_u_a_r_t_device"></span><em class="property">class </em><code class="descname">UARTDevice</code> : <em class="property">public</em> Stream<a class="headerlink" href="#_CPPv310UARTDevice" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Subclassed by <a class="reference internal" href="../binary_sensor/rdm6300.html#classbinary__sensor_1_1_r_d_m6300_component"><span class="std std-ref">binary_sensor::RDM6300Component</span></a>, <a class="reference internal" href="../display/nextion.html#classdisplay_1_1_nextion"><span class="std std-ref">display::Nextion</span></a>, <a class="reference internal" href="../sensor/cse7766.html#classsensor_1_1_c_s_e7766_component"><span class="std std-ref">sensor::CSE7766Component</span></a>, <a class="reference internal" href="../sensor/mhz19.html#classsensor_1_1_m_h_z19_component"><span class="std std-ref">sensor::MHZ19Component</span></a>, <a class="reference internal" href="../sensor/pmsx003.html#classsensor_1_1_p_m_s_x003_component"><span class="std std-ref">sensor::PMSX003Component</span></a>, <a class="reference internal" href="../switch/uart.html#classswitch___1_1_u_a_r_t_switch"><span class="std std-ref">switch_::UARTSwitch</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
@@ -226,12 +232,27 @@
 
 <dl class="function">
 <dt id="_CPPv3N10UARTDevice9availableEv">
-<span id="_CPPv2N10UARTDevice9availableEv"></span><span id="UARTDevice::available"></span><span class="target" id="class_u_a_r_t_device_1ac5b8e58214a15968596a787b34c1442a"></span>size_t <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10UARTDevice9availableEv"></span><span id="UARTDevice::available"></span><span class="target" id="class_u_a_r_t_device_1a38d5d12928e7c3d81fb723e365a32245"></span>int <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice9availableEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N10UARTDevice5flushEv">
-<span id="_CPPv2N10UARTDevice5flushEv"></span><span id="UARTDevice::flush"></span><span class="target" id="class_u_a_r_t_device_1a9987f665ef3ab7c8fe8d1b6d5f4336cf"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice5flushEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N10UARTDevice5flushEv"></span><span id="UARTDevice::flush"></span><span class="target" id="class_u_a_r_t_device_1a8014eae6ac9daee4caa5c184cb5c55ac"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice5flushEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice5writeE7uint8_t">
+<span id="_CPPv2N10UARTDevice5writeE7uint8_t"></span><span id="UARTDevice::write__uint8_t"></span><span class="target" id="class_u_a_r_t_device_1aaa00788dfe123a5ab64798566707120b"></span>size_t <code class="descname">write</code><span class="sig-paren">(</span>uint8_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice5writeE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice4readEv">
+<span id="_CPPv2N10UARTDevice4readEv"></span><span id="UARTDevice::read"></span><span class="target" id="class_u_a_r_t_device_1a9ba007203d72ad99bc3d5402dafbf2c0"></span>int <code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice4readEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N10UARTDevice4peekEv">
+<span id="_CPPv2N10UARTDevice4peekEv"></span><span id="UARTDevice::peek"></span><span class="target" id="class_u_a_r_t_device_1a075f11371f357396771ba79a39f7a229"></span>int <code class="descname">peek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N10UARTDevice4peekEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -277,7 +298,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N21ESP8266SoftwareSerial9availableEv">
-<span id="_CPPv2N21ESP8266SoftwareSerial9availableEv"></span><span id="ESP8266SoftwareSerial::available"></span><span class="target" id="class_e_s_p8266_software_serial_1a433d74c5492a5ca5d055cc606d27229a"></span>size_t <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9availableEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N21ESP8266SoftwareSerial9availableEv"></span><span id="ESP8266SoftwareSerial::available"></span><span class="target" id="class_e_s_p8266_software_serial_1aef3da143dab253d9b2ea380f3fc0487f"></span>int <code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N21ESP8266SoftwareSerial9availableEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -368,7 +389,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -384,11 +405,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

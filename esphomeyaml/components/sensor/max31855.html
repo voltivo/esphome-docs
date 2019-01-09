@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up MAX31855 Thermocouple temperature sensors.">
+<meta itemprop="name" content="MAX31855 K-Type Thermocouple Temperature Sensor">
+<meta itemprop="description" content="Instructions for setting up MAX31855 Thermocouple temperature sensors.">
+<meta itemprop="image" content="https://esphomelib.com/_images/max31855.jpg">
+<meta name="twitter:title" content="MAX31855 K-Type Thermocouple Temperature Sensor">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/max31855.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up MAX31855 Thermocouple temperature sensors.">
+<meta property="og:title" content="MAX31855 K-Type Thermocouple Temperature Sensor"/>
+<meta property="og:image" content="https://esphomelib.com/_images/max31855.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up MAX31855 Thermocouple temperature sensors."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>MAX31855 K-Type Thermocouple Temperature Sensor &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/max31855.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MAX6675 K-Type Thermocouple Temperature Sensor" href="max6675.html" />
+    <link rel="prev" title="INA3221 3-Channel DC Current Sensor" href="ina3221.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/max31855.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MAX31855 K-Type Thermocouple Temperature Sensor</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="max31855-k-type-thermocouple-temperature-sensor">
+<h1>MAX31855 K-Type Thermocouple Temperature Sensor<a class="headerlink" href="#max31855-k-type-thermocouple-temperature-sensor" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">max31855</span></code> temperature sensor allows you to use your max31855 thermocouple
+temperature sensor (<a class="reference external" href="https://datasheets.maximintegrated.com/en/ds/MAX31855.pdf">datasheet</a>) with esphomelib</p>
+<p>As the communication with the MAX66775 is done using SPI, you need
+to have an <a class="reference internal" href="../spi.html#spi"><span class="std std-ref">spi bus</span></a> in your configuration with the <strong>miso_pin</strong> set (mosi is not required).</p>
+<p>Connect <code class="docutils literal notranslate"><span class="pre">GND</span></code> to <code class="docutils literal notranslate"><span class="pre">GND</span></code>, <code class="docutils literal notranslate"><span class="pre">VCC</span></code> to <code class="docutils literal notranslate"><span class="pre">3.3V</span></code> and the other three <code class="docutils literal notranslate"><span class="pre">MISO</span></code> (or <code class="docutils literal notranslate"><span class="pre">SO</span></code> for short),
+<code class="docutils literal notranslate"><span class="pre">CS</span></code> and <code class="docutils literal notranslate"><span class="pre">CLOCK</span></code> (or <code class="docutils literal notranslate"><span class="pre">CLK</span></code>) to free GPIO pins.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/temperature.png"><img alt="../../../_images/temperature.png" src="../../../_images/temperature.png" style="width: 80.0%;" /></a>
+</div>
+<div class="code yaml highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">spi</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">miso_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+  <span class="l l-Scalar l-Scalar-Plain">clk_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">max31855</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Living</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">Temperature&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">cs_pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for the temperature sensor.</li>
+<li><strong>cs_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The Chip Select pin of the SPI interface.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval to check the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">60s</span></code>.</li>
+<li><strong>spi_id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID of the <a class="reference internal" href="../spi.html#spi"><span class="std std-ref">SPI Component</span></a> if you want
+to use multiple SPI buses.</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+<li>All other options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
+<li><a class="reference internal" href="dallas.html"><span class="doc">Dallas Temperature Sensor</span></a></li>
+<li><a class="reference internal" href="dht.html"><span class="doc">DHT Temperature+Humidity Sensor</span></a></li>
+<li><a class="reference internal" href="adc.html"><span class="doc">Analog To Digital Sensor</span></a></li>
+<li><a class="reference internal" href="sht3xd.html"><span class="doc">SHT3X-D Temperature+Humidity Sensor</span></a></li>
+<li><a class="reference internal" href="max6675.html"><span class="doc">MAX6675 K-Type Thermocouple Temperature Sensor</span></a></li>
+<li><a class="reference external" href="https://github.com/adafruit/Adafruit-MAX31855-library">MAX31855 Library</a> by <a class="reference external" href="https://www.adafruit.com/">Adafruit</a></li>
+<li><a class="reference internal" href="../../../api/sensor/max31855.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/max31855.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-components-sensor-max31855" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

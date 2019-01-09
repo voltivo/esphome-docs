@@ -23,19 +23,20 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Binary Sensor Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Binary Sensor Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/binary_sensor/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ESP32 Bluetooth Low Energy Device" href="esp32_ble_tracker.html" />
+    <link rel="next" title="Custom Binary Sensor" href="custom.html" />
     <link rel="prev" title="Components" href="../index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -75,9 +76,11 @@
 <li><a class="reference internal" href="#binary-sensor-automation">Binary Sensor Automation</a><ul>
 <li><a class="reference internal" href="#on-press"><code class="docutils literal notranslate"><span class="pre">on_press</span></code></a></li>
 <li><a class="reference internal" href="#on-release"><code class="docutils literal notranslate"><span class="pre">on_release</span></code></a></li>
+<li><a class="reference internal" href="#on-state"><code class="docutils literal notranslate"><span class="pre">on_state</span></code></a></li>
 <li><a class="reference internal" href="#on-click"><code class="docutils literal notranslate"><span class="pre">on_click</span></code></a></li>
 <li><a class="reference internal" href="#on-double-click"><code class="docutils literal notranslate"><span class="pre">on_double_click</span></code></a></li>
 <li><a class="reference internal" href="#on-multi-click"><code class="docutils literal notranslate"><span class="pre">on_multi_click</span></code></a></li>
+<li><a class="reference internal" href="#binary-sensor-is-on-binary-sensor-is-off-condition"><code class="docutils literal notranslate"><span class="pre">binary_sensor.is_on</span></code> / <code class="docutils literal notranslate"><span class="pre">binary_sensor.is_off</span></code> Condition</a></li>
 <li><a class="reference internal" href="#lambda-calls">lambda calls</a></li>
 </ul>
 </li>
@@ -123,6 +126,8 @@ inverting signals. See <a class="reference internal" href="#binary-sensor-filter
 when the button is pressed. See <a class="reference internal" href="#binary-sensor-on-press"><span class="std std-ref">on_press</span></a>.</li>
 <li><strong>on_release</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): An automation to perform
 when the button is released. See <a class="reference internal" href="#binary-sensor-on-release"><span class="std std-ref">on_release</span></a>.</li>
+<li><strong>on_state</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): An automation to perform
+when a state is published. See <a class="reference internal" href="#binary-sensor-on-state"><span class="std std-ref">on_state</span></a>.</li>
 <li><strong>on_click</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>): An automation to perform
 when the button is held down for a specified period of time.
 See <a class="reference internal" href="#binary-sensor-on-click"><span class="std std-ref">on_click</span></a>.</li>
@@ -146,7 +151,7 @@ They are similar to <a class="reference internal" href="../sensor/index.html#sen
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">invert</span><span class="p p-Indicator">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delayed_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delayed_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;-</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
           <span class="no">if (id(other_binary_sensor).state) {</span>
             <span class="no">return x;</span>
           <span class="no">} else {</span>
@@ -202,6 +207,21 @@ edge of the signal.</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">on_release</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
+</pre></div>
+</div>
+<p>Configuration variables: See <a class="reference internal" href="../../guides/automations.html#automation"><span class="std std-ref">Automation</span></a>.</p>
+</div>
+<div class="section" id="on-state">
+<span id="binary-sensor-on-state"></span><h3><code class="docutils literal notranslate"><span class="pre">on_state</span></code><a class="headerlink" href="#on-state" title="Permalink to this headline">¶</a></h3>
+<p>This automation will be triggered when a new state is received (and thus combines <code class="docutils literal notranslate"><span class="pre">on_press</span></code>
+and <code class="docutils literal notranslate"><span class="pre">on_release</span></code> into one trigger). The new state will be given as the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> as a boolean
+and can be used in <a class="reference internal" href="../../guides/automations.html#config-lambda"><span class="std std-ref">lambdas</span></a>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">on_state</span><span class="p p-Indicator">:</span>
       <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay_1</span>
 </pre></div>
@@ -300,7 +320,6 @@ presses.</p>
   <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Double</span><span class="nv"> </span><span class="s">Clicked&quot;</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">timing</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for 1s to 2s</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ON for 1s to 2s</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at least 0.5s</span>
   <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
@@ -310,6 +329,18 @@ presses.</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">OFF for at least 0.5s</span>
   <span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span> <span class="s">&quot;Single</span><span class="nv"> </span><span class="s">Short</span><span class="nv"> </span><span class="s">Clicked&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="binary-sensor-is-on-binary-sensor-is-off-condition">
+<span id="binary-sensor-is-off-condition"></span><span id="binary-sensor-is-on-condition"></span><h3><code class="docutils literal notranslate"><span class="pre">binary_sensor.is_on</span></code> / <code class="docutils literal notranslate"><span class="pre">binary_sensor.is_off</span></code> Condition<a class="headerlink" href="#binary-sensor-is-on-binary-sensor-is-off-condition" title="Permalink to this headline">¶</a></h3>
+<p>This <a class="reference internal" href="../../guides/automations.html#config-condition"><span class="std std-ref">Condition</span></a> checks if the given binary sensor is ON (or OFF).</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># In some trigger:</span>
+<span class="l l-Scalar l-Scalar-Plain">on_...</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">if</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">condition</span><span class="p p-Indicator">:</span>
+      <span class="c1"># Same syntax for is_off</span>
+      <span class="l l-Scalar l-Scalar-Plain">binary_sensor.is_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_binary_sensor</span>
 </pre></div>
 </div>
 </div>
@@ -349,6 +380,7 @@ in the program.</p>
 </ul>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Custom Binary Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="esp32_ble_tracker.html">ESP32 Bluetooth Low Energy Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="esp32_touch.html">ESP32 Touch Pad Binary Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpio.html">GPIO Binary Sensor</a></li>
@@ -374,7 +406,7 @@ in the program.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -390,11 +422,11 @@ in the program.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>API Reference &#8212; ESPHome 1.9.3 documentation</title>
+    <title>API Reference &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/index.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,11 +79,13 @@
 <li class="toctree-l2"><a class="reference internal" href="core/time.html">Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core/spi.html">SPI Bus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core/uart.html">UART Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/native-api.html">Native API for Home Assistant</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sensor/index.html">Sensor</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sensor/adc.html">ADC Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/ads1115.html">ADS1115 ADC Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor/apds9960.html">APDS9960 Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/bh1750.html">BH1750 Ambient Light Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/bme280.html">BME280 Temperature/Pressure/Humidity Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/bme680.html">BME680 Temperature/Pressure/Humidity/Gas Sensor</a></li>
@@ -101,6 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sensor/hx711.html">HX711 Load Cell Amplifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/ina219.html">INA219 DC Current Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/ina3221.html">INA3221 3-Channel DC Current Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor/max31855.html">MAX31855 K-Type Thermocouple Temperature Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/max6675.html">MAX6675 K-Type Thermocouple Temperature Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/mhz19.html">MH-Z19 CO_2 and Temperature Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensor/mpu6050.html">MPU6050 Accelerometer/Gyroscope Component</a></li>
@@ -141,7 +145,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="light/index.html">Light</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="light/addressable.html">Addressable Lights</a></li>
 <li class="toctree-l2"><a class="reference internal" href="light/fastled.html">FastLED Light Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="light/neopixelbus.html">Neopixelbus Lights</a></li>
 <li class="toctree-l2"><a class="reference internal" href="light/index.html#example-usage">Example Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="light/index.html#api-reference">API Reference</a></li>
 </ul>
@@ -197,7 +203,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -213,11 +219,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

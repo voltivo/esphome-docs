@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Remote Receiver &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Remote Receiver &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/binary_sensor/remote_receiver.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,9 +85,7 @@
 <dl class="function">
 <dt id="_CPPv3N6remote23RemoteReceiverComponent5setupEv">
 <span id="_CPPv2N6remote23RemoteReceiverComponent5setupEv"></span><span id="remote::RemoteReceiverComponent::setup"></span><span class="target" id="classremote_1_1_remote_receiver_component_1af455edc5d5903b278edefd8aeb1f1966"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classremote_1_1_remote_receiver_component_1af455edc5d5903b278edefd8aeb1f1966"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6remote23RemoteReceiverComponent11dump_configEv">
@@ -96,22 +95,12 @@
 <dl class="function">
 <dt id="_CPPv3N6remote23RemoteReceiverComponent4loopEv">
 <span id="_CPPv2N6remote23RemoteReceiverComponent4loopEv"></span><span id="remote::RemoteReceiverComponent::loop"></span><span class="target" id="classremote_1_1_remote_receiver_component_1ab63aa0818a6f0e1e9d50e5125ad3b427"></span>void <code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent4loopEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This method will be called repeatedly. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classremote_1_1_remote_receiver_component_1ab63aa0818a6f0e1e9d50e5125ad3b427"><span class="std std-ref">loop()</span></a>. <a class="reference internal" href="#classremote_1_1_remote_receiver_component_1af455edc5d5903b278edefd8aeb1f1966"><span class="std std-ref">setup()</span></a> is guaranteed to be called before this. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK6remote23RemoteReceiverComponent18get_setup_priorityEv">
 <span id="_CPPv2NK6remote23RemoteReceiverComponent18get_setup_priorityEv"></span><span id="remote::RemoteReceiverComponent::get_setup_priorityC"></span><span class="target" id="classremote_1_1_remote_receiver_component_1a1b53eb246d0daf8c297e9e7defb93ac6"></span>float <code class="descname">get_setup_priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6remote23RemoteReceiverComponent18get_setup_priorityEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>priority of <a class="reference internal" href="#classremote_1_1_remote_receiver_component_1af455edc5d5903b278edefd8aeb1f1966"><span class="std std-ref">setup()</span></a>. </p>
-<p>higher -&gt; executed earlier</p>
-<p>Defaults to 0.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The setup priority of this component </dd>
-</dl>
-</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6remote23RemoteReceiverComponent11add_decoderEP14RemoteReceiver">
@@ -143,6 +132,11 @@
 <span id="_CPPv2N6remote23RemoteReceiverComponent11set_idle_usE8uint32_t"></span><span id="remote::RemoteReceiverComponent::set_idle_us__uint32_t"></span><span class="target" id="classremote_1_1_remote_receiver_component_1a8b3ec8c1702f30aeaa780e068d70ae24"></span>void <code class="descname">set_idle_us</code><span class="sig-paren">(</span>uint32_t <em>idle_us</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent11set_idle_usE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N6remote23RemoteReceiverComponent8process_EP17RemoteReceiveData">
+<span id="_CPPv2N6remote23RemoteReceiverComponent8process_EP17RemoteReceiveData"></span><span id="remote::RemoteReceiverComponent::process___RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_remote_receiver_component_1a52be0e120232874707703693467b9746"></span>void <code class="descname">process_</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent8process_EP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Functions</p>
@@ -153,7 +147,7 @@
 
 <dl class="function">
 <dt>
-<span class="target" id="classremote_1_1_remote_receiver_component_1abe22dc0f2ba474c57549e89dd077955e"></span><code class="descname">void ICACHE_RAM_ATTR remote::RemoteReceiverComponent::gpio_intr()</code></dt>
+<span class="target" id="classremote_1_1_remote_receiver_component_1aaa8e93cfef3b521f54a531dc86429443"></span><code class="descname">void ICACHE_RAM_ATTR HOT remote::RemoteReceiverComponent::gpio_intr()</code></dt>
 <dd></dd></dl>
 
 </div>
@@ -193,8 +187,18 @@
 </dd></dl>
 
 <dl class="member">
+<dt id="_CPPv3N6remote23RemoteReceiverComponent9overflow_E">
+<span id="_CPPv2N6remote23RemoteReceiverComponent9overflow_E"></span><span id="remote::RemoteReceiverComponent::overflow___b"></span><span class="target" id="classremote_1_1_remote_receiver_component_1a70c95d1ccd83ebef6619162a4b07edf6"></span>bool <code class="descname">overflow_</code> = {false}<a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent9overflow_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
 <dt id="_CPPv3N6remote23RemoteReceiverComponent12buffer_size_E">
 <span id="_CPPv2N6remote23RemoteReceiverComponent12buffer_size_E"></span><span id="remote::RemoteReceiverComponent::buffer_size___uint32_t"></span><span class="target" id="classremote_1_1_remote_receiver_component_1a37e9c6025c6bd1abbc0439195049a15f"></span>uint32_t <code class="descname">buffer_size_</code> = {10000}<a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent12buffer_size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N6remote23RemoteReceiverComponent10high_freq_E">
+<span id="_CPPv2N6remote23RemoteReceiverComponent10high_freq_E"></span><span id="remote::RemoteReceiverComponent::high_freq___HighFrequencyLoopRequester"></span><span class="target" id="classremote_1_1_remote_receiver_component_1afcf528545a1701f8689580cab97380b2"></span><a class="reference internal" href="../core/helpers.html#_CPPv326HighFrequencyLoopRequester" title="HighFrequencyLoopRequester">HighFrequencyLoopRequester</a> <code class="descname">high_freq_</code><a class="headerlink" href="#_CPPv3N6remote23RemoteReceiverComponent10high_freq_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="member">
@@ -265,12 +269,17 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote19RemoteReceiveDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote19RemoteReceiveDumper4dumpEP17RemoteReceiveData"></span><span id="remote::RemoteReceiveDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_remote_receive_dumper_1a7b3bd034dfd515899b9dfc0cad0abb11"></span><em class="property">virtual</em> void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N6remote19RemoteReceiveDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote19RemoteReceiveDumper4dumpEP17RemoteReceiveData"></span><span id="remote::RemoteReceiveDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_remote_receive_dumper_1ad360b3642fa45195850fc151f8cc9772"></span><em class="property">virtual</em> bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N6remote19RemoteReceiveDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6remote19RemoteReceiveDumper8process_EP17RemoteReceiveData">
-<span id="_CPPv2N6remote19RemoteReceiveDumper8process_EP17RemoteReceiveData"></span><span id="remote::RemoteReceiveDumper::process___RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_remote_receive_dumper_1ac1b7a5cb5f35722df956adb0f20b685f"></span>void <code class="descname">process_</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote19RemoteReceiveDumper8process_EP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote19RemoteReceiveDumper8process_EP17RemoteReceiveData"></span><span id="remote::RemoteReceiveDumper::process___RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_remote_receive_dumper_1af4363750b4b84b2afd3cee6765467d29"></span>bool <code class="descname">process_</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote19RemoteReceiveDumper8process_EP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6remote19RemoteReceiveDumper10secondary_Ev">
+<span id="_CPPv2N6remote19RemoteReceiveDumper10secondary_Ev"></span><span id="remote::RemoteReceiveDumper::secondary_"></span><span class="target" id="classremote_1_1_remote_receive_dumper_1a9dafd1b29c4596da9c9fbb3d6148406f"></span>bool <code class="descname">secondary_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote19RemoteReceiveDumper10secondary_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -317,7 +326,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote8LGDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote8LGDumper4dumpEP17RemoteReceiveData"></span><span id="remote::LGDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_l_g_dumper_1aeed5a1c2349ee700fa450eb702cdd557"></span>void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote8LGDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote8LGDumper4dumpEP17RemoteReceiveData"></span><span id="remote::LGDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_l_g_dumper_1a7544d3cece9a4b99fa6f3c0f2ed0cd89"></span>bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote8LGDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -366,7 +375,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote9NECDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote9NECDumper4dumpEP17RemoteReceiveData"></span><span id="remote::NECDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_n_e_c_dumper_1a66a3c7a7a84ab87263144816bf43046f"></span>void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote9NECDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote9NECDumper4dumpEP17RemoteReceiveData"></span><span id="remote::NECDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_n_e_c_dumper_1ac7c04186d10cb5c210819148b2b45fbf"></span>bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote9NECDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -415,7 +424,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote15PanasonicDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote15PanasonicDumper4dumpEP17RemoteReceiveData"></span><span id="remote::PanasonicDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_panasonic_dumper_1aabcc128bb3df1afdcaf3bf4957664045"></span>void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote15PanasonicDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote15PanasonicDumper4dumpEP17RemoteReceiveData"></span><span id="remote::PanasonicDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_panasonic_dumper_1aaab4e6e481a617d9024700cabb5e237a"></span>bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote15PanasonicDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -467,7 +476,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote10SonyDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote10SonyDumper4dumpEP17RemoteReceiveData"></span><span id="remote::SonyDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_sony_dumper_1ab5498eb30c57ab30ff5a648ebd8645ae"></span>void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote10SonyDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote10SonyDumper4dumpEP17RemoteReceiveData"></span><span id="remote::SonyDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_sony_dumper_1a0273dae4308c2d157b66076328100f5a"></span>bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote10SonyDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -511,7 +520,12 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote9RawDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote9RawDumper4dumpEP17RemoteReceiveData"></span><span id="remote::RawDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_raw_dumper_1a0b20337ccd4bf7e9ee1e26e15bfe9d84"></span>void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote9RawDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote9RawDumper4dumpEP17RemoteReceiveData"></span><span id="remote::RawDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_raw_dumper_1a27f69c33fc76824eb6e9b4e852470ea8"></span>bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote9RawDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6remote9RawDumper10secondary_Ev">
+<span id="_CPPv2N6remote9RawDumper10secondary_Ev"></span><span id="remote::RawDumper::secondary_"></span><span class="target" id="classremote_1_1_raw_dumper_1aae0a7af8cf1a7b48c59c347920c4979b"></span>bool <code class="descname">secondary_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote9RawDumper10secondary_Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -642,7 +656,7 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv3N6remote14RCSwitchDumper4dumpEP17RemoteReceiveData">
-<span id="_CPPv2N6remote14RCSwitchDumper4dumpEP17RemoteReceiveData"></span><span id="remote::RCSwitchDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_r_c_switch_dumper_1aa64d6e0cd2ae9bbf4c3ba3f7822061e6"></span>void <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote14RCSwitchDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N6remote14RCSwitchDumper4dumpEP17RemoteReceiveData"></span><span id="remote::RCSwitchDumper::dump__RemoteReceiveDataP"></span><span class="target" id="classremote_1_1_r_c_switch_dumper_1ab87c1aa184555797f9f7caa2e105402d"></span>bool <code class="descname">dump</code><span class="sig-paren">(</span>RemoteReceiveData *<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote14RCSwitchDumper4dumpEP17RemoteReceiveData" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -662,7 +676,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -678,11 +692,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

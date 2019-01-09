@@ -24,13 +24,14 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Xiaomi MiFlora BLE Sensor &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Xiaomi MiFlora BLE Sensor &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/xiaomi_miflora.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
@@ -149,6 +150,7 @@ MiFlora devices at once as you want.</p>
 </div>
 <div class="section" id="setting-up-devices">
 <h2>Setting Up Devices<a class="headerlink" href="#setting-up-devices" title="Permalink to this headline">¶</a></h2>
+<p>Before you can even scan for the MiFlora sensor, you need to activate it using the Flower Care app. Set it up there and you’ll be able to discover it.</p>
 <p>To set up Xiaomi MiFlora devices you first need to find their MAC Address so that esphomelib can
 identify them. So first, create a simple configuration without any <code class="docutils literal notranslate"><span class="pre">xiaomi_miflora</span></code> entries like so:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esp32_ble_tracker</span><span class="p p-Indicator">:</span>
@@ -187,7 +189,7 @@ in the configuration example at the top.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -203,11 +205,11 @@ in the configuration example at the top.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="description" content="Instructions for setting up APDS9960 sensors.">
+<meta itemprop="name" content="APDS9960 Sensor">
+<meta itemprop="description" content="Instructions for setting up APDS9960 sensors.">
+<meta itemprop="image" content="https://esphomelib.com/_images/apds9960.jpg">
+<meta name="twitter:title" content="APDS9960 Sensor">
+<meta name="twitter:image:src" content="https://esphomelib.com/_images/apds9960.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@OttoWinter_">
+<meta name="twitter:description" content="Instructions for setting up APDS9960 sensors.">
+<meta property="og:title" content="APDS9960 Sensor"/>
+<meta property="og:image" content="https://esphomelib.com/_images/apds9960.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="esphomelib"/>
+<meta property="og:description" content="Instructions for setting up APDS9960 sensors."/>
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#DFDFDF">
+
+    <title>APDS9960 Sensor &#8212; ESPHome 1.10.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../../_static/disqus.js"></script>
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/apds9960.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BH1750 Ambient Light Sensor" href="bh1750.html" />
+    <link rel="prev" title="ADS1115 Sensor" href="ads1115.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+    <link rel="apple-touch-icon" href="../../../_static/apple-touch-icon.png" />
+  
+  
+    <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/sensor/apds9960.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo-full.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">APDS9960 Sensor</a><ul>
+<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="apds9960-sensor">
+<h1>APDS9960 Sensor<a class="headerlink" href="#apds9960-sensor" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">apds9960</span></code> sensor platform allows you to use your APDS9960 RGB and gesture sensors
+(<a class="reference external" href="https://cdn-shop.adafruit.com/datasheets/BST-BME280_DS001-10.pdf">datasheet</a>,
+<a class="reference external" href="https://www.sparkfun.com/products/12787">Sparkfun</a>) with esphomelib.
+The <a class="reference internal" href="../i2c.html#i2c"><span class="std std-ref">I²C</span></a> is
+required to be set up in your configuration for this sensor to work.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/apds9960-full.jpg"><img alt="../../../_images/apds9960-full.jpg" src="../../../_images/apds9960-full.jpg" style="width: 80.0%;" /></a>
+<p class="caption"><span class="caption-text">Image by <a class="reference external" href="https://www.sparkfun.com/products/12787">Sparkfun</a>.</span></p>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">apds9960</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0x39</span>
+  <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
+
+<span class="l l-Scalar l-Scalar-Plain">sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">apds9960</span>
+    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">CLEAR</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;APDS9960</span><span class="nv"> </span><span class="s">Clear</span><span class="nv"> </span><span class="s">Channel&quot;</span>
+
+<span class="l l-Scalar l-Scalar-Plain">binary_sensor</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">apds9960</span>
+    <span class="l l-Scalar l-Scalar-Plain">direction</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UP</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;APDS960</span><span class="nv"> </span><span class="s">Up</span><span class="nv"> </span><span class="s">Movement&quot;</span>
+  <span class="c1"># Repeat for each direction</span>
+</pre></div>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<p>The configuration is made up of three parts: The central component, individual sensors,
+and direction binary sensors.</p>
+<p>Base Configuration:</p>
+<ul class="simple">
+<li><strong>address</strong> (<em>Optional</em>, integer): The i2c address of the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">0x39</span></code>.</li>
+<li><strong>update_interval</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-time"><span class="std std-ref">Time</span></a>): The interval
+to check the sensor. Defaults to <code class="docutils literal notranslate"><span class="pre">60s</span></code>.</li>
+</ul>
+<p>Sensor Configuration:</p>
+<ul class="simple">
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for the sensor.</li>
+<li><strong>type</strong> (<strong>Required</strong>, string): The type of sensor measurement. One of<ul>
+<li><strong>CLEAR</strong></li>
+<li><strong>RED</strong></li>
+<li><strong>GREEN</strong></li>
+<li><strong>BLUE</strong></li>
+<li><strong>PROXIMITY</strong></li>
+</ul>
+</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Set the ID of this sensor for use in lambdas.</li>
+<li>All other options from <a class="reference internal" href="index.html#config-sensor"><span class="std std-ref">Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+<p>Binary Sensor Configuration:</p>
+<ul class="simple">
+<li><strong>name</strong> (<strong>Required</strong>, string): The name for the binary sensor.</li>
+<li><strong>direction</strong> (<strong>Required</strong>, string): The direction to measure. One of:<ul>
+<li><strong>UP</strong></li>
+<li><strong>DOWN</strong></li>
+<li><strong>LEFT</strong></li>
+<li><strong>RIGHT</strong></li>
+</ul>
+</li>
+<li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
+<li>All other options from <a class="reference internal" href="../binary_sensor/index.html#config-binary-sensor"><span class="std std-ref">Binary Sensor</span></a> and <a class="reference internal" href="../mqtt.html#config-mqtt-component"><span class="std std-ref">MQTT Component</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="index.html#sensor-filters"><span class="std std-ref">Sensor Filters</span></a></li>
+<li><a class="reference internal" href="../../../api/sensor/apds9960.html"><span class="doc">API Reference</span></a></li>
+<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/sensor/apds9960.rst">Edit this page on GitHub</a></li>
+</ul>
+<div data-disqus-identifier="esphomeyaml-components-sensor-apds9960" id="disqus_thread"></div></div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="footer">
+    <a href="/misc/privacy.html">Privacy Policy</a>
+  </div>
+  <div id="upgrade-footer">
+    A new version has been release since you last visited this page: 1.10.0 🎉
+    <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113203480-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113203480-2', {'anonymize_ip': true});
+  </script>
+
+  <script>
+    var old = window.localStorage.getItem("release");
+    if (old === null) {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
+      document.getElementById("upgrade-footer").classList.add("not-hidden");
+      document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
+        window.localStorage.setItem("release", "1.10.0");
+      });
+    }
+  </script>
+
+  </body>
+</html>

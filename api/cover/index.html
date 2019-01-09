@@ -6,13 +6,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cover &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Cover &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="canonical" href="https://esphomelib.com/api/cover/index.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -172,6 +173,11 @@
 <span id="_CPPv2N5cover5Cover13write_commandE12CoverCommand"></span><span id="cover::Cover::write_command__CoverCommand"></span><span class="target" id="classcover_1_1_cover_1a60f6b91641ea855d2787c1d42a68d08b"></span><em class="property">virtual</em> void <code class="descname">write_command</code><span class="sig-paren">(</span>CoverCommand <em>command</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv3N5cover5Cover13write_commandE12CoverCommand" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="_CPPv3N5cover5Cover10hash_base_Ev">
+<span id="_CPPv2N5cover5Cover10hash_base_Ev"></span><span id="cover::Cover::hash_base_"></span><span class="target" id="classcover_1_1_cover_1aae12826a23175b32b7e002b53ebd066c"></span>uint32_t <code class="descname">hash_base_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover5Cover10hash_base_Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Protected Attributes</p>
@@ -298,19 +304,16 @@
 <dl class="function">
 <dt id="_CPPv3N5cover18MQTTCoverComponent5setupEv">
 <span id="_CPPv2N5cover18MQTTCoverComponent5setupEv"></span><span id="cover::MQTTCoverComponent::setup"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1a273afcb78e66ab30779461d1b8b2bb8e"></span>void <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover18MQTTCoverComponent5setupEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Where the component’s initialization should happen. </p>
-<p>Analogous to Arduino’s <a class="reference internal" href="#classcover_1_1_m_q_t_t_cover_component_1a273afcb78e66ab30779461d1b8b2bb8e"><span class="std std-ref">setup()</span></a>. This method is guaranteed to only be called once. Defaults to doing nothing. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N5cover18MQTTCoverComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE">
 <span id="_CPPv2N5cover18MQTTCoverComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE"></span><span id="cover::MQTTCoverComponent::send_discovery__JsonObjectR.mqtt::SendDiscoveryConfigR"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1ab446236dd02b719e034f3a46eb6a9867"></span>void <code class="descname">send_discovery</code><span class="sig-paren">(</span>JsonObject &amp;<em>root</em>, mqtt::<a class="reference internal" href="../core/mqtt.html#_CPPv3N4mqtt19SendDiscoveryConfigE" title="mqtt::SendDiscoveryConfig">SendDiscoveryConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover18MQTTCoverComponent14send_discoveryER10JsonObjectRN4mqtt19SendDiscoveryConfigE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Send discovery info the Home Assistant, override this. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N5cover18MQTTCoverComponent18send_initial_stateEv">
-<span id="_CPPv2N5cover18MQTTCoverComponent18send_initial_stateEv"></span><span id="cover::MQTTCoverComponent::send_initial_state"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1a60961367f1400561fe538e37adef5f05"></span>void <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover18MQTTCoverComponent18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5cover18MQTTCoverComponent18send_initial_stateEv"></span><span id="cover::MQTTCoverComponent::send_initial_state"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1a215cfcecbe198341981cfb5afa2a8880"></span>bool <code class="descname">send_initial_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover18MQTTCoverComponent18send_initial_stateEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -320,7 +323,7 @@
 
 <dl class="function">
 <dt id="_CPPv3N5cover18MQTTCoverComponent13publish_stateEN5cover10CoverStateE">
-<span id="_CPPv2N5cover18MQTTCoverComponent13publish_stateEN5cover10CoverStateE"></span><span id="cover::MQTTCoverComponent::publish_state__cover::CoverState"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1abf2bc4c5deaf09c074a4f2c7fdf3fe82"></span>void <code class="descname">publish_state</code><span class="sig-paren">(</span>cover::<a class="reference internal" href="#_CPPv3N5cover10CoverStateE" title="cover::CoverState">CoverState</a> <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover18MQTTCoverComponent13publish_stateEN5cover10CoverStateE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5cover18MQTTCoverComponent13publish_stateEN5cover10CoverStateE"></span><span id="cover::MQTTCoverComponent::publish_state__cover::CoverState"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1afe4540ad8313d0e7fdc584988103b3b8"></span>bool <code class="descname">publish_state</code><span class="sig-paren">(</span>cover::<a class="reference internal" href="#_CPPv3N5cover10CoverStateE" title="cover::CoverState">CoverState</a> <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5cover18MQTTCoverComponent13publish_stateEN5cover10CoverStateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -334,14 +337,12 @@
 <dl class="function">
 <dt id="_CPPv3NK5cover18MQTTCoverComponent14component_typeEv">
 <span id="_CPPv2NK5cover18MQTTCoverComponent14component_typeEv"></span><span id="cover::MQTTCoverComponent::component_typeC"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1a251e9ac20c0f123c718c0f3a6c119c1b"></span>std::string <code class="descname">component_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5cover18MQTTCoverComponent14component_typeEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Override this method to return the component type (e.g. “light”, “sensor”, …) </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3NK5cover18MQTTCoverComponent13friendly_nameEv">
 <span id="_CPPv2NK5cover18MQTTCoverComponent13friendly_nameEv"></span><span id="cover::MQTTCoverComponent::friendly_nameC"></span><span class="target" id="classcover_1_1_m_q_t_t_cover_component_1a0566e441b014e142f787eb886acf572a"></span>std::string <code class="descname">friendly_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK5cover18MQTTCoverComponent13friendly_nameEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the friendly name of this MQTT component. </p>
-</dd></dl>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -369,7 +370,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -385,11 +386,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>

@@ -24,20 +24,21 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Stepper Component &#8212; ESPHome 1.9.3 documentation</title>
+    <title>Stepper Component &#8212; ESPHome 1.10.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/disqus.js"></script>
     <link rel="canonical" href="https://esphomelib.com/esphomeyaml/components/stepper/index.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ADS1115 Hub" href="../ads1115.html" />
-    <link rel="prev" title="Template Text Sensor" href="../text_sensor/template.html" />
+    <link rel="prev" title="Version Text Sensor" href="../text_sensor/version.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -71,7 +72,8 @@
   <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Stepper Component</a><ul>
-<li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#a4988-configuration">A4988 Configuration</a></li>
+<li><a class="reference internal" href="#uln2003-configuration">ULN2003 Configuration</a></li>
 <li><a class="reference internal" href="#stepper-set-target-action"><code class="docutils literal notranslate"><span class="pre">stepper.set_target</span></code> Action</a></li>
 <li><a class="reference internal" href="#stepper-report-position-action"><code class="docutils literal notranslate"><span class="pre">stepper.report_position</span></code> Action</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
@@ -92,7 +94,9 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">stepper</span></code> component allows you to use stepper motors with esphomelib.
 Currently only the A4988 stepper driver
 (<a class="reference external" href="https://www.pololu.com/file/0J450/a4988_DMOS_microstepping_driver_with_translator.pdf">datasheet</a>)
-is supported.</p>
+and ULN2003 (<a class="reference external" href="http://www.ti.com/lit/ds/symlink/uln2003a.pdf">datasheet</a>) are supported.</p>
+<div class="section" id="a4988-configuration">
+<h2>A4988 Configuration<a class="headerlink" href="#a4988-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="l l-Scalar l-Scalar-Plain">stepper</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">a4988</span>
@@ -107,8 +111,7 @@ is supported.</p>
     <span class="l l-Scalar l-Scalar-Plain">deceleration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">inf</span>
 </pre></div>
 </div>
-<div class="section" id="configuration-variables">
-<h2>Configuration variables:<a class="headerlink" href="#configuration-variables" title="Permalink to this headline">¶</a></h2>
+<p>Configuration variables:</p>
 <ul class="simple">
 <li><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Specify the ID of the stepper so that you can control it.</li>
 <li><strong>step_pin</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>): The <code class="docutils literal notranslate"><span class="pre">STEP</span></code> pin of the A4988
@@ -128,12 +131,6 @@ shortly before reaching the set position. Defaults to <code class="docutils lite
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Esphomelib’s core loop only runs 60 times per second by default to conserve power. But this also means it’s limited
-to 60 steps per second. To have higher step rater, you have to open up the <code class="docutils literal notranslate"><span class="pre">&lt;NODE_NAME&gt;/src/main.cpp</span></code> file,
-scroll down to the <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">loop()</span></code> section and remove the <code class="docutils literal notranslate"><span class="pre">delay(16);</span></code> line.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
 <p>If the stepper is driving in the wrong direction, you can invert the <code class="docutils literal notranslate"><span class="pre">dir_pin</span></code>:</p>
 <div class="last highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">stepper</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">a4988</span>
@@ -144,6 +141,54 @@ scroll down to the <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="uln2003-configuration">
+<h2>ULN2003 Configuration<a class="headerlink" href="#uln2003-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
+<span class="l l-Scalar l-Scalar-Plain">stepper</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uln2003</span>
+    <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_a</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D0</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_b</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D1</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_c</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D2</span>
+    <span class="l l-Scalar l-Scalar-Plain">pin_d</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">D3</span>
+    <span class="l l-Scalar l-Scalar-Plain">max_speed</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">250 steps/s</span>
+
+    <span class="c1"># Optional:</span>
+    <span class="l l-Scalar l-Scalar-Plain">acceleration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">inf</span>
+    <span class="l l-Scalar l-Scalar-Plain">deceleration</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">inf</span>
+</pre></div>
+</div>
+<p>Configuration variables:</p>
+<ul>
+<li><p class="first"><strong>id</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Specify the ID of the stepper so that you can control it.</p>
+</li>
+<li><p class="first"><strong>pin_a</strong>, <strong>pin_b</strong>, <strong>pin_c</strong>, <strong>pin_d</strong> (<strong>Required</strong>, <a class="reference internal" href="../../guides/configuration-types.html#config-pin-schema"><span class="std std-ref">Pin Schema</span></a>):
+The four pins of the stepper control board.</p>
+</li>
+<li><p class="first"><strong>sleep_when_done</strong> (<em>Optional</em>, boolean): Whether to turn off all coils when the stepper has
+reached the target position</p>
+</li>
+<li><p class="first"><strong>step_mode</strong> (<em>Optional</em>, string): The step mode to operate the motor with. One of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">FULL_STEP</span></code> (Default)</li>
+<li><code class="docutils literal notranslate"><span class="pre">HALF_STEP</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">WAVE_DRIVE</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>max_speed</strong> (<strong>Required</strong>, float): The maximum speed in <code class="docutils literal notranslate"><span class="pre">steps/s</span></code> (steps per seconds) to drive the
+stepper at. Note most steppers can’t step properly with speeds higher than 250 steps/s.</p>
+</li>
+<li><p class="first"><strong>acceleration</strong> (<em>Optional</em>, float): The acceleration in <code class="docutils literal notranslate"><span class="pre">steps/s^2</span></code> (steps per seconds squared)
+to use when starting to move. The default is <code class="docutils literal notranslate"><span class="pre">inf</span></code> which means infinite acceleration, so the
+stepper will try to drive with the full speed immediately.</p>
+</li>
+<li><p class="first"><strong>deceleration</strong> (<em>Optional</em>, float): The same as <code class="docutils literal notranslate"><span class="pre">acceleration</span></code>, but for when the motor is decelerating
+shortly before reaching the set position. Defaults to <code class="docutils literal notranslate"><span class="pre">inf</span></code> (immediate deceleration).</p>
+</li>
+</ul>
 </div>
 <div class="section" id="stepper-set-target-action">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">stepper.set_target</span></code> Action<a class="headerlink" href="#stepper-set-target-action" title="Permalink to this headline">¶</a></h2>
@@ -247,7 +292,7 @@ the target again.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.9.3 🎉
+    A new version has been release since you last visited this page: 1.10.0 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -263,11 +308,11 @@ the target again.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.9.3");
-    } else if (old !== "1.9.3") {
+      window.localStorage.setItem("release", "1.10.0");
+    } else if (old !== "1.10.0") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.9.3");
+        window.localStorage.setItem("release", "1.10.0");
       });
     }
   </script>
