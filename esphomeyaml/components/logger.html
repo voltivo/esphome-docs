@@ -23,7 +23,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Logger Component &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Logger Component &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -216,7 +216,7 @@ that have a lower severity than the global log level.</p>
     <span class="c1"># Formatted:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">logger.log</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">format</span><span class="p p-Indicator">:</span> <span class="s">&quot;The</span><span class="nv"> </span><span class="s">temperature</span><span class="nv"> </span><span class="s">sensor</span><span class="nv"> </span><span class="s">reports</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">%.1f</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">humidity</span><span class="nv"> </span><span class="s">%.1f&quot;</span>
-        <span class="l l-Scalar l-Scalar-Plain">args</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;id(temperature_sensor).value&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;id(humidity_sensor).value&#39;</span> <span class="p p-Indicator">]</span>
+        <span class="l l-Scalar l-Scalar-Plain">args</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;id(temperature_sensor).state&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;id(humidity_sensor).state&#39;</span> <span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>Configuration options:</p>
@@ -250,7 +250,7 @@ with. Defaults to <code class="docutils literal notranslate"><span class="pre">m
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -266,11 +266,11 @@ with. Defaults to <code class="docutils literal notranslate"><span class="pre">m
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

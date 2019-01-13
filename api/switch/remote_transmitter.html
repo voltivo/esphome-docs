@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Remote Transmitter &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Remote Transmitter &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -106,6 +106,12 @@
 <dt id="_CPPv3N6remote26RemoteTransmitterComponent24set_carrier_duty_percentE7uint8_t">
 <span id="_CPPv2N6remote26RemoteTransmitterComponent24set_carrier_duty_percentE7uint8_t"></span><span id="remote::RemoteTransmitterComponent::set_carrier_duty_percent__uint8_t"></span><span class="target" id="classremote_1_1_remote_transmitter_component_1a853c0338a9c66d466db80e8366e782ec"></span>void <code class="descname">set_carrier_duty_percent</code><span class="sig-paren">(</span>uint8_t <em>carrier_duty_percent</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote26RemoteTransmitterComponent24set_carrier_duty_percentE7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N6remote26RemoteTransmitterComponent13deferred_sendEP17RemoteTransmitter">
+<span id="_CPPv2N6remote26RemoteTransmitterComponent13deferred_sendEP17RemoteTransmitter"></span><span id="remote::RemoteTransmitterComponent::deferred_send__RemoteTransmitterP"></span><span class="target" id="classremote_1_1_remote_transmitter_component_1a8e15847a49a2f0894bf9b4f28d0d00e9"></span>void <code class="descname">deferred_send</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N6remote17RemoteTransmitterE" title="remote::RemoteTransmitter">RemoteTransmitter</a> *<em>switch_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote26RemoteTransmitterComponent13deferred_sendEP17RemoteTransmitter" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defer send of the switches remote code until next <a class="reference internal" href="../core/component.html#class_component_1a6e7ddc3311aafcf6900ef61a10dfa4e5"><span class="std std-ref">loop()</span></a>. </p>
+</dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3N6remote26RemoteTransmitterComponent8transmitEv">
@@ -326,6 +332,16 @@
 <dl class="function">
 <dt id="_CPPv3N6remote17RemoteTransmitter10set_repeatE8uint32_t8uint32_t">
 <span id="_CPPv2N6remote17RemoteTransmitter10set_repeatE8uint32_t8uint32_t"></span><span id="remote::RemoteTransmitter::set_repeat__uint32_t.uint32_t"></span><span class="target" id="classremote_1_1_remote_transmitter_1a08b13e3c83a5d6373118e8b03aeb5b05"></span>void <code class="descname">set_repeat</code><span class="sig-paren">(</span>uint32_t <em>send_times</em>, uint32_t <em>send_wait</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N6remote17RemoteTransmitter10set_repeatE8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6remote17RemoteTransmitter14get_send_timesEv">
+<span id="_CPPv2NK6remote17RemoteTransmitter14get_send_timesEv"></span><span id="remote::RemoteTransmitter::get_send_timesC"></span><span class="target" id="classremote_1_1_remote_transmitter_1a047b3ef17019d36550f1dbdff9cada07"></span>uint32_t <code class="descname">get_send_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6remote17RemoteTransmitter14get_send_timesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3NK6remote17RemoteTransmitter13get_send_waitEv">
+<span id="_CPPv2NK6remote17RemoteTransmitter13get_send_waitEv"></span><span id="remote::RemoteTransmitter::get_send_waitC"></span><span class="target" id="classremote_1_1_remote_transmitter_1a5aa56c4e252a21dd79a9453263406f67"></span>uint32_t <code class="descname">get_send_wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv3NK6remote17RemoteTransmitter13get_send_waitEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -913,7 +929,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -929,11 +945,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Index &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -4023,8 +4023,6 @@
 </li>
       <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect14fade_out_rate_E">light::AddressableFireworksEffect::fade_out_rate_ (C++ member)</a>
 </li>
-      <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect4initEv">light::AddressableFireworksEffect::init (C++ function)</a>
-</li>
       <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect12last_update_E">light::AddressableFireworksEffect::last_update_ (C++ member)</a>
 </li>
       <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect17set_fade_out_rateE7uint8_t">light::AddressableFireworksEffect::set_fade_out_rate (C++ function)</a>
@@ -4036,6 +4034,8 @@
       <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect20set_use_random_colorEb">light::AddressableFireworksEffect::set_use_random_color (C++ function)</a>
 </li>
       <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect18spark_probability_E">light::AddressableFireworksEffect::spark_probability_ (C++ member)</a>
+</li>
+      <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect5startEv">light::AddressableFireworksEffect::start (C++ function)</a>
 </li>
       <li><a href="api/light/addressable.html#_CPPv3N5light26AddressableFireworksEffect16update_interval_E">light::AddressableFireworksEffect::update_interval_ (C++ member)</a>
 </li>
@@ -4815,7 +4815,7 @@
 </li>
       <li><a href="api/light/neopixelbus.html#_CPPv3N5light26NeoPixelBusLightOutputBase12effect_data_E">light::NeoPixelBusLightOutputBase::effect_data_ (C++ member)</a>
 </li>
-      <li><a href="api/light/neopixelbus.html#_CPPv3NK5light26NeoPixelBusLightOutputBase15get_controller_Ev">light::NeoPixelBusLightOutputBase::get_controller_ (C++ function)</a>
+      <li><a href="api/light/neopixelbus.html#_CPPv3NK5light26NeoPixelBusLightOutputBase14get_controllerEv">light::NeoPixelBusLightOutputBase::get_controller (C++ function)</a>
 </li>
       <li><a href="api/light/neopixelbus.html#_CPPv3NK5light26NeoPixelBusLightOutputBase18get_setup_priorityEv">light::NeoPixelBusLightOutputBase::get_setup_priority (C++ function)</a>
 </li>
@@ -6133,10 +6133,10 @@
 </li>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteControlComponentBase11set_channelE13rmt_channel_t">remote::RemoteControlComponentBase::set_channel (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteControlComponentBase17set_clock_dividerE7uint8_t">remote::RemoteControlComponentBase::set_clock_divider (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteControlComponentBase15to_microsecondsE8uint32_t">remote::RemoteControlComponentBase::to_microseconds (C++ function)</a>
 </li>
       <li><a href="api/binary_sensor/remote_receiver.html#_CPPv3N6remote19RemoteReceiveDumperE">remote::RemoteReceiveDumper (C++ class)</a>
@@ -6239,6 +6239,10 @@
 </li>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote17RemoteTransmitterE">remote::RemoteTransmitter (C++ class)</a>
 </li>
+      <li><a href="api/switch/remote_transmitter.html#_CPPv3NK6remote17RemoteTransmitter14get_send_timesEv">remote::RemoteTransmitter::get_send_times (C++ function)</a>
+</li>
+      <li><a href="api/switch/remote_transmitter.html#_CPPv3NK6remote17RemoteTransmitter13get_send_waitEv">remote::RemoteTransmitter::get_send_wait (C++ function)</a>
+</li>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote17RemoteTransmitter7parent_E">remote::RemoteTransmitter::parent_ (C++ member)</a>
 </li>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote17RemoteTransmitter17RemoteTransmitterERKNSt6stringE">remote::RemoteTransmitter::RemoteTransmitter (C++ function)</a>
@@ -6266,6 +6270,8 @@
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteTransmitterComponent13configure_rmtEv">remote::RemoteTransmitterComponent::configure_rmt (C++ function)</a>
 </li>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteTransmitterComponent26current_carrier_frequency_E">remote::RemoteTransmitterComponent::current_carrier_frequency_ (C++ member)</a>
+</li>
+      <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteTransmitterComponent13deferred_sendEP17RemoteTransmitter">remote::RemoteTransmitterComponent::deferred_send (C++ function)</a>
 </li>
       <li><a href="api/switch/remote_transmitter.html#_CPPv3N6remote26RemoteTransmitterComponent11dump_configEv">remote::RemoteTransmitterComponent::dump_config (C++ function)</a>
 </li>
@@ -9487,10 +9493,10 @@
 </li>
       <li><a href="api/core/wifi.html#_CPPv313WiFiComponent">WiFiComponent (C++ class)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent15action_started_E">WiFiComponent::action_started_ (C++ member)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent7add_staERK6WiFiAP">WiFiComponent::add_sta (C++ function)</a>
 </li>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent3ap_E">WiFiComponent::ap_ (C++ member)</a>
@@ -9506,6 +9512,8 @@
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent11dump_configEv">WiFiComponent::dump_config (C++ function)</a>
 </li>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent20error_from_callback_E">WiFiComponent::error_from_callback_ (C++ member)</a>
+</li>
+      <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent13fast_connect_E">WiFiComponent::fast_connect_ (C++ member)</a>
 </li>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent12get_hostnameEv">WiFiComponent::get_hostname (C++ function)</a>
 </li>
@@ -9548,6 +9556,8 @@
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent12selected_ap_E">WiFiComponent::selected_ap_ (C++ member)</a>
 </li>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent6set_apERK6WiFiAP">WiFiComponent::set_ap (C++ function)</a>
+</li>
+      <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent16set_fast_connectEb">WiFiComponent::set_fast_connect (C++ function)</a>
 </li>
       <li><a href="api/core/wifi.html#_CPPv3N13WiFiComponent12set_hostnameERRNSt6stringE">WiFiComponent::set_hostname (C++ function)</a>
 </li>
@@ -9742,7 +9752,7 @@
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -9758,11 +9768,11 @@
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

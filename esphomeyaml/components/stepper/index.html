@@ -24,7 +24,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Stepper Component &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Stepper Component &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -204,7 +204,7 @@ position (in steps). The stepper will always run towards the target position and
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.set_target</span><span class="p p-Indicator">:</span>
       <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
       <span class="l l-Scalar l-Scalar-Plain">target</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
-        <span class="no">if (id(my_binary_sensor).value) {</span>
+        <span class="no">if (id(my_binary_sensor).state) {</span>
           <span class="no">return 1000;</span>
         <span class="no">} else {</span>
           <span class="no">return -1000;</span>
@@ -249,7 +249,7 @@ the target again.</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stepper.report_position</span><span class="p p-Indicator">:</span>
       <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_stepper</span>
       <span class="l l-Scalar l-Scalar-Plain">position</span><span class="p p-Indicator">:</span> <span class="kt">!lambda</span> <span class="p p-Indicator">|-</span>
-        <span class="no">if (id(my_binary_sensor).value) {</span>
+        <span class="no">if (id(my_binary_sensor).state) {</span>
           <span class="no">return 0;</span>
         <span class="no">} else {</span>
           <span class="no">return -1000;</span>
@@ -292,7 +292,7 @@ the target again.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -308,11 +308,11 @@ the target again.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

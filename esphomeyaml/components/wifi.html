@@ -24,7 +24,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>WiFi Component &#8212; ESPHome 1.10.0 documentation</title>
+    <title>WiFi Component &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -148,6 +148,8 @@ WiFi connection exists. Can be disabled by setting this to <code class="docutils
 seems to have issues with WiFi where a full reboot is required to get the interface back working. Defaults to <code class="docutils literal notranslate"><span class="pre">5min</span></code>.</li>
 <li><strong>power_save_mode</strong> (<em>Optional</em>, string): The power save mode for the WiFi interface. Defaults to no power saving.
 See <a class="reference internal" href="#wifi-power-save-mode"><span class="std std-ref">Power Save Mode</span></a></li>
+<li><strong>fast_connect</strong> (<em>Optional</em>, boolean): If enabled, directly connects to WiFi network without doing a full scan
+first. This is required for hidden networks and can significantly improve connection times. Defaults to <code class="docutils literal notranslate"><span class="pre">off</span></code>.</li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
 </ul>
 </div>
@@ -248,7 +250,7 @@ This can be used to further restrict which networks to connect to.</li>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -264,11 +266,11 @@ This can be used to further restrict which networks to connect to.</li>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Light &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Light &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -668,7 +668,7 @@ state updates.</p>
 <dt id="_CPPv3N5light11LightOutputE">
 <span id="_CPPv2N5light11LightOutputE"></span><span id="light::LightOutput"></span><span class="target" id="classlight_1_1_light_output"></span><em class="property">class </em><code class="descname">LightOutput</code><a class="headerlink" href="#_CPPv3N5light11LightOutputE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;light_state.h&gt;</em><p>Interface to write LightStates to hardware. </p>
-<p>Subclassed by light::BinaryLightOutput, light::CWWWLightOutput, <a class="reference internal" href="fastled.html#classlight_1_1_fast_l_e_d_light_output_component"><span class="std std-ref">light::FastLEDLightOutputComponent</span></a>, light::MonochromaticLightOutput, <a class="reference internal" href="neopixelbus.html#classlight_1_1_neo_pixel_bus_light_output_base"><span class="std std-ref">light::NeoPixelBusLightOutputBase&lt; T_METHOD, T_COLOR_FEATURE &gt;</span></a>, light::RGBLightOutput, light::RGBWLightOutput, light::RGBWWLightOutput</p>
+<p>Subclassed by <a class="reference internal" href="addressable.html#classlight_1_1_addressable_light"><span class="std std-ref">light::AddressableLight</span></a>, light::BinaryLightOutput, light::CWWWLightOutput, light::MonochromaticLightOutput, light::RGBLightOutput, light::RGBWLightOutput, light::RGBWWLightOutput</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -1816,7 +1816,7 @@ state updates.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -1832,11 +1832,11 @@ state updates.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

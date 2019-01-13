@@ -24,7 +24,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Changelog - Version 1.10.0 &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Changelog - Version 1.10.0 &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -78,6 +78,7 @@
 <li><a class="reference internal" href="#rename-esphome-lib-yaml-esphome">Rename: esphome{lib, yaml} -&gt; ESPHome</a></li>
 <li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
 <li><a class="reference internal" href="#other-notable-changes">Other notable changes:</a></li>
+<li><a class="reference internal" href="#release-1-10-1-january-13">Release 1.10.1 - January 13</a></li>
 <li><a class="reference internal" href="#all-changes">All changes</a></li>
 <li><a class="reference internal" href="#past-changelogs">Past Changelogs</a></li>
 </ul>
@@ -237,6 +238,30 @@ but esphomelib doesn’t use that so now you have that as extra storage. Thanks 
 <li>You can now use Home Assistant to get time in ESPHome, so no more need for SNTP. See <a class="reference internal" href="../components/time.html#time"><span class="std std-ref">Time</span></a>.</li>
 </ul>
 </div>
+<div class="section" id="release-1-10-1-january-13">
+<h2>Release 1.10.1 - January 13<a class="headerlink" href="#release-1-10-1-january-13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>docs: Fix substitutions example &amp; api intro text <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/117">docs#117</a> by <a class="reference external" href="https://github.com/thubot">&#64;thubot</a></li>
+<li>lib: Fix while action not resetting is_running <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/378">lib#378</a></li>
+<li>lib: Fix remote transmitter ESP32 repeat wait <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/376">lib#376</a></li>
+<li>lib: Fix addressable lights <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/375">lib#375</a></li>
+<li>yaml: Fix ESP32 not decoding stacktrace on broken PC <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/330">yaml#330</a></li>
+<li>docs: Fixed missing link to BME cookbook <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/120">docs#120</a> by <a class="reference external" href="https://github.com/Mynasru">&#64;Mynasru</a></li>
+<li>lib: Fix addressable flicker effect <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/383">lib#383</a></li>
+<li>lib: NeoPixelBus: fix handling of white color component <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/384">lib#384</a> by <a class="reference external" href="https://github.com/badbadc0ffee">&#64;badbadc0ffee</a></li>
+<li>lib: Fix trigger not being optional <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/381">lib#381</a></li>
+<li>docs: Add WiFi fast connect <a class="reference external" href="https://github.com/OttoWinter/esphomedocs/pull/121">docs#121</a></li>
+<li>yaml: Fix AsyncTCP compilation on ESP32 with Arduino breaking change <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/334">yaml#334</a></li>
+<li>yaml: Fix show logs with MQTT and dashboard <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/332">yaml#332</a></li>
+<li>lib: Add WiFi fast connect mode <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/385">lib#385</a></li>
+<li>lib: Fix API Server has deep sleep <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/386">lib#386</a></li>
+<li>yaml: Introduce wifi fast connect mode <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/333">yaml#333</a></li>
+<li>lib: Fix GPIO Switch not handling inverted <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/387">lib#387</a></li>
+<li>lib: Expose NeoPixelBus Controller <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/388">lib#388</a></li>
+<li>yaml: Pin platformio platforms <a class="reference external" href="https://github.com/OttoWinter/esphomeyaml/pull/335">yaml#335</a></li>
+<li>lib: Fix ble tracker compile error <a class="reference external" href="https://github.com/OttoWinter/esphomelib/pull/390">lib#390</a></li>
+</ul>
+</div>
 <div class="section" id="all-changes">
 <h2>All changes<a class="headerlink" href="#all-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -334,7 +359,7 @@ but esphomelib doesn’t use that so now you have that as extra storage. Thanks 
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -350,11 +375,11 @@ but esphomelib doesn’t use that so now you have that as extra storage. Thanks 
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

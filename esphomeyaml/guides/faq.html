@@ -23,7 +23,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Frequently Asked Questions &#8212; ESPHome 1.10.0 documentation</title>
+    <title>Frequently Asked Questions &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -292,6 +292,7 @@ not have a real solution.</p>
 <p>Some steps that can help with the issue:</p>
 <ul class="simple">
 <li>Set the <code class="docutils literal notranslate"><span class="pre">power_save_mode</span></code> to <code class="docutils literal notranslate"><span class="pre">light</span></code> in the <code class="docutils literal notranslate"><span class="pre">wifi:</span></code> config. See <a class="reference internal" href="../components/wifi.html#wifi-power-save-mode"><span class="std std-ref">Power Save Mode</span></a>.</li>
+<li>If you’re using a hidden WiFi network, make sure to enable <code class="docutils literal notranslate"><span class="pre">fast_connect</span></code> mode in the WiFi configuration.</li>
 <li>Use the most recent version of th arduino framework. The platformio arduino package
 always takes some time to update and the most recent version often includes some awesome
 patches. See <a class="reference internal" href="../components/esphomeyaml.html#esphomeyaml-arduino-version"><span class="std std-ref">arduino_version</span></a>.</li>
@@ -388,7 +389,7 @@ _guarantee_ that I can get a specific feature to work reliably.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -404,11 +405,11 @@ _guarantee_ that I can get a specific feature to work reliably.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>

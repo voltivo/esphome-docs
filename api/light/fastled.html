@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>FastLED Light Output &#8212; ESPHome 1.10.0 documentation</title>
+    <title>FastLED Light Output &#8212; ESPHome 1.10.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -88,7 +88,7 @@ library.</p>
 <span id="_CPPv25light"></span><span id="light"></span><span class="target" id="namespacelight"></span><em class="property">namespace </em><code class="descname">light</code><br /></dt>
 <dd><dl class="class">
 <dt id="_CPPv3N5light27FastLEDLightOutputComponentE">
-<span id="_CPPv2N5light27FastLEDLightOutputComponentE"></span><span id="light::FastLEDLightOutputComponent"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component"></span><em class="property">class </em><code class="descname">FastLEDLightOutputComponent</code> : <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="index.html#_CPPv3N5light11LightOutputE" title="light::LightOutput">LightOutput</a>, <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="addressable.html#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a><a class="headerlink" href="#_CPPv3N5light27FastLEDLightOutputComponentE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N5light27FastLEDLightOutputComponentE"></span><span id="light::FastLEDLightOutputComponent"></span><span class="target" id="classlight_1_1_fast_l_e_d_light_output_component"></span><em class="property">class </em><code class="descname">FastLEDLightOutputComponent</code> : <em class="property">public</em> <a class="reference internal" href="../core/component.html#_CPPv39Component" title="Component">Component</a>, <em class="property">public</em> <a class="reference internal" href="addressable.html#_CPPv35light" title="light">light</a>::<a class="reference internal" href="addressable.html#_CPPv3N5light16AddressableLightE" title="light::AddressableLight">AddressableLight</a><a class="headerlink" href="#_CPPv3N5light27FastLEDLightOutputComponentE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;fast_led_light_output.h&gt;</em><p>This component implements support for many types of addressable LED lights. </p>
 <p>To do this, it uses the FastLED library. The API for setting up the different types of lights FastLED supports is intentionally kept as close to FastLEDs defaults as possible. To use FastLED lights with esphomelib, first set up the component using the helper in <a class="reference internal" href="../core/application.html#class_application"><span class="std std-ref">Application</span></a>, then add the LEDs using the <code class="docutils literal notranslate"><span class="pre">add_leds</span></code> helper functions.</p>
 <p>These add_leds helpers can, however, only be called once on a FastLEDLightOutput. Also, with this component you cannot pass in the CRGB array and offset values as you would be able to do with FastLED as the component manage the lights itself. </p>
@@ -339,7 +339,7 @@ library.</p>
     <a href="/misc/privacy.html">Privacy Policy</a>
   </div>
   <div id="upgrade-footer">
-    A new version has been release since you last visited this page: 1.10.0 🎉
+    A new version has been release since you last visited this page: 1.10.1 🎉
     <a id="upgrade-footer-changelog" href="/esphomeyaml/changelog/index.html">View Changelog</a>
   </div>
 
@@ -355,11 +355,11 @@ library.</p>
   <script>
     var old = window.localStorage.getItem("release");
     if (old === null) {
-      window.localStorage.setItem("release", "1.10.0");
-    } else if (old !== "1.10.0") {
+      window.localStorage.setItem("release", "1.10.1");
+    } else if (old !== "1.10.1") {
       document.getElementById("upgrade-footer").classList.add("not-hidden");
       document.getElementById("upgrade-footer-changelog").addEventListener('click', function () {
-        window.localStorage.setItem("release", "1.10.0");
+        window.localStorage.setItem("release", "1.10.1");
       });
     }
   </script>
