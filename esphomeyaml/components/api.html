@@ -183,6 +183,12 @@ always manually set up an ESPHome device using “Set up a new integration” -&
 <li>Now you can remove <code class="docutils literal notranslate"><span class="pre">mqtt:</span></code> from your ESPHome configuration. You don’t have to, but doing so will
 free up resources (of which these ESPs don’t have too much).</li>
 </ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Using MQTT together with the native API seems to be broken on some devices at the moment.
+Of course in the future you will be able to use both at the same time, but the fix will
+just take a while to get done as it’s a larger scale issue.</p>
+</div>
 </div>
 <div class="section" id="homeassistant-service-action">
 <span id="api-homeassistant-service-action"></span><h2><code class="docutils literal notranslate"><span class="pre">homeassistant.service</span></code> Action<a class="headerlink" href="#homeassistant-service-action" title="Permalink to this headline">¶</a></h2>
