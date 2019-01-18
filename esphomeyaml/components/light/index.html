@@ -345,15 +345,19 @@ random offsets. Defaults to <code class="docutils literal notranslate"><span cla
           <span class="l l-Scalar l-Scalar-Plain">update_interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1s</span>
           <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
             <span class="no">static int state = 0;</span>
+            <span class="no">auto call = id(my_light).turn_on();</span>
+            <span class="no">// Transtion of 1000ms = 1s</span>
+            <span class="no">call.set_transition_length(1000);</span>
             <span class="no">if (state == 0) {</span>
-              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(1.0, 1.0, 1.0)));</span>
+              <span class="no">call.set_rgb(1.0, 1.0, 1.0);</span>
             <span class="no">} else if (state == 1) {</span>
-              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(1.0, 0.0, 1.0)));</span>
+              <span class="no">call.set_rgb(1.0, 0.0, 1.0);</span>
             <span class="no">} else if (state == 2) {</span>
-              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(0.0, 0.0, 1.0)));</span>
+              <span class="no">call.set_rgb(0.0, 0.0, 1.0);</span>
             <span class="no">} else {</span>
-              <span class="no">id(my_light).start_transition(light::LightColorValues::from_rgb(0.0, 0.0, 0.0)));</span>
+              <span class="no">call.set_rgb(1.0, 0.0, 0.0);</span>
             <span class="no">}</span>
+            <span class="no">call.execute();</span>
             <span class="no">state += 1;</span>
             <span class="no">if (state == 4)</span>
               <span class="no">state = 0;</span>

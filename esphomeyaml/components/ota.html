@@ -73,6 +73,7 @@
   <ul>
 <li><a class="reference internal" href="#">OTA Update Component</a><ul>
 <li><a class="reference internal" href="#configuration-variables">Configuration variables:</a></li>
+<li><a class="reference internal" href="#updating-the-password">Updating the password:</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -127,6 +128,19 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">True</s
 to <code class="docutils literal notranslate"><span class="pre">3232</span></code> for the ESP32 and <code class="docutils literal notranslate"><span class="pre">8266</span></code> for the ESP8266.</li>
 <li><strong>id</strong> (<em>Optional</em>, <a class="reference internal" href="../guides/configuration-types.html#config-id"><span class="std std-ref">ID</span></a>): Manually specify the ID used for code generation.</li>
 </ul>
+</div>
+<div class="section" id="updating-the-password">
+<h2>Updating the password:<a class="headerlink" href="#updating-the-password" title="Permalink to this headline">¶</a></h2>
+<p>Since the password is used both for compiling and uploading the regular <code class="docutils literal notranslate"><span class="pre">esphomeyaml</span> <span class="pre">&lt;file&gt;</span> <span class="pre">run</span></code> won’t work of course. This issue can be worked around by executing the operations separately through a <code class="docutils literal notranslate"><span class="pre">on_boot</span></code> trigger:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">esphomeyaml</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">on_boot</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lambda</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|-</span>
+        <span class="no">id(ota).set_auth_password(&quot;New password&quot;);</span>
+<span class="l l-Scalar l-Scalar-Plain">ota</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&quot;Old</span><span class="nv"> </span><span class="s">password&quot;</span>
+  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ota</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>If you get errors like</p>

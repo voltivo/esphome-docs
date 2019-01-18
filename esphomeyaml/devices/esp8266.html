@@ -72,6 +72,9 @@
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Generic ESP8266</a><ul>
+<li><a class="reference internal" href="#special-pins">Special Pins</a></li>
+<li><a class="reference internal" href="#boot-modes">Boot Modes</a></li>
+<li><a class="reference internal" href="#reset-causes">Reset Causes</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -121,6 +124,141 @@ to read out voltages (in the range from 0 to 1.0V) on this pin.</li>
     <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Pin</span><span class="nv"> </span><span class="s">GPIO17&quot;</span>
     <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GPIO17</span>
 </pre></div>
+</div>
+<div class="section" id="special-pins">
+<h2>Special Pins<a class="headerlink" href="#special-pins" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td>Controls Boot Mode</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td>UART TX pin</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td>Controls Boot Mode</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td>UART RX pin</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO6</span></code></td>
+<td>SDIO/Flash CLK pin</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO7</span></code></td>
+<td>SDIO/Flash Data 0 pin</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO8</span></code></td>
+<td>SDIO/Flash Data 1 pin</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO9</span></code></td>
+<td>SDIO/Flash Data 2 pin (qio/qout only)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO10</span></code></td>
+<td>SDIO/Flash Data 3 pin (qio/qout only)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO11</span></code></td>
+<td>SDIO/Flash CMD pin</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td>Attached to Hardware SPI controller MISO</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
+<td>Attached to Hardware SPI controller MOSI</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td>Attached to Hardware SPI controller CLK</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
+<td>Controls Boot Mode; Attached to Hardware SPI
+controller CS</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO16</span></code></td>
+<td>Special pin that can be accessed from RTC,
+and is Deep-Sleep wakeup pin</td>
+</tr>
+<tr class="row-even"><td>TOUT aka <code class="docutils literal notranslate"><span class="pre">GPIO17</span></code></td>
+<td>ADC pin for measuring voltages, can only be
+used as analog input pin</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="boot-modes">
+<h2>Boot Modes<a class="headerlink" href="#boot-modes" title="Permalink to this headline">¶</a></h2>
+<p>On each boot, the ESP8266 will check three pins to determine in which boot mode to enter.
+There are three boot modes:</p>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="37%" />
+<col width="13%" />
+<col width="13%" />
+<col width="15%" />
+<col width="21%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Mode</strong></td>
+<td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">boot</span> <span class="pre">mode:</span></code></td>
+</tr>
+<tr class="row-even"><td>Boot from Flash (normal)</td>
+<td>HIGH</td>
+<td>HIGH</td>
+<td>LOW</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>Download Code from UART</td>
+<td>LOW</td>
+<td>HIGH</td>
+<td>LOW</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>Boot from SD-Card</td>
+<td>ANY</td>
+<td>ANY</td>
+<td>HIGH</td>
+<td>4-7</td>
+</tr>
+</tbody>
+</table>
+<p>You can identify these on boot-up by looking at the UART output, the first number
+in the <code class="docutils literal notranslate"><span class="pre">boot</span> <span class="pre">mode:</span></code> line tells you what mode was selected</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre>ets Jan  8 2013,rst cause:4, boot mode:(3,6)
+</pre></div>
+</div>
+<p>The first lines when viewing the UART logs might have unrecognized characters. This is
+because the ESP8266 bootloader uses a baudrate of 76800, whereas the use program uses 115200.</p>
+</div>
+<div class="section" id="reset-causes">
+<h2>Reset Causes<a class="headerlink" href="#reset-causes" title="Permalink to this headline">¶</a></h2>
+<p>Additionally, the first line also contains the <strong>reset cause</strong>.
+These reset causes <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/esp8266_reset_causes_and_common_fatal_exception_causes_en.pdf">are documented</a>:</p>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>0</td>
+<td>Undefined</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>Power On Reboot</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>External reset or deep-sleep wakeup</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>Hardware WDT reset</td>
+</tr>
+</tbody>
+</table>
+<p>After a software reset, the reset cause will not change.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
