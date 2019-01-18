@@ -89,6 +89,7 @@
 <li><a class="reference internal" href="#sonoff-t1-1ch-2ch-3ch">Sonoff T1 1CH, 2CH, 3CH</a></li>
 <li><a class="reference internal" href="#arilux-lc10-magic-home">Arilux LC10, Magic Home</a></li>
 <li><a class="reference internal" href="#arilux-lc01">Arilux LC01</a></li>
+<li><a class="reference internal" href="#arilux-lc02">Arilux LC02</a></li>
 <li><a class="reference internal" href="#arilux-lc11">Arilux LC11</a></li>
 <li><a class="reference internal" href="#sonoff-s31">Sonoff S31</a></li>
 <li><a class="reference internal" href="#shelly-1">Shelly 1</a></li>
@@ -648,6 +649,48 @@ for controlling the light pin.</p>
 <td><strong> Blue Channel</strong></td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td><strong> White Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
+<td> UART TX pin (for external sensors)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO3</span></code></td>
+<td> UART RX pin (for external sensors)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="../components/light/rgbw.html"><span class="doc">RGBW Light</span></a> for controlling the lights together with
+<a class="reference internal" href="../components/output/esp8266_pwm.html"><span class="doc">ESP8266 Software PWM Output</span></a>.</p>
+</div>
+<div class="section" id="arilux-lc02">
+<h2>Arilux LC02<a class="headerlink" href="#arilux-lc02" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pin</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
+<td><strong> Button (inverted)</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
+<td><strong> Blue LED</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
+<td><strong> Red Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
+<td><strong> Green Channel</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
+<td><strong> Blue Channel</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
 <td><strong> White Channel</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO1</span></code></td>
