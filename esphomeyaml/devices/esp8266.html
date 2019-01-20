@@ -189,42 +189,55 @@ used as analog input pin</td>
 <p>This means effectively only the following pins can be used as general purpose GPIO:</p>
 <table border="1" class="no-center docutils">
 <colgroup>
-<col width="25%" />
-<col width="75%" />
+<col width="14%" />
+<col width="43%" />
+<col width="43%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>Pin</strong></td>
 <td><strong>Restrictions</strong></td>
+<td><strong>State after Reset</strong></td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO0</span></code></td>
 <td>If HIGH on boot</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO2</span></code></td>
 <td>If HIGH on boot</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO4</span></code></td>
 <td>&#160;</td>
+<td>High Impedance</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO5</span></code></td>
 <td>&#160;</td>
+<td>High Impedance</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO6</span></code></td>
 <td>&#160;</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO12</span></code></td>
 <td>&#160;</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO13</span></code></td>
 <td>&#160;</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO14</span></code></td>
 <td>&#160;</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">GPIO15</span></code></td>
 <td>If LOW on boot</td>
+<td>Weak Pull Up</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">GPIO16</span></code></td>
-<td>Does not have internal pullup</td>
+<td>Has pull-down (but no pull-up
+resistor</td>
+<td>Weak Pull Down</td>
 </tr>
 </tbody>
 </table>
