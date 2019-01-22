@@ -75,6 +75,7 @@
 <li><a class="reference internal" href="#special-pins">Special Pins</a></li>
 <li><a class="reference internal" href="#boot-modes">Boot Modes</a></li>
 <li><a class="reference internal" href="#reset-causes">Reset Causes</a></li>
+<li><a class="reference internal" href="#electrical-characteristics">Electrical Characteristics</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
@@ -314,6 +315,83 @@ These reset causes <a class="reference external" href="https://www.espressif.com
 </tbody>
 </table>
 <p>After a software reset, the reset cause will not change.</p>
+</div>
+<div class="section" id="electrical-characteristics">
+<h2>Electrical Characteristics<a class="headerlink" href="#electrical-characteristics" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="no-center docutils">
+<colgroup>
+<col width="57%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><strong>Min.</strong></td>
+<td><strong>Typical</strong></td>
+<td><strong>Max.</strong></td>
+<td><strong>Unit</strong></td>
+</tr>
+<tr class="row-even"><td>Operating Temperature</td>
+<td>-40</td>
+<td>&#160;</td>
+<td>125</td>
+<td>°C</td>
+</tr>
+<tr class="row-odd"><td>Working Voltage <code class="docutils literal notranslate"><span class="pre">V_IO</span></code></td>
+<td>2.5</td>
+<td>3.3</td>
+<td>3.6</td>
+<td>V</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">V_IL</span></code> - INPUT voltage level to be considered LOW</td>
+<td>-0.3</td>
+<td>&#160;</td>
+<td>0.25*V_IO</td>
+<td>V</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">V_IH</span></code> - INPUT voltage level to be considered HIGH</td>
+<td>0.75*V_IO</td>
+<td>&#160;</td>
+<td>3.6</td>
+<td>V</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">V_OL</span></code> - OUTPUT voltage level for LOW</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>0.1*V_IO</td>
+<td>V</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">V_OH</span></code> - OUTPUT voltage level for HIGH</td>
+<td>0.8*V_IO</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>V</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">I_MAX</span></code> - Maximum current for GPIO</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>12</td>
+<td>mA</td>
+</tr>
+<tr class="row-odd"><td>Power Consumption in Deep Sleep</td>
+<td>&#160;</td>
+<td>20</td>
+<td>&#160;</td>
+<td>µA</td>
+</tr>
+<tr class="row-even"><td>Power Consumption in Active Mode</td>
+<td>&#160;</td>
+<td>120</td>
+<td>&#160;</td>
+<td>mA</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a class="reference external" href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">ESP8266EX datasheet</a></p>
+<p>The internal pull up/down resistors have values of 30kΩ to 100kΩ
+(<a class="reference external" href="https://bbs.espressif.com/viewtopic.php?t=1079">source</a>).</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
