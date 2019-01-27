@@ -23,7 +23,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name="theme-color" content="#DFDFDF">
 
-    <title>Automations And Templates &#8212; ESPHome 1.10.1 documentation</title>
+    <title>Automations And Templates &#8212; ESPHome</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -316,7 +316,7 @@ global variables can be used to store the state of a garage door.</p>
  <span class="l l-Scalar l-Scalar-Plain">globals</span><span class="p p-Indicator">:</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_global_int</span>
      <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">int</span>
-     <span class="l l-Scalar l-Scalar-Plain">restore_state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+     <span class="l l-Scalar l-Scalar-Plain">restore_value</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
      <span class="l l-Scalar l-Scalar-Plain">initial_value</span><span class="p p-Indicator">:</span> <span class="s">&#39;0&#39;</span>
 
 <span class="c1"># In an automation</span>
@@ -339,7 +339,7 @@ global variables can be used to store the state of a garage door.</p>
 to it later in <a class="reference internal" href="#config-lambda"><span class="std std-ref">lambdas</span></a>.</li>
 <li><strong>type</strong> (<strong>Required</strong>, string): The C++ type of the global variable, for example <code class="docutils literal notranslate"><span class="pre">bool</span></code> (for <code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code>),
 <code class="docutils literal notranslate"><span class="pre">int</span></code> (for integers), <code class="docutils literal notranslate"><span class="pre">float</span></code> (for decimal numbers), <code class="docutils literal notranslate"><span class="pre">int[50]</span></code> for an array of 50 integers, etc.</li>
-<li><strong>restore_state</strong> (<em>Optional</em>, boolean): Whether to try to restore the state on boot up.
+<li><strong>restore_value</strong> (<em>Optional</em>, boolean): Whether to try to restore the state on boot up.
 Be careful: on the ESP8266, you only have a total of 96 bytes available for this! Defaults to <code class="docutils literal notranslate"><span class="pre">no</span></code>.</li>
 <li><strong>initial_value</strong> (<em>Optional</em>, string): The value with which to initialize this variable if the state
 can not be restored or if state restoration is not enabled. This needs to be wrapped in quotes! Defaults to
@@ -524,7 +524,7 @@ compile error.</p>
 </div>
 <div class="section" id="script-execute-action">
 <span id="id7"></span><h2><code class="docutils literal notranslate"><span class="pre">script.execute</span></code> Action<a class="headerlink" href="#script-execute-action" title="Permalink to this headline">¶</a></h2>
-<p>This action allows you to prevent code-reuse. For example if you have multiple triggers
+<p>This action allows code-reuse. For example if you have multiple triggers
 that perform the same exact action, you would normally have to copy the YAML lines for all
 triggers.</p>
 <p>With the <code class="docutils literal notranslate"><span class="pre">script</span></code> component you can define these steps in a central place, and then
