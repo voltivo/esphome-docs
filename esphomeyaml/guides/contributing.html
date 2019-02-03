@@ -71,7 +71,12 @@
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Contributing</a><ul>
-<li><a class="reference internal" href="#contributing-to-esphomedocs">Contributing to esphomedocs</a></li>
+<li><a class="reference internal" href="#contributing-to-esphomedocs">Contributing to esphomedocs</a><ul>
+<li><a class="reference internal" href="#syntax">Syntax</a></li>
+<li><a class="reference internal" href="#build">Build</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#contributing-to-esphomelib">Contributing to esphomelib</a></li>
 <li><a class="reference internal" href="#contributing-to-esphomeyaml">Contributing to esphomeyaml</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
@@ -92,9 +97,9 @@
 <p>Contributions to the esphomelib suite are very welcome! All the code for the projects
 is hosted on GitHub and you can find the sources here:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/OttoWinter/esphomelib">esphomelib</a> (The C++ framework)</li>
-<li><a class="reference external" href="https://github.com/OttoWinter/esphomeyaml">esphomeyaml</a> (The Python YAML to C++ transpiler)</li>
-<li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs">esphomedocs</a> (The documentation which you’re reading here)</li>
+<li><a class="reference external" href="https://github.com/esphome/ESPHome-Core">ESPHome-Core</a> (The C++ framework)</li>
+<li><a class="reference external" href="https://github.com/esphome/ESPHome">ESPHome</a> (The Python YAML to C++ transpiler)</li>
+<li><a class="reference external" href="https://github.com/esphome/ESPHome-Docs">ESPHome-Docs</a> (The documentation which you’re reading here)</li>
 </ul>
 <p>Just clone the repository locally, do the changes for your new feature/bug fix and submit
 a pull request. I will try to take a look at your PR as soon as possible.</p>
@@ -105,6 +110,8 @@ If you see an issue somewhere, or spelling mistakes or if you want to share your
 setup, please feel free to submit a pull request.</p>
 <p>The esphomelib documentation is built using <a class="reference external" href="http://www.sphinx-doc.org/">sphinx</a> and uses
 <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> for all source files.</p>
+<div class="section" id="syntax">
+<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <p>In my opinion, markdown would have been the much better choice in hindsight, but at the time
 I was setting up the documentation good doxygen integration was key to me. Anyway, here’s a quick
 RST primer:</p>
@@ -240,32 +247,41 @@ must be split up into multiple lines.</li>
 </ul>
 <p>reStructured text can do a lot more than this, so if you’re looking for a more complete guide
 please have a look at the <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">Sphinx reStructuredText Primer</a>.</p>
-<p>To check your documentation changes locally, you first need install sphinx (<strong>with Python 3</strong>) and
-<a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">doxygen</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="c1"># in esphomedocs repo:</span>
-pip3 install -r requirements.txt
-</pre></div>
 </div>
+<div class="section" id="build">
+<h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Alternatively, you can use the <a class="reference external" href="https://hub.docker.com/r/ottowinter/esphomedocs/">esphomedocs docker image</a>:</p>
+<p>The easiest way is to use the <a class="reference external" href="https://hub.docker.com/r/ottowinter/esphomedocs/">esphomedocs docker image</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre>docker run --rm -v <span class="s2">&quot;</span>$<span class="s2">PWD/..&quot;</span>:/data -p 8000:8000 -it ottowinter/esphomedocs
 </pre></div>
 </div>
-<p class="last">And then go to <code class="docutils literal notranslate"><span class="pre">&lt;CONTAINER_IP&gt;:8000</span></code> in your browser.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre>docker run --rm -v ${PWD}/..:/data -p 8000:8000 -it ottowinter/esphomedocs
+</pre></div>
 </div>
-<p>Next, you will also need to clone the <a class="reference external" href="https://github.com/OttoWinter/esphomelib">esphomelib repository</a> into
-the folder where <code class="docutils literal notranslate"><span class="pre">esphomedocs</span></code> sits like this:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre>├── esphomedocs/
+<p>And then go to <code class="docutils literal notranslate"><span class="pre">&lt;CONTAINER_IP&gt;:8000</span></code> in your browser.</p>
+<p class="last">This way, you don’t have to install the dependencies to build the documentation.</p>
+</div>
+<p>To check your documentation changes locally, you first need install sphinx (<strong>with Python 3</strong>) and
+<a class="reference external" href="http://www.doxygen.nl/">doxygen</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span class="c1"># in ESPHome-Docs repo:</span>
+pip3 install -r requirements.txt
+</pre></div>
+</div>
+<p>Next, you will also need to clone the <a class="reference external" href="https://github.com/esphome/ESPHome-Core">ESPHome-Core repository</a> into
+the paret folder where <code class="docutils literal notranslate"><span class="pre">ESPHome-Docs</span></code> sits like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre>├── ESPHome-Docs/
 │   ├── api/
 │   ├── esphomeyaml/
 │   ├── Doxygen
 │   ├── Makefile
 │   ├── index.rst
 │   └── ...
-└── esphomelib/
-    ├── src/
+└── ESPHome-Core/
+    ├── docker/
     ├── examples/
+    ├── lib/
+    ├── src/
     ├── library.json
     ├── platformio.ini
     └── ...
@@ -281,6 +297,9 @@ make webserver
 make html
 </pre></div>
 </div>
+</div>
+<div class="section" id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <p>Some notes about the docs:</p>
 <ul class="simple">
 <li>Use the english language (duh…)</li>
@@ -292,6 +311,7 @@ and domain-specific lingo, it should not interfere with new users understanding 
 <li>Fixes/improvements for the docs themselves should go to the <code class="docutils literal notranslate"><span class="pre">current</span></code> branch of the
 esphomedocs repository. New features should be added against the <code class="docutils literal notranslate"><span class="pre">next</span></code> branch.</li>
 </ul>
+</div>
 </div>
 <div class="section" id="contributing-to-esphomelib">
 <h2>Contributing to esphomelib<a class="headerlink" href="#contributing-to-esphomelib" title="Permalink to this headline">¶</a></h2>

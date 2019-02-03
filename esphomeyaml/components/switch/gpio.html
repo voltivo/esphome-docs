@@ -132,20 +132,25 @@ GPIO pin to use for the switch.</p>
       <span class="l l-Scalar l-Scalar-Plain">inverted</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
 </pre></div>
 </div>
-<p>And to create momentary switches, for example switches that toggle a pin for a moment, use <a class="reference internal" href="template.html"><span class="doc">template switches</span></a>:</p>
+<p>To create momentary switches, for example switches that toggle a pin for a moment, you can use <a class="reference internal" href="template.html"><span class="doc">template switches</span></a>.</p>
+<p>An example that uses a single relay to activate a remote control button. The button can only start or stop the motor of the gate. In itself, the button or remote can not know if it opens or closes the gate. The relay simulates the button press for 500ms.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span class="c1"># Example configuration entry</span>
 <span class="l l-Scalar l-Scalar-Plain">switch</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gpio</span>
     <span class="l l-Scalar l-Scalar-Plain">pin</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
     <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">platform</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
-    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Momentary</span><span class="nv"> </span><span class="s">Switch&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">optimistic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;Gate</span><span class="nv"> </span><span class="s">Remote&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="s">&quot;mdi:gate&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">optimistic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
     <span class="l l-Scalar l-Scalar-Plain">turn_on_action</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100ms</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delay</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500ms</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">switch.turn_off</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">relay</span>
 </pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../../_images/gate-remote-ui.png" src="../../../_images/gate-remote-ui.png" />
 </div>
 </div>
 <div class="section" id="see-also">
@@ -153,6 +158,8 @@ GPIO pin to use for the switch.</p>
 <ul class="simple">
 <li><a class="reference internal" href="index.html"><span class="doc">Switch Component</span></a></li>
 <li><a class="reference internal" href="../output/gpio.html"><span class="doc">GPIO Output</span></a></li>
+<li><a class="reference internal" href="../cover/template.html"><span class="doc">Template Cover</span></a></li>
+<li><a class="reference internal" href="../../cookbook/garage-door.html"><span class="doc">Simple Garage Door</span></a></li>
 <li><a class="reference internal" href="../../../api/switch/index.html"><span class="doc">API Reference</span></a></li>
 <li><a class="reference external" href="https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/components/switch/gpio.rst">Edit this page on GitHub</a></li>
 </ul>
