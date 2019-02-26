@@ -54,6 +54,11 @@ Configuration variables:
     - 2
     - 4
 
+- **min_value** (*Optional*, int): Constrain the rotary encoder to a minimum value, turning
+  the knob further will not decrement the counter.
+- **max_value** (*Optional*, int): Constrain the rotary encoder to a maximum value, turning
+  the knob further will not increment the counter.
+
 - **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation.
 - All other options from :ref:`Sensor <config-sensor>`.
 
