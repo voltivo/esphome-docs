@@ -494,6 +494,24 @@ Configuration options:
         });
 
 
+.. _mqtt-connected_condition::
+
+``mqtt.connected`` Condition
+****************************
+
+This :ref:`Condition <config-condition>` checks if MQTT is connected.
+
+.. code-block:: yaml
+
+    # In some trigger:
+    on_...:
+      if:
+        condition:
+          mqtt.connected:
+        then:
+          # ...
+
+
 See Also
 --------
 

@@ -156,6 +156,24 @@ Configuration options:
 - **variables** (*Optional*, mapping): Optional variables that can be used in the ``data_template``.
   Values are :ref:`lambdas <config-lambda>` and will be evaluated before sending the request.
 
+
+.. _api-connected_condition::
+
+``api.connected`` Condition
+****************************
+
+This :ref:`Condition <config-condition>` checks if the API is connected to any clients.
+
+.. code-block:: yaml
+
+    # In some trigger:
+    on_...:
+      if:
+        condition:
+          api.connected:
+        then:
+          # ...
+
 See Also
 --------
 

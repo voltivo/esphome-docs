@@ -354,6 +354,7 @@ All Conditions
 - :ref:`binary_sensor.is_on <binary_sensor-is_on_condition>` / :ref:`binary_sensor.is_off <binary_sensor-is_off_condition>`
 - :ref:`switch.is_on <switch-is_on_condition>` / :ref:`switch.is_off <switch-is_off_condition>`
 - :ref:`sensor.in_range <sensor-in_range_condition>`
+- :ref:`wifi.connected <wifi-connected_condition>` / :ref:`mqtt.connected <mqtt-connected_condition>` / :ref:`api.connected <api-connected_condition>`
 
 .. _delay_action:
 
