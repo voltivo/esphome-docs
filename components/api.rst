@@ -160,7 +160,7 @@ Configuration options:
 .. _api-connected_condition::
 
 ``api.connected`` Condition
-****************************
+***************************
 
 This :ref:`Condition <config-condition>` checks if the API is connected to any clients.
 
