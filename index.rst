@@ -163,6 +163,7 @@ Output Components
 .. imgtable::
 
     Output Core, components/output/index, folder-open.svg
+    Copy Output, components/output/copy, content-copy.png
     ESP8266 Software PWM, components/output/esp8266_pwm, pwm.png
     GPIO Output, components/output/gpio, pin.svg
     ESP32 LEDC, components/output/ledc, pwm.png
