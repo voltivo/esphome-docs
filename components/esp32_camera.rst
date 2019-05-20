@@ -193,6 +193,29 @@ Configuration for TTGO T-Camera
       name: My Camera
       # ...
 
+Configuration for TTGO T-Camera V2
+----------------------------------
+
+The white PCB V2 version with PIR and MIC
+
+.. code-block:: yaml
+
+    esp32_camera:
+      external_clock:
+        pin: 4
+        frequency: 20MHz
+      i2c_pins:
+        sda: 18
+        scl: 23
+      data_pins: [34,13,14,35,39,12,15,36]
+      vsync_pin: 5
+      href_pin: 27
+      pixel_clock_pin: 25
+      #power_down_pin: GPIO26
+      name: My Camera
+      resolution: 640x480
+      jpeg_quality: 10
+  
 
 See Also
 --------
